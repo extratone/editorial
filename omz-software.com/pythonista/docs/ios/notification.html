@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>notification — Notifications on iOS &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/notification.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-notification">
+<span id="notification-notifications-on-ios"></span><h1><a class="reference internal" href="notification.html#module-notification" title="notification: Integration with Notification Center on iOS"><code class="xref py py-mod docutils literal"><span class="pre">notification</span></code></a> &#8212; Notifications on iOS<a class="headerlink" href="notification.html#module-notification" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="notification.html#module-notification" title="notification: Integration with Notification Center on iOS"><code class="xref py py-mod docutils literal"><span class="pre">notification</span></code></a> module allows you to schedule notification messages that are shown in the iOS Notification Center. Scheduled notifications are delivered even when your script (or even the entire app) is no longer running.</p>
+<p>It is also possible to attach a URL to a notification. The URL gets launched when the notification is activated (i.e. tapped in Notification Center or on the lock screen). Notifications can also contain multiple buttons that launch different URLs.</p>
+<p>Typically, a notification is scheduled for a certain date/time in the future, but you can also schedule location-based notifications that get triggered when you enter or leave a specified geographic location (e.g. home/work).</p>
+<p>All notifications you can schedule with this module are <em>local</em> notifications. Remote (push) notifications are not supported.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="notification.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="notification.schedule">
+<code class="descclassname">notification.</code><code class="descname">schedule</code><span class="sig-paren">(</span><em>message=None</em>, <em>delay=0</em>, <em>sound_name=None</em>, <em>action_url=None</em>, <em>title=None</em>, <em>subtitle=None</em>, <em>attachments=None</em>, <em>trigger=None</em>, <em>actions=None</em>, <em>identifier=None</em><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedule a notification with the given options.</p>
+<p>The return value is a string that can be used as an identifier to e.g. cancel the notification later.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><cite>message</cite>: The main text of the notification</li>
+<li><cite>delay</cite>: The time when the notification gets delivered, in seconds from now</li>
+<li><cite>sound_name</cite>: The name of the built-in sound effect or sound file name that should be played when the notification is delivered. You can pass <cite>None</cite> (the default) for silent notifications or <cite>&#8216;default&#8217;</cite> for the default notification sound.</li>
+<li><cite>action_url</cite>: The URL that gets launched when the notification is tapped</li>
+<li><cite>title</cite>: The title of the notification that gets displayed above the <cite>message</cite></li>
+<li><cite>subtitle</cite>: The subtitle of the notification</li>
+<li><cite>attachments</cite>: A list of files that should be attached to the notification (e.g. images) &#8211; note that these files are copied immediately, so you cannot make changes to any attachments afterwards.</li>
+<li><cite>trigger</cite>: A dictionary for more complex triggers than the simple <cite>delay</cite> parameter allows (see below)</li>
+<li><cite>actions</cite>: Definitions for custom action buttons that are attached to the notification. Each action can launch a different URL or script. Notification actions get shown either when you drag down a notification banner from the top of the screen, by 3D Touch (on supported devices), or by tapping and holding the notification (on devices that don&#8217;t support 3D Touch). See below for details on how to define custom actions.</li>
+<li><cite>identifier</cite>: An optional string that gets used as the notification&#8217;s identifier. If a notification with the same identifier is already scheduled, it gets replaced by the new notification.</li>
+</ul>
+<p><strong>Date and location triggers:</strong></p>
+<p>If you need more complex notification triggers than the simple <cite>delay</cite> parameter, you can pass a <cite>dict</cite> as the <cite>trigger</cite> parameter. This trigger can contain various options that define either a calendar- or location-based notification trigger. Supported keys for calendar-based notifications are: <code class="docutils literal"><span class="pre">'repeats',</span> <span class="pre">'year',</span> <span class="pre">'quarter',</span> <span class="pre">'month',</span> <span class="pre">'day',</span> <span class="pre">'weekday',</span> <span class="pre">'weekday_ordinal',</span> <span class="pre">'week_of_month',</span> <span class="pre">'week_of_year',</span> <span class="pre">'hour',</span> <span class="pre">'minute',</span> <span class="pre">'second'</span></code> &#8211; you don&#8217;t have to specify all of these keys, just use the date/time components you need for your use case. Repeating notifications cannot repeat more often than once per minute.</p>
+<p>Supported keys for location-based notification triggers are: <code class="docutils literal"><span class="pre">'latitude'</span></code>, <code class="docutils literal"><span class="pre">'longitude'</span></code>, <code class="docutils literal"><span class="pre">'radius'</span></code> (meters, default=100), <code class="docutils literal"><span class="pre">'entry'</span></code>, <code class="docutils literal"><span class="pre">'exit'</span></code>, <code class="docutils literal"><span class="pre">'repeats'</span></code>. The <code class="docutils literal"><span class="pre">'entry'</span></code> (notify when reaching the location) and <code class="docutils literal"><span class="pre">'exit'</span></code> (notify when leaving the location) options should be <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code>. By default, both are true. Location-based notifications require that the app is authorized to access your location (you&#8217;ll be prompted automatically, and you can change it in the Settings app under Privacy).</p>
+<p><strong>Custom notification actions:</strong></p>
+<p>The <cite>actions</cite> parameter allows you to pass a list of actions that are shown as buttons when the notification is activated (e.g. by 3D Touch from the lock screen on supported devices). <cite>actions</cite> should be a list of <a href="notification.html#id1"><span class="problematic" id="id2">`</span></a>dict`s that may contain the following keys:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'title'</span></code> &#8211; The title of the button</li>
+<li><code class="docutils literal"><span class="pre">'url'</span></code> or <code class="docutils literal"><span class="pre">'action_url'</span></code> &#8211; The URL that gets launched when the button is tapped. If this is a <cite>pythonista://</cite> URL that runs a script, the script runs in the background, unless the <code class="docutils literal"><span class="pre">'foreground'</span></code> key is set to <cite>True</cite>.</li>
+<li><code class="docutils literal"><span class="pre">'foreground'</span></code> &#8211; See <code class="docutils literal"><span class="pre">`'action_url'</span></code></li>
+<li><code class="docutils literal"><span class="pre">'destructive'</span></code> &#8211; Changes the button&#8217;s appearance to indicate a destructive action (the text color becomes red)</li>
+<li><code class="docutils literal"><span class="pre">'text_input'</span></code> &#8211; When set to <cite>True</cite>, this action causes a text field to appear within the notification interface. To use the entered text, put a <code class="docutils literal"><span class="pre">{text_input}</span></code> placeholder somewhere in this action&#8217;s URL (set via <code class="docutils literal"><span class="pre">'url'</span></code> key). If you use a <cite>pythonista://</cite> URL to launch a script with this action, you can use the entered text as the URL&#8217;s <cite>args</cite> parameter, and access it in the script via <code class="docutils literal"><span class="pre">sys.argv</span></code>. Example: <code class="docutils literal"><span class="pre">pythonista3://MyScript.py?action=run&amp;args={text_input}</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">'text_input_button_title'</span></code> &#8211; Specifies the title of the &#8220;OK&#8221; button when <code class="docutils literal"><span class="pre">'text_input'</span></code> is <cite>True</cite></li>
+<li><code class="docutils literal"><span class="pre">'text_input_placeholder'</span></code> &#8211; Specifies the placeholder text when <code class="docutils literal"><span class="pre">'text_input'</span></code> is <cite>True</cite></li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="notification.cancel">
+<code class="descclassname">notification.</code><code class="descname">cancel</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel a notification that was previously scheduled.</p>
+<p>The <cite>notification_id</cite> parameter is a string that was either retrieved via <a class="reference internal" href="notification.html#notification.get_scheduled" title="notification.get_scheduled"><code class="xref py py-func docutils literal"><span class="pre">get_scheduled()</span></code></a> or returned
+from the <a class="reference internal" href="notification.html#notification.schedule" title="notification.schedule"><code class="xref py py-func docutils literal"><span class="pre">schedule()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="notification.cancel_all">
+<code class="descclassname">notification.</code><code class="descname">cancel_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.cancel_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel all previously scheduled notifications.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="notification.get_scheduled">
+<code class="descclassname">notification.</code><code class="descname">get_scheduled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.get_scheduled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of scheduled notification identifiers.</p>
+<p>The entries in the list are UUID strings that can be used for the <a class="reference internal" href="notification.html#notification.cancel" title="notification.cancel"><code class="xref py py-func docutils literal"><span class="pre">cancel()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="notification.remove_delivered">
+<code class="descclassname">notification.</code><code class="descname">remove_delivered</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.remove_delivered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a specific notification that was already delivered from Notification Center. Note: This is done automatically when the user activates a notification.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="notification.remove_all_delivered">
+<code class="descclassname">notification.</code><code class="descname">remove_all_delivered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="notification.html#notification.remove_all_delivered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all notifications that were already delivered from Notification Center. Note: This only affects the notifications of this app.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pythonista | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Pythonista" />
+	<meta property="og:title" content="Pythonista" />
+	<meta name="description" content="Share scripts and get help with your programming questions" />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="../5.rss" />
+	<link rel="up" href="../../index.html" />
+	<link rel="next" href="pythonista@page=2.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"gdR0WaGb-qBgurjLvAamabwL6yak3hM9oLL4","searchEnabled":true}');
+		var app = {
+			template: "category",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="pythonista@page=1.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="pythonista@page=1.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="pythonista@page=1.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="pythonista@page=1.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="category">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Pythonista
+												<a target="_blank" href="../5.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+<div class="subcategory">
+	
+
+	<ul class="categories" itemscope itemtype="http://www.schema.org/ItemList">
+
+	</ul>
+</div>
+
+	
+
+	<div class="clearfix">
+								<a href="../../topic/7476.html" class="btn btn-primary">Log in to post</a>
+
+		<span class="pull-right">
+
+
+
+		</span>
+	</div>
+
+	<hr />
+
+	<p>Pythonista</p>
+
+	
+
+<ul component="category" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="20">
+	<meta itemprop="itemListOrder" content="descending">
+	<li component="category/topic" class="row clearfix locked pinned unread"data-tid="3116" data-index="0" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pythonista Slack Chat">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/omz.html" class="pull-left">
+						<img src="../../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack "></i>
+				<i component="topic/locked" class="fa fa-lock "></i>
+				<a href="../../topic/3116/pythonista-slack-chat.html" itemprop="url">Pythonista Slack Chat</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-05-07T18:56:03.263Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="30819">30819</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7537" data-index="1" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/skyflexipack.html" class="pull-left">
+						<img src="../../uploads/profile/14226-profileimg.png" class="img-circle user-img" title="skyflexipack"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7537.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-05-12T09:53:26.849Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="23">23</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6182" data-index="2" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Python script to back up Photos to SD card or HDD">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/flyingdiver.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/f23295f8392363235b2de6985b50efb9?size=128&default=identicon&rating=pg" class="img-circle user-img" title="FlyingDiver"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/6182/python-script-to-back-up-photos-to-sd-card-or-hdd.html" itemprop="url">Python script to back up Photos to SD card or HDD</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2020-02-19T22:56:49.517Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="21">21</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6058">6058</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="../../topic/6182/python-script-to-back-up-photos-to-sd-card-or-hdd/21.html">
+						<small class="timeago" title="2020-02-23T21:07:15.979Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../../user/jmv38.html">@jmv38</a> Panasonic Lumix DMC-TZ40</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7520" data-index="3" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Arcade for Pythonista">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/assesssyrian123.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/fd14d49a315403c586e5322847de0fe0?size=128&default=identicon&rating=pg" class="img-circle user-img" title="assesssyrian123"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7520/arcade-for-pythonista.html" itemprop="url">Arcade for Pythonista</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-24T11:53:35.059Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="8">8</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="405">405</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="../../topic/7520/arcade-for-pythonista/8.html">
+						<small class="timeago" title="2022-05-10T00:30:22.858Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>You won't be able to install arcade.  Pip might say it installed, but it won't work.</p>
+<p>Pythonista has its own unique game module called scene.  You won't be able to reuse code from other engines, though you can translate most of what other simple 2d engines do to something equivalent in scene.</p>
+<p><a class="plugin-mentions-a" href="../../user/cethric.html">@Cethric</a> developed an engine that makes use of iOS OpenGLES, including a basic physics engine:<br />
+<a href="https://github.com/Cethric/OpenGLES-Pythonista" rel="nofollow">https://github.com/Cethric/OpenGLES-Pythonista</a></p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7522" data-index="4" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Apple delisting older apps that haven&#x27;t been updated recently">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/wbjethro.html" class="pull-left">
+						<img src="../../uploads/profile/877-profileimg.png" class="img-circle user-img" title="wbjethro"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7522/apple-delisting-older-apps-that-haven-t-been-updated-recently.html" itemprop="url">Apple delisting older apps that haven&#x27;t been updated recently</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-26T01:24:55.520Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2">2</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="307">307</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>dchevell</strong>
+					<a class="permalink" href="../../topic/7522/apple-delisting-older-apps-that-haven-t-been-updated-recently/2.html">
+						<small class="timeago" title="2022-05-08T00:35:33.414Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Sadly, this would be pretty deserved for Pythonista. It was by far the best app of its kind, but at this point it's dead. Last update was 2 years ago, and the one before that was another 2 years. The version of python it ships is EOL. New users should not buy it.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7248" data-index="5" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Outliner with drag&#x2F;drop reordering - part 2">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/cvp.html" class="pull-left">
+						<img src="../../uploads/profile/2281-profileimg.png" class="img-circle user-img" title="cvp"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7248/outliner-with-drag-drop-reordering-part-2.html" itemprop="url">Outliner with drag&#x2F;drop reordering - part 2</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-09-30T20:51:14.861Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="579">579</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="60127">60127</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="../../topic/7248/outliner-with-drag-drop-reordering-part-2/579.html">
+						<small class="timeago" title="2022-05-07T06:42:08.687Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> Rememeber, I was able to play normally without freezing afTer rebooting my iPad, no other way, even restarting Pythonista did not work. Reason for which I think the problem comes from the iOS.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7532" data-index="6" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/wlaw.html" class="pull-left">
+						<img src="../../uploads/profile/20231-profileimg.png" class="img-circle user-img" title="wlaw"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7532.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-05-02T12:46:23.491Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="23">23</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7528" data-index="7" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="laundry">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/xylily.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/5e4b835568376f40bbbb257fac457eac?size=128&default=identicon&rating=pg" class="img-circle user-img" title="xylily"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7528/laundry.html" itemprop="url">laundry</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-30T23:47:12.521Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="139">139</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7347" data-index="8" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pasting in UI designer always pastes into main view - not subviews">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/geese.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a337ee63b7149b1ba99f1f508c2e56c4?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Geese"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews.html" itemprop="url">Pasting in UI designer always pastes into main view - not subviews</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-12-21T01:35:35.095Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2">2</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="308">308</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>Vent</strong>
+					<a class="permalink" href="../../topic/7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews/2.html">
+						<small class="timeago" title="2022-04-29T06:05:31.598Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>me too!<br />
+plz look this omz...</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7526" data-index="9" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/tomcarry49.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a5935c1ca48f7d5ba7f91a92c38482f6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="tomcarry49"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7526.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-29T04:54:19.184Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="14">14</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5368" data-index="10" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="google sheets api setup problem">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/djl.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/5052536205bef30292b74e2acf982133?size=128&default=identicon&rating=pg" class="img-circle user-img" title="djl"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/5368/google-sheets-api-setup-problem.html" itemprop="url">google sheets api setup problem</a><br />
+
+				
+
+				<span class="tag-list">
+					<a href="../../tags/pyasn1.html"><span class="tag">pyasn1</span></a>
+									<a href="../../tags/google&#32;drive.html"><span class="tag">google drive</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2019-01-18T00:57:45.761Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="10">10</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2491">2491</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>johnquirke</strong>
+					<a class="permalink" href="../../topic/5368/google-sheets-api-setup-problem/10.html">
+						<small class="timeago" title="2022-04-28T21:59:33.783Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thank you so much Jon. I took the simple route, deleted all the modules and reinstalled. It took a couple of goes and it works. It looks like, as you say, one of the original uploads didn:t work. There are a couple of other problems but the developer who wrote the original twillo article has reached out to me so I:ll follow that route first.</p>
+<p>Thanks again Jon</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7524" data-index="11" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/soogoofr.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/4d56decfd07067bda8cbf87bf7460f71?size=128&default=identicon&rating=pg" class="img-circle user-img" title="soogoofr"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7524.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-27T13:52:29.624Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="27">27</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="312" data-index="12" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Soundcloud Downloader">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/pudquick51.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/5e543256c480ac577d30f76f9120eb74?size=128&default=identicon&rating=pg" class="img-circle user-img" title="pudquick51"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/312/soundcloud-downloader.html" itemprop="url">Soundcloud Downloader</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2013-11-01T00:00:01.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="18">18</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="12384">12384</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>westernira</strong>
+					<a class="permalink" href="../../topic/312/soundcloud-downloader/18.html">
+						<small class="timeago" title="2019-05-16T14:41:03.476Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks for this information. It really helpful for me. Also if you face any connectivity trouble while downloading you may refer<a href="https://routerlogin.one/192-168-1-13/" rel="nofollow"> router login</a> guide. It's useful.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7455" data-index="13" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Does the dropbox 6.4.0 library support TLS 1.2?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/dthomson.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/198c12a25b01a7fb9679dd8f4aa498fd?size=128&default=identicon&rating=pg" class="img-circle user-img" title="dthomson"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7455/does-the-dropbox-6-4-0-library-support-tls-1-2.html" itemprop="url">Does the dropbox 6.4.0 library support TLS 1.2?</a><br />
+
+				
+
+				<span class="tag-list">
+					<a href="../../tags/dropbox.html"><span class="tag">dropbox</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-11T05:19:12.450Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5">5</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="389">389</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="../../topic/7455/does-the-dropbox-6-4-0-library-support-tls-1-2/5.html">
+						<small class="timeago" title="2022-04-25T14:55:12.247Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Just force quit pythonista, then open again.  If you are using python 3, then importing will check site-packages first.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7251" data-index="14" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Since IOS 15 requests always gives me an SSL Certificate Error.">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/kami.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg" class="img-circle user-img" title="kami"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7251/since-ios-15-requests-always-gives-me-an-ssl-certificate-error.html" itemprop="url">Since IOS 15 requests always gives me an SSL Certificate Error.</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-10-03T12:58:07.200Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="8">8</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1535">1535</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>osamu</strong>
+					<a class="permalink" href="../../topic/7251/since-ios-15-requests-always-gives-me-an-ssl-certificate-error/8.html">
+						<small class="timeago" title="2022-04-24T23:51:06.557Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../../user/jonb.html">@JonB</a><br />
+It also worked for geocode nominatim query.  Thanks 🙏</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5310" data-index="15" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="When will OMZ release an Xcode Template for Python3?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/vignesh.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/6144232a52c6886da92f9cf0b313e51b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="vignesh"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/5310/when-will-omz-release-an-xcode-template-for-python3.html" itemprop="url">When will OMZ release an Xcode Template for Python3?</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2018-12-27T22:10:57.287Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="56">56</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="32707">32707</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>abazen</strong>
+					<a class="permalink" href="../../topic/5310/when-will-omz-release-an-xcode-template-for-python3/56.html">
+						<small class="timeago" title="2022-04-24T19:11:02.472Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks for this!</p>
+<p>When I physically connect an iPad it works beautifully in Xcode 13.3.1 (MacOS 12.3.1) on a Mac Mini M1</p>
+<p>However, building for a simulator, I get this:</p>
+ld: building for iOS Simulator, but linking in dylib built for iOS, file
+'/Users/andreas/Library/Mobile Documents/com~apple~CloudDocs/CloudSrc/Pythonista3AppTemplate Updated/Pythonista3AppTemplate/Py3Kit.framework/Py3Kit'
+for architecture arm64
+
+<p>I suspect the linker is telling me that the arm64 version is meant for an iOS device and that it is missing an arm64 version for MacOS? Does anybody know of a solution?</p>
+<p>Thanks!</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7519" data-index="16" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/tuefelop.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/1851af84ffcba9e807dabbccb8813d9b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="tuefelop"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7519.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-23T10:57:55.646Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="26">26</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7457" data-index="17" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Quick Sqlite cmd&#x2F;script tools for Pythonista">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/wolf71.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/80656cc987b8086bc33746d340c561b3?size=128&default=identicon&rating=pg" class="img-circle user-img" title="wolf71"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7457/quick-sqlite-cmd-script-tools-for-pythonista.html" itemprop="url">Quick Sqlite cmd&#x2F;script tools for Pythonista</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-12T08:34:14.481Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="354">354</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>wolf71</strong>
+					<a class="permalink" href="../../topic/7457/quick-sqlite-cmd-script-tools-for-pythonista/3.html">
+						<small class="timeago" title="2022-04-23T04:04:52.541Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					For Bioinformatics Support
+
+loadcsv also support tsv format file (\t split type), just using:
+
+loadcsv test.tsv tb1 1
+
+
+loadcsv also support bioinformatics .maf/.vcf/.sam/.gtf/.gff/.gpd file, just using:
+
+loadcsv test.maf tb1 or loadcsv test.vcf tb1
+
+
+Load GenBank Format Features Data.
+
+using: loadgb gbfile tb01
+load bioinformatics GenBank file (etc: .gb/.gbff/.gpff) features info to table.
+
+
+
+Crawl website data, parse and write to database
+
+using: loop loadweb url=https://xxx.xxx.com/xxx re=(\d+), base on python regular module, Qsqlite loop nesting function, can achieve complex web data crawling and content extraction, and then write to the database.
+
+<p>All new function please check the <a href="https://github.com/wolf71/Qsqlite" rel="nofollow">Readme file</a></p>
+Qsqlite is one py file only, you can just copy the <a href="https://github.com/wolf71/Qsqlite/tree/master/Qsqlite" rel="nofollow">Qsqlite.py</a> file on Github to Pythonista, and then run it on python3 mode.
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7518" data-index="18" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/vufvotok.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/df27512523f5aae04f8f82c03a3ca6c9?size=128&default=identicon&rating=pg" class="img-circle user-img" title="vufvotok"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7518.html" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-19T11:22:01.644Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="25">25</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7516" data-index="19" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Breathing exercise animation">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../../user/rosanne.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/9d625406b686a9116ade214dc79ebb96?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Rosanne"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../../topic/7516/breathing-exercise-animation.html" itemprop="url">Breathing exercise animation</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-04-18T09:45:06.562Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4">4</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="186">186</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #0485a6">
+								<p class="hidden-xs">
+					<strong>Rosanne</strong>
+					<a class="permalink" href="../../topic/7516/breathing-exercise-animation/4.html">
+						<small class="timeago" title="2022-04-19T09:54:41.267Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thank you, that was exactly the starting point I needed! I managed to get it working, now I just need to position everything and make it look good.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+
+	
+</div>
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="pythonista@page=1.html" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+						<li class="page active" >
+				<a href="pythonista@page=1.html" data-page="1">1</a>
+			</li>
+							<li class="page" >
+				<a href="pythonista@page=2.html" data-page="2">2</a>
+			</li>
+							<li class="page" >
+				<a href="pythonista@page=3.html" data-page="3">3</a>
+			</li>
+							<li class="page select-page">
+				<a href="pythonista@page=1.html#"><i class="fa fa-ellipsis-h"></i></a>
+			</li>
+							<li class="page" >
+				<a href="pythonista@page=293.html" data-page="293">293</a>
+			</li>
+							<li class="page" >
+				<a href="pythonista@page=294.html" data-page="294">294</a>
+			</li>
+
+		<li class="next pull-right">
+			<a href="pythonista@page=2.html" data-page="2"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="category_name" value="Pythonista" />
+<input type="hidden" template-variable="category_slug" value="5/pythonista" />
+<input type="hidden" template-variable="topic_count" value="5875" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="294" /><input type="hidden" ajaxify-data="%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A42768%2C%22totalTopicCount%22%3A5875%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%2C%22unread-class%22%3A%22unread%22%2C%22children%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22tid%22%3A%223116%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2218884%22%2C%22title%22%3A%22Pythonista%20Slack%20Chat%22%2C%22slug%22%3A%223116%2Fpythonista-slack-chat%22%2C%22timestamp%22%3A%221462647363263%22%2C%22lastposttime%22%3A%221462647363274%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2230819%22%2C%22locked%22%3Atrue%2C%22deleted%22%3Afalse%2C%22pinned%22%3Atrue%2C%22relativeTime%22%3A%222016-05-07T18%3A56%3A03.263Z%22%2C%22lastposttimeISO%22%3A%222016-05-07T18%3A56%3A03.274Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A0%7D%2C%7B%22tid%22%3A%227537%22%2C%22uid%22%3A%2214226%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248454%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227537%22%2C%22timestamp%22%3A%221652349206849%22%2C%22lastposttime%22%3A%221652349207174%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2223%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-05-12T09%3A53%3A26.849Z%22%2C%22lastposttimeISO%22%3A%222022-05-12T09%3A53%3A27.174Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2214226%22%2C%22username%22%3A%22skyflexipack%22%2C%22userslug%22%3A%22skyflexipack%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F14226-profileimg.png%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A1%7D%2C%7B%22tid%22%3A%226182%22%2C%22uid%22%3A%227373%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2238249%22%2C%22title%22%3A%22Python%20script%20to%20back%20up%20Photos%20to%20SD%20card%20or%20HDD%22%2C%22slug%22%3A%226182%2Fpython-script-to-back-up-photos-to-sd-card-or-hdd%22%2C%22timestamp%22%3A%221582153009517%22%2C%22lastposttime%22%3A%221582492035979%22%2C%22postcount%22%3A%2221%22%2C%22viewcount%22%3A%226058%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2238327%22%2C%22relativeTime%22%3A%222020-02-19T22%3A56%3A49.517Z%22%2C%22lastposttimeISO%22%3A%222020-02-23T21%3A07%3A15.979Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%227373%22%2C%22username%22%3A%22FlyingDiver%22%2C%22userslug%22%3A%22flyingdiver%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ff23295f8392363235b2de6985b50efb9%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2238327%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222020-02-23T21%3A07%3A15.979Z%22%2C%22tid%22%3A%226182%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjmv38%5C%22%3E%40jmv38%3C%2Fa%3E%20Panasonic%20Lumix%20DMC-TZ40%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A21%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A2%7D%2C%7B%22tid%22%3A%227520%22%2C%22uid%22%3A%2219993%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248406%22%2C%22title%22%3A%22Arcade%20for%20Pythonista%22%2C%22slug%22%3A%227520%2Farcade-for-pythonista%22%2C%22timestamp%22%3A%221650801215059%22%2C%22lastposttime%22%3A%221652142622858%22%2C%22postcount%22%3A%228%22%2C%22viewcount%22%3A%22405%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248451%22%2C%22relativeTime%22%3A%222022-04-24T11%3A53%3A35.059Z%22%2C%22lastposttimeISO%22%3A%222022-05-10T00%3A30%3A22.858Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2219993%22%2C%22username%22%3A%22assesssyrian123%22%2C%22userslug%22%3A%22assesssyrian123%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248451%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222022-05-10T00%3A30%3A22.858Z%22%2C%22tid%22%3A%227520%22%2C%22content%22%3A%22%3Cp%3EYou%20won't%20be%20able%20to%20install%20arcade.%20%20Pip%20might%20say%20it%20installed%2C%20but%20it%20won't%20work.%3C%2Fp%3E%5Cn%3Cp%3EPythonista%20has%20its%20own%20unique%20game%20module%20called%20scene.%20%20You%20won't%20be%20able%20to%20reuse%20code%20from%20other%20engines%2C%20though%20you%20can%20translate%20most%20of%20what%20other%20simple%202d%20engines%20do%20to%20something%20equivalent%20in%20scene.%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcethric%5C%22%3E%40Cethric%3C%2Fa%3E%20developed%20an%20engine%20that%20makes%20use%20of%20iOS%20OpenGLES%2C%20including%20a%20basic%20physics%20engine%3A%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FCethric%2FOpenGLES-Pythonista%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2FCethric%2FOpenGLES-Pythonista%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A8%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A3%7D%2C%7B%22timestamp%22%3A%221650936295520%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%22307%22%2C%22teaserPid%22%3A%2248447%22%2C%22lastposttime%22%3A%221651970133414%22%2C%22deleted%22%3Afalse%2C%22locked%22%3Afalse%2C%22postcount%22%3A%222%22%2C%22slug%22%3A%227522%2Fapple-delisting-older-apps-that-haven-t-been-updated-recently%22%2C%22title%22%3A%22Apple%20delisting%20older%20apps%20that%20haven%26%23x27%3Bt%20been%20updated%20recently%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248414%22%2C%22uid%22%3A%22877%22%2C%22tid%22%3A%227522%22%2C%22relativeTime%22%3A%222022-04-26T01%3A24%3A55.520Z%22%2C%22lastposttimeISO%22%3A%222022-05-08T00%3A35%3A33.414Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22877%22%2C%22username%22%3A%22wbjethro%22%2C%22userslug%22%3A%22wbjethro%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F877-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248447%22%2C%22uid%22%3A%222119%22%2C%22timestamp%22%3A%222022-05-08T00%3A35%3A33.414Z%22%2C%22tid%22%3A%227522%22%2C%22content%22%3A%22%3Cp%3ESadly%2C%20this%20would%20be%20pretty%20deserved%20for%20Pythonista.%20It%20was%20by%20far%20the%20best%20app%20of%20its%20kind%2C%20but%20at%20this%20point%20it's%20dead.%20Last%20update%20was%202%20years%20ago%2C%20and%20the%20one%20before%20that%20was%20another%202%20years.%20The%20version%20of%20python%20it%20ships%20is%20EOL.%20New%20users%20should%20not%20buy%20it.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222119%22%2C%22username%22%3A%22dchevell%22%2C%22userslug%22%3A%22dchevell%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F6120d6af14ce1853e7da1f67e78d402d%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A4%7D%2C%7B%22tid%22%3A%227248%22%2C%22uid%22%3A%222281%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2246837%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22timestamp%22%3A%221633035074861%22%2C%22lastposttime%22%3A%221651905728687%22%2C%22postcount%22%3A%22579%22%2C%22viewcount%22%3A%2260127%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248446%22%2C%22relativeTime%22%3A%222021-09-30T20%3A51%3A14.861Z%22%2C%22lastposttimeISO%22%3A%222022-05-07T06%3A42%3A08.687Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248446%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222022-05-07T06%3A42%3A08.687Z%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Rememeber%2C%20I%20was%20able%20to%20play%20normally%20without%20freezing%20afTer%20rebooting%20my%20iPad%2C%20no%20other%20way%2C%20even%20restarting%20Pythonista%20did%20not%20work.%20Reason%20for%20which%20I%20think%20the%20problem%20comes%20from%20the%20iOS.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A579%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A5%7D%2C%7B%22tid%22%3A%227532%22%2C%22uid%22%3A%2220231%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248440%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227532%22%2C%22timestamp%22%3A%221651495583491%22%2C%22lastposttime%22%3A%221651495583861%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2223%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-05-02T12%3A46%3A23.491Z%22%2C%22lastposttimeISO%22%3A%222022-05-02T12%3A46%3A23.861Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2220231%22%2C%22username%22%3A%22wlaw%22%2C%22userslug%22%3A%22wlaw%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F20231-profileimg.png%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A6%7D%2C%7B%22tid%22%3A%227528%22%2C%22uid%22%3A%2220201%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248436%22%2C%22title%22%3A%22laundry%22%2C%22slug%22%3A%227528%2Flaundry%22%2C%22timestamp%22%3A%221651362432521%22%2C%22lastposttime%22%3A%221651362432788%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%22139%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-04-30T23%3A47%3A12.521Z%22%2C%22lastposttimeISO%22%3A%222022-04-30T23%3A47%3A12.788Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2220201%22%2C%22username%22%3A%22xylily%22%2C%22userslug%22%3A%22xylily%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F5e4b835568376f40bbbb257fac457eac%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A7%7D%2C%7B%22timestamp%22%3A%221640050535095%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%22308%22%2C%22teaserPid%22%3A%2248430%22%2C%22postcount%22%3A%222%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22lastposttime%22%3A%221651212331598%22%2C%22slug%22%3A%227347%2Fpasting-in-ui-designer-always-pastes-into-main-view-not-subviews%22%2C%22title%22%3A%22Pasting%20in%20UI%20designer%20always%20pastes%20into%20main%20view%20-%20not%20subviews%22%2C%22cid%22%3A%225%22%2C%22uid%22%3A%2216555%22%2C%22mainPid%22%3A%2247597%22%2C%22tid%22%3A%227347%22%2C%22relativeTime%22%3A%222021-12-21T01%3A35%3A35.095Z%22%2C%22lastposttimeISO%22%3A%222022-04-29T06%3A05%3A31.598Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2216555%22%2C%22username%22%3A%22Geese%22%2C%22userslug%22%3A%22geese%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa337ee63b7149b1ba99f1f508c2e56c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248430%22%2C%22uid%22%3A%2220148%22%2C%22timestamp%22%3A%222022-04-29T06%3A05%3A31.598Z%22%2C%22tid%22%3A%227347%22%2C%22content%22%3A%22%3Cp%3Eme%20too!%3Cbr%20%2F%3E%5Cnplz%20look%20this%20omz...%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2220148%22%2C%22username%22%3A%22Vent%22%2C%22userslug%22%3A%22vent%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Faf3701b07cfdb69c7742863293befe06%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A8%7D%2C%7B%22timestamp%22%3A%221651208059184%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%2214%22%2C%22teaserPid%22%3A%22null%22%2C%22lastposttime%22%3A%221651208059509%22%2C%22deleted%22%3Atrue%2C%22locked%22%3Afalse%2C%22postcount%22%3A%221%22%2C%22slug%22%3A%227526%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248429%22%2C%22uid%22%3A%2220143%22%2C%22tid%22%3A%227526%22%2C%22relativeTime%22%3A%222022-04-29T04%3A54%3A19.184Z%22%2C%22lastposttimeISO%22%3A%222022-04-29T04%3A54%3A19.509Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2220143%22%2C%22username%22%3A%22tomcarry49%22%2C%22userslug%22%3A%22tomcarry49%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa5935c1ca48f7d5ba7f91a92c38482f6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A9%7D%2C%7B%22tid%22%3A%225368%22%2C%22uid%22%3A%225748%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2232281%22%2C%22title%22%3A%22google%20sheets%20api%20setup%20problem%22%2C%22slug%22%3A%225368%2Fgoogle-sheets-api-setup-problem%22%2C%22timestamp%22%3A%221547773065761%22%2C%22lastposttime%22%3A%221651183173783%22%2C%22postcount%22%3A%2210%22%2C%22viewcount%22%3A%222491%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248428%22%2C%22relativeTime%22%3A%222019-01-18T00%3A57%3A45.761Z%22%2C%22lastposttimeISO%22%3A%222022-04-28T21%3A59%3A33.783Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%225748%22%2C%22username%22%3A%22djl%22%2C%22userslug%22%3A%22djl%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F5052536205bef30292b74e2acf982133%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248428%22%2C%22uid%22%3A%226584%22%2C%22timestamp%22%3A%222022-04-28T21%3A59%3A33.783Z%22%2C%22tid%22%3A%225368%22%2C%22content%22%3A%22%3Cp%3EThank%20you%20so%20much%20Jon.%20I%20took%20the%20simple%20route%2C%20deleted%20all%20the%20modules%20and%20reinstalled.%20It%20took%20a%20couple%20of%20goes%20and%20it%20works.%20It%20looks%20like%2C%20as%20you%20say%2C%20one%20of%20the%20original%20uploads%20didn%3At%20work.%20There%20are%20a%20couple%20of%20other%20problems%20but%20the%20developer%20who%20wrote%20the%20original%20twillo%20article%20has%20reached%20out%20to%20me%20so%20I%3All%20follow%20that%20route%20first.%3C%2Fp%3E%5Cn%3Cp%3EThanks%20again%20Jon%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%226584%22%2C%22username%22%3A%22johnquirke%22%2C%22userslug%22%3A%22johnquirke%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fedecd0d3778e5d495d023d0df38c6cb0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A10%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22pyasn1%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22google%20drive%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%224%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A10%7D%2C%7B%22tid%22%3A%227524%22%2C%22uid%22%3A%2220086%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248423%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227524%22%2C%22timestamp%22%3A%221651067549624%22%2C%22lastposttime%22%3A%221651067549868%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2227%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-04-27T13%3A52%3A29.624Z%22%2C%22lastposttimeISO%22%3A%222022-04-27T13%3A52%3A29.868Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2220086%22%2C%22username%22%3A%22soogoofr%22%2C%22userslug%22%3A%22soogoofr%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4d56decfd07067bda8cbf87bf7460f71%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A11%7D%2C%7B%22tid%22%3A%22312%22%2C%22uid%22%3A%221713%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%22312%22%2C%22title%22%3A%22Soundcloud%20Downloader%22%2C%22slug%22%3A%22312%2Fsoundcloud-downloader%22%2C%22timestamp%22%3A%221383264001000%22%2C%22lastposttime%22%3A%221558017663476%22%2C%22postcount%22%3A%2218%22%2C%22viewcount%22%3A%2212384%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2234326%22%2C%22relativeTime%22%3A%222013-11-01T00%3A00%3A01.000Z%22%2C%22lastposttimeISO%22%3A%222019-05-16T14%3A41%3A03.476Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221713%22%2C%22username%22%3A%22pudquick51%22%2C%22userslug%22%3A%22pudquick51%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F5e543256c480ac577d30f76f9120eb74%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2234326%22%2C%22uid%22%3A%226181%22%2C%22timestamp%22%3A%222019-05-16T14%3A41%3A03.476Z%22%2C%22tid%22%3A%22312%22%2C%22content%22%3A%22%3Cp%3EThanks%20for%20this%20information.%20It%20really%20helpful%20for%20me.%20Also%20if%20you%20face%20any%20connectivity%20trouble%20while%20downloading%20you%20may%20refer%3Ca%20href%3D%5C%22https%3A%2F%2Frouterlogin.one%2F192-168-1-13%2F%5C%22%20rel%3D%5C%22nofollow%5C%22%3E%20router%20login%3C%2Fa%3E%20guide.%20It's%20useful.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%226181%22%2C%22username%22%3A%22westernira%22%2C%22userslug%22%3A%22westernira%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2417b45519bef357e02e092fcb4b6b0b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A18%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A12%7D%2C%7B%22tid%22%3A%227455%22%2C%22uid%22%3A%228609%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248103%22%2C%22title%22%3A%22Does%20the%20dropbox%206.4.0%20library%20support%20TLS%201.2%3F%22%2C%22slug%22%3A%227455%2Fdoes-the-dropbox-6-4-0-library-support-tls-1-2%22%2C%22timestamp%22%3A%221646975952450%22%2C%22lastposttime%22%3A%221650898512247%22%2C%22postcount%22%3A%225%22%2C%22viewcount%22%3A%22389%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248412%22%2C%22relativeTime%22%3A%222022-03-11T05%3A19%3A12.450Z%22%2C%22lastposttimeISO%22%3A%222022-04-25T14%3A55%3A12.247Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%228609%22%2C%22username%22%3A%22dthomson%22%2C%22userslug%22%3A%22dthomson%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F198c12a25b01a7fb9679dd8f4aa498fd%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248412%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222022-04-25T14%3A55%3A12.247Z%22%2C%22tid%22%3A%227455%22%2C%22content%22%3A%22%3Cp%3EJust%20force%20quit%20pythonista%2C%20then%20open%20again.%20%20If%20you%20are%20using%20python%203%2C%20then%20importing%20will%20check%20site-packages%20first.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A5%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22dropbox%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2214%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A13%7D%2C%7B%22timestamp%22%3A%221633265887200%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%221535%22%2C%22lastposttime%22%3A%221650844266557%22%2C%22postcount%22%3A%228%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22teaserPid%22%3A%2248409%22%2C%22slug%22%3A%227251%2Fsince-ios-15-requests-always-gives-me-an-ssl-certificate-error%22%2C%22title%22%3A%22Since%20IOS%2015%20requests%20always%20gives%20me%20an%20SSL%20Certificate%20Error.%22%2C%22cid%22%3A%225%22%2C%22uid%22%3A%224714%22%2C%22mainPid%22%3A%2246859%22%2C%22tid%22%3A%227251%22%2C%22relativeTime%22%3A%222021-10-03T12%3A58%3A07.200Z%22%2C%22lastposttimeISO%22%3A%222022-04-24T23%3A51%3A06.557Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248409%22%2C%22uid%22%3A%229032%22%2C%22timestamp%22%3A%222022-04-24T23%3A51%3A06.557Z%22%2C%22tid%22%3A%227251%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%3Cbr%20%2F%3E%5CnIt%20also%20worked%20for%20geocode%20nominatim%20query.%20%20Thanks%20%F0%9F%99%8F%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%229032%22%2C%22username%22%3A%22osamu%22%2C%22userslug%22%3A%22osamu%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F9da720d432046682e9d67b1a29b7a971%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A8%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A14%7D%2C%7B%22tid%22%3A%225310%22%2C%22uid%22%3A%225608%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2231784%22%2C%22title%22%3A%22When%20will%20OMZ%20release%20an%20Xcode%20Template%20for%20Python3%3F%22%2C%22slug%22%3A%225310%2Fwhen-will-omz-release-an-xcode-template-for-python3%22%2C%22timestamp%22%3A%221545948657287%22%2C%22lastposttime%22%3A%221650827462472%22%2C%22postcount%22%3A%2256%22%2C%22viewcount%22%3A%2232707%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248408%22%2C%22relativeTime%22%3A%222018-12-27T22%3A10%3A57.287Z%22%2C%22lastposttimeISO%22%3A%222022-04-24T19%3A11%3A02.472Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%225608%22%2C%22username%22%3A%22vignesh%22%2C%22userslug%22%3A%22vignesh%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F6144232a52c6886da92f9cf0b313e51b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248408%22%2C%22uid%22%3A%2219995%22%2C%22timestamp%22%3A%222022-04-24T19%3A11%3A02.472Z%22%2C%22tid%22%3A%225310%22%2C%22content%22%3A%22%3Cp%3EThanks%20for%20this!%3C%2Fp%3E%5Cn%3Cp%3EWhen%20I%20physically%20connect%20an%20iPad%20it%20works%20beautifully%20in%20Xcode%2013.3.1%20(MacOS%2012.3.1)%20on%20a%20Mac%20Mini%20M1%3C%2Fp%3E%5Cn%3Cp%3EHowever%2C%20building%20for%20a%20simulator%2C%20I%20get%20this%3A%3C%2Fp%3E%5Cnld%3A%20building%20for%20iOS%20Simulator%2C%20but%20linking%20in%20dylib%20built%20for%20iOS%2C%20file%5Cn'%2FUsers%2Fandreas%2FLibrary%2FMobile%20Documents%2Fcom~apple~CloudDocs%2FCloudSrc%2FPythonista3AppTemplate%20Updated%2FPythonista3AppTemplate%2FPy3Kit.framework%2FPy3Kit'%5Cnfor%20architecture%20arm64%5Cn%5Cn%3Cp%3EI%20suspect%20the%20linker%20is%20telling%20me%20that%20the%20arm64%20version%20is%20meant%20for%20an%20iOS%20device%20and%20that%20it%20is%20missing%20an%20arm64%20version%20for%20MacOS%3F%20Does%20anybody%20know%20of%20a%20solution%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2219995%22%2C%22username%22%3A%22abazen%22%2C%22userslug%22%3A%22abazen%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F52725c833496e8f08816e29c220e16c1%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A56%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A15%7D%2C%7B%22tid%22%3A%227519%22%2C%22uid%22%3A%2219982%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248403%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227519%22%2C%22timestamp%22%3A%221650711475646%22%2C%22lastposttime%22%3A%221650711475967%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2226%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-04-23T10%3A57%3A55.646Z%22%2C%22lastposttimeISO%22%3A%222022-04-23T10%3A57%3A55.967Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2219982%22%2C%22username%22%3A%22tuefelop%22%2C%22userslug%22%3A%22tuefelop%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F1851af84ffcba9e807dabbccb8813d9b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A16%7D%2C%7B%22tid%22%3A%227457%22%2C%22uid%22%3A%221183%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248106%22%2C%22title%22%3A%22Quick%20Sqlite%20cmd%26%23x2F%3Bscript%20tools%20for%20Pythonista%22%2C%22slug%22%3A%227457%2Fquick-sqlite-cmd-script-tools-for-pythonista%22%2C%22timestamp%22%3A%221647074054481%22%2C%22lastposttime%22%3A%221650686692541%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%22354%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248402%22%2C%22relativeTime%22%3A%222022-03-12T08%3A34%3A14.481Z%22%2C%22lastposttimeISO%22%3A%222022-04-23T04%3A04%3A52.541Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221183%22%2C%22username%22%3A%22wolf71%22%2C%22userslug%22%3A%22wolf71%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F80656cc987b8086bc33746d340c561b3%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248402%22%2C%22uid%22%3A%221183%22%2C%22timestamp%22%3A%222022-04-23T04%3A04%3A52.541Z%22%2C%22tid%22%3A%227457%22%2C%22content%22%3A%22For%20Bioinformatics%20Support%5Cn%5Cnloadcsv%20also%20support%20tsv%20format%20file%20(%5C%5Ct%20split%20type)%2C%20just%20using%3A%5Cn%5Cnloadcsv%20test.tsv%20tb1%201%5Cn%5Cn%5Cnloadcsv%20also%20support%20bioinformatics%20.maf%2F.vcf%2F.sam%2F.gtf%2F.gff%2F.gpd%20file%2C%20just%20using%3A%5Cn%5Cnloadcsv%20test.maf%20tb1%20or%20loadcsv%20test.vcf%20tb1%5Cn%5Cn%5CnLoad%20GenBank%20Format%20Features%20Data.%5Cn%5Cnusing%3A%20loadgb%20gbfile%20tb01%5Cnload%20bioinformatics%20GenBank%20file%20(etc%3A%20.gb%2F.gbff%2F.gpff)%20features%20info%20to%20table.%5Cn%5Cn%5Cn%5CnCrawl%20website%20data%2C%20parse%20and%20write%20to%20database%5Cn%5Cnusing%3A%20loop%20loadweb%20url%3Dhttps%3A%2F%2Fxxx.xxx.com%2Fxxx%20re%3D(%5C%5Cd%2B)%2C%20base%20on%20python%20regular%20module%2C%20Qsqlite%20loop%20nesting%20function%2C%20can%20achieve%20complex%20web%20data%20crawling%20and%20content%20extraction%2C%20and%20then%20write%20to%20the%20database.%5Cn%5Cn%3Cp%3EAll%20new%20function%20please%20check%20the%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fwolf71%2FQsqlite%5C%22%20rel%3D%5C%22nofollow%5C%22%3EReadme%20file%3C%2Fa%3E%3C%2Fp%3E%5CnQsqlite%20is%20one%20py%20file%20only%2C%20you%20can%20just%20copy%20the%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fwolf71%2FQsqlite%2Ftree%2Fmaster%2FQsqlite%5C%22%20rel%3D%5C%22nofollow%5C%22%3EQsqlite.py%3C%2Fa%3E%20file%20on%20Github%20to%20Pythonista%2C%20and%20then%20run%20it%20on%20python3%20mode.%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221183%22%2C%22username%22%3A%22wolf71%22%2C%22userslug%22%3A%22wolf71%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F80656cc987b8086bc33746d340c561b3%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A17%7D%2C%7B%22tid%22%3A%227518%22%2C%22uid%22%3A%2219841%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248399%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227518%22%2C%22timestamp%22%3A%221650367321644%22%2C%22lastposttime%22%3A%221650367321931%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2225%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-04-19T11%3A22%3A01.644Z%22%2C%22lastposttimeISO%22%3A%222022-04-19T11%3A22%3A01.931Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2219841%22%2C%22username%22%3A%22vufvotok%22%2C%22userslug%22%3A%22vufvotok%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdf27512523f5aae04f8f82c03a3ca6c9%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A18%7D%2C%7B%22tid%22%3A%227516%22%2C%22uid%22%3A%2244%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248388%22%2C%22title%22%3A%22Breathing%20exercise%20animation%22%2C%22slug%22%3A%227516%2Fbreathing-exercise-animation%22%2C%22timestamp%22%3A%221650275106562%22%2C%22lastposttime%22%3A%221650362081267%22%2C%22postcount%22%3A%224%22%2C%22viewcount%22%3A%22186%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248398%22%2C%22relativeTime%22%3A%222022-04-18T09%3A45%3A06.562Z%22%2C%22lastposttimeISO%22%3A%222022-04-19T09%3A54%3A41.267Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2244%22%2C%22username%22%3A%22Rosanne%22%2C%22userslug%22%3A%22rosanne%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F9d625406b686a9116ade214dc79ebb96%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248398%22%2C%22uid%22%3A%2244%22%2C%22timestamp%22%3A%222022-04-19T09%3A54%3A41.267Z%22%2C%22tid%22%3A%227516%22%2C%22content%22%3A%22%3Cp%3EThank%20you%2C%20that%20was%20exactly%20the%20starting%20point%20I%20needed!%20I%20managed%20to%20get%20it%20working%2C%20now%20I%20just%20need%20to%20position%20everything%20and%20make%20it%20look%20good.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2244%22%2C%22username%22%3A%22Rosanne%22%2C%22userslug%22%3A%22rosanne%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F9d625406b686a9116ade214dc79ebb96%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A19%7D%5D%2C%22nextStart%22%3A20%2C%22pageCount%22%3A294%2C%22isIgnored%22%3Afalse%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22privileges%22%3A%7B%22cid%22%3A%225%22%2C%22uid%22%3A0%2C%22topics%3Acreate%22%3Afalse%2C%22editable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22read%22%3Atrue%7D%2C%22showSelect%22%3Afalse%2C%22currentPage%22%3A1%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Fcategory%2F5.rss%22%2C%22pagination%22%3A%7B%22rel%22%3A%5B%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22pages%22%3A%5B%7B%22page%22%3A1%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D1%22%7D%2C%7B%22page%22%3A2%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D2%22%7D%2C%7B%22page%22%3A3%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D3%22%7D%2C%7B%22separator%22%3Atrue%7D%2C%7B%22page%22%3A293%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D293%22%7D%2C%7B%22page%22%3A294%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D294%22%7D%5D%2C%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D1%22%7D%2C%22next%22%3A%7B%22page%22%3A2%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D2%22%7D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22category%22%2C%22category%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22gdR0WaGb-qBgurjLvAamabwL6yak3hM9oLL4%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Pythonista%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Pythonista%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22website%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5.rss%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%22%7D%2C%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22template%22%3A%22category%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="pythonista@page=1.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

@@ -1,0 +1,1610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>24.1. turtle — Turtle graphics &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="up" title="24. Program Frameworks" href="frameworks.html" />
+    <link rel="next" title="24.2. cmd — Support for line-oriented command interpreters" href="cmd.html" />
+    <link rel="prev" title="24. Program Frameworks" href="frameworks.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/library/turtle.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cmd.html" title="24.2. cmd — Support for line-oriented command interpreters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="frameworks.html" title="24. Program Frameworks"
+             accesskey="P">previous</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+          <li><a href="index.html" >The Python Standard Library</a> &raquo;</li>
+          <li><a href="frameworks.html" accesskey="U">24. Program Frameworks</a> &raquo;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-turtle">
+<span id="turtle-turtle-graphics"></span><h1>24.1. <a class="reference internal" href="turtle.html#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal"><span class="pre">turtle</span></code></a> &#8212; Turtle graphics<a class="headerlink" href="turtle.html#module-turtle" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference internal" href="turtle.html#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal"><span class="pre">turtle</span></code></a> module that comes with Pythonista is not 100% compatible with the standard library version because it&#8217;s based on the <a class="reference internal" href="../ios/ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> module rather than <code class="xref py py-mod docutils literal"><span class="pre">Tkinter</span></code> (which isn&#8217;t available in Pythonista). It should work just fine for learning, but some advanced features (like mouse/keyboard interaction) are not implemented. For typical (educational) use cases, this should not be a problem. This documentation page has been edited to remove references to features that are not available in Pythonista, but the rest is mostly unchanged.</p>
+</div>
+<div class="section" id="introduction">
+<h2>24.1.1. Introduction<a class="headerlink" href="turtle.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Turtle graphics is a popular way for introducing programming to kids.  It was
+part of the original Logo programming language developed by Wally Feurzig and
+Seymour Papert in 1966.</p>
+<p>Imagine a robotic turtle starting at (0, 0) in the x-y plane.  After an <code class="docutils literal"><span class="pre">import</span> <span class="pre">turtle</span></code>, give it the
+command <code class="docutils literal"><span class="pre">turtle.forward(15)</span></code>, and it moves (on-screen!) 15 pixels in the
+direction it is facing, drawing a line as it moves.  Give it the command
+<code class="docutils literal"><span class="pre">turtle.right(25)</span></code>, and it rotates in-place 25 degrees clockwise.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Turtle star</p>
+<p>Turtle can draw intricate shapes using programs that repeat simple
+moves.</p>
+<img alt="../_images/turtle-star.png" class="align-center" src="../_images/turtle-star.png" />
+<div class="last highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+<span class="n">begin_fill</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">170</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">pos</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="n">end_fill</span><span class="p">()</span>
+<span class="n">done</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>By combining together these and similar commands, intricate shapes and pictures
+can easily be drawn.</p>
+<p>The <a class="reference internal" href="turtle.html#module-turtle" title="turtle: An educational framework for simple graphics applications"><code class="xref py py-mod docutils literal"><span class="pre">turtle</span></code></a> module is an extended reimplementation of the same-named
+module from the Python standard distribution up to version Python 2.5.</p>
+<p>The turtle module provides turtle graphics primitives, in both object-oriented
+and procedure-oriented ways.</p>
+<p>The procedural interface provides functions which are derived from the methods
+of the classes <code class="xref py py-class docutils literal"><span class="pre">Screen</span></code> and <a class="reference internal" href="turtle.html#turtle.Turtle" title="turtle.Turtle"><code class="xref py py-class docutils literal"><span class="pre">Turtle</span></code></a>.  They have the same names as
+the corresponding methods.  A screen object is automatically created whenever a
+function derived from a Screen method is called.  An (unnamed) turtle object is
+automatically created whenever any of the functions derived from a Turtle method
+is called.</p>
+<p>To use multiple turtles on a screen one has to use the object-oriented interface.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the following documentation the argument list for functions is given.
+Methods, of course, have the additional first argument <em>self</em> which is
+omitted here.</p>
+</div>
+</div>
+<div class="section" id="overview-of-available-turtle-and-screen-methods">
+<h2>24.1.2. Overview of available Turtle and Screen methods<a class="headerlink" href="turtle.html#overview-of-available-turtle-and-screen-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="turtle-methods">
+<h3>24.1.2.1. Turtle methods<a class="headerlink" href="turtle.html#turtle-methods" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Turtle motion</dt>
+<dd><dl class="first last docutils">
+<dt>Move and draw</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.forward" title="turtle.forward"><code class="xref py py-func docutils literal"><span class="pre">forward()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.fd" title="turtle.fd"><code class="xref py py-func docutils literal"><span class="pre">fd()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.backward" title="turtle.backward"><code class="xref py py-func docutils literal"><span class="pre">backward()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.bk" title="turtle.bk"><code class="xref py py-func docutils literal"><span class="pre">bk()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.back" title="turtle.back"><code class="xref py py-func docutils literal"><span class="pre">back()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.right" title="turtle.right"><code class="xref py py-func docutils literal"><span class="pre">right()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.rt" title="turtle.rt"><code class="xref py py-func docutils literal"><span class="pre">rt()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.left" title="turtle.left"><code class="xref py py-func docutils literal"><span class="pre">left()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.lt" title="turtle.lt"><code class="xref py py-func docutils literal"><span class="pre">lt()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.goto" title="turtle.goto"><code class="xref py py-func docutils literal"><span class="pre">goto()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.setpos" title="turtle.setpos"><code class="xref py py-func docutils literal"><span class="pre">setpos()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.setposition" title="turtle.setposition"><code class="xref py py-func docutils literal"><span class="pre">setposition()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.setx" title="turtle.setx"><code class="xref py py-func docutils literal"><span class="pre">setx()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.sety" title="turtle.sety"><code class="xref py py-func docutils literal"><span class="pre">sety()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.setheading" title="turtle.setheading"><code class="xref py py-func docutils literal"><span class="pre">setheading()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.seth" title="turtle.seth"><code class="xref py py-func docutils literal"><span class="pre">seth()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.home" title="turtle.home"><code class="xref py py-func docutils literal"><span class="pre">home()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.circle" title="turtle.circle"><code class="xref py py-func docutils literal"><span class="pre">circle()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.dot" title="turtle.dot"><code class="xref py py-func docutils literal"><span class="pre">dot()</span></code></a></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">stamp()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">clearstamp()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">clearstamps()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">undo()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.speed" title="turtle.speed"><code class="xref py py-func docutils literal"><span class="pre">speed()</span></code></a></div>
+</div>
+</dd>
+<dt>Tell Turtle&#8217;s state</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.position" title="turtle.position"><code class="xref py py-func docutils literal"><span class="pre">position()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.pos" title="turtle.pos"><code class="xref py py-func docutils literal"><span class="pre">pos()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.towards" title="turtle.towards"><code class="xref py py-func docutils literal"><span class="pre">towards()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.xcor" title="turtle.xcor"><code class="xref py py-func docutils literal"><span class="pre">xcor()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.ycor" title="turtle.ycor"><code class="xref py py-func docutils literal"><span class="pre">ycor()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.heading" title="turtle.heading"><code class="xref py py-func docutils literal"><span class="pre">heading()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.distance" title="turtle.distance"><code class="xref py py-func docutils literal"><span class="pre">distance()</span></code></a></div>
+</div>
+</dd>
+<dt>Setting and measurement</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.degrees" title="turtle.degrees"><code class="xref py py-func docutils literal"><span class="pre">degrees()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.radians" title="turtle.radians"><code class="xref py py-func docutils literal"><span class="pre">radians()</span></code></a></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Pen control</dt>
+<dd><dl class="first last docutils">
+<dt>Drawing state</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.pendown" title="turtle.pendown"><code class="xref py py-func docutils literal"><span class="pre">pendown()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.pd" title="turtle.pd"><code class="xref py py-func docutils literal"><span class="pre">pd()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.down" title="turtle.down"><code class="xref py py-func docutils literal"><span class="pre">down()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.penup" title="turtle.penup"><code class="xref py py-func docutils literal"><span class="pre">penup()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.pu" title="turtle.pu"><code class="xref py py-func docutils literal"><span class="pre">pu()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.up" title="turtle.up"><code class="xref py py-func docutils literal"><span class="pre">up()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.pensize" title="turtle.pensize"><code class="xref py py-func docutils literal"><span class="pre">pensize()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.width" title="turtle.width"><code class="xref py py-func docutils literal"><span class="pre">width()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.pen" title="turtle.pen"><code class="xref py py-func docutils literal"><span class="pre">pen()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.isdown" title="turtle.isdown"><code class="xref py py-func docutils literal"><span class="pre">isdown()</span></code></a></div>
+</div>
+</dd>
+<dt>Color control</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.color" title="turtle.color"><code class="xref py py-func docutils literal"><span class="pre">color()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.pencolor" title="turtle.pencolor"><code class="xref py py-func docutils literal"><span class="pre">pencolor()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.fillcolor" title="turtle.fillcolor"><code class="xref py py-func docutils literal"><span class="pre">fillcolor()</span></code></a></div>
+</div>
+</dd>
+<dt>Filling</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.filling" title="turtle.filling"><code class="xref py py-func docutils literal"><span class="pre">filling()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.begin_fill" title="turtle.begin_fill"><code class="xref py py-func docutils literal"><span class="pre">begin_fill()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.end_fill" title="turtle.end_fill"><code class="xref py py-func docutils literal"><span class="pre">end_fill()</span></code></a></div>
+</div>
+</dd>
+<dt>More drawing control</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.reset" title="turtle.reset"><code class="xref py py-func docutils literal"><span class="pre">reset()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.clear" title="turtle.clear"><code class="xref py py-func docutils literal"><span class="pre">clear()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.write" title="turtle.write"><code class="xref py py-func docutils literal"><span class="pre">write()</span></code></a></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Turtle state</dt>
+<dd><dl class="first last docutils">
+<dt>Visibility</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.showturtle" title="turtle.showturtle"><code class="xref py py-func docutils literal"><span class="pre">showturtle()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.st" title="turtle.st"><code class="xref py py-func docutils literal"><span class="pre">st()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.hideturtle" title="turtle.hideturtle"><code class="xref py py-func docutils literal"><span class="pre">hideturtle()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.ht" title="turtle.ht"><code class="xref py py-func docutils literal"><span class="pre">ht()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.isvisible" title="turtle.isvisible"><code class="xref py py-func docutils literal"><span class="pre">isvisible()</span></code></a></div>
+</div>
+</dd>
+<dt>Appearance</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">shape()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">resizemode()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">shapesize()</span></code> | <code class="xref py py-func docutils literal"><span class="pre">turtlesize()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">shearfactor()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">settiltangle()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">tiltangle()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">tilt()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">shapetransform()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">get_shapepoly()</span></code></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Using events</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">onclick()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">onrelease()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">ondrag()</span></code></div>
+</div>
+</dd>
+<dt>Special Turtle methods</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">begin_poly()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">end_poly()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">get_poly()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.clone" title="turtle.clone"><code class="xref py py-func docutils literal"><span class="pre">clone()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.getturtle" title="turtle.getturtle"><code class="xref py py-func docutils literal"><span class="pre">getturtle()</span></code></a> | <a class="reference internal" href="turtle.html#turtle.getpen" title="turtle.getpen"><code class="xref py py-func docutils literal"><span class="pre">getpen()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.getscreen" title="turtle.getscreen"><code class="xref py py-func docutils literal"><span class="pre">getscreen()</span></code></a></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">setundobuffer()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">undobufferentries()</span></code></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="methods-of-turtlescreen-screen">
+<h3>24.1.2.2. Methods of TurtleScreen/Screen<a class="headerlink" href="turtle.html#methods-of-turtlescreen-screen" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Window control</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">bgcolor()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">bgpic()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.clear" title="turtle.clear"><code class="xref py py-func docutils literal"><span class="pre">clear()</span></code></a> | <code class="xref py py-func docutils literal"><span class="pre">clearscreen()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.reset" title="turtle.reset"><code class="xref py py-func docutils literal"><span class="pre">reset()</span></code></a> | <code class="xref py py-func docutils literal"><span class="pre">resetscreen()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">screensize()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">setworldcoordinates()</span></code></div>
+</div>
+</dd>
+<dt>Animation control</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.delay" title="turtle.delay"><code class="xref py py-func docutils literal"><span class="pre">delay()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.tracer" title="turtle.tracer"><code class="xref py py-func docutils literal"><span class="pre">tracer()</span></code></a></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">update()</span></code></div>
+</div>
+</dd>
+<dt>Using screen events</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">listen()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">onkey()</span></code> | <code class="xref py py-func docutils literal"><span class="pre">onkeyrelease()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">onkeypress()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">onclick()</span></code> | <code class="xref py py-func docutils literal"><span class="pre">onscreenclick()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">ontimer()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">mainloop()</span></code> | <code class="xref py py-func docutils literal"><span class="pre">done()</span></code></div>
+</div>
+</dd>
+<dt>Settings and special methods</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">mode()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.colormode" title="turtle.colormode"><code class="xref py py-func docutils literal"><span class="pre">colormode()</span></code></a></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">getcanvas()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">getshapes()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">register_shape()</span></code> | <code class="xref py py-func docutils literal"><span class="pre">addshape()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.turtles" title="turtle.turtles"><code class="xref py py-func docutils literal"><span class="pre">turtles()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.window_height" title="turtle.window_height"><code class="xref py py-func docutils literal"><span class="pre">window_height()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.window_width" title="turtle.window_width"><code class="xref py py-func docutils literal"><span class="pre">window_width()</span></code></a></div>
+</div>
+</dd>
+<dt>Input methods</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference internal" href="turtle.html#turtle.textinput" title="turtle.textinput"><code class="xref py py-func docutils literal"><span class="pre">textinput()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.numinput" title="turtle.numinput"><code class="xref py py-func docutils literal"><span class="pre">numinput()</span></code></a></div>
+</div>
+</dd>
+<dt>Methods specific to Screen</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">bye()</span></code></div>
+<div class="line"><code class="xref py py-func docutils literal"><span class="pre">exitonclick()</span></code></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.setup" title="turtle.setup"><code class="xref py py-func docutils literal"><span class="pre">setup()</span></code></a></div>
+<div class="line"><a class="reference internal" href="turtle.html#turtle.title" title="turtle.title"><code class="xref py py-func docutils literal"><span class="pre">title()</span></code></a></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="methods-of-turtle-and-corresponding-functions">
+<h2>24.1.3. Methods of Turtle and corresponding functions<a class="headerlink" href="turtle.html#methods-of-turtle-and-corresponding-functions" title="Permalink to this headline">¶</a></h2>
+<p>Most of the examples in this section refer to a Turtle instance called
+<code class="docutils literal"><span class="pre">turtle</span></code>.</p>
+<div class="section" id="turtle-motion">
+<h3>24.1.3.1. Turtle motion<a class="headerlink" href="turtle.html#turtle-motion" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.forward">
+<code class="descclassname">turtle.</code><code class="descname">forward</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.forward" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.fd">
+<code class="descclassname">turtle.</code><code class="descname">fd</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.fd" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>distance</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Move the turtle forward by the specified <em>distance</em>, in the direction the
+turtle is headed.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(25.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="o">-</span><span class="mi">75</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(-50.00,0.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.back">
+<code class="descclassname">turtle.</code><code class="descname">back</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.back" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.bk">
+<code class="descclassname">turtle.</code><code class="descname">bk</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.bk" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.backward">
+<code class="descclassname">turtle.</code><code class="descname">backward</code><span class="sig-paren">(</span><em>distance</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.backward" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>distance</strong> &#8211; a number</td>
+</tr>
+</tbody>
+</table>
+<p>Move the turtle backward by <em>distance</em>, opposite to the direction the
+turtle is headed.  Do not change the turtle&#8217;s heading.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(-30.00,0.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.right">
+<code class="descclassname">turtle.</code><code class="descname">right</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.right" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.rt">
+<code class="descclassname">turtle.</code><code class="descname">rt</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.rt" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Turn turtle right by <em>angle</em> units.  (Units are by default degrees, but
+can be set via the <a class="reference internal" href="turtle.html#turtle.degrees" title="turtle.degrees"><code class="xref py py-func docutils literal"><span class="pre">degrees()</span></code></a> and <a class="reference internal" href="turtle.html#turtle.radians" title="turtle.radians"><code class="xref py py-func docutils literal"><span class="pre">radians()</span></code></a> functions.)  Angle
+orientation depends on the turtle mode, see <code class="xref py py-func docutils literal"><span class="pre">mode()</span></code>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">22.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">337.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.left">
+<code class="descclassname">turtle.</code><code class="descname">left</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.left" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.lt">
+<code class="descclassname">turtle.</code><code class="descname">lt</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.lt" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Turn turtle left by <em>angle</em> units.  (Units are by default degrees, but
+can be set via the <a class="reference internal" href="turtle.html#turtle.degrees" title="turtle.degrees"><code class="xref py py-func docutils literal"><span class="pre">degrees()</span></code></a> and <a class="reference internal" href="turtle.html#turtle.radians" title="turtle.radians"><code class="xref py py-func docutils literal"><span class="pre">radians()</span></code></a> functions.)  Angle
+orientation depends on the turtle mode, see <code class="xref py py-func docutils literal"><span class="pre">mode()</span></code>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">22.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">67.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.goto">
+<code class="descclassname">turtle.</code><code class="descname">goto</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.goto" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.setpos">
+<code class="descclassname">turtle.</code><code class="descname">setpos</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.setpos" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.setposition">
+<code class="descclassname">turtle.</code><code class="descname">setposition</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.setposition" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; a number or a pair/vector of numbers</li>
+<li><strong>y</strong> &#8211; a number or <code class="docutils literal"><span class="pre">None</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>If <em>y</em> is <code class="docutils literal"><span class="pre">None</span></code>, <em>x</em> must be a pair of coordinates or a <a class="reference internal" href="turtle.html#turtle.Vec2D" title="turtle.Vec2D"><code class="xref py py-class docutils literal"><span class="pre">Vec2D</span></code></a>
+(e.g. as returned by <a class="reference internal" href="turtle.html#turtle.pos" title="turtle.pos"><code class="xref py py-func docutils literal"><span class="pre">pos()</span></code></a>).</p>
+<p>Move turtle to an absolute position.  If the pen is down, draw line.  Do
+not change the turtle&#8217;s orientation.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tp</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tp</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">setpos</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="go">(60.00,30.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">setpos</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="go">(20.00,80.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">setpos</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.setx">
+<code class="descclassname">turtle.</code><code class="descname">setx</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.setx" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Set the turtle&#8217;s first coordinate to <em>x</em>, leave second coordinate
+unchanged.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,240.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">setx</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(10.00,240.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.sety">
+<code class="descclassname">turtle.</code><code class="descname">sety</code><span class="sig-paren">(</span><em>y</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.sety" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>y</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Set the turtle&#8217;s second coordinate to <em>y</em>, leave first coordinate unchanged.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,40.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">sety</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,-10.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.setheading">
+<code class="descclassname">turtle.</code><code class="descname">setheading</code><span class="sig-paren">(</span><em>to_angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.setheading" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.seth">
+<code class="descclassname">turtle.</code><code class="descname">seth</code><span class="sig-paren">(</span><em>to_angle</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.seth" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>to_angle</strong> &#8211; a number (integer or float)</td>
+</tr>
+</tbody>
+</table>
+<p>Set the orientation of the turtle to <em>to_angle</em>.  Here are some common
+directions in degrees:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">standard mode</th>
+<th class="head">logo mode</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0 - east</td>
+<td>0 - north</td>
+</tr>
+<tr class="row-odd"><td>90 - north</td>
+<td>90 - east</td>
+</tr>
+<tr class="row-even"><td>180 - west</td>
+<td>180 - south</td>
+</tr>
+<tr class="row-odd"><td>270 - south</td>
+<td>270 - west</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">90.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.home">
+<code class="descclassname">turtle.</code><code class="descname">home</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move turtle to the origin &#8211; coordinates (0,0) &#8211; and set its heading to
+its start-orientation (which depends on the mode, see <code class="xref py py-func docutils literal"><span class="pre">mode()</span></code>).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">90.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,-10.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.circle">
+<code class="descclassname">turtle.</code><code class="descname">circle</code><span class="sig-paren">(</span><em>radius</em>, <em>extent=None</em>, <em>steps=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.circle" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>radius</strong> &#8211; a number</li>
+<li><strong>extent</strong> &#8211; a number (or <code class="docutils literal"><span class="pre">None</span></code>)</li>
+<li><strong>steps</strong> &#8211; an integer (or <code class="docutils literal"><span class="pre">None</span></code>)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Draw a circle with given <em>radius</em>.  The center is <em>radius</em> units left of
+the turtle; <em>extent</em> &#8211; an angle &#8211; determines which part of the circle
+is drawn.  If <em>extent</em> is not given, draw the entire circle.  If <em>extent</em>
+is not a full circle, one endpoint of the arc is the current pen
+position.  Draw the arc in counterclockwise direction if <em>radius</em> is
+positive, otherwise in clockwise direction.  Finally the direction of the
+turtle is changed by the amount of <em>extent</em>.</p>
+<p>As the circle is approximated by an inscribed regular polygon, <em>steps</em>
+determines the number of steps to use.  If not given, it will be
+calculated automatically.  May be used to draw regular polygons.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(-0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>  <span class="c1"># draw a semicircle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,240.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">180.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.dot">
+<code class="descclassname">turtle.</code><code class="descname">dot</code><span class="sig-paren">(</span><em>size=None</em>, <em>*color</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.dot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> &#8211; an integer &gt;= 1 (if given)</li>
+<li><strong>color</strong> &#8211; a colorstring or a numeric color tuple</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Draw a circular dot with diameter <em>size</em>, using <em>color</em>.  If <em>size</em> is
+not given, the maximum of pensize+4 and 2*pensize is used.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="n">turtle</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">);</span> <span class="n">turtle</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(100.00,-0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.speed">
+<code class="descclassname">turtle.</code><code class="descname">speed</code><span class="sig-paren">(</span><em>speed=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.speed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>speed</strong> &#8211; an integer in the range 0..10 or a speedstring (see below)</td>
+</tr>
+</tbody>
+</table>
+<p>Set the turtle&#8217;s speed to an integer value in the range 0..10.  If no
+argument is given, return current speed.</p>
+<p>If input is a number greater than 10 or smaller than 0.5, speed is set
+to 0.  Speedstrings are mapped to speedvalues as follows:</p>
+<ul class="simple">
+<li>&#8220;fastest&#8221;:  0</li>
+<li>&#8220;fast&#8221;:  10</li>
+<li>&#8220;normal&#8221;:  6</li>
+<li>&#8220;slow&#8221;:  3</li>
+<li>&#8220;slowest&#8221;:  1</li>
+</ul>
+<p>Speeds from 1 to 10 enforce increasingly faster animation of line drawing
+and turtle turning.</p>
+<p>Attention: <em>speed</em> = 0 means that <em>no</em> animation takes
+place. forward/back makes turtle jump and likewise left/right make the
+turtle turn instantly.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span>
+<span class="go">9</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="tell-turtle-s-state">
+<h3>24.1.3.2. Tell Turtle&#8217;s state<a class="headerlink" href="turtle.html#tell-turtle-s-state" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.position">
+<code class="descclassname">turtle.</code><code class="descname">position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.position" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.pos">
+<code class="descclassname">turtle.</code><code class="descname">pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the turtle&#8217;s current location (x,y) (as a <a class="reference internal" href="turtle.html#turtle.Vec2D" title="turtle.Vec2D"><code class="xref py py-class docutils literal"><span class="pre">Vec2D</span></code></a> vector).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="go">(440.00,-0.00)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.towards">
+<code class="descclassname">turtle.</code><code class="descname">towards</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.towards" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; a number or a pair/vector of numbers or a turtle instance</li>
+<li><strong>y</strong> &#8211; a number if <em>x</em> is a number, else <code class="docutils literal"><span class="pre">None</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return the angle between the line from turtle position to position specified
+by (x,y), the vector or the other turtle.  This depends on the turtle&#8217;s start
+orientation which depends on the mode - &#8220;standard&#8221;/&#8221;world&#8221; or &#8220;logo&#8221;).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">towards</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">225.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.xcor">
+<code class="descclassname">turtle.</code><code class="descname">xcor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.xcor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the turtle&#8217;s x coordinate.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">()</span>
+<span class="go">(64.28,76.60)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">xcor</span><span class="p">(),</span> <span class="mi">5</span><span class="p">))</span>
+<span class="go">64.27876</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.ycor">
+<code class="descclassname">turtle.</code><code class="descname">ycor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.ycor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the turtle&#8217;s y coordinate.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+<span class="go">(50.00,86.60)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">ycor</span><span class="p">(),</span> <span class="mi">5</span><span class="p">))</span>
+<span class="go">86.60254</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.heading">
+<code class="descclassname">turtle.</code><code class="descname">heading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the turtle&#8217;s current heading (value depends on the turtle mode, see
+<code class="xref py py-func docutils literal"><span class="pre">mode()</span></code>).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">67</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">67.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.distance">
+<code class="descclassname">turtle.</code><code class="descname">distance</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.distance" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; a number or a pair/vector of numbers or a turtle instance</li>
+<li><strong>y</strong> &#8211; a number if <em>x</em> is a number, else <code class="docutils literal"><span class="pre">None</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return the distance from the turtle to (x,y), the given vector, or the given
+other turtle, in turtle step units.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+<span class="go">50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">distance</span><span class="p">((</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">))</span>
+<span class="go">50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">joe</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">joe</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">77</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">joe</span><span class="p">)</span>
+<span class="go">77.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="settings-for-measurement">
+<h3>24.1.3.3. Settings for measurement<a class="headerlink" href="turtle.html#settings-for-measurement" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.degrees">
+<code class="descclassname">turtle.</code><code class="descname">degrees</code><span class="sig-paren">(</span><em>fullcircle=360.0</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.degrees" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fullcircle</strong> &#8211; a number</td>
+</tr>
+</tbody>
+</table>
+<p>Set angle measurement units, i.e. set number of &#8220;degrees&#8221; for a full circle.
+Default value is 360 degrees.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">90.0</span>
+
+<span class="go">Change angle measurement unit to grad (also known as gon,</span>
+<span class="go">grade, or gradian and equals 1/100-th of the right angle.)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="mf">400.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="mi">360</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">90.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.radians">
+<code class="descclassname">turtle.</code><code class="descname">radians</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.radians" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the angle measurement units to radians.  Equivalent to
+<code class="docutils literal"><span class="pre">degrees(2*math.pi)</span></code>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">90.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">radians</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">1.5707963267948966</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="pen-control">
+<h3>24.1.3.4. Pen control<a class="headerlink" href="turtle.html#pen-control" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="drawing-state">
+<h4>24.1.3.4.1. Drawing state<a class="headerlink" href="turtle.html#drawing-state" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="turtle.pendown">
+<code class="descclassname">turtle.</code><code class="descname">pendown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pendown" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.pd">
+<code class="descclassname">turtle.</code><code class="descname">pd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pd" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.down">
+<code class="descclassname">turtle.</code><code class="descname">down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull the pen down &#8211; drawing when moving.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.penup">
+<code class="descclassname">turtle.</code><code class="descname">penup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.penup" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.pu">
+<code class="descclassname">turtle.</code><code class="descname">pu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pu" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.up">
+<code class="descclassname">turtle.</code><code class="descname">up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull the pen up &#8211; no drawing when moving.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.pensize">
+<code class="descclassname">turtle.</code><code class="descname">pensize</code><span class="sig-paren">(</span><em>width=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pensize" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.width">
+<code class="descclassname">turtle.</code><code class="descname">width</code><span class="sig-paren">(</span><em>width=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.width" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> &#8211; a positive number</td>
+</tr>
+</tbody>
+</table>
+<p>Set the line thickness to <em>width</em> or return it.  If resizemode is set to
+&#8220;auto&#8221; and turtleshape is a polygon, that polygon is drawn with the same line
+thickness.  If no argument is given, the current pensize is returned.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># from here on lines of width 10 are drawn</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.pen">
+<code class="descclassname">turtle.</code><code class="descname">pen</code><span class="sig-paren">(</span><em>pen=None</em>, <em>**pendict</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pen" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pen</strong> &#8211; a dictionary with some or all of the below listed keys</li>
+<li><strong>pendict</strong> &#8211; one or more keyword-arguments with the below listed keys as keywords</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return or set the pen&#8217;s attributes in a &#8220;pen-dictionary&#8221; with the following
+key/value pairs:</p>
+<ul class="simple">
+<li>&#8220;shown&#8221;: True/False</li>
+<li>&#8220;pendown&#8221;: True/False</li>
+<li>&#8220;pencolor&#8221;: color-string or color-tuple</li>
+<li>&#8220;fillcolor&#8221;: color-string or color-tuple</li>
+<li>&#8220;pensize&#8221;: positive number</li>
+<li>&#8220;speed&#8221;: number in range 0..10</li>
+<li>&#8220;resizemode&#8221;: &#8220;auto&#8221; or &#8220;user&#8221; or &#8220;noresize&#8221;</li>
+<li>&#8220;stretchfactor&#8221;: (positive number, positive number)</li>
+<li>&#8220;outline&#8221;: positive number</li>
+<li>&#8220;tilt&#8221;: number</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>resizemode</cite>, <cite>outline</cite>, <cite>tilt</cite>, and <cite>stretchfactor</cite> are not supported in Pythonista.</p>
+</div>
+<p>This dictionary can be used as argument for a subsequent call to <a class="reference internal" href="turtle.html#turtle.pen" title="turtle.pen"><code class="xref py py-func docutils literal"><span class="pre">pen()</span></code></a>
+to restore the former pen-state.  Moreover one or more of these attributes
+can be provided as keyword-arguments.  This can be used to set several pen
+attributes in one statement.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">(</span><span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">pencolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">pensize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;fillcolor&#39;, &#39;black&#39;), (&#39;outline&#39;, 1), (&#39;pencolor&#39;, &#39;red&#39;),</span>
+<span class="go"> (&#39;pendown&#39;, True), (&#39;pensize&#39;, 10), (&#39;resizemode&#39;, &#39;noresize&#39;),</span>
+<span class="go"> (&#39;shearfactor&#39;, 0.0), (&#39;shown&#39;, True), (&#39;speed&#39;, 9),</span>
+<span class="go"> (&#39;stretchfactor&#39;, (1.0, 1.0)), (&#39;tilt&#39;, 0.0)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">penstate</span><span class="o">=</span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">())[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[(&#39;fillcolor&#39;, &#39;&#39;), (&#39;outline&#39;, 1), (&#39;pencolor&#39;, &#39;yellow&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">(</span><span class="n">penstate</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pen</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">())[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[(&#39;fillcolor&#39;, &#39;green&#39;), (&#39;outline&#39;, 1), (&#39;pencolor&#39;, &#39;red&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.isdown">
+<code class="descclassname">turtle.</code><code class="descname">isdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.isdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if pen is down, <code class="docutils literal"><span class="pre">False</span></code> if it&#8217;s up.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">isdown</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">isdown</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="color-control">
+<h4>24.1.3.4.2. Color control<a class="headerlink" href="turtle.html#color-control" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="turtle.pencolor">
+<code class="descclassname">turtle.</code><code class="descname">pencolor</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.pencolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return or set the pencolor.</p>
+<p>Four input formats are allowed:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">pencolor()</span></code></dt>
+<dd>Return the current pencolor as color specification string or
+as a tuple (see example).  May be used as input to another
+color/pencolor/fillcolor call.</dd>
+<dt><code class="docutils literal"><span class="pre">pencolor(colorstring)</span></code></dt>
+<dd>Set pencolor to <em>colorstring</em>, which is a Tk color specification string,
+such as <code class="docutils literal"><span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;yellow&quot;</span></code>, or <code class="docutils literal"><span class="pre">&quot;#33cc8c&quot;</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">pencolor((r,</span> <span class="pre">g,</span> <span class="pre">b))</span></code></dt>
+<dd>Set pencolor to the RGB color represented by the tuple of <em>r</em>, <em>g</em>, and
+<em>b</em>.  Each of <em>r</em>, <em>g</em>, and <em>b</em> must be in the range 0..colormode, where
+colormode is either 1.0 or 255 (see <a class="reference internal" href="turtle.html#turtle.colormode" title="turtle.colormode"><code class="xref py py-func docutils literal"><span class="pre">colormode()</span></code></a>).</dd>
+<dt><code class="docutils literal"><span class="pre">pencolor(r,</span> <span class="pre">g,</span> <span class="pre">b)</span></code></dt>
+<dd><blockquote class="first">
+<div>Set pencolor to the RGB color represented by <em>r</em>, <em>g</em>, and <em>b</em>.  Each of
+<em>r</em>, <em>g</em>, and <em>b</em> must be in the range 0..colormode.</div></blockquote>
+<p class="last">If turtleshape is a polygon, the outline of that polygon is drawn with the
+newly set pencolor.</p>
+</dd>
+</dl>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">colormode</span><span class="p">()</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="go">&#39;red&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;brown&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="go">&#39;brown&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="go">(0.2, 0.8, 0.5490196078431373)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colormode</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="go">(51.0, 204.0, 140.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="s1">&#39;#32c18f&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="go">(50.0, 193.0, 143.0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.fillcolor">
+<code class="descclassname">turtle.</code><code class="descname">fillcolor</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.fillcolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return or set the fillcolor.</p>
+<p>Four input formats are allowed:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">fillcolor()</span></code></dt>
+<dd>Return the current fillcolor as color specification string, possibly
+in tuple format (see example).  May be used as input to another
+color/pencolor/fillcolor call.</dd>
+<dt><code class="docutils literal"><span class="pre">fillcolor(colorstring)</span></code></dt>
+<dd>Set fillcolor to <em>colorstring</em>, which is a Tk color specification string,
+such as <code class="docutils literal"><span class="pre">&quot;red&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;yellow&quot;</span></code>, or <code class="docutils literal"><span class="pre">&quot;#33cc8c&quot;</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">fillcolor((r,</span> <span class="pre">g,</span> <span class="pre">b))</span></code></dt>
+<dd>Set fillcolor to the RGB color represented by the tuple of <em>r</em>, <em>g</em>, and
+<em>b</em>.  Each of <em>r</em>, <em>g</em>, and <em>b</em> must be in the range 0..colormode, where
+colormode is either 1.0 or 255 (see <a class="reference internal" href="turtle.html#turtle.colormode" title="turtle.colormode"><code class="xref py py-func docutils literal"><span class="pre">colormode()</span></code></a>).</dd>
+<dt><code class="docutils literal"><span class="pre">fillcolor(r,</span> <span class="pre">g,</span> <span class="pre">b)</span></code></dt>
+<dd><blockquote class="first">
+<div>Set fillcolor to the RGB color represented by <em>r</em>, <em>g</em>, and <em>b</em>.  Each of
+<em>r</em>, <em>g</em>, and <em>b</em> must be in the range 0..colormode.</div></blockquote>
+<p class="last">If turtleshape is a polygon, the interior of that polygon is drawn
+with the newly set fillcolor.</p>
+</dd>
+</dl>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s2">&quot;violet&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">()</span>
+<span class="go">&#39;violet&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col</span>
+<span class="go">(50.0, 193.0, 143.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">()</span>
+<span class="go">(50.0, 193.0, 143.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;#ffffff&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">()</span>
+<span class="go">(255.0, 255.0, 255.0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.color">
+<code class="descclassname">turtle.</code><code class="descname">color</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return or set pencolor and fillcolor.</p>
+<p>Several input formats are allowed.  They use 0 to 3 arguments as
+follows:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">color()</span></code></dt>
+<dd>Return the current pencolor and the current fillcolor as a pair of color
+specification strings or tuples as returned by <a class="reference internal" href="turtle.html#turtle.pencolor" title="turtle.pencolor"><code class="xref py py-func docutils literal"><span class="pre">pencolor()</span></code></a> and
+<a class="reference internal" href="turtle.html#turtle.fillcolor" title="turtle.fillcolor"><code class="xref py py-func docutils literal"><span class="pre">fillcolor()</span></code></a>.</dd>
+<dt><code class="docutils literal"><span class="pre">color(colorstring)</span></code>, <code class="docutils literal"><span class="pre">color((r,g,b))</span></code>, <code class="docutils literal"><span class="pre">color(r,g,b)</span></code></dt>
+<dd>Inputs as in <a class="reference internal" href="turtle.html#turtle.pencolor" title="turtle.pencolor"><code class="xref py py-func docutils literal"><span class="pre">pencolor()</span></code></a>, set both, fillcolor and pencolor, to the
+given value.</dd>
+<dt><code class="docutils literal"><span class="pre">color(colorstring1,</span> <span class="pre">colorstring2)</span></code>, <code class="docutils literal"><span class="pre">color((r1,g1,b1),</span> <span class="pre">(r2,g2,b2))</span></code></dt>
+<dd><blockquote class="first">
+<div>Equivalent to <code class="docutils literal"><span class="pre">pencolor(colorstring1)</span></code> and <code class="docutils literal"><span class="pre">fillcolor(colorstring2)</span></code>
+and analogously if the other input format is used.</div></blockquote>
+<p class="last">If turtleshape is a polygon, outline and interior of that polygon is drawn
+with the newly set colors.</p>
+</dd>
+</dl>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">()</span>
+<span class="go">(&#39;red&#39;, &#39;green&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;#285078&quot;</span><span class="p">,</span> <span class="s2">&quot;#a0c8f0&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span><span class="p">()</span>
+<span class="go">((40.0, 80.0, 120.0), (160.0, 200.0, 240.0))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>See also: <a class="reference internal" href="turtle.html#turtle.colormode" title="turtle.colormode"><code class="xref py py-func docutils literal"><span class="pre">colormode()</span></code></a>.</p>
+</div>
+<div class="section" id="filling">
+<h4>24.1.3.4.3. Filling<a class="headerlink" href="turtle.html#filling" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="turtle.filling">
+<code class="descclassname">turtle.</code><code class="descname">filling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.filling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return fillstate (<code class="docutils literal"><span class="pre">True</span></code> if filling, <code class="docutils literal"><span class="pre">False</span></code> else).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">turtle</span><span class="o">.</span><span class="n">filling</span><span class="p">():</span>
+<span class="gp">... </span>   <span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.begin_fill">
+<code class="descclassname">turtle.</code><code class="descname">begin_fill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.begin_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>To be called just before drawing a shape to be filled.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.end_fill">
+<code class="descclassname">turtle.</code><code class="descname">end_fill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.end_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the shape drawn after the last call to <a class="reference internal" href="turtle.html#turtle.begin_fill" title="turtle.begin_fill"><code class="xref py py-func docutils literal"><span class="pre">begin_fill()</span></code></a>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="more-drawing-control">
+<h4>24.1.3.4.4. More drawing control<a class="headerlink" href="turtle.html#more-drawing-control" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="turtle.reset">
+<code class="descclassname">turtle.</code><code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the turtle&#8217;s drawings from the screen, re-center the turtle and set
+variables to the default values.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,-22.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">position</span><span class="p">()</span>
+<span class="go">(0.00,0.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.clear">
+<code class="descclassname">turtle.</code><code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the turtle&#8217;s drawings from the screen.  Do not move turtle.  State and
+position of the turtle as well as drawings of other turtles are not affected.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.write">
+<code class="descclassname">turtle.</code><code class="descname">write</code><span class="sig-paren">(</span><em>arg</em>, <em>move=False</em>, <em>align=&quot;left&quot;</em>, <em>font=(&quot;Arial&quot;</em>, <em>8</em>, <em>&quot;normal&quot;)</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>arg</strong> &#8211; object to be written to the TurtleScreen</li>
+<li><strong>move</strong> &#8211; True/False</li>
+<li><strong>align</strong> &#8211; one of the strings &#8220;left&#8221;, &#8220;center&#8221; or right&#8221;</li>
+<li><strong>font</strong> &#8211; a triple (fontname, fontsize, fonttype)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <cite>align</cite> and <cite>font</cite> arguments are not supported in Pythonista.</p>
+</div>
+<p>Write text - the string representation of <em>arg</em> - at the current turtle
+position according to <em>align</em> (&#8220;left&#8221;, &#8220;center&#8221; or right&#8221;) and with the given
+font.  If <em>move</em> is true, the pen is moved to the bottom-right corner of the
+text.  By default, <em>move</em> is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Home = &quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="turtle-state">
+<h3>24.1.3.5. Turtle state<a class="headerlink" href="turtle.html#turtle-state" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="visibility">
+<h4>24.1.3.5.1. Visibility<a class="headerlink" href="turtle.html#visibility" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="turtle.hideturtle">
+<code class="descclassname">turtle.</code><code class="descname">hideturtle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.hideturtle" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.ht">
+<code class="descclassname">turtle.</code><code class="descname">ht</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.ht" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make the turtle invisible.  It&#8217;s a good idea to do this while you&#8217;re in the
+middle of doing some complex drawing, because hiding the turtle speeds up the
+drawing observably.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.showturtle">
+<code class="descclassname">turtle.</code><code class="descname">showturtle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.showturtle" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.st">
+<code class="descclassname">turtle.</code><code class="descname">st</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.st" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make the turtle visible.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">showturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.isvisible">
+<code class="descclassname">turtle.</code><code class="descname">isvisible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.isvisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if the Turtle is shown, <code class="docutils literal"><span class="pre">False</span></code> if it&#8217;s hidden.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">isvisible</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">showturtle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">isvisible</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="special-turtle-methods">
+<h3>24.1.3.6. Special Turtle methods<a class="headerlink" href="turtle.html#special-turtle-methods" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.clone">
+<code class="descclassname">turtle.</code><code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a clone of the turtle with same position, heading and
+turtle properties.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mick</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">joe</span> <span class="o">=</span> <span class="n">mick</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.getturtle">
+<code class="descclassname">turtle.</code><code class="descname">getturtle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.getturtle" title="Permalink to this definition">¶</a></dt>
+<dt id="turtle.getpen">
+<code class="descclassname">turtle.</code><code class="descname">getpen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.getpen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Turtle object itself.  Only reasonable use: as a function to
+return the &#8220;anonymous turtle&#8221;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pet</span> <span class="o">=</span> <span class="n">getturtle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pet</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pet</span>
+<span class="go">&lt;turtle.Turtle object at 0x...&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.getscreen">
+<code class="descclassname">turtle.</code><code class="descname">getscreen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.getscreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal"><span class="pre">TurtleScreen</span></code> object the turtle is drawing on.
+TurtleScreen methods can then be called for that object.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">getscreen</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span>
+<span class="go">&lt;turtle._Screen object at 0x...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">&quot;pink&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="animation-control">
+<h3>24.1.3.7. Animation control<a class="headerlink" href="turtle.html#animation-control" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.delay">
+<code class="descclassname">turtle.</code><code class="descname">delay</code><span class="sig-paren">(</span><em>delay=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.delay" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delay</strong> &#8211; positive integer</td>
+</tr>
+</tbody>
+</table>
+<p>Set or return the drawing <em>delay</em> in milliseconds.  (This is approximately
+the time interval between two consecutive canvas updates.)  The longer the
+drawing delay, the slower the animation.</p>
+<p>Optional argument:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.tracer">
+<code class="descclassname">turtle.</code><code class="descname">tracer</code><span class="sig-paren">(</span><em>n=None</em>, <em>delay=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.tracer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n</strong> &#8211; nonnegative integer</li>
+<li><strong>delay</strong> &#8211; nonnegative integer</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Turn turtle animation on/off and set delay for update drawings.  If
+<em>n</em> is given, only each n-th regular screen update is really
+performed.  (Can be used to accelerate the drawing of complex
+graphics.)  When called without arguments, returns the currently
+stored value of n. Second argument sets delay value (see
+<a class="reference internal" href="turtle.html#turtle.delay" title="turtle.delay"><code class="xref py py-func docutils literal"><span class="pre">delay()</span></code></a>).</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">fd</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">rt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">dist</span> <span class="o">+=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>See also the RawTurtle/Turtle method <a class="reference internal" href="turtle.html#turtle.speed" title="turtle.speed"><code class="xref py py-func docutils literal"><span class="pre">speed()</span></code></a>.</p>
+</div>
+<div class="section" id="input-methods">
+<h3>24.1.3.8. Input methods<a class="headerlink" href="turtle.html#input-methods" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.textinput">
+<code class="descclassname">turtle.</code><code class="descname">textinput</code><span class="sig-paren">(</span><em>title</em>, <em>prompt</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.textinput" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; string</li>
+<li><strong>prompt</strong> &#8211; string</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Pop up a dialog window for input of a string. Parameter title is
+the title of the dialog window, propmt is a text mostly describing
+what information to input.
+Return the string input. If the dialog is canceled, return None.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">textinput</span><span class="p">(</span><span class="s2">&quot;NIM&quot;</span><span class="p">,</span> <span class="s2">&quot;Name of first player:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.numinput">
+<code class="descclassname">turtle.</code><code class="descname">numinput</code><span class="sig-paren">(</span><em>title</em>, <em>prompt</em>, <em>default=None</em>, <em>minval=None</em>, <em>maxval=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.numinput" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; string</li>
+<li><strong>prompt</strong> &#8211; string</li>
+<li><strong>default</strong> &#8211; number (optional)</li>
+<li><strong>minval</strong> &#8211; number (optional)</li>
+<li><strong>maxval</strong> &#8211; number (optional)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Pop up a dialog window for input of a number. title is the title of the
+dialog window, prompt is a text mostly describing what numerical information
+to input. default: default value, minval: minimum value for input,
+maxval: maximum value for input
+The number input must be in the range minval .. maxval if these are
+given. If not, a hint is issued and the dialog remains open for
+correction.
+Return the number input. If the dialog is canceled,  return None.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">numinput</span><span class="p">(</span><span class="s2">&quot;Poker&quot;</span><span class="p">,</span> <span class="s2">&quot;Your stakes:&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxval</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="settings-and-special-methods">
+<h3>24.1.3.9. Settings and special methods<a class="headerlink" href="turtle.html#settings-and-special-methods" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.colormode">
+<code class="descclassname">turtle.</code><code class="descname">colormode</code><span class="sig-paren">(</span><em>cmode=None</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.colormode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cmode</strong> &#8211; one of the values 1.0 or 255</td>
+</tr>
+</tbody>
+</table>
+<p>Return the colormode or set it to 1.0 or 255.  Subsequently <em>r</em>, <em>g</em>, <em>b</em>
+values of color triples have to be in the range 0..<em>cmode</em>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">colormode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+     <span class="o">...</span>
+<span class="gr">TurtleGraphicsError</span>: <span class="n">bad color sequence: (240, 160, 80)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">colormode</span><span class="p">()</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">colormode</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">colormode</span><span class="p">()</span>
+<span class="go">255</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turtle</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.turtles">
+<code class="descclassname">turtle.</code><code class="descname">turtles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.turtles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of turtles on the screen.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">turtle</span> <span class="ow">in</span> <span class="n">screen</span><span class="o">.</span><span class="n">turtles</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.window_height">
+<code class="descclassname">turtle.</code><code class="descname">window_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.window_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the height of the turtle window.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">window_height</span><span class="p">()</span>
+<span class="go">480</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.window_width">
+<code class="descclassname">turtle.</code><code class="descname">window_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.window_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the width of the turtle window.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">window_width</span><span class="p">()</span>
+<span class="go">640</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="methods-specific-to-screen-not-inherited-from-turtlescreen">
+<span id="screenspecific"></span><h3>24.1.3.10. Methods specific to Screen, not inherited from TurtleScreen<a class="headerlink" href="turtle.html#methods-specific-to-screen-not-inherited-from-turtlescreen" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="turtle.setup">
+<code class="descclassname">turtle.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>width=_CFG[&quot;width&quot;], height=_CFG[&quot;height&quot;], startx=_CFG[&quot;leftright&quot;], starty=_CFG[&quot;topbottom&quot;]</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size and position of the main window.  Default values of arguments
+are stored in the configuration dictionary and can be changed via a
+<code class="file docutils literal"><span class="pre">turtle.cfg</span></code> file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> &#8211; if an integer, a size in pixels, if a float, a fraction of the
+screen; default is 50% of screen</li>
+<li><strong>height</strong> &#8211; if an integer, the height in pixels, if a float, a fraction of
+the screen; default is 75% of screen</li>
+<li><strong>startx</strong> &#8211; if positive, starting position in pixels from the left
+edge of the screen, if negative from the right edge, if None,
+center window horizontally</li>
+<li><strong>starty</strong> &#8211; if positive, starting position in pixels from the top
+edge of the screen, if negative from the bottom edge, if None,
+center window vertically</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">startx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">starty</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>             <span class="c1"># sets window to 200x200 pixels, in upper left of screen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="o">=.</span><span class="mi">75</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">startx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">starty</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>             <span class="c1"># sets window to 75% of screen by 50% of screen and centers</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="turtle.title">
+<code class="descclassname">turtle.</code><code class="descname">title</code><span class="sig-paren">(</span><em>titlestring</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.title" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>titlestring</strong> &#8211; a string that is shown in the titlebar of the turtle
+graphics window</td>
+</tr>
+</tbody>
+</table>
+<p>Set title of turtle window to <em>titlestring</em>.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">screen</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Welcome to the turtle zoo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="public-classes">
+<h2>24.1.4. Public classes<a class="headerlink" href="turtle.html#public-classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="turtle.Turtle">
+<em class="property">class </em><code class="descclassname">turtle.</code><code class="descname">Turtle</code><a class="headerlink" href="turtle.html#turtle.Turtle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclass of RawTurtle, has the same interface but draws on a default
+<code class="xref py py-class docutils literal"><span class="pre">Screen</span></code> object created automatically when needed for the first time.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="turtle.Vec2D">
+<em class="property">class </em><code class="descclassname">turtle.</code><code class="descname">Vec2D</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="turtle.html#turtle.Vec2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>A two-dimensional vector class, used as a helper class for implementing
+turtle graphics.  May be useful for turtle graphics programs too.  Derived
+from tuple, so a vector is a tuple!</p>
+<p>Provides (for <em>a</em>, <em>b</em> vectors, <em>k</em> number):</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> vector addition</li>
+<li><code class="docutils literal"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code> vector subtraction</li>
+<li><code class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code> inner product</li>
+<li><code class="docutils literal"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">k</span></code> multiplication with scalar</li>
+<li><code class="docutils literal"><span class="pre">abs(a)</span></code> absolute value of a</li>
+<li><code class="docutils literal"><span class="pre">a.rotate(angle)</span></code> rotation</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

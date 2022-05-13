@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shortcuts — Pythonista URLs and Utilities &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/shortcuts.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-shortcuts">
+<span id="shortcuts-pythonista-urls-and-utilities"></span><h1><a class="reference internal" href="shortcuts.html#module-shortcuts" title="shortcuts: Support for Pythonista URLs and related utilities"><code class="xref py py-mod docutils literal"><span class="pre">shortcuts</span></code></a> &#8212; Pythonista URLs and Utilities<a class="headerlink" href="shortcuts.html#module-shortcuts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="shortcuts.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="shortcuts.html#module-shortcuts" title="shortcuts: Support for Pythonista URLs and related utilities"><code class="xref py py-mod docutils literal"><span class="pre">shortcuts</span></code></a> module provides utilities for Pythonista URLs that can be used to launch the app, and run or open scripts. You can also launch the Shortcuts app (and run shortcuts) using this module, but support for &#8220;native&#8221; Python shortcuts in the Shortcuts app is planned for a future version of Pythonista.</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="shortcuts.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="shortcuts.open_url">
+<code class="descclassname">shortcuts.</code><code class="descname">open_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="shortcuts.html#shortcuts.open_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a given URL using the system&#8217;s default app for the URL&#8217;s scheme. This is equivalent to <a class="reference internal" href="../library/webbrowser.html#webbrowser.open" title="webbrowser.open"><code class="xref py py-func docutils literal"><span class="pre">webbrowser.open()</span></code></a>, but more light-weight in terms of memory use (which makes it more suitable to use e.g. in the Today widget).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="shortcuts.pythonista_url">
+<code class="descclassname">shortcuts.</code><code class="descname">pythonista_url</code><span class="sig-paren">(</span><em>path=''</em>, <em>action='run'</em>, <em>args=None</em>, <em>argv=None</em><span class="sig-paren">)</span><a class="headerlink" href="shortcuts.html#shortcuts.pythonista_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a <code class="docutils literal"><span class="pre">pythonista3://...</span></code> URL from a file name/path, an action, and optional arguments.</p>
+<p>Possible values for <cite>action</cite> are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'run'</span></code> &#8211; Opening the URL will run the script without further prompt.</li>
+<li><code class="docutils literal"><span class="pre">'open'</span></code> &#8211; Opening the URL will open the script for editing.</li>
+<li><code class="docutils literal"><span class="pre">'exec'</span></code> &#8211; The script will be embedded as source code in the URL, and opening the URL will show it in Pythonista. The user can then decide to run it (embedded scripts are not run automatically for security reasons).</li>
+</ul>
+<p>The <cite>path</cite> should either be relative to the root &#8220;on this device&#8221; directory, or have an &#8216;iCloud/&#8217; prefix, and be relative to the iCloud container directory of Pythonista.</p>
+<p><cite>args</cite> can be a string that contains arguments that are passed to the script as <code class="docutils literal"><span class="pre">sys.argv</span></code>. Alternatively, you can use the <cite>argv</cite> parameter to pass the arguments as a list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="shortcuts.open_shortcuts_app">
+<code class="descclassname">shortcuts.</code><code class="descname">open_shortcuts_app</code><span class="sig-paren">(</span><em>name=None</em>, <em>shortcut_input=''</em><span class="sig-paren">)</span><a class="headerlink" href="shortcuts.html#shortcuts.open_shortcuts_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the Apple Shortcuts app and optionally run a named shortcut. Equivalent to <code class="docutils literal"><span class="pre">webbrowser.open('shortcuts://run-shortcut?name=[name]&amp;input=shortcut_input')</span></code>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

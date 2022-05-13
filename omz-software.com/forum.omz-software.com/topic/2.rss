@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Welcome to the new forum!]]></title><description><![CDATA[<p>I've migrated the Pythonista and Editorial community forums to <a href="https://nodebb.org" rel="nofollow">NodeBB</a>, which brings a fresh new look and a lot of very nice features that the old forum was lacking. For example:</p>
+<ul>
+<li>
+<p>Get notified when someone replies to your posts or @-mentions you (see the settings in your profile)</p>
+</li>
+<li>
+<p>Mark posts as favorites, flag for moderation, track unread status, etc.</p>
+</li>
+<li>
+<p>Better search</p>
+</li>
+<li>
+<p>You can introduce yourself on the profile page</p>
+</li>
+<li>
+<p>Login via Twitter (optional, for new users)</p>
+</li>
+<li>
+<p>A nicer URL ;)</p>
+</li>
+<li>
+<p>...and much more.</p>
+</li>
+</ul>
+<p>If you already have an account in the old forum, here's what you need to know:</p>
+<ul>
+<li>
+<p>I've imported all users (and posts), but you need to set a new password. Simply enter the email address you used for the old forum here: <a href="https://forum.omz-software.com/reset">→ Reset Password</a></p>
+</li>
+<li>
+<p>The old forum is still online for now, so that links continue to work. In the next couple of days, I will start redirecting the old topic pages to the imported ones in this forum.</p>
+</li>
+<li>
+<p>I'm not sure yet if I'll redirect the RSS feeds as well, you might want to update your feed reader manually in any case (some apps don't support redirection properly).</p>
+</li>
+</ul>
+<p>If you see anything that looks weird, or if you have any problems with accessing your account, please let me know.</p>
+<p>Unfortunately, spam has been a bit of an issue lately. I don't know yet how well NodeBB will work in that regard, but I've taken some precautionary measures. Signups require solving a <a href="https://www.google.com/recaptcha/intro/index.html" rel="nofollow">reCAPTCHA</a>, and all posts are checked by <a href="http://akismet.com" rel="nofollow">Akismet</a> – I don't have experience with the latter, but I've heard good things about it.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum</link><generator>RSS for Node</generator><lastBuildDate>Thu, 12 May 2022 23:12:38 GMT</lastBuildDate><atom:link href="https://forum.omz-software.com/topic/2.rss" rel="self" type="application/rss+xml"/><pubDate>Wed, 05 Aug 2015 15:37:01 GMT</pubDate><ttl>60</ttl><item><title><![CDATA[Reply to Welcome to the new forum! on Thu, 06 Aug 2015 09:08:17 GMT]]></title><description><![CDATA[<p>I've migrated the Pythonista and Editorial community forums to <a href="https://nodebb.org" rel="nofollow">NodeBB</a>, which brings a fresh new look and a lot of very nice features that the old forum was lacking. For example:</p>
+<ul>
+<li>
+<p>Get notified when someone replies to your posts or @-mentions you (see the settings in your profile)</p>
+</li>
+<li>
+<p>Mark posts as favorites, flag for moderation, track unread status, etc.</p>
+</li>
+<li>
+<p>Better search</p>
+</li>
+<li>
+<p>You can introduce yourself on the profile page</p>
+</li>
+<li>
+<p>Login via Twitter (optional, for new users)</p>
+</li>
+<li>
+<p>A nicer URL ;)</p>
+</li>
+<li>
+<p>...and much more.</p>
+</li>
+</ul>
+<p>If you already have an account in the old forum, here's what you need to know:</p>
+<ul>
+<li>
+<p>I've imported all users (and posts), but you need to set a new password. Simply enter the email address you used for the old forum here: <a href="https://forum.omz-software.com/reset">→ Reset Password</a></p>
+</li>
+<li>
+<p>The old forum is still online for now, so that links continue to work. In the next couple of days, I will start redirecting the old topic pages to the imported ones in this forum.</p>
+</li>
+<li>
+<p>I'm not sure yet if I'll redirect the RSS feeds as well, you might want to update your feed reader manually in any case (some apps don't support redirection properly).</p>
+</li>
+</ul>
+<p>If you see anything that looks weird, or if you have any problems with accessing your account, please let me know.</p>
+<p>Unfortunately, spam has been a bit of an issue lately. I don't know yet how well NodeBB will work in that regard, but I've taken some precautionary measures. Signups require solving a <a href="https://www.google.com/recaptcha/intro/index.html" rel="nofollow">reCAPTCHA</a>, and all posts are checked by <a href="http://akismet.com" rel="nofollow">Akismet</a> – I don't have experience with the latter, but I've heard good things about it.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum</guid><dc:creator><![CDATA[admin2]]></dc:creator><pubDate>Thu, 06 Aug 2015 09:08:17 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Thu, 06 Aug 2015 22:16:31 GMT]]></title><description><![CDATA[<p>Loving the new forum so far. I don't know how hard this would be to do, but it'd be nice if links to old forum posts changed. For example in the topic <a href="https://forum.omz-software.com/topic/2031/videos">Videos</a> <a class="plugin-mentions-a" href="https://forum.omz-software.com/user/ccc">@ccc</a> said:</p>
+<blockquote>
+<p>This exploration allows you to record video from the camera... <a href="http://omz-forums.appspot.com/pythonista/post/6438894778187776" rel="nofollow">http://omz-forums.appspot.com/pythonista/post/6438894778187776</a></p>
+</blockquote>
+<p>It'd be nice and provide a smoother user experience if that was automatically changed to :</p>
+<blockquote>
+<p>This exploration allows you to record video from the camera... <a href="https://forum.omz-software.com/topic/2026/capturemedia">https://forum.omz-software.com/topic/2026/capturemedia</a></p>
+</blockquote>
+<p>Because as of right now, if I click that, it takes me to the old forum. This could be a matter of having a program that changes the physical links, or it could be a matter of when the old site goes down, having each page redirect to the relevant page on the new forum.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/2</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/2</guid><dc:creator><![CDATA[Webmaster4o]]></dc:creator><pubDate>Thu, 06 Aug 2015 22:16:31 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 05:47:56 GMT]]></title><description><![CDATA[<blockquote>
+<p>...or it could be a matter of when the old site goes down, having each page redirect to the relevant page on the new forum.</p>
+</blockquote>
+<p>That's what I plan to do. It has the benefit that links from elsewhere also continue to work.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/3</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/3</guid><dc:creator><![CDATA[omz]]></dc:creator><pubDate>Fri, 07 Aug 2015 05:47:56 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 15:00:49 GMT]]></title><description><![CDATA[<p>Ok, great.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/4</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/4</guid><dc:creator><![CDATA[Webmaster4o]]></dc:creator><pubDate>Fri, 07 Aug 2015 15:00:49 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 19:28:18 GMT]]></title><description><![CDATA[<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/omz">@omz</a> Not sure if you can do this through NodeBB, but if you could Close a topic instead of deleting it all together, that would be helpful in most cases with code issues/questions.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/5</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/5</guid><dc:creator><![CDATA[techteej]]></dc:creator><pubDate>Fri, 07 Aug 2015 19:28:18 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 19:59:34 GMT]]></title><description><![CDATA[<p>Is there a way to link to the first new post in a topic based on the last time you visited the forums? This drove me nuts about the old forum too.</p>
+<p>You can click on the topic title to start at the first post, or on the link to the right to jump to the last post but doing that means you'll have to scroll up to see if there were posts made between your last visit and the last post in the thread. Frustrating.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/6</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/6</guid><dc:creator><![CDATA[roosterboy]]></dc:creator><pubDate>Fri, 07 Aug 2015 19:59:34 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 20:12:46 GMT]]></title><description><![CDATA[<p>When clicking on a topic I've visited before, I usually get a popup like this one:</p>
+<p><img src="http://omz-software.com/share/forum_return_to_last_post.png" alt="" class="img-responsive img-markdown" /></p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/7</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/7</guid><dc:creator><![CDATA[omz]]></dc:creator><pubDate>Fri, 07 Aug 2015 20:12:46 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Fri, 07 Aug 2015 21:20:21 GMT]]></title><description><![CDATA[<p>OK, definitely never noticed that. It's a little awkward that it requires you to make a second action to jump to that spot rather than automatically taking you there like most other forum software I've ever used, but I suppose it'll work.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/8</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/8</guid><dc:creator><![CDATA[roosterboy]]></dc:creator><pubDate>Fri, 07 Aug 2015 21:20:21 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Sat, 08 Aug 2015 02:26:11 GMT]]></title><description><![CDATA[<p>i find that, on ipad, when i reply, the rest of the conversation goes away...  until i am done editing.  is there a setting that lets you still scroll back?  for example copying bits if code, or opening links in a new window, etc, or frankly remebering what i wanted to say in the first place?</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/9</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/9</guid><dc:creator><![CDATA[JonB]]></dc:creator><pubDate>Sat, 08 Aug 2015 02:26:11 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Sat, 08 Aug 2015 02:43:46 GMT]]></title><description><![CDATA[<p>I think your best option might be to open a separate tab for replying.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/10</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/10</guid><dc:creator><![CDATA[omz]]></dc:creator><pubDate>Sat, 08 Aug 2015 02:43:46 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Sat, 08 Aug 2015 15:50:01 GMT]]></title><description><![CDATA[<p>The old forum now redirects to the new one for both the index pages and individual discussions.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/11</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/11</guid><dc:creator><![CDATA[omz]]></dc:creator><pubDate>Sat, 08 Aug 2015 15:50:01 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Mon, 10 Aug 2015 01:52:41 GMT]]></title><description><![CDATA[<p>Does anyone else have trouble reading/copying code blocks in the forum, when on iOS?  it seems that in the new forum, code blocks are limited to a certain height.  I cannot seem to reliably get those blocks to either select all, or scroll.   Scrolling scrolls the page, and selecting never wants to grab the whole section, even when dragging to the top, etc.</p>
+<p>I suspect there may be a &quot;trick&quot; to this (similar to selecting text on iOS in general... i have found that some webpages trying to select selects a whole paragraph...l unless you zoom/pan such that the right side of the text is off screen, at which point long tap selects single words).</p>
+<p>Also.... on some threads I have noticed a little red plus sign in the bottom right corner, which lets you reply while still keeping the conversation in view.... but others default to fullscreen replies.... odd!</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/12</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/12</guid><dc:creator><![CDATA[JonB]]></dc:creator><pubDate>Mon, 10 Aug 2015 01:52:41 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Mon, 10 Aug 2015 12:36:10 GMT]]></title><description><![CDATA[<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/jonb">@JonB</a> I've disabled the vertical scrolling in code blocks for now.</p>
+<p>This isn't ideal, but I'll need a little more time to dig deeper into NodeBB's plugin system before I can figure out a better solution.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/13</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/13</guid><dc:creator><![CDATA[omz]]></dc:creator><pubDate>Mon, 10 Aug 2015 12:36:10 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Tue, 18 Aug 2015 15:31:45 GMT]]></title><description><![CDATA[<p>Bug (sort of): I can go to <a href="https://omz-forums.appspot.com/pythonista/new" rel="nofollow">https://omz-forums.appspot.com/pythonista/new</a> and see the old forum, it should be redirected to the equivalent URL on the new forum.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/14</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/14</guid><dc:creator><![CDATA[Webmaster4o]]></dc:creator><pubDate>Tue, 18 Aug 2015 15:31:45 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Wed, 19 Aug 2015 07:46:32 GMT]]></title><description><![CDATA[<p>Note: Back button doesn't work the way I think it should.</p>
+<p>Not sure I can codify what I mean :-) and it's probably not fixable.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/15</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/15</guid><dc:creator><![CDATA[MartinPacker]]></dc:creator><pubDate>Wed, 19 Aug 2015 07:46:32 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Wed, 16 Sep 2015 14:29:06 GMT]]></title><description><![CDATA[<p>Did the forum editor settings change recently? I can no longer see the editor cursor on IPad, and things seeem very &quot;jumpy&quot;.</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/16</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/16</guid><dc:creator><![CDATA[JonB]]></dc:creator><pubDate>Wed, 16 Sep 2015 14:29:06 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Tue, 26 Jul 2016 23:24:14 GMT]]></title><description><![CDATA[<p>The forum is turning 1 right about now... not sure about the exact date</p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/17</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/17</guid><dc:creator><![CDATA[Webmaster4o]]></dc:creator><pubDate>Tue, 26 Jul 2016 23:24:14 GMT</pubDate></item><item><title><![CDATA[Reply to Welcome to the new forum! on Thu, 04 Aug 2016 05:53:26 GMT]]></title><description><![CDATA[<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/webmaster4o">@Webmaster4o</a><br />
+The date from the post above:<br />
+<strong>2015-08-05T15:37:01.049Z</strong></p>
+]]></description><link>https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/18</link><guid isPermaLink="true">https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/18</guid><dc:creator><![CDATA[cook]]></dc:creator><pubDate>Thu, 04 Aug 2016 05:53:26 GMT</pubDate></item></channel></rss>

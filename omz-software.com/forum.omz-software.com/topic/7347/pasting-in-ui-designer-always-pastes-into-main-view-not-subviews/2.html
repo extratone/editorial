@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pasting in UI designer always pastes into main view - not subviews | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Pasting in UI designer always pastes into main view - not subviews" />
+	<meta name="description" content="Hello, Using Pythonista 3.3(330025) on 5thGen iPad Pro. iOS 15.2 No matter where I am in the UI designer, anything I paste shows up at the uppermost level. Example: I start a fresh UI. Within the main view I add via the &amp;quot;+&amp;quot; a custom view. I enter the cust..." />
+	<meta property="og:title" content="Pasting in UI designer always pastes into main view - not subviews" />
+	<meta property="og:description" content="Hello, Using Pythonista 3.3(330025) on 5thGen iPad Pro. iOS 15.2 No matter where I am in the UI designer, anything I paste shows up at the uppermost level. Example: I start a fresh UI. Within the main view I add via the &amp;quot;+&amp;quot; a custom view. I enter the cust..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;7347&#x2F;pasting-in-ui-designer-always-pastes-into-main-view-not-subviews" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;a337ee63b7149b1ba99f1f508c2e56c4?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;a337ee63b7149b1ba99f1f508c2e56c4?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="article:published_time" content="2021-12-21T01:35:35.095Z" />
+	<meta property="article:modified_time" content="2022-04-29T06:05:31.598Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="https://forum.omz-software.com/topic/7347.rss" />
+	<link rel="canonical" href="../pasting-in-ui-designer-always-pastes-into-main-view-not-subviews.html" />
+	<link rel="up" href="../../../../omz-software.com/pythonista/forums.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"sJ9D3BB4-mfa2IMk46o2l_HhMTDpq5r5siNI","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="2.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="2.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="2.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="2.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Pasting in UI designer always pastes into main view - not subviews
+												<a target="_blank" href="https://forum.omz-software.com/topic/7347.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">Pasting in UI designer always pastes into main view - not subviews</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="7347">
+			<li component="post" class="clearfix "data-pid="47597" data-uid="16555" data-username="Geese" data-userslug="geese" data-index="0" data-timestamp="1640050535447" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2021-12-21T01:35:35.447Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/geese.html">
+			<img src="https://s.gravatar.com/avatar/a337ee63b7149b1ba99f1f508c2e56c4?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/geese.html" itemprop="author" data-username="Geese" data-uid="16555">Geese</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews/1"><span class="timeago" title="2021-12-21T01:35:35.447Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Hello,<br />
+Using Pythonista 3.3(330025) on 5thGen iPad Pro. iOS 15.2</p>
+<p>No matter where I am in the UI designer, anything I paste shows up at the uppermost level.</p>
+<p>Example:<br />
+I start a fresh UI. Within the main view I add via the &quot;+&quot; a custom view. I enter the custom view by tapping it and then selecting &quot;subviews&quot;. While in the subview I create a button. I then tap and copy the button. When I paste it, it doesn't paste into the current context, but rather one level up in the main view.   This appears to happen regardless how I copy/paste (tap menus as well as CMD-C, CMD-V via external keyboard produce the same results).</p>
+<p>Am I utilizing the UI designer wrong? Any help appreciated. Thank you.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="2">2</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="307">307</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="48430" data-uid="20148" data-username="Vent" data-userslug="vent" data-index="1" data-timestamp="1651212331598" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2022-04-29T06:05:31.598Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/vent">
+			<img src="https://s.gravatar.com/avatar/af3701b07cfdb69c7742863293befe06?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/vent" itemprop="author" data-username="Vent" data-uid="20148">Vent</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="2.html"><span class="timeago" title="2022-04-29T06:05:31.598Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>me too!<br />
+plz look this omz...</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="2">2</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="307">307</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews/2?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="https://forum.omz-software.com/topic/7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews/2?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="7347" />
+<input type="hidden" template-variable="topic_slug" value="7347/pasting-in-ui-designer-always-pastes-into-main-view-not-subviews" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Pasting in UI designer always pastes into main view - not subviews" />
+<input type="hidden" template-variable="postcount" value="2" />
+<input type="hidden" template-variable="viewcount" value="307" /><input type="hidden" ajaxify-data="%7B%22timestamp%22%3A%221640050535095%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%22307%22%2C%22teaserPid%22%3A%2248430%22%2C%22postcount%22%3A%222%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22lastposttime%22%3A%221651212331598%22%2C%22slug%22%3A%227347%2Fpasting-in-ui-designer-always-pastes-into-main-view-not-subviews%22%2C%22title%22%3A%22Pasting%20in%20UI%20designer%20always%20pastes%20into%20main%20view%20-%20not%20subviews%22%2C%22cid%22%3A%225%22%2C%22uid%22%3A%2216555%22%2C%22mainPid%22%3A%2247597%22%2C%22tid%22%3A%227347%22%2C%22relativeTime%22%3A%222021-12-21T01%3A35%3A35.095Z%22%2C%22lastposttimeISO%22%3A%222022-04-29T06%3A05%3A31.598Z%22%2C%22posts%22%3A%5B%7B%22timestamp%22%3A%221640050535447%22%2C%22content%22%3A%22%3Cp%3EHello%2C%3Cbr%20%2F%3E%5CnUsing%20Pythonista%203.3(330025)%20on%205thGen%20iPad%20Pro.%20iOS%2015.2%3C%2Fp%3E%5Cn%3Cp%3ENo%20matter%20where%20I%20am%20in%20the%20UI%20designer%2C%20anything%20I%20paste%20shows%20up%20at%20the%20uppermost%20level.%3C%2Fp%3E%5Cn%3Cp%3EExample%3A%3Cbr%20%2F%3E%5CnI%20start%20a%20fresh%20UI.%20Within%20the%20main%20view%20I%20add%20via%20the%20%26quot%3B%2B%26quot%3B%20a%20custom%20view.%20I%20enter%20the%20custom%20view%20by%20tapping%20it%20and%20then%20selecting%20%26quot%3Bsubviews%26quot%3B.%20While%20in%20the%20subview%20I%20create%20a%20button.%20I%20then%20tap%20and%20copy%20the%20button.%20When%20I%20paste%20it%2C%20it%20doesn't%20paste%20into%20the%20current%20context%2C%20but%20rather%20one%20level%20up%20in%20the%20main%20view.%20%20%20This%20appears%20to%20happen%20regardless%20how%20I%20copy%2Fpaste%20(tap%20menus%20as%20well%20as%20CMD-C%2C%20CMD-V%20via%20external%20keyboard%20produce%20the%20same%20results).%3C%2Fp%3E%5Cn%3Cp%3EAm%20I%20utilizing%20the%20UI%20designer%20wrong%3F%20Any%20help%20appreciated.%20Thank%20you.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%221%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2247597%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2216555%22%2C%22tid%22%3A%227347%22%2C%22relativeTime%22%3A%222021-12-21T01%3A35%3A35.447Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%2216555%22%2C%22username%22%3A%22Geese%22%2C%22userslug%22%3A%22geese%22%2C%22reputation%22%3A%221%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa337ee63b7149b1ba99f1f508c2e56c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2248430%22%2C%22uid%22%3A%2220148%22%2C%22tid%22%3A%227347%22%2C%22content%22%3A%22%3Cp%3Eme%20too!%3Cbr%20%2F%3E%5Cnplz%20look%20this%20omz...%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221651212331598%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222022-04-29T06%3A05%3A31.598Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%2220148%22%2C%22username%22%3A%22Vent%22%2C%22userslug%22%3A%22vent%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Faf3701b07cfdb69c7742863293befe06%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22Pasting%20in%20UI%20designer%20always%20pastes%20into%20main%20view%20-%20not%20subviews%22%2C%22url%22%3A%22%2Ftopic%2F7347%2Fpasting-in-ui-designer-always-pastes-into-main-view-not-subviews%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%227347%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F7347.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22sJ9D3BB4-mfa2IMk46o2l_HhMTDpq5r5siNI%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Pasting%20in%20UI%20designer%20always%20pastes%20into%20main%20view%20-%20not%20subviews%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22Hello%2C%20Using%20Pythonista%203.3(330025)%20on%205thGen%20iPad%20Pro.%20iOS%2015.2%20No%20matter%20where%20I%20am%20in%20the%20UI%20designer%2C%20anything%20I%20paste%20shows%20up%20at%20the%20uppermost%20level.%20Example%3A%20I%20start%20a%20fresh%20UI.%20Within%20the%20main%20view%20I%20add%20via%20the%20%26quot%3B%2B%26quot%3B%20a%20custom%20view.%20I%20enter%20the%20cust...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Pasting%20in%20UI%20designer%20always%20pastes%20into%20main%20view%20-%20not%20subviews%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22Hello%2C%20Using%20Pythonista%203.3(330025)%20on%205thGen%20iPad%20Pro.%20iOS%2015.2%20No%20matter%20where%20I%20am%20in%20the%20UI%20designer%2C%20anything%20I%20paste%20shows%20up%20at%20the%20uppermost%20level.%20Example%3A%20I%20start%20a%20fresh%20UI.%20Within%20the%20main%20view%20I%20add%20via%20the%20%26quot%3B%2B%26quot%3B%20a%20custom%20view.%20I%20enter%20the%20cust...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7347%2Fpasting-in-ui-designer-always-pastes-into-main-view-not-subviews%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa337ee63b7149b1ba99f1f508c2e56c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa337ee63b7149b1ba99f1f508c2e56c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222021-12-21T01%3A35%3A35.095Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222022-04-29T06%3A05%3A31.598Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7347.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7347%2Fpasting-in-ui-designer-always-pastes-into-main-view-not-subviews%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="2.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

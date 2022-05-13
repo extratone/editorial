@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>qrcode — Pure python QR Code generator &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/qrcode.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-qrcode">
+<span id="qrcode-pure-python-qr-code-generator"></span><h1><a class="reference internal" href="qrcode.html#module-qrcode" title="qrcode"><code class="xref py py-mod docutils literal"><span class="pre">qrcode</span></code></a> &#8212; Pure python QR Code generator<a class="headerlink" href="qrcode.html#module-qrcode" title="Permalink to this headline">¶</a></h1>
+<p>This module uses image libraries, Python Imaging Library (PIL) by default, to
+generate QR Codes.</p>
+<div class="section" id="what-is-a-qr-code">
+<h2>What is a QR Code?<a class="headerlink" href="qrcode.html#what-is-a-qr-code" title="Permalink to this headline">¶</a></h2>
+<p>A Quick Response code is a two-dimensional pictographic code used for its fast
+readability and comparatively large storage capacity. The code consists of
+black modules arranged in a square pattern on a white background. The
+information encoded can be made up of any kind of data (e.g., binary,
+alphanumeric, or Kanji symbols)</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="qrcode.html#usage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="qrcode.make">
+<code class="descclassname">qrcode.</code><code class="descname">make</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="qrcode.html#qrcode.make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a PIL <code class="docutils literal"><span class="pre">Image</span></code> containing a QR code with the given data.</p>
+<p>Example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qrcode</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;http://python.org&#39;</span><span class="p">)</span>
+<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="qrcode.html#advanced-usage" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="qrcode.QRCode">
+<em class="property">class </em><code class="descclassname">qrcode.</code><code class="descname">QRCode</code><a class="headerlink" href="qrcode.html#qrcode.QRCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>For more control, use the <a class="reference internal" href="qrcode.html#qrcode.QRCode" title="qrcode.QRCode"><code class="xref py py-class docutils literal"><span class="pre">QRCode</span></code></a> class. For example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qrcode</span>
+<span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span>
+    <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">error_correction</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ERROR_CORRECT_L</span><span class="p">,</span>
+    <span class="n">box_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">border</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">qr</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="s1">&#39;Some data&#39;</span><span class="p">)</span>
+<span class="n">qr</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">fit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">version</span></code> parameter is an integer from 1 to 40 that controls the size of
+the QR Code (the smallest, version 1, is a 21x21 matrix).
+Set to <code class="docutils literal"><span class="pre">None</span></code> and use the <code class="docutils literal"><span class="pre">fit</span></code> parameter when making the code to determine
+this automatically.</p>
+<p>The <code class="docutils literal"><span class="pre">error_correction</span></code> parameter controls the error correction used for the
+QR Code. The following four constants are made available on the <code class="docutils literal"><span class="pre">qrcode</span></code>
+package:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">ERROR_CORRECT_L</span></code></dt>
+<dd>About 7% or less errors can be corrected.</dd>
+<dt><code class="docutils literal"><span class="pre">ERROR_CORRECT_M</span></code> (default)</dt>
+<dd>About 15% or less errors can be corrected.</dd>
+<dt><code class="docutils literal"><span class="pre">ERROR_CORRECT_Q</span></code></dt>
+<dd>About 25% or less errors can be corrected.</dd>
+<dt><code class="docutils literal"><span class="pre">ERROR_CORRECT_H</span></code>.</dt>
+<dd>About 30% or less errors can be corrected.</dd>
+</dl>
+<p>The <code class="docutils literal"><span class="pre">box_size</span></code> parameter controls how many pixels each &#8220;box&#8221; of the QR code
+is.</p>
+<p>The <code class="docutils literal"><span class="pre">border</span></code> parameter controls how many boxes thick the border should be
+(the default is 4, which is the minimum according to the specs).</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

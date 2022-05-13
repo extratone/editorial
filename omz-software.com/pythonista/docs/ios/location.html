@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>location — Geo-Location Services on iOS &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/location.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-location">
+<span id="location-geo-location-services-on-ios"></span><h1><a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><code class="xref py py-mod docutils literal"><span class="pre">location</span></code></a> &#8212; Geo-Location Services on iOS<a class="headerlink" href="location.html#module-location" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><code class="xref py py-mod docutils literal"><span class="pre">location</span></code></a> module allows you to access geo-location data (e.g. GPS) on iOS. Additionally, you can use the <a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><code class="xref py py-mod docutils literal"><span class="pre">location</span></code></a> module to convert addresses to coordinates and vice-versa (geocoding and reverse-geocoding).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The first time this module is used, a system-provided permission alert will be shown. Until you have given the app permission to access your location, most functions won&#8217;t return meaningful results.</p>
+</div>
+<p>Functions in the <a class="reference internal" href="location.html#module-location" title="location: Provides geo-location services on iOS"><code class="xref py py-mod docutils literal"><span class="pre">location</span></code></a> module:</p>
+<dl class="function">
+<dt id="location.get_location">
+<code class="descclassname">location.</code><code class="descname">get_location</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.get_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the most recently obtained location data. The return value is a dictionary containing various numbers that describe the current location (most importantly, &#8216;longitude&#8217;, &#8216;latitude&#8217; and &#8216;timestamp&#8217;). This dictionary can be used as a parameter for the <a class="reference internal" href="location.html#location.reverse_geocode" title="location.reverse_geocode"><code class="xref py py-func docutils literal"><span class="pre">reverse_geocode()</span></code></a> function. If no location data has been obtained yet (or you haven&#8217;t authorized the app), the return value may be <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.start_updates">
+<code class="descclassname">location.</code><code class="descname">start_updates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.start_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start updating location data. This should be called before using <a class="reference internal" href="location.html#location.get_location" title="location.get_location"><code class="xref py py-func docutils literal"><span class="pre">get_location()</span></code></a>. To save energy, it is recommended to call <a class="reference internal" href="location.html#location.stop_updates" title="location.stop_updates"><code class="xref py py-func docutils literal"><span class="pre">stop_updates()</span></code></a> when you no longer need location data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.stop_updates">
+<code class="descclassname">location.</code><code class="descname">stop_updates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.stop_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop updating location data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.geocode">
+<code class="descclassname">location.</code><code class="descname">geocode</code><span class="sig-paren">(</span><em>address</em><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to convert an address dictionary to geo-coordinates. The return value is a list of possible coordinates (can be empty if no results are found). Each entry in the list is a dictionary with &#8216;longitude&#8217; and &#8216;latitude&#8217; keys.</p>
+<p>Example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">location</span>
+<span class="n">address_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Street&#39;</span><span class="p">:</span> <span class="s1">&#39;Infinite Loop&#39;</span><span class="p">,</span> <span class="s1">&#39;City&#39;</span><span class="p">:</span> <span class="s1">&#39;Cupertino&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="s1">&#39;USA&#39;</span><span class="p">}</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="n">address_dict</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">results</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.render_map_snapshot">
+<code class="descclassname">location.</code><code class="descname">render_map_snapshot</code><span class="sig-paren">(</span><em>lat</em>, <em>lng</em>, <em>width=1000</em>, <em>height=1000</em>, <em>map_type='standard'</em>, <em>show_poi=True</em>, <em>img_width=240</em>, <em>img_height=240</em>, <em>img_scale=0</em><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.render_map_snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render/download a snapshot image of the given map region (using the Apple Maps framework).</p>
+<p>The <cite>lat</cite> and <cite>lng</cite> parameters determine the latitude and longitude of the map&#8217;s center. <cite>width</cite> and <cite>height</cite> (in meters) indirectly set the map&#8217;s scale factor. <cite>map_type</cite> can be <code class="docutils literal"><span class="pre">'standard'</span></code>, <code class="docutils literal"><span class="pre">'satellite'</span></code> or <code class="docutils literal"><span class="pre">'hybrid'</span></code>.</p>
+<p>The return value is a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><code class="xref py py-class docutils literal"><span class="pre">ui.Image</span></code></a> with the given size (<cite>img_width</cite>/<cite>img_height</cite>) and scale (<cite>0</cite> by default, i.e. the current device&#8217;s screen scale).</p>
+<p>Example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">location</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">render_map_snapshot</span><span class="p">(</span><span class="mf">48.8582</span><span class="p">,</span> <span class="mf">2.2945</span><span class="p">,</span> <span class="n">map_type</span><span class="o">=</span><span class="s1">&#39;satellite&#39;</span><span class="p">,</span> <span class="n">img_width</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">img_height</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.reverse_geocode">
+<code class="descclassname">location.</code><code class="descname">reverse_geocode</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.reverse_geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to convert a location (longitude/latitude) to a human-readable address. The <cite>location</cite> parameter should be a dictionary containing values for &#8216;longitude&#8217; and &#8216;latitude&#8217;. The return value is a list of possible address dictionaries (usually just one).</p>
+<p>Example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">location</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="mf">37.331684</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">122.030758</span><span class="p">}</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">reverse_geocode</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">results</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="location.is_authorized">
+<code class="descclassname">location.</code><code class="descname">is_authorized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="location.html#location.is_authorized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>True</cite> if access to location data is currently allowed, <cite>False</cite> otherwise (e.g. if the permission dialog hasn&#8217;t been shown yet or if access is denied due to parental controls).</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Outliner with drag&#x2F;drop reordering - part 2 | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Outliner with drag&amp;#x2F;drop reordering - part 2" />
+	<meta name="description" content="@ccc thanks for the advice " />
+	<meta property="og:title" content="Outliner with drag&amp;#x2F;drop reordering - part 2" />
+	<meta property="og:description" content="@ccc thanks for the advice " />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;7248&#x2F;outliner-with-drag-drop-reordering-part-2" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;uploads&#x2F;profile&#x2F;2281-profileimg.png" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;uploads&#x2F;profile&#x2F;2281-profileimg.png" />
+	<meta property="article:published_time" content="2021-09-30T20:51:14.861Z" />
+	<meta property="article:modified_time" content="2022-05-07T06:42:08.687Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="https://forum.omz-software.com/topic/7248.rss" />
+	<link rel="canonical" href="outliner-with-drag-drop-reordering-part-2.html" />
+	<link rel="up" href="../../../omz-software.com/pythonista/forums.html" />
+	<link rel="next" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=2" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"84skJjzb-eEXVsCGqR_sdbABBLRNdWoWJW_k","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="outliner-with-drag-drop-reordering-part-2.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="outliner-with-drag-drop-reordering-part-2.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="outliner-with-drag-drop-reordering-part-2.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="outliner-with-drag-drop-reordering-part-2.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Outliner with drag&#x2F;drop reordering - part 2
+												<a target="_blank" href="https://forum.omz-software.com/topic/7248.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">Outliner with drag&#x2F;drop reordering - part 2</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="7248">
+			<li component="post" class="clearfix "data-pid="46837" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="0" data-timestamp="1633035074954" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2021-09-30T20:51:14.954Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/1"><span class="timeago" title="2021-09-30T20:51:14.954Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ccc.html">@ccc</a> thanks for the advice</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="579">579</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="60125">60125</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="46838" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="1" data-timestamp="1633035271871" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2021-09-30T20:54:31.871Z">
+				<meta itemprop="dateModified" content="2021-09-30T20:59:41.477Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/2"><span class="timeago" title="2021-09-30T20:54:31.871Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> said</p>
+<blockquote>
+<p>This a (low priority) idea for the wish list: I sometimes want to read my outlines on the Mac. What I do now is save them in pdf or some other format that the Mac understands. This works fine but I have to remember to do it after any change so that the outline will be up-to-date. A reader script in python would permit me to view an outline on the Mac or on anything that runs python and has access to the iCloud files.</p>
+</blockquote>
+<p>Written in my todo list, but when you say &quot;view an outline&quot;, that will say use an UI...or print it in the console of this Python interpreter.</p>
+<p>I have never used Python on a Mac, which free app do I need?</p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-09-30T20:59:41.477Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46840" data-uid="878" data-username="ihf" data-userslug="ihf" data-index="2" data-timestamp="1633046307902" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2021-09-30T23:58:27.902Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ihf.html">
+			<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ihf.html" itemprop="author" data-username="ihf" data-uid="878">ihf</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/3"><span class="timeago" title="2021-09-30T23:58:27.902Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/cvp.html">@cvp</a> Using a UI would be very nice but I would settle for the console. Python comes on the Mac but since it is OSX (and not iOS) you can pretty much install any Python distribution you like. I use Anaconda.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46841" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="3" data-timestamp="1633085320851" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T10:48:40.851Z">
+				<meta itemprop="dateModified" content="2021-10-01T12:06:05.314Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/4"><span class="timeago" title="2021-10-01T10:48:40.851Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> Ok, I've installed Python on my (very old and unused Mac) via <a href="https://docs.python.org/3/using/mac.html" rel="nofollow">https://docs.python.org/3/using/mac.html</a>.</p>
+<p>Then I wrote a very quick and dirty (as usual) script to</p>
+<ul>
+<li>define a path where to start the files dialog (see and set your default_path)</li>
+<li>open a files dialog allowing only .outline files</li>
+<li>select an outline file</li>
+<li>printing your file in console (outline in red, text in blue) without any image</li>
+</ul>
+<p><code>Please, try it and tell me how you would want to see it better</code></p>
+<pre><code>#!/usr/bin/env python3
+# coding: utf-8
+
+from __future__ import print_function, absolute_import
+from   ast      import literal_eval
+import os
+import sys
+from   tkinter  import *
+from   tkinter.filedialog import askopenfilename
+root = Tk()
+root.withdraw()
+
+default_path = os.path.expanduser('~/Desktop/Users/Christian/Pythonista/Backup/Outline')
+valid_types = [(&quot;Outline files&quot;, &quot;*.outline&quot;)]
+
+RED = '\033[91m'
+BLUE = '\033[94m'
+
+def clear():
+    os.system('clear')
+
+def main():
+    file_path = askopenfilename(initialdir=default_path,
+                             message=&quot;Choose one outline file&quot;,
+                             multiple=False,
+                             title=&quot;Outline Selector&quot;,
+                             filetypes=valid_types)
+    if not file_path:
+        sys.exit(&quot;User cancelled&quot;)
+    clear()
+    print(file_path, end='\n')
+    with open(file_path, mode='rt', encoding='utf-8', errors=&quot;surrogateescape&quot;) as fil:
+        c = fil.read()
+        c_prms = c.split('\n')
+        c = c_prms[0]
+        cs = literal_eval(c)
+        del c
+        del c_prms
+        for c in cs:
+            vals,outline,opts,dict_text = c
+            text = dict_text['text']                    
+            print(f&quot;&#123;RED&#125;&#123;outline&#125; &#123;BLUE&#125;&#123;text&#125;&quot;)
+        del text
+        del cs
+    
+
+if __name__ == '__main__':
+    sys.exit(main())
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-01T12:06:05.314Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46842" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="4" data-timestamp="1633089948682" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T12:05:48.682Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/5"><span class="timeago" title="2021-10-01T12:05:48.682Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> sorry, error due to late change, del text instead of del t</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46843" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="5" data-timestamp="1633094216691" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T13:16:56.691Z">
+				<meta itemprop="dateModified" content="2021-10-01T13:37:50.499Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/6"><span class="timeago" title="2021-10-01T13:16:56.691Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> Instead of printing the outline file in the console, I could create a local html file with the outline content and open a new tab in Safari showing this html, but it is a little bit more complex. And surely if we want to include the images in the html...</p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-01T13:37:50.499Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46844" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="6" data-timestamp="1633101692096" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="6"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:21:32.096Z">
+				<meta itemprop="dateModified" content="2021-10-01T15:21:49.806Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ccc.html">
+			<img src="../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/7"><span class="timeago" title="2021-10-01T15:21:32.096Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a href="https://brew.sh" rel="nofollow">https://brew.sh</a> is the essential tool for macOS.</p>
+<p><code>brew install python</code></p>
+
+	
+</div>
+
+
+<small data-editor="ccc" component="post/editor" class="hidden">last edited by <strong>ccc</strong> <span class="timeago" title="2021-10-01T15:21:49.806Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46845" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="7" data-timestamp="1633101992877" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="7"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:26:32.877Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/8"><span class="timeago" title="2021-10-01T15:26:32.877Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ccc.html">@ccc</a> Far from me to critic any Mac software , but, sincerely, I stopped to use my Mac some years ago and I have programmed all what I needed on my iPad in Pythonista, Shortcuts, Scriptable, IFTTT.<br />
+It is only when <a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> asked this last feature that I powered my Mac on. I don't want to spend more time to learn something new, but thanks for the info, as usual.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46846" data-uid="878" data-username="ihf" data-userslug="ihf" data-index="8" data-timestamp="1633102107534" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="8"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:28:27.534Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ihf.html">
+			<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ihf.html" itemprop="author" data-username="ihf" data-uid="878">ihf</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/9"><span class="timeago" title="2021-10-01T15:28:27.534Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/cvp.html">@cvp</a> I tried the viewer script. It worked fine on the first outline I tried but the second gave:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;/Users/ihf/Desktop/outline_viewer.py&quot;, line 48, in &lt;module&gt;
+    sys.exit(main())
+  File &quot;/Users/ihf/Desktop/outline_viewer.py&quot;, line 42, in main
+    print(f&quot;&#123;RED&#125;&#123;outline&#125; &#123;BLUE&#125;&#123;text&#125;&quot;)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2019' in position 27: ordinal not in range(128)
+
+</code></pre>
+<p>It would be helpful if a path to the Outline could optionally be passed to the script rather than requiring the selection each time.</p>
+<p>As far as rendering in html, that would be useful if there are images and more elegant than using the console but at least I can see the outlines on the Mac.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46847" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="9" data-timestamp="1633103393658" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="9"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:49:53.658Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/10"><span class="timeago" title="2021-10-01T15:49:53.658Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> Since IOS 15, I have a lot of problems with a lot of apps, including Pythonista and Pyto, obliging me to restart my iPad. They stay hanging even if restart from Safari or in safe mode for Pythonista.<br />
+I program the script on my iPad, in Pythonista with the script open as external on the Mac  via the Files app. And if Pythonista hangs, I can't do anything.<br />
+I guess this encode problem comes from a special character in the file, not accepted by the print.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46848" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="10" data-timestamp="1633103437025" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="10"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:50:37.025Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/11"><span class="timeago" title="2021-10-01T15:50:37.025Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> How do you call the script with argument?</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46849" data-uid="878" data-username="ihf" data-userslug="ihf" data-index="11" data-timestamp="1633103638539" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="11"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T15:53:58.539Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ihf.html">
+			<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ihf.html" itemprop="author" data-username="ihf" data-uid="878">ihf</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/12"><span class="timeago" title="2021-10-01T15:53:58.539Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/cvp.html">@cvp</a> outline_viewer path_to_file</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46850" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="12" data-timestamp="1633104409179" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="12"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T16:06:49.179Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/13"><span class="timeago" title="2021-10-01T16:06:49.179Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> thus in terminal? I used in double clicking it in Finder</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46851" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="13" data-timestamp="1633108520737" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="13"></a>
+
+				<meta itemprop="datePublished" content="2021-10-01T17:15:20.737Z">
+				<meta itemprop="dateModified" content="2021-10-02T11:30:36.446Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/14"><span class="timeago" title="2021-10-01T17:15:20.737Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> see <a href="https://github.com/cvpe/Pythonista-scripts/blob/7a0ea85d3f0b7c0def0eb4472aac2ac099730bc3/Gists/mac_outline_viewer.py" rel="nofollow">V00.01 of mac_outline_viewer</a></p>
+<p>You can pass as argument the entire path of the outline file, relative versus folder of script it-self.</p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-02T11:30:36.446Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46852" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="14" data-timestamp="1633175074033" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="14"></a>
+
+				<meta itemprop="datePublished" content="2021-10-02T11:44:34.033Z">
+				<meta itemprop="dateModified" content="2021-10-02T12:10:21.216Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/15"><span class="timeago" title="2021-10-02T11:44:34.033Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> see <a href="https://github.com/cvpe/Pythonista-scripts/blob/7a0ea85d3f0b7c0def0eb4472aac2ac099730bc3/Gists/mac_outline_viewer.py" rel="nofollow">V00.02 of mac_outline_viewer</a> with</p>
+<pre><code>  V0.02
+    - runs on Mac and in Pythonista on iPad/iPhone
+    - generates a web page (without images, font attributes, links...)
+    - opens a new tab in Safari to display the html
+</code></pre>
+<p>As I don't know a lot about html/css, I don't see how I could make this script better so the html would support images (at left/right/...), font attributes, links and so on...</p>
+<p>I wonder if the ideal would not be that the outline program generates a .pdf each time an .outline file is &quot;finished&quot;, either when the program is closed, or when the option &quot;new&quot; creates a new one,</p>
+<p>the mac_outline_viewer program would then allow you to choose a .pdf to display.</p>
+<p><img src="https://i.imgur.com/n9Qr9pY.jpg" alt="" class="img-responsive img-markdown" /></p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-02T12:10:21.216Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46861" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="15" data-timestamp="1633268420997" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="15"></a>
+
+				<meta itemprop="datePublished" content="2021-10-03T13:40:20.997Z">
+				<meta itemprop="dateModified" content="2021-10-03T15:46:10.201Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/16"><span class="timeago" title="2021-10-03T13:40:20.997Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> Are you interested by viewing your outlines (text) on your Apple Watch (if you have one as I think )?<br />
+If yes, I've found a way (after hours of tests), not yet programmed but feasible.<br />
+The <a href="http://outline.py" rel="nofollow">outline.py</a> program could, at each save, create/update the notes field (if accessible as I hope, but not sure, see <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_contacts_notes" rel="nofollow">here</a>) of a contact named as<br />
+first name = outline<br />
+last name = file name (without the yyyymmdd_hhmmss part)<br />
+You would need to run a shortcut on your Apple Watch, shortcut as:</p>
+<ul>
+<li>show a list of contacts with first name = outline</li>
+<li>you select one in the list</li>
+<li>get notes</li>
+<li>quick look of notes</li>
+</ul>
+<p>It seems that from IOS 13, notes field of contact is no more available to apps.<br />
+Thus, my solution would not work.<br />
+I'll try to use notes fields of calendar events, for instance in a specific calendar...<br />
+<strong>Tried (not in <a href="http://outline.py" rel="nofollow">outline.py</a>) and ok</strong><br />
+Concept is to store it in an area readable by Apple Watch shortcut and shared on all Idevices</p>
+<p><img src="https://i.imgur.com/wlln8Rn.jpg" alt="" class="img-responsive img-markdown" /></p>
+<p><img src="https://i.imgur.com/og42Nem.jpg" alt="" class="img-responsive img-markdown" /></p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-03T15:46:10.201Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46863" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="16" data-timestamp="1633280320968" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="16"></a>
+
+				<meta itemprop="datePublished" content="2021-10-03T16:58:40.968Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/17"><span class="timeago" title="2021-10-03T16:58:40.968Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> please give me news about the Mac script and the Apple Watch proposal</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46878" data-uid="878" data-username="ihf" data-userslug="ihf" data-index="17" data-timestamp="1633439695450" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="17"></a>
+
+				<meta itemprop="datePublished" content="2021-10-05T13:14:55.450Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ihf.html">
+			<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ihf.html" itemprop="author" data-username="ihf" data-uid="878">ihf</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/18"><span class="timeago" title="2021-10-05T13:14:55.450Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/cvp.html">@cvp</a> Sorry for the delay in replying. I am away from home this week and had some network issues yesterday. I will try to test the Mac script later today. As to the watch, that would be a great addition. I think I would use DataJar for this purpose. I have to look at how Pythonista could add values though.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46879" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="18" data-timestamp="1633441785593" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="18"></a>
+
+				<meta itemprop="datePublished" content="2021-10-05T13:49:45.593Z">
+				<meta itemprop="dateModified" content="2021-10-05T14:02:09.401Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/19"><span class="timeago" title="2021-10-05T13:49:45.593Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> oups, sorry to have insisted, no urgence at all.<br />
+don't know datajar, if you find a way that Pythonista could use it to update such a file, tell me.</p>
+
+	
+</div>
+
+
+<small data-editor="cvp" component="post/editor" class="hidden">last edited by <strong>cvp</strong> <span class="timeago" title="2021-10-05T14:02:09.401Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46880" data-uid="2281" data-username="cvp" data-userslug="cvp" data-index="19" data-timestamp="1633451057173" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="19"></a>
+
+				<meta itemprop="datePublished" content="2021-10-05T16:24:17.173Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/cvp.html">
+			<img src="../../uploads/profile/2281-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/cvp.html" itemprop="author" data-username="cvp" data-uid="2281">cvp</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/20"><span class="timeago" title="2021-10-05T16:24:17.173Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/ihf.html">@ihf</a> the only way I actually see to update the Data Jar database is via a shortcut, not via a Python script. Thus, I don't see how it could help you to store the ouTline data.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="46881" data-uid="878" data-username="ihf" data-userslug="ihf" data-index="20" data-timestamp="1633453477022" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="20"></a>
+
+				<meta itemprop="datePublished" content="2021-10-05T17:04:37.022Z">
+				<meta itemprop="dateModified" content="2021-10-05T17:17:13.504Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../user/ihf.html">
+			<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../user/ihf.html" itemprop="author" data-username="ihf" data-uid="878">ihf</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/21"><span class="timeago" title="2021-10-05T17:04:37.022Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="outliner-with-drag-drop-reordering-part-2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="outliner-with-drag-drop-reordering-part-2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="outliner-with-drag-drop-reordering-part-2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../user/cvp.html">@cvp</a> Yes but you can do this:</p>
+<pre><code>import shortcuts
+shortcuts.open_shortcuts_app(name=&quot;dj&quot;,shortcut_input=&quot;Hello World&quot; 
+</code></pre>
+<p>The Shortcut looks like this: <a href="https://www.icloud.com/shortcuts/a944a4779c0c4c71861a402cb6b6a138" rel="nofollow">https://www.icloud.com/shortcuts/a944a4779c0c4c71861a402cb6b6a138</a></p>
+<p>Then it is easy to get to Datajar values from a shortcut that is run on the watch.</p>
+
+	
+</div>
+
+
+<small data-editor="ihf" component="post/editor" class="hidden">last edited by <strong>ihf</strong> <span class="timeago" title="2021-10-05T17:17:13.504Z"></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="579">579</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="60125">60125</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=1" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+						<li class="page active" >
+				<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=1" data-page="1">1</a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=2" data-page="2">2</a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=3" data-page="3">3</a>
+			</li>
+							<li class="page select-page">
+				<a href="outliner-with-drag-drop-reordering-part-2.html#"><i class="fa fa-ellipsis-h"></i></a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=28" data-page="28">28</a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=29" data-page="29">29</a>
+			</li>
+
+		<li class="next pull-right">
+			<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2?page=2" data-page="2"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="7248" />
+<input type="hidden" template-variable="topic_slug" value="7248/outliner-with-drag-drop-reordering-part-2" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="29" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Outliner with drag&#x2F;drop reordering - part 2" />
+<input type="hidden" template-variable="postcount" value="579" />
+<input type="hidden" template-variable="viewcount" value="60125" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%227248%22%2C%22uid%22%3A%222281%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2246837%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22timestamp%22%3A%221633035074861%22%2C%22lastposttime%22%3A%221651905728687%22%2C%22postcount%22%3A%22579%22%2C%22viewcount%22%3A%2260125%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248446%22%2C%22relativeTime%22%3A%222021-09-30T20%3A51%3A14.861Z%22%2C%22lastposttimeISO%22%3A%222022-05-07T06%3A42%3A08.687Z%22%2C%22posts%22%3A%5B%7B%22pid%22%3A%2246837%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20thanks%20for%20the%20advice%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221633035074954%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%221%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222021-09-30T20%3A51%3A14.954Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633035271871%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20said%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EThis%20a%20(low%20priority)%20idea%20for%20the%20wish%20list%3A%20I%20sometimes%20want%20to%20read%20my%20outlines%20on%20the%20Mac.%20What%20I%20do%20now%20is%20save%20them%20in%20pdf%20or%20some%20other%20format%20that%20the%20Mac%20understands.%20This%20works%20fine%20but%20I%20have%20to%20remember%20to%20do%20it%20after%20any%20change%20so%20that%20the%20outline%20will%20be%20up-to-date.%20A%20reader%20script%20in%20python%20would%20permit%20me%20to%20view%20an%20outline%20on%20the%20Mac%20or%20on%20anything%20that%20runs%20python%20and%20has%20access%20to%20the%20iCloud%20files.%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EWritten%20in%20my%20todo%20list%2C%20but%20when%20you%20say%20%26quot%3Bview%20an%20outline%26quot%3B%2C%20that%20will%20say%20use%20an%20UI...or%20print%20it%20in%20the%20console%20of%20this%20Python%20interpreter.%3C%2Fp%3E%5Cn%3Cp%3EI%20have%20never%20used%20Python%20on%20a%20Mac%2C%20which%20free%20app%20do%20I%20need%3F%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%221633035581477%22%2C%22votes%22%3A%222%22%2C%22pid%22%3A%2246838%22%2C%22deleted%22%3Afalse%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-09-30T20%3A54%3A31.871Z%22%2C%22relativeEditTime%22%3A%222021-09-30T20%3A59%3A41.477Z%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633046307902%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20Using%20a%20UI%20would%20be%20very%20nice%20but%20I%20would%20settle%20for%20the%20console.%20Python%20comes%20on%20the%20Mac%20but%20since%20it%20is%20OSX%20(and%20not%20iOS)%20you%20can%20pretty%20much%20install%20any%20Python%20distribution%20you%20like.%20I%20use%20Anaconda.%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%220%22%2C%22votes%22%3A%221%22%2C%22pid%22%3A%2246840%22%2C%22deleted%22%3Afalse%2C%22editor%22%3Anull%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22878%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-09-30T23%3A58%3A27.902Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%221050%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633085320851%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Ok%2C%20I've%20installed%20Python%20on%20my%20(very%20old%20and%20unused%20Mac)%20via%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdocs.python.org%2F3%2Fusing%2Fmac.html%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fdocs.python.org%2F3%2Fusing%2Fmac.html%3C%2Fa%3E.%3C%2Fp%3E%5Cn%3Cp%3EThen%20I%20wrote%20a%20very%20quick%20and%20dirty%20(as%20usual)%20script%20to%3C%2Fp%3E%5Cn%3Cul%3E%5Cn%3Cli%3Edefine%20a%20path%20where%20to%20start%20the%20files%20dialog%20(see%20and%20set%20your%20default_path)%3C%2Fli%3E%5Cn%3Cli%3Eopen%20a%20files%20dialog%20allowing%20only%20.outline%20files%3C%2Fli%3E%5Cn%3Cli%3Eselect%20an%20outline%20file%3C%2Fli%3E%5Cn%3Cli%3Eprinting%20your%20file%20in%20console%20(outline%20in%20red%2C%20text%20in%20blue)%20without%20any%20image%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3E%3Ccode%3EPlease%2C%20try%20it%20and%20tell%20me%20how%20you%20would%20want%20to%20see%20it%20better%3C%2Fcode%3E%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%23!%2Fusr%2Fbin%2Fenv%20python3%5Cn%23%20coding%3A%20utf-8%5Cn%5Cnfrom%20__future__%20import%20print_function%2C%20absolute_import%5Cnfrom%20%20%20ast%20%20%20%20%20%20import%20literal_eval%5Cnimport%20os%5Cnimport%20sys%5Cnfrom%20%20%20tkinter%20%20import%20*%5Cnfrom%20%20%20tkinter.filedialog%20import%20askopenfilename%5Cnroot%20%3D%20Tk()%5Cnroot.withdraw()%5Cn%5Cndefault_path%20%3D%20os.path.expanduser('~%2FDesktop%2FUsers%2FChristian%2FPythonista%2FBackup%2FOutline')%5Cnvalid_types%20%3D%20%5B(%26quot%3BOutline%20files%26quot%3B%2C%20%26quot%3B*.outline%26quot%3B)%5D%5Cn%5CnRED%20%3D%20'%5C%5C033%5B91m'%5CnBLUE%20%3D%20'%5C%5C033%5B94m'%5Cn%5Cndef%20clear()%3A%5Cn%20%20%20%20os.system('clear')%5Cn%5Cndef%20main()%3A%5Cn%20%20%20%20file_path%20%3D%20askopenfilename(initialdir%3Ddefault_path%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20message%3D%26quot%3BChoose%20one%20outline%20file%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20multiple%3DFalse%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%26quot%3BOutline%20Selector%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20filetypes%3Dvalid_types)%5Cn%20%20%20%20if%20not%20file_path%3A%5Cn%20%20%20%20%20%20%20%20sys.exit(%26quot%3BUser%20cancelled%26quot%3B)%5Cn%20%20%20%20clear()%5Cn%20%20%20%20print(file_path%2C%20end%3D'%5C%5Cn')%5Cn%20%20%20%20with%20open(file_path%2C%20mode%3D'rt'%2C%20encoding%3D'utf-8'%2C%20errors%3D%26quot%3Bsurrogateescape%26quot%3B)%20as%20fil%3A%5Cn%20%20%20%20%20%20%20%20c%20%3D%20fil.read()%5Cn%20%20%20%20%20%20%20%20c_prms%20%3D%20c.split('%5C%5Cn')%5Cn%20%20%20%20%20%20%20%20c%20%3D%20c_prms%5B0%5D%5Cn%20%20%20%20%20%20%20%20cs%20%3D%20literal_eval(c)%5Cn%20%20%20%20%20%20%20%20del%20c%5Cn%20%20%20%20%20%20%20%20del%20c_prms%5Cn%20%20%20%20%20%20%20%20for%20c%20in%20cs%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20vals%2Coutline%2Copts%2Cdict_text%20%3D%20c%5Cn%20%20%20%20%20%20%20%20%20%20%20%20text%20%3D%20dict_text%5B'text'%5D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20print(f%26quot%3B%7BRED%7D%7Boutline%7D%20%7BBLUE%7D%7Btext%7D%26quot%3B)%5Cn%20%20%20%20%20%20%20%20del%20text%5Cn%20%20%20%20%20%20%20%20del%20cs%5Cn%20%20%20%20%5Cn%5Cnif%20__name__%20%3D%3D%20'__main__'%3A%5Cn%20%20%20%20sys.exit(main())%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22votes%22%3A%221%22%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2246841%22%2C%22edited%22%3A%221633089965314%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246840%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T10%3A48%3A40.851Z%22%2C%22relativeEditTime%22%3A%222021-10-01T12%3A06%3A05.314Z%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2246842%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20sorry%2C%20error%20due%20to%20late%20change%2C%20del%20text%20instead%20of%20del%20t%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221633089948682%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%221%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22toPid%22%3A%2246840%22%2C%22relativeTime%22%3A%222021-10-01T12%3A05%3A48.682Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633094216691%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Instead%20of%20printing%20the%20outline%20file%20in%20the%20console%2C%20I%20could%20create%20a%20local%20html%20file%20with%20the%20outline%20content%20and%20open%20a%20new%20tab%20in%20Safari%20showing%20this%20html%2C%20but%20it%20is%20a%20little%20bit%20more%20complex.%20And%20surely%20if%20we%20want%20to%20include%20the%20images%20in%20the%20html...%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246843%22%2C%22edited%22%3A%221633095470499%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246841%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T13%3A16%3A56.691Z%22%2C%22relativeEditTime%22%3A%222021-10-01T13%3A37%3A50.499Z%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633101692096%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fbrew.sh%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fbrew.sh%3C%2Fa%3E%20is%20the%20essential%20tool%20for%20macOS.%3C%2Fp%3E%5Cn%3Cp%3E%3Ccode%3Ebrew%20install%20python%3C%2Fcode%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%7D%2C%22votes%22%3A%221%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221633101709806%22%2C%22pid%22%3A%2246844%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221634%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T15%3A21%3A32.096Z%22%2C%22relativeEditTime%22%3A%222021-10-01T15%3A21%3A49.806Z%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633101992877%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20Far%20from%20me%20to%20critic%20any%20Mac%20software%20%2C%20but%2C%20sincerely%2C%20I%20stopped%20to%20use%20my%20Mac%20some%20years%20ago%20and%20I%20have%20programmed%20all%20what%20I%20needed%20on%20my%20iPad%20in%20Pythonista%2C%20Shortcuts%2C%20Scriptable%2C%20IFTTT.%3Cbr%20%2F%3E%5CnIt%20is%20only%20when%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20asked%20this%20last%20feature%20that%20I%20powered%20my%20Mac%20on.%20I%20don't%20want%20to%20spend%20more%20time%20to%20learn%20something%20new%2C%20but%20thanks%20for%20the%20info%2C%20as%20usual.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246845%22%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246844%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T15%3A26%3A32.877Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633102107534%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20I%20tried%20the%20viewer%20script.%20It%20worked%20fine%20on%20the%20first%20outline%20I%20tried%20but%20the%20second%20gave%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3ETraceback%20(most%20recent%20call%20last)%3A%5Cn%20%20File%20%26quot%3B%2FUsers%2Fihf%2FDesktop%2Foutline_viewer.py%26quot%3B%2C%20line%2048%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20sys.exit(main())%5Cn%20%20File%20%26quot%3B%2FUsers%2Fihf%2FDesktop%2Foutline_viewer.py%26quot%3B%2C%20line%2042%2C%20in%20main%5Cn%20%20%20%20print(f%26quot%3B%7BRED%7D%7Boutline%7D%20%7BBLUE%7D%7Btext%7D%26quot%3B)%5CnUnicodeEncodeError%3A%20'ascii'%20codec%20can't%20encode%20character%20'%5C%5Cu2019'%20in%20position%2027%3A%20ordinal%20not%20in%20range(128)%5Cn%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EIt%20would%20be%20helpful%20if%20a%20path%20to%20the%20Outline%20could%20optionally%20be%20passed%20to%20the%20script%20rather%20than%20requiring%20the%20selection%20each%20time.%3C%2Fp%3E%5Cn%3Cp%3EAs%20far%20as%20rendering%20in%20html%2C%20that%20would%20be%20useful%20if%20there%20are%20images%20and%20more%20elegant%20than%20using%20the%20console%20but%20at%20least%20I%20can%20see%20the%20outlines%20on%20the%20Mac.%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246846%22%2C%22deleted%22%3Afalse%2C%22editor%22%3Anull%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22878%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T15%3A28%3A27.534Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A8%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%221050%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633103393658%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Since%20IOS%2015%2C%20I%20have%20a%20lot%20of%20problems%20with%20a%20lot%20of%20apps%2C%20including%20Pythonista%20and%20Pyto%2C%20obliging%20me%20to%20restart%20my%20iPad.%20They%20stay%20hanging%20even%20if%20restart%20from%20Safari%20or%20in%20safe%20mode%20for%20Pythonista.%3Cbr%20%2F%3E%5CnI%20program%20the%20script%20on%20my%20iPad%2C%20in%20Pythonista%20with%20the%20script%20open%20as%20external%20on%20the%20Mac%20%20via%20the%20Files%20app.%20And%20if%20Pythonista%20hangs%2C%20I%20can't%20do%20anything.%3Cbr%20%2F%3E%5CnI%20guess%20this%20encode%20problem%20comes%20from%20a%20special%20character%20in%20the%20file%2C%20not%20accepted%20by%20the%20print.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246847%22%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246846%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T15%3A49%3A53.658Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2246848%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20How%20do%20you%20call%20the%20script%20with%20argument%3F%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221633103437025%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22toPid%22%3A%2246846%22%2C%22relativeTime%22%3A%222021-10-01T15%3A50%3A37.025Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A10%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2246849%22%2C%22uid%22%3A%22878%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20outline_viewer%20path_to_file%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221633103638539%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222021-10-01T15%3A53%3A58.539Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A11%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%221050%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2246850%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20thus%20in%20terminal%3F%20I%20used%20in%20double%20clicking%20it%20in%20Finder%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221633104409179%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22toPid%22%3A%2246849%22%2C%22relativeTime%22%3A%222021-10-01T16%3A06%3A49.179Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A12%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633108520737%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20see%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fcvpe%2FPythonista-scripts%2Fblob%2F7a0ea85d3f0b7c0def0eb4472aac2ac099730bc3%2FGists%2Fmac_outline_viewer.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3EV00.01%20of%20mac_outline_viewer%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EYou%20can%20pass%20as%20argument%20the%20entire%20path%20of%20the%20outline%20file%2C%20relative%20versus%20folder%20of%20script%20it-self.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246851%22%2C%22edited%22%3A%221633174236446%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246849%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-01T17%3A15%3A20.737Z%22%2C%22relativeEditTime%22%3A%222021-10-02T11%3A30%3A36.446Z%22%2C%22index%22%3A13%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633175074033%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20see%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fcvpe%2FPythonista-scripts%2Fblob%2F7a0ea85d3f0b7c0def0eb4472aac2ac099730bc3%2FGists%2Fmac_outline_viewer.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3EV00.02%20of%20mac_outline_viewer%3C%2Fa%3E%20with%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%20%20V0.02%5Cn%20%20%20%20-%20runs%20on%20Mac%20and%20in%20Pythonista%20on%20iPad%2FiPhone%5Cn%20%20%20%20-%20generates%20a%20web%20page%20(without%20images%2C%20font%20attributes%2C%20links...)%5Cn%20%20%20%20-%20opens%20a%20new%20tab%20in%20Safari%20to%20display%20the%20html%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EAs%20I%20don't%20know%20a%20lot%20about%20html%2Fcss%2C%20I%20don't%20see%20how%20I%20could%20make%20this%20script%20better%20so%20the%20html%20would%20support%20images%20(at%20left%2Fright%2F...)%2C%20font%20attributes%2C%20links%20and%20so%20on...%3C%2Fp%3E%5Cn%3Cp%3EI%20wonder%20if%20the%20ideal%20would%20not%20be%20that%20the%20outline%20program%20generates%20a%20.pdf%20each%20time%20an%20.outline%20file%20is%20%26quot%3Bfinished%26quot%3B%2C%20either%20when%20the%20program%20is%20closed%2C%20or%20when%20the%20option%20%26quot%3Bnew%26quot%3B%20creates%20a%20new%20one%2C%3C%2Fp%3E%5Cn%3Cp%3Ethe%20mac_outline_viewer%20program%20would%20then%20allow%20you%20to%20choose%20a%20.pdf%20to%20display.%3C%2Fp%3E%5Cn%3Cp%3E%3Cimg%20src%3D%5C%22https%3A%2F%2Fi.imgur.com%2Fn9Qr9pY.jpg%5C%22%20alt%3D%5C%22%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%221633176621216%22%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246852%22%2C%22deleted%22%3Afalse%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-02T11%3A44%3A34.033Z%22%2C%22relativeEditTime%22%3A%222021-10-02T12%3A10%3A21.216Z%22%2C%22index%22%3A14%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633268420997%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Are%20you%20interested%20by%20viewing%20your%20outlines%20(text)%20on%20your%20Apple%20Watch%20(if%20you%20have%20one%20as%20I%20think%20)%3F%3Cbr%20%2F%3E%5CnIf%20yes%2C%20I've%20found%20a%20way%20(after%20hours%20of%20tests)%2C%20not%20yet%20programmed%20but%20feasible.%3Cbr%20%2F%3E%5CnThe%20%3Ca%20href%3D%5C%22http%3A%2F%2Foutline.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eoutline.py%3C%2Fa%3E%20program%20could%2C%20at%20each%20save%2C%20create%2Fupdate%20the%20notes%20field%20(if%20accessible%20as%20I%20hope%2C%20but%20not%20sure%2C%20see%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fbundleresources%2Fentitlements%2Fcom_apple_developer_contacts_notes%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehere%3C%2Fa%3E)%20of%20a%20contact%20named%20as%3Cbr%20%2F%3E%5Cnfirst%20name%20%3D%20outline%3Cbr%20%2F%3E%5Cnlast%20name%20%3D%20file%20name%20(without%20the%20yyyymmdd_hhmmss%20part)%3Cbr%20%2F%3E%5CnYou%20would%20need%20to%20run%20a%20shortcut%20on%20your%20Apple%20Watch%2C%20shortcut%20as%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn%3Cli%3Eshow%20a%20list%20of%20contacts%20with%20first%20name%20%3D%20outline%3C%2Fli%3E%5Cn%3Cli%3Eyou%20select%20one%20in%20the%20list%3C%2Fli%3E%5Cn%3Cli%3Eget%20notes%3C%2Fli%3E%5Cn%3Cli%3Equick%20look%20of%20notes%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EIt%20seems%20that%20from%20IOS%2013%2C%20notes%20field%20of%20contact%20is%20no%20more%20available%20to%20apps.%3Cbr%20%2F%3E%5CnThus%2C%20my%20solution%20would%20not%20work.%3Cbr%20%2F%3E%5CnI'll%20try%20to%20use%20notes%20fields%20of%20calendar%20events%2C%20for%20instance%20in%20a%20specific%20calendar...%3Cbr%20%2F%3E%5Cn%3Cstrong%3ETried%20(not%20in%20%3Ca%20href%3D%5C%22http%3A%2F%2Foutline.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eoutline.py%3C%2Fa%3E)%20and%20ok%3C%2Fstrong%3E%3Cbr%20%2F%3E%5CnConcept%20is%20to%20store%20it%20in%20an%20area%20readable%20by%20Apple%20Watch%20shortcut%20and%20shared%20on%20all%20Idevices%3C%2Fp%3E%5Cn%3Cp%3E%3Cimg%20src%3D%5C%22https%3A%2F%2Fi.imgur.com%2Fwlln8Rn.jpg%5C%22%20alt%3D%5C%22%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cimg%20src%3D%5C%22https%3A%2F%2Fi.imgur.com%2Fog42Nem.jpg%5C%22%20alt%3D%5C%22%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246861%22%2C%22edited%22%3A%221633275970201%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246849%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-03T13%3A40%3A20.997Z%22%2C%22relativeEditTime%22%3A%222021-10-03T15%3A46%3A10.201Z%22%2C%22index%22%3A15%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633280320968%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20please%20give%20me%20news%20about%20the%20Mac%20script%20and%20the%20Apple%20Watch%20proposal%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246863%22%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246849%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-03T16%3A58%3A40.968Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A16%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633439695450%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20Sorry%20for%20the%20delay%20in%20replying.%20I%20am%20away%20from%20home%20this%20week%20and%20had%20some%20network%20issues%20yesterday.%20I%20will%20try%20to%20test%20the%20Mac%20script%20later%20today.%20As%20to%20the%20watch%2C%20that%20would%20be%20a%20great%20addition.%20I%20think%20I%20would%20use%20DataJar%20for%20this%20purpose.%20I%20have%20to%20look%20at%20how%20Pythonista%20could%20add%20values%20though.%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246878%22%2C%22deleted%22%3Afalse%2C%22editor%22%3Anull%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22878%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-05T13%3A14%3A55.450Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A17%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%221050%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633441785593%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20oups%2C%20sorry%20to%20have%20insisted%2C%20no%20urgence%20at%20all.%3Cbr%20%2F%3E%5Cndon't%20know%20datajar%2C%20if%20you%20find%20a%20way%20that%20Pythonista%20could%20use%20it%20to%20update%20such%20a%20file%2C%20tell%20me.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%7D%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246879%22%2C%22edited%22%3A%221633442529401%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246878%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-05T13%3A49%3A45.593Z%22%2C%22relativeEditTime%22%3A%222021-10-05T14%3A02%3A09.401Z%22%2C%22index%22%3A18%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633451057173%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20the%20only%20way%20I%20actually%20see%20to%20update%20the%20Data%20Jar%20database%20is%20via%20a%20shortcut%2C%20not%20via%20a%20Python%20script.%20Thus%2C%20I%20don't%20see%20how%20it%20could%20help%20you%20to%20store%20the%20ouTline%20data.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2246880%22%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2246878%22%2C%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-05T16%3A24%3A17.173Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A19%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22reputation%22%3A%22709%22%2C%22postcount%22%3A%225907%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221633453477022%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20Yes%20but%20you%20can%20do%20this%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eimport%20shortcuts%5Cnshortcuts.open_shortcuts_app(name%3D%26quot%3Bdj%26quot%3B%2Cshortcut_input%3D%26quot%3BHello%20World%26quot%3B%20%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EThe%20Shortcut%20looks%20like%20this%3A%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.icloud.com%2Fshortcuts%2Fa944a4779c0c4c71861a402cb6b6a138%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fwww.icloud.com%2Fshortcuts%2Fa944a4779c0c4c71861a402cb6b6a138%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EThen%20it%20is%20easy%20to%20get%20to%20Datajar%20values%20from%20a%20shortcut%20that%20is%20run%20on%20the%20watch.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221633454233504%22%2C%22pid%22%3A%2246881%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22878%22%2C%22tid%22%3A%227248%22%2C%22relativeTime%22%3A%222021-10-05T17%3A04%3A37.022Z%22%2C%22relativeEditTime%22%3A%222021-10-05T17%3A17%3A13.504Z%22%2C%22index%22%3A20%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%221050%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A29%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22url%22%3A%22%2Ftopic%2F7248%2Foutliner-with-drag-drop-reordering-part-2%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%227248%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F7248.rss%22%2C%22pagination%22%3A%7B%22rel%22%3A%5B%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22pages%22%3A%5B%7B%22page%22%3A1%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D1%22%7D%2C%7B%22page%22%3A2%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D2%22%7D%2C%7B%22page%22%3A3%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D3%22%7D%2C%7B%22separator%22%3Atrue%7D%2C%7B%22page%22%3A28%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D28%22%7D%2C%7B%22page%22%3A29%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D29%22%7D%5D%2C%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D1%22%7D%2C%22next%22%3A%7B%22page%22%3A2%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D2%22%7D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%2284skJjzb-eEXVsCGqR_sdbABBLRNdWoWJW_k%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22%40ccc%20thanks%20for%20the%20advice%20%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22%40ccc%20thanks%20for%20the%20advice%20%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7248%2Foutliner-with-drag-drop-reordering-part-2%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222021-09-30T20%3A51%3A14.861Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222022-05-07T06%3A42%3A08.687Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7248.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7248%2Foutliner-with-drag-drop-reordering-part-2%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="outliner-with-drag-drop-reordering-part-2.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

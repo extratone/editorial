@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Topics created by Cethric | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"OriGgUil-aMKQzDz036M3MZJ5deXzy2OH18A","searchEnabled":true}');
+		var app = {
+			template: "account/topics",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="topics.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="topics.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="topics.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="topics.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="cethric" data-uid="250">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="topics.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="following.html"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="followers.html"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="topics.html"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="posts.html"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="groups.html"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="../cethric.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div>
+	
+
+	<div class="category">
+<ul component="category" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="20">
+	<meta itemprop="itemListOrder" content="descending">
+	<li component="category/topic" class="row clearfix unread"data-tid="3002" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="ObjC parse_type error">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3002/objc-parse_type-error" itemprop="url">ObjC parse_type error</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-04-05T03:14:49.406Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1746">1746</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3002/objc-parse_type-error/3">
+						<small class="timeago" title="2016-04-06T21:56:51.530Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../jonb.html">@JonB</a> thank you for the reply, I will look into implimenting a fix soon.<br />
+I have been trying to extend the Header Parser that I used for OpenGLES to include most of the iOS headers.<br />
+So far it seems to work well...</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2839" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="objc_util Documentation">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2839/objc_util-documentation" itemprop="url">objc_util Documentation</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-02-28T00:17:31.088Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2095">2095</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>filippocld</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2839/objc_util-documentation/3">
+						<small class="timeago" title="2016-02-28T11:18:00.910Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>It would be very cool :-)</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2339" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="GLKit view fails">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2339/glkit-view-fails" itemprop="url">GLKit view fails</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/objc"><span class="tag">objc</span></a>
+									<a href="https://forum.omz-software.com/tags/ctypes"><span class="tag">ctypes</span></a>
+									<a href="https://forum.omz-software.com/tags/glkit"><span class="tag">glkit</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2015-11-05T06:42:10.550Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="9">9</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6062">6062</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2339/glkit-view-fails/9">
+						<small class="timeago" title="2015-11-05T09:20:07.156Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>I have updated the GitHub repo to represent the current work. I have more or less temporariely resolved the issue by calling reload(GLKit.view) in main.py how ever this is really only a temporary fix. I will look into some of the methods that omz uses to retain the globals/delegate methods.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2327" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="UIImageJPEGRepresentation">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2327/uiimagejpegrepresentation" itemprop="url">UIImageJPEGRepresentation</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-10-30T07:57:43.499Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="10">10</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="16092">16092</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2327/uiimagejpegrepresentation/10">
+						<small class="timeago" title="2015-10-31T22:11:01.246Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Ok I have got it to render the image to a file however the render image is still incorrect.<br />
+Script available <a href="https://gist.github.com/Cethric/83a4b2ccf25798d5e074" rel="nofollow">here</a></p>
+<p>EDIT:<br />
+It now renders in black and white.</p>
+<p>Any ideas?</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2296" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Dynamic Libraries. Could it potentially Work?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2296/dynamic-libraries-could-it-potentially-work" itemprop="url">Dynamic Libraries. Could it potentially Work?</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/objc"><span class="tag">objc</span></a>
+									<a href="https://forum.omz-software.com/tags/framework"><span class="tag">framework</span></a>
+									<a href="https://forum.omz-software.com/tags/bundle"><span class="tag">bundle</span></a>
+									<a href="https://forum.omz-software.com/tags/ctypes"><span class="tag">ctypes</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2015-10-11T01:02:40.548Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="15">15</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="13183">13183</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2296/dynamic-libraries-could-it-potentially-work/15">
+						<small class="timeago" title="2015-10-28T14:55:29.739Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>This could be a great potential use case for In App Purchases in the future ;)</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2294" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="objc_util ObjCBlock. __call__ method makes reference to unassigned variable (self.func)">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2294/objc_util-objcblock-__call__-method-makes-reference-to-unassigned-variable-self-func" itemprop="url">objc_util ObjCBlock. __call__ method makes reference to unassigned variable (self.func)</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-10-09T22:20:17.052Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2516">2516</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2294/objc_util-objcblock-__call__-method-makes-reference-to-unassigned-variable-self-func/3">
+						<small class="timeago" title="2015-10-09T22:37:00.229Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Welcome and ok.<br />
+Will do a bit more research into why the crash is occurring then.<br />
+Current code</p>
+class CBlock(ObjCBlock):
+    def __init__(self, func, restype=None, argtypes=None):
+        super(CBlock, self).__init__(func, restype=None, argtypes=None)
+        self.func = func
+
+type_encodings['@?'] = CBlock
+
+default_opt = &#123;
+    'GLKTextureLoaderApplyPremultiplication': 0,
+    'GLKTextureLoaderGenerateMipmaps': 0,
+    'GLKTextureLoaderOriginBottomLeft': 0,
+    'GLKTextureLoaderGrayscaleAsAlpha': 0,
+    'GLKTextureLoaderSRGB': 0
+&#125;
+
+DEFAULTS = ns(default_opt)
+
+
+class GLKTextureLoader:
+    def __init__(self, sharegroup=None):
+        if sharegroup is None:
+            sharegroup = currentContext().sharegroup
+            print sharegroup
+        tl = ObjCClass('GLKTextureLoader')
+        self._loader = tl.alloc().initWithSharegroup_(sharegroup._sharegroup)
+        
+    def textureFromFile(self, path):
+        callback = CBlock(GLKTextureLoaderCallback, restype=None, argtypes=[ctypes.c_void_p, ctypes.c_void_p])
+        print dir(self._loader)
+        print DEFAULTS
+        # self._loader.textureWithContentsOfFile_options_queue_completionHandler_(path, DEFAULTS, None, callback)
+
+<p>Note currentContext() is just a wrapper for EAGLContext.currentContext() where EAGLContext has not been allocated or initialised.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2292" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="How to use structures? setting GLKEffectPropertyLight.position, fails">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2292/how-to-use-structures-setting-glkeffectpropertylight-position-fails" itemprop="url">How to use structures? setting GLKEffectPropertyLight.position, fails</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-10-08T07:06:21.389Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="18">18</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="8913">8913</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2292/how-to-use-structures-setting-glkeffectpropertylight-position-fails/18">
+						<small class="timeago" title="2015-10-11T02:17:14.479Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../omz.html">@omz</a> that seemed to fix it. Thanks</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2279" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="TypeError for unbound method">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2279/typeerror-for-unbound-method" itemprop="url">TypeError for unbound method</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-09-30T00:46:20.357Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11">11</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5860">5860</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2279/typeerror-for-unbound-method/11">
+						<small class="timeago" title="2015-10-01T11:00:49.703Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/ywangd">@ywangd</a> that has resolved the issue, thank you for the infomation about it</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2275" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Optimisation of GLES update times">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2275/optimisation-of-gles-update-times" itemprop="url">Optimisation of GLES update times</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-09-26T01:09:52.614Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="23">23</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="13589">13589</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>wradcliffe</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2275/optimisation-of-gles-update-times/23">
+						<small class="timeago" title="2015-09-29T21:03:11.747Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../jonb.html">@JonB</a> and <a class="plugin-mentions-a" href="../cethric.html">@Cethric</a> - this seems to imply that the JS runtime system is highly optimized for JSON encoding and decoding. That would not be a big surprise. The new method for transferring the data seems to also confirm that moving all the data in a single blob and with a single call back into python is the best strategy. I was thinking that the send_to_python call could also be running faster if the JSON method is handled via a http POST like mechanism rather then a http PUT. It certainly is interesting.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2262" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="SystemError: bad argument to internal function">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2262/systemerror-bad-argument-to-internal-function" itemprop="url">SystemError: bad argument to internal function</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/pythonista"><span class="tag">pythonista</span></a>
+									<a href="https://forum.omz-software.com/tags/1.6"><span class="tag">1.6</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2015-09-21T23:21:15.035Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5">5</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4881">4881</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2262/systemerror-bad-argument-to-internal-function/5">
+						<small class="timeago" title="2015-09-22T11:07:36.951Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Awesome.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2159" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="JavaScriptCore adding custom functions">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2159/javascriptcore-adding-custom-functions" itemprop="url">JavaScriptCore adding custom functions</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-08-25T06:18:04.587Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="42">42</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="23277">23277</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2159/javascriptcore-adding-custom-functions/42">
+						<small class="timeago" title="2015-09-19T03:32:34.815Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Nevermind, it is fixed now, I don't really know what I did but it is working now.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2098" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="What am I doing wrong?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2098/what-am-i-doing-wrong" itemprop="url">What am I doing wrong?</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-08-15T06:14:46.613Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1933">1933</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2098/what-am-i-doing-wrong/3">
+						<small class="timeago" title="2015-08-15T22:50:57.297Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>That fixed the issue, thanks you <a class="plugin-mentions-a" href="../jonb.html">@JonB</a></p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2066" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Python OpenGLES">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2066/python-opengles" itemprop="url">Python OpenGLES</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-08-10T10:08:43.227Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="20">20</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11279">11279</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Cethric</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2066/python-opengles/20">
+						<small class="timeago" title="2015-08-20T07:32:00.651Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Working on an example file <a href="https://github.com/Cethric/OpenGLES-Pythonista/blob/master/main.py" rel="nofollow">main.py</a> to test shaders and rendering. However I cannot get the view to show a cube I think the issue is with the MVP however I do not know at what point I am going wrong, can someone please look at it and let me know<br />
+For simplicity I am using the <a href="https://pypi.python.org/pypi/euclid/0.01" rel="nofollow">euclid.py</a> math library.</p>
+<p>Thanks in advanced.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1953" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Proof of concept HTML Editor">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../cethric.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Cethric"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1953/proof-of-concept-html-editor" itemprop="url">Proof of concept HTML Editor</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-07-25T05:34:52.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="27">27</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="18014">18014</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1953/proof-of-concept-html-editor/27">
+						<small class="timeago" title="2015-07-25T05:34:52.000Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>the other approach, which may be faster, would be to build a list structure of all themesble objects, one time.  then, you dont need to recurse through views, which might be slow due to repeated subviews calls, and the recursive nature, which involves many slow function calls.  so, build a list one time (or, if you have a lot of dynamic components, youll have to keep track of them as they are added /deleted)</p>
+<p>this would let you use list comprehension or maps to set the attributes, looping one time over the list which you have already prefiltered (eliminating all those other checks for name, etc).  since list comprension /maps are optimized in c, it might yield better performance.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+		
+	</div>
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="250" /><input type="hidden" ajaxify-data="%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%22250%22%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22tid%22%3A%223002%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217982%22%2C%22title%22%3A%22ObjC%20parse_type%20error%22%2C%22slug%22%3A%223002%2Fobjc-parse_type-error%22%2C%22timestamp%22%3A%221459826089406%22%2C%22lastposttime%22%3A%221459979811530%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%221746%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2218034%22%2C%22relativeTime%22%3A%222016-04-05T03%3A14%3A49.406Z%22%2C%22lastposttimeISO%22%3A%222016-04-06T21%3A56%3A51.530Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2218034%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222016-04-06T21%3A56%3A51.530Z%22%2C%22tid%22%3A%223002%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20thank%20you%20for%20the%20reply%2C%20I%20will%20look%20into%20implimenting%20a%20fix%20soon.%3Cbr%20%2F%3E%5CnI%20have%20been%20trying%20to%20extend%20the%20Header%20Parser%20that%20I%20used%20for%20OpenGLES%20to%20include%20most%20of%20the%20iOS%20headers.%3Cbr%20%2F%3E%5CnSo%20far%20it%20seems%20to%20work%20well...%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222839%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2216712%22%2C%22title%22%3A%22objc_util%20Documentation%22%2C%22slug%22%3A%222839%2Fobjc_util-documentation%22%2C%22timestamp%22%3A%221456618651088%22%2C%22lastposttime%22%3A%221456658280910%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%222095%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2216749%22%2C%22relativeTime%22%3A%222016-02-28T00%3A17%3A31.088Z%22%2C%22lastposttimeISO%22%3A%222016-02-28T11%3A18%3A00.910Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2216749%22%2C%22uid%22%3A%221441%22%2C%22timestamp%22%3A%222016-02-28T11%3A18%3A00.910Z%22%2C%22tid%22%3A%222839%22%2C%22content%22%3A%22%3Cp%3EIt%20would%20be%20very%20cool%20%3A-)%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221441%22%2C%22username%22%3A%22filippocld%22%2C%22userslug%22%3A%22filippocld%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe3edfa7954e9783a657f498d962454c9%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222339%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2213085%22%2C%22title%22%3A%22GLKit%20view%20fails%22%2C%22slug%22%3A%222339%2Fglkit-view-fails%22%2C%22timestamp%22%3A%221446705730550%22%2C%22lastposttime%22%3A%221446715207156%22%2C%22postcount%22%3A%229%22%2C%22viewcount%22%3A%226062%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2213093%22%2C%22relativeTime%22%3A%222015-11-05T06%3A42%3A10.550Z%22%2C%22lastposttimeISO%22%3A%222015-11-05T09%3A20%3A07.156Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2213093%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-11-05T09%3A20%3A07.156Z%22%2C%22tid%22%3A%222339%22%2C%22content%22%3A%22%3Cp%3EI%20have%20updated%20the%20GitHub%20repo%20to%20represent%20the%20current%20work.%20I%20have%20more%20or%20less%20temporariely%20resolved%20the%20issue%20by%20calling%20reload(GLKit.view)%20in%20main.py%20how%20ever%20this%20is%20really%20only%20a%20temporary%20fix.%20I%20will%20look%20into%20some%20of%20the%20methods%20that%20omz%20uses%20to%20retain%20the%20globals%2Fdelegate%20methods.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A9%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22objc%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2247%22%7D%2C%7B%22value%22%3A%22ctypes%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2213%22%7D%2C%7B%22value%22%3A%22glkit%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%222%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222327%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212984%22%2C%22title%22%3A%22UIImageJPEGRepresentation%22%2C%22slug%22%3A%222327%2Fuiimagejpegrepresentation%22%2C%22timestamp%22%3A%221446191863499%22%2C%22lastposttime%22%3A%221446329461246%22%2C%22postcount%22%3A%2210%22%2C%22viewcount%22%3A%2216092%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2213008%22%2C%22relativeTime%22%3A%222015-10-30T07%3A57%3A43.499Z%22%2C%22lastposttimeISO%22%3A%222015-10-31T22%3A11%3A01.246Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2213008%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-10-31T22%3A11%3A01.246Z%22%2C%22tid%22%3A%222327%22%2C%22content%22%3A%22%3Cp%3EOk%20I%20have%20got%20it%20to%20render%20the%20image%20to%20a%20file%20however%20the%20render%20image%20is%20still%20incorrect.%3Cbr%20%2F%3E%5CnScript%20available%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgist.github.com%2FCethric%2F83a4b2ccf25798d5e074%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehere%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EEDIT%3A%3Cbr%20%2F%3E%5CnIt%20now%20renders%20in%20black%20and%20white.%3C%2Fp%3E%5Cn%3Cp%3EAny%20ideas%3F%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A10%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222296%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212798%22%2C%22title%22%3A%22Dynamic%20Libraries.%20Could%20it%20potentially%20Work%3F%22%2C%22slug%22%3A%222296%2Fdynamic-libraries-could-it-potentially-work%22%2C%22timestamp%22%3A%221444525360548%22%2C%22lastposttime%22%3A%221446044129739%22%2C%22postcount%22%3A%2215%22%2C%22viewcount%22%3A%2213183%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212975%22%2C%22relativeTime%22%3A%222015-10-11T01%3A02%3A40.548Z%22%2C%22lastposttimeISO%22%3A%222015-10-28T14%3A55%3A29.739Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212975%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222015-10-28T14%3A55%3A29.739Z%22%2C%22tid%22%3A%222296%22%2C%22content%22%3A%22%3Cp%3EThis%20could%20be%20a%20great%20potential%20use%20case%20for%20In%20App%20Purchases%20in%20the%20future%20%3B)%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A15%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22objc%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2247%22%7D%2C%7B%22value%22%3A%22framework%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%224%22%7D%2C%7B%22value%22%3A%22bundle%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22ctypes%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2213%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221444429217052%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%222516%22%2C%22lastposttime%22%3A%221444430220229%22%2C%22postcount%22%3A%223%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22teaserPid%22%3A%2212783%22%2C%22slug%22%3A%222294%2Fobjc_util-objcblock-__call__-method-makes-reference-to-unassigned-variable-self-func%22%2C%22title%22%3A%22objc_util%20ObjCBlock.%20__call__%20method%20makes%20reference%20to%20unassigned%20variable%20(self.func)%22%2C%22cid%22%3A%225%22%2C%22uid%22%3A%22250%22%2C%22mainPid%22%3A%2212781%22%2C%22tid%22%3A%222294%22%2C%22relativeTime%22%3A%222015-10-09T22%3A20%3A17.052Z%22%2C%22lastposttimeISO%22%3A%222015-10-09T22%3A37%3A00.229Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212783%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-10-09T22%3A37%3A00.229Z%22%2C%22tid%22%3A%222294%22%2C%22content%22%3A%22%3Cp%3EWelcome%20and%20ok.%3Cbr%20%2F%3E%5CnWill%20do%20a%20bit%20more%20research%20into%20why%20the%20crash%20is%20occurring%20then.%3Cbr%20%2F%3E%5CnCurrent%20code%3C%2Fp%3E%5Cnclass%20CBlock(ObjCBlock)%3A%5Cn%20%20%20%20def%20__init__(self%2C%20func%2C%20restype%3DNone%2C%20argtypes%3DNone)%3A%5Cn%20%20%20%20%20%20%20%20super(CBlock%2C%20self).__init__(func%2C%20restype%3DNone%2C%20argtypes%3DNone)%5Cn%20%20%20%20%20%20%20%20self.func%20%3D%20func%5Cn%5Cntype_encodings%5B'%40%3F'%5D%20%3D%20CBlock%5Cn%5Cndefault_opt%20%3D%20%7B%5Cn%20%20%20%20'GLKTextureLoaderApplyPremultiplication'%3A%200%2C%5Cn%20%20%20%20'GLKTextureLoaderGenerateMipmaps'%3A%200%2C%5Cn%20%20%20%20'GLKTextureLoaderOriginBottomLeft'%3A%200%2C%5Cn%20%20%20%20'GLKTextureLoaderGrayscaleAsAlpha'%3A%200%2C%5Cn%20%20%20%20'GLKTextureLoaderSRGB'%3A%200%5Cn%7D%5Cn%5CnDEFAULTS%20%3D%20ns(default_opt)%5Cn%5Cn%5Cnclass%20GLKTextureLoader%3A%5Cn%20%20%20%20def%20__init__(self%2C%20sharegroup%3DNone)%3A%5Cn%20%20%20%20%20%20%20%20if%20sharegroup%20is%20None%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20sharegroup%20%3D%20currentContext().sharegroup%5Cn%20%20%20%20%20%20%20%20%20%20%20%20print%20sharegroup%5Cn%20%20%20%20%20%20%20%20tl%20%3D%20ObjCClass('GLKTextureLoader')%5Cn%20%20%20%20%20%20%20%20self._loader%20%3D%20tl.alloc().initWithSharegroup_(sharegroup._sharegroup)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20textureFromFile(self%2C%20path)%3A%5Cn%20%20%20%20%20%20%20%20callback%20%3D%20CBlock(GLKTextureLoaderCallback%2C%20restype%3DNone%2C%20argtypes%3D%5Bctypes.c_void_p%2C%20ctypes.c_void_p%5D)%5Cn%20%20%20%20%20%20%20%20print%20dir(self._loader)%5Cn%20%20%20%20%20%20%20%20print%20DEFAULTS%5Cn%20%20%20%20%20%20%20%20%23%20self._loader.textureWithContentsOfFile_options_queue_completionHandler_(path%2C%20DEFAULTS%2C%20None%2C%20callback)%5Cn%5Cn%3Cp%3ENote%20currentContext()%20is%20just%20a%20wrapper%20for%20EAGLContext.currentContext()%20where%20EAGLContext%20has%20not%20been%20allocated%20or%20initialised.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221444287981389%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%228913%22%2C%22lastposttime%22%3A%221444529834479%22%2C%22postcount%22%3A%2218%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22teaserPid%22%3A%2212802%22%2C%22slug%22%3A%222292%2Fhow-to-use-structures-setting-glkeffectpropertylight-position-fails%22%2C%22title%22%3A%22How%20to%20use%20structures%3F%20setting%20GLKEffectPropertyLight.position%2C%20fails%22%2C%22cid%22%3A%225%22%2C%22uid%22%3A%22250%22%2C%22mainPid%22%3A%2212768%22%2C%22tid%22%3A%222292%22%2C%22relativeTime%22%3A%222015-10-08T07%3A06%3A21.389Z%22%2C%22lastposttimeISO%22%3A%222015-10-11T02%3A17%3A14.479Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212802%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-10-11T02%3A17%3A14.479Z%22%2C%22tid%22%3A%222292%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20that%20seemed%20to%20fix%20it.%20Thanks%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A18%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222279%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212686%22%2C%22title%22%3A%22TypeError%20for%20unbound%20method%22%2C%22slug%22%3A%222279%2Ftypeerror-for-unbound-method%22%2C%22timestamp%22%3A%221443573980357%22%2C%22lastposttime%22%3A%221443697249703%22%2C%22postcount%22%3A%2211%22%2C%22viewcount%22%3A%225860%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212705%22%2C%22relativeTime%22%3A%222015-09-30T00%3A46%3A20.357Z%22%2C%22lastposttimeISO%22%3A%222015-10-01T11%3A00%3A49.703Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212705%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-10-01T11%3A00%3A49.703Z%22%2C%22tid%22%3A%222279%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fywangd%5C%22%3E%40ywangd%3C%2Fa%3E%20that%20has%20resolved%20the%20issue%2C%20thank%20you%20for%20the%20infomation%20about%20it%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A11%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222275%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212645%22%2C%22title%22%3A%22Optimisation%20of%20GLES%20update%20times%22%2C%22slug%22%3A%222275%2Foptimisation-of-gles-update-times%22%2C%22timestamp%22%3A%221443229792614%22%2C%22lastposttime%22%3A%221443560591747%22%2C%22postcount%22%3A%2223%22%2C%22viewcount%22%3A%2213589%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212681%22%2C%22relativeTime%22%3A%222015-09-26T01%3A09%3A52.614Z%22%2C%22lastposttimeISO%22%3A%222015-09-29T21%3A03%3A11.747Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212681%22%2C%22uid%22%3A%22456%22%2C%22timestamp%22%3A%222015-09-29T21%3A03%3A11.747Z%22%2C%22tid%22%3A%222275%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20and%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcethric%5C%22%3E%40Cethric%3C%2Fa%3E%20-%20this%20seems%20to%20imply%20that%20the%20JS%20runtime%20system%20is%20highly%20optimized%20for%20JSON%20encoding%20and%20decoding.%20That%20would%20not%20be%20a%20big%20surprise.%20The%20new%20method%20for%20transferring%20the%20data%20seems%20to%20also%20confirm%20that%20moving%20all%20the%20data%20in%20a%20single%20blob%20and%20with%20a%20single%20call%20back%20into%20python%20is%20the%20best%20strategy.%20I%20was%20thinking%20that%20the%20send_to_python%20call%20could%20also%20be%20running%20faster%20if%20the%20JSON%20method%20is%20handled%20via%20a%20http%20POST%20like%20mechanism%20rather%20then%20a%20http%20PUT.%20It%20certainly%20is%20interesting.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22456%22%2C%22username%22%3A%22wradcliffe%22%2C%22userslug%22%3A%22wradcliffe%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F575e5efedb8e6890e7f9e2633ae954fd%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A23%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222262%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212577%22%2C%22title%22%3A%22SystemError%3A%20bad%20argument%20to%20internal%20function%22%2C%22slug%22%3A%222262%2Fsystemerror-bad-argument-to-internal-function%22%2C%22timestamp%22%3A%221442877675035%22%2C%22lastposttime%22%3A%221442920056951%22%2C%22postcount%22%3A%225%22%2C%22viewcount%22%3A%224881%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212591%22%2C%22relativeTime%22%3A%222015-09-21T23%3A21%3A15.035Z%22%2C%22lastposttimeISO%22%3A%222015-09-22T11%3A07%3A36.951Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212591%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222015-09-22T11%3A07%3A36.951Z%22%2C%22tid%22%3A%222262%22%2C%22content%22%3A%22%3Cp%3EAwesome.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A5%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22pythonista%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2258%22%7D%2C%7B%22value%22%3A%221.6%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2232%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222159%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2211718%22%2C%22title%22%3A%22JavaScriptCore%20adding%20custom%20functions%22%2C%22slug%22%3A%222159%2Fjavascriptcore-adding-custom-functions%22%2C%22timestamp%22%3A%221440483484587%22%2C%22lastposttime%22%3A%221442633554815%22%2C%22postcount%22%3A%2242%22%2C%22viewcount%22%3A%2223277%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212505%22%2C%22relativeTime%22%3A%222015-08-25T06%3A18%3A04.587Z%22%2C%22lastposttimeISO%22%3A%222015-09-19T03%3A32%3A34.815Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212505%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-09-19T03%3A32%3A34.815Z%22%2C%22tid%22%3A%222159%22%2C%22content%22%3A%22%3Cp%3ENevermind%2C%20it%20is%20fixed%20now%2C%20I%20don't%20really%20know%20what%20I%20did%20but%20it%20is%20working%20now.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A42%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222098%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2211329%22%2C%22title%22%3A%22What%20am%20I%20doing%20wrong%3F%22%2C%22slug%22%3A%222098%2Fwhat-am-i-doing-wrong%22%2C%22timestamp%22%3A%221439619286613%22%2C%22lastposttime%22%3A%221439679057297%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%221933%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2211392%22%2C%22relativeTime%22%3A%222015-08-15T06%3A14%3A46.613Z%22%2C%22lastposttimeISO%22%3A%222015-08-15T22%3A50%3A57.297Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2211392%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-08-15T22%3A50%3A57.297Z%22%2C%22tid%22%3A%222098%22%2C%22content%22%3A%22%3Cp%3EThat%20fixed%20the%20issue%2C%20thanks%20you%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222066%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2211137%22%2C%22title%22%3A%22Python%20OpenGLES%22%2C%22slug%22%3A%222066%2Fpython-opengles%22%2C%22timestamp%22%3A%221439201323227%22%2C%22lastposttime%22%3A%221440055920651%22%2C%22postcount%22%3A%2220%22%2C%22viewcount%22%3A%2211279%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2211569%22%2C%22relativeTime%22%3A%222015-08-10T10%3A08%3A43.227Z%22%2C%22lastposttimeISO%22%3A%222015-08-20T07%3A32%3A00.651Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2211569%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%222015-08-20T07%3A32%3A00.651Z%22%2C%22tid%22%3A%222066%22%2C%22content%22%3A%22%3Cp%3EWorking%20on%20an%20example%20file%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FCethric%2FOpenGLES-Pythonista%2Fblob%2Fmaster%2Fmain.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Emain.py%3C%2Fa%3E%20to%20test%20shaders%20and%20rendering.%20However%20I%20cannot%20get%20the%20view%20to%20show%20a%20cube%20I%20think%20the%20issue%20is%20with%20the%20MVP%20however%20I%20do%20not%20know%20at%20what%20point%20I%20am%20going%20wrong%2C%20can%20someone%20please%20look%20at%20it%20and%20let%20me%20know%3Cbr%20%2F%3E%5CnFor%20simplicity%20I%20am%20using%20the%20%3Ca%20href%3D%5C%22https%3A%2F%2Fpypi.python.org%2Fpypi%2Feuclid%2F0.01%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eeuclid.py%3C%2Fa%3E%20math%20library.%3C%2Fp%3E%5Cn%3Cp%3EThanks%20in%20advanced.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A20%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221953%22%2C%22uid%22%3A%22250%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%221953%22%2C%22title%22%3A%22Proof%20of%20concept%20HTML%20Editor%22%2C%22slug%22%3A%221953%2Fproof-of-concept-html-editor%22%2C%22timestamp%22%3A%221437802492000%22%2C%22lastposttime%22%3A%221437802492000%22%2C%22postcount%22%3A%2227%22%2C%22viewcount%22%3A%2218014%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2210588%22%2C%22relativeTime%22%3A%222015-07-25T05%3A34%3A52.000Z%22%2C%22lastposttimeISO%22%3A%222015-07-25T05%3A34%3A52.000Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2210588%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222015-07-25T05%3A34%3A52.000Z%22%2C%22tid%22%3A%221953%22%2C%22content%22%3A%22%3Cp%3Ethe%20other%20approach%2C%20which%20may%20be%20faster%2C%20would%20be%20to%20build%20a%20list%20structure%20of%20all%20themesble%20objects%2C%20one%20time.%20%20then%2C%20you%20dont%20need%20to%20recurse%20through%20views%2C%20which%20might%20be%20slow%20due%20to%20repeated%20subviews%20calls%2C%20and%20the%20recursive%20nature%2C%20which%20involves%20many%20slow%20function%20calls.%20%20so%2C%20build%20a%20list%20one%20time%20(or%2C%20if%20you%20have%20a%20lot%20of%20dynamic%20components%2C%20youll%20have%20to%20keep%20track%20of%20them%20as%20they%20are%20added%20%2Fdeleted)%3C%2Fp%3E%5Cn%3Cp%3Ethis%20would%20let%20you%20use%20list%20comprehension%20or%20maps%20to%20set%20the%20attributes%2C%20looping%20one%20time%20over%20the%20list%20which%20you%20have%20already%20prefiltered%20(eliminating%20all%20those%20other%20checks%20for%20name%2C%20etc).%20%20since%20list%20comprension%20%2Fmaps%20are%20optimized%20in%20c%2C%20it%20might%20yield%20better%20performance.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A27%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%5D%2C%22nextStart%22%3A20%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Ftopics%22%2C%22account%2Ftopics%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22OriGgUil-aMKQzDz036M3MZJ5deXzy2OH18A%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Ftopics%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="topics.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

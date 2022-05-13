@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+		
+    <title>Editorial for iOS</title>
+		<link rel="stylesheet" href="../css/magnific-popup.css">
+		
+	<style type="text/css">
+	@font-face {
+		font-family: "Source Sans Pro";
+		src: url("fonts/SourceSansPro-ExtraLight.otf.html");
+		font-weight: 100;
+	}
+	@font-face {
+		font-family: "Source Sans Pro";
+		src: url("fonts/SourceSansPro-Light.otf.html");
+		font-weight: 200;
+	}
+	@font-face {
+		font-family: "Source Sans Pro";
+		src: url("fonts/SourceSansPro-LightIt.otf.html");
+		font-weight: 200;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "Source Sans Pro";
+		src: url("fonts/SourceSansPro-Regular.otf.html");
+		font-weight: 400;
+	}
+	body {
+		font-family: "Source Sans Pro";
+		background-color: #F5F5F5;
+		font-size: 18px;
+		font-weight: 200;
+		margin: 0 auto;
+	}
+	a {
+		color: #387295;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 20px 0 20px;
+	}
+	h1.title {
+		font-size: 96px;
+		font-weight: 100;
+		color: #387295;
+		margin: 50px 0 0 0;
+	}
+	h2.subtitle {
+		font-size: 36px;
+		font-weight: 200;
+		color: #313D4D;
+		width: 50%;
+		padding-bottom: 20px;
+	}
+	.main-blurb {
+		font-size: 22px;
+		font-weight: 200;
+		background-color: #313D4D;
+		color: white;
+		padding: 40px 0px 40px 0px;
+		width: 100%;
+		margin: 0;
+	}
+	.appstore-container {
+		background-color: #5A6471;
+		color: white;
+		min-height: 130px;
+		margin-bottom: 40px;
+	}
+	img.device-image {
+		position: relative;
+		float: right;
+		width: 512px;
+		height: 682px;
+		margin: -120px 0px 0px 20px;
+	}
+	img.feature-icon {
+		float:left;
+		width: 79px;
+		height: 80px;
+	}
+	.feature-container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 20px;
+		clear: both;
+	}
+	.feature-description {
+		float: right;
+		width: 75%;
+		margin-top: 0;
+		padding-left: 10px;
+	}
+	.feature-description h4 {
+		font-weight: 400;
+		font-size: 22px;
+		margin: 0;
+	}
+	.feature-description p {
+		margin: 10px 0 10px 0;
+	}
+	.feature-description strong {
+		font-weight: 400;
+	}
+	.testimonials {
+		font-size: 22px;
+		
+		background-color: #eaeaea;
+		
+		min-height: 180px;
+		clear: both;
+		width: 100%;
+		color: white;
+		color: #387295;
+		color: #313d4d;
+		color: black;
+		
+		float: left;
+		padding: 15px 0 15px 0;
+		margin: 40px 0 40px 0;
+	}
+	.testimonial {
+		padding: 0 32px 0 32px;
+	}
+	.testimonial-credits {
+		margin-top: 28px;
+		margin-left: 50px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.column {
+		width: 45%;
+		float: left;
+	}
+	.column.right {
+		float: right;
+	}
+	
+	.column-33 {
+		width: 33%;
+		float: left;
+	}
+	
+	img.avatar {
+		width: 36px; height: 36px; border-radius: 20px; display: inline-block; float: left;
+	}
+	img.thumbnail {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #bbb;
+		margin-right: 20px;
+		margin-top: 20px;
+		border-radius: 8px;
+	}
+	a.screenshot-link img:hover {
+		opacity: 0.75;
+		cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+		border-color: #387295;
+		border-color: #1073ff;
+	}
+	@media only screen and (max-width: 767px) {
+		body {
+			font-size: 18px;
+		}
+		.main-blurb {
+			clear: both;
+		}
+		.column {
+			width: 100%;
+			float: none;
+		}
+		.testimonial {
+			padding: 0;
+		}
+		.column.left {
+		}
+		.column.right {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.column-33 {
+			width: 100%;
+		}
+		img.device-image {
+			float: left;
+			clear: both;
+			margin: 0;
+			
+			width: 320px;
+			height: 427px;
+		}
+		h1.title {
+			font-size: 40px;
+			font-weight: 400;
+			margin-top: 0;
+			padding: 20px 10px 10px 10px;
+		}
+		h2.subtitle {
+			font-size: 24px;
+			padding: 10px;
+			margin: 0;
+			width: 100%;
+		}
+		img.feature-icon {	
+			width: 60px;
+			height: 60px;
+		}
+	}
+	.footer {
+		background-color: #313D4D;
+		min-height: 300px;
+		clear: both;
+	}
+	.footer-text {
+		text-align: center;
+		color: white;
+		padding: 20px;
+		font-weight: 400;
+	}
+	.footer-text a {
+		color: white;
+	}
+	
+	/* magnific popup (animation) */
+	.mfp-fade {
+		-webkit-user-select: none;
+	}
+	.mfp-fade.mfp-bg {
+	  opacity: 0;
+
+	  -webkit-transition: all 0.15s ease-out;
+	  -moz-transition: all 0.15s ease-out;
+	  transition: all 0.15s ease-out;
+	}
+
+	/* overlay animate in */
+	.mfp-fade.mfp-bg.mfp-ready {
+		opacity: 0.5;
+	}
+	/* overlay animate out */
+	.mfp-fade.mfp-bg.mfp-removing {
+		opacity: 0;
+	}
+	/* content at start */
+	.mfp-fade.mfp-wrap .mfp-content {
+		opacity: 0;
+	  	-webkit-transition: all 0.15s ease-out;
+		-moz-transition: all 0.15s ease-out;
+		transition: all 0.15s ease-out;
+	}
+	/* content animate it */
+	.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+		opacity: 1;
+	}
+	/* content animate out */
+	.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+		opacity: 0;
+	}
+	
+		
+	</style>
+  </head>
+  <body>
+  
+	<div class="container">
+		<h1 class="title">Editorial</h1>
+		
+		<h2 class="subtitle">Desktop-Class Plain Text Productivity on iOS</h2>
+		<img src="images/DeviceScreenshots.png" class="device-image"/>	
+	</div>
+	
+	
+	<div class="main-blurb">
+		<div class="container">
+			<div>
+				<p>Editorial is a plain text editor for iOS with great Markdown support and powerful automation tools.</p>
+				
+				<p>Make yourself at home with custom workflows, snippets, templates, and themes.</p>
+				
+				<p>Whether you write personal notes, todo lists, blog posts, screenplays or your next novel &mdash; Editorial provides powerful productivity tools without getting in your way.</p>
+					
+			</div>
+		</div>
+	</div>
+	<div class="appstore-container">
+		<div class="container">
+		<a href="https://itunes.apple.com/app/editorial/id673907758"><img src="images/AppStoreBadge.png" style="width: 205px; height: 61px; margin-top:22px;" alt="Download Editorial on the App Store"/></a>
+		<br/>
+		<span style="font-size:16px; color: #ccc;">$4.99 &mdash; iPad + iPhone</span>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Preview.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Beautiful Preview</h4>
+			<p>If you use <a href="http://daringfireball.net/projects/markdown">Markdown</a> or <a href="http://fountain.io">Fountain</a>, Editorial shows you both your markup and a formatted preview right within the editor. This way, you don't have to switch to a dedicated preview mode to get an idea of what your final document will look like.</p>
+			<p>If you <em>do</em> need a full preview, it is just a swipe gesture away, and you can even customize the HTML template with custom CSS to match the style of your website.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Preview4.png" class="screenshot-link"><img src="images/screenshots/thumb/Preview4.png" class="thumbnail"/></a></a>
+			<a href="images/screenshots/Preview1.png" class="screenshot-link"><img src="images/screenshots/thumb/Preview1.png" class="thumbnail"/></a><a href="images/screenshots/Preview2.png" class="screenshot-link"><img src="images/screenshots/thumb/Preview2.png" class="thumbnail"/></a>
+		</div>
+		
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Folding.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Text Folding</h4>
+			<p>With a simple tap, you can quickly hide an entire section of your document while writing. This works for Markdown, TaskPaper, and Fountain documents.</p>
+			<p>When a section is folded, its word count is shown next to the heading.</p>
+		</div>
+		
+		<!--<div class="feature-description"><a href="images/screenshots/Folding1.png" class="screenshot-link"><img src="images/screenshots/thumb/Folding1.png" class="thumbnail"/></a>-->
+		</div>
+	</div>
+	
+	
+	
+	<div class="feature-container">
+		<img src="images/KeyboardGestures.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Smart Keyboard</h4>
+			<p>The extended keyboard row gives you access to all the special characters you need for writing Markdown, Fountain, or TaskPaper markup. It also allows you to position the cursor precisely with a swipe gesture.</p>
+			<p>If you use a Bluetooth keyboard, Editorial supports various shortcuts, and you can even define your own for custom workflows.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Keyboard1.png" class="screenshot-link"><img src="images/screenshots/thumb/Keyboard1.png" class="thumbnail"/></a><a href="images/screenshots/Keyboard2.png" class="screenshot-link"><img src="images/screenshots/thumb/Keyboard2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	
+	
+	<div class="testimonials">
+		<div class="container">
+			<div class="column left">
+				<div class="testimonial">
+					<p>“Editorial sits at the forefront of the post-PC era, and it's become an indispensable tool for my professional life.”</p>
+					<img src="images/avatars/viticci.png" class="avatar"/><p class="testimonial-credits"><a href="http://www.macstories.net/reviews/editorial-1-1/">Federico Viticci</a></p>
+				</div>
+			</div>
+			<div class="column right">
+				<div class="testimonial">
+					<p>“Editorial is the app that I actually use to write the scripts for my videos.”</p>
+					<img src="images/avatars/cgpgrey.png" class="avatar"/><p class="testimonial-credits"><a href="http://www.relay.fm/cortex/1">CGP Grey</a></p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Dropbox.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Sync with Dropbox</h4>
+			<p>You can store documents on your device or sync with your <a href="http://dropbox.com">Dropbox</a> account. Editorial lets you choose the Dropbox folder to sync with, so it works well with other note taking apps you might use.</p>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Search.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Search</h4>
+			<p>You can easily search within the current document or across all your files. For global searches, Editorial also supports "fuzzy" matching of file names &mdash; e.g. search for "wte" to find "<strong>W</strong>elcome <strong>t</strong>o <strong>E</strong>ditorial".</p>
+			<p>New in version 1.2, you can also highlight all occurrences of a word in the editor &mdash; simply select it, and pick "Highlight All" from the editing menu.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Search1.png" class="screenshot-link"><img src="images/screenshots/thumb/Search1.png" class="thumbnail"/></a><a href="images/screenshots/Search2.png" class="screenshot-link"><img src="images/screenshots/thumb/Search2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Templates.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Document Templates</h4>
+			<p>Tired of copying and pasting boilerplate text? Simply create a template, so you don't have to start from scratch every time you create a new document.</p>
+			<p>Templates are full-fledged workflows, so they can include variables, e.g. the current date/time or clipboard. You can even make templates that are based on Python scripts for a maximum of flexibility.</p>
+		</div>
+		<div class="feature-description"><a href="images/screenshots/Templates1.png" class="screenshot-link"><img src="images/screenshots/thumb/Templates1.png" class="thumbnail"/></a><a href="images/screenshots/Templates2.png" class="screenshot-link"><img src="images/screenshots/thumb/Templates2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="testimonials">
+		<div class="container">
+			<div class="column-33">
+				<div class="testimonial">
+					<p>“It would be hard to imagine a better editor, let alone recommend one that actually exists.”</p>
+					<img src="images/avatars/theverge.png" class="avatar"/><p class="testimonial-credits"><a href="http://www.theverge.com/2013/8/15/4623714/editorial-ipad-text-editor-hands-on">The Verge</a></p>
+				</div>
+			</div>
+			<div class="column-33">
+				<div class="testimonial">
+					<p>“If you're looking for a text editor with serious power, Editorial is what you're looking for.”</p>
+					
+					<div>
+					<img src="images/avatars/lifehacker.png" class="avatar"/><p class="testimonial-credits"><a href="http://lifehacker.com/editorial-for-ipad-is-a-powerful-text-editor-with-autom-1153847821">Lifehacker</a>
+					</div>
+					
+				</div>
+			</div>
+			<div class="column-33">
+				<div class="testimonial">
+					<p>“For those who are serious about automating their workflow, Editorial is hands down the best current option available for both iPhone and iPad.”</p>
+					<img src="images/avatars/imore.jpeg" class="avatar"><p class="testimonial-credits"><a href="http://www.imore.com/ios/editorial">iMore</a></p>
+				</div>
+			</div>
+			
+			<div style="clear:both;"></div>
+			
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Automation.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Workflow Automation</h4>
+			<p>You can combine more than 50 configurable actions into powerful workflows for extending Editorial's feature set.</p>
+			<p>A large collection of ready-to-use workflows for a variety of use cases is included &mdash; you can also use them as starting points for your own creations.</p>
+			<p>Workflows make Editorial grow with your needs and enable advanced features that you might not expect in an iOS app.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Workflows1.png" class="screenshot-link"><img src="images/screenshots/thumb/Workflows1.png" class="thumbnail"/></a><a href="images/screenshots/Workflows3.png" class="screenshot-link"><img src="images/screenshots/thumb/Workflows3.png" class="thumbnail"/></a><a href="images/screenshots/Workflows2.png" class="screenshot-link"><img src="images/screenshots/thumb/Workflows2.png" class="thumbnail"/></a>
+		</div>
+		
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Snippets.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Smart Snippets</h4>
+			<p>Save time by creating abbreviations for pieces of text that you need often. Snippets can also include dynamic text, for example the current date or clipboard content. You can even specify where the cursor should be after the snippet is expanded.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Snippets1.png" class="screenshot-link"><img src="images/screenshots/thumb/Snippets1.png" class="thumbnail"/></a><a href="images/screenshots/Snippets2.png" class="screenshot-link"><img src="images/screenshots/thumb/Snippets2.png" class="thumbnail"/></a><a href="images/screenshots/Snippets3.png" class="screenshot-link"><img src="images/screenshots/thumb/Snippets3.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Python.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Python Scripting</h4>
+			<p>You can make use of a full Python interpreter in your workflows. Editorial comes with tons of modules for processing text, images, or even data from web APIs, and you also have scripting access to the editor itself from Python.</p>
+			<p>Scripts can be integrated in workflows, but there's also an interactive prompt and a scratchpad for quick one-off scripts.</p>
+			<p>Editorial includes custom Python modules for accessing iOS system functionality, like <a href="docs/ios/reminders.html">reminders</a>, <a href="docs/ios/contacts.html">contacts</a>, <a href="docs/ios/location.html">location data</a>, or <a href="docs/ios/twitter.html">Twitter</a> accounts.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Python1.png" class="screenshot-link"><img src="images/screenshots/thumb/Python1.png" class="thumbnail"/></a><a href="images/screenshots/Python2.png" class="screenshot-link"><img src="images/screenshots/thumb/Python2.png" class="thumbnail"/></a><a href="images/screenshots/Python3.png" class="screenshot-link"><img src="images/screenshots/thumb/Python3.png" class="thumbnail"/></a>
+		</div>
+		
+	</div>
+	
+	
+	<div class="testimonials">
+		<div class="container">
+			<div class="column left">
+				<div class="testimonial">
+					<p>“Editorial just reinvented iOS text editing.”</p>
+					<img src="images/avatars/merlinmann.jpeg" class="avatar"/><p class="testimonial-credits"><a href="https://twitter.com/hotdogsladies/status/368265669256544258">Merlin Mann</a></p>
+				</div>
+			</div>
+			<div class="column right">
+				<div class="testimonial">
+					<p>“A really pleasant way to do writing on iOS [...] I'm impressed by how powerful Editorial is.”</p>
+					<img src="images/avatars/jsnell.png" class="avatar"/><p class="testimonial-credits"><a href="http://www.relay.fm/upgrade/16">Jason Snell</a></p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/DarkTheme.png" class="feature-icon"/>
+		<div class="feature-description"><h4>Dark Theme</h4>
+			<p>If you like working at night or just prefer a dark app UI, you can easily change the look of the entire app.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/DarkTheme1.png" class="screenshot-link"><img src="images/screenshots/thumb/DarkTheme1.png" class="thumbnail"/></a><a href="images/screenshots/DarkTheme2.png" class="screenshot-link"><img src="images/screenshots/thumb/DarkTheme2.png" class="thumbnail"/></a><a href="images/screenshots/DarkTheme3.png" class="screenshot-link"><img src="images/screenshots/thumb/DarkTheme3.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/TaskPaper.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>TaskPaper Mode</h4>
+			<p>Editorial supports the popular TaskPaper format for plain text todo lists. You can assign tags and color labels to your tasks, and rearrange them via drag'n'drop. New in version 1.2, you can also fold the contents of a project or focus on a specific tag.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/TaskPaper1.png" class="screenshot-link"><img src="images/screenshots/thumb/TaskPaper1.png" class="thumbnail"/></a><a href="images/screenshots/TaskPaper2.png" class="screenshot-link"><img src="images/screenshots/thumb/TaskPaper2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="feature-container">
+		<img src="images/Fountain.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>Fountain Mode</h4>
+			<p>If you're a screenwriter, you'll love Editorial's support for <a href="http://fountain.io">Fountain</a>, a Markdown-inspired plain text format for screenplays.</p>
+			<p>You can preview your formatting directly in the editor, or switch to an HTML preview that includes page numbers. You can even export your finished screenplay as a print-ready PDF.</p>
+		</div>
+		
+		<div class="feature-description"><a href="images/screenshots/Fountain1.png" class="screenshot-link"><img src="images/screenshots/thumb/Fountain1.png" class="thumbnail"/></a><a href="images/screenshots/Fountain2.png" class="screenshot-link"><img src="images/screenshots/thumb/Fountain2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	
+	
+	<div class="feature-container">
+		<img src="images/BrowserTabs.png" class="feature-icon"/>
+		<div class="feature-description">
+			<h4>In-App Browser</h4>
+			<p>For quick research you don't have to leave the app. The in-app browser supports multiple tabs, and it's  integrated with the workflow and snippet system. You can build workflows to look up words in your favorite online dictionary very easily, or just use the current page URL in a snippet, for example to insert a Markdown link.</p>
+			<p>The browser also supports <a href="https://agilebits.com/onepassword">1Password</a> for accessing saved passwords quickly.</a>
+		</div>
+		
+		<div class="feature-description" style="margin-bottom: 60px;"><a href="images/screenshots/Browser1.png" class="screenshot-link"><img src="images/screenshots/thumb/Browser1.png" class="thumbnail"/></a><a href="images/screenshots/Browser2.png" class="screenshot-link"><img src="images/screenshots/thumb/Browser2.png" class="thumbnail"/></a>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="footer-text">
+			<p><a href="https://itunes.apple.com/app/editorial/id673907758">Get Editorial on the App Store</a>
+			<p><a href="http://www.editorial-workflows.com">Workflow Directory</a></p>
+			<p><a href="http://omz-forums.appspot.com/editorial">Community Forum</a></p>
+			<p><a href="docs.html">Documentation</a></p>
+			<p><a href="https://itunes.apple.com/us/book/writing-on-ipad-text-automation/id697865620">iBook: “Writing On The iPad: Text Automation with Editorial” <br/>by Federico Viticci</a></p>
+			<p><a href="docs/ios/editorial_release_notes.html">Release Notes</a></p>
+			<p><a href="http://twitter.com/olemoritz">Follow @olemoritz on Twitter</a></p>
+			<p style="font-size: 14px; color: #ccc">Made in Berlin</p>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/magnific-popup.js"></script>
+	<script>
+	$('.screenshot-link').magnificPopup({ 
+		type: 'image',
+		removalDelay: 300,
+		mainClass: 'mfp-fade',
+		closeOnContentClick: true,
+		/*
+		retina: {
+			ratio: 2,
+			replaceSrc: function(item, ratio) {
+				return item.src.replace(/\.\w+$/, function(m) { return  m; });
+			}
+		}
+		*/
+	});
+	</script>	
+  </body>
+</html>

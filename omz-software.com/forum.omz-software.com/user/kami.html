@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kami | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"1pyGE98w-KyrxHWvFvvyceR4WPpSBS7TVKm4","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="kami.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="kami.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="kami.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="kami.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="kami" data-uid="4714">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="kami.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="https://forum.omz-software.com/user/kami/following"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="https://forum.omz-software.com/user/kami/followers"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="https://forum.omz-software.com/user/kami/topics"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="https://forum.omz-software.com/user/kami/posts"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="https://forum.omz-software.com/user/kami/groups"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="kami.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> kami</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="kami.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="kami.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+						
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="0">0</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="38">38</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="1008">1008</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+					
+
+					
+
+					
+
+					
+
+					
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="0">0</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="0">0</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2018-01-26T13:30:42.126Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2022-04-11T06:29:45.307Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="46859" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>after updating to IOS 15 i get always a SSL: CERTIFICATE_VERIFY_FAILED error.</p>
+<p>with requests.Session() as s:<br />
+r= s.get('<a href="https://URL" rel="nofollow">https://URL</a>)</p>
+<p>Only adding verify=False helps. Can someone tell me how to add the certificate?</p>
+<p>Thanks a lot.</p>
+<p>BG kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-10-03T12:58:07.476Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7251/since-ios-15-requests-always-gives-me-an-ssl-certificate-error/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="42206" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>HI,</p>
+<p>thanks a lot for the answer, but sometimes my script is working. Is there any new feature with the right to access images in iOS14?</p>
+<p>Cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2020-10-29T13:26:42.184Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6669/problems-with-opening-image-pil/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="42203" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>i have a working script for opening and resizing Image from my local photo storage. Like this:</p>
+<pre><code>        asset = photos.get_asset_with_local_id(file['id'])
+        print (asset)
+        data = asset.get_image()
+        print (data)
+        wpercent = (mywidth/float(data.size[0]))
+        hsize = int((float(data.size[1])*float(wpercent)))
+        data = data.resize((mywidth,hsize))
+        imgByteArr = io.BytesIO()
+        data.save(imgByteArr, format='JPEG')
+</code></pre>
+<p>Before i updated to IOS 14 everything works fine. Without changing the script, i no can sometimes use this functions and sometimes i get the Error with file has 0 bytes and is truncated.</p>
+<p>Here is the output from the files which are working and which are not working:</p>
+<p>working:</p>
+<p>&lt;Asset A4F64DB3-683C-4514-8B27-ED45763434D7/L0/001 - image (3024 x 4032)&gt;<br />
+&lt;PIL.Image.Image image mode=RGB size=3024x4032 at 0x113C58128&gt;</p>
+<p>not working:<br />
+&lt;Asset 1F758F7F-7F2C-4D78-9B6E-EEBA2134AD45/L0/001 - image (1200 x 1600)&gt;<br />
+&lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=1200x1600 at 0x1143338D0&gt;</p>
+<p>Can someone tell me what my problem is?</p>
+<p>Thx a lot.</p>
+<p>Cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2020-10-29T08:37:40.900Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6669/problems-with-opening-image-pil/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="37110" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi, thanks a lot. Now with the Apple Shortcut everything works fine.</p>
+<p>Cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-12-01T09:55:08.185Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/30">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="37079" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>HI, i will try to create an Apple Shortcut. But can someone please tell me how to write the path if the files are stored in the icloud?</p>
+<p>Thanks a lot.</p>
+<p>Cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-29T15:03:26.498Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/28">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="37064" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>thanks a lot for all the answer. But this doesn't solve my problem. So for now i made a simple example for everyone which will show my problem. I created a python script like this:</p>
+<pre><code>import ui
+import os 
+
+def close(sender):
+    v.close()
+    os.abort()
+    
+v = ui.load_view()
+v.present('sheet')
+</code></pre>
+<p>and a pyui:</p>
+<pre><code>[
+  &#123;
+    &quot;nodes&quot; : [
+      {
+        &quot;nodes&quot; : [
+
+        ],
+        &quot;frame&quot; : &quot;{{95, 162&#125;, &#123;80, 55&#125;}&quot;,
+        &quot;class&quot; : &quot;Button&quot;,
+        &quot;attributes&quot; : &#123;
+          &quot;action&quot; : &quot;close&quot;,
+          &quot;frame&quot; : &quot;{{95, 217&#125;, &#123;80, 32&#125;}&quot;,
+          &quot;title&quot; : &quot;Button&quot;,
+          &quot;uuid&quot; : &quot;B05F9F96-41D2-41C1-B4E1-C27F68D5CD4A&quot;,
+          &quot;class&quot; : &quot;Button&quot;,
+          &quot;name&quot; : &quot;button1&quot;,
+          &quot;font_size&quot; : 15
+        },
+        &quot;selected&quot; : true
+      }
+    ],
+    &quot;frame&quot; : &quot;&#123;{0, 0&#125;, &#123;270, 466&#125;}&quot;,
+    &quot;class&quot; : &quot;View&quot;,
+    &quot;attributes&quot; : &#123;
+      &quot;enabled&quot; : true,
+      &quot;background_color&quot; : &quot;RGBA(1.000000,1.000000,1.000000,1.000000)&quot;,
+      &quot;tint_color&quot; : &quot;RGBA(0.000000,0.478000,1.000000,1.000000)&quot;,
+      &quot;border_color&quot; : &quot;RGBA(0.000000,0.000000,0.000000,1.000000)&quot;,
+      &quot;flex&quot; : &quot;&quot;
+    &#125;,
+    &quot;selected&quot; : false
+  }
+]
+</code></pre>
+<p>With this script and UI i just add a Button on the Home screen like it is described in Pythonista.</p>
+<p>Then i close all app on my iphone. I press the button and the App is opening twice. I press the Button in the UI and it closes. I see the normal Iphone homescren. If i now press the Home screen Button of the App (the shortcut), i only see a screen from Pythonista with a complete green background. I have to close manually from the IOS all pythonista screen and after this i can normally start the shortcut of the script again. So how can help me with this.</p>
+<p>Thanks a lot.</p>
+<p>cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-28T16:36:46.555Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/24">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="37023" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>thanks a lot. This works fine and now there is no missing nav or v element. There are also no double views. But there is still the Problem, that when i run the script from the home shortcut button and close it. Pythonista is still active in the background and i can not restart the app from the home shortcut but. I have to close manually pythonista from the ios screen and then i can restart the script.</p>
+<p>This is no my problem.</p>
+<p>Thanks a lot.</p>
+<p>cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-24T10:09:18.265Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/14">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="36994" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>you are right. I wrote a script. And it opens twice. I now implemented the  AppSingleLaunch module. In Pythonista directly everything runs fine. But if i add a Homebutton the Mainview opens but if i try to switch with the navigationview to another view the script always tells that nav view and the loaded view is not defined.</p>
+<p>Can you help me?</p>
+<pre><code>class MyViewapp (ui.View):
+    # Muss beim Einsatz von PYUI-Dateien in der View als custom_class angelegt werden.
+    
+    def __init__(self):
+        # This will also be called without arguments when the view is loaded from a UI file.
+        # You don't have to call super. Note that this is called *before* the attributes
+        # defined in the UI file are set. Implement `did_load` to customize a view after
+        # it's been fully loaded from a UI file.
+        
+        pass
+
+    def did_load(self):
+        # This will be called when a view has been fully loaded from a UI file.
+        pass
+
+    def will_close(self):
+        # This will be called when a presented view is about to be dismissed.
+        # You might want to save data here.
+        global app
+        app.will_close()
+        
+        pass
+
+    def draw(self):
+        # This will be called whenever the view's content needs to be drawn.
+        # You can use any of the ui module's drawing functions here to render
+        # content into the view's visible rectangle.
+        # Do not call this method directly, instead, if you need your view
+        # to redraw its content, call set_needs_display().
+        # Example:
+        #print (v.width)
+
+
+        pass
+
+    def layout(self):
+        # This will be called when a view is resized. You should typically set the
+        # frames of the view's subviews here, if your layout requirements cannot
+        # be fulfilled with the standard auto-resizing (flex) attribute.
+             
+        pass
+
+    def touch_began(self, touch):
+        # Called when a touch begins.
+        pass
+
+    def touch_moved(self, touch):
+        # Called when a touch moves.
+        pass
+
+    def touch_ended(self, touch):
+        # Called when a touch ends.
+        pass
+
+    def keyboard_frame_will_change(self, frame):
+        # Called when the on-screen keyboard appears/disappears
+        # Note: The frame is in screen coordinates.
+        pass
+
+    def keyboard_frame_did_change(self, frame):
+        # Called when the on-screen keyboard appears/disappears
+        # Note: The frame is in screen coordinates.
+        pass 
+        
+def appclose():
+    global nav,v,app
+    
+   
+    app.will_close()
+    v.close()
+    nav.close()
+    
+    #os.abort()
+    #sys.exit(0)
+    #os._exit(0)
+    
+    
+
+app = AppSingleLaunch(&quot;Demo app 2&quot;)
+                             
+if not app.is_active():
+    v = ui.load_view('mainview') # Customclass of MyViewapp
+    
+    
+    v.right_button_items = [ui.ButtonItem(title=&quot;Ende&quot;, action=lambda x: appclose())]
+    
+    nav = ui.NavigationView(v)
+    nav.name=&quot;nav&quot;
+    app.will_present(nav)
+    nav.present(hide_title_bar=True)```
+
+Thanks a lot.
+
+cu kami</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-22T12:10:07.579Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/11">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="36918" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi, i open with a script an ui-View with Nav-Controller. In the Nav-Controller there is an Exit Button. This button should close the app (script running in Pythonista). Temporaly it only close the script and not the Pythonista app.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-19T09:15:39.221Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/8">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="36915" data-uid="4714">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="kami.html">
+					<img title="kami" class="img-rounded user-img" src="https://s.gravatar.com/avatar/c8bd87c2d50b5aef309dd6df4ef59af0?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="kami.html">
+					<strong><span>kami</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Hi,</p>
+<p>can you both please explain what you mean. I just add an tap on the Home Screen from Pythonista. But if i use os.abort() or something else the app is closed but Pythonista is still running.</p>
+<p>Thanks a lot.</p>
+<p>Cu kami</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2019-11-19T09:03:06.327Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/6000/close-app-from-home-screen-button/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="4714" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22passwordExpiry%22%3A%220%22%2C%22fullname%22%3A%22%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%22%22%2C%22postcount%22%3A%2238%22%2C%22status%22%3A%22offline%22%2C%22website%22%3A%22%22%2C%22location%22%3A%22%22%2C%22joindate%22%3A%222018-01-26T13%3A30%3A42.126Z%22%2C%22uploadedpicture%22%3A%22%22%2C%22banned%22%3Afalse%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22userslug%22%3A%22kami%22%2C%22lastonline%22%3A%222022-04-11T06%3A29%3A45.307Z%22%2C%22lastposttime%22%3A%221633265887476%22%2C%22profileviews%22%3A%221008%22%2C%22reputation%22%3A%220%22%2C%22topiccount%22%3A%2212%22%2C%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22email%22%3A%22%22%2C%22age%22%3A%22%22%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%224714%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22http%3A%2F%2F%22%2C%22websiteName%22%3A%22%22%2C%22followingCount%22%3A0%2C%22followerCount%22%3A0%2C%22posts%22%3A%5B%7B%22pid%22%3A%2246859%22%2C%22tid%22%3A%227251%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Eafter%20updating%20to%20IOS%2015%20i%20get%20always%20a%20SSL%3A%20CERTIFICATE_VERIFY_FAILED%20error.%3C%2Fp%3E%5Cn%3Cp%3Ewith%20requests.Session()%20as%20s%3A%3Cbr%20%2F%3E%5Cnr%3D%20s.get('%3Ca%20href%3D%5C%22https%3A%2F%2FURL%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2FURL%3C%2Fa%3E)%3C%2Fp%3E%5Cn%3Cp%3EOnly%20adding%20verify%3DFalse%20helps.%20Can%20someone%20tell%20me%20how%20to%20add%20the%20certificate%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3EBG%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221633265887476%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%227251%22%2C%22title%22%3A%22Since%20IOS%2015%20requests%20always%20gives%20me%20an%20SSL%20Certificate%20Error.%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227251%2Fsince-ios-15-requests-always-gives-me-an-ssl-certificate-error%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%228%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-10-03T12%3A58%3A07.476Z%22%7D%2C%7B%22pid%22%3A%2242206%22%2C%22tid%22%3A%226669%22%2C%22content%22%3A%22%3Cp%3EHI%2C%3C%2Fp%3E%5Cn%3Cp%3Ethanks%20a%20lot%20for%20the%20answer%2C%20but%20sometimes%20my%20script%20is%20working.%20Is%20there%20any%20new%20feature%20with%20the%20right%20to%20access%20images%20in%20iOS14%3F%3C%2Fp%3E%5Cn%3Cp%3ECu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221603978002184%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226669%22%2C%22title%22%3A%22Problems%20with%20opening%20Image%20PIL%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226669%2Fproblems-with-opening-image-pil%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222020-10-29T13%3A26%3A42.184Z%22%7D%2C%7B%22pid%22%3A%2242203%22%2C%22tid%22%3A%226669%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Ei%20have%20a%20working%20script%20for%20opening%20and%20resizing%20Image%20from%20my%20local%20photo%20storage.%20Like%20this%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%20%20%20%20%20%20%20%20asset%20%3D%20photos.get_asset_with_local_id(file%5B'id'%5D)%5Cn%20%20%20%20%20%20%20%20print%20(asset)%5Cn%20%20%20%20%20%20%20%20data%20%3D%20asset.get_image()%5Cn%20%20%20%20%20%20%20%20print%20(data)%5Cn%20%20%20%20%20%20%20%20wpercent%20%3D%20(mywidth%2Ffloat(data.size%5B0%5D))%5Cn%20%20%20%20%20%20%20%20hsize%20%3D%20int((float(data.size%5B1%5D)*float(wpercent)))%5Cn%20%20%20%20%20%20%20%20data%20%3D%20data.resize((mywidth%2Chsize))%5Cn%20%20%20%20%20%20%20%20imgByteArr%20%3D%20io.BytesIO()%5Cn%20%20%20%20%20%20%20%20data.save(imgByteArr%2C%20format%3D'JPEG')%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EBefore%20i%20updated%20to%20IOS%2014%20everything%20works%20fine.%20Without%20changing%20the%20script%2C%20i%20no%20can%20sometimes%20use%20this%20functions%20and%20sometimes%20i%20get%20the%20Error%20with%20file%20has%200%20bytes%20and%20is%20truncated.%3C%2Fp%3E%5Cn%3Cp%3EHere%20is%20the%20output%20from%20the%20files%20which%20are%20working%20and%20which%20are%20not%20working%3A%3C%2Fp%3E%5Cn%3Cp%3Eworking%3A%3C%2Fp%3E%5Cn%3Cp%3E%26lt%3BAsset%20A4F64DB3-683C-4514-8B27-ED45763434D7%2FL0%2F001%20-%20image%20(3024%20x%204032)%26gt%3B%3Cbr%20%2F%3E%5Cn%26lt%3BPIL.Image.Image%20image%20mode%3DRGB%20size%3D3024x4032%20at%200x113C58128%26gt%3B%3C%2Fp%3E%5Cn%3Cp%3Enot%20working%3A%3Cbr%20%2F%3E%5Cn%26lt%3BAsset%201F758F7F-7F2C-4D78-9B6E-EEBA2134AD45%2FL0%2F001%20-%20image%20(1200%20x%201600)%26gt%3B%3Cbr%20%2F%3E%5Cn%26lt%3BPIL.JpegImagePlugin.JpegImageFile%20image%20mode%3DRGB%20size%3D1200x1600%20at%200x1143338D0%26gt%3B%3C%2Fp%3E%5Cn%3Cp%3ECan%20someone%20tell%20me%20what%20my%20problem%20is%3F%3C%2Fp%3E%5Cn%3Cp%3EThx%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3ECu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221603960660900%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226669%22%2C%22title%22%3A%22Problems%20with%20opening%20Image%20PIL%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226669%2Fproblems-with-opening-image-pil%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222020-10-29T08%3A37%3A40.900Z%22%7D%2C%7B%22pid%22%3A%2237110%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%20thanks%20a%20lot.%20Now%20with%20the%20Apple%20Shortcut%20everything%20works%20fine.%3C%2Fp%3E%5Cn%3Cp%3ECu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221575194108185%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A30%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-12-01T09%3A55%3A08.185Z%22%7D%2C%7B%22pid%22%3A%2237079%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHI%2C%20i%20will%20try%20to%20create%20an%20Apple%20Shortcut.%20But%20can%20someone%20please%20tell%20me%20how%20to%20write%20the%20path%20if%20the%20files%20are%20stored%20in%20the%20icloud%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3ECu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221575039806498%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A28%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-29T15%3A03%3A26.498Z%22%7D%2C%7B%22pid%22%3A%2237064%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Ethanks%20a%20lot%20for%20all%20the%20answer.%20But%20this%20doesn't%20solve%20my%20problem.%20So%20for%20now%20i%20made%20a%20simple%20example%20for%20everyone%20which%20will%20show%20my%20problem.%20I%20created%20a%20python%20script%20like%20this%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eimport%20ui%5Cnimport%20os%20%5Cn%5Cndef%20close(sender)%3A%5Cn%20%20%20%20v.close()%5Cn%20%20%20%20os.abort()%5Cn%20%20%20%20%5Cnv%20%3D%20ui.load_view()%5Cnv.present('sheet')%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3Eand%20a%20pyui%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%5B%5Cn%20%20%7B%5Cn%20%20%20%20%26quot%3Bnodes%26quot%3B%20%3A%20%5B%5Cn%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%26quot%3Bnodes%26quot%3B%20%3A%20%5B%5Cn%5Cn%20%20%20%20%20%20%20%20%5D%2C%5Cn%20%20%20%20%20%20%20%20%26quot%3Bframe%26quot%3B%20%3A%20%26quot%3B%7B%7B95%2C%20162%7D%2C%20%7B80%2C%2055%7D%7D%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%26quot%3Bclass%26quot%3B%20%3A%20%26quot%3BButton%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%26quot%3Battributes%26quot%3B%20%3A%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Baction%26quot%3B%20%3A%20%26quot%3Bclose%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Bframe%26quot%3B%20%3A%20%26quot%3B%7B%7B95%2C%20217%7D%2C%20%7B80%2C%2032%7D%7D%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Btitle%26quot%3B%20%3A%20%26quot%3BButton%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Buuid%26quot%3B%20%3A%20%26quot%3BB05F9F96-41D2-41C1-B4E1-C27F68D5CD4A%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Bclass%26quot%3B%20%3A%20%26quot%3BButton%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Bname%26quot%3B%20%3A%20%26quot%3Bbutton1%26quot%3B%2C%5Cn%20%20%20%20%20%20%20%20%20%20%26quot%3Bfont_size%26quot%3B%20%3A%2015%5Cn%20%20%20%20%20%20%20%20%7D%2C%5Cn%20%20%20%20%20%20%20%20%26quot%3Bselected%26quot%3B%20%3A%20true%5Cn%20%20%20%20%20%20%7D%5Cn%20%20%20%20%5D%2C%5Cn%20%20%20%20%26quot%3Bframe%26quot%3B%20%3A%20%26quot%3B%7B%7B0%2C%200%7D%2C%20%7B270%2C%20466%7D%7D%26quot%3B%2C%5Cn%20%20%20%20%26quot%3Bclass%26quot%3B%20%3A%20%26quot%3BView%26quot%3B%2C%5Cn%20%20%20%20%26quot%3Battributes%26quot%3B%20%3A%20%7B%5Cn%20%20%20%20%20%20%26quot%3Benabled%26quot%3B%20%3A%20true%2C%5Cn%20%20%20%20%20%20%26quot%3Bbackground_color%26quot%3B%20%3A%20%26quot%3BRGBA(1.000000%2C1.000000%2C1.000000%2C1.000000)%26quot%3B%2C%5Cn%20%20%20%20%20%20%26quot%3Btint_color%26quot%3B%20%3A%20%26quot%3BRGBA(0.000000%2C0.478000%2C1.000000%2C1.000000)%26quot%3B%2C%5Cn%20%20%20%20%20%20%26quot%3Bborder_color%26quot%3B%20%3A%20%26quot%3BRGBA(0.000000%2C0.000000%2C0.000000%2C1.000000)%26quot%3B%2C%5Cn%20%20%20%20%20%20%26quot%3Bflex%26quot%3B%20%3A%20%26quot%3B%26quot%3B%5Cn%20%20%20%20%7D%2C%5Cn%20%20%20%20%26quot%3Bselected%26quot%3B%20%3A%20false%5Cn%20%20%7D%5Cn%5D%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EWith%20this%20script%20and%20UI%20i%20just%20add%20a%20Button%20on%20the%20Home%20screen%20like%20it%20is%20described%20in%20Pythonista.%3C%2Fp%3E%5Cn%3Cp%3EThen%20i%20close%20all%20app%20on%20my%20iphone.%20I%20press%20the%20button%20and%20the%20App%20is%20opening%20twice.%20I%20press%20the%20Button%20in%20the%20UI%20and%20it%20closes.%20I%20see%20the%20normal%20Iphone%20homescren.%20If%20i%20now%20press%20the%20Home%20screen%20Button%20of%20the%20App%20(the%20shortcut)%2C%20i%20only%20see%20a%20screen%20from%20Pythonista%20with%20a%20complete%20green%20background.%20I%20have%20to%20close%20manually%20from%20the%20IOS%20all%20pythonista%20screen%20and%20after%20this%20i%20can%20normally%20start%20the%20shortcut%20of%20the%20script%20again.%20So%20how%20can%20help%20me%20with%20this.%3C%2Fp%3E%5Cn%3Cp%3EThanks%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3Ecu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221574959006555%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A24%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-28T16%3A36%3A46.555Z%22%7D%2C%7B%22pid%22%3A%2237023%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Ethanks%20a%20lot.%20This%20works%20fine%20and%20now%20there%20is%20no%20missing%20nav%20or%20v%20element.%20There%20are%20also%20no%20double%20views.%20But%20there%20is%20still%20the%20Problem%2C%20that%20when%20i%20run%20the%20script%20from%20the%20home%20shortcut%20button%20and%20close%20it.%20Pythonista%20is%20still%20active%20in%20the%20background%20and%20i%20can%20not%20restart%20the%20app%20from%20the%20home%20shortcut%20but.%20I%20have%20to%20close%20manually%20pythonista%20from%20the%20ios%20screen%20and%20then%20i%20can%20restart%20the%20script.%3C%2Fp%3E%5Cn%3Cp%3EThis%20is%20no%20my%20problem.%3C%2Fp%3E%5Cn%3Cp%3EThanks%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3Ecu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221574590158265%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A14%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-24T10%3A09%3A18.265Z%22%7D%2C%7B%22pid%22%3A%2236994%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Eyou%20are%20right.%20I%20wrote%20a%20script.%20And%20it%20opens%20twice.%20I%20now%20implemented%20the%20%20AppSingleLaunch%20module.%20In%20Pythonista%20directly%20everything%20runs%20fine.%20But%20if%20i%20add%20a%20Homebutton%20the%20Mainview%20opens%20but%20if%20i%20try%20to%20switch%20with%20the%20navigationview%20to%20another%20view%20the%20script%20always%20tells%20that%20nav%20view%20and%20the%20loaded%20view%20is%20not%20defined.%3C%2Fp%3E%5Cn%3Cp%3ECan%20you%20help%20me%3F%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eclass%20MyViewapp%20(ui.View)%3A%5Cn%20%20%20%20%23%20Muss%20beim%20Einsatz%20von%20PYUI-Dateien%20in%20der%20View%20als%20custom_class%20angelegt%20werden.%5Cn%20%20%20%20%5Cn%20%20%20%20def%20__init__(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20This%20will%20also%20be%20called%20without%20arguments%20when%20the%20view%20is%20loaded%20from%20a%20UI%20file.%5Cn%20%20%20%20%20%20%20%20%23%20You%20don't%20have%20to%20call%20super.%20Note%20that%20this%20is%20called%20*before*%20the%20attributes%5Cn%20%20%20%20%20%20%20%20%23%20defined%20in%20the%20UI%20file%20are%20set.%20Implement%20%60did_load%60%20to%20customize%20a%20view%20after%5Cn%20%20%20%20%20%20%20%20%23%20it's%20been%20fully%20loaded%20from%20a%20UI%20file.%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20did_load(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20This%20will%20be%20called%20when%20a%20view%20has%20been%20fully%20loaded%20from%20a%20UI%20file.%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20will_close(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20This%20will%20be%20called%20when%20a%20presented%20view%20is%20about%20to%20be%20dismissed.%5Cn%20%20%20%20%20%20%20%20%23%20You%20might%20want%20to%20save%20data%20here.%5Cn%20%20%20%20%20%20%20%20global%20app%5Cn%20%20%20%20%20%20%20%20app.will_close()%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20draw(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20This%20will%20be%20called%20whenever%20the%20view's%20content%20needs%20to%20be%20drawn.%5Cn%20%20%20%20%20%20%20%20%23%20You%20can%20use%20any%20of%20the%20ui%20module's%20drawing%20functions%20here%20to%20render%5Cn%20%20%20%20%20%20%20%20%23%20content%20into%20the%20view's%20visible%20rectangle.%5Cn%20%20%20%20%20%20%20%20%23%20Do%20not%20call%20this%20method%20directly%2C%20instead%2C%20if%20you%20need%20your%20view%5Cn%20%20%20%20%20%20%20%20%23%20to%20redraw%20its%20content%2C%20call%20set_needs_display().%5Cn%20%20%20%20%20%20%20%20%23%20Example%3A%5Cn%20%20%20%20%20%20%20%20%23print%20(v.width)%5Cn%5Cn%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20layout(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20This%20will%20be%20called%20when%20a%20view%20is%20resized.%20You%20should%20typically%20set%20the%5Cn%20%20%20%20%20%20%20%20%23%20frames%20of%20the%20view's%20subviews%20here%2C%20if%20your%20layout%20requirements%20cannot%5Cn%20%20%20%20%20%20%20%20%23%20be%20fulfilled%20with%20the%20standard%20auto-resizing%20(flex)%20attribute.%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20touch_began(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20Called%20when%20a%20touch%20begins.%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20touch_moved(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20Called%20when%20a%20touch%20moves.%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20touch_ended(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20Called%20when%20a%20touch%20ends.%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20keyboard_frame_will_change(self%2C%20frame)%3A%5Cn%20%20%20%20%20%20%20%20%23%20Called%20when%20the%20on-screen%20keyboard%20appears%2Fdisappears%5Cn%20%20%20%20%20%20%20%20%23%20Note%3A%20The%20frame%20is%20in%20screen%20coordinates.%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20keyboard_frame_did_change(self%2C%20frame)%3A%5Cn%20%20%20%20%20%20%20%20%23%20Called%20when%20the%20on-screen%20keyboard%20appears%2Fdisappears%5Cn%20%20%20%20%20%20%20%20%23%20Note%3A%20The%20frame%20is%20in%20screen%20coordinates.%5Cn%20%20%20%20%20%20%20%20pass%20%5Cn%20%20%20%20%20%20%20%20%5Cndef%20appclose()%3A%5Cn%20%20%20%20global%20nav%2Cv%2Capp%5Cn%20%20%20%20%5Cn%20%20%20%5Cn%20%20%20%20app.will_close()%5Cn%20%20%20%20v.close()%5Cn%20%20%20%20nav.close()%5Cn%20%20%20%20%5Cn%20%20%20%20%23os.abort()%5Cn%20%20%20%20%23sys.exit(0)%5Cn%20%20%20%20%23os._exit(0)%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%5Cnapp%20%3D%20AppSingleLaunch(%26quot%3BDemo%20app%202%26quot%3B)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5Cnif%20not%20app.is_active()%3A%5Cn%20%20%20%20v%20%3D%20ui.load_view('mainview')%20%23%20Customclass%20of%20MyViewapp%5Cn%20%20%20%20%5Cn%20%20%20%20%5Cn%20%20%20%20v.right_button_items%20%3D%20%5Bui.ButtonItem(title%3D%26quot%3BEnde%26quot%3B%2C%20action%3Dlambda%20x%3A%20appclose())%5D%5Cn%20%20%20%20%5Cn%20%20%20%20nav%20%3D%20ui.NavigationView(v)%5Cn%20%20%20%20nav.name%3D%26quot%3Bnav%26quot%3B%5Cn%20%20%20%20app.will_present(nav)%5Cn%20%20%20%20nav.present(hide_title_bar%3DTrue)%60%60%60%5Cn%5CnThanks%20a%20lot.%5Cn%5Cncu%20kami%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221574424607579%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A11%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-22T12%3A10%3A07.579Z%22%7D%2C%7B%22pid%22%3A%2236918%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%20i%20open%20with%20a%20script%20an%20ui-View%20with%20Nav-Controller.%20In%20the%20Nav-Controller%20there%20is%20an%20Exit%20Button.%20This%20button%20should%20close%20the%20app%20(script%20running%20in%20Pythonista).%20Temporaly%20it%20only%20close%20the%20script%20and%20not%20the%20Pythonista%20app.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221574154939221%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A8%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-19T09%3A15%3A39.221Z%22%7D%2C%7B%22pid%22%3A%2236915%22%2C%22tid%22%3A%226000%22%2C%22content%22%3A%22%3Cp%3EHi%2C%3C%2Fp%3E%5Cn%3Cp%3Ecan%20you%20both%20please%20explain%20what%20you%20mean.%20I%20just%20add%20an%20tap%20on%20the%20Home%20Screen%20from%20Pythonista.%20But%20if%20i%20use%20os.abort()%20or%20something%20else%20the%20app%20is%20closed%20but%20Pythonista%20is%20still%20running.%3C%2Fp%3E%5Cn%3Cp%3EThanks%20a%20lot.%3C%2Fp%3E%5Cn%3Cp%3ECu%20kami%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%224714%22%2C%22timestamp%22%3A%221574154186327%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%224714%22%2C%22username%22%3A%22kami%22%2C%22userslug%22%3A%22kami%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc8bd87c2d50b5aef309dd6df4ef59af0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%224714%22%2C%22tid%22%3A%226000%22%2C%22title%22%3A%22Close%20app%20from%20home%20screen%20button%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%226000%2Fclose-app-from-home-screen-button%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2230%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222019-11-19T09%3A03%3A06.327Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%221pyGE98w-KyrxHWvFvvyceR4WPpSBS7TVKm4%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="kami.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

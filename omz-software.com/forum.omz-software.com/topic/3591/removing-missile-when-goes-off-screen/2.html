@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing missile, when goes off screen | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Removing missile, when goes off screen" />
+	<meta name="description" content="I am using the scene module to make a game. When I hit a button, I have a missile moving up the screen. When it goes off the screen, I would like to remove it from my array and memory, to clear up memory and since in the game the missile is gone. I have t..." />
+	<meta property="og:title" content="Removing missile, when goes off screen" />
+	<meta property="og:description" content="I am using the scene module to make a game. When I hit a button, I have a missile moving up the screen. When it goes off the screen, I would like to remove it from my array and memory, to clear up memory and since in the game the missile is gone. I have t..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;3591&#x2F;removing-missile-when-goes-off-screen" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;pbs.twimg.com&#x2F;profile_images&#x2F;533412106&#x2F;head_bigger.png" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;pbs.twimg.com&#x2F;profile_images&#x2F;533412106&#x2F;head_bigger.png" />
+	<meta property="article:published_time" content="2016-10-19T03:11:40.259Z" />
+	<meta property="article:modified_time" content="2016-10-19T21:34:07.988Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="https://forum.omz-software.com/topic/3591.rss" />
+	<link rel="canonical" href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen" />
+	<link rel="up" href="../../../../omz-software.com/pythonista/forums.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"rEAPAmLm-drelqp88MnOBkQlICR4HNmaIH1E","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="2.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="2.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="2.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="2.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Removing missile, when goes off screen
+												<a target="_blank" href="https://forum.omz-software.com/topic/3591.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">Removing missile, when goes off screen</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="3591">
+			<li component="post" class="clearfix "data-pid="21950" data-uid="2039" data-username="mrcoxall" data-userslug="mrcoxall" data-index="0" data-timestamp="1476846700687" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2016-10-19T03:11:40.687Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/mrcoxall.html">
+			<img src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/mrcoxall.html" itemprop="author" data-username="mrcoxall" data-uid="2039">mrcoxall</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/1"><span class="timeago" title="2016-10-19T03:11:40.687Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I am using the scene module to make a game. When I hit a button, I have a missile moving up the screen. When it goes off the screen, I would like to remove it from my array and memory, to clear up memory and since in the game the missile is gone.</p>
+<p>I have tried many things and it does not seem to remove it right away, and then tries to remove more than one. Not sure what I am doing wrong. At line 80.</p>
+<p>Here is the Gist: <a href="https://gist.github.com/cb0ac079b7351e2b59e980237a546152" rel="nofollow">https://gist.github.com/cb0ac079b7351e2b59e980237a546152</a></p>
+<pre><code># Created by: Mr. Coxall
+# Created on: Sep 2016
+# Created for: ICS3U
+# This program is the first file in a multi-scene game template
+#    This template is meant to be used with the Xcode 
+
+from scene import *
+import ui
+from numpy import random
+from copy import deepcopy
+
+class FirstScene(Scene):
+    def setup(self):
+        # this method is called, when user moves to this scene
+        
+        self.size_of_screen = deepcopy(self.size)
+        self.center_of_screen = deepcopy(self.size/2)
+        self.left_button_down = False
+        self.right_button_down = False
+        self.ship_move_speed = 40.0
+        self.missiles = []
+        self.aliens = []
+        self.alien_attack_rate = 1
+        self.alien_attack_speed = 20.0
+        
+        # add blue background color
+        self.background = SpriteNode(position = self.size / 2, 
+                                     color = (0.61, 0.78, 0.87), 
+                                     parent = self, 
+                                     size = self.size)
+        
+        spaceship_position = deepcopy(self.center_of_screen)
+        spaceship_position.y = 100
+        self.spaceship = SpriteNode('spc:PlayerShip1Orange',
+                                    parent = self,
+                                    position = spaceship_position)
+        
+        left_button_position = deepcopy(self.center_of_screen)
+        left_button_position.x = 75
+        left_button_position.y = 75
+        self.left_button = SpriteNode('iob:arrow_left_a_256',
+                                      parent = self,
+                                      scale = 0.5,
+                                      position = left_button_position,
+                                      alpha = 0.5)
+        
+        right_button_position = deepcopy(self.center_of_screen)
+        right_button_position.x = 200
+        right_button_position.y = 75
+        self.right_button = SpriteNode('iob:arrow_right_a_256',
+                                       parent = self,
+                                       scale = 0.5,
+                                       position = right_button_position,
+                                       alpha = 0.5)
+        
+        fire_button_position = deepcopy(self.size)
+        fire_button_position.x = fire_button_position.x - 75
+        fire_button_position.y = 75
+        self.fire_button = SpriteNode('iob:disc_256',
+                                      parent = self,
+                                      scale = 0.5,
+                                      position = fire_button_position,
+                                      alpha = 0.5)
+        
+    def update(self):
+        # this method is called, hopefully, 60 times a second
+        
+        # move spaceship if button down
+        if self.left_button_down == True:
+            spaceshipMove = Action.move_by(-1*self.ship_move_speed, 
+                                           0.0, 
+                                           0.1)
+            self.spaceship.run_action(spaceshipMove)
+        if self.right_button_down == True:
+            spaceshipMove = Action.move_by(self.ship_move_speed, 
+                                           0.0, 
+                                           0.1)
+            self.spaceship.run_action(spaceshipMove)
+        
+        # check every update if a missile is off screen
+        print('A: ' + str(range(len(self.missiles))))
+        for missile_index in range(len(self.missiles)):
+           
+           if self.missiles[missile_index].position.y &gt; self.size_of_screen.y - 100:
+               #self.missiles[missile_index].remove_all_actions()
+               #self.missiles[missile_index].remove_from_parent()
+               print('B: ' + str(missile_index) + ' ' + str(len(self.missiles)))
+               #print(missile_index)
+               self.missiles.remove(missile_index)
+               #print('one success')
+               break
+               #print(len(self.missiles))
+        
+    def touch_began(self, touch):
+        # this method is called, when user touches the screen
+        
+        # check if left or right button is down
+        if self.left_button.frame.contains_point(touch.location):
+            self.left_button_down = True
+        
+        if self.right_button.frame.contains_point(touch.location):
+            self.right_button_down = True
+    
+    def touch_moved(self, touch):
+        # this method is called, when user moves a finger around on the screen
+        pass
+    
+    def touch_ended(self, touch):
+        # this method is called, when user releases a finger from the screen
+        
+        # if I removed my finger, then no matter what spaceship
+        #    should not be moving any more
+        self.left_button_down = False
+        self.right_button_down = False
+        
+        # if fire button pressed, create a new missile
+        if self.fire_button.frame.contains_point(touch.location):
+            self.create_new_missile()
+        
+    def create_new_missile(self):
+        # when the user hits the fire button
+        
+        missile_start_position = deepcopy(self.spaceship.position)
+        missile_start_position.y = 100
+        
+        missile_end_position = deepcopy(self.size)
+        missile_end_position.x = missile_start_position.x
+        
+        self.missiles.append(SpriteNode('spc:Fire1',
+                             position = missile_start_position,
+                             parent = self))
+        
+        # make missile move forward
+        missileMoveAction = Action.move_to(missile_end_position.x, 
+                                           missile_end_position.y + 100, 
+                                           1.0)
+        self.missiles[len(self.missiles)-1].run_action(missileMoveAction)
+        
+
+#  ..use when deploying app for Xcode and the App Store
+main_view = ui.View()
+scene_view = SceneView(frame = main_view.bounds, flex = 'WH')
+main_view.add_subview(scene_view)
+scene_view.scene = FirstScene()
+main_view.present(hide_title_bar = True, animated = False)
+
+~~~
+
+Thanks</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="5">5</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="3367">3367</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="21951" data-uid="250" data-username="Cethric" data-userslug="cethric" data-index="1" data-timestamp="1476848313855" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2016-10-19T03:38:33.855Z">
+				<meta itemprop="dateModified" content="2016-10-19T03:39:08.062Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/cethric.html">
+			<img src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/cethric.html" itemprop="author" data-username="Cethric" data-uid="250">Cethric</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="2.html"><span class="timeago" title="2016-10-19T03:38:33.855Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>If you are really concerned about memory there is a lot more in your code that can be cleaned up, mainly unnecessary variables, etc. But if you need help with that then we can go over it after.<br />
+As to the rockets not deleting correctly, I get an error before it can even delete due to non-existent indecies in the list (due to the list being modified from in the loop that is not really friendly with your code). To resolve that I completely changed your <code>for</code>-loop to the following:</p>
+<pre><code class="python">for i, missile in enumerate(self.missiles):
+            print(i, missile.position)
+            if missile.position.y &gt; self.size_of_screen.y - 100:
+                missile.remove_from_parent()
+                self.missiles.remove(missile)
+</code></pre>
+<p>Also <code>Node.remove_from_parent()</code> needs to be called for the object to be removed from the render list.</p>
+
+	
+</div>
+
+
+<small data-editor="cethric" component="post/editor" class="hidden">last edited by <strong>Cethric</strong> <span class="timeago" title="2016-10-19T03:39:08.062Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21954" data-uid="2039" data-username="mrcoxall" data-userslug="mrcoxall" data-index="2" data-timestamp="1476851175387" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2016-10-19T04:26:15.387Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/mrcoxall.html">
+			<img src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/mrcoxall.html" itemprop="author" data-username="mrcoxall" data-uid="2039">mrcoxall</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/3"><span class="timeago" title="2016-10-19T04:26:15.387Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/cethric.html">@Cethric</a><br />
+Works great.<br />
+Thanks</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21955" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="3" data-timestamp="1476856226562" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2016-10-19T05:50:26.562Z">
+				<meta itemprop="dateModified" content="2016-10-19T05:51:01.284Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/ccc.html">
+			<img src="../../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/4"><span class="timeago" title="2016-10-19T05:50:26.562Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>You might also run &quot;Check Style&quot; and &quot;Analyze (PyFlakes)&quot; from the run menu.  Those two tools mention a few items that would be worth fixing.</p>
+
+	
+</div>
+
+
+<small data-editor="ccc" component="post/editor" class="hidden">last edited by <strong>ccc</strong> <span class="timeago" title="2016-10-19T05:51:01.284Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21973" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="4" data-timestamp="1476912847988" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2016-10-19T21:34:07.988Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/ccc.html">
+			<img src="../../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/5"><span class="timeago" title="2016-10-19T21:34:07.988Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Another take...</p>
+<pre><code class="python"># Created by: Mr. Coxall
+# Created on: Sep 2016
+# Created for: ICS3U
+# This program is the first file in a multi-scene game template
+#    This template is meant to be used with the Xcode
+
+import scene
+import ui
+Action = scene.Action
+
+
+class FirstScene(scene.Scene):
+    def setup(self):
+        # this method is called, when user moves to this scene
+        self.left_button_down = False
+        self.right_button_down = False
+        self.ship_move_speed = 40.0
+        self.missiles = []
+        # self.aliens = []
+        # self.alien_attack_rate = 1
+        # self.alien_attack_speed = 20.0
+
+        # add blue background color
+        scene.SpriteNode(position=self.size / 2,
+                         color=(0.61, 0.78, 0.87),
+                         parent=self,
+                         size=self.size)
+
+        position = scene.Point(self.size.x / 2, 100)
+        self.spaceship = scene.SpriteNode('spc:PlayerShip1Orange',
+                                          parent=self,
+                                          position=position)
+
+        self.left_button = scene.SpriteNode('iob:arrow_left_a_256',
+                                            parent=self,
+                                            scale=0.5,
+                                            position=scene.Point(75, 75),
+                                            alpha=0.5)
+
+        self.right_button = scene.SpriteNode('iob:arrow_right_a_256',
+                                             parent=self,
+                                             scale=0.5,
+                                             position=scene.Point(200, 75),
+                                             alpha=0.5)
+
+        position = scene.Point(self.size.x - 75, 75)
+        self.fire_button = scene.SpriteNode('iob:disc_256',
+                                            parent=self,
+                                            scale=0.5,
+                                            position=position,
+                                            alpha=0.5)
+
+    def update(self):
+        # this method is called, hopefully, 60 times a second
+        # move spaceship if button down
+        if self.left_button_down:
+            self.spaceship.run_action(Action.move_by(-self.ship_move_speed,
+                                                     0.0,
+                                                     0.1))
+        if self.right_button_down:
+            self.spaceship.run_action(Action.move_by(self.ship_move_speed,
+                                                     0.0,
+                                                     0.1))
+
+        # check every update if a missile is off screen
+        print('A: &#123;&#125;'.format(len(self.missiles)))
+        for i, missile in enumerate(self.missiles):
+            print(i, missile.position)
+            if missile.position.y &gt; self.size.y - 100:
+                missile.remove_from_parent()
+                self.missiles.remove(missile)
+                break
+
+    def touch_began(self, touch):
+        # this method is called, when user touches the screen
+
+        # check if left or right button is down
+        self.left_button_down = touch.location in self.left_button.frame
+        self.right_button_down = touch.location in self.right_button.frame
+
+    def touch_moved(self, touch):
+        # this method is called, when user moves a finger around on the screen
+        pass
+
+    def touch_ended(self, touch):
+        # this method is called, when user releases a finger from the screen
+
+        # if I removed my finger,
+        # then no matter what spaceship should not be moving any more
+        self.left_button_down = False
+        self.right_button_down = False
+
+        # if fire button pressed, create a new missile
+        if touch.location in self.fire_button.frame:
+            self.create_new_missile()
+
+    def create_new_missile(self):
+        # when the user hits the fire button
+        missle = scene.SpriteNode('spc:Fire1',
+                                  position=self.spaceship.position,
+                                  parent=self)
+        missle.run_action(Action.move_to(self.spaceship.position.x,
+                                         self.size.y + 100,
+                                         1.0))
+        self.missiles.append(missle)
+
+
+#  ..use when deploying app for Xcode and the App Store
+if __name__ == '__main__':
+    main_view = ui.View()
+    scene_view = scene.SceneView(frame=main_view.bounds, flex='WH')
+    scene_view.scene = FirstScene()
+    main_view.add_subview(scene_view)
+    main_view.present(hide_title_bar=True, animated=False)
+
+    # scene_view = scene.SceneView()
+    # scene_view.scene = FirstScene()
+    # scene_view.present(hide_title_bar = True, animated = False)
+
+    # scene.run(FirstScene())
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="5">5</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="3367">3367</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/2?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="https://forum.omz-software.com/topic/3591/removing-missile-when-goes-off-screen/2?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="3591" />
+<input type="hidden" template-variable="topic_slug" value="3591/removing-missile-when-goes-off-screen" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Removing missile, when goes off screen" />
+<input type="hidden" template-variable="postcount" value="5" />
+<input type="hidden" template-variable="viewcount" value="3367" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%223591%22%2C%22uid%22%3A%222039%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2221950%22%2C%22title%22%3A%22Removing%20missile%2C%20when%20goes%20off%20screen%22%2C%22slug%22%3A%223591%2Fremoving-missile-when-goes-off-screen%22%2C%22timestamp%22%3A%221476846700259%22%2C%22lastposttime%22%3A%221476912847988%22%2C%22postcount%22%3A%225%22%2C%22viewcount%22%3A%223367%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2221973%22%2C%22relativeTime%22%3A%222016-10-19T03%3A11%3A40.259Z%22%2C%22lastposttimeISO%22%3A%222016-10-19T21%3A34%3A07.988Z%22%2C%22posts%22%3A%5B%7B%22timestamp%22%3A%221476846700687%22%2C%22content%22%3A%22%3Cp%3EI%20am%20using%20the%20scene%20module%20to%20make%20a%20game.%20When%20I%20hit%20a%20button%2C%20I%20have%20a%20missile%20moving%20up%20the%20screen.%20When%20it%20goes%20off%20the%20screen%2C%20I%20would%20like%20to%20remove%20it%20from%20my%20array%20and%20memory%2C%20to%20clear%20up%20memory%20and%20since%20in%20the%20game%20the%20missile%20is%20gone.%3C%2Fp%3E%5Cn%3Cp%3EI%20have%20tried%20many%20things%20and%20it%20does%20not%20seem%20to%20remove%20it%20right%20away%2C%20and%20then%20tries%20to%20remove%20more%20than%20one.%20Not%20sure%20what%20I%20am%20doing%20wrong.%20At%20line%2080.%3C%2Fp%3E%5Cn%3Cp%3EHere%20is%20the%20Gist%3A%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgist.github.com%2Fcb0ac079b7351e2b59e980237a546152%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgist.github.com%2Fcb0ac079b7351e2b59e980237a546152%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%23%20Created%20by%3A%20Mr.%20Coxall%5Cn%23%20Created%20on%3A%20Sep%202016%5Cn%23%20Created%20for%3A%20ICS3U%5Cn%23%20This%20program%20is%20the%20first%20file%20in%20a%20multi-scene%20game%20template%5Cn%23%20%20%20%20This%20template%20is%20meant%20to%20be%20used%20with%20the%20Xcode%20%5Cn%5Cnfrom%20scene%20import%20*%5Cnimport%20ui%5Cnfrom%20numpy%20import%20random%5Cnfrom%20copy%20import%20deepcopy%5Cn%5Cnclass%20FirstScene(Scene)%3A%5Cn%20%20%20%20def%20setup(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20moves%20to%20this%20scene%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20self.size_of_screen%20%3D%20deepcopy(self.size)%5Cn%20%20%20%20%20%20%20%20self.center_of_screen%20%3D%20deepcopy(self.size%2F2)%5Cn%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.ship_move_speed%20%3D%2040.0%5Cn%20%20%20%20%20%20%20%20self.missiles%20%3D%20%5B%5D%5Cn%20%20%20%20%20%20%20%20self.aliens%20%3D%20%5B%5D%5Cn%20%20%20%20%20%20%20%20self.alien_attack_rate%20%3D%201%5Cn%20%20%20%20%20%20%20%20self.alien_attack_speed%20%3D%2020.0%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20add%20blue%20background%20color%5Cn%20%20%20%20%20%20%20%20self.background%20%3D%20SpriteNode(position%20%3D%20self.size%20%2F%202%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20color%20%3D%20(0.61%2C%200.78%2C%200.87)%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20size%20%3D%20self.size)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20spaceship_position%20%3D%20deepcopy(self.center_of_screen)%5Cn%20%20%20%20%20%20%20%20spaceship_position.y%20%3D%20100%5Cn%20%20%20%20%20%20%20%20self.spaceship%20%3D%20SpriteNode('spc%3APlayerShip1Orange'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%20%3D%20spaceship_position)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20left_button_position%20%3D%20deepcopy(self.center_of_screen)%5Cn%20%20%20%20%20%20%20%20left_button_position.x%20%3D%2075%5Cn%20%20%20%20%20%20%20%20left_button_position.y%20%3D%2075%5Cn%20%20%20%20%20%20%20%20self.left_button%20%3D%20SpriteNode('iob%3Aarrow_left_a_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%20%3D%200.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%20%3D%20left_button_position%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%20%3D%200.5)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20right_button_position%20%3D%20deepcopy(self.center_of_screen)%5Cn%20%20%20%20%20%20%20%20right_button_position.x%20%3D%20200%5Cn%20%20%20%20%20%20%20%20right_button_position.y%20%3D%2075%5Cn%20%20%20%20%20%20%20%20self.right_button%20%3D%20SpriteNode('iob%3Aarrow_right_a_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%20%3D%200.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%20%3D%20right_button_position%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%20%3D%200.5)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20fire_button_position%20%3D%20deepcopy(self.size)%5Cn%20%20%20%20%20%20%20%20fire_button_position.x%20%3D%20fire_button_position.x%20-%2075%5Cn%20%20%20%20%20%20%20%20fire_button_position.y%20%3D%2075%5Cn%20%20%20%20%20%20%20%20self.fire_button%20%3D%20SpriteNode('iob%3Adisc_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%20%3D%200.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%20%3D%20fire_button_position%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%20%3D%200.5)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20update(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20hopefully%2C%2060%20times%20a%20second%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20move%20spaceship%20if%20button%20down%5Cn%20%20%20%20%20%20%20%20if%20self.left_button_down%20%3D%3D%20True%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20spaceshipMove%20%3D%20Action.move_by(-1*self.ship_move_speed%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.0%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.1)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.spaceship.run_action(spaceshipMove)%5Cn%20%20%20%20%20%20%20%20if%20self.right_button_down%20%3D%3D%20True%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20spaceshipMove%20%3D%20Action.move_by(self.ship_move_speed%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.0%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.1)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.spaceship.run_action(spaceshipMove)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20check%20every%20update%20if%20a%20missile%20is%20off%20screen%5Cn%20%20%20%20%20%20%20%20print('A%3A%20'%20%2B%20str(range(len(self.missiles))))%5Cn%20%20%20%20%20%20%20%20for%20missile_index%20in%20range(len(self.missiles))%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%20%20%20if%20self.missiles%5Bmissile_index%5D.position.y%20%26gt%3B%20self.size_of_screen.y%20-%20100%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23self.missiles%5Bmissile_index%5D.remove_all_actions()%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23self.missiles%5Bmissile_index%5D.remove_from_parent()%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print('B%3A%20'%20%2B%20str(missile_index)%20%2B%20'%20'%20%2B%20str(len(self.missiles)))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23print(missile_index)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.missiles.remove(missile_index)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23print('one%20success')%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20break%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23print(len(self.missiles))%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20touch_began(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20touches%20the%20screen%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20check%20if%20left%20or%20right%20button%20is%20down%5Cn%20%20%20%20%20%20%20%20if%20self.left_button.frame.contains_point(touch.location)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20True%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20if%20self.right_button.frame.contains_point(touch.location)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20True%5Cn%20%20%20%20%5Cn%20%20%20%20def%20touch_moved(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20moves%20a%20finger%20around%20on%20the%20screen%5Cn%20%20%20%20%20%20%20%20pass%5Cn%20%20%20%20%5Cn%20%20%20%20def%20touch_ended(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20releases%20a%20finger%20from%20the%20screen%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20if%20I%20removed%20my%20finger%2C%20then%20no%20matter%20what%20spaceship%5Cn%20%20%20%20%20%20%20%20%23%20%20%20%20should%20not%20be%20moving%20any%20more%5Cn%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20if%20fire%20button%20pressed%2C%20create%20a%20new%20missile%5Cn%20%20%20%20%20%20%20%20if%20self.fire_button.frame.contains_point(touch.location)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.create_new_missile()%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20create_new_missile(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20when%20the%20user%20hits%20the%20fire%20button%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20missile_start_position%20%3D%20deepcopy(self.spaceship.position)%5Cn%20%20%20%20%20%20%20%20missile_start_position.y%20%3D%20100%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20missile_end_position%20%3D%20deepcopy(self.size)%5Cn%20%20%20%20%20%20%20%20missile_end_position.x%20%3D%20missile_start_position.x%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20self.missiles.append(SpriteNode('spc%3AFire1'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%20%3D%20missile_start_position%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%20%3D%20self))%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%23%20make%20missile%20move%20forward%5Cn%20%20%20%20%20%20%20%20missileMoveAction%20%3D%20Action.move_to(missile_end_position.x%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20missile_end_position.y%20%2B%20100%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201.0)%5Cn%20%20%20%20%20%20%20%20self.missiles%5Blen(self.missiles)-1%5D.run_action(missileMoveAction)%5Cn%20%20%20%20%20%20%20%20%5Cn%5Cn%23%20%20..use%20when%20deploying%20app%20for%20Xcode%20and%20the%20App%20Store%5Cnmain_view%20%3D%20ui.View()%5Cnscene_view%20%3D%20SceneView(frame%20%3D%20main_view.bounds%2C%20flex%20%3D%20'WH')%5Cnmain_view.add_subview(scene_view)%5Cnscene_view.scene%20%3D%20FirstScene()%5Cnmain_view.present(hide_title_bar%20%3D%20True%2C%20animated%20%3D%20False)%5Cn%5Cn~~~%5Cn%5CnThanks%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221950%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222039%22%2C%22tid%22%3A%223591%22%2C%22relativeTime%22%3A%222016-10-19T03%3A11%3A40.687Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22reputation%22%3A%226%22%2C%22postcount%22%3A%2243%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221476848313855%22%2C%22content%22%3A%22%3Cp%3EIf%20you%20are%20really%20concerned%20about%20memory%20there%20is%20a%20lot%20more%20in%20your%20code%20that%20can%20be%20cleaned%20up%2C%20mainly%20unnecessary%20variables%2C%20etc.%20But%20if%20you%20need%20help%20with%20that%20then%20we%20can%20go%20over%20it%20after.%3Cbr%20%2F%3E%5CnAs%20to%20the%20rockets%20not%20deleting%20correctly%2C%20I%20get%20an%20error%20before%20it%20can%20even%20delete%20due%20to%20non-existent%20indecies%20in%20the%20list%20(due%20to%20the%20list%20being%20modified%20from%20in%20the%20loop%20that%20is%20not%20really%20friendly%20with%20your%20code).%20To%20resolve%20that%20I%20completely%20changed%20your%20%3Ccode%3Efor%3C%2Fcode%3E-loop%20to%20the%20following%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Efor%20i%2C%20missile%20in%20enumerate(self.missiles)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20print(i%2C%20missile.position)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if%20missile.position.y%20%26gt%3B%20self.size_of_screen.y%20-%20100%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20missile.remove_from_parent()%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.missiles.remove(missile)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EAlso%20%3Ccode%3ENode.remove_from_parent()%3C%2Fcode%3E%20needs%20to%20be%20called%20for%20the%20object%20to%20be%20removed%20from%20the%20render%20list.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221476848348062%22%2C%22pid%22%3A%2221951%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22250%22%2C%22tid%22%3A%223591%22%2C%22relativeTime%22%3A%222016-10-19T03%3A38%3A33.855Z%22%2C%22relativeEditTime%22%3A%222016-10-19T03%3A39%3A08.062Z%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22reputation%22%3A%2227%22%2C%22postcount%22%3A%22169%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2221954%22%2C%22uid%22%3A%222039%22%2C%22tid%22%3A%223591%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcethric%5C%22%3E%40Cethric%3C%2Fa%3E%3Cbr%20%2F%3E%5CnWorks%20great.%3Cbr%20%2F%3E%5CnThanks%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221476851175387%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22toPid%22%3A%2221951%22%2C%22relativeTime%22%3A%222016-10-19T04%3A26%3A15.387Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22reputation%22%3A%226%22%2C%22postcount%22%3A%2243%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EYou%20might%20also%20run%20%26quot%3BCheck%20Style%26quot%3B%20and%20%26quot%3BAnalyze%20(PyFlakes)%26quot%3B%20from%20the%20run%20menu.%20%20Those%20two%20tools%20mention%20a%20few%20items%20that%20would%20be%20worth%20fixing.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%7D%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221955%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223591%22%2C%22timestamp%22%3A%221476856226562%22%2C%22edited%22%3A%221476856261284%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221634%22%2C%22relativeTime%22%3A%222016-10-19T05%3A50%3A26.562Z%22%2C%22relativeEditTime%22%3A%222016-10-19T05%3A51%3A01.284Z%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221476912847988%22%2C%22content%22%3A%22%3Cp%3EAnother%20take...%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3E%23%20Created%20by%3A%20Mr.%20Coxall%5Cn%23%20Created%20on%3A%20Sep%202016%5Cn%23%20Created%20for%3A%20ICS3U%5Cn%23%20This%20program%20is%20the%20first%20file%20in%20a%20multi-scene%20game%20template%5Cn%23%20%20%20%20This%20template%20is%20meant%20to%20be%20used%20with%20the%20Xcode%5Cn%5Cnimport%20scene%5Cnimport%20ui%5CnAction%20%3D%20scene.Action%5Cn%5Cn%5Cnclass%20FirstScene(scene.Scene)%3A%5Cn%20%20%20%20def%20setup(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20moves%20to%20this%20scene%5Cn%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.ship_move_speed%20%3D%2040.0%5Cn%20%20%20%20%20%20%20%20self.missiles%20%3D%20%5B%5D%5Cn%20%20%20%20%20%20%20%20%23%20self.aliens%20%3D%20%5B%5D%5Cn%20%20%20%20%20%20%20%20%23%20self.alien_attack_rate%20%3D%201%5Cn%20%20%20%20%20%20%20%20%23%20self.alien_attack_speed%20%3D%2020.0%5Cn%5Cn%20%20%20%20%20%20%20%20%23%20add%20blue%20background%20color%5Cn%20%20%20%20%20%20%20%20scene.SpriteNode(position%3Dself.size%20%2F%202%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20color%3D(0.61%2C%200.78%2C%200.87)%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20size%3Dself.size)%5Cn%5Cn%20%20%20%20%20%20%20%20position%20%3D%20scene.Point(self.size.x%20%2F%202%2C%20100)%5Cn%20%20%20%20%20%20%20%20self.spaceship%20%3D%20scene.SpriteNode('spc%3APlayerShip1Orange'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3Dposition)%5Cn%5Cn%20%20%20%20%20%20%20%20self.left_button%20%3D%20scene.SpriteNode('iob%3Aarrow_left_a_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3D0.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3Dscene.Point(75%2C%2075)%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%3D0.5)%5Cn%5Cn%20%20%20%20%20%20%20%20self.right_button%20%3D%20scene.SpriteNode('iob%3Aarrow_right_a_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3D0.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3Dscene.Point(200%2C%2075)%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%3D0.5)%5Cn%5Cn%20%20%20%20%20%20%20%20position%20%3D%20scene.Point(self.size.x%20-%2075%2C%2075)%5Cn%20%20%20%20%20%20%20%20self.fire_button%20%3D%20scene.SpriteNode('iob%3Adisc_256'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3D0.5%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3Dposition%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alpha%3D0.5)%5Cn%5Cn%20%20%20%20def%20update(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20hopefully%2C%2060%20times%20a%20second%5Cn%20%20%20%20%20%20%20%20%23%20move%20spaceship%20if%20button%20down%5Cn%20%20%20%20%20%20%20%20if%20self.left_button_down%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.spaceship.run_action(Action.move_by(-self.ship_move_speed%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.0%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.1))%5Cn%20%20%20%20%20%20%20%20if%20self.right_button_down%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.spaceship.run_action(Action.move_by(self.ship_move_speed%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.0%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.1))%5Cn%5Cn%20%20%20%20%20%20%20%20%23%20check%20every%20update%20if%20a%20missile%20is%20off%20screen%5Cn%20%20%20%20%20%20%20%20print('A%3A%20%7B%7D'.format(len(self.missiles)))%5Cn%20%20%20%20%20%20%20%20for%20i%2C%20missile%20in%20enumerate(self.missiles)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20print(i%2C%20missile.position)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if%20missile.position.y%20%26gt%3B%20self.size.y%20-%20100%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20missile.remove_from_parent()%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.missiles.remove(missile)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20break%5Cn%5Cn%20%20%20%20def%20touch_began(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20touches%20the%20screen%5Cn%5Cn%20%20%20%20%20%20%20%20%23%20check%20if%20left%20or%20right%20button%20is%20down%5Cn%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20touch.location%20in%20self.left_button.frame%5Cn%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20touch.location%20in%20self.right_button.frame%5Cn%5Cn%20%20%20%20def%20touch_moved(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20moves%20a%20finger%20around%20on%20the%20screen%5Cn%20%20%20%20%20%20%20%20pass%5Cn%5Cn%20%20%20%20def%20touch_ended(self%2C%20touch)%3A%5Cn%20%20%20%20%20%20%20%20%23%20this%20method%20is%20called%2C%20when%20user%20releases%20a%20finger%20from%20the%20screen%5Cn%5Cn%20%20%20%20%20%20%20%20%23%20if%20I%20removed%20my%20finger%2C%5Cn%20%20%20%20%20%20%20%20%23%20then%20no%20matter%20what%20spaceship%20should%20not%20be%20moving%20any%20more%5Cn%20%20%20%20%20%20%20%20self.left_button_down%20%3D%20False%5Cn%20%20%20%20%20%20%20%20self.right_button_down%20%3D%20False%5Cn%5Cn%20%20%20%20%20%20%20%20%23%20if%20fire%20button%20pressed%2C%20create%20a%20new%20missile%5Cn%20%20%20%20%20%20%20%20if%20touch.location%20in%20self.fire_button.frame%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20self.create_new_missile()%5Cn%5Cn%20%20%20%20def%20create_new_missile(self)%3A%5Cn%20%20%20%20%20%20%20%20%23%20when%20the%20user%20hits%20the%20fire%20button%5Cn%20%20%20%20%20%20%20%20missle%20%3D%20scene.SpriteNode('spc%3AFire1'%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3Dself.spaceship.position%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20parent%3Dself)%5Cn%20%20%20%20%20%20%20%20missle.run_action(Action.move_to(self.spaceship.position.x%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.size.y%20%2B%20100%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201.0))%5Cn%20%20%20%20%20%20%20%20self.missiles.append(missle)%5Cn%5Cn%5Cn%23%20%20..use%20when%20deploying%20app%20for%20Xcode%20and%20the%20App%20Store%5Cnif%20__name__%20%3D%3D%20'__main__'%3A%5Cn%20%20%20%20main_view%20%3D%20ui.View()%5Cn%20%20%20%20scene_view%20%3D%20scene.SceneView(frame%3Dmain_view.bounds%2C%20flex%3D'WH')%5Cn%20%20%20%20scene_view.scene%20%3D%20FirstScene()%5Cn%20%20%20%20main_view.add_subview(scene_view)%5Cn%20%20%20%20main_view.present(hide_title_bar%3DTrue%2C%20animated%3DFalse)%5Cn%5Cn%20%20%20%20%23%20scene_view%20%3D%20scene.SceneView()%5Cn%20%20%20%20%23%20scene_view.scene%20%3D%20FirstScene()%5Cn%20%20%20%20%23%20scene_view.present(hide_title_bar%20%3D%20True%2C%20animated%20%3D%20False)%5Cn%5Cn%20%20%20%20%23%20scene.run(FirstScene())%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221973%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221634%22%2C%22tid%22%3A%223591%22%2C%22relativeTime%22%3A%222016-10-19T21%3A34%3A07.988Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22Removing%20missile%2C%20when%20goes%20off%20screen%22%2C%22url%22%3A%22%2Ftopic%2F3591%2Fremoving-missile-when-goes-off-screen%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%223591%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F3591.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22rEAPAmLm-drelqp88MnOBkQlICR4HNmaIH1E%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Removing%20missile%2C%20when%20goes%20off%20screen%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22I%20am%20using%20the%20scene%20module%20to%20make%20a%20game.%20When%20I%20hit%20a%20button%2C%20I%20have%20a%20missile%20moving%20up%20the%20screen.%20When%20it%20goes%20off%20the%20screen%2C%20I%20would%20like%20to%20remove%20it%20from%20my%20array%20and%20memory%2C%20to%20clear%20up%20memory%20and%20since%20in%20the%20game%20the%20missile%20is%20gone.%20I%20have%20t...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Removing%20missile%2C%20when%20goes%20off%20screen%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22I%20am%20using%20the%20scene%20module%20to%20make%20a%20game.%20When%20I%20hit%20a%20button%2C%20I%20have%20a%20missile%20moving%20up%20the%20screen.%20When%20it%20goes%20off%20the%20screen%2C%20I%20would%20like%20to%20remove%20it%20from%20my%20array%20and%20memory%2C%20to%20clear%20up%20memory%20and%20since%20in%20the%20game%20the%20missile%20is%20gone.%20I%20have%20t...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3591%2Fremoving-missile-when-goes-off-screen%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222016-10-19T03%3A11%3A40.259Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222016-10-19T21%3A34%3A07.988Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3591.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3591%2Fremoving-missile-when-goes-off-screen%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="2.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

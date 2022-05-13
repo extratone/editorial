@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mrcoxall | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"ESgh6coY-1L7m1BNVzDj5A9LxUd6inP9UeYA","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="mrcoxall.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="mrcoxall.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="mrcoxall.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="mrcoxall.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="mrcoxall" data-uid="2039">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="mrcoxall.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="https://forum.omz-software.com/user/mrcoxall/following"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="https://forum.omz-software.com/user/mrcoxall/followers"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="https://forum.omz-software.com/user/mrcoxall/topics"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="https://forum.omz-software.com/user/mrcoxall/posts"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="https://forum.omz-software.com/user/mrcoxall/groups"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="mrcoxall.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> mrcoxall</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="mrcoxall.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="mrcoxall.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+						
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="6">6</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="43">43</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="2128">2128</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+					
+
+					
+
+					
+
+					
+
+					
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="1">1</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="0">0</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2015-12-23T01:12:27.041Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2018-01-16T03:49:57.376Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="26141" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="omz.html">@omz</a> Thanks for getting back to me.</p>
+<p>I was wondering if there is any explanation on why it is no longer possible?<br />
+I used Pythonista last year with my grade 11 programming course and got over a dozen apps published on the App Store. I have just started using it again with this years group and told them we will be doing the same thing. If there is anything I can do to help the process along, please let me know. We will not be starting to write the final apps until December.</p>
+<p>Thanks</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-09-19T00:07:28.712Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/15">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="25854" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>In January I was successful at getting several apps onto the App Store.<br />
+I just went back to load another one and I am now getting a Code Signing Error.<br />
+I cleared out all my certificates and reloaded everything to ensure something had not expired.<br />
+I even loaded an app built completely in Xcode and it worked fine.<br />
+When I try using the Pythonista template I get:</p>
+<p>ERROR ITMS-90035: &quot;Invalid Signature. Code object is not signed at all. The file at path [My App.app/Frameworks/PythonistaKit.framework/pylib/<strong>future</strong>.py] is not properly signed. Make sure you have signed your application with a distribution certificate, not an ad hoc certificate or a development certificate. Verify that the code signing settings in Xcode are correct at the target level (which override any values at the project level). Additionally, make sure the bundle you are uploading was built using a Release target in Xcode, not a Simulator target. If you are certain your code signing settings are correct, choose &quot;Clean All&quot; in Xcode, delete the &quot;build&quot; directory in the Finder, and rebuild your release target. For more information, please consult <a href="https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html" rel="nofollow">https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html</a>&quot;<br />
+ERROR ITMS-90035: &quot;Invalid Signature. Code object is not signed at all. The file at path [My App.app/Frameworks/PythonistaKit.framework/pylib/<strong>future</strong>.py] is not properly signed. Make sure you have signed your application with a distribution certificate, not an ad hoc certificate or a development certificate. Verify that the code signing settings in Xcode are correct at the target level (which override any values at the project level). Additionally, make sure the bundle you are uploading was built using a Release target in Xcode, not a Simulator target. If you are certain your code signing settings are correct, choose &quot;Clean All&quot; in Xcode, delete the &quot;build&quot; directory in the Finder, and rebuild your release target. For more information, please consult <a href="https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html" rel="nofollow">https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html</a>&quot;</p>
+<p>Anybody else getting this?<br />
+Anyone have a solution?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-09-04T01:05:50.986Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/4325/xcode-template-for-pythonista-code-signing-error/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22991" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>That works and I get the new view.<br />
+Problem is it looks like Pythonista is trying to load the buttons that are defined in the second *.pyui file, but the first *.py file does not have any reference to them. The are in the second *.py file.</p>
+<p>Warning: Could not bind action: name 'calculate_button_touch_up_inside' is not defined<br />
+Warning: Could not bind action: name 'clear_button_touch_up_inside' is not defined</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-01-11T18:08:38.212Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3777/moving-from-one-pyui-file-to-another/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22960" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Is there a way to be in one *.py file with its corresponding *.pyui file that creates the GUI.<br />
+Then you click a button and go to another *.py with its corresponding *.pyui file?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-01-09T19:27:31.818Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3777/moving-from-one-pyui-file-to-another/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22921" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Wondering if anyone has been able to submit an app successfully since Jan 1, 2017.<br />
+I still am getting signing errors and have no workaround that will work.<br />
+I have app waiting to get approved and need a solution.</p>
+<p>Thanks</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-01-05T19:02:31.478Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/10">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22852" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="omz.html">@omz</a> I tried as you suggest and used the Application Loader. Same problem happening. Still getting code signing errors. Have tried using &quot;Auto code signing&quot; and even old school downloading the certificate myself and still getting the same messages.<br />
+Have you been able to get anything uploaded to the App Store?<br />
+Do you have a template that I could try?</p>
+<p>Thanks</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-12-28T02:39:48.192Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/9">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22844" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="omz.html">@omz</a> I have used your script and changed all the files in pylib and pylib_ext. I even placed the header at the top of the files in &quot;scripts&quot;. It still compiles OK to simulator and devices but I am still getting a code signing error.</p>
+<p><a href="https://drive.google.com/open?id=0BxJplyUFPhf-eFZMMjRpSW54LXM" rel="nofollow">error screenshot</a></p>
+<p>Any ideas?<br />
+Here is my fork with the fix: <a href="https://github.com/Mr-Coxall/PythonistaAppTemplate" rel="nofollow">https://github.com/Mr-Coxall/PythonistaAppTemplate</a></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-12-26T15:07:55.539Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22806" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="omz.html">@omz</a> Thanks so much for getting back to me.<br />
+I will give it a try and see what happens.</p>
+<p>By any chance do you have an update to the GitHub repo with the changes already made to the pylib and pylib_ext, so that I do not have to run the scrip and change anything?</p>
+<p>Thanks again, Patrick</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-12-22T21:53:37.160Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/4">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22787" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>I am trying to upload a Pythonista project to the Apple App Store.<br />
+I have tried many, many time and keep getting code signing errors.<br />
+I am using Xcode 8.2.1<br />
+So this is what I have done:</p>
+<p>Started with new Xcode Swift single view project, archived it and was able to submit it to the App Store. So my certificates are all working. I downloaded the Xcode template and then archived it. When I submit to Apple, it hangs on the code signing for a really long time and then comes back with this error:</p>
+<p>ERROR ITMS-90035: &quot;Invalid Signature. Code object is not signed at all. Make sure you have signed your application with a distribution certificate, not an ad hoc certificate or a development certificate. Verify that the code signing settings in Xcode are correct at the target level (which override any values at the project level). Additionally, make sure the bundle you are uploading was built using a Release target in Xcode, not a Simulator target. If you are certain your code signing settings are correct, choose &quot;Clean All&quot; in Xcode, delete the &quot;build&quot; directory in the Finder, and rebuild your release target. For more information, please consult <a href="https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html" rel="nofollow">https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html</a>&quot;</p>
+<p>The only thing I can figure out is that it seems to be trying to code sign the PythonistaKit.framework and does not seem to be able to. I can see &quot;PythonistaKit.framework (0 Entitlements), just before I validate it.</p>
+<p>Wondering if anyone else is able to reproduce this error, or even better have a fix to the problem.<br />
+Thanks</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-12-20T04:33:17.570Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3744/xcode-template-for-pythonista/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22500" data-uid="2039">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mrcoxall.html">
+					<img title="mrcoxall" class="img-rounded user-img" src="https://pbs.twimg.com/profile_images/533412106/head_bigger.png">
+				</a>
+
+				<a href="mrcoxall.html">
+					<strong><span>mrcoxall</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Got it working:<br />
+[<a href="https://github.com/Mr-Coxall/Git2Go-to-Pythonista" rel="nofollow">https://github.com/Mr-Coxall/Git2Go-to-Pythonista</a>](link url)</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-11-24T05:06:15.597Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3606/script-to-import-any-file-in-pythonista-from-any-app/5">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="2039" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22fullname%22%3A%22%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fd415f0e30c471dfdd9bc4f827329ef48%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%22%22%2C%22postcount%22%3A%2243%22%2C%22status%22%3A%22offline%22%2C%22followerCount%22%3A1%2C%22website%22%3A%22%22%2C%22location%22%3A%22%22%2C%22joindate%22%3A%222015-12-23T01%3A12%3A27.041Z%22%2C%22uploadedpicture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%2C%22banned%22%3Afalse%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22twid%22%3A%2239742682%22%2C%22lastonline%22%3A%222018-01-16T03%3A49%3A57.376Z%22%2C%22lastposttime%22%3A%221505779648712%22%2C%22profileviews%22%3A%222128%22%2C%22reputation%22%3A%226%22%2C%22topiccount%22%3A%227%22%2C%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22email%22%3A%22%22%2C%22age%22%3A%22%22%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%222039%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22http%3A%2F%2F%22%2C%22websiteName%22%3A%22%22%2C%22followingCount%22%3A0%2C%22posts%22%3A%5B%7B%22pid%22%3A%2226141%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Thanks%20for%20getting%20back%20to%20me.%3C%2Fp%3E%5Cn%3Cp%3EI%20was%20wondering%20if%20there%20is%20any%20explanation%20on%20why%20it%20is%20no%20longer%20possible%3F%3Cbr%20%2F%3E%5CnI%20used%20Pythonista%20last%20year%20with%20my%20grade%2011%20programming%20course%20and%20got%20over%20a%20dozen%20apps%20published%20on%20the%20App%20Store.%20I%20have%20just%20started%20using%20it%20again%20with%20this%20years%20group%20and%20told%20them%20we%20will%20be%20doing%20the%20same%20thing.%20If%20there%20is%20anything%20I%20can%20do%20to%20help%20the%20process%20along%2C%20please%20let%20me%20know.%20We%20will%20not%20be%20starting%20to%20write%20the%20final%20apps%20until%20December.%3C%2Fp%3E%5Cn%3Cp%3EThanks%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221505779648712%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A15%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-09-19T00%3A07%3A28.712Z%22%7D%2C%7B%22pid%22%3A%2225854%22%2C%22tid%22%3A%224325%22%2C%22content%22%3A%22%3Cp%3EIn%20January%20I%20was%20successful%20at%20getting%20several%20apps%20onto%20the%20App%20Store.%3Cbr%20%2F%3E%5CnI%20just%20went%20back%20to%20load%20another%20one%20and%20I%20am%20now%20getting%20a%20Code%20Signing%20Error.%3Cbr%20%2F%3E%5CnI%20cleared%20out%20all%20my%20certificates%20and%20reloaded%20everything%20to%20ensure%20something%20had%20not%20expired.%3Cbr%20%2F%3E%5CnI%20even%20loaded%20an%20app%20built%20completely%20in%20Xcode%20and%20it%20worked%20fine.%3Cbr%20%2F%3E%5CnWhen%20I%20try%20using%20the%20Pythonista%20template%20I%20get%3A%3C%2Fp%3E%5Cn%3Cp%3EERROR%20ITMS-90035%3A%20%26quot%3BInvalid%20Signature.%20Code%20object%20is%20not%20signed%20at%20all.%20The%20file%20at%20path%20%5BMy%20App.app%2FFrameworks%2FPythonistaKit.framework%2Fpylib%2F%3Cstrong%3Efuture%3C%2Fstrong%3E.py%5D%20is%20not%20properly%20signed.%20Make%20sure%20you%20have%20signed%20your%20application%20with%20a%20distribution%20certificate%2C%20not%20an%20ad%20hoc%20certificate%20or%20a%20development%20certificate.%20Verify%20that%20the%20code%20signing%20settings%20in%20Xcode%20are%20correct%20at%20the%20target%20level%20(which%20override%20any%20values%20at%20the%20project%20level).%20Additionally%2C%20make%20sure%20the%20bundle%20you%20are%20uploading%20was%20built%20using%20a%20Release%20target%20in%20Xcode%2C%20not%20a%20Simulator%20target.%20If%20you%20are%20certain%20your%20code%20signing%20settings%20are%20correct%2C%20choose%20%26quot%3BClean%20All%26quot%3B%20in%20Xcode%2C%20delete%20the%20%26quot%3Bbuild%26quot%3B%20directory%20in%20the%20Finder%2C%20and%20rebuild%20your%20release%20target.%20For%20more%20information%2C%20please%20consult%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%3C%2Fa%3E%26quot%3B%3Cbr%20%2F%3E%5CnERROR%20ITMS-90035%3A%20%26quot%3BInvalid%20Signature.%20Code%20object%20is%20not%20signed%20at%20all.%20The%20file%20at%20path%20%5BMy%20App.app%2FFrameworks%2FPythonistaKit.framework%2Fpylib%2F%3Cstrong%3Efuture%3C%2Fstrong%3E.py%5D%20is%20not%20properly%20signed.%20Make%20sure%20you%20have%20signed%20your%20application%20with%20a%20distribution%20certificate%2C%20not%20an%20ad%20hoc%20certificate%20or%20a%20development%20certificate.%20Verify%20that%20the%20code%20signing%20settings%20in%20Xcode%20are%20correct%20at%20the%20target%20level%20(which%20override%20any%20values%20at%20the%20project%20level).%20Additionally%2C%20make%20sure%20the%20bundle%20you%20are%20uploading%20was%20built%20using%20a%20Release%20target%20in%20Xcode%2C%20not%20a%20Simulator%20target.%20If%20you%20are%20certain%20your%20code%20signing%20settings%20are%20correct%2C%20choose%20%26quot%3BClean%20All%26quot%3B%20in%20Xcode%2C%20delete%20the%20%26quot%3Bbuild%26quot%3B%20directory%20in%20the%20Finder%2C%20and%20rebuild%20your%20release%20target.%20For%20more%20information%2C%20please%20consult%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%3C%2Fa%3E%26quot%3B%3C%2Fp%3E%5Cn%3Cp%3EAnybody%20else%20getting%20this%3F%3Cbr%20%2F%3E%5CnAnyone%20have%20a%20solution%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221504487150986%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%224325%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%20code%20signing%20error%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%224325%2Fxcode-template-for-pythonista-code-signing-error%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-09-04T01%3A05%3A50.986Z%22%7D%2C%7B%22pid%22%3A%2222991%22%2C%22tid%22%3A%223777%22%2C%22content%22%3A%22%3Cp%3EThat%20works%20and%20I%20get%20the%20new%20view.%3Cbr%20%2F%3E%5CnProblem%20is%20it%20looks%20like%20Pythonista%20is%20trying%20to%20load%20the%20buttons%20that%20are%20defined%20in%20the%20second%20*.pyui%20file%2C%20but%20the%20first%20*.py%20file%20does%20not%20have%20any%20reference%20to%20them.%20The%20are%20in%20the%20second%20*.py%20file.%3C%2Fp%3E%5Cn%3Cp%3EWarning%3A%20Could%20not%20bind%20action%3A%20name%20'calculate_button_touch_up_inside'%20is%20not%20defined%3Cbr%20%2F%3E%5CnWarning%3A%20Could%20not%20bind%20action%3A%20name%20'clear_button_touch_up_inside'%20is%20not%20defined%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221484158118212%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223777%22%2C%22title%22%3A%22Moving%20from%20one%20*.pyui%20file%20to%20another%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223777%2Fmoving-from-one-pyui-file-to-another%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%224%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-01-11T18%3A08%3A38.212Z%22%7D%2C%7B%22pid%22%3A%2222960%22%2C%22tid%22%3A%223777%22%2C%22content%22%3A%22%3Cp%3EIs%20there%20a%20way%20to%20be%20in%20one%20*.py%20file%20with%20its%20corresponding%20*.pyui%20file%20that%20creates%20the%20GUI.%3Cbr%20%2F%3E%5CnThen%20you%20click%20a%20button%20and%20go%20to%20another%20*.py%20with%20its%20corresponding%20*.pyui%20file%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221483990051818%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223777%22%2C%22title%22%3A%22Moving%20from%20one%20*.pyui%20file%20to%20another%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223777%2Fmoving-from-one-pyui-file-to-another%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%224%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-01-09T19%3A27%3A31.818Z%22%7D%2C%7B%22pid%22%3A%2222921%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3EWondering%20if%20anyone%20has%20been%20able%20to%20submit%20an%20app%20successfully%20since%20Jan%201%2C%202017.%3Cbr%20%2F%3E%5CnI%20still%20am%20getting%20signing%20errors%20and%20have%20no%20workaround%20that%20will%20work.%3Cbr%20%2F%3E%5CnI%20have%20app%20waiting%20to%20get%20approved%20and%20need%20a%20solution.%3C%2Fp%3E%5Cn%3Cp%3EThanks%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221483642951478%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A10%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-01-05T19%3A02%3A31.478Z%22%7D%2C%7B%22pid%22%3A%2222852%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20I%20tried%20as%20you%20suggest%20and%20used%20the%20Application%20Loader.%20Same%20problem%20happening.%20Still%20getting%20code%20signing%20errors.%20Have%20tried%20using%20%26quot%3BAuto%20code%20signing%26quot%3B%20and%20even%20old%20school%20downloading%20the%20certificate%20myself%20and%20still%20getting%20the%20same%20messages.%3Cbr%20%2F%3E%5CnHave%20you%20been%20able%20to%20get%20anything%20uploaded%20to%20the%20App%20Store%3F%3Cbr%20%2F%3E%5CnDo%20you%20have%20a%20template%20that%20I%20could%20try%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221482892788192%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-12-28T02%3A39%3A48.192Z%22%7D%2C%7B%22pid%22%3A%2222844%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20I%20have%20used%20your%20script%20and%20changed%20all%20the%20files%20in%20pylib%20and%20pylib_ext.%20I%20even%20placed%20the%20header%20at%20the%20top%20of%20the%20files%20in%20%26quot%3Bscripts%26quot%3B.%20It%20still%20compiles%20OK%20to%20simulator%20and%20devices%20but%20I%20am%20still%20getting%20a%20code%20signing%20error.%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D0BxJplyUFPhf-eFZMMjRpSW54LXM%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eerror%20screenshot%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EAny%20ideas%3F%3Cbr%20%2F%3E%5CnHere%20is%20my%20fork%20with%20the%20fix%3A%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FMr-Coxall%2FPythonistaAppTemplate%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2FMr-Coxall%2FPythonistaAppTemplate%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221482764875539%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-12-26T15%3A07%3A55.539Z%22%7D%2C%7B%22pid%22%3A%2222806%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Thanks%20so%20much%20for%20getting%20back%20to%20me.%3Cbr%20%2F%3E%5CnI%20will%20give%20it%20a%20try%20and%20see%20what%20happens.%3C%2Fp%3E%5Cn%3Cp%3EBy%20any%20chance%20do%20you%20have%20an%20update%20to%20the%20GitHub%20repo%20with%20the%20changes%20already%20made%20to%20the%20pylib%20and%20pylib_ext%2C%20so%20that%20I%20do%20not%20have%20to%20run%20the%20scrip%20and%20change%20anything%3F%3C%2Fp%3E%5Cn%3Cp%3EThanks%20again%2C%20Patrick%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221482443617160%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-12-22T21%3A53%3A37.160Z%22%7D%2C%7B%22pid%22%3A%2222787%22%2C%22tid%22%3A%223744%22%2C%22content%22%3A%22%3Cp%3EI%20am%20trying%20to%20upload%20a%20Pythonista%20project%20to%20the%20Apple%20App%20Store.%3Cbr%20%2F%3E%5CnI%20have%20tried%20many%2C%20many%20time%20and%20keep%20getting%20code%20signing%20errors.%3Cbr%20%2F%3E%5CnI%20am%20using%20Xcode%208.2.1%3Cbr%20%2F%3E%5CnSo%20this%20is%20what%20I%20have%20done%3A%3C%2Fp%3E%5Cn%3Cp%3EStarted%20with%20new%20Xcode%20Swift%20single%20view%20project%2C%20archived%20it%20and%20was%20able%20to%20submit%20it%20to%20the%20App%20Store.%20So%20my%20certificates%20are%20all%20working.%20I%20downloaded%20the%20Xcode%20template%20and%20then%20archived%20it.%20When%20I%20submit%20to%20Apple%2C%20it%20hangs%20on%20the%20code%20signing%20for%20a%20really%20long%20time%20and%20then%20comes%20back%20with%20this%20error%3A%3C%2Fp%3E%5Cn%3Cp%3EERROR%20ITMS-90035%3A%20%26quot%3BInvalid%20Signature.%20Code%20object%20is%20not%20signed%20at%20all.%20Make%20sure%20you%20have%20signed%20your%20application%20with%20a%20distribution%20certificate%2C%20not%20an%20ad%20hoc%20certificate%20or%20a%20development%20certificate.%20Verify%20that%20the%20code%20signing%20settings%20in%20Xcode%20are%20correct%20at%20the%20target%20level%20(which%20override%20any%20values%20at%20the%20project%20level).%20Additionally%2C%20make%20sure%20the%20bundle%20you%20are%20uploading%20was%20built%20using%20a%20Release%20target%20in%20Xcode%2C%20not%20a%20Simulator%20target.%20If%20you%20are%20certain%20your%20code%20signing%20settings%20are%20correct%2C%20choose%20%26quot%3BClean%20All%26quot%3B%20in%20Xcode%2C%20delete%20the%20%26quot%3Bbuild%26quot%3B%20directory%20in%20the%20Finder%2C%20and%20rebuild%20your%20release%20target.%20For%20more%20information%2C%20please%20consult%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fios%2Fdocumentation%2FSecurity%2FConceptual%2FCodeSigningGuide%2FIntroduction%2FIntroduction.html%3C%2Fa%3E%26quot%3B%3C%2Fp%3E%5Cn%3Cp%3EThe%20only%20thing%20I%20can%20figure%20out%20is%20that%20it%20seems%20to%20be%20trying%20to%20code%20sign%20the%20PythonistaKit.framework%20and%20does%20not%20seem%20to%20be%20able%20to.%20I%20can%20see%20%26quot%3BPythonistaKit.framework%20(0%20Entitlements)%2C%20just%20before%20I%20validate%20it.%3C%2Fp%3E%5Cn%3Cp%3EWondering%20if%20anyone%20else%20is%20able%20to%20reproduce%20this%20error%2C%20or%20even%20better%20have%20a%20fix%20to%20the%20problem.%3Cbr%20%2F%3E%5CnThanks%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221482208397570%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223744%22%2C%22title%22%3A%22Xcode%20Template%20for%20Pythonista%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223744%2Fxcode-template-for-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2268%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-12-20T04%3A33%3A17.570Z%22%7D%2C%7B%22pid%22%3A%2222500%22%2C%22tid%22%3A%223606%22%2C%22content%22%3A%22%3Cp%3EGot%20it%20working%3A%3Cbr%20%2F%3E%5Cn%5B%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FMr-Coxall%2FGit2Go-to-Pythonista%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2FMr-Coxall%2FGit2Go-to-Pythonista%3C%2Fa%3E%5D(link%20url)%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222039%22%2C%22timestamp%22%3A%221479963975597%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%222039%22%2C%22username%22%3A%22mrcoxall%22%2C%22userslug%22%3A%22mrcoxall%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F533412106%2Fhead_bigger.png%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%223004%22%2C%22tid%22%3A%223606%22%2C%22title%22%3A%22Script%20to%20import%20any%20file%20in%20Pythonista%20from%20any%20app%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223606%2Fscript-to-import-any-file-in-pythonista-from-any-app%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2217%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-11-24T05%3A06%3A15.597Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22ESgh6coY-1L7m1BNVzDj5A9LxUd6inP9UeYA%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="mrcoxall.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>paramiko &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/paramiko.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-paramiko">
+<span id="paramiko"></span><h1>paramiko<a class="headerlink" href="paramiko.html#module-paramiko" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This page only contains a brief summary about available classes in paramiko. Please refer to the full documentation on the paramiko website for more information: <a class="reference external" href="http://paramiko.org/">http://paramiko.org/</a></p>
+</div>
+<p>Paramiko (a combination of the esperanto words for &#8220;paranoid&#8221; and &#8220;friend&#8221;) is a module for python 2.3 or greater that implements the SSH2 protocol for secure (encrypted and authenticated) connections to remote machines. Unlike SSL (aka TLS), the SSH2 protocol does not require hierarchical certificates signed by a powerful central authority. You may know SSH2 as the protocol that replaced telnet and rsh for secure access to remote shells, but the protocol also includes the ability to open arbitrary channels to remote services across an encrypted tunnel. (This is how sftp works, for example.)</p>
+<p>The high-level client API starts with creation of an SSHClient object. For more direct control, pass a socket (or socket-like object) to a Transport, and use start_server or start_client to negoatite with the remote host as either a server or client. As a client, you are responsible for authenticating using a password or private key, and checking the server&#8217;s host key. (Key signature and verification is done by paramiko, but you will need to provide private keys and check that the content of a public key matches what you expected to see.) As a server, you are responsible for deciding which users, passwords, and keys to allow, and what kind of channels to allow.</p>
+<p>Once you have finished, either side may request flow-controlled Channels to the other side, which are python objects that act like sockets, but send and receive data over the encrypted session.</p>
+<p>Paramiko is written entirely in python (no C or platform-dependent code) and is released under the GNU Lesser General Public License (LGPL).</p>
+<p>Classes:</p>
+<dl class="class">
+<dt id="paramiko.SecurityOptions">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SecurityOptions</code><a class="headerlink" href="paramiko.html#paramiko.SecurityOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple object containing the security preferences of an ssh transport.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.Transport">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">Transport</code><a class="headerlink" href="paramiko.html#paramiko.Transport" title="Permalink to this definition">¶</a></dt>
+<dd><p>An SSH Transport attaches to a stream (usually a socket), negotiates an encrypted session, authenticates, and then creates stream tunnels, called Channels, across the session.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SSHClient">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SSHClient</code><a class="headerlink" href="paramiko.html#paramiko.SSHClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>A high-level representation of a session with an SSH server.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.MissingHostKeyPolicy">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">MissingHostKeyPolicy</code><a class="headerlink" href="paramiko.html#paramiko.MissingHostKeyPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interface for defining the policy that SSHClient should use when the SSH server&#8217;s hostname is not in either the system host keys or the application&#8217;s keys.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.AutoAddPolicy">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">AutoAddPolicy</code><a class="headerlink" href="paramiko.html#paramiko.AutoAddPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Policy for automatically adding the hostname and new host key to the local HostKeys object, and saving it.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.RejectPolicy">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">RejectPolicy</code><a class="headerlink" href="paramiko.html#paramiko.RejectPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Policy for automatically rejecting the unknown hostname &amp; key.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.WarningPolicy">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">WarningPolicy</code><a class="headerlink" href="paramiko.html#paramiko.WarningPolicy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Policy for logging a python-style warning for an unknown host key, but accepting it.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.Channel">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">Channel</code><a class="headerlink" href="paramiko.html#paramiko.Channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A secure tunnel across an SSH Transport.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SSHException">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SSHException</code><a class="headerlink" href="paramiko.html#paramiko.SSHException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised by failures in SSH2 protocol negotiation or logic errors.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.PasswordRequiredException">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">PasswordRequiredException</code><a class="headerlink" href="paramiko.html#paramiko.PasswordRequiredException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when a password is needed to unlock a private key file.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.BadAuthenticationType">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">BadAuthenticationType</code><a class="headerlink" href="paramiko.html#paramiko.BadAuthenticationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when an authentication type (like password) is used, but the server isn&#8217;t allowing that type.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.ChannelException">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">ChannelException</code><a class="headerlink" href="paramiko.html#paramiko.ChannelException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when an attempt to open a new Channel fails.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.BadHostKeyException">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">BadHostKeyException</code><a class="headerlink" href="paramiko.html#paramiko.BadHostKeyException" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>The host key given by the SSH server did not match what we were expecting.</div></blockquote>
+<dl class="class">
+<dt id="paramiko.BadHostKeyException.AuthenticationException">
+<em class="property">class </em><code class="descname">AuthenticationException</code><a class="headerlink" href="paramiko.html#paramiko.BadHostKeyException.AuthenticationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when authentication failed for some reason.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.ServerInterface">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">ServerInterface</code><a class="headerlink" href="paramiko.html#paramiko.ServerInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines an interface for controlling the behavior of paramiko in server mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SubsystemHandler">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SubsystemHandler</code><a class="headerlink" href="paramiko.html#paramiko.SubsystemHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handler for a subsytem in server mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.RSAKey">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">RSAKey</code><a class="headerlink" href="paramiko.html#paramiko.RSAKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of an RSA key which can be used to sign and verify SSH2 data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.DSSKey">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">DSSKey</code><a class="headerlink" href="paramiko.html#paramiko.DSSKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of a DSS key which can be used to sign an verify SSH2 data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPError">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPError</code><a class="headerlink" href="paramiko.html#paramiko.SFTPError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTP">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTP</code><a class="headerlink" href="paramiko.html#paramiko.SFTP" title="Permalink to this definition">¶</a></dt>
+<dd><p>an alias for SFTPClient for backwards compatability</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPClient">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPClient</code><a class="headerlink" href="paramiko.html#paramiko.SFTPClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>SFTP client object.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPServer">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPServer</code><a class="headerlink" href="paramiko.html#paramiko.SFTPServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Server-side SFTP subsystem support.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPAttributes">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPAttributes</code><a class="headerlink" href="paramiko.html#paramiko.SFTPAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of the attributes of a file (or proxied file) for SFTP in client or server mode.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPHandle">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPHandle</code><a class="headerlink" href="paramiko.html#paramiko.SFTPHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract object representing a handle to an open file (or folder) in an SFTP server implementation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPServerInterface">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPServerInterface</code><a class="headerlink" href="paramiko.html#paramiko.SFTPServerInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines an interface for controlling the behavior of paramiko when using the SFTPServer subsystem to provide an SFTP server.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SFTPFile">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SFTPFile</code><a class="headerlink" href="paramiko.html#paramiko.SFTPFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proxy object for a file on the remote server, in client mode SFTP.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.Message">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">Message</code><a class="headerlink" href="paramiko.html#paramiko.Message" title="Permalink to this definition">¶</a></dt>
+<dd><p>An SSH2 Message is a stream of bytes that encodes some combination of strings, integers, bools, and infinite-precision integers (known in python as longs).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.BufferedFile">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">BufferedFile</code><a class="headerlink" href="paramiko.html#paramiko.BufferedFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reusable base class to implement python-style file buffering around a simpler stream.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.Agent">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">Agent</code><a class="headerlink" href="paramiko.html#paramiko.Agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client interface for using private keys from an SSH agent running on the local machine.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.AgentKey">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">AgentKey</code><a class="headerlink" href="paramiko.html#paramiko.AgentKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private key held in a local SSH agent.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.PKey">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">PKey</code><a class="headerlink" href="paramiko.html#paramiko.PKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for public keys.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.HostKeys">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">HostKeys</code><a class="headerlink" href="paramiko.html#paramiko.HostKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of an openssh-style &#8220;known hosts&#8221; file.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paramiko.SSHConfig">
+<em class="property">class </em><code class="descclassname">paramiko.</code><code class="descname">SSHConfig</code><a class="headerlink" href="paramiko.html#paramiko.SSHConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Representation of config information as stored in the format used by OpenSSH.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

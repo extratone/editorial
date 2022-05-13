@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>contacts — Access the iOS Contacts Database &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/contacts.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-contacts">
+<span id="contacts-access-the-ios-contacts-database"></span><h1><a class="reference internal" href="contacts.html#module-contacts" title="contacts: Access the iOS Contacts Database"><code class="xref py py-mod docutils literal"><span class="pre">contacts</span></code></a> &#8212; Access the iOS Contacts Database<a class="headerlink" href="contacts.html#module-contacts" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="contacts.html#module-contacts" title="contacts: Access the iOS Contacts Database"><code class="xref py py-mod docutils literal"><span class="pre">contacts</span></code></a> module allows you to read and modify the iOS contacts (address book) database.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The first time the <a class="reference internal" href="contacts.html#module-contacts" title="contacts: Access the iOS Contacts Database"><code class="xref py py-mod docutils literal"><span class="pre">contacts</span></code></a> module is imported, a system-provided permission dialog will be shown. If you deny access, <a class="reference internal" href="contacts.html#contacts.get_all_people" title="contacts.get_all_people"><code class="xref py py-func docutils literal"><span class="pre">get_all_people()</span></code></a> will always return an empty list. If you change your mind later, you can allow access to your contacts from the <cite>Privacy</cite> section in the Settings app.</p>
+</div>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="contacts.html#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>As a simple example for reading information in the address book, let&#8217;s start with a script that prints out all people that have text in the &#8216;Notes&#8217; field:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contacts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Address Book Notes&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">people</span> <span class="o">=</span> <span class="n">contacts</span><span class="o">.</span><span class="n">get_all_people</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+  <span class="n">note</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">note</span>
+  <span class="k">if</span> <span class="n">note</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">full_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script uses the <a class="reference internal" href="contacts.html#contacts.get_all_people" title="contacts.get_all_people"><code class="xref py py-func docutils literal"><span class="pre">get_all_people()</span></code></a> function to retrieve a list of all <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> objects in the address book, iterates over the list, and prints the name and note for each person that has a (non-empty) <a class="reference internal" href="contacts.html#contacts.Person.note" title="contacts.Person.note"><code class="xref py py-attr docutils literal"><span class="pre">Person.note</span></code></a> field.</p>
+<p>As a slightly more complex example, this script prints out a list of upcoming birthdays (as number of days from now):</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contacts</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">operator</span>
+
+<span class="n">days_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">people</span> <span class="o">=</span> <span class="n">contacts</span><span class="o">.</span><span class="n">get_all_people</span><span class="p">()</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">birthday</span>
+  <span class="k">if</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">next_birthday</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">next_birthday</span> <span class="o">&lt;</span> <span class="n">now</span><span class="p">:</span>
+      <span class="n">next_birthday</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="p">(</span><span class="n">next_birthday</span> <span class="o">-</span> <span class="n">now</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">days_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">full_name</span><span class="p">,</span> <span class="s1">&#39;days&#39;</span><span class="p">:</span> <span class="n">days</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">days_list</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You don</span><span class="se">\&#39;</span><span class="s1">t have any birthdays in your address book.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">days_list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="s1">&#39;days&#39;</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Upcoming Birthdays&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">days_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* </span><span class="si">%s</span><span class="s1"> in </span><span class="si">%i</span><span class="s1"> days&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;days&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>The note and birthday fields are very easy to use because there is only one for each person. Many other fields can have multiple values, e.g. a person can have more than one email address. These fields are represented as lists of tuples, with each tuple containing a label (e.g. &#8216;home&#8217;, &#8216;work&#8217;...), and the actual value. An example for the <a class="reference internal" href="contacts.html#contacts.Person.email" title="contacts.Person.email"><code class="xref py py-attr docutils literal"><span class="pre">Person.email</span></code></a> attribute would be <code class="docutils literal"><span class="pre">[('home',</span> <span class="pre">'me&#64;example.com'),</span> <span class="pre">('work',</span> <span class="pre">'work&#64;example.com')]</span></code>.</p>
+<p>So far, we&#8217;ve only <em>read</em> information from the address book database, but you can also use the <a class="reference internal" href="contacts.html#module-contacts" title="contacts: Access the iOS Contacts Database"><code class="xref py py-mod docutils literal"><span class="pre">contacts</span></code></a> module to make changes. Because the previous example used a simple single-value attribute, let&#8217;s use the more complex <a class="reference internal" href="contacts.html#contacts.Person.address" title="contacts.Person.address"><code class="xref py py-attr docutils literal"><span class="pre">Person.address</span></code></a> attribute now, which is represented as a list of multiple dictionaries, each wrapped in a tuple that contains a label (e.g. &#8216;home&#8217;, &#8216;work&#8217;...). Let&#8217;s change the country of all people that live in Berlin to be Germany:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contacts</span>
+<span class="n">people</span> <span class="o">=</span> <span class="n">contacts</span><span class="o">.</span><span class="n">get_all_people</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+  <span class="n">changed</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">addresses</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">address</span>
+  <span class="k">for</span> <span class="n">address_tuple</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">address_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">contacts</span><span class="o">.</span><span class="n">CITY</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">contacts</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="s1">&#39;Berlin&#39;</span> <span class="ow">and</span> <span class="n">country</span> <span class="o">!=</span> <span class="s1">&#39;Germany&#39;</span><span class="p">:</span>
+      <span class="n">address</span><span class="p">[</span><span class="n">contacts</span><span class="o">.</span><span class="n">COUNTRY</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
+      <span class="n">address</span><span class="p">[</span><span class="n">contacts</span><span class="o">.</span><span class="n">COUNTRY_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;de&#39;</span>
+      <span class="n">changed</span> <span class="o">=</span> <span class="kc">True</span>
+  <span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">addresses</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated country of&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">full_name</span><span class="p">)</span>
+<span class="n">contacts</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that we&#8217;ve used constants for the keys in the address dictionary &#8211; you can find a list of these keys at the end of this document. After making any changes to the address book, you have to call the <a class="reference internal" href="contacts.html#contacts.save" title="contacts.save"><code class="xref py py-func docutils literal"><span class="pre">save()</span></code></a> function to make them persistent.</p>
+<p>Note that all multi-value attributes are returned as &#8216;snapshots&#8217;. Modifying these lists directly has no effect unless you re-assign the attribute.</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="contacts.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="contacts.get_group">
+<code class="descclassname">contacts.</code><code class="descname">get_group</code><span class="sig-paren">(</span><em>group_id</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.get_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> with the given id (an integer, c.f. <a class="reference internal" href="contacts.html#contacts.Group.id" title="contacts.Group.id"><code class="xref py py-attr docutils literal"><span class="pre">Group.id</span></code></a>).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.get_all_groups">
+<code class="descclassname">contacts.</code><code class="descname">get_all_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.get_all_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> objects in the address book.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.add_group">
+<code class="descclassname">contacts.</code><code class="descname">add_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.add_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> to the address book.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.remove_group">
+<code class="descclassname">contacts.</code><code class="descname">remove_group</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.remove_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> from the address book.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.add_person">
+<code class="descclassname">contacts.</code><code class="descname">add_person</code><span class="sig-paren">(</span><em>person</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.add_person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> to the address book.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.remove_person">
+<code class="descclassname">contacts.</code><code class="descname">remove_person</code><span class="sig-paren">(</span><em>person</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.remove_person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> from the address book.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.find">
+<code class="descclassname">contacts.</code><code class="descname">find</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do a prefix search for the given name and return a list of all matching <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> records.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.get_all_people">
+<code class="descclassname">contacts.</code><code class="descname">get_all_people</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.get_all_people" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all people in the address book. Each list entry is a <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.get_person">
+<code class="descclassname">contacts.</code><code class="descname">get_person</code><span class="sig-paren">(</span><em>person_id</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.get_person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> with the given id (an integer, c.f. <a class="reference internal" href="contacts.html#contacts.Person.id" title="contacts.Person.id"><code class="xref py py-attr docutils literal"><span class="pre">Person.id</span></code></a>).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.save">
+<code class="descclassname">contacts.</code><code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save all pending changes in the contacts database. After changing any attributes of a <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> or <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> object, this function has to be called in order to make the changes persistent.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.revert">
+<code class="descclassname">contacts.</code><code class="descname">revert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.revert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Revert all pending changes in the contacts database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.localized_label">
+<code class="descclassname">contacts.</code><code class="descname">localized_label</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.localized_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a localized version of a label that is used in a multi-value property.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="contacts.is_authorized">
+<code class="descclassname">contacts.</code><code class="descname">is_authorized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="contacts.html#contacts.is_authorized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>True</cite> if access to the address book is currently allowed, <cite>False</cite> otherwise (e.g. if the permission dialog hasn&#8217;t been shown yet or if access is denied due to parental controls).</p>
+</dd></dl>
+
+<div class="section" id="group-objects">
+<h3>Group Objects<a class="headerlink" href="contacts.html#group-objects" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="contacts.Group">
+<em class="property">class </em><code class="descclassname">contacts.</code><code class="descname">Group</code><a class="headerlink" href="contacts.html#contacts.Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> object represents a group in the address book, e.g. friends, family, or co-workers. After initializing a <a class="reference internal" href="contacts.html#contacts.Group" title="contacts.Group"><code class="xref py py-class docutils literal"><span class="pre">Group</span></code></a> object and setting its <code class="docutils literal"><span class="pre">name</span></code> attribute, it can be added to the address book database by calling <a class="reference internal" href="contacts.html#contacts.add_group" title="contacts.add_group"><code class="xref py py-func docutils literal"><span class="pre">add_group()</span></code></a>. When a group&#8217;s name is modified, the <a class="reference internal" href="contacts.html#contacts.save" title="contacts.save"><code class="xref py py-func docutils literal"><span class="pre">save()</span></code></a> function has to be called in order to make the change persistent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Group.name">
+<code class="descclassname">Group.</code><code class="descname">name</code><a class="headerlink" href="contacts.html#contacts.Group.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The group&#8217;s name, e.g. &#8216;Friends&#8217; or &#8216;Family&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Group.id">
+<code class="descclassname">Group.</code><code class="descname">id</code><a class="headerlink" href="contacts.html#contacts.Group.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The persistent identifier of the group record in the address book (int, readonly), or <code class="docutils literal"><span class="pre">-1</span></code> if the group has not been saved yet. The id can be used with the <a class="reference internal" href="contacts.html#contacts.get_group" title="contacts.get_group"><code class="xref py py-func docutils literal"><span class="pre">get_group()</span></code></a> function.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="person-objects">
+<h2>Person Objects<a class="headerlink" href="contacts.html#person-objects" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="contacts.Person">
+<em class="property">class </em><code class="descclassname">contacts.</code><code class="descname">Person</code><a class="headerlink" href="contacts.html#contacts.Person" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> objects represent people in the address book. After initializing a <a class="reference internal" href="contacts.html#contacts.Person" title="contacts.Person"><code class="xref py py-class docutils literal"><span class="pre">Person</span></code></a> and setting its various attributes, it can be added to the address book database by calling <a class="reference internal" href="contacts.html#contacts.add_person" title="contacts.add_person"><code class="xref py py-func docutils literal"><span class="pre">add_person()</span></code></a>. After any attributes are modified, the <a class="reference internal" href="contacts.html#contacts.save" title="contacts.save"><code class="xref py py-func docutils literal"><span class="pre">save()</span></code></a> function has to be called in order to make the changes persistent.</p>
+<p>A lot of attributes can have multiple values, e.g. a person can have multiple email addresses (work, private, ...) or phone numbers (home, mobile, ...). Each of these attributes is represented as a list of 2-tuples, with each tuple containing a label and the actual value. For example, this could be the contents of a person&#8217;s <code class="docutils literal"><span class="pre">email</span></code> attribute: <code class="docutils literal"><span class="pre">[('home',</span> <span class="pre">'foo&#64;work.com'),</span> <span class="pre">('work',</span> <span class="pre">'foo&#64;work.com')]</span></code>. Though it&#8217;s possible to use any string as a label, it is recommended to use one of the constants at the end of this document. These labels look like <code class="docutils literal"><span class="pre">'_$!&lt;Work&gt;!$'</span></code>, but will be localized in the UI. You can get a localized representation of a label constant by using the <a class="reference internal" href="contacts.html#contacts.localized_label" title="contacts.localized_label"><code class="xref py py-func docutils literal"><span class="pre">localized_label()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.address">
+<code class="descclassname">Person.</code><code class="descname">address</code><a class="headerlink" href="contacts.html#contacts.Person.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Street address(es) (multi-dictionary). Use the constants <a class="reference internal" href="contacts.html#contacts.contacts.STREET" title="contacts.contacts.STREET"><code class="xref py py-data docutils literal"><span class="pre">contacts.STREET</span></code></a>, <a class="reference internal" href="contacts.html#contacts.contacts.CITY" title="contacts.contacts.CITY"><code class="xref py py-data docutils literal"><span class="pre">contacts.CITY</span></code></a>, <a class="reference internal" href="contacts.html#contacts.contacts.STATE" title="contacts.contacts.STATE"><code class="xref py py-data docutils literal"><span class="pre">contacts.STATE</span></code></a> etc. as keys.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.birthday">
+<code class="descclassname">Person.</code><code class="descname">birthday</code><a class="headerlink" href="contacts.html#contacts.Person.birthday" title="Permalink to this definition">¶</a></dt>
+<dd><p>Birthday (<a class="reference internal" href="../library/datetime.html#datetime.datetime" title="datetime.datetime"><code class="xref py py-mod docutils literal"><span class="pre">datetime.datetime</span></code></a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.creation_date">
+<code class="descclassname">Person.</code><code class="descname">creation_date</code><a class="headerlink" href="contacts.html#contacts.Person.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the person was added to the address book (readonly, <a class="reference internal" href="../library/datetime.html#datetime.datetime" title="datetime.datetime"><code class="xref py py-mod docutils literal"><span class="pre">datetime.datetime</span></code></a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.department">
+<code class="descclassname">Person.</code><code class="descname">department</code><a class="headerlink" href="contacts.html#contacts.Person.department" title="Permalink to this definition">¶</a></dt>
+<dd><p>Department (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.email">
+<code class="descclassname">Person.</code><code class="descname">email</code><a class="headerlink" href="contacts.html#contacts.Person.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Email address(es) (multi-string)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.first_name">
+<code class="descclassname">Person.</code><code class="descname">first_name</code><a class="headerlink" href="contacts.html#contacts.Person.first_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>First name (string)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.first_name_phonetic">
+<code class="descclassname">Person.</code><code class="descname">first_name_phonetic</code><a class="headerlink" href="contacts.html#contacts.Person.first_name_phonetic" title="Permalink to this definition">¶</a></dt>
+<dd><p>First name phonetic (string)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.full_name">
+<code class="descclassname">Person.</code><code class="descname">full_name</code><a class="headerlink" href="contacts.html#contacts.Person.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The person&#8217;s full name (readonly, string). To modify the name, use the <a class="reference internal" href="contacts.html#contacts.Person.first_name" title="contacts.Person.first_name"><code class="xref py py-attr docutils literal"><span class="pre">Person.first_name</span></code></a>, <a class="reference internal" href="contacts.html#contacts.Person.last_name" title="contacts.Person.last_name"><code class="xref py py-attr docutils literal"><span class="pre">Person.last_name</span></code></a> and <a class="reference internal" href="contacts.html#contacts.Person.middle_name" title="contacts.Person.middle_name"><code class="xref py py-attr docutils literal"><span class="pre">Person.middle_name</span></code></a> attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.id">
+<code class="descclassname">Person.</code><code class="descname">id</code><a class="headerlink" href="contacts.html#contacts.Person.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The persistent identifier of the person record in the address book (int, readonly), or <code class="docutils literal"><span class="pre">-1</span></code> if the person has not been saved yet. The id can be used with the <a class="reference internal" href="contacts.html#contacts.get_person" title="contacts.get_person"><code class="xref py py-func docutils literal"><span class="pre">get_person()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.image_data">
+<code class="descclassname">Person.</code><code class="descname">image_data</code><a class="headerlink" href="contacts.html#contacts.Person.image_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The person&#8217;s image, e.g. a photo (byte string representing a common image file format, like PNG or JPEG, or <cite>None</cite> if no image was set).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.instant_message">
+<code class="descclassname">Person.</code><code class="descname">instant_message</code><a class="headerlink" href="contacts.html#contacts.Person.instant_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instant message accounts (multi-dictionary).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.job_title">
+<code class="descclassname">Person.</code><code class="descname">job_title</code><a class="headerlink" href="contacts.html#contacts.Person.job_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job title (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.kind">
+<code class="descclassname">Person.</code><code class="descname">kind</code><a class="headerlink" href="contacts.html#contacts.Person.kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>The kind of address book record (int, <code class="docutils literal"><span class="pre">0</span></code> for a person, <code class="docutils literal"><span class="pre">1</span></code> for an organization).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.last_name">
+<code class="descclassname">Person.</code><code class="descname">last_name</code><a class="headerlink" href="contacts.html#contacts.Person.last_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Last name (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.last_name_phonetic">
+<code class="descclassname">Person.</code><code class="descname">last_name_phonetic</code><a class="headerlink" href="contacts.html#contacts.Person.last_name_phonetic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Last name phonetic (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.middle_name">
+<code class="descclassname">Person.</code><code class="descname">middle_name</code><a class="headerlink" href="contacts.html#contacts.Person.middle_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Middle name (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.middle_name_phonetic">
+<code class="descclassname">Person.</code><code class="descname">middle_name_phonetic</code><a class="headerlink" href="contacts.html#contacts.Person.middle_name_phonetic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Middle name phonetic (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.modification_date">
+<code class="descclassname">Person.</code><code class="descname">modification_date</code><a class="headerlink" href="contacts.html#contacts.Person.modification_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the person was last modified (readonly, <a class="reference internal" href="../library/datetime.html#datetime.datetime" title="datetime.datetime"><code class="xref py py-mod docutils literal"><span class="pre">datetime.datetime</span></code></a>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.nickname">
+<code class="descclassname">Person.</code><code class="descname">nickname</code><a class="headerlink" href="contacts.html#contacts.Person.nickname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nickname (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.note">
+<code class="descclassname">Person.</code><code class="descname">note</code><a class="headerlink" href="contacts.html#contacts.Person.note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.organization">
+<code class="descclassname">Person.</code><code class="descname">organization</code><a class="headerlink" href="contacts.html#contacts.Person.organization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Organization (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.phone">
+<code class="descclassname">Person.</code><code class="descname">phone</code><a class="headerlink" href="contacts.html#contacts.Person.phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Phone number(s) (multi-string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.prefix">
+<code class="descclassname">Person.</code><code class="descname">prefix</code><a class="headerlink" href="contacts.html#contacts.Person.prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prefix, e.g. “Sir,” “Duke,” “General” (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.related_names">
+<code class="descclassname">Person.</code><code class="descname">related_names</code><a class="headerlink" href="contacts.html#contacts.Person.related_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Related names (multi-string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.social_profile">
+<code class="descclassname">Person.</code><code class="descname">social_profile</code><a class="headerlink" href="contacts.html#contacts.Person.social_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Social profile(s), e.g. Twitter accounts (multi-dictionary).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.suffix">
+<code class="descclassname">Person.</code><code class="descname">suffix</code><a class="headerlink" href="contacts.html#contacts.Person.suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suffix, e.g. “Jr.,” “Sr.,” “III” (string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.url">
+<code class="descclassname">Person.</code><code class="descname">url</code><a class="headerlink" href="contacts.html#contacts.Person.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL(s), e.g. homepage (multi-string).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="contacts.Person.vcard">
+<code class="descclassname">Person.</code><code class="descname">vcard</code><a class="headerlink" href="contacts.html#contacts.Person.vcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>VCard reprentation of the person&#8217;s data (readonly, string).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="contacts.html#constants" title="Permalink to this headline">¶</a></h2>
+<p>Generic labels for multi-value attributes:</p>
+<dl class="data">
+<dt id="contacts.contacts.HOME">
+<code class="descclassname">contacts.</code><code class="descname">HOME</code><a class="headerlink" href="contacts.html#contacts.contacts.HOME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.WORK">
+<code class="descclassname">contacts.</code><code class="descname">WORK</code><a class="headerlink" href="contacts.html#contacts.contacts.WORK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.OTHER">
+<code class="descclassname">contacts.</code><code class="descname">OTHER</code><a class="headerlink" href="contacts.html#contacts.contacts.OTHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Labels for the <a class="reference internal" href="contacts.html#contacts.Person.phone" title="contacts.Person.phone"><code class="xref py py-attr docutils literal"><span class="pre">Person.phone</span></code></a> multi-string attribute:</p>
+<dl class="data">
+<dt id="contacts.contacts.IPHONE">
+<code class="descclassname">contacts.</code><code class="descname">IPHONE</code><a class="headerlink" href="contacts.html#contacts.contacts.IPHONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.MAIN_PHONE">
+<code class="descclassname">contacts.</code><code class="descname">MAIN_PHONE</code><a class="headerlink" href="contacts.html#contacts.contacts.MAIN_PHONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.HOME_FAX">
+<code class="descclassname">contacts.</code><code class="descname">HOME_FAX</code><a class="headerlink" href="contacts.html#contacts.contacts.HOME_FAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.WORK_FAX">
+<code class="descclassname">contacts.</code><code class="descname">WORK_FAX</code><a class="headerlink" href="contacts.html#contacts.contacts.WORK_FAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.OTHER_FAX">
+<code class="descclassname">contacts.</code><code class="descname">OTHER_FAX</code><a class="headerlink" href="contacts.html#contacts.contacts.OTHER_FAX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.PAGER">
+<code class="descclassname">contacts.</code><code class="descname">PAGER</code><a class="headerlink" href="contacts.html#contacts.contacts.PAGER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Labels for the <a class="reference internal" href="contacts.html#contacts.Person.related_names" title="contacts.Person.related_names"><code class="xref py py-attr docutils literal"><span class="pre">Person.related_names</span></code></a> multi-string attribute:</p>
+<dl class="data">
+<dt id="contacts.contacts.FATHER">
+<code class="descclassname">contacts.</code><code class="descname">FATHER</code><a class="headerlink" href="contacts.html#contacts.contacts.FATHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.MOTHER">
+<code class="descclassname">contacts.</code><code class="descname">MOTHER</code><a class="headerlink" href="contacts.html#contacts.contacts.MOTHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.PARENT">
+<code class="descclassname">contacts.</code><code class="descname">PARENT</code><a class="headerlink" href="contacts.html#contacts.contacts.PARENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.BROTHER">
+<code class="descclassname">contacts.</code><code class="descname">BROTHER</code><a class="headerlink" href="contacts.html#contacts.contacts.BROTHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.SISTER">
+<code class="descclassname">contacts.</code><code class="descname">SISTER</code><a class="headerlink" href="contacts.html#contacts.contacts.SISTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.CHILD">
+<code class="descclassname">contacts.</code><code class="descname">CHILD</code><a class="headerlink" href="contacts.html#contacts.contacts.CHILD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.FRIEND">
+<code class="descclassname">contacts.</code><code class="descname">FRIEND</code><a class="headerlink" href="contacts.html#contacts.contacts.FRIEND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.SPOUSE">
+<code class="descclassname">contacts.</code><code class="descname">SPOUSE</code><a class="headerlink" href="contacts.html#contacts.contacts.SPOUSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.PARTNER">
+<code class="descclassname">contacts.</code><code class="descname">PARTNER</code><a class="headerlink" href="contacts.html#contacts.contacts.PARTNER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.ASSISTANT">
+<code class="descclassname">contacts.</code><code class="descname">ASSISTANT</code><a class="headerlink" href="contacts.html#contacts.contacts.ASSISTANT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.MANAGER">
+<code class="descclassname">contacts.</code><code class="descname">MANAGER</code><a class="headerlink" href="contacts.html#contacts.contacts.MANAGER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Labels for the <a class="reference internal" href="contacts.html#contacts.Person.url" title="contacts.Person.url"><code class="xref py py-attr docutils literal"><span class="pre">Person.url</span></code></a> multi-string attribute:</p>
+<dl class="data">
+<dt id="contacts.contacts.HOMEPAGE">
+<code class="descclassname">contacts.</code><code class="descname">HOMEPAGE</code><a class="headerlink" href="contacts.html#contacts.contacts.HOMEPAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Keys for <a class="reference internal" href="contacts.html#contacts.Person.address" title="contacts.Person.address"><code class="xref py py-attr docutils literal"><span class="pre">Person.address</span></code></a> dictionaries:</p>
+<dl class="data">
+<dt id="contacts.contacts.STREET">
+<code class="descclassname">contacts.</code><code class="descname">STREET</code><a class="headerlink" href="contacts.html#contacts.contacts.STREET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.CITY">
+<code class="descclassname">contacts.</code><code class="descname">CITY</code><a class="headerlink" href="contacts.html#contacts.contacts.CITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.STATE">
+<code class="descclassname">contacts.</code><code class="descname">STATE</code><a class="headerlink" href="contacts.html#contacts.contacts.STATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.ZIP">
+<code class="descclassname">contacts.</code><code class="descname">ZIP</code><a class="headerlink" href="contacts.html#contacts.contacts.ZIP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.COUNTRY">
+<code class="descclassname">contacts.</code><code class="descname">COUNTRY</code><a class="headerlink" href="contacts.html#contacts.contacts.COUNTRY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="contacts.contacts.COUNTRY_CODE">
+<code class="descclassname">contacts.</code><code class="descname">COUNTRY_CODE</code><a class="headerlink" href="contacts.html#contacts.contacts.COUNTRY_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

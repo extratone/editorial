@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pythonista Modules &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/index.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="pythonista-modules">
+<span id="ios"></span><h1>Pythonista Modules<a class="headerlink" href="index.html#pythonista-modules" title="Permalink to this headline">¶</a></h1>
+<p>The following modules have been created for Pythonista and provide iOS-specific functionality.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appex.html"><code class="docutils literal"><span class="pre">appex</span></code> &#8212; Utilities for Pythonista&#8217;s App Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas.html"><code class="docutils literal"><span class="pre">canvas</span></code> &#8212; Vector Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cb.html"><code class="docutils literal"><span class="pre">cb</span></code> &#8212; Connecting to Bluetooth LE Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clipboard.html"><code class="docutils literal"><span class="pre">clipboard</span></code> &#8212; Copy and paste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console.html"><code class="docutils literal"><span class="pre">console</span></code> &#8212; Utilities for Console Output and Various System Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogs.html"><code class="docutils literal"><span class="pre">dialogs</span></code> &#8212; Easy-to-use UI Dialogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contacts.html"><code class="docutils literal"><span class="pre">contacts</span></code> &#8212; Access the iOS Contacts Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html"><code class="docutils literal"><span class="pre">editor</span></code> &#8212; Functions for scripting Pythonista&#8217;s text editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard.html"><code class="docutils literal"><span class="pre">keyboard</span></code> &#8212; Utilities for the Pythonista Keyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keychain.html"><code class="docutils literal"><span class="pre">keychain</span></code> &#8212; Secure Password Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linguistictagger.html"><code class="docutils literal"><span class="pre">linguistictagger</span></code> &#8212; Linguistic analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="location.html"><code class="docutils literal"><span class="pre">location</span></code> &#8212; Geo-Location Services on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html"><code class="docutils literal"><span class="pre">motion</span></code> &#8212; Motion Sensor Data on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notification.html"><code class="docutils literal"><span class="pre">notification</span></code> &#8212; Notifications on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objc_util.html"><code class="docutils literal"><span class="pre">objc_util</span></code> &#8212; Utilities for bridging Objective-C APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="photos.html"><code class="docutils literal"><span class="pre">photos</span></code> &#8212; Photo Library Access on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reminders.html"><code class="docutils literal"><span class="pre">reminders</span></code> &#8212; Access to the iOS Reminders Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scene.html"><code class="docutils literal"><span class="pre">scene</span></code> &#8212; 2D Games and Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shortcuts.html"><code class="docutils literal"><span class="pre">shortcuts</span></code> &#8212; Pythonista URLs and Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sound.html"><code class="docutils literal"><span class="pre">sound</span></code> &#8212; Sound effects and music playback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speech.html"><code class="docutils literal"><span class="pre">speech</span></code> &#8212; Text-to-Speech on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twitter.html"><code class="docutils literal"><span class="pre">twitter</span></code> &#8212; iOS Twitter Accounts and API Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html"><code class="docutils literal"><span class="pre">ui</span></code> &#8212; Native GUI for iOS</a></li>
+</ul>
+</div>
+<div class="section" id="other-information">
+<h2>Other Information<a class="headerlink" href="index.html#other-information" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="urlscheme.html">The Pythonista URL Scheme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="urlscheme.html#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urlscheme.html#command-line-arguments">Command-line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urlscheme.html#python-version">Python Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urlscheme.html#launching-other-apps">Launching Other Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pythonista_shortcuts.html">App Extensions and Shortcuts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pythonista_shortcuts.html#pythonista-keyboard">Pythonista Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonista_shortcuts.html#share-sheet-extension">Share Sheet Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonista_shortcuts.html#editor-action">Editor Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonista_shortcuts.html#home-screen-icon">Home Screen Icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pythonista_shortcuts.html#pythonista-url">Pythonista URL</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="extras">
+<h2>Extras<a class="headerlink" href="index.html#extras" title="Permalink to this headline">¶</a></h2>
+<p>The following popular third-party modules are also included with Pythonista.
+They are not part of the Python Standard Library, but they are not specific to iOS.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="beautifulsoup.html"><code class="docutils literal"><span class="pre">bs4</span></code> &#8212; BeautifulSoup 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bottle/index.html">Bottle: Python Web Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dropbox.html">Dropbox for Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evernote.html"><code class="docutils literal"><span class="pre">evernote</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="faker.html"><code class="docutils literal"><span class="pre">faker</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="feedparser.html"><code class="docutils literal"><span class="pre">feedparser</span></code> &#8212; Universal Feed Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown2.html"><code class="docutils literal"><span class="pre">markdown2</span></code> &#8212; A fast and complete implementation of Markdown in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paramiko.html">paramiko</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PIL.html">Python Imaging Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyPDF2.html"><code class="docutils literal"><span class="pre">PyPDF2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyminizip.html"><code class="docutils literal"><span class="pre">pyminizip</span></code> &#8212; Create password-protected Zip files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qrcode.html"><code class="docutils literal"><span class="pre">qrcode</span></code> &#8212; Pure python QR Code generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requests.html">Requests &#8211; HTTP for Humans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xmltodict.html"><code class="docutils literal"><span class="pre">xmltodict</span></code></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="undocumented-modules">
+<h2>Undocumented Modules<a class="headerlink" href="index.html#undocumented-modules" title="Permalink to this headline">¶</a></h2>
+<p>The following third-party modules are included with Pythonista, but full documentation is currently not available within the app.</p>
+<p>You&#8217;ll still find at least a brief description and links to more information here.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/arrow.html"><code class="docutils literal"><span class="pre">arrow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/certifi.html"><code class="docutils literal"><span class="pre">certifi</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/cssselect.html"><code class="docutils literal"><span class="pre">cssselect</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/dateutil.html"><code class="docutils literal"><span class="pre">dateutil</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/ecdsa.html"><code class="docutils literal"><span class="pre">ecdsa</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/flask.html"><code class="docutils literal"><span class="pre">flask</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/html2text.html"><code class="docutils literal"><span class="pre">html2text</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/html5lib.html"><code class="docutils literal"><span class="pre">html5lib</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/httplib2.html"><code class="docutils literal"><span class="pre">httplib2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/images2gif.html"><code class="docutils literal"><span class="pre">images2gif</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/itsdangerous.html"><code class="docutils literal"><span class="pre">itsdangerous</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/jinja2.html"><code class="docutils literal"><span class="pre">jinja2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/markupsafe.html"><code class="docutils literal"><span class="pre">markupsafe</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/midiutil.html"><code class="docutils literal"><span class="pre">midiutil</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/oauth2.html"><code class="docutils literal"><span class="pre">oauth2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/openpyxl.html"><code class="docutils literal"><span class="pre">openpyxl</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/parsedatetime.html"><code class="docutils literal"><span class="pre">parsedatetime</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/py.html"><code class="docutils literal"><span class="pre">py</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/pycparser.html"><code class="docutils literal"><span class="pre">pycparser</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/pygments.html"><code class="docutils literal"><span class="pre">pygments</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/pyparsing.html"><code class="docutils literal"><span class="pre">pyparsing</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/pytest.html"><code class="docutils literal"><span class="pre">pytest</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/pytz.html"><code class="docutils literal"><span class="pre">pytz</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/reportlab.html"><code class="docutils literal"><span class="pre">reportlab</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/simpy.html"><code class="docutils literal"><span class="pre">simpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/six.html"><code class="docutils literal"><span class="pre">six</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/sqlalchemy.html"><code class="docutils literal"><span class="pre">sqlalchemy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/urllib3.html"><code class="docutils literal"><span class="pre">urllib3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/wavebender.html"><code class="docutils literal"><span class="pre">wavebender</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/werkzeug.html"><code class="docutils literal"><span class="pre">werkzeug</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="undocumented/yaml.html"><code class="docutils literal"><span class="pre">yaml</span></code></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 24, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

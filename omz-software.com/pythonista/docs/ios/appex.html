@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>appex — Utilities for Pythonista’s App Extensions &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/appex.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-appex">
+<span id="appex-utilities-for-pythonista-s-app-extensions"></span><h1><a class="reference internal" href="appex.html#module-appex" title="appex: Utilities for Pythonista's App Extensions"><code class="xref py py-mod docutils literal"><span class="pre">appex</span></code></a> &#8212; Utilities for Pythonista&#8217;s App Extensions<a class="headerlink" href="appex.html#module-appex" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="appex.html#module-appex" title="appex: Utilities for Pythonista's App Extensions"><code class="xref py py-mod docutils literal"><span class="pre">appex</span></code></a> module provides functions for interacting with Pythonista&#8217;s app extensions that allow you to use Python scripting within other apps on iOS.</p>
+<p>Pythonista 3 provides two different app extensions which are affected by this module: the <em>share</em> extension and the <em>Today widget</em>.</p>
+<div class="section" id="the-share-extension">
+<h2>The Share Extension<a class="headerlink" href="appex.html#the-share-extension" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See also: <a class="reference internal" href="pythonista_shortcuts.html#pythonista-share-extension"><span>Pythonista Shortcuts / Share Extension</span></a></p>
+</div>
+<p>Pythonista&#8217;s <em>share</em> extension allows you to process data from other apps through the standard iOS share sheet.</p>
+<p>To use it for the first time, you have to invoke the share sheet in some app that supports it, e.g. Safari, then tap either &#8220;More...&#8221; (iOS 12 and earlier) or &#8220;Edit Actions...&#8221; (iOS 13+) turn on the &#8220;Run Pythonista Script&#8221; action. You only need to do this once &#8211; after you&#8217;ve activated the action, it will show up automatically.</p>
+<p>After it&#8217;s activated, you can invoke a &#8220;Mini Pythonista&#8221; from almost any app that uses the share sheet. The <em>share</em> extension includes an interactive console, a basic script editor, and you can add shortcut icons for running your favorite scripts quickly.</p>
+<p>When an app uses the share sheet, it typically passes some data to it &#8211; e.g. the current page&#8217;s URL in Safari, text in Notes, or an image in Photos. You can access (and process) that data using the functions in this module, e.g. <a class="reference internal" href="appex.html#appex.get_url" title="appex.get_url"><code class="xref py py-func docutils literal"><span class="pre">appex.get_url()</span></code></a>, <a class="reference internal" href="appex.html#appex.get_text" title="appex.get_text"><code class="xref py py-func docutils literal"><span class="pre">appex.get_text()</span></code></a> etc.</p>
+<p>Special considerations for running scripts in the share extension:</p>
+<ul class="simple">
+<li>When you present a <a class="reference internal" href="ui.html#ui.View" title="ui.View"><code class="xref py py-class docutils literal"><span class="pre">ui.View</span></code></a> (using <a class="reference internal" href="ui.html#ui.View.present" title="ui.View.present"><code class="xref py py-meth docutils literal"><span class="pre">ui.View.present()</span></code></a>), the presentation style is ignored. On iPhone, the presentation is always full-screen, on iPad, the view will cover the main view of the app extension, and it&#8217;s not possible to create full-screen views.</li>
+<li>Some functions, most importantly <a class="reference internal" href="../library/webbrowser.html#webbrowser.open" title="webbrowser.open"><code class="xref py py-func docutils literal"><span class="pre">webbrowser.open()</span></code></a>, will not work within a share extension script. The <a class="reference internal" href="notification.html#module-notification" title="notification: Integration with Notification Center on iOS"><code class="xref py py-mod docutils literal"><span class="pre">notification</span></code></a> module is also unavailable.</li>
+<li>The camera is not available to app extensions, so <a class="reference internal" href="photos.html#photos.capture_image" title="photos.capture_image"><code class="xref py py-func docutils literal"><span class="pre">photos.capture_image()</span></code></a> will not work.</li>
+</ul>
+</div>
+<div class="section" id="the-today-widget">
+<h2>The Today Widget<a class="headerlink" href="appex.html#the-today-widget" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Today widget</em> allows you to run a single script within a widget that is quickly accessible from anywhere on iOS, by pulling down Notification Center (and showing the &#8220;Today&#8221; tab), on the first page of the home screen, or even from the lock screen (by swiping right).</p>
+<p>To activate the Today widget, you have to tap the <em>Edit</em> button in the Today view, and select the Pythonista widget. You also have to select a script that the widget should run &#8211; you can do this in Pythonista&#8217;s settings. To get started, you may want to try one of the scripts in the included <em>Examples/Widget</em> folder.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Today widget requires iOS 10 or later, and only supports Python 3.</p>
+</div>
+<p>The selected script will run every time the widget is shown. Typically, it will use the <a class="reference internal" href="appex.html#appex.set_widget_view" title="appex.set_widget_view"><code class="xref py py-func docutils literal"><span class="pre">set_widget_view()</span></code></a> function to show a simple user interface (created with the <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> module) in the widget.</p>
+<p>Compared to the share extension, the capabilities of the Today widget are more limited. Only a subset of Pythonista&#8217;s APIs are available, and it gets a significantly smaller amount of RAM from the system than both the main app and the share extension.</p>
+<p>Special considerations for running scripts in the Today widget:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Memory is very limited in the widget &#8211; if your script runs well in the main app, but you see a &#8220;Could not load&#8221; message in the widget (or the widget is empty), it is likely that your script used too much memory and was terminated by the system. You can also try rebooting your device when this happens.</p>
+</div>
+<ul class="simple">
+<li>Dialogs (everything in the <a class="reference internal" href="dialogs.html#module-dialogs" title="dialogs"><code class="xref py py-mod docutils literal"><span class="pre">dialogs</span></code></a>, <a class="reference internal" href="console.html#console.alert" title="console.alert"><code class="xref py py-func docutils literal"><span class="pre">console.alert()</span></code></a> etc.) are <em>not</em> available in the widget.</li>
+<li>The <a class="reference internal" href="ui.html#ui.View.present" title="ui.View.present"><code class="xref py py-func docutils literal"><span class="pre">ui.View.present()</span></code></a> method is not available. To show a user interface in the widget, you have to use the <a class="reference internal" href="appex.html#appex.set_widget_view" title="appex.set_widget_view"><code class="xref py py-func docutils literal"><span class="pre">set_widget_view()</span></code></a> function.</li>
+<li>If you find the widget getting stuck, you can terminate the process manually by tapping and holding it with two fingers for about 3 seconds.</li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="appex.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="appex.is_running_extension">
+<code class="descclassname">appex.</code><code class="descname">is_running_extension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.is_running_extension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <cite>True</cite> if the script is running within an app extension (share extension or widget), <cite>False</cite> otherwise.</p>
+<p>In case you want to test your script in the main app, you can e.g. use this to load dummy data to replace the share sheet&#8217;s input.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.is_widget">
+<code class="descclassname">appex.</code><code class="descname">is_widget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.is_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <cite>True</cite> if the script is running within the Today widget, <cite>False</cite> otherwise.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.finish">
+<code class="descclassname">appex.</code><code class="descname">finish</code><span class="sig-paren">(</span><em>js=None</em><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the share sheet extension. The optional <cite>js</cite> parameter is only relevant when the extension is shown in Safari. It specifies a piece of JavaScript code that is evaluated in the context of the current web page, after the Pythonista sheet is closed. Calling this function from the main app has no effect.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_attachments">
+<code class="descclassname">appex.</code><code class="descname">get_attachments</code><span class="sig-paren">(</span><em>uti='public.data'</em><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_attachments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of attachments that match the given type identifier. In most cases, it is a lot easier to use the type-specific functions (like <a class="reference internal" href="appex.html#appex.get_image" title="appex.get_image"><code class="xref py py-func docutils literal"><span class="pre">get_image()</span></code></a>, <a class="reference internal" href="appex.html#appex.get_url" title="appex.get_url"><code class="xref py py-func docutils literal"><span class="pre">get_url()</span></code></a>...) instead.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_images">
+<code class="descclassname">appex.</code><code class="descname">get_images</code><span class="sig-paren">(</span><em>image_type='pil'</em><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of images in the input of the share sheet. <cite>image_type</cite> can be either &#8216;ui&#8217; or &#8216;pil&#8217;. If the type is &#8216;ui&#8217;, <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><code class="xref py py-class docutils literal"><span class="pre">ui.Image</span></code></a> instances will be returned, otherwise <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><code class="xref py py-mod docutils literal"><span class="pre">PIL</span></code></a> images. If there are no images in the input, the return value will be an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_image">
+<code class="descclassname">appex.</code><code class="descname">get_image</code><span class="sig-paren">(</span><em>image_type='pil</em><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first image in the input of the share sheet. <cite>image_type</cite> can be either &#8216;ui&#8217; or &#8216;pil&#8217;. If the type is &#8216;ui&#8217;, a <a class="reference internal" href="ui.html#ui.Image" title="ui.Image"><code class="xref py py-class docutils literal"><span class="pre">ui.Image</span></code></a> instance will be returned, otherwise a <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><code class="xref py py-mod docutils literal"><span class="pre">PIL</span></code></a> image. If there are no images in the input, the return value will be an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_image_data">
+<code class="descclassname">appex.</code><code class="descname">get_image_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_image_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return raw image data for the first image in the share sheet&#8217;s input. The data is returned as a byte string. If there is no image in the input, the return value is <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_images_data">
+<code class="descclassname">appex.</code><code class="descname">get_images_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_images_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return raw image data for all images in the share sheet&#8217;s input. The data is returned as a list of byte strings. If there are no images in the input, the return value is an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_text">
+<code class="descclassname">appex.</code><code class="descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return text input of the share sheet (as a unicode string). If there is no text in the input, the return value is <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_urls">
+<code class="descclassname">appex.</code><code class="descname">get_urls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_urls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of URLs in the share sheet&#8217;s input. If there are no URLs in the input, the return value is an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_url">
+<code class="descclassname">appex.</code><code class="descname">get_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first URL in the share sheet&#8217;s input. If there is no URL in the input, the return value is <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_file_paths">
+<code class="descclassname">appex.</code><code class="descname">get_file_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_file_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of file paths in the share sheet&#8217;s input. If there are no file paths in the input, the return value is an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_file_path">
+<code class="descclassname">appex.</code><code class="descname">get_file_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first file path in the share sheet&#8217;s input. If there is no file path in the input, the return value is <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_vcards">
+<code class="descclassname">appex.</code><code class="descname">get_vcards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_vcards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of VCard records in the share sheet&#8217;s input. Each record is represented as a string. If there are no Vcards in the input, the return value is an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_vcard">
+<code class="descclassname">appex.</code><code class="descname">get_vcard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_vcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first VCard record in the share sheet&#8217;s input. The record is represented as a string. If there are no Vcards in the input, the return value is <cite>None</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_web_page_info">
+<code class="descclassname">appex.</code><code class="descname">get_web_page_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_web_page_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the share sheet is shown in Safari, return information about the currently loaded page. The return value is a <cite>dict</cite>, and usually contains the following keys (all values are unicode strings):</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'url'</span></code>: The full URL of the page (<code class="docutils literal"><span class="pre">document.URL</span></code>) &#8211; if you need only this value, you can use <a class="reference internal" href="appex.html#appex.get_url" title="appex.get_url"><code class="xref py py-func docutils literal"><span class="pre">get_url()</span></code></a> instead (which also works in other apps)</li>
+<li><code class="docutils literal"><span class="pre">'title'</span></code>: The title of the page (<code class="docutils literal"><span class="pre">document.title</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">'html'</span></code>: The HTML source code of the page &#8211; Please note that this is constructed from <code class="docutils literal"><span class="pre">document.documentElement.outerHTML</span></code>, and may not necessarily be exactly the same as what was loaded from the server (e.g. in case of DOM manipulation via JavaScript etc.)</li>
+<li><code class="docutils literal"><span class="pre">'selection_html'</span></code>: Selected text (in HTML format, preserves formatting, links etc.)</li>
+<li><code class="docutils literal"><span class="pre">'selection_text'</span></code>: Selected text (as plain text)</li>
+<li><code class="docutils literal"><span class="pre">'cookie'</span></code>: The value of <code class="docutils literal"><span class="pre">document.cookie</span></code></li>
+<li><code class="docutils literal"><span class="pre">'referrer'</span></code>: The value of <code class="docutils literal"><span class="pre">document.referrer</span></code></li>
+</ul>
+<p>Missing values are represented by an empty string.</p>
+<p>If the share sheet is shown in another app (not Safari), or if information about the current page cannot be retrieved, an empty <cite>dict</cite> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.get_widget_view">
+<code class="descclassname">appex.</code><code class="descname">get_widget_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.get_widget_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the view that is currently shown in the Today widget (or <cite>None</cite> if no view was set via <a class="reference internal" href="appex.html#appex.set_widget_view" title="appex.set_widget_view"><code class="xref py py-func docutils literal"><span class="pre">set_widget_view()</span></code></a>).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appex.set_widget_view">
+<code class="descclassname">appex.</code><code class="descname">set_widget_view</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="headerlink" href="appex.html#appex.set_widget_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the widget&#8217;s view to a <a class="reference internal" href="ui.html#ui.View" title="ui.View"><code class="xref py py-class docutils literal"><span class="pre">ui.View</span></code></a> object. The view is automatically resized to fill the widget, and the view&#8217;s current height is used as the expanded height of the widget (when the &#8220;Show More&#8221; button is tapped). If the view&#8217;s height is &lt;= 120, the widget does not show a &#8220;Shore More&#8221; button, and only the compact widget display mode is used.</p>
+<p>To remove the current view from the widget, pass <cite>None</cite> instead of a view object.</p>
+<p>If the script is running in the main app, a simulated widget view is shown.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

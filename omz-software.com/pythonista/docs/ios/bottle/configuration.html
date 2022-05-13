@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration (DRAFT) &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/bottle/configuration.html" />
+    
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration-draft">
+<h1>Configuration (DRAFT)<a class="headerlink" href="configuration.html#configuration-draft" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a draft for a new API. <a class="reference external" href="mailto:bottlepy&#37;&#52;&#48;googlegroups&#46;com">Tell us</a> what you think.</p>
+</div>
+<p>Bottle applications can store their configuration in <a class="reference internal" href="api.html#bottle.Bottle.config" title="bottle.Bottle.config"><code class="xref py py-attr docutils literal"><span class="pre">Bottle.config</span></code></a>, a dict-like object and central place for application specific settings. This dictionary controls many aspects of the framework, tells (newer) plugins what to do, and can be used to store your own configuration as well.</p>
+<div class="section" id="configuration-basics">
+<h2>Configuration Basics<a class="headerlink" href="configuration.html#configuration-basics" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="api.html#bottle.Bottle.config" title="bottle.Bottle.config"><code class="xref py py-attr docutils literal"><span class="pre">Bottle.config</span></code></a> object behaves a lot like an ordinary dictionary. All the common dict methods work as expected. Let us start with some examples:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bottle</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">bottle</span><span class="o">.</span><span class="n">default_app</span><span class="p">()</span>             <span class="c1"># or bottle.Bottle() if you prefer</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;autojson&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">False</span>      <span class="c1"># Turns off the &quot;autojson&quot; feature</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;sqlite.db&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;:memory:&#39;</span> <span class="c1"># Tells the sqlite plugin which db to use</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;myapp.param&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>    <span class="c1"># Example for a custom config value.</span>
+
+<span class="c1"># Change many values at once</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s1">&#39;autojson&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;sqlite.db&#39;</span><span class="p">:</span> <span class="s1">&#39;:memory:&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;myapp.param&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span>
+<span class="p">})</span>
+
+<span class="c1"># Add default values</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;myapp.param2&#39;</span><span class="p">,</span> <span class="s1">&#39;some default&#39;</span><span class="p">)</span>
+
+<span class="c1"># Receive values</span>
+<span class="n">param</span>  <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;myapp.param&#39;</span><span class="p">]</span>
+<span class="n">param2</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;myapp.param2&#39;</span><span class="p">,</span> <span class="s1">&#39;fallback value&#39;</span><span class="p">)</span>
+
+<span class="c1"># An example route using configuration values</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s1">&#39;about.rst&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;my.email&#39;</span><span class="p">,</span> <span class="s1">&#39;nomail@example.com&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="n">email</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The app object is not always available, but as long as you are within a request context, you can use the <cite>request</cite> object to get the current application and its configuration:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="k">def</span> <span class="nf">is_admin</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">user</span> <span class="o">==</span> <span class="n">request</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;myapp.admin_user&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="naming-convention">
+<h2>Naming Convention<a class="headerlink" href="configuration.html#naming-convention" title="Permalink to this headline">¶</a></h2>
+<p>To make life easier, plugins and applications should follow some simple rules when it comes to config parameter names:</p>
+<ul class="simple">
+<li>All keys should be lowercase strings and follow the rules for python identifiers (no special characters but the underscore).</li>
+<li>Namespaces are separated by dots (e.g. <code class="docutils literal"><span class="pre">namespace.field</span></code> or <code class="docutils literal"><span class="pre">namespace.subnamespace.field</span></code>).</li>
+<li>Bottle uses the root namespace for its own configuration. Plugins should store all their variables in their own namespace (e.g. <code class="docutils literal"><span class="pre">sqlite.db</span></code> or <code class="docutils literal"><span class="pre">werkzeug.use_debugger</span></code>).</li>
+<li>Your own application should use a separate namespace (e.g. <code class="docutils literal"><span class="pre">myapp.*</span></code>).</li>
+</ul>
+</div>
+<div class="section" id="loading-configuration-from-a-file">
+<h2>Loading Configuration from a File<a class="headerlink" href="configuration.html#loading-configuration-from-a-file" title="Permalink to this headline">¶</a></h2>
+<p>Configuration files are useful if you want to enable non-programmers to configure your application,
+or just don&#8217;t want to hack python module files just to change the database port. A very common syntax for configuration files is shown here:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[sqlite]</span>
+<span class="na">db</span> <span class="o">=</span> <span class="s">/tmp/test.db</span>
+<span class="na">commit</span> <span class="o">=</span> <span class="s">auto</span>
+
+<span class="k">[myapp]</span>
+<span class="na">admin_user</span> <span class="o">=</span> <span class="s">defnull</span>
+</pre></div>
+</div>
+<p>With <a class="reference internal" href="configuration.html#bottle.ConfigDict.load_config" title="bottle.ConfigDict.load_config"><code class="xref py py-meth docutils literal"><span class="pre">ConfigDict.load_config()</span></code></a> you can load these <code class="docutils literal"><span class="pre">*.ini</span></code> style configuration
+files from disk and import their values into your existing configuration:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;/etc/myapp.conf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-configuration-from-a-nested-dict">
+<h2>Loading Configuration from a nested <a class="reference internal" href="../../library/stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a><a class="headerlink" href="configuration.html#loading-configuration-from-a-nested-dict" title="Permalink to this headline">¶</a></h2>
+<p>Another useful method is <a class="reference internal" href="configuration.html#bottle.ConfigDict.load_dict" title="bottle.ConfigDict.load_dict"><code class="xref py py-meth docutils literal"><span class="pre">ConfigDict.load_dict()</span></code></a>. This method takes
+an entire structure of nested dictionaries and turns it into a flat list of keys and values with namespaced keys:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="c1"># Load an entire dict structure</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_dict</span><span class="p">({</span>
+    <span class="s1">&#39;autojson&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;sqlite&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="s1">&#39;:memory:&#39;</span> <span class="p">},</span>
+    <span class="s1">&#39;myapp&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;param2&#39;</span><span class="p">:</span> <span class="s1">&#39;value2&#39;</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="k">assert</span> <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;myapp.param&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value&#39;</span>
+
+<span class="c1"># Load configuration from a json file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/etc/myapp.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_dict</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listening-to-configuration-changes">
+<h2>Listening to configuration changes<a class="headerlink" href="configuration.html#listening-to-configuration-changes" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">config</span></code> hook on the application object is triggered each time a value in <a class="reference internal" href="api.html#bottle.Bottle.config" title="bottle.Bottle.config"><code class="xref py py-attr docutils literal"><span class="pre">Bottle.config</span></code></a> is changed. This hook can be used to react on configuration changes at runtime, for example reconnect to a new database, change the debug settings on a background service or resize worker thread pools. The hook callback receives two arguments (key, new_value) and is called before the value is actually changed in the dictionary. Raising an exception from a hook callback cancels the change and the old value is preserved.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">hook</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">on_config_change</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;debug&#39;</span><span class="p">:</span>
+      <span class="n">switch_own_debug_mode_to</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The hook callbacks cannot <em>change</em> the value that is to be stored to the dictionary. That is what filters are for.</p>
+</div>
+<div class="section" id="filters-and-other-meta-data">
+<h2>Filters and other Meta Data<a class="headerlink" href="configuration.html#filters-and-other-meta-data" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="configuration.html#bottle.ConfigDict" title="bottle.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">ConfigDict</span></code></a> allows you to store meta data along with configuration keys. Two meta fields are currently defined:</p>
+<dl class="docutils">
+<dt>help</dt>
+<dd>A help or description string. May be used by debugging, introspection or
+admin tools to help the site maintainer configuring their application.</dd>
+<dt>filter</dt>
+<dd>A callable that accepts and returns a single value. If a filter is defined for a key, any new value stored to that key is first passed through the filter callback. The filter can be used to cast the value to a different type, check for invalid values (throw a ValueError) or trigger side effects.</dd>
+</dl>
+<p>This feature is most useful for plugins. They can validate their config parameters or trigger side effects using filters and document their configuration via <code class="docutils literal"><span class="pre">help</span></code> fields:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomePlugin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">meta_set</span><span class="p">(</span><span class="s1">&#39;some.int&#39;</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">meta_set</span><span class="p">(</span><span class="s1">&#39;some.list&#39;</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">val</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">))</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">meta_set</span><span class="p">(</span><span class="s1">&#39;some.list&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;A semicolon separated list.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">route</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="kn">import</span> <span class="nn">bottle</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">bottle</span><span class="o">.</span><span class="n">default_app</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">SomePlugin</span><span class="p">())</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;some.list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a;b;c&#39;</span>     <span class="c1"># Actually stores [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;some.int&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;not an int&#39;</span> <span class="c1"># raises ValueError</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="configuration.html#api-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="bottle.ConfigDict">
+<em class="property">class </em><code class="descclassname">bottle.</code><code class="descname">ConfigDict</code><span class="sig-paren">(</span><em>*a</em>, <em>**ka</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dict-like configuration storage with additional support for
+namespaces, validators, meta-data, on_change listeners and more.</p>
+<p>This storage is optimized for fast read access. Retrieving a key
+or using non-altering dict methods (e.g. <cite>dict.get()</cite>) has no overhead
+compared to a native dict.</p>
+<dl class="method">
+<dt id="bottle.ConfigDict.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load values from an <a href="configuration.html#id1"><span class="problematic" id="id2">*</span></a>.ini style config file.</p>
+<p>If the config file contains sections, their names are used as
+namespaces for the values within. The two special sections
+<code class="docutils literal"><span class="pre">DEFAULT</span></code> and <code class="docutils literal"><span class="pre">bottle</span></code> refer to the root namespace (no prefix).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bottle.ConfigDict.load_dict">
+<code class="descname">load_dict</code><span class="sig-paren">(</span><em>source</em>, <em>namespace=''</em>, <em>make_namespaces=False</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.load_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import values from a dictionary structure. Nesting can be used to
+represent namespaces.</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ConfigDict</span><span class="p">()</span><span class="o">.</span><span class="n">load_dict</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;space&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}}})</span>
+<span class="go">{&#39;name.space.key&#39;: &#39;value&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="bottle.ConfigDict.meta_get">
+<code class="descname">meta_get</code><span class="sig-paren">(</span><em>key</em>, <em>metafield</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.meta_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value of a meta field for a key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bottle.ConfigDict.meta_list">
+<code class="descname">meta_list</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.meta_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterable of meta field names defined for a key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bottle.ConfigDict.meta_set">
+<code class="descname">meta_set</code><span class="sig-paren">(</span><em>key</em>, <em>metafield</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.meta_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the meta field for a key to a new value. This triggers the
+on-change handler for existing keys.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bottle.ConfigDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>*a</em>, <em>**ka</em><span class="sig-paren">)</span><a class="headerlink" href="configuration.html#bottle.ConfigDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the first parameter is a string, all keys are prefixed with this
+namespace. Apart from that it works just as the usual dict.update().
+Example: <code class="docutils literal"><span class="pre">update('some.namespace',</span> <span class="pre">key='value')</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

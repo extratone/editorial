@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raymond | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"YSrDj4Y1-3rAb8PFySAfojfAbEeseVEUAIyg","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="raymond.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="raymond.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="raymond.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="raymond.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="raymond" data-uid="12228">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="raymond.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="https://forum.omz-software.com/user/raymond/following"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="https://forum.omz-software.com/user/raymond/followers"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="https://forum.omz-software.com/user/raymond/topics"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="https://forum.omz-software.com/user/raymond/posts"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="https://forum.omz-software.com/user/raymond/groups"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="raymond.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> Raymond</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="raymond.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="raymond.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+						
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="0">0</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="19">19</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="531">531</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+					
+
+					
+
+					
+
+					
+
+					
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="0">0</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="2">2</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2021-07-08T06:03:49.164Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2022-04-12T13:38:48.378Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="48196" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Like the title, how to print javascript console, or How to send message from javascript to pythonista ?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-01T18:45:07.689Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7493/how-to-print-javascript-console-in-pythonista/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48152" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a><br />
+yes i was mean this! thank you so much man !!!❤️</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-03-23T12:37:20.389Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7467/is-there-a-way-to-do-this-with-textview/9">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48141" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> I was mean i want some thing like code editer,  that changed the color of word by the word type, like:</p>
+<p>import : pink<br />
+def : red<br />
+normal : white</p>
+<p>i hope you understand me.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-03-22T10:02:33.755Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7467/is-there-a-way-to-do-this-with-textview/4">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48132" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>I saw the old Question like this, but i did not understand how to use that Answer of the question, so i will ask the same:</p>
+<p>How to change a Specific word Property like color or size in TextView ?</p>
+<p>i want real example if there is a way.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-03-22T01:07:01.762Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7467/is-there-a-way-to-do-this-with-textview/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48109" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>How can i do with webView:</p>
+<p>1- take download Requests from webView and download it in custom folder.</p>
+<p>2- Know what the Current web site is running now in the webView.</p>
+<p>And is there a way to get an javascript message from webView ?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-03-13T23:27:58.669Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7458/how-to-do-with-webview/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="47984" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Can you make a simple example please</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-02-21T19:15:56.900Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7425/how-to-use-class-touch/5">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="47982" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>What?!! There is no sketch example in pythonista site !</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-02-21T18:58:40.615Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7425/how-to-use-class-touch/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="47980" data-uid="12228">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="raymond.html">
+					<img title="Raymond" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2086c2ba67570f5e15cdab2d4919ab85?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="raymond.html">
+					<strong><span>Raymond</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>i dont know how to use Touch class..so i want simple example..<br />
+i try this to learn..but its not work:</p>
+<pre><code>import ui
+
+v = ui.load_view('main')
+t = ui.Touch
+v.present('sheet')
+
+
+
+while v.on_screen:
+    print(t.phase)
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-02-21T18:52:59.667Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7425/how-to-use-class-touch/1">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="12228" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22followingCount%22%3A2%2C%22fullname%22%3A%22%22%2C%22passwordExpiry%22%3A%220%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%22%22%2C%22postcount%22%3A%2219%22%2C%22status%22%3A%22offline%22%2C%22website%22%3A%22%22%2C%22location%22%3A%22%22%2C%22joindate%22%3A%222021-07-08T06%3A03%3A49.164Z%22%2C%22uploadedpicture%22%3A%22%22%2C%22banned%22%3Afalse%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22lastonline%22%3A%222022-04-12T13%3A38%3A48.378Z%22%2C%22lastposttime%22%3A%221648929454448%22%2C%22profileviews%22%3A%22531%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2212228%22%2C%22topiccount%22%3A%2212%22%2C%22username%22%3A%22Raymond%22%2C%22email%22%3A%22%22%2C%22age%22%3A%22%22%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%2212228%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22http%3A%2F%2F%22%2C%22websiteName%22%3A%22%22%2C%22followerCount%22%3A0%2C%22posts%22%3A%5B%7B%22pid%22%3A%2248196%22%2C%22tid%22%3A%227493%22%2C%22content%22%3A%22%3Cp%3ELike%20the%20title%2C%20how%20to%20print%20javascript%20console%2C%20or%20How%20to%20send%20message%20from%20javascript%20to%20pythonista%20%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221648838707689%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227493%22%2C%22title%22%3A%22How%20to%20print%20javascript%20console%20in%20pythonista%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227493%2Fhow-to-print-javascript-console-in-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%222%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-01T18%3A45%3A07.689Z%22%7D%2C%7B%22pid%22%3A%2248152%22%2C%22tid%22%3A%227467%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%3Cbr%20%2F%3E%5Cnyes%20i%20was%20mean%20this!%20thank%20you%20so%20much%20man%20!!!%E2%9D%A4%EF%B8%8F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221648039040389%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227467%22%2C%22title%22%3A%22is%20there%20a%20way%20to%20do%20this%20with%20TextView%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227467%2Fis-there-a-way-to-do-this-with-textview%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2212%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-03-23T12%3A37%3A20.389Z%22%7D%2C%7B%22pid%22%3A%2248141%22%2C%22tid%22%3A%227467%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20I%20was%20mean%20i%20want%20some%20thing%20like%20code%20editer%2C%20%20that%20changed%20the%20color%20of%20word%20by%20the%20word%20type%2C%20like%3A%3C%2Fp%3E%5Cn%3Cp%3Eimport%20%3A%20pink%3Cbr%20%2F%3E%5Cndef%20%3A%20red%3Cbr%20%2F%3E%5Cnnormal%20%3A%20white%3C%2Fp%3E%5Cn%3Cp%3Ei%20hope%20you%20understand%20me.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221647943353755%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227467%22%2C%22title%22%3A%22is%20there%20a%20way%20to%20do%20this%20with%20TextView%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227467%2Fis-there-a-way-to-do-this-with-textview%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2212%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-03-22T10%3A02%3A33.755Z%22%7D%2C%7B%22pid%22%3A%2248132%22%2C%22tid%22%3A%227467%22%2C%22content%22%3A%22%3Cp%3EI%20saw%20the%20old%20Question%20like%20this%2C%20but%20i%20did%20not%20understand%20how%20to%20use%20that%20Answer%20of%20the%20question%2C%20so%20i%20will%20ask%20the%20same%3A%3C%2Fp%3E%5Cn%3Cp%3EHow%20to%20change%20a%20Specific%20word%20Property%20like%20color%20or%20size%20in%20TextView%20%3F%3C%2Fp%3E%5Cn%3Cp%3Ei%20want%20real%20example%20if%20there%20is%20a%20way.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221647911221762%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227467%22%2C%22title%22%3A%22is%20there%20a%20way%20to%20do%20this%20with%20TextView%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227467%2Fis-there-a-way-to-do-this-with-textview%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2212%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-03-22T01%3A07%3A01.762Z%22%7D%2C%7B%22pid%22%3A%2248109%22%2C%22tid%22%3A%227458%22%2C%22content%22%3A%22%3Cp%3EHow%20can%20i%20do%20with%20webView%3A%3C%2Fp%3E%5Cn%3Cp%3E1-%20take%20download%20Requests%20from%20webView%20and%20download%20it%20in%20custom%20folder.%3C%2Fp%3E%5Cn%3Cp%3E2-%20Know%20what%20the%20Current%20web%20site%20is%20running%20now%20in%20the%20webView.%3C%2Fp%3E%5Cn%3Cp%3EAnd%20is%20there%20a%20way%20to%20get%20an%20javascript%20message%20from%20webView%20%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221647214078669%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227458%22%2C%22title%22%3A%22How%20to%20do%20with%20webView..%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227458%2Fhow-to-do-with-webview%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%224%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-03-13T23%3A27%3A58.669Z%22%7D%2C%7B%22pid%22%3A%2247984%22%2C%22tid%22%3A%227425%22%2C%22content%22%3A%22%3Cp%3ECan%20you%20make%20a%20simple%20example%20please%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221645470956900%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227425%22%2C%22title%22%3A%22How%20to%20use%20class%20touch%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227425%2Fhow-to-use-class-touch%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-02-21T19%3A15%3A56.900Z%22%7D%2C%7B%22pid%22%3A%2247982%22%2C%22tid%22%3A%227425%22%2C%22content%22%3A%22%3Cp%3EWhat%3F!!%20There%20is%20no%20sketch%20example%20in%20pythonista%20site%20!%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221645469920615%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227425%22%2C%22title%22%3A%22How%20to%20use%20class%20touch%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227425%2Fhow-to-use-class-touch%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-02-21T18%3A58%3A40.615Z%22%7D%2C%7B%22pid%22%3A%2247980%22%2C%22tid%22%3A%227425%22%2C%22content%22%3A%22%3Cp%3Ei%20dont%20know%20how%20to%20use%20Touch%20class..so%20i%20want%20simple%20example..%3Cbr%20%2F%3E%5Cni%20try%20this%20to%20learn..but%20its%20not%20work%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eimport%20ui%5Cn%5Cnv%20%3D%20ui.load_view('main')%5Cnt%20%3D%20ui.Touch%5Cnv.present('sheet')%5Cn%5Cn%5Cn%5Cnwhile%20v.on_screen%3A%5Cn%20%20%20%20print(t.phase)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%2212228%22%2C%22timestamp%22%3A%221645469579667%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%2212228%22%2C%22username%22%3A%22Raymond%22%2C%22userslug%22%3A%22raymond%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2086c2ba67570f5e15cdab2d4919ab85%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212228%22%2C%22tid%22%3A%227425%22%2C%22title%22%3A%22How%20to%20use%20class%20touch%20%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227425%2Fhow-to-use-class-touch%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-02-21T18%3A52%3A59.667Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22YSrDj4Y1-3rAb8PFySAfojfAbEeseVEUAIyg%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="raymond.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arcade for Pythonista | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Arcade for Pythonista" />
+	<meta name="description" content="I’ve just started using Pythonista and I’m still unsure on many of the features. I’m trying to install the arcade module to Pythonista but am unable to do so. If anybody could explain all the steps necessary to get Arcade on Pythonista 3 that would be ama..." />
+	<meta property="og:title" content="Arcade for Pythonista" />
+	<meta property="og:description" content="I’ve just started using Pythonista and I’m still unsure on many of the features. I’m trying to install the arcade module to Pythonista but am unable to do so. If anybody could explain all the steps necessary to get Arcade on Pythonista 3 that would be ama..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;7520&#x2F;arcade-for-pythonista" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;fd14d49a315403c586e5322847de0fe0?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;fd14d49a315403c586e5322847de0fe0?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="article:published_time" content="2022-04-24T11:53:35.059Z" />
+	<meta property="article:modified_time" content="2022-05-10T00:30:22.858Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="../../7520.rss" />
+	<link rel="canonical" href="../arcade-for-pythonista.html" />
+	<link rel="up" href="../../../../omz-software.com/pythonista/forums.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"xW6j0Ml2-Z28R26QiyHUl2UjVGRZxmtvT0vQ","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="2.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="2.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="2.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="2.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Arcade for Pythonista
+												<a target="_blank" href="../../7520.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">Arcade for Pythonista</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="7520">
+			<li component="post" class="clearfix "data-pid="48406" data-uid="19993" data-username="assesssyrian123" data-userslug="assesssyrian123" data-index="0" data-timestamp="1650801215461" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2022-04-24T11:53:35.461Z">
+				<meta itemprop="dateModified" content="2022-04-24T11:53:43.378Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/assesssyrian123.html">
+			<img src="https://s.gravatar.com/avatar/fd14d49a315403c586e5322847de0fe0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/assesssyrian123.html" itemprop="author" data-username="assesssyrian123" data-uid="19993">assesssyrian123</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="1.html"><span class="timeago" title="2022-04-24T11:53:35.461Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I’ve just started using Pythonista and I’m still unsure on many of the features. I’m trying to install the arcade module to Pythonista but am unable to do so. If anybody could explain all the steps necessary to get Arcade on Pythonista 3 that would be amazing. Thanks in advance!</p>
+
+	
+</div>
+
+
+<small data-editor="assesssyrian123" component="post/editor" class="hidden">last edited by <strong>assesssyrian123</strong> <span class="timeago" title="2022-04-24T11:53:43.378Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="8">8</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="398">398</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="48410" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="1" data-timestamp="1650871154473" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2022-04-25T07:19:14.473Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="2.html"><span class="timeago" title="2022-04-25T07:19:14.473Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Arcade depends on pyglet, which depends on pygame, which is mostly written in c.  Pythonista is limited to installation of pure python modules (or those which only depend on moudles included with pythonista, like numpy)</p>
+<p>Portions of pyglet, like the physics model, might be usable in pythonista with some work to disentangle it from the backend graphics, but it would be pretty complicated to replicate the pyglet graphics stuff using Pythonista scene constructs, or maybe the lower level iOS constructs.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48415" data-uid="19993" data-username="assesssyrian123" data-userslug="assesssyrian123" data-index="2" data-timestamp="1650937990039" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2022-04-26T01:53:10.039Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/assesssyrian123.html">
+			<img src="https://s.gravatar.com/avatar/fd14d49a315403c586e5322847de0fe0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/assesssyrian123.html" itemprop="author" data-username="assesssyrian123" data-uid="19993">assesssyrian123</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="3.html"><span class="timeago" title="2022-04-26T01:53:10.039Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Are there any workarounds for this?</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48416" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="3" data-timestamp="1650960003108" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2022-04-26T08:00:03.108Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="4.html"><span class="timeago" title="2022-04-26T08:00:03.108Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Theoretically, you could use objc_util /OpenGLES/EAGL to implement the presentation layer of pyglet/pygame.  It would be hard, and probably super slow.</p>
+<p>I don't believe Pyto has yet included pygame either, despite a few requests.  It is open source, so you could go for it, but I'm not sure if there is an iOS SDL library.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48420" data-uid="19993" data-username="assesssyrian123" data-userslug="assesssyrian123" data-index="4" data-timestamp="1651011157012" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2022-04-26T22:12:37.012Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/assesssyrian123.html">
+			<img src="https://s.gravatar.com/avatar/fd14d49a315403c586e5322847de0fe0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/assesssyrian123.html" itemprop="author" data-username="assesssyrian123" data-uid="19993">assesssyrian123</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="5.html"><span class="timeago" title="2022-04-26T22:12:37.012Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Are there any other iOS/iPadOS python apps which support the arcade module?</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48421" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="5" data-timestamp="1651049990550" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2022-04-27T08:59:50.550Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="6.html"><span class="timeago" title="2022-04-27T08:59:50.550Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I doubt it.   l</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48449" data-uid="20222" data-username="debraplm51" data-userslug="debraplm51" data-index="6" data-timestamp="1652085289282" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="6"></a>
+
+				<meta itemprop="datePublished" content="2022-05-09T08:34:49.282Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/debraplm51.html">
+			<img src="https://s.gravatar.com/avatar/058dfc43a2bb772f42958300c3ed36e0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/debraplm51.html" itemprop="author" data-username="debraplm51" data-uid="20222">debraplm51</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="7.html"><span class="timeago" title="2022-05-09T08:34:49.282Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I'm still unsure on many of the features. I'm trying to install the arcade module to Pythonista</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="48451" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="7" data-timestamp="1652142622858" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="7"></a>
+
+				<meta itemprop="datePublished" content="2022-05-10T00:30:22.858Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="8.html"><span class="timeago" title="2022-05-10T00:30:22.858Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="2.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="2.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="2.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="2.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>You won't be able to install arcade.  Pip might say it installed, but it won't work.</p>
+<p>Pythonista has its own unique game module called <code>scene</code>.  You won't be able to reuse code from other engines, though you can translate most of what other simple 2d engines do to something equivalent in scene.</p>
+<p><a class="plugin-mentions-a" href="../../../user/cethric.html">@Cethric</a> developed an engine that makes use of iOS OpenGLES, including a basic physics engine:<br />
+<a href="https://github.com/Cethric/OpenGLES-Pythonista" rel="nofollow">https://github.com/Cethric/OpenGLES-Pythonista</a></p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="8">8</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="398">398</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/7520/arcade-for-pythonista/2?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="https://forum.omz-software.com/topic/7520/arcade-for-pythonista/2?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="7520" />
+<input type="hidden" template-variable="topic_slug" value="7520/arcade-for-pythonista" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Arcade for Pythonista" />
+<input type="hidden" template-variable="postcount" value="8" />
+<input type="hidden" template-variable="viewcount" value="398" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%227520%22%2C%22uid%22%3A%2219993%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2248406%22%2C%22title%22%3A%22Arcade%20for%20Pythonista%22%2C%22slug%22%3A%227520%2Farcade-for-pythonista%22%2C%22timestamp%22%3A%221650801215059%22%2C%22lastposttime%22%3A%221652142622858%22%2C%22postcount%22%3A%228%22%2C%22viewcount%22%3A%22398%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248451%22%2C%22relativeTime%22%3A%222022-04-24T11%3A53%3A35.059Z%22%2C%22lastposttimeISO%22%3A%222022-05-10T00%3A30%3A22.858Z%22%2C%22posts%22%3A%5B%7B%22timestamp%22%3A%221650801215461%22%2C%22content%22%3A%22%3Cp%3EI%E2%80%99ve%20just%20started%20using%20Pythonista%20and%20I%E2%80%99m%20still%20unsure%20on%20many%20of%20the%20features.%20I%E2%80%99m%20trying%20to%20install%20the%20arcade%20module%20to%20Pythonista%20but%20am%20unable%20to%20do%20so.%20If%20anybody%20could%20explain%20all%20the%20steps%20necessary%20to%20get%20Arcade%20on%20Pythonista%203%20that%20would%20be%20amazing.%20Thanks%20in%20advance!%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248406%22%2C%22votes%22%3A%220%22%2C%22editor%22%3A%7B%22uid%22%3A%2219993%22%2C%22username%22%3A%22assesssyrian123%22%2C%22userslug%22%3A%22assesssyrian123%22%7D%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221650801223378%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2219993%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-04-24T11%3A53%3A35.461Z%22%2C%22relativeEditTime%22%3A%222022-04-24T11%3A53%3A43.378Z%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%2219993%22%2C%22username%22%3A%22assesssyrian123%22%2C%22userslug%22%3A%22assesssyrian123%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%223%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221650871154473%22%2C%22content%22%3A%22%3Cp%3EArcade%20depends%20on%20pyglet%2C%20which%20depends%20on%20pygame%2C%20which%20is%20mostly%20written%20in%20c.%20%20Pythonista%20is%20limited%20to%20installation%20of%20pure%20python%20modules%20(or%20those%20which%20only%20depend%20on%20moudles%20included%20with%20pythonista%2C%20like%20numpy)%3C%2Fp%3E%5Cn%3Cp%3EPortions%20of%20pyglet%2C%20like%20the%20physics%20model%2C%20might%20be%20usable%20in%20pythonista%20with%20some%20work%20to%20disentangle%20it%20from%20the%20backend%20graphics%2C%20but%20it%20would%20be%20pretty%20complicated%20to%20replicate%20the%20pyglet%20graphics%20stuff%20using%20Pythonista%20scene%20constructs%2C%20or%20maybe%20the%20lower%20level%20iOS%20constructs.%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248410%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-04-25T07%3A19%3A14.473Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2248415%22%2C%22uid%22%3A%2219993%22%2C%22tid%22%3A%227520%22%2C%22content%22%3A%22%3Cp%3EAre%20there%20any%20workarounds%20for%20this%3F%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221650937990039%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222022-04-26T01%3A53%3A10.039Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%2219993%22%2C%22username%22%3A%22assesssyrian123%22%2C%22userslug%22%3A%22assesssyrian123%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%223%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221650960003108%22%2C%22content%22%3A%22%3Cp%3ETheoretically%2C%20you%20could%20use%20objc_util%20%2FOpenGLES%2FEAGL%20to%20implement%20the%20presentation%20layer%20of%20pyglet%2Fpygame.%20%20It%20would%20be%20hard%2C%20and%20probably%20super%20slow.%3C%2Fp%3E%5Cn%3Cp%3EI%20don't%20believe%20Pyto%20has%20yet%20included%20pygame%20either%2C%20despite%20a%20few%20requests.%20%20It%20is%20open%20source%2C%20so%20you%20could%20go%20for%20it%2C%20but%20I'm%20not%20sure%20if%20there%20is%20an%20iOS%20SDL%20library.%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248416%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-04-26T08%3A00%3A03.108Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221651011157012%22%2C%22content%22%3A%22%3Cp%3EAre%20there%20any%20other%20iOS%2FiPadOS%20python%20apps%20which%20support%20the%20arcade%20module%3F%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248420%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2219993%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-04-26T22%3A12%3A37.012Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%2219993%22%2C%22username%22%3A%22assesssyrian123%22%2C%22userslug%22%3A%22assesssyrian123%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%223%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2248421%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%227520%22%2C%22content%22%3A%22%3Cp%3EI%20doubt%20it.%20%20%20l%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221651049990550%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222022-04-27T08%3A59%3A50.550Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221652085289282%22%2C%22content%22%3A%22%3Cp%3EI'm%20still%20unsure%20on%20many%20of%20the%20features.%20I'm%20trying%20to%20install%20the%20arcade%20module%20to%20Pythonista%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248449%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2220222%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-05-09T08%3A34%3A49.282Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%2220222%22%2C%22username%22%3A%22debraplm51%22%2C%22userslug%22%3A%22debraplm51%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F058dfc43a2bb772f42958300c3ed36e0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221652142622858%22%2C%22content%22%3A%22%3Cp%3EYou%20won't%20be%20able%20to%20install%20arcade.%20%20Pip%20might%20say%20it%20installed%2C%20but%20it%20won't%20work.%3C%2Fp%3E%5Cn%3Cp%3EPythonista%20has%20its%20own%20unique%20game%20module%20called%20%3Ccode%3Escene%3C%2Fcode%3E.%20%20You%20won't%20be%20able%20to%20reuse%20code%20from%20other%20engines%2C%20though%20you%20can%20translate%20most%20of%20what%20other%20simple%202d%20engines%20do%20to%20something%20equivalent%20in%20scene.%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcethric%5C%22%3E%40Cethric%3C%2Fa%3E%20developed%20an%20engine%20that%20makes%20use%20of%20iOS%20OpenGLES%2C%20including%20a%20basic%20physics%20engine%3A%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FCethric%2FOpenGLES-Pythonista%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2FCethric%2FOpenGLES-Pythonista%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22pid%22%3A%2248451%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%227520%22%2C%22relativeTime%22%3A%222022-05-10T00%3A30%3A22.858Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22Arcade%20for%20Pythonista%22%2C%22url%22%3A%22%2Ftopic%2F7520%2Farcade-for-pythonista%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%227520%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F7520.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22xW6j0Ml2-Z28R26QiyHUl2UjVGRZxmtvT0vQ%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Arcade%20for%20Pythonista%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22I%E2%80%99ve%20just%20started%20using%20Pythonista%20and%20I%E2%80%99m%20still%20unsure%20on%20many%20of%20the%20features.%20I%E2%80%99m%20trying%20to%20install%20the%20arcade%20module%20to%20Pythonista%20but%20am%20unable%20to%20do%20so.%20If%20anybody%20could%20explain%20all%20the%20steps%20necessary%20to%20get%20Arcade%20on%20Pythonista%203%20that%20would%20be%20ama...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Arcade%20for%20Pythonista%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22I%E2%80%99ve%20just%20started%20using%20Pythonista%20and%20I%E2%80%99m%20still%20unsure%20on%20many%20of%20the%20features.%20I%E2%80%99m%20trying%20to%20install%20the%20arcade%20module%20to%20Pythonista%20but%20am%20unable%20to%20do%20so.%20If%20anybody%20could%20explain%20all%20the%20steps%20necessary%20to%20get%20Arcade%20on%20Pythonista%203%20that%20would%20be%20ama...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7520%2Farcade-for-pythonista%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd14d49a315403c586e5322847de0fe0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222022-04-24T11%3A53%3A35.059Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222022-05-10T00%3A30%3A22.858Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7520.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7520%2Farcade-for-pythonista%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="2.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

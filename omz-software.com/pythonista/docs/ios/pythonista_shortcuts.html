@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>App Extensions and Shortcuts &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/pythonista_shortcuts.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="app-extensions-and-shortcuts">
+<span id="pythonista-shortcuts"></span><h1>App Extensions and Shortcuts<a class="headerlink" href="pythonista_shortcuts.html#app-extensions-and-shortcuts" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/pythonista_shortcuts.jpg"><img alt="../_images/pythonista_shortcuts.jpg" class="align-right" src="../_images/pythonista_shortcuts.jpg" style="width: 120px;" /></a>
+<p>This page gives you an overview of the various places where you can use Pythonista scripts to extend iOS, other apps, and Pythonista itself.</p>
+<p>Most of these features are accessible by tapping the &#8220;wrench&#8221; button in the editor, and selecting &#8220;Shortcuts&#8221;.</p>
+<ul class="simple">
+<li><a class="reference internal" href="pythonista_shortcuts.html#pythonista-keyboard"><span>Pythonista Keyboard</span></a></li>
+<li><a class="reference internal" href="pythonista_shortcuts.html#pythonista-share-extension"><span>Share Extension</span></a></li>
+<li><a class="reference internal" href="pythonista_shortcuts.html#editor-action"><span>Editor Action</span></a></li>
+<li><a class="reference internal" href="pythonista_shortcuts.html#pythonista-homescreen-icon"><span>Home Screen Icon</span></a></li>
+<li><a class="reference internal" href="pythonista_shortcuts.html#pythonista-url"><span>Pythonista URL</span></a></li>
+</ul>
+<div class="section" id="pythonista-keyboard">
+<span id="id1"></span><h2>Pythonista Keyboard<a class="headerlink" href="pythonista_shortcuts.html#pythonista-keyboard" title="Permalink to this headline">¶</a></h2>
+<p>The Pythonista keyboard is a custom on-screen keyboard that you can use in any app that has editable text. The keyboard includes a Python interpreter, so you can run scripts that manipulate text without ever launching the main Pythonista app. Scripts can insert text in the app, work with the selection, or even show completely custom user interfaces.</p>
+<a class="reference internal image-reference" href="../_images/pythonista_keyboard.jpg"><img alt="Pythonista keyboard" src="../_images/pythonista_keyboard.jpg" style="width: 100%;" /></a>
+<p>Please note that the Pythonista keyboard is <em>not</em> intended to replace the system keyboard for all your writing &#8211; it&#8217;s more like the Emoji keyboard, i.e. you&#8217;d typically switch to it briefly to run a script, and then switch back to the system keyboard (or any other custom keyboard) to do most of your typing. While the keyboard does include a standard QWERTY layout, there isn&#8217;t any kind of auto-correction or typing suggestions, so it&#8217;s not really suitable for long text input.</p>
+<p>To give you an idea of what the keyboard is capable of, various scripts are included as examples.</p>
+<p><strong>How to Use</strong></p>
+<p>To start using the keyboard, tap and hold the &#8220;Globe&#8221; key on the system keyboard, and select &#8220;Keyboard Settings…&#8221;. From there, select &#8220;Keyboards &gt; Add New Keyboard…&#8221;. You should find &#8220;Pythonista&#8221; in the list of available keyboard.</p>
+<p>You may also want to enable the &#8220;Full Access&#8221; option after adding the keyboard, as some functionality won&#8217;t be available to your scripts otherwise (e.g. writing files that are readable by the main app or accessing the network). It&#8217;s generally possible to use the keyboard without full access enabled though.</p>
+<p>After you&#8217;ve enabled the keyboard, you can switch to it anytime, using the &#8220;Globe&#8221; key. When you tap and hold the globe key, you can switch to any keyboard directly (without going through all of them by tapping).</p>
+<p>In general, you can do <em>most</em> things you could do in a script that runs in the main app, but there are some limitations:</p>
+<ul class="simple">
+<li>Custom user interfaces run only within the keyboard, and cannot cover the entire screen. They&#8217;re also more limited in how views can be presented.</li>
+<li>Resources are more limited in general, and the keyboard may &#8220;crash&#8221;, if your scripts use too much memory (even if the scripts may run fine in the main app).</li>
+</ul>
+<p><strong>Tips:</strong></p>
+<ul class="simple">
+<li>Tap and hold a script shortcut to edit the script or remove the shortcut.</li>
+<li>Tap the green key to expand the row of script shortcuts to the entire keyboard. This also expands any user interfaces that are shown in that view.</li>
+<li>Tap and hold the globe key to switch to a different keyboard directly, without going through all other keyboards.</li>
+<li>The <a class="reference internal" href="keyboard.html#module-keyboard" title="keyboard: Utilities for the Pythonista Keyboard"><code class="xref py py-mod docutils literal"><span class="pre">keyboard</span></code></a> module contains functions for dealing with text input and the keyboard in general. You can use this to insert text, move the cursor, get selected text, and more.</li>
+<li>The Python standard library contains a lot of modules for working with and transforming text, which may be interesting when used in a custom keyboard. Have a look at the <a class="reference internal" href="../library/text.html#textservices"><span>Text Processing Services</span></a> page to get an overview.</li>
+<li>Have a look at the included <a class="reference external" href="pythonista3://Examples/Keyboard?action=open">sample scripts</a> to get an idea of what&#8217;s possible with a scriptable keyboard</li>
+</ul>
+<p><strong>More Information</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="keyboard.html#module-keyboard" title="keyboard: Utilities for the Pythonista Keyboard"><code class="xref py py-mod docutils literal"><span class="pre">keyboard</span></code></a> module</li>
+<li><a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> module</li>
+</ul>
+</div>
+<div class="section" id="share-sheet-extension">
+<span id="pythonista-share-extension"></span><h2>Share Sheet Extension<a class="headerlink" href="pythonista_shortcuts.html#share-sheet-extension" title="Permalink to this headline">¶</a></h2>
+<p>The Pythonista share sheet extension allows you to run scripts from other apps that support the standard iOS share sheet, e.g. Safari, Photos, Notes, but also third-party apps (including Pythonista itself).</p>
+<p>Your scripts have access to the share sheet&#8217;s input, e.g. a URL in Safari, or an image in Photos.</p>
+<p><strong>How to Use</strong></p>
+<a class="reference internal image-reference" href="../_images/pythonista_sharesheet.jpg"><img alt="Share sheet with Pythonista action" class="align-right" src="../_images/pythonista_sharesheet.jpg" style="width: 50%;" /></a>
+<p>To enable the Pythonista share sheet extension, simply share something in a supported app, e.g. Safari or Pythonista itself. Scroll down in the list of actions (or sideways on iOS 12 and earlier) to find the &#8220;Run Pythonista Script&#8221; action. If it&#8217;s not in the list already, tap on &#8220;More...&#8221; (on iOS 12) or &#8220;Edit Actions…&#8221; (on iOS 13+).</p>
+<p><strong>Scripting Tips for the Share Sheet</strong></p>
+<ul class="simple">
+<li>You can access the share sheet&#8217;s input using various functions in the <a class="reference internal" href="appex.html#module-appex" title="appex: Utilities for Pythonista's App Extensions"><code class="xref py py-mod docutils literal"><span class="pre">appex</span></code></a> module, e.g. <a class="reference internal" href="appex.html#appex.get_url" title="appex.get_url"><code class="xref py py-func docutils literal"><span class="pre">appex.get_url()</span></code></a> to get a URL (e.g. in Safari), <a class="reference internal" href="appex.html#appex.get_text" title="appex.get_text"><code class="xref py py-func docutils literal"><span class="pre">appex.get_text()</span></code></a> to get text in e.g. Notes, <a class="reference internal" href="appex.html#appex.get_image" title="appex.get_image"><code class="xref py py-func docutils literal"><span class="pre">appex.get_image()</span></code></a> to get a shared photo, and more.</li>
+<li>You can dismiss the share sheet programmatically using the <a class="reference internal" href="appex.html#appex.finish" title="appex.finish"><code class="xref py py-func docutils literal"><span class="pre">appex.finish()</span></code></a> function.</li>
+<li>The share sheet extension contains an interactive prompt (console), so you can also work with the input data interactively, without writing a full script.</li>
+<li>If you want to process images in the share sheet extension, you can either use <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><code class="xref py py-mod docutils literal"><span class="pre">PIL</span></code></a> (with <a class="reference internal" href="appex.html#appex.get_image" title="appex.get_image"><code class="xref py py-func docutils literal"><span class="pre">appex.get_image()</span></code></a>) or <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> (with <code class="xref py py-func docutils literal"><span class="pre">appex.get_ui_image()</span></code>). While <a class="reference internal" href="PIL.html#module-PIL" title="PIL"><code class="xref py py-mod docutils literal"><span class="pre">PIL</span></code></a> is cross-platform, the <a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> module provides higher-quality vector drawing, and is generally a bit more light-weight.</li>
+<li>As in all app extensions, resources are more limited than in the main app (which makes &#8220;crashes&#8221; due to memory limitations more likely), and the share sheet extension runs in a separate process. Some modules are only supported in the main app, e.g. the <a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><code class="xref py py-mod docutils literal"><span class="pre">editor</span></code></a> module.</li>
+</ul>
+<p><strong>More Information</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="appex.html#module-appex" title="appex: Utilities for Pythonista's App Extensions"><code class="xref py py-mod docutils literal"><span class="pre">appex</span></code></a> module</li>
+<li><a class="reference internal" href="clipboard.html#module-clipboard" title="clipboard: Provides copy and paste integration on iOS"><code class="xref py py-mod docutils literal"><span class="pre">clipboard</span></code></a> module</li>
+<li><a class="reference internal" href="ui.html#module-ui" title="ui: Native GUI for iOS"><code class="xref py py-mod docutils literal"><span class="pre">ui</span></code></a> module</li>
+<li><a class="reference internal" href="PIL.html#module-PIL" title="PIL"><code class="xref py py-mod docutils literal"><span class="pre">PIL</span></code></a> module</li>
+</ul>
+</div>
+<div class="section" id="editor-action">
+<span id="id2"></span><h2>Editor Action<a class="headerlink" href="pythonista_shortcuts.html#editor-action" title="Permalink to this headline">¶</a></h2>
+<p>Editor actions allow you to extend the popup that appears when you tap the &#8220;wrench&#8221; button, so you can run scripts while editing code or viewing other files.</p>
+<p>Each editor action can have a custom icon/color, and you can create multiple actions from the same script by passing command-line arguments.</p>
+<p>Editor actions are particularly useful for scripts that make use of the <a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><code class="xref py py-mod docutils literal"><span class="pre">editor</span></code></a> module (for scripting the text editor), but they can be anything that you want quick access to.</p>
+<a class="reference internal image-reference" href="../_images/pythonista_editor_actions.jpg"><img alt="Editor actions" class="align-right" src="../_images/pythonista_editor_actions.jpg" style="width: 432px;" /></a>
+<p>The &#8220;Reset Environment&#8221; option determines whether global variables etc. are deleted before the script is run. Normally, the runtime environment is reset before running a script, but if the editor action is related to debugging, it may be useful to keep the variables from the last script that was run.</p>
+<p><strong>More Information</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="editor.html#module-editor" title="editor: Scripting Pythonista's text editor"><code class="xref py py-mod docutils literal"><span class="pre">editor</span></code></a> module</li>
+<li><a class="reference internal" href="dialogs.html#module-dialogs" title="dialogs"><code class="xref py py-mod docutils literal"><span class="pre">dialogs</span></code></a> module</li>
+</ul>
+</div>
+<div class="section" id="home-screen-icon">
+<span id="pythonista-homescreen-icon"></span><h2>Home Screen Icon<a class="headerlink" href="pythonista_shortcuts.html#home-screen-icon" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/pythonista_homescreen.jpg"><img alt="Home screen icon" class="align-left" src="../_images/pythonista_homescreen.jpg" style="width: 285px;" /></a>
+<p>This allows you to add a custom home screen icon to launch a Pythonista script. Technically, these home screen icons are just Safari bookmarks, but they do work offline.</p>
+<p>On iOS 13 and later, you may want to use a home screen shortcut from the Shortcuts app instead. You can launch Pythonista from the Shortcuts app by opening a <code class="docutils literal"><span class="pre">pythonista://</span></code> URL (see below).</p>
+</div>
+<div class="section" id="pythonista-url">
+<span id="id3"></span><h2>Pythonista URL<a class="headerlink" href="pythonista_shortcuts.html#pythonista-url" title="Permalink to this headline">¶</a></h2>
+<p>The Pythonista URL generator allows you to easily generate <code class="docutils literal"><span class="pre">pythonista3://</span></code> URLs for launching or opening your scripts from other apps. You can also generate QR codes with embedded URLs that can be scanned by the iOS camera app.</p>
+<p>Pythonista&#8217;s URL scheme support allows various kinds of automation, including launching scripts from the Shortcuts app or third-party automation tools.</p>
+<p>For more information on what you can do with Pythonista URLs, please refer to the <a class="reference internal" href="urlscheme.html#pythonista-urlscheme"><span>Pythonista URL Scheme</span></a> reference.</p>
+<p>You can also generate Pythonista URLs programmatically, using the <a class="reference internal" href="shortcuts.html#module-shortcuts" title="shortcuts: Support for Pythonista URLs and related utilities"><code class="xref py py-mod docutils literal"><span class="pre">shortcuts</span></code></a> module.</p>
+<p><strong>More Information</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../library/webbrowser.html#module-webbrowser" title="webbrowser: Easy-to-use controller for Web browsers."><code class="xref py py-mod docutils literal"><span class="pre">webbrowser</span></code></a> module</li>
+<li><a class="reference internal" href="shortcuts.html#module-shortcuts" title="shortcuts: Support for Pythonista URLs and related utilities"><code class="xref py py-mod docutils literal"><span class="pre">shortcuts</span></code></a> module</li>
+<li><a class="reference internal" href="urlscheme.html#pythonista-urlscheme"><span>The Pythonista URL Scheme</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

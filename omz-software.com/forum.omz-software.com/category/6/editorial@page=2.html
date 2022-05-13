@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editorial | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Editorial" />
+	<meta property="og:title" content="Editorial" />
+	<meta name="description" content="Discuss plain text productivity and workflow automation with Editorial" />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="../6.rss" />
+	<link rel="up" href="../../index.html" />
+	<link rel="next" href="editorial@page=3.html" />
+	<link rel="prev" href="editorial@page=1.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"xTsGKZNJ-Kg35QRCn2RVxCq30Z8SiwDiTbtA","searchEnabled":true}');
+		var app = {
+			template: "category",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="editorial@page=2.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="editorial@page=2.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="editorial@page=2.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="editorial@page=2.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="category">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Editorial
+												<a target="_blank" href="../6.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+<div class="subcategory">
+	
+
+	<ul class="categories" itemscope itemtype="http://www.schema.org/ItemList">
+
+	</ul>
+</div>
+
+	
+
+	<div class="clearfix">
+								<a href="../../topic/7476.html" class="btn btn-primary">Log in to post</a>
+
+		<span class="pull-right">
+
+
+
+		</span>
+	</div>
+
+	<hr />
+
+	<p>Editorial</p>
+
+	
+
+<ul component="category" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="40">
+	<meta itemprop="itemListOrder" content="descending">
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7473" data-index="20" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/christianfrances" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/79a50dacee8f9e5f890af70fe7956d4b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="christianfrances"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7473" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/%EB%B0%94%EC%B9%B4%EB%9D%BC%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%8A%94"><span class="tag">바카라사이트는</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-22T08:36:11.639Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="13">13</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7471" data-index="21" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/lemmywilliam" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/35c2ed2d3282040786be395a227c645f?size=128&default=identicon&rating=pg" class="img-circle user-img" title="lemmywilliam"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7471" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-22T08:34:03.527Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="9">9</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix locked unread"data-tid="3931" data-index="22" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="Beginner Custom UI, how to get the python script?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/nikkischwartzvb" class="pull-left">
+						<img src="https://pbs.twimg.com/profile_images/835498352921948160/zKT2-ozr_bigger.jpg" class="img-circle user-img" title="NikkiSchwartzVB"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock "></i>
+				<a href="https://forum.omz-software.com/topic/3931/beginner-custom-ui-how-to-get-the-python-script" itemprop="url">Beginner Custom UI, how to get the python script?</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2017-03-26T17:36:50.406Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="10">10</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5690">5690</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					<strong>NikkiSchwartzVB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3931/beginner-custom-ui-how-to-get-the-python-script/10">
+						<small class="timeago" title="2017-04-05T01:48:15.474Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks! That's beautiful!</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7452" data-index="23" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/jazfivop" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/eafd7a5f3efb0cb53bf2049c4a648b8b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="jazfivop"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7452" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-09T08:02:38.250Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="15">15</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix locked unread"data-tid="6859" data-index="24" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="Newbie question...">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/rhod" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a5da85c68de8fd42580c4fe719574ed7?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Rhod"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock "></i>
+				<a href="https://forum.omz-software.com/topic/6859/newbie-question" itemprop="url">Newbie question...</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-01-26T21:10:10.070Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5">5</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1145">1145</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					<strong></strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6859/newbie-question">
+						<small class="timeago" title=""></small>
+					</a>
+				</p>
+				<div class="post-content">
+					
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7448" data-index="25" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/daonugtp" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/4bdd0934ea92f50d0ea9fd47f04f7620?size=128&default=identicon&rating=pg" class="img-circle user-img" title="daonugtp"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7448" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-07T07:56:28.502Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="12">12</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7444" data-index="26" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/claragray" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/e527356736ce8097dc28b922db2d98e0?size=128&default=identicon&rating=pg" class="img-circle user-img" title="claragray"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7444" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-03-04T11:37:53.487Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="29">29</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6951" data-index="27" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="Feature Request: Piped Wikilink">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/hced" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/85898aa4742c983fb8b58255a453c3f7?size=128&default=identicon&rating=pg" class="img-circle user-img" title="hced"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/6951/feature-request-piped-wikilink" itemprop="url">Feature Request: Piped Wikilink</a><br />
+
+				
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/feature-request"><span class="tag">feature-request</span></a>
+									<a href="https://forum.omz-software.com/tags/wiki-links"><span class="tag">wiki-links</span></a>
+									<a href="https://forum.omz-software.com/tags/links"><span class="tag">links</span></a>
+									<a href="https://forum.omz-software.com/tags/wiki"><span class="tag">wiki</span></a>
+									<a href="https://forum.omz-software.com/tags/feature"><span class="tag">feature</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2021-03-15T00:20:33.356Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5">5</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1391">1391</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					<strong>Nikolay</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6951/feature-request-piped-wikilink/5">
+						<small class="timeago" title="2021-10-24T09:34:12.480Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>+1 I also vote for wikilinks. At now I use 1Writer, but Editorial seem very comfort to me. Please add wikilink. I build own wiki and now have more than 2000 file linked by [[wiki links]]</p>
+<p>Thanks</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7408" data-index="28" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/cigbairtf" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/c3237afe5759044af65eb331d352d15a?size=128&default=identicon&rating=pg" class="img-circle user-img" title="cigbairtf"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7408" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-02-06T11:09:29.752Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="18">18</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7407" data-index="29" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/ruesosed" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/884e315d4d9c0a375aed8348e249942f?size=128&default=identicon&rating=pg" class="img-circle user-img" title="ruesosed"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7407" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-02-05T08:53:40.068Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11">11</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7405" data-index="30" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/nighieop" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/412cc56f3df5565776d4fb632371cdfa?size=128&default=identicon&rating=pg" class="img-circle user-img" title="nighieop"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7405" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-02-03T08:30:16.906Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="8">8</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7376" data-index="31" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/wakulivy" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a252129c71a43a669c599af536945194?size=128&default=identicon&rating=pg" class="img-circle user-img" title="wakulivy"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7376" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-13T14:51:28.821Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2">2</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="151">151</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					<strong></strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/7376">
+						<small class="timeago" title=""></small>
+					</a>
+				</p>
+				<div class="post-content">
+					
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7397" data-index="32" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/ficuwoxo" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/e0844f908728510c9b80d76ea72e8bd1?size=128&default=identicon&rating=pg" class="img-circle user-img" title="ficuwoxo"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7397" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-27T13:45:52.196Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="19">19</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7394" data-index="33" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/totwueop" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/35c14e3dbd68fa2776259ac80cb8f4f8?size=128&default=identicon&rating=pg" class="img-circle user-img" title="totwueop"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7394" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-24T11:53:24.952Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="14">14</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7383" data-index="34" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/cyxivuwe" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2599788d07c259dc6a0b1c7e5683e54e?size=128&default=identicon&rating=pg" class="img-circle user-img" title="cyxivuwe"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7383" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-16T11:50:22.440Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="21">21</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7380" data-index="35" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/norwegischler" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/98eff8784e2ce46a4d8ed08f037301e7?size=128&default=identicon&rating=pg" class="img-circle user-img" title="norwegischler"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7380" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-15T13:12:12.857Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6">6</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7373" data-index="36" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/godhelpu" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/59eca22dece1e5ba8202acbeff06b37b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Godhelpu"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7373" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/swiss&#32;air"><span class="tag">swiss air</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-12T06:23:59.300Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="12">12</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7372" data-index="37" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/beticurop" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/f97a538019ebcf7fc936672e4482281b?size=128&default=identicon&rating=pg" class="img-circle user-img" title="beticurop"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7372" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-11T13:34:58.851Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="10">10</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7371" data-index="38" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/xiaoye" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/20f0b5a3408cb18c8e0cea0032d1e0cb?size=128&default=identicon&rating=pg" class="img-circle user-img" title="xiaoye"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7371" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2022-01-11T10:03:57.182Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="17">17</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix deleted unread"data-tid="7352" data-index="39" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="This topic is deleted!">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/sportsmanfinder" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a601b061c8131ed44f9b86513367fc1c?size=128&default=identicon&rating=pg" class="img-circle user-img" title="sportsmanfinder"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7352" itemprop="url">This topic is deleted!</a><br />
+
+				
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-12-24T07:43:03.368Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="19">19</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: #495c74">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+</ul>
+
+	
+</div>
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container">
+	<ul class="pagination">
+		<li class="previous pull-left">
+			<a href="editorial@page=1.html" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+						<li class="page" >
+				<a href="editorial@page=1.html" data-page="1">1</a>
+			</li>
+							<li class="page active" >
+				<a href="editorial@page=2.html" data-page="2">2</a>
+			</li>
+							<li class="page" >
+				<a href="editorial@page=3.html" data-page="3">3</a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/category/6/editorial?page=4" data-page="4">4</a>
+			</li>
+							<li class="page select-page">
+				<a href="editorial@page=2.html#"><i class="fa fa-ellipsis-h"></i></a>
+			</li>
+							<li class="page" >
+				<a href="editorial@page=44.html" data-page="44">44</a>
+			</li>
+							<li class="page" >
+				<a href="editorial@page=45.html" data-page="45">45</a>
+			</li>
+
+		<li class="next pull-right">
+			<a href="editorial@page=3.html" data-page="3"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="category_id" value="6" />
+<input type="hidden" template-variable="category_name" value="Editorial" />
+<input type="hidden" template-variable="category_slug" value="6/editorial" />
+<input type="hidden" template-variable="topic_count" value="887" />
+<input type="hidden" template-variable="currentPage" value="2" />
+<input type="hidden" template-variable="pageCount" value="45" /><input type="hidden" ajaxify-data="%7B%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22order%22%3A%222%22%2C%22cid%22%3A%226%22%2C%22parentCid%22%3A%220%22%2C%22description%22%3A%22Discuss%20plain%20text%20productivity%20and%20workflow%20automation%20with%20Editorial%22%2C%22name%22%3A%22Editorial%22%2C%22topic_count%22%3A%22887%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22icon%22%3A%22fa-comments%22%2C%22color%22%3A%22%23fff%22%2C%22post_count%22%3A%223286%22%2C%22disabled%22%3Afalse%2C%22imageClass%22%3A%22auto%22%2C%22link%22%3A%22%22%2C%22totalPostCount%22%3A3286%2C%22totalTopicCount%22%3A887%2C%22descriptionParsed%22%3A%22%3Cp%3EDiscuss%20plain%20text%20productivity%20and%20workflow%20automation%20with%20Editorial%3C%2Fp%3E%5Cn%22%2C%22unread-class%22%3A%22unread%22%2C%22children%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22tid%22%3A%227473%22%2C%22uid%22%3A%2218933%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2248140%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227473%22%2C%22timestamp%22%3A%221647938171639%22%2C%22lastposttime%22%3A%221647938171934%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2213%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-03-22T08%3A36%3A11.639Z%22%2C%22lastposttimeISO%22%3A%222022-03-22T08%3A36%3A11.934Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2218933%22%2C%22username%22%3A%22christianfrances%22%2C%22userslug%22%3A%22christianfrances%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F79a50dacee8f9e5f890af70fe7956d4b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%7B%22value%22%3A%22%EB%B0%94%EC%B9%B4%EB%9D%BC%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%8A%94%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A20%7D%2C%7B%22tid%22%3A%227471%22%2C%22uid%22%3A%2218935%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2248138%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227471%22%2C%22timestamp%22%3A%221647938043527%22%2C%22lastposttime%22%3A%221647938043833%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%229%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-03-22T08%3A34%3A03.527Z%22%2C%22lastposttimeISO%22%3A%222022-03-22T08%3A34%3A03.833Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2218935%22%2C%22username%22%3A%22lemmywilliam%22%2C%22userslug%22%3A%22lemmywilliam%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F35c2ed2d3282040786be395a227c645f%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A21%7D%2C%7B%22tid%22%3A%223931%22%2C%22uid%22%3A%223472%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2223762%22%2C%22title%22%3A%22Beginner%20Custom%20UI%2C%20how%20to%20get%20the%20python%20script%3F%22%2C%22slug%22%3A%223931%2Fbeginner-custom-ui-how-to-get-the-python-script%22%2C%22timestamp%22%3A%221490549810406%22%2C%22lastposttime%22%3A%221491356895474%22%2C%22postcount%22%3A%2210%22%2C%22viewcount%22%3A%225690%22%2C%22locked%22%3Atrue%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2223905%22%2C%22relativeTime%22%3A%222017-03-26T17%3A36%3A50.406Z%22%2C%22lastposttimeISO%22%3A%222017-04-05T01%3A48%3A15.474Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%223472%22%2C%22username%22%3A%22NikkiSchwartzVB%22%2C%22userslug%22%3A%22nikkischwartzvb%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F835498352921948160%2FzKT2-ozr_bigger.jpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2223905%22%2C%22uid%22%3A%223472%22%2C%22timestamp%22%3A%222017-04-05T01%3A48%3A15.474Z%22%2C%22tid%22%3A%223931%22%2C%22content%22%3A%22%3Cp%3EThanks!%20That's%20beautiful!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%223472%22%2C%22username%22%3A%22NikkiSchwartzVB%22%2C%22userslug%22%3A%22nikkischwartzvb%22%2C%22picture%22%3A%22https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F835498352921948160%2FzKT2-ozr_bigger.jpg%22%7D%2C%22index%22%3A10%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A22%7D%2C%7B%22tid%22%3A%227452%22%2C%22uid%22%3A%2218620%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2248094%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227452%22%2C%22timestamp%22%3A%221646812958250%22%2C%22lastposttime%22%3A%221646812958502%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2215%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-03-09T08%3A02%3A38.250Z%22%2C%22lastposttimeISO%22%3A%222022-03-09T08%3A02%3A38.502Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2218620%22%2C%22username%22%3A%22jazfivop%22%2C%22userslug%22%3A%22jazfivop%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Feafd7a5f3efb0cb53bf2049c4a648b8b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A23%7D%2C%7B%22tid%22%3A%226859%22%2C%22uid%22%3A%229728%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2243347%22%2C%22title%22%3A%22Newbie%20question...%22%2C%22slug%22%3A%226859%2Fnewbie-question%22%2C%22timestamp%22%3A%221611695410070%22%2C%22lastposttime%22%3A%221611695410195%22%2C%22postcount%22%3A%225%22%2C%22viewcount%22%3A%221145%22%2C%22locked%22%3Atrue%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222021-01-26T21%3A10%3A10.070Z%22%2C%22lastposttimeISO%22%3A%222021-01-26T21%3A10%3A10.195Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%229728%22%2C%22username%22%3A%22Rhod%22%2C%22userslug%22%3A%22rhod%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa5da85c68de8fd42580c4fe719574ed7%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A24%7D%2C%7B%22tid%22%3A%227448%22%2C%22uid%22%3A%2218566%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2248079%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227448%22%2C%22timestamp%22%3A%221646639788502%22%2C%22lastposttime%22%3A%221646639788579%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2212%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-03-07T07%3A56%3A28.502Z%22%2C%22lastposttimeISO%22%3A%222022-03-07T07%3A56%3A28.579Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2218566%22%2C%22username%22%3A%22daonugtp%22%2C%22userslug%22%3A%22daonugtp%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4bdd0934ea92f50d0ea9fd47f04f7620%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A25%7D%2C%7B%22tid%22%3A%227444%22%2C%22uid%22%3A%2218515%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2248059%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227444%22%2C%22timestamp%22%3A%221646393873487%22%2C%22lastposttime%22%3A%221646393873785%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2229%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-03-04T11%3A37%3A53.487Z%22%2C%22lastposttimeISO%22%3A%222022-03-04T11%3A37%3A53.785Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2218515%22%2C%22username%22%3A%22claragray%22%2C%22userslug%22%3A%22claragray%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe527356736ce8097dc28b922db2d98e0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A26%7D%2C%7B%22tid%22%3A%226951%22%2C%22uid%22%3A%2210253%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2244106%22%2C%22title%22%3A%22Feature%20Request%3A%20Piped%20Wikilink%22%2C%22slug%22%3A%226951%2Ffeature-request-piped-wikilink%22%2C%22timestamp%22%3A%221615767633356%22%2C%22lastposttime%22%3A%221635068052480%22%2C%22postcount%22%3A%225%22%2C%22viewcount%22%3A%221391%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2247089%22%2C%22relativeTime%22%3A%222021-03-15T00%3A20%3A33.356Z%22%2C%22lastposttimeISO%22%3A%222021-10-24T09%3A34%3A12.480Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2210253%22%2C%22username%22%3A%22hced%22%2C%22userslug%22%3A%22hced%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F85898aa4742c983fb8b58255a453c3f7%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2247089%22%2C%22uid%22%3A%2214664%22%2C%22timestamp%22%3A%222021-10-24T09%3A34%3A12.480Z%22%2C%22tid%22%3A%226951%22%2C%22content%22%3A%22%3Cp%3E%2B1%20I%20also%20vote%20for%20wikilinks.%20At%20now%20I%20use%201Writer%2C%20but%20Editorial%20seem%20very%20comfort%20to%20me.%20Please%20add%20wikilink.%20I%20build%20own%20wiki%20and%20now%20have%20more%20than%202000%20file%20linked%20by%20%5B%5Bwiki%20links%5D%5D%3C%2Fp%3E%5Cn%3Cp%3EThanks%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2214664%22%2C%22username%22%3A%22Nikolay%22%2C%22userslug%22%3A%22nikolay%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4ffc6bf2776a24686b7bcfeae382986f%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A5%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22feature-request%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2213%22%7D%2C%7B%22value%22%3A%22wiki-links%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22links%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%223%22%7D%2C%7B%22value%22%3A%22wiki%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%22feature%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%227%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A27%7D%2C%7B%22tid%22%3A%227408%22%2C%22uid%22%3A%2217862%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247927%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227408%22%2C%22timestamp%22%3A%221644145769752%22%2C%22lastposttime%22%3A%221644145770009%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2218%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-02-06T11%3A09%3A29.752Z%22%2C%22lastposttimeISO%22%3A%222022-02-06T11%3A09%3A30.009Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217862%22%2C%22username%22%3A%22cigbairtf%22%2C%22userslug%22%3A%22cigbairtf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc3237afe5759044af65eb331d352d15a%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A28%7D%2C%7B%22tid%22%3A%227407%22%2C%22uid%22%3A%2217847%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247920%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227407%22%2C%22timestamp%22%3A%221644051220068%22%2C%22lastposttime%22%3A%221644051220363%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2211%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-02-05T08%3A53%3A40.068Z%22%2C%22lastposttimeISO%22%3A%222022-02-05T08%3A53%3A40.363Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217847%22%2C%22username%22%3A%22ruesosed%22%2C%22userslug%22%3A%22ruesosed%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F884e315d4d9c0a375aed8348e249942f%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A29%7D%2C%7B%22tid%22%3A%227405%22%2C%22uid%22%3A%2217794%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247916%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227405%22%2C%22timestamp%22%3A%221643877016906%22%2C%22lastposttime%22%3A%221643877017169%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%228%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-02-03T08%3A30%3A16.906Z%22%2C%22lastposttimeISO%22%3A%222022-02-03T08%3A30%3A17.169Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217794%22%2C%22username%22%3A%22nighieop%22%2C%22userslug%22%3A%22nighieop%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F412cc56f3df5565776d4fb632371cdfa%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A30%7D%2C%7B%22tid%22%3A%227376%22%2C%22uid%22%3A%2217157%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247785%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227376%22%2C%22timestamp%22%3A%221642085488821%22%2C%22lastposttime%22%3A%221643379097669%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%22151%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-13T14%3A51%3A28.821Z%22%2C%22lastposttimeISO%22%3A%222022-01-28T14%3A11%3A37.669Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217157%22%2C%22username%22%3A%22wakulivy%22%2C%22userslug%22%3A%22wakulivy%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa252129c71a43a669c599af536945194%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%2C%22index%22%3A31%7D%2C%7B%22tid%22%3A%227397%22%2C%22uid%22%3A%2217582%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247876%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227397%22%2C%22timestamp%22%3A%221643291152196%22%2C%22lastposttime%22%3A%221643291152503%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2219%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-27T13%3A45%3A52.196Z%22%2C%22lastposttimeISO%22%3A%222022-01-27T13%3A45%3A52.503Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217582%22%2C%22username%22%3A%22ficuwoxo%22%2C%22userslug%22%3A%22ficuwoxo%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe0844f908728510c9b80d76ea72e8bd1%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A32%7D%2C%7B%22tid%22%3A%227394%22%2C%22uid%22%3A%2217474%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247865%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227394%22%2C%22timestamp%22%3A%221643025204952%22%2C%22lastposttime%22%3A%221643025205033%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2214%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-24T11%3A53%3A24.952Z%22%2C%22lastposttimeISO%22%3A%222022-01-24T11%3A53%3A25.033Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217474%22%2C%22username%22%3A%22totwueop%22%2C%22userslug%22%3A%22totwueop%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F35c14e3dbd68fa2776259ac80cb8f4f8%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A33%7D%2C%7B%22tid%22%3A%227383%22%2C%22uid%22%3A%2217221%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247815%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227383%22%2C%22timestamp%22%3A%221642333822440%22%2C%22lastposttime%22%3A%221642333822512%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2221%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-16T11%3A50%3A22.440Z%22%2C%22lastposttimeISO%22%3A%222022-01-16T11%3A50%3A22.512Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217221%22%2C%22username%22%3A%22cyxivuwe%22%2C%22userslug%22%3A%22cyxivuwe%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2599788d07c259dc6a0b1c7e5683e54e%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A34%7D%2C%7B%22tid%22%3A%227380%22%2C%22uid%22%3A%2217207%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247802%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227380%22%2C%22timestamp%22%3A%221642252332857%22%2C%22lastposttime%22%3A%221642252333235%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%226%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-15T13%3A12%3A12.857Z%22%2C%22lastposttimeISO%22%3A%222022-01-15T13%3A12%3A13.235Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217207%22%2C%22username%22%3A%22norwegischler%22%2C%22userslug%22%3A%22norwegischler%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F98eff8784e2ce46a4d8ed08f037301e7%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A35%7D%2C%7B%22timestamp%22%3A%221641968639300%22%2C%22pinned%22%3Afalse%2C%22viewcount%22%3A%2212%22%2C%22lastposttime%22%3A%221641968639631%22%2C%22postcount%22%3A%221%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22teaserPid%22%3A%22null%22%2C%22slug%22%3A%227373%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22cid%22%3A%226%22%2C%22uid%22%3A%2217099%22%2C%22mainPid%22%3A%2247774%22%2C%22tid%22%3A%227373%22%2C%22relativeTime%22%3A%222022-01-12T06%3A23%3A59.300Z%22%2C%22lastposttimeISO%22%3A%222022-01-12T06%3A23%3A59.631Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217099%22%2C%22username%22%3A%22Godhelpu%22%2C%22userslug%22%3A%22godhelpu%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F59eca22dece1e5ba8202acbeff06b37b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%7B%22value%22%3A%22swiss%20air%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A36%7D%2C%7B%22tid%22%3A%227372%22%2C%22uid%22%3A%2217082%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247772%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227372%22%2C%22timestamp%22%3A%221641908098851%22%2C%22lastposttime%22%3A%221641908099141%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2210%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-11T13%3A34%3A58.851Z%22%2C%22lastposttimeISO%22%3A%222022-01-11T13%3A34%3A59.141Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217082%22%2C%22username%22%3A%22beticurop%22%2C%22userslug%22%3A%22beticurop%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ff97a538019ebcf7fc936672e4482281b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A37%7D%2C%7B%22tid%22%3A%227371%22%2C%22uid%22%3A%2217038%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247771%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227371%22%2C%22timestamp%22%3A%221641895437182%22%2C%22lastposttime%22%3A%221641895437525%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2217%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222022-01-11T10%3A03%3A57.182Z%22%2C%22lastposttimeISO%22%3A%222022-01-11T10%3A03%3A57.525Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2217038%22%2C%22username%22%3A%22xiaoye%22%2C%22userslug%22%3A%22xiaoye%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F20f0b5a3408cb18c8e0cea0032d1e0cb%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A38%7D%2C%7B%22tid%22%3A%227352%22%2C%22uid%22%3A%2213540%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%2247623%22%2C%22title%22%3A%22%5B%5Btopic%3Atopic_is_deleted%5D%5D%22%2C%22slug%22%3A%227352%22%2C%22timestamp%22%3A%221640331783368%22%2C%22lastposttime%22%3A%221640331783642%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%2219%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Atrue%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222021-12-24T07%3A43%3A03.368Z%22%2C%22lastposttimeISO%22%3A%222021-12-24T07%3A43%3A03.642Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2213540%22%2C%22username%22%3A%22sportsmanfinder%22%2C%22userslug%22%3A%22sportsmanfinder%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa601b061c8131ed44f9b86513367fc1c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3Anull%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%2C%22index%22%3A39%7D%5D%2C%22nextStart%22%3A40%2C%22pageCount%22%3A45%2C%22isIgnored%22%3Afalse%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Editorial%22%2C%22url%22%3A%22%2Fcategory%2F6%2Feditorial%22%7D%5D%2C%22privileges%22%3A%7B%22cid%22%3A%226%22%2C%22uid%22%3A0%2C%22topics%3Acreate%22%3Afalse%2C%22editable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22read%22%3Atrue%7D%2C%22showSelect%22%3Afalse%2C%22currentPage%22%3A2%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Fcategory%2F6.rss%22%2C%22pagination%22%3A%7B%22rel%22%3A%5B%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D3%22%7D%2C%7B%22rel%22%3A%22prev%22%2C%22href%22%3A%22%3Fpage%3D1%22%7D%5D%2C%22pages%22%3A%5B%7B%22page%22%3A1%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D1%22%7D%2C%7B%22page%22%3A2%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D2%22%7D%2C%7B%22page%22%3A3%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D3%22%7D%2C%7B%22page%22%3A4%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D4%22%7D%2C%7B%22separator%22%3Atrue%7D%2C%7B%22page%22%3A44%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D44%22%7D%2C%7B%22page%22%3A45%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D45%22%7D%5D%2C%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D1%22%7D%2C%22next%22%3A%7B%22page%22%3A3%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D3%22%7D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22category%22%2C%22category%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22xTsGKZNJ-Kg35QRCn2RVxCq30Z8SiwDiTbtA%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Editorial%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Editorial%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22Discuss%20plain%20text%20productivity%20and%20workflow%20automation%20with%20Editorial%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22website%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F6.rss%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%22%7D%2C%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D3%22%7D%2C%7B%22rel%22%3A%22prev%22%2C%22href%22%3A%22%3Fpage%3D1%22%7D%5D%2C%22template%22%3A%22category%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="editorial@page=2.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

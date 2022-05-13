@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>keyboard — Utilities for the Pythonista Keyboard &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/keyboard.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-keyboard">
+<span id="keyboard-utilities-for-the-pythonista-keyboard"></span><h1><a class="reference internal" href="keyboard.html#module-keyboard" title="keyboard: Utilities for the Pythonista Keyboard"><code class="xref py py-mod docutils literal"><span class="pre">keyboard</span></code></a> &#8212; Utilities for the Pythonista Keyboard<a class="headerlink" href="keyboard.html#module-keyboard" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="keyboard.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="keyboard.html#module-keyboard" title="keyboard: Utilities for the Pythonista Keyboard"><code class="xref py py-mod docutils literal"><span class="pre">keyboard</span></code></a> module provides various functions for extending the custom Pythonista keyboard (&#8220;PyKeys&#8221;).</p>
+<p>The Pythonista keyboard is a custom on-screen keyboard that you can use in pretty much any app on iOS that can edit text. You can extend this keyboard with your own scripts, e.g. for inserting text snippets, or even providing a fully custom UI (<a class="reference internal" href="ui.html#ui.View" title="ui.View"><code class="xref py py-class docutils literal"><span class="pre">ui.View</span></code></a>) in or above the QWERTY keyboard. This custom UI can show additional buttons etc., and also react to changes in the document or selection.</p>
+<p>If you implement a custom view/UI for your keyboard script, you can also get notified when certain text input-related events happen, either by the user moving the cursor, or by keys on the built-in QWERTY layout being used. To do this, you can implement any of the following callback methods in a custom <a class="reference internal" href="ui.html#ui.View" title="ui.View"><code class="xref py py-class docutils literal"><span class="pre">ui.View</span></code></a> subclass:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">keyboard</span>
+<span class="kn">import</span> <span class="nn">ui</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
+
+<span class="k">class</span> <span class="nc">MyView</span> <span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">View</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">,</span> <span class="n">flex</span><span class="o">=</span><span class="s1">&#39;wh&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_subview</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">kb_should_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Insert: </span><span class="si">{text}</span><span class="s1">&#39;</span>
+                <span class="c1"># You can modify the inserted text here:</span>
+                <span class="k">return</span> <span class="n">text</span>
+
+        <span class="k">def</span> <span class="nf">kb_text_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="p">(</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+        <span class="k">def</span> <span class="nf">kb_should_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">MyView</span><span class="p">()</span>
+<span class="n">keyboard</span><span class="o">.</span><span class="n">set_view</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Various examples of custom keyboard UIs are included with Pythonista in <a class="reference external" href="pythonista3://Examples/Keyboard/?action=open">the keyboard examples folder</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can find more information on how to enable and use the keyboard on the <a class="reference internal" href="pythonista_shortcuts.html#pythonista-keyboard"><span>Pythonista Shortcuts</span></a> page.</p>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="keyboard.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="keyboard.backspace">
+<code class="descclassname">keyboard.</code><code class="descname">backspace</code><span class="sig-paren">(</span><em>times=1</em><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.backspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete backwards in the current document (simulate the backspace key). The <cite>times</cite> parameter determines how many characters are deleted at once.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.get_appearance">
+<code class="descclassname">keyboard.</code><code class="descname">get_appearance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.get_appearance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current appearance of the keyboard (<code class="docutils literal"><span class="pre">dark'</span></code> or <code class="docutils literal"><span class="pre">'light'</span></code>).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.get_document_id">
+<code class="descclassname">keyboard.</code><code class="descname">get_document_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.get_document_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unique identifier (UUID) for the current document the keyboard is typing into. This identifier is arbitrary/random, and does not include any information about the document, but you can use it to detect when the user types into a different document.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.get_input_context">
+<code class="descclassname">keyboard.</code><code class="descname">get_input_context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.get_input_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a pair (2-tuple) of two strings with the text immediately before and after the cursor.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.get_selected_text">
+<code class="descclassname">keyboard.</code><code class="descname">get_selected_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.get_selected_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the currently selected text or an empty string, if no text is selected.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If more than two lines, or about 1000 characters are selected, this function&#8217;s return value will be truncated in the middle. Unfortunately, it is not technically possible to prevent this (it&#8217;s a system limitation), and it&#8217;s also not possible to detect the truncation.</p>
+<p class="last">You should typically not use the return value of this function to replace selected text, if it contains more than one line.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.get_text_replacements">
+<code class="descclassname">keyboard.</code><code class="descname">get_text_replacements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.get_text_replacements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of text replacements you&#8217;ve defined in the global keyboard settings (Settings app: General &gt; Keyboard &gt; Text Replacement). Every text replacement is a tuple of two strings (phrase, shortcut).</p>
+<p>This function is only supported when running in the Pythonista Keyboard. In other contexts, <cite>None</cite> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.has_full_access">
+<code class="descclassname">keyboard.</code><code class="descname">has_full_access</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.has_full_access" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <cite>True</cite> if the &#8216;Full Access&#8217; option is enabled for the keyboard, <cite>False</cite> otherwise.</p>
+<p>&#8216;Full Access&#8217; is required for a number of things, e.g. any network access, clipboard, writing files to the main app.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.has_text">
+<code class="descclassname">keyboard.</code><code class="descname">has_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.has_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <cite>True</cite> if the document (text field) the keyboard is editing contains any text, <cite>False</cite> if it&#8217;s empty.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.insert_text">
+<code class="descclassname">keyboard.</code><code class="descname">insert_text</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.insert_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert text in the current document (text field) the keyboard is editing.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.is_keyboard">
+<code class="descclassname">keyboard.</code><code class="descname">is_keyboard</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.is_keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <cite>True</cite> if the script is running in the custom Pythonista keyboard, <cite>False</cite> otherwise.</p>
+<p>This can be used for scripts that should behave differently, depending on whether they run in the keyboard or in the main app.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.move_cursor">
+<code class="descclassname">keyboard.</code><code class="descname">move_cursor</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.move_cursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move the cursor by a specified offset (a positive or negative integer).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.play_input_click">
+<code class="descclassname">keyboard.</code><code class="descname">play_input_click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.play_input_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play an input click sound, if this is enabled by the user (input clicks can be turned off in the global keyboard settings), and the device is not muted.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keyboard.set_view">
+<code class="descclassname">keyboard.</code><code class="descname">set_view</code><span class="sig-paren">(</span><em>view=None</em>, <em>mode='current'</em><span class="sig-paren">)</span><a class="headerlink" href="keyboard.html#keyboard.set_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a custom <a class="reference internal" href="ui.html#ui.View" title="ui.View"><code class="xref py py-class docutils literal"><span class="pre">ui.View</span></code></a> as the keyboard&#8217;s UI, either above of the QWERTY layout (mode = <code class="docutils literal"><span class="pre">'minimized'</span></code>) or filling most of the keyboard&#8217;s area (mode = <code class="docutils literal"><span class="pre">'expanded'</span></code>). With mode = <code class="docutils literal"><span class="pre">'current'</span></code>, the active mode is kept (you can switch manually by tapping the green &#8220;shortcuts&#8221; key).</p>
+<p>You can pass <code class="docutils literal"><span class="pre">None</span></code> as the view to close the current view.</p>
+<p>See the <a class="reference internal" href="../reference/introduction.html#introduction"><span>Introduction</span></a> for information about callbacks you can implement in custom UIs to get notified about text input events.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 24, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

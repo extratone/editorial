@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>24. Program Frameworks &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="up" title="The Python Standard Library" href="index.html" />
+    <link rel="next" title="24.1. turtle — Turtle graphics" href="turtle.html" />
+    <link rel="prev" title="23.2. locale — Internationalization services" href="locale.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/library/frameworks.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="turtle.html" title="24.1. turtle — Turtle graphics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="locale.html" title="23.2. locale — Internationalization services"
+             accesskey="P">previous</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+          <li><a href="index.html" accesskey="U">The Python Standard Library</a> &raquo;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="program-frameworks">
+<span id="frameworks"></span><h1>24. Program Frameworks<a class="headerlink" href="frameworks.html#program-frameworks" title="Permalink to this headline">¶</a></h1>
+<p>The modules described in this chapter are frameworks that will largely dictate
+the structure of your program.  Currently the modules described  here are all
+oriented toward writing command-line interfaces.</p>
+<p>The full list of modules described in this chapter is:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="turtle.html">24.1. <code class="docutils literal"><span class="pre">turtle</span></code> &#8212; Turtle graphics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html#introduction">24.1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html#overview-of-available-turtle-and-screen-methods">24.1.2. Overview of available Turtle and Screen methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#turtle-methods">24.1.2.1. Turtle methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#methods-of-turtlescreen-screen">24.1.2.2. Methods of TurtleScreen/Screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html#methods-of-turtle-and-corresponding-functions">24.1.3. Methods of Turtle and corresponding functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#turtle-motion">24.1.3.1. Turtle motion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#tell-turtle-s-state">24.1.3.2. Tell Turtle&#8217;s state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#settings-for-measurement">24.1.3.3. Settings for measurement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#pen-control">24.1.3.4. Pen control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="turtle.html#drawing-state">24.1.3.4.1. Drawing state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turtle.html#color-control">24.1.3.4.2. Color control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turtle.html#filling">24.1.3.4.3. Filling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="turtle.html#more-drawing-control">24.1.3.4.4. More drawing control</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#turtle-state">24.1.3.5. Turtle state</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="turtle.html#visibility">24.1.3.5.1. Visibility</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#special-turtle-methods">24.1.3.6. Special Turtle methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#animation-control">24.1.3.7. Animation control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#input-methods">24.1.3.8. Input methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#settings-and-special-methods">24.1.3.9. Settings and special methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="turtle.html#methods-specific-to-screen-not-inherited-from-turtlescreen">24.1.3.10. Methods specific to Screen, not inherited from TurtleScreen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html#public-classes">24.1.4. Public classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cmd.html">24.2. <code class="docutils literal"><span class="pre">cmd</span></code> &#8212; Support for line-oriented command interpreters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cmd.html#cmd-objects">24.2.1. Cmd Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmd.html#cmd-example">24.2.2. Cmd Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shlex.html">24.3. <code class="docutils literal"><span class="pre">shlex</span></code> &#8212; Simple lexical analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shlex.html#shlex-objects">24.3.1. shlex Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shlex.html#parsing-rules">24.3.2. Parsing Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shlex.html#improved-compatibility-with-shells">24.3.3. Improved Compatibility with Shells</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

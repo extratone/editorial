@@ -1,0 +1,1092 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Requests – HTTP for Humans &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/requests.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="module-requests"></span><div class="section" id="requests-http-for-humans">
+<h1>Requests &#8211; HTTP for Humans<a class="headerlink" href="requests.html#requests-http-for-humans" title="Permalink to this headline">¶</a></h1>
+<p>This part of the documentation covers all the interfaces of Requests.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pythonista&#8217;s documentation only includes the core API documentation for <a class="reference internal" href="requests.html#module-requests" title="requests"><code class="xref py py-mod docutils literal"><span class="pre">requests</span></code></a>. For a tutorial and more in-depth information, please visit the <a class="reference external" href="http://docs.python-requests.org/en/latest/">requests website</a>.</p>
+</div>
+<div class="section" id="main-interface">
+<h2>Main Interface<a class="headerlink" href="requests.html#main-interface" title="Permalink to this headline">¶</a></h2>
+<p>All of Request&#8217;s functionality can be accessed by these 7 methods.
+They all return an instance of the <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<dl class="function">
+<dt id="requests.request">
+<code class="descclassname">requests.</code><code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs and sends a <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.
+Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>method</strong> &#8211; method for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>params</strong> &#8211; (optional) Dictionary or bytes to be sent in the query string for the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json data to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>headers</strong> &#8211; (optional) Dictionary of HTTP Headers to send with the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>cookies</strong> &#8211; (optional) Dict or CookieJar object to send with the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>files</strong> &#8211; (optional) Dictionary of <code class="docutils literal"><span class="pre">'name':</span> <span class="pre">file-like-objects</span></code> (or <code class="docutils literal"><span class="pre">{'name':</span> <span class="pre">('filename',</span> <span class="pre">fileobj)}</span></code>) for multipart encoding upload.</li>
+<li><strong>auth</strong> &#8211; (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.</li>
+<li><strong>timeout</strong> (<em>float or tuple</em>) &#8211; (optional) How long to wait for the server to send data
+before giving up, as a float, or a (<a class="reference external" href="http://omz-software.com/pythonista/docs/ios/user/advanced.html#timeouts">connect timeout, read timeout</a>) tuple.</li>
+<li><strong>allow_redirects</strong> (<a class="reference internal" href="../library/functions.html#bool" title="bool"><em>bool</em></a>) &#8211; (optional) Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</li>
+<li><strong>proxies</strong> &#8211; (optional) Dictionary mapping protocol to the URL of the proxy.</li>
+<li><strong>verify</strong> &#8211; (optional) if <code class="docutils literal"><span class="pre">True</span></code>, the SSL cert will be verified. A CA_BUNDLE path can also be provided.</li>
+<li><strong>stream</strong> &#8211; (optional) if <code class="docutils literal"><span class="pre">False</span></code>, the response content will be immediately downloaded.</li>
+<li><strong>cert</strong> &#8211; (optional) if String, path to ssl client cert file (.pem). If Tuple, (&#8216;cert&#8217;, &#8216;key&#8217;) pair.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="class">
+<dt id="requests.Response">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Response</code><a class="headerlink" href="requests.html#requests.Response" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object, which contains a
+server&#8217;s response to an HTTP request.</p>
+<dl class="attribute">
+<dt id="requests.Response.apparent_encoding">
+<code class="descname">apparent_encoding</code><a class="headerlink" href="requests.html#requests.Response.apparent_encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>The apparent encoding, provided by the chardet library</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Response.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Response.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Releases the connection back to the pool. Once this method has been
+called the underlying <code class="docutils literal"><span class="pre">raw</span></code> object must not be accessed again.</p>
+<p><em>Note: Should not normally need to be called explicitly.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.content">
+<code class="descname">content</code><a class="headerlink" href="requests.html#requests.Response.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Content of the response, in bytes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.cookies">
+<code class="descname">cookies</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>A CookieJar of Cookies the server sent back.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.elapsed">
+<code class="descname">elapsed</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.elapsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount of time elapsed between sending the request
+and the arrival of the response (as a timedelta)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.encoding">
+<code class="descname">encoding</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encoding to decode with when accessing r.text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.headers">
+<code class="descname">headers</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Case-insensitive Dictionary of Response Headers.
+For example, <code class="docutils literal"><span class="pre">headers['content-encoding']</span></code> will return the
+value of a <code class="docutils literal"><span class="pre">'Content-Encoding'</span></code> response header.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.history">
+<code class="descname">history</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.history" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> objects from
+the history of the Request. Any redirect responses will end
+up here. The list is sorted from the oldest to the most recent request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.is_permanent_redirect">
+<code class="descname">is_permanent_redirect</code><a class="headerlink" href="requests.html#requests.Response.is_permanent_redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if this Response one of the permanant versions of redirect</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.is_redirect">
+<code class="descname">is_redirect</code><a class="headerlink" href="requests.html#requests.Response.is_redirect" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if this Response is a well-formed HTTP redirect that could have
+been processed automatically (by <a class="reference internal" href="requests.html#requests.Session.resolve_redirects" title="requests.Session.resolve_redirects"><code class="xref py py-meth docutils literal"><span class="pre">Session.resolve_redirects()</span></code></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Response.iter_content">
+<code class="descname">iter_content</code><span class="sig-paren">(</span><em>chunk_size=1</em>, <em>decode_unicode=False</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Response.iter_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over the response data.  When stream=True is set on the
+request, this avoids reading the content at once into memory for
+large responses.  The chunk size is the number of bytes it should
+read into memory.  This is not necessarily the length of each item
+returned as decoding can take place.</p>
+<p>If decode_unicode is True, content will be decoded using the best
+available encoding based on the response.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Response.iter_lines">
+<code class="descname">iter_lines</code><span class="sig-paren">(</span><em>chunk_size=512</em>, <em>decode_unicode=None</em>, <em>delimiter=None</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Response.iter_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over the response data, one line at a time.  When
+stream=True is set on the request, this avoids reading the
+content at once into memory for large responses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Response.json">
+<code class="descname">json</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Response.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json-encoded content of a response, if any.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">json.loads</span></code> takes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.links">
+<code class="descname">links</code><a class="headerlink" href="requests.html#requests.Response.links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the parsed header links of the response, if any.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Response.raise_for_status">
+<code class="descname">raise_for_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Response.raise_for_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises stored <a class="reference internal" href="requests.html#requests.HTTPError" title="requests.HTTPError"><code class="xref py py-class docutils literal"><span class="pre">HTTPError</span></code></a>, if one occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.raw">
+<code class="descname">raw</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>File-like object representation of response (for advanced usage).
+Use of <code class="docutils literal"><span class="pre">raw</span></code> requires that <code class="docutils literal"><span class="pre">stream=True</span></code> be set on the request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.reason">
+<code class="descname">reason</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>Textual reason of responded HTTP Status, e.g. &#8220;Not Found&#8221; or &#8220;OK&#8221;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.request">
+<code class="descname">request</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> object to which this
+is a response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.status_code">
+<code class="descname">status_code</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.status_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integer Code of responded HTTP Status, e.g. 404 or 200.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.text">
+<code class="descname">text</code><a class="headerlink" href="requests.html#requests.Response.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Content of the response, in unicode.</p>
+<p>If Response.encoding is None, encoding will be guessed using
+<code class="docutils literal"><span class="pre">chardet</span></code>.</p>
+<p>The encoding of the response content is determined based solely on HTTP
+headers, following RFC 2616 to the letter. If you can take advantage of
+non-HTTP knowledge to make a better guess at the encoding, you should
+set <code class="docutils literal"><span class="pre">r.encoding</span></code> appropriately before accessing this property.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Response.url">
+<code class="descname">url</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Response.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Final URL location of Response.</p>
+</dd></dl>
+
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="function">
+<dt id="requests.head">
+<code class="descclassname">requests.</code><code class="descname">head</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a HEAD request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="requests.get">
+<code class="descclassname">requests.</code><code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a GET request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="requests.post">
+<code class="descclassname">requests.</code><code class="descname">post</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>json=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a POST request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json data to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="requests.put">
+<code class="descclassname">requests.</code><code class="descname">put</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PUT request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="requests.patch">
+<code class="descclassname">requests.</code><code class="descname">patch</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PATCH request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="requests.delete">
+<code class="descclassname">requests.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a DELETE request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="function">
+<dt id="requests.session">
+<code class="descclassname">requests.</code><code class="descname">session</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <a class="reference internal" href="requests.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a> for context-management.</p>
+</dd></dl>
+
+<div class="section" id="exceptions">
+<h3>Exceptions<a class="headerlink" href="requests.html#exceptions" title="Permalink to this headline">¶</a></h3>
+<dl class="exception">
+<dt id="requests.RequestException">
+<em class="property">exception </em><code class="descclassname">requests.</code><code class="descname">RequestException</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.RequestException" title="Permalink to this definition">¶</a></dt>
+<dd><p>There was an ambiguous exception that occurred while handling your
+request.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="requests.ConnectionError">
+<em class="property">exception </em><code class="descclassname">requests.</code><code class="descname">ConnectionError</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.ConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Connection error occurred.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="requests.HTTPError">
+<em class="property">exception </em><code class="descclassname">requests.</code><code class="descname">HTTPError</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.HTTPError" title="Permalink to this definition">¶</a></dt>
+<dd><p>An HTTP error occurred.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="requests.URLRequired">
+<em class="property">exception </em><code class="descclassname">requests.</code><code class="descname">URLRequired</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.URLRequired" title="Permalink to this definition">¶</a></dt>
+<dd><p>A valid URL is required to make a request.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="requests.TooManyRedirects">
+<em class="property">exception </em><code class="descclassname">requests.</code><code class="descname">TooManyRedirects</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.TooManyRedirects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Too many redirects.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="configurations">
+<span id="id1"></span><h2>Configurations<a class="headerlink" href="requests.html#configurations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="internals">
+<h2>Internals<a class="headerlink" href="requests.html#internals" title="Permalink to this headline">¶</a></h2>
+<p>These items are an internal component to Requests, and should never be
+seen by the end user (developer). This part of the API documentation
+exists for those who are extending the functionality of Requests.</p>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="requests.html#classes" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Response</code></dt>
+<dd><p>The <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object, which contains a
+server&#8217;s response to an HTTP request.</p>
+<dl class="attribute">
+<dt>
+<code class="descname">apparent_encoding</code></dt>
+<dd><p>The apparent encoding, provided by the chardet library</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Releases the connection back to the pool. Once this method has been
+called the underlying <code class="docutils literal"><span class="pre">raw</span></code> object must not be accessed again.</p>
+<p><em>Note: Should not normally need to be called explicitly.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">content</code></dt>
+<dd><p>Content of the response, in bytes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">cookies</code><em class="property"> = None</em></dt>
+<dd><p>A CookieJar of Cookies the server sent back.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">elapsed</code><em class="property"> = None</em></dt>
+<dd><p>The amount of time elapsed between sending the request
+and the arrival of the response (as a timedelta)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">encoding</code><em class="property"> = None</em></dt>
+<dd><p>Encoding to decode with when accessing r.text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">headers</code><em class="property"> = None</em></dt>
+<dd><p>Case-insensitive Dictionary of Response Headers.
+For example, <code class="docutils literal"><span class="pre">headers['content-encoding']</span></code> will return the
+value of a <code class="docutils literal"><span class="pre">'Content-Encoding'</span></code> response header.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">history</code><em class="property"> = None</em></dt>
+<dd><p>A list of <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> objects from
+the history of the Request. Any redirect responses will end
+up here. The list is sorted from the oldest to the most recent request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">is_permanent_redirect</code></dt>
+<dd><p>True if this Response one of the permanant versions of redirect</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">is_redirect</code></dt>
+<dd><p>True if this Response is a well-formed HTTP redirect that could have
+been processed automatically (by <a class="reference internal" href="requests.html#requests.Session.resolve_redirects" title="requests.Session.resolve_redirects"><code class="xref py py-meth docutils literal"><span class="pre">Session.resolve_redirects()</span></code></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">iter_content</code><span class="sig-paren">(</span><em>chunk_size=1</em>, <em>decode_unicode=False</em><span class="sig-paren">)</span></dt>
+<dd><p>Iterates over the response data.  When stream=True is set on the
+request, this avoids reading the content at once into memory for
+large responses.  The chunk size is the number of bytes it should
+read into memory.  This is not necessarily the length of each item
+returned as decoding can take place.</p>
+<p>If decode_unicode is True, content will be decoded using the best
+available encoding based on the response.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">iter_lines</code><span class="sig-paren">(</span><em>chunk_size=512</em>, <em>decode_unicode=None</em>, <em>delimiter=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Iterates over the response data, one line at a time.  When
+stream=True is set on the request, this avoids reading the
+content at once into memory for large responses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">json</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns the json-encoded content of a response, if any.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">json.loads</span></code> takes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">links</code></dt>
+<dd><p>Returns the parsed header links of the response, if any.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">raise_for_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Raises stored <a class="reference internal" href="requests.html#requests.HTTPError" title="requests.HTTPError"><code class="xref py py-class docutils literal"><span class="pre">HTTPError</span></code></a>, if one occurred.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">raw</code><em class="property"> = None</em></dt>
+<dd><p>File-like object representation of response (for advanced usage).
+Use of <code class="docutils literal"><span class="pre">raw</span></code> requires that <code class="docutils literal"><span class="pre">stream=True</span></code> be set on the request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">reason</code><em class="property"> = None</em></dt>
+<dd><p>Textual reason of responded HTTP Status, e.g. &#8220;Not Found&#8221; or &#8220;OK&#8221;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">request</code><em class="property"> = None</em></dt>
+<dd><p>The <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> object to which this
+is a response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">status_code</code><em class="property"> = None</em></dt>
+<dd><p>Integer Code of responded HTTP Status, e.g. 404 or 200.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">text</code></dt>
+<dd><p>Content of the response, in unicode.</p>
+<p>If Response.encoding is None, encoding will be guessed using
+<code class="docutils literal"><span class="pre">chardet</span></code>.</p>
+<p>The encoding of the response content is determined based solely on HTTP
+headers, following RFC 2616 to the letter. If you can take advantage of
+non-HTTP knowledge to make a better guess at the encoding, you should
+set <code class="docutils literal"><span class="pre">r.encoding</span></code> appropriately before accessing this property.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">url</code><em class="property"> = None</em></dt>
+<dd><p>Final URL location of Response.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="requests.Request">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Request</code><span class="sig-paren">(</span><em>method=None</em>, <em>url=None</em>, <em>headers=None</em>, <em>files=None</em>, <em>data=None</em>, <em>params=None</em>, <em>auth=None</em>, <em>cookies=None</em>, <em>hooks=None</em>, <em>json=None</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>A user-created <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</p>
+<p>Used to prepare a <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code>, which is sent to the server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>method</strong> &#8211; HTTP method to use.</li>
+<li><strong>url</strong> &#8211; URL to send.</li>
+<li><strong>headers</strong> &#8211; dictionary of headers to send.</li>
+<li><strong>files</strong> &#8211; dictionary of {filename: fileobject} files to multipart upload.</li>
+<li><strong>data</strong> &#8211; the body to attach to the request. If a dictionary is provided, form-encoding will take place.</li>
+<li><strong>json</strong> &#8211; json for the body to attach to the request (if data is not specified).</li>
+<li><strong>params</strong> &#8211; dictionary of URL parameters to append to the URL.</li>
+<li><strong>auth</strong> &#8211; Auth handler or (user, pass) tuple.</li>
+<li><strong>cookies</strong> &#8211; dictionary or CookieJar of cookies to attach to this request.</li>
+<li><strong>hooks</strong> &#8211; dictionary of callback hooks, for internal usage.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">req</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+<span class="go">&lt;PreparedRequest [GET]&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="requests.Request.deregister_hook">
+<code class="descname">deregister_hook</code><span class="sig-paren">(</span><em>event</em>, <em>hook</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Request.deregister_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deregister a previously registered hook.
+Returns True if the hook existed, False if not.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Request.prepare">
+<code class="descname">prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Request.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> for transmission and returns it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Request.register_hook">
+<code class="descname">register_hook</code><span class="sig-paren">(</span><em>event</em>, <em>hook</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Request.register_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Properly register a hook.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="sessionapi"></span><dl class="class">
+<dt id="requests.Session">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Session</code><a class="headerlink" href="requests.html#requests.Session" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Requests session.</p>
+<p>Provides cookie persistence, connection-pooling, and configuration.</p>
+<p>Basic Usage:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">200</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="requests.Session.auth">
+<code class="descname">auth</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default Authentication tuple or object to attach to
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.cert">
+<code class="descname">cert</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>SSL certificate default.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all adapters and as such the session</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.cookies">
+<code class="descname">cookies</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>A CookieJar containing all currently outstanding cookies set on this
+session. By default it is a
+<code class="xref py py-class docutils literal"><span class="pre">RequestsCookieJar</span></code>, but
+may be any other <code class="docutils literal"><span class="pre">cookielib.CookieJar</span></code> compatible object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a DELETE request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a GET request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.get_adapter">
+<code class="descname">get_adapter</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.get_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the appropriate connnection adapter for the given URL.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.head">
+<code class="descname">head</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a HEAD request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.headers">
+<code class="descname">headers</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>A case-insensitive dictionary of headers to be sent on each
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> sent from this
+<a class="reference internal" href="requests.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.hooks">
+<code class="descname">hooks</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.hooks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event-handling hooks.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.max_redirects">
+<code class="descname">max_redirects</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.max_redirects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum number of redirects allowed. If the request exceeds this
+limit, a <a class="reference internal" href="requests.html#requests.TooManyRedirects" title="requests.TooManyRedirects"><code class="xref py py-class docutils literal"><span class="pre">TooManyRedirects</span></code></a> exception is raised.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.merge_environment_settings">
+<code class="descname">merge_environment_settings</code><span class="sig-paren">(</span><em>url</em>, <em>proxies</em>, <em>stream</em>, <em>verify</em>, <em>cert</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.merge_environment_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the environment and merge it with some settings.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.mount">
+<code class="descname">mount</code><span class="sig-paren">(</span><em>prefix</em>, <em>adapter</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.mount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a connection adapter to a prefix.</p>
+<p>Adapters are sorted in descending order by key length.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.options">
+<code class="descname">options</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a OPTIONS request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.params">
+<code class="descname">params</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary of querystring data to attach to each
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>. The dictionary values may be lists for
+representing multivalued query parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.patch">
+<code class="descname">patch</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PATCH request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>json=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a POST request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.prepare_request">
+<code class="descname">prepare_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.prepare_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> for
+transmission and returns it. The <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> has settings
+merged from the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> instance and those of the
+<a class="reference internal" href="requests.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> instance to prepare with this
+session&#8217;s settings.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.proxies">
+<code class="descname">proxies</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping protocol to the URL of the proxy (e.g.
+{&#8216;http&#8217;: &#8216;foo.bar:3128&#8217;}) to be used on each
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PUT request. Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.rebuild_auth">
+<code class="descname">rebuild_auth</code><span class="sig-paren">(</span><em>prepared_request</em>, <em>response</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.rebuild_auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>When being redirected we may want to strip authentication from the
+request to avoid leaking credentials. This method intelligently removes
+and reapplies authentication where possible to avoid credential loss.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.rebuild_proxies">
+<code class="descname">rebuild_proxies</code><span class="sig-paren">(</span><em>prepared_request</em>, <em>proxies</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.rebuild_proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method re-evaluates the proxy configuration by considering the
+environment variables. If we are redirected to a URL covered by
+NO_PROXY, we strip the proxy configuration. Otherwise, we set missing
+proxy keys for this URL (in case they were stripped by a previous
+redirect).</p>
+<p>This method also replaces the Proxy-Authorization header where
+necessary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>params=None</em>, <em>data=None</em>, <em>headers=None</em>, <em>cookies=None</em>, <em>files=None</em>, <em>auth=None</em>, <em>timeout=None</em>, <em>allow_redirects=True</em>, <em>proxies=None</em>, <em>hooks=None</em>, <em>stream=None</em>, <em>verify=None</em>, <em>cert=None</em>, <em>json=None</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>, prepares it and sends it.
+Returns <a class="reference internal" href="requests.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>method</strong> &#8211; method for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>params</strong> &#8211; (optional) Dictionary or bytes to be sent in the query
+string for the <a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary or bytes to send in the body of the
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json to send in the body of the
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>headers</strong> &#8211; (optional) Dictionary of HTTP Headers to send with the
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>cookies</strong> &#8211; (optional) Dict or CookieJar object to send with the
+<a class="reference internal" href="requests.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>files</strong> &#8211; (optional) Dictionary of <code class="docutils literal"><span class="pre">'filename':</span> <span class="pre">file-like-objects</span></code>
+for multipart encoding upload.</li>
+<li><strong>auth</strong> &#8211; (optional) Auth tuple or callable to enable
+Basic/Digest/Custom HTTP Auth.</li>
+<li><strong>timeout</strong> (<em>float or tuple</em>) &#8211; <p>(optional) How long to wait for the server to send
+data before giving up, as a float, or a (<a class="reference external" href="http://omz-software.com/pythonista/docs/ios/user/advanced.html#timeouts">connect timeout, read
+timeout</a>) tuple.</p>
+</li>
+<li><strong>allow_redirects</strong> (<a class="reference internal" href="../library/functions.html#bool" title="bool"><em>bool</em></a>) &#8211; (optional) Set to True by default.</li>
+<li><strong>proxies</strong> &#8211; (optional) Dictionary mapping protocol to the URL of
+the proxy.</li>
+<li><strong>stream</strong> &#8211; (optional) whether to immediately download the response
+content. Defaults to <code class="docutils literal"><span class="pre">False</span></code>.</li>
+<li><strong>verify</strong> &#8211; (optional) if <code class="docutils literal"><span class="pre">True</span></code>, the SSL cert will be verified.
+A CA_BUNDLE path can also be provided.</li>
+<li><strong>cert</strong> &#8211; (optional) if String, path to ssl client cert file (.pem).
+If Tuple, (&#8216;cert&#8217;, &#8216;key&#8217;) pair.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.resolve_redirects">
+<code class="descname">resolve_redirects</code><span class="sig-paren">(</span><em>resp</em>, <em>req</em>, <em>stream=False</em>, <em>timeout=None</em>, <em>verify=True</em>, <em>cert=None</em>, <em>proxies=None</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.resolve_redirects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a Response. Returns a generator of Responses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="requests.Session.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>request</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="requests.html#requests.Session.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a given PreparedRequest.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.stream">
+<code class="descname">stream</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stream response content default.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.trust_env">
+<code class="descname">trust_env</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.trust_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should we trust the environment?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="requests.Session.verify">
+<code class="descname">verify</code><em class="property"> = None</em><a class="headerlink" href="requests.html#requests.Session.verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>SSL Verification default.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 24, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

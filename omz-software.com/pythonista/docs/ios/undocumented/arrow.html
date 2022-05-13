@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arrow &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/undocumented/arrow.html" />
+    
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-arrow">
+<span id="arrow"></span><h1><a class="reference internal" href="arrow.html#module-arrow" title="arrow"><code class="xref py py-mod docutils literal"><span class="pre">arrow</span></code></a><a class="headerlink" href="arrow.html#module-arrow" title="Permalink to this headline">¶</a></h1>
+<p>Arrow is a Python library that offers a sensible, human-friendly approach to creating, manipulating, formatting and converting dates, times, and timestamps. It implements and updates the datetime type, plugging gaps in functionality, and provides an intelligent module API that supports many common creation scenarios. Simply put, it helps you work with dates and times with fewer imports and a lot less code.</p>
+<p><strong>More Info:</strong> <a class="reference external" href="http://arrow.readthedocs.io">http://arrow.readthedocs.io</a></p>
+<div class="section" id="why">
+<h2>Why?<a class="headerlink" href="arrow.html#why" title="Permalink to this headline">¶</a></h2>
+<p>Python’s standard library and some other low-level modules have near-complete date, time and time zone functionality but don’t work very well from a usability perspective:</p>
+<ul class="simple">
+<li>Too many modules: datetime, time, calendar, dateutil, pytz and more</li>
+<li>Too many types: date, time, datetime, tzinfo, timedelta, relativedelta, etc.</li>
+<li>Time zones and timestamp conversions are verbose and unpleasant</li>
+<li>Time zone naivety is the norm</li>
+<li>Gaps in functionality: ISO-8601 parsing, time spans, humanization</li>
+</ul>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="arrow.html#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fully implemented, drop-in replacement for datetime</li>
+<li>Supports Python 2.6, 2.7, 3.3, 3.4 and 3.5</li>
+<li>Time zone-aware &amp; UTC by default</li>
+<li>Provides super-simple creation options for many common input scenarios</li>
+<li>Updated .replace method with support for relative offsets, including weeks</li>
+<li>Formats and parses strings automatically</li>
+<li>Partial ISO-8601 support</li>
+<li>Timezone conversion</li>
+<li>Timestamp available as a property</li>
+<li>Generates time spans, ranges, floors and ceilings in time frames from year to microsecond</li>
+<li>Humanizes and supports a growing list of contributed locales</li>
+<li>Extensible for your own Arrow-derived types</li>
+</ul>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="arrow.html#quickstart" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Examples::</dt>
+<dd><div class="first highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arrow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utc</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utc</span>
+<span class="go">&lt;Arrow [2013-05-11T21:23:58.970460+00:00]&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">utc</span> <span class="o">=</span> <span class="n">utc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hours</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utc</span>
+<span class="go">&lt;Arrow [2013-05-11T20:23:58.970460+00:00]&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span> <span class="o">=</span> <span class="n">utc</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;US/Pacific&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">local</span>
+<span class="go">&lt;Arrow [2013-05-11T13:23:58.970460-07:00]&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;2013-05-11T21:23:58.970460+00:00&#39;</span><span class="p">)</span>
+<span class="go">&lt;Arrow [2013-05-11T21:23:58.970460+00:00]&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span><span class="o">.</span><span class="n">timestamp</span>
+<span class="go">1368303838</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span><span class="o">.</span><span class="n">format</span><span class="p">()</span>
+<span class="go">&#39;2013-05-11 13:23:58 -07:00&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH:mm:ss ZZ&#39;</span><span class="p">)</span>
+<span class="go">&#39;2013-05-11 13:23:58 -07:00&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span><span class="o">.</span><span class="n">humanize</span><span class="p">()</span>
+<span class="go">&#39;an hour ago&#39;</span>
+</pre></div>
+</div>
+<div class="last highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">local</span><span class="o">.</span><span class="n">humanize</span><span class="p">(</span><span class="n">locale</span><span class="o">=</span><span class="s1">&#39;ko_kr&#39;</span><span class="p">)</span>
+<span class="go">&#39;1시간 전&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

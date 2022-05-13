@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>livejson - Webmaster4o - Tuples | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="livejson - Webmaster4o - Tuples" />
+	<meta name="description" content="@Webmaster4o, I was just experimenting with your module livejson. But appears you are handling all a lot of data types as lists.  The below code was just testing.  But if you uncomment the font attr in the dict, d the code fails. A list is returned instea..." />
+	<meta property="og:title" content="livejson - Webmaster4o - Tuples" />
+	<meta property="og:description" content="@Webmaster4o, I was just experimenting with your module livejson. But appears you are handling all a lot of data types as lists.  The below code was just testing.  But if you uncomment the font attr in the dict, d the code fails. A list is returned instea..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;3483&#x2F;livejson-webmaster4o-tuples" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;uploads&#x2F;profile&#x2F;232-profileimg.png" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;uploads&#x2F;profile&#x2F;232-profileimg.png" />
+	<meta property="article:published_time" content="2016-09-04T17:33:03.075Z" />
+	<meta property="article:modified_time" content="2016-09-07T14:07:47.427Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="https://forum.omz-software.com/topic/3483.rss" />
+	<link rel="canonical" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples" />
+	<link rel="up" href="../../../../omz-software.com/pythonista/forums.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"EU8FCzjp-v9lwmpCkRMa30xsKBHkf-7ibgDo","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="5.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="5.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="5.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="5.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				livejson - Webmaster4o - Tuples
+												<a target="_blank" href="https://forum.omz-software.com/topic/3483.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">livejson - Webmaster4o - Tuples</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="3483">
+			<li component="post" class="clearfix "data-pid="21302" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="0" data-timestamp="1473010383379" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T17:33:03.379Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/1"><span class="timeago" title="2016-09-04T17:33:03.379Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a>, I was just experimenting with your module livejson. But appears you are handling all a lot of data types as lists.  The below code was just testing.  But if you uncomment the font attr in the dict, d the code fails. A list is returned instead of a tuple.  Do you think this is a oversight or does your module need to be like this:  You can see I just try to save some constants/recipes in the file.</p>
+<p><em>sorry, this example points to my version of livejson which has been downloaded.  livejson is a module written by <a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a></em></p>
+<pre><code class="python">import ui
+import clipboard
+
+import os, sys
+root_dir = os.path.expanduser('~/Documents')
+import_path = root_dir + &quot;/MyProjects/wrench/from Working Copy/livejson/&quot;
+sys.path.append(import_path)
+import livejson
+
+_themes = ['Dawn', 'Tomorrow', 'Solarized Light',
+'Solarized Dark', 'Cool Glow', 'Gold', 'Tomorrow Night', 'Oceanic',
+'Editorial']
+
+d = \
+    &#123;
+        'frame': (10, 10, 100, 32),
+        'bg_color': 'purple',
+        'tint_color' : 'white',
+        'border_width':.5,
+        'title': 'HELLO',
+        'corner_radius':3,
+        #'font': ('Avenir Next Condensed', 18),
+        
+    &#125;
+
+def make_btn(**kwargs):
+    btn = ui.Button(name = 'btn')
+    for k, v in kwargs.items():
+        if hasattr(btn, k):
+            setattr(btn, k, v)
+    
+    return btn
+    
+class LiveJSON(object):
+    def __init__(self, fspec, *args, **kwargs):
+        self.fspec = fspec
+        self.db = None
+        self.open()
+        
+    def open(self):
+        self.db = livejson.Database(self.fspec)
+        
+    def set(self, name, data):
+        self.db[name] = data
+        
+    def get(self, name):
+        return self.db[name]
+        
+        
+class MyClass(ui.View):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+if __name__ == '__main__':
+    w, h = 600, 800
+    f = (0, 0, w, h)
+
+    lj = LiveJSON('some_info.json')
+    lj.set('themes', _themes)
+    t = lj.get('themes')
+    x = dict(d)
+    lj.set('std_btn', x)
+    print(t, type(t), len(t))
+    for th in t:
+        print(th)
+    
+    print(lj.get('std_btn'))
+
+    mc = MyClass(frame = f, bg_color = 'white')
+    
+    btn = make_btn(**lj.get('std_btn'))
+    mc.add_subview(btn)
+    mc.present('sheet', animated = False)
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="14">14</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="8294">8294</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="21303" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="1" data-timestamp="1473012835326" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T18:13:55.326Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/2"><span class="timeago" title="2016-09-04T18:13:55.326Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Ok datetime objects also a problem.  Can't be serialized by json.  But just asking do you have  a idea how to deal with these data types inside the module?  I know I can fudge it a little, but better the module takes care of it.</p>
+<p>A fudge, to store a date.time as a string. But bad form to do it like this.</p>
+<pre><code class="python">dob = datetime.date(1964, 12, 17)
+me = \
+    &#123;
+        'DOB':str(dob),
+    &#125;</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21304" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="2" data-timestamp="1473018918542" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T19:55:18.542Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/3"><span class="timeago" title="2016-09-04T19:55:18.542Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>JSON doesn't have tuples, just lists. <code>livejson</code> intentionally leaves the serialization of more complex types to the user. If <code>livejson</code> handled this itself, it would lose compatibility with other languages and modules. It wouldn't be hard to store a datetime object in JSON as a timestamp, though, and then decode that out. If you really need to use a tuple, you can convert it after <code>livejson</code> is done with it.</p>
+<p>This isn't the most friendly approach, I know, but <code>livejson</code>'s core philosophy is that there is as little abstraction as possible. <code>livejson</code> is supposed to be simple, easy, and efficient to use. <code>livejson</code> is supposed to be just an interface to your data, not a simple-looking module that keeps lots of hidden attributes behind the curtains. As soon as it gets into the business of custom encodings, it loses compatibility with other modules.</p>
+<p>The reason for this is, to put it simply simply, that nearly every programming language can read and write JSON, and can convert timestamps to dates and back. But Python <code>datetime</code> objects aren't the same as those in Ruby or PHP.</p>
+<p>I know livejson is a Python module, but allowing tuples or datetime objects isn't in the spirit of JSON. JSON is a simple, minimal data serialization format that is extendable to almost every language. Anything python-specific about the way <code>livejson</code> stores data would defeat the purpose</p>
+<p>That's why <code>livejson</code> doesn't have methods for working with complex objects. You as the user are encouraged to reduce your objects to the simplest possible form (like a <code>list</code> for a <code>tuple</code> or a timestamp for a <code>datetime</code> object), because that way it's <strong>simple, straightforward, and universal</strong>.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21308" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="3" data-timestamp="1473022802339" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T21:00:02.339Z">
+				<meta itemprop="dateModified" content="2016-09-04T21:01:12.068Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/ccc.html">
+			<img src="../../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/4"><span class="timeago" title="2016-09-04T21:00:02.339Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Why not just have livejson convert all inbound tuples into lists?</p>
+
+	
+</div>
+
+
+<small data-editor="ccc" component="post/editor" class="hidden">last edited by <strong>ccc</strong> <span class="timeago" title="2016-09-04T21:01:12.068Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21309" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="4" data-timestamp="1473027313707" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T22:15:13.707Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="5.html"><span class="timeago" title="2016-09-04T22:15:13.707Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/ccc.html">@ccc</a> It does, but it can't possibly convert them back into tuples.</p>
+<pre><code class="python">In [2]: a = livejson.File(&quot;/Users/luke/Desktop/a.json&quot;)
+
+In [3]: a[&quot;b&quot;] = (0, 1, 2, 3)
+
+In [4]: a[&quot;b&quot;]
+Out[5]: [0, 1, 2, 3]
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21321" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="5" data-timestamp="1473067648771" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2016-09-05T09:27:28.771Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/6"><span class="timeago" title="2016-09-05T09:27:28.771Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a> , ok no problems.  I thought as much.  Just wanted to be sure I wasn't missing something.  I just wanted to get back to it.  Was playing around the idea of creating simple ui objects from livejson. Not sure it's a good approach or not,  just thought I would try it out. A very simple idea,  but in essence you get a object addressable mini .pyui file. We'll sort of.<br />
+Anyway, thanks for the detailed response. I will keep looking to see if it's worthwhile to handle the required data types.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21325" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="6" data-timestamp="1473081579281" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="6"></a>
+
+				<meta itemprop="datePublished" content="2016-09-05T13:19:39.281Z">
+				<meta itemprop="dateModified" content="2016-09-05T13:21:25.928Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/ccc.html">
+			<img src="../../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/7"><span class="timeago" title="2016-09-05T13:19:39.281Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>The underlying problem is that the first two work with json but the third does not...</p>
+<pre><code class="python">import datetime, json
+with open('junk.json', 'w') as out_file:
+    json.dump((0, 1, 2), out_file)  # tuples are serializable (as lists)
+    json.dump(datetime.date(1964, 12, 17).timetuple(), out_file)  # timetuples are serializable
+    json.dump(datetime.date(1964, 12, 17), out_file)  # datetime.dates are NOT!!  :-(
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="ccc" component="post/editor" class="hidden">last edited by <strong>ccc</strong> <span class="timeago" title="2016-09-05T13:21:25.928Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21327" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="7" data-timestamp="1473085730708" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="7"></a>
+
+				<meta itemprop="datePublished" content="2016-09-05T14:28:50.708Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/8"><span class="timeago" title="2016-09-05T14:28:50.708Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/ccc.html">@ccc</a> , thanks.  Yeah I see the problem. I didn't know about timetuple before also. But it's good to know about it.  Can see I could also convert font to list. Forgetting dates, if you want to make a ui element directly from data (a dict) there are not many elements that get in the way of doing it.  Personally I think font and font size should be different attrs anyway. But at least for ui elements it would be nice to be able to read the definition from a json file without any translations.  Then the next logical thing would be for ui elements to deal with all kwargs passed to the creation of the object</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21331" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="8" data-timestamp="1473093481834" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="8"></a>
+
+				<meta itemprop="datePublished" content="2016-09-05T16:38:01.834Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/9"><span class="timeago" title="2016-09-05T16:38:01.834Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>If your goal is a human readable file that you only plan to use in python, consider <code>yaml</code>.  By default, it supports datetime objects, tuples, and pretty much any native python construct.  It can be easily extended to dump /load most any other class, as long as the repr shows what the constructor would look like.</p>
+<p>It is also possible to get quite complex, and define and register your own representers and constructors.  Of course, at some point you may find that python code is easier.</p>
+<p>If you don't care about human readability, <code>shelve</code> is very python centric (think &quot;livePickle&quot;... pickle with dictionary access)</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21343" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="9" data-timestamp="1473158842571" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="9"></a>
+
+				<meta itemprop="datePublished" content="2016-09-06T10:47:22.571Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/10"><span class="timeago" title="2016-09-06T10:47:22.571Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/jonb.html">@JonB</a> , thanks. I did see shelve come up in conversations when <a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a> was writing livejson.  But this seems perfect for  saving dicts although I can you see you need to be careful.  I just did the basic minimum below.  I know I don't need the SheleveObject they way I have done it.  I just prefer to have a wrapper.  Still not sure it's smart or practical for storing ui.object definitions inside.  But it works anyway.  Also, the lib is builtin.<br />
+Thanks again.</p>
+<pre><code class="python">import ui
+import datetime
+import shelve
+
+_themes = ['Dawn', 'Tomorrow', 'Solarized Light',
+'Solarized Dark', 'Cool Glow', 'Gold', 'Tomorrow Night', 'Oceanic',
+'Editorial']
+
+d = \
+    &#123;
+        'frame': (10, 10, 100, 32),
+        'bg_color': 'purple',
+        'tint_color' : 'white',
+        'border_width':.5,
+        'title': 'HELLO',
+        'corner_radius':3,
+        'font': ('Avenir Next Condensed', 22),  
+    &#125;
+    
+dob = datetime.date(1964, 12, 17)
+me = \
+    &#123;
+        'DOB':dob,
+    &#125;
+def make_btn(**kwargs):
+    btn = ui.Button(name = 'btn')
+    for k, v in kwargs.items():
+        if hasattr(btn, k):
+            setattr(btn, k, v)
+    
+    return btn
+        
+class ShelveObject(object):
+    def __init__(self, fspec, *args, **kwargs):
+        self.fspec = fspec
+        self.db = None
+        self.open()
+        
+    def open(self):
+        self.db = shelve.open(self.fspec, flag='c', protocol=None, writeback=False)
+        
+    def set(self, key, data):
+        self.db[key] = data
+        
+    def get(self, key):
+        return self.db.get(key)     
+    
+    def clear(self):
+        self.db.clear()
+    
+    def close(self):
+        self.db.close()
+        
+class MyClass(ui.View):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+if __name__ == '__main__':
+    w, h = 600, 800
+    f = (0, 0, w, h)
+    # open the database. 3 files are created - .dat, .dir and .bak
+    so = ShelveObject('ij_test')
+    so.set('themes', _themes)
+    t = so.get('themes')
+    x = dict(d)
+    so.set('std_btn', x)
+    print(t, type(t), len(t))
+    for th in t:
+        print(th)
+    
+    print(so.get('std_btn'))
+
+    mc = MyClass(frame = f, bg_color = 'white')
+    
+    # create ui.Button using saved dict, called 'std_btn'
+    btn = make_btn(**so.get('std_btn'))
+    
+    mc.add_subview(btn)
+    mc.present('sheet', animated = False)
+    
+    so.set('ian', me)
+    print(so.get('ian'))
+    for k in so.db.keys():
+        print(k)
+        
+    so.close()
+</code></pre>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21344" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="10" data-timestamp="1473163001906" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="10"></a>
+
+				<meta itemprop="datePublished" content="2016-09-06T11:56:41.906Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/11"><span class="timeago" title="2016-09-06T11:56:41.906Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Just to be a smart a**,  I tried saving a ui.Button obj into shelve.  Wasn't sure what to expect, but I was not optimistic 😱 Recovers a object, but if I try to use it,  Pythonista crashes.  Again, I am not surprised, but saying that I am have no idea how close it gets in recreating the object.  Maybe it's just catastrophic and never had a chance in the world that it would work,  maybe it's only a few attrs/objects that causes the melt down.  Only mention because if it's only a few simply to override attrs, it's gets quite interesting to what's possible using this to entire views or subviews of views.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21348" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="11" data-timestamp="1473190446343" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="11"></a>
+
+				<meta itemprop="datePublished" content="2016-09-06T19:34:06.343Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/12"><span class="timeago" title="2016-09-06T19:34:06.343Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>you can use a shelve object like a dict.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>with shelve.open('test.shelf') as s:<br />
+...    s['a']='b'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>For objects which are a wrapper to an objc type, essentially the shelve stores the pointers to th objc object.... but that object will not exist when you load it again!</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21351" data-uid="2163" data-username="abcabc" data-userslug="abcabc" data-index="12" data-timestamp="1473217360878" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="12"></a>
+
+				<meta itemprop="datePublished" content="2016-09-07T03:02:40.878Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/abcabc">
+			<img src="https://s.gravatar.com/avatar/36825ff14e5946d26a8dfca0f87dc2b6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/abcabc" itemprop="author" data-username="abcabc" data-uid="2163">abcabc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/13"><span class="timeago" title="2016-09-07T03:02:40.878Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Maybe try &quot;dataset&quot; module. You can directly store a dictionary in sqlite or mysql database.<br />
+&quot;pip install dataset&quot; works in pythonista.</p>
+<p><a href="https://dataset.readthedocs.io/en/latest/quickstart.html#storing-data" rel="nofollow">https://dataset.readthedocs.io/en/latest/quickstart.html#storing-data</a></p>
+<p>This was discussed sometimes ago reddit/python thread.<br />
+<a href="https://www.reddit.com/r/Python/comments/506sn6/dataset_databases_for_lazy_people/" rel="nofollow">https://www.reddit.com/r/Python/comments/506sn6/dataset_databases_for_lazy_people/</a></p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21364" data-uid="232" data-username="Phuket2" data-userslug="phuket2" data-index="13" data-timestamp="1473257267427" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="13"></a>
+
+				<meta itemprop="datePublished" content="2016-09-07T14:07:47.427Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/phuket2.html">
+			<img src="../../../uploads/profile/232-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/phuket2.html" itemprop="author" data-username="Phuket2" data-uid="232">Phuket2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/14"><span class="timeago" title="2016-09-07T14:07:47.427Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="5.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="5.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="5.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="5.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Thanks guys, I think I will give up on this.  shelve is really good, but for the life of me, I can't understand why need 2 files. The .dat and .dir for it to work.  Unless I missed something, you need these 2 files.  Hmmm, maybe it can create the .dir from the .dat file.  But does not do it automatically if it's missing.  You would think that it could either recreate the .dir file if it was missing or given its has its own format that the .dir file could be a header in the .dat file. Yeah, it will grow and need to be rewritten occasionally. It just seems one file would be better than 2 files that are dependent on each other.<br />
+Again, maybe I got it wrong. But that's how I see it from what I read and tested</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="14">14</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="8294">8294</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/5?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="https://forum.omz-software.com/topic/3483/livejson-webmaster4o-tuples/5?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="3483" />
+<input type="hidden" template-variable="topic_slug" value="3483/livejson-webmaster4o-tuples" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="livejson - Webmaster4o - Tuples" />
+<input type="hidden" template-variable="postcount" value="14" />
+<input type="hidden" template-variable="viewcount" value="8294" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%223483%22%2C%22uid%22%3A%22232%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2221302%22%2C%22title%22%3A%22livejson%20-%20Webmaster4o%20-%20Tuples%22%2C%22slug%22%3A%223483%2Flivejson-webmaster4o-tuples%22%2C%22timestamp%22%3A%221473010383075%22%2C%22lastposttime%22%3A%221473257267427%22%2C%22postcount%22%3A%2214%22%2C%22viewcount%22%3A%228294%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2221364%22%2C%22relativeTime%22%3A%222016-09-04T17%3A33%3A03.075Z%22%2C%22lastposttimeISO%22%3A%222016-09-07T14%3A07%3A47.427Z%22%2C%22posts%22%3A%5B%7B%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%2C%20I%20was%20just%20experimenting%20with%20your%20module%20livejson.%20But%20appears%20you%20are%20handling%20all%20a%20lot%20of%20data%20types%20as%20lists.%20%20The%20below%20code%20was%20just%20testing.%20%20But%20if%20you%20uncomment%20the%20font%20attr%20in%20the%20dict%2C%20d%20the%20code%20fails.%20A%20list%20is%20returned%20instead%20of%20a%20tuple.%20%20Do%20you%20think%20this%20is%20a%20oversight%20or%20does%20your%20module%20need%20to%20be%20like%20this%3A%20%20You%20can%20see%20I%20just%20try%20to%20save%20some%20constants%2Frecipes%20in%20the%20file.%3C%2Fp%3E%5Cn%3Cp%3E%3Cem%3Esorry%2C%20this%20example%20points%20to%20my%20version%20of%20livejson%20which%20has%20been%20downloaded.%20%20livejson%20is%20a%20module%20written%20by%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%3C%2Fem%3E%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20ui%5Cnimport%20clipboard%5Cn%5Cnimport%20os%2C%20sys%5Cnroot_dir%20%3D%20os.path.expanduser('~%2FDocuments')%5Cnimport_path%20%3D%20root_dir%20%2B%20%26quot%3B%2FMyProjects%2Fwrench%2Ffrom%20Working%20Copy%2Flivejson%2F%26quot%3B%5Cnsys.path.append(import_path)%5Cnimport%20livejson%5Cn%5Cn_themes%20%3D%20%5B'Dawn'%2C%20'Tomorrow'%2C%20'Solarized%20Light'%2C%5Cn'Solarized%20Dark'%2C%20'Cool%20Glow'%2C%20'Gold'%2C%20'Tomorrow%20Night'%2C%20'Oceanic'%2C%5Cn'Editorial'%5D%5Cn%5Cnd%20%3D%20%5C%5C%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20'frame'%3A%20(10%2C%2010%2C%20100%2C%2032)%2C%5Cn%20%20%20%20%20%20%20%20'bg_color'%3A%20'purple'%2C%5Cn%20%20%20%20%20%20%20%20'tint_color'%20%3A%20'white'%2C%5Cn%20%20%20%20%20%20%20%20'border_width'%3A.5%2C%5Cn%20%20%20%20%20%20%20%20'title'%3A%20'HELLO'%2C%5Cn%20%20%20%20%20%20%20%20'corner_radius'%3A3%2C%5Cn%20%20%20%20%20%20%20%20%23'font'%3A%20('Avenir%20Next%20Condensed'%2C%2018)%2C%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%7D%5Cn%5Cndef%20make_btn(**kwargs)%3A%5Cn%20%20%20%20btn%20%3D%20ui.Button(name%20%3D%20'btn')%5Cn%20%20%20%20for%20k%2C%20v%20in%20kwargs.items()%3A%5Cn%20%20%20%20%20%20%20%20if%20hasattr(btn%2C%20k)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20setattr(btn%2C%20k%2C%20v)%5Cn%20%20%20%20%5Cn%20%20%20%20return%20btn%5Cn%20%20%20%20%5Cnclass%20LiveJSON(object)%3A%5Cn%20%20%20%20def%20__init__(self%2C%20fspec%2C%20*args%2C%20**kwargs)%3A%5Cn%20%20%20%20%20%20%20%20self.fspec%20%3D%20fspec%5Cn%20%20%20%20%20%20%20%20self.db%20%3D%20None%5Cn%20%20%20%20%20%20%20%20self.open()%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20open(self)%3A%5Cn%20%20%20%20%20%20%20%20self.db%20%3D%20livejson.Database(self.fspec)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20set(self%2C%20name%2C%20data)%3A%5Cn%20%20%20%20%20%20%20%20self.db%5Bname%5D%20%3D%20data%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20get(self%2C%20name)%3A%5Cn%20%20%20%20%20%20%20%20return%20self.db%5Bname%5D%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20%20%20%20%20%5Cnclass%20MyClass(ui.View)%3A%5Cn%20%20%20%20def%20__init__(self%2C%20*args%2C%20**kwargs)%3A%5Cn%20%20%20%20%20%20%20%20super().__init__(*args%2C%20**kwargs)%5Cn%5Cnif%20__name__%20%3D%3D%20'__main__'%3A%5Cn%20%20%20%20w%2C%20h%20%3D%20600%2C%20800%5Cn%20%20%20%20f%20%3D%20(0%2C%200%2C%20w%2C%20h)%5Cn%5Cn%20%20%20%20lj%20%3D%20LiveJSON('some_info.json')%5Cn%20%20%20%20lj.set('themes'%2C%20_themes)%5Cn%20%20%20%20t%20%3D%20lj.get('themes')%5Cn%20%20%20%20x%20%3D%20dict(d)%5Cn%20%20%20%20lj.set('std_btn'%2C%20x)%5Cn%20%20%20%20print(t%2C%20type(t)%2C%20len(t))%5Cn%20%20%20%20for%20th%20in%20t%3A%5Cn%20%20%20%20%20%20%20%20print(th)%5Cn%20%20%20%20%5Cn%20%20%20%20print(lj.get('std_btn'))%5Cn%5Cn%20%20%20%20mc%20%3D%20MyClass(frame%20%3D%20f%2C%20bg_color%20%3D%20'white')%5Cn%20%20%20%20%5Cn%20%20%20%20btn%20%3D%20make_btn(**lj.get('std_btn'))%5Cn%20%20%20%20mc.add_subview(btn)%5Cn%20%20%20%20mc.present('sheet'%2C%20animated%20%3D%20False)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%22232%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221302%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473010383379%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222016-09-04T17%3A33%3A03.379Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EOk%20datetime%20objects%20also%20a%20problem.%20%20Can't%20be%20serialized%20by%20json.%20%20But%20just%20asking%20do%20you%20have%20%20a%20idea%20how%20to%20deal%20with%20these%20data%20types%20inside%20the%20module%3F%20%20I%20know%20I%20can%20fudge%20it%20a%20little%2C%20but%20better%20the%20module%20takes%20care%20of%20it.%3C%2Fp%3E%5Cn%3Cp%3EA%20fudge%2C%20to%20store%20a%20date.time%20as%20a%20string.%20But%20bad%20form%20to%20do%20it%20like%20this.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Edob%20%3D%20datetime.date(1964%2C%2012%2C%2017)%5Cnme%20%3D%20%5C%5C%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20'DOB'%3Astr(dob)%2C%5Cn%20%20%20%20%7D%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221303%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473012835326%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22232%22%2C%22relativeTime%22%3A%222016-09-04T18%3A13%3A55.326Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473018918542%22%2C%22content%22%3A%22%3Cp%3EJSON%20doesn't%20have%20tuples%2C%20just%20lists.%20%3Ccode%3Elivejson%3C%2Fcode%3E%20intentionally%20leaves%20the%20serialization%20of%20more%20complex%20types%20to%20the%20user.%20If%20%3Ccode%3Elivejson%3C%2Fcode%3E%20handled%20this%20itself%2C%20it%20would%20lose%20compatibility%20with%20other%20languages%20and%20modules.%20It%20wouldn't%20be%20hard%20to%20store%20a%20datetime%20object%20in%20JSON%20as%20a%20timestamp%2C%20though%2C%20and%20then%20decode%20that%20out.%20If%20you%20really%20need%20to%20use%20a%20tuple%2C%20you%20can%20convert%20it%20after%20%3Ccode%3Elivejson%3C%2Fcode%3E%20is%20done%20with%20it.%3C%2Fp%3E%5Cn%3Cp%3EThis%20isn't%20the%20most%20friendly%20approach%2C%20I%20know%2C%20but%20%3Ccode%3Elivejson%3C%2Fcode%3E's%20core%20philosophy%20is%20that%20there%20is%20as%20little%20abstraction%20as%20possible.%20%3Ccode%3Elivejson%3C%2Fcode%3E%20is%20supposed%20to%20be%20simple%2C%20easy%2C%20and%20efficient%20to%20use.%20%3Ccode%3Elivejson%3C%2Fcode%3E%20is%20supposed%20to%20be%20just%20an%20interface%20to%20your%20data%2C%20not%20a%20simple-looking%20module%20that%20keeps%20lots%20of%20hidden%20attributes%20behind%20the%20curtains.%20As%20soon%20as%20it%20gets%20into%20the%20business%20of%20custom%20encodings%2C%20it%20loses%20compatibility%20with%20other%20modules.%3C%2Fp%3E%5Cn%3Cp%3EThe%20reason%20for%20this%20is%2C%20to%20put%20it%20simply%20simply%2C%20that%20nearly%20every%20programming%20language%20can%20read%20and%20write%20JSON%2C%20and%20can%20convert%20timestamps%20to%20dates%20and%20back.%20But%20Python%20%3Ccode%3Edatetime%3C%2Fcode%3E%20objects%20aren't%20the%20same%20as%20those%20in%20Ruby%20or%20PHP.%3C%2Fp%3E%5Cn%3Cp%3EI%20know%20livejson%20is%20a%20Python%20module%2C%20but%20allowing%20tuples%20or%20datetime%20objects%20isn't%20in%20the%20spirit%20of%20JSON.%20JSON%20is%20a%20simple%2C%20minimal%20data%20serialization%20format%20that%20is%20extendable%20to%20almost%20every%20language.%20Anything%20python-specific%20about%20the%20way%20%3Ccode%3Elivejson%3C%2Fcode%3E%20stores%20data%20would%20defeat%20the%20purpose%3C%2Fp%3E%5Cn%3Cp%3EThat's%20why%20%3Ccode%3Elivejson%3C%2Fcode%3E%20doesn't%20have%20methods%20for%20working%20with%20complex%20objects.%20You%20as%20the%20user%20are%20encouraged%20to%20reduce%20your%20objects%20to%20the%20simplest%20possible%20form%20(like%20a%20%3Ccode%3Elist%3C%2Fcode%3E%20for%20a%20%3Ccode%3Etuple%3C%2Fcode%3E%20or%20a%20timestamp%20for%20a%20%3Ccode%3Edatetime%3C%2Fcode%3E%20object)%2C%20because%20that%20way%20it's%20%3Cstrong%3Esimple%2C%20straightforward%2C%20and%20universal%3C%2Fstrong%3E.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221304%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-04T19%3A55%3A18.542Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EWhy%20not%20just%20have%20livejson%20convert%20all%20inbound%20tuples%20into%20lists%3F%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%7D%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221308%22%2C%22votes%22%3A%221%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473022802339%22%2C%22edited%22%3A%221473022872068%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221634%22%2C%22relativeTime%22%3A%222016-09-04T21%3A00%3A02.339Z%22%2C%22relativeEditTime%22%3A%222016-09-04T21%3A01%3A12.068Z%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473027313707%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20It%20does%2C%20but%20it%20can't%20possibly%20convert%20them%20back%20into%20tuples.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3EIn%20%5B2%5D%3A%20a%20%3D%20livejson.File(%26quot%3B%2FUsers%2Fluke%2FDesktop%2Fa.json%26quot%3B)%5Cn%5CnIn%20%5B3%5D%3A%20a%5B%26quot%3Bb%26quot%3B%5D%20%3D%20(0%2C%201%2C%202%2C%203)%5Cn%5CnIn%20%5B4%5D%3A%20a%5B%26quot%3Bb%26quot%3B%5D%5CnOut%5B5%5D%3A%20%5B0%2C%201%2C%202%2C%203%5D%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221309%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-04T22%3A15%3A13.707Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%20%2C%20ok%20no%20problems.%20%20I%20thought%20as%20much.%20%20Just%20wanted%20to%20be%20sure%20I%20wasn't%20missing%20something.%20%20I%20just%20wanted%20to%20get%20back%20to%20it.%20%20Was%20playing%20around%20the%20idea%20of%20creating%20simple%20ui%20objects%20from%20livejson.%20Not%20sure%20it's%20a%20good%20approach%20or%20not%2C%20%20just%20thought%20I%20would%20try%20it%20out.%20A%20very%20simple%20idea%2C%20%20but%20in%20essence%20you%20get%20a%20object%20addressable%20mini%20.pyui%20file.%20We'll%20sort%20of.%3Cbr%20%2F%3E%5CnAnyway%2C%20thanks%20for%20the%20detailed%20response.%20I%20will%20keep%20looking%20to%20see%20if%20it's%20worthwhile%20to%20handle%20the%20required%20data%20types.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22232%22%2C%22votes%22%3A%221%22%2C%22pid%22%3A%2221321%22%2C%22editor%22%3Anull%2C%22timestamp%22%3A%221473067648771%22%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221304%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-05T09%3A27%3A28.771Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473081579281%22%2C%22content%22%3A%22%3Cp%3EThe%20underlying%20problem%20is%20that%20the%20first%20two%20work%20with%20json%20but%20the%20third%20does%20not...%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20datetime%2C%20json%5Cnwith%20open('junk.json'%2C%20'w')%20as%20out_file%3A%5Cn%20%20%20%20json.dump((0%2C%201%2C%202)%2C%20out_file)%20%20%23%20tuples%20are%20serializable%20(as%20lists)%5Cn%20%20%20%20json.dump(datetime.date(1964%2C%2012%2C%2017).timetuple()%2C%20out_file)%20%20%23%20timetuples%20are%20serializable%5Cn%20%20%20%20json.dump(datetime.date(1964%2C%2012%2C%2017)%2C%20out_file)%20%20%23%20datetime.dates%20are%20NOT!!%20%20%3A-(%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221325%22%2C%22edited%22%3A%221473081685928%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221634%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-05T13%3A19%3A39.281Z%22%2C%22relativeEditTime%22%3A%222016-09-05T13%3A21%3A25.928Z%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2221327%22%2C%22deleted%22%3Afalse%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473085730708%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20%2C%20thanks.%20%20Yeah%20I%20see%20the%20problem.%20I%20didn't%20know%20about%20timetuple%20before%20also.%20But%20it's%20good%20to%20know%20about%20it.%20%20Can%20see%20I%20could%20also%20convert%20font%20to%20list.%20Forgetting%20dates%2C%20if%20you%20want%20to%20make%20a%20ui%20element%20directly%20from%20data%20(a%20dict)%20there%20are%20not%20many%20elements%20that%20get%20in%20the%20way%20of%20doing%20it.%20%20Personally%20I%20think%20font%20and%20font%20size%20should%20be%20different%20attrs%20anyway.%20But%20at%20least%20for%20ui%20elements%20it%20would%20be%20nice%20to%20be%20able%20to%20read%20the%20definition%20from%20a%20json%20file%20without%20any%20translations.%20%20Then%20the%20next%20logical%20thing%20would%20be%20for%20ui%20elements%20to%20deal%20with%20all%20kwargs%20passed%20to%20the%20creation%20of%20the%20object%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221325%22%2C%22uid%22%3A%22232%22%2C%22relativeTime%22%3A%222016-09-05T14%3A28%3A50.708Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EIf%20your%20goal%20is%20a%20human%20readable%20file%20that%20you%20only%20plan%20to%20use%20in%20python%2C%20consider%20%3Ccode%3Eyaml%3C%2Fcode%3E.%20%20By%20default%2C%20it%20supports%20datetime%20objects%2C%20tuples%2C%20and%20pretty%20much%20any%20native%20python%20construct.%20%20It%20can%20be%20easily%20extended%20to%20dump%20%2Fload%20most%20any%20other%20class%2C%20as%20long%20as%20the%20repr%20shows%20what%20the%20constructor%20would%20look%20like.%3C%2Fp%3E%5Cn%3Cp%3EIt%20is%20also%20possible%20to%20get%20quite%20complex%2C%20and%20define%20and%20register%20your%20own%20representers%20and%20constructors.%20%20Of%20course%2C%20at%20some%20point%20you%20may%20find%20that%20python%20code%20is%20easier.%3C%2Fp%3E%5Cn%3Cp%3EIf%20you%20don't%20care%20about%20human%20readability%2C%20%3Ccode%3Eshelve%3C%2Fcode%3E%20is%20very%20python%20centric%20(think%20%26quot%3BlivePickle%26quot%3B...%20pickle%20with%20dictionary%20access)%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22895%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22votes%22%3A%222%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473093481834%22%2C%22pid%22%3A%2221331%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222016-09-05T16%3A38%3A01.834Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A8%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473158842571%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20%2C%20thanks.%20I%20did%20see%20shelve%20come%20up%20in%20conversations%20when%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%20was%20writing%20livejson.%20%20But%20this%20seems%20perfect%20for%20%20saving%20dicts%20although%20I%20can%20you%20see%20you%20need%20to%20be%20careful.%20%20I%20just%20did%20the%20basic%20minimum%20below.%20%20I%20know%20I%20don't%20need%20the%20SheleveObject%20they%20way%20I%20have%20done%20it.%20%20I%20just%20prefer%20to%20have%20a%20wrapper.%20%20Still%20not%20sure%20it's%20smart%20or%20practical%20for%20storing%20ui.object%20definitions%20inside.%20%20But%20it%20works%20anyway.%20%20Also%2C%20the%20lib%20is%20builtin.%3Cbr%20%2F%3E%5CnThanks%20again.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20ui%5Cnimport%20datetime%5Cnimport%20shelve%5Cn%5Cn_themes%20%3D%20%5B'Dawn'%2C%20'Tomorrow'%2C%20'Solarized%20Light'%2C%5Cn'Solarized%20Dark'%2C%20'Cool%20Glow'%2C%20'Gold'%2C%20'Tomorrow%20Night'%2C%20'Oceanic'%2C%5Cn'Editorial'%5D%5Cn%5Cnd%20%3D%20%5C%5C%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20'frame'%3A%20(10%2C%2010%2C%20100%2C%2032)%2C%5Cn%20%20%20%20%20%20%20%20'bg_color'%3A%20'purple'%2C%5Cn%20%20%20%20%20%20%20%20'tint_color'%20%3A%20'white'%2C%5Cn%20%20%20%20%20%20%20%20'border_width'%3A.5%2C%5Cn%20%20%20%20%20%20%20%20'title'%3A%20'HELLO'%2C%5Cn%20%20%20%20%20%20%20%20'corner_radius'%3A3%2C%5Cn%20%20%20%20%20%20%20%20'font'%3A%20('Avenir%20Next%20Condensed'%2C%2022)%2C%20%20%5Cn%20%20%20%20%7D%5Cn%20%20%20%20%5Cndob%20%3D%20datetime.date(1964%2C%2012%2C%2017)%5Cnme%20%3D%20%5C%5C%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20'DOB'%3Adob%2C%5Cn%20%20%20%20%7D%5Cndef%20make_btn(**kwargs)%3A%5Cn%20%20%20%20btn%20%3D%20ui.Button(name%20%3D%20'btn')%5Cn%20%20%20%20for%20k%2C%20v%20in%20kwargs.items()%3A%5Cn%20%20%20%20%20%20%20%20if%20hasattr(btn%2C%20k)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20setattr(btn%2C%20k%2C%20v)%5Cn%20%20%20%20%5Cn%20%20%20%20return%20btn%5Cn%20%20%20%20%20%20%20%20%5Cnclass%20ShelveObject(object)%3A%5Cn%20%20%20%20def%20__init__(self%2C%20fspec%2C%20*args%2C%20**kwargs)%3A%5Cn%20%20%20%20%20%20%20%20self.fspec%20%3D%20fspec%5Cn%20%20%20%20%20%20%20%20self.db%20%3D%20None%5Cn%20%20%20%20%20%20%20%20self.open()%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20open(self)%3A%5Cn%20%20%20%20%20%20%20%20self.db%20%3D%20shelve.open(self.fspec%2C%20flag%3D'c'%2C%20protocol%3DNone%2C%20writeback%3DFalse)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20set(self%2C%20key%2C%20data)%3A%5Cn%20%20%20%20%20%20%20%20self.db%5Bkey%5D%20%3D%20data%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20def%20get(self%2C%20key)%3A%5Cn%20%20%20%20%20%20%20%20return%20self.db.get(key)%20%20%20%20%20%5Cn%20%20%20%20%5Cn%20%20%20%20def%20clear(self)%3A%5Cn%20%20%20%20%20%20%20%20self.db.clear()%5Cn%20%20%20%20%5Cn%20%20%20%20def%20close(self)%3A%5Cn%20%20%20%20%20%20%20%20self.db.close()%5Cn%20%20%20%20%20%20%20%20%5Cnclass%20MyClass(ui.View)%3A%5Cn%20%20%20%20def%20__init__(self%2C%20*args%2C%20**kwargs)%3A%5Cn%20%20%20%20%20%20%20%20super().__init__(*args%2C%20**kwargs)%5Cn%5Cnif%20__name__%20%3D%3D%20'__main__'%3A%5Cn%20%20%20%20w%2C%20h%20%3D%20600%2C%20800%5Cn%20%20%20%20f%20%3D%20(0%2C%200%2C%20w%2C%20h)%5Cn%20%20%20%20%23%20open%20the%20database.%203%20files%20are%20created%20-%20.dat%2C%20.dir%20and%20.bak%5Cn%20%20%20%20so%20%3D%20ShelveObject('ij_test')%5Cn%20%20%20%20so.set('themes'%2C%20_themes)%5Cn%20%20%20%20t%20%3D%20so.get('themes')%5Cn%20%20%20%20x%20%3D%20dict(d)%5Cn%20%20%20%20so.set('std_btn'%2C%20x)%5Cn%20%20%20%20print(t%2C%20type(t)%2C%20len(t))%5Cn%20%20%20%20for%20th%20in%20t%3A%5Cn%20%20%20%20%20%20%20%20print(th)%5Cn%20%20%20%20%5Cn%20%20%20%20print(so.get('std_btn'))%5Cn%5Cn%20%20%20%20mc%20%3D%20MyClass(frame%20%3D%20f%2C%20bg_color%20%3D%20'white')%5Cn%20%20%20%20%5Cn%20%20%20%20%23%20create%20ui.Button%20using%20saved%20dict%2C%20called%20'std_btn'%5Cn%20%20%20%20btn%20%3D%20make_btn(**so.get('std_btn'))%5Cn%20%20%20%20%5Cn%20%20%20%20mc.add_subview(btn)%5Cn%20%20%20%20mc.present('sheet'%2C%20animated%20%3D%20False)%5Cn%20%20%20%20%5Cn%20%20%20%20so.set('ian'%2C%20me)%5Cn%20%20%20%20print(so.get('ian'))%5Cn%20%20%20%20for%20k%20in%20so.db.keys()%3A%5Cn%20%20%20%20%20%20%20%20print(k)%5Cn%20%20%20%20%20%20%20%20%5Cn%20%20%20%20so.close()%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221343%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221331%22%2C%22uid%22%3A%22232%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-06T10%3A47%3A22.571Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EJust%20to%20be%20a%20smart%20a**%2C%20%20I%20tried%20saving%20a%20ui.Button%20obj%20into%20shelve.%20%20Wasn't%20sure%20what%20to%20expect%2C%20but%20I%20was%20not%20optimistic%20%F0%9F%98%B1%20Recovers%20a%20object%2C%20but%20if%20I%20try%20to%20use%20it%2C%20%20Pythonista%20crashes.%20%20Again%2C%20I%20am%20not%20surprised%2C%20but%20saying%20that%20I%20am%20have%20no%20idea%20how%20close%20it%20gets%20in%20recreating%20the%20object.%20%20Maybe%20it's%20just%20catastrophic%20and%20never%20had%20a%20chance%20in%20the%20world%20that%20it%20would%20work%2C%20%20maybe%20it's%20only%20a%20few%20attrs%2Fobjects%20that%20causes%20the%20melt%20down.%20%20Only%20mention%20because%20if%20it's%20only%20a%20few%20simply%20to%20override%20attrs%2C%20it's%20gets%20quite%20interesting%20to%20what's%20possible%20using%20this%20to%20entire%20views%20or%20subviews%20of%20views.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221344%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473163001906%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22232%22%2C%22relativeTime%22%3A%222016-09-06T11%3A56%3A41.906Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A10%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3Eyou%20can%20use%20a%20shelve%20object%20like%20a%20dict.%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cblockquote%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3Ewith%20shelve.open('test.shelf')%20as%20s%3A%3Cbr%20%2F%3E%5Cn...%20%20%20%20s%5B'a'%5D%3D'b'%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3C%2Fblockquote%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EFor%20objects%20which%20are%20a%20wrapper%20to%20an%20objc%20type%2C%20essentially%20the%20shelve%20stores%20the%20pointers%20to%20th%20objc%20object....%20but%20that%20object%20will%20not%20exist%20when%20you%20load%20it%20again!%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221348%22%2C%22votes%22%3A%221%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473190446343%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22relativeTime%22%3A%222016-09-06T19%3A34%3A06.343Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A11%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cp%3EMaybe%20try%20%26quot%3Bdataset%26quot%3B%20module.%20You%20can%20directly%20store%20a%20dictionary%20in%20sqlite%20or%20mysql%20database.%3Cbr%20%2F%3E%5Cn%26quot%3Bpip%20install%20dataset%26quot%3B%20works%20in%20pythonista.%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fdataset.readthedocs.io%2Fen%2Flatest%2Fquickstart.html%23storing-data%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fdataset.readthedocs.io%2Fen%2Flatest%2Fquickstart.html%23storing-data%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EThis%20was%20discussed%20sometimes%20ago%20reddit%2Fpython%20thread.%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.reddit.com%2Fr%2FPython%2Fcomments%2F506sn6%2Fdataset_databases_for_lazy_people%2F%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fwww.reddit.com%2Fr%2FPython%2Fcomments%2F506sn6%2Fdataset_databases_for_lazy_people%2F%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%222163%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221351%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223483%22%2C%22timestamp%22%3A%221473217360878%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222016-09-07T03%3A02%3A40.878Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A12%2C%22user%22%3A%7B%22uid%22%3A%222163%22%2C%22username%22%3A%22abcabc%22%2C%22userslug%22%3A%22abcabc%22%2C%22reputation%22%3A%2231%22%2C%22postcount%22%3A%22132%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F36825ff14e5946d26a8dfca0f87dc2b6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473257267427%22%2C%22content%22%3A%22%3Cp%3EThanks%20guys%2C%20I%20think%20I%20will%20give%20up%20on%20this.%20%20shelve%20is%20really%20good%2C%20but%20for%20the%20life%20of%20me%2C%20I%20can't%20understand%20why%20need%202%20files.%20The%20.dat%20and%20.dir%20for%20it%20to%20work.%20%20Unless%20I%20missed%20something%2C%20you%20need%20these%202%20files.%20%20Hmmm%2C%20maybe%20it%20can%20create%20the%20.dir%20from%20the%20.dat%20file.%20%20But%20does%20not%20do%20it%20automatically%20if%20it's%20missing.%20%20You%20would%20think%20that%20it%20could%20either%20recreate%20the%20.dir%20file%20if%20it%20was%20missing%20or%20given%20its%20has%20its%20own%20format%20that%20the%20.dir%20file%20could%20be%20a%20header%20in%20the%20.dat%20file.%20Yeah%2C%20it%20will%20grow%20and%20need%20to%20be%20rewritten%20occasionally.%20It%20just%20seems%20one%20file%20would%20be%20better%20than%202%20files%20that%20are%20dependent%20on%20each%20other.%3Cbr%20%2F%3E%5CnAgain%2C%20maybe%20I%20got%20it%20wrong.%20But%20that's%20how%20I%20see%20it%20from%20what%20I%20read%20and%20tested%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221364%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22232%22%2C%22tid%22%3A%223483%22%2C%22relativeTime%22%3A%222016-09-07T14%3A07%3A47.427Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A13%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22reputation%22%3A%22326%22%2C%22postcount%22%3A%222240%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22livejson%20-%20Webmaster4o%20-%20Tuples%22%2C%22url%22%3A%22%2Ftopic%2F3483%2Flivejson-webmaster4o-tuples%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%223483%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F3483.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22EU8FCzjp-v9lwmpCkRMa30xsKBHkf-7ibgDo%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22livejson%20-%20Webmaster4o%20-%20Tuples%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22%40Webmaster4o%2C%20I%20was%20just%20experimenting%20with%20your%20module%20livejson.%20But%20appears%20you%20are%20handling%20all%20a%20lot%20of%20data%20types%20as%20lists.%20%20The%20below%20code%20was%20just%20testing.%20%20But%20if%20you%20uncomment%20the%20font%20attr%20in%20the%20dict%2C%20d%20the%20code%20fails.%20A%20list%20is%20returned%20instea...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22livejson%20-%20Webmaster4o%20-%20Tuples%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22%40Webmaster4o%2C%20I%20was%20just%20experimenting%20with%20your%20module%20livejson.%20But%20appears%20you%20are%20handling%20all%20a%20lot%20of%20data%20types%20as%20lists.%20%20The%20below%20code%20was%20just%20testing.%20%20But%20if%20you%20uncomment%20the%20font%20attr%20in%20the%20dict%2C%20d%20the%20code%20fails.%20A%20list%20is%20returned%20instea...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3483%2Flivejson-webmaster4o-tuples%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fuploads%2Fprofile%2F232-profileimg.png%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fuploads%2Fprofile%2F232-profileimg.png%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222016-09-04T17%3A33%3A03.075Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222016-09-07T14%3A07%3A47.427Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3483.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3483%2Flivejson-webmaster4o-tuples%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="5.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

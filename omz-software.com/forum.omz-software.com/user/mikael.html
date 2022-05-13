@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mikael | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"rSRRXGq7-mUvOzwfzHH4Orsas8VLrDebBt3A","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="mikael.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="mikael.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="mikael.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="mikael.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="mikael" data-uid="1887">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="mikael.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="https://forum.omz-software.com/user/mikael/following"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="https://forum.omz-software.com/user/mikael/followers"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="https://forum.omz-software.com/user/mikael/topics"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="https://forum.omz-software.com/user/mikael/posts"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="https://forum.omz-software.com/user/mikael/groups"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="mikael.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> mikael</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="mikael.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="mikael.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+						
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="466">466</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="1633">1633</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="12723">12723</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+					
+
+					
+
+										<span class="account-bio-label">Website</span>
+					<span class="account-bio-value"><a href="https:&#x2F;&#x2F;github.com&#x2F;mikaelho">github.com&#x2F;mikaelho</a></span>
+
+										<span class="account-bio-label">Location</span>
+					<span class="account-bio-value">Espoo, Finland</span>
+
+					
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="19">19</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="0">0</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2015-09-23T09:14:39.177Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2022-04-27T03:35:26.137Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="46962" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a>, thanks! Have been hacking more on the laptop lately.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-10-15T13:14:55.824Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7260/coords-edge-detect-2-colour-image/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="46961" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/rb">@rb</a>, if we are talking something like a photo with rectangles, you could also use the iOS Vision framework, see <a href="https://developer.apple.com/documentation/vision/detecting_objects_in_still_images?language=objc" rel="nofollow">here</a>.</p>
+<p>I have a Python implementation lying around somewhere, let me know if that seems interesting.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-10-15T13:13:48.736Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7260/coords-edge-detect-2-colour-image/5">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="46959" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/rb">@rb</a>, are the rectangles exactly &quot;squared&quot; or can they be in any position in the image? Are the rectangles solid colour and the background another colour, or is the background (say) white with (say) black rectangular outlines? Do you know what the colours are or can they be anything?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-10-15T13:02:57.247Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7260/coords-edge-detect-2-colour-image/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45833" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a>, impressive! Know how hard these seemingly simple things can be.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-07-27T04:14:19.819Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7110/outliner-with-drag-drop-reordering/394">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45830" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/samsonantony">@samsonantony</a>, as one possible building block. here is ObjC code that can be used to save a video clip slowed down without audio:<br />
+<a href="https://stackoverflow.com/questions/17296999/how-to-do-slow-motion-video-in-ios" rel="nofollow">https://stackoverflow.com/questions/17296999/how-to-do-slow-motion-video-in-ios</a></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-07-26T06:21:39.484Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7171/running-camera-in-slow-motion-mode/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45284" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="jonb.html">@JonB</a>, your post should be pinned to the top of the forum, wonder if <a class="plugin-mentions-a" href="ccc.html">@ccc</a> has access.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-06-10T05:25:09.795Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7125/pythonista-tutorials/7">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45191" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/robert_tompkins">@Robert_Tompkins</a>, I have the same issue, and no workaround.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-06-07T05:02:24.873Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7127/custom-theme-suggestion/2">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45190" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/talns100">@talns100</a>, as others have pointed out, <code>int</code> is a quick way to get the number. Always a good idea to wrap it in <code>try ... except ValueError</code> though, to either set a default or give the user some guidance on what you expected to receive.</p>
+<p>Usually, if all I want is an int, I prefer to use <code>int(round(float(input())))</code>, just to be that little bit more tolerant of users who input <code>1.0</code>, for example.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-06-07T04:38:24.247Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7130/numbers-behave-like-strings-in-iphone/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45147" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/steven11">@Steven11</a>, on MacBook, would recommend PyCharm. Community edition is free, and the ease of navigating in the code is just something you cannot live without once you get used to it. Can be a bit heavy on the machine, though.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-06-01T13:32:25.947Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7121/best-macbook-ide-pythonista/3">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="45109" data-uid="1887">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="mikael.html">
+					<img title="mikael" class="img-rounded user-img" src="https://s.gravatar.com/avatar/21d71ac20be1f1bad4e07cd4c4659f9c?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="mikael.html">
+					<strong><span>mikael</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a>, sure, there’s pros and cons, and <a class="plugin-mentions-a" href="ihf.html">@ihf</a>’s use case should provide some guidance here.</p>
+<p>But you can have a TextView that resizes to fit the paragraph, and TableView rows that also resize to their contents.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2021-05-29T13:26:40.424Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7110/outliner-with-drag-drop-reordering/22">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="1887" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22fullname%22%3A%22%22%2C%22passwordExpiry%22%3A%220%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%22%22%2C%22postcount%22%3A%221633%22%2C%22status%22%3A%22offline%22%2C%22followerCount%22%3A19%2C%22website%22%3A%22https%3A%26%23x2F%3B%26%23x2F%3Bgithub.com%26%23x2F%3Bmikaelho%22%2C%22location%22%3A%22Espoo%2C%20Finland%22%2C%22joindate%22%3A%222015-09-23T09%3A14%3A39.177Z%22%2C%22uploadedpicture%22%3A%22%22%2C%22banned%22%3Afalse%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22lastonline%22%3A%222022-04-27T03%3A35%3A26.137Z%22%2C%22lastposttime%22%3A%221634303695824%22%2C%22profileviews%22%3A%2212723%22%2C%22reputation%22%3A%22466%22%2C%22uid%22%3A%221887%22%2C%22topiccount%22%3A%2298%22%2C%22username%22%3A%22mikael%22%2C%22email%22%3A%22%22%2C%22age%22%3A%22%22%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%221887%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22https%3A%26%23x2F%3B%26%23x2F%3Bgithub.com%26%23x2F%3Bmikaelho%22%2C%22websiteName%22%3A%22github.com%26%23x2F%3Bmikaelho%22%2C%22followingCount%22%3A0%2C%22posts%22%3A%5B%7B%22pid%22%3A%2246962%22%2C%22tid%22%3A%227260%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%2C%20thanks!%20Have%20been%20hacking%20more%20on%20the%20laptop%20lately.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221634303695824%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%225272%22%2C%22tid%22%3A%227260%22%2C%22title%22%3A%22Coords%26%23x2F%3Bedge%20detect%202%20colour%20image%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227260%2Fcoords-edge-detect-2-colour-image%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2215%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-10-15T13%3A14%3A55.824Z%22%7D%2C%7B%22pid%22%3A%2246961%22%2C%22tid%22%3A%227260%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Frb%5C%22%3E%40rb%3C%2Fa%3E%2C%20if%20we%20are%20talking%20something%20like%20a%20photo%20with%20rectangles%2C%20you%20could%20also%20use%20the%20iOS%20Vision%20framework%2C%20see%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fvision%2Fdetecting_objects_in_still_images%3Flanguage%3Dobjc%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehere%3C%2Fa%3E.%3C%2Fp%3E%5Cn%3Cp%3EI%20have%20a%20Python%20implementation%20lying%20around%20somewhere%2C%20let%20me%20know%20if%20that%20seems%20interesting.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221634303628736%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%225272%22%2C%22tid%22%3A%227260%22%2C%22title%22%3A%22Coords%26%23x2F%3Bedge%20detect%202%20colour%20image%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227260%2Fcoords-edge-detect-2-colour-image%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2215%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-10-15T13%3A13%3A48.736Z%22%7D%2C%7B%22pid%22%3A%2246959%22%2C%22tid%22%3A%227260%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Frb%5C%22%3E%40rb%3C%2Fa%3E%2C%20are%20the%20rectangles%20exactly%20%26quot%3Bsquared%26quot%3B%20or%20can%20they%20be%20in%20any%20position%20in%20the%20image%3F%20Are%20the%20rectangles%20solid%20colour%20and%20the%20background%20another%20colour%2C%20or%20is%20the%20background%20(say)%20white%20with%20(say)%20black%20rectangular%20outlines%3F%20Do%20you%20know%20what%20the%20colours%20are%20or%20can%20they%20be%20anything%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221634302977247%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%225272%22%2C%22tid%22%3A%227260%22%2C%22title%22%3A%22Coords%26%23x2F%3Bedge%20detect%202%20colour%20image%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227260%2Fcoords-edge-detect-2-colour-image%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2215%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-10-15T13%3A02%3A57.247Z%22%7D%2C%7B%22pid%22%3A%2245833%22%2C%22tid%22%3A%227110%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%2C%20impressive!%20Know%20how%20hard%20these%20seemingly%20simple%20things%20can%20be.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221627359259819%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A394%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22878%22%2C%22tid%22%3A%227110%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227110%2Foutliner-with-drag-drop-reordering%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%221003%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-07-27T04%3A14%3A19.819Z%22%7D%2C%7B%22pid%22%3A%2245830%22%2C%22tid%22%3A%227171%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fsamsonantony%5C%22%3E%40samsonantony%3C%2Fa%3E%2C%20as%20one%20possible%20building%20block.%20here%20is%20ObjC%20code%20that%20can%20be%20used%20to%20save%20a%20video%20clip%20slowed%20down%20without%20audio%3A%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22https%3A%2F%2Fstackoverflow.com%2Fquestions%2F17296999%2Fhow-to-do-slow-motion-video-in-ios%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fstackoverflow.com%2Fquestions%2F17296999%2Fhow-to-do-slow-motion-video-in-ios%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221627280499484%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2212610%22%2C%22tid%22%3A%227171%22%2C%22title%22%3A%22Running%20camera%20in%20slow%20motion%20mode%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227171%2Frunning-camera-in-slow-motion-mode%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-07-26T06%3A21%3A39.484Z%22%7D%2C%7B%22pid%22%3A%2245284%22%2C%22tid%22%3A%227125%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%2C%20your%20post%20should%20be%20pinned%20to%20the%20top%20of%20the%20forum%2C%20wonder%20if%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20has%20access.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221623302709795%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2211563%22%2C%22tid%22%3A%227125%22%2C%22title%22%3A%22Pythonista%20Tutorials%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227125%2Fpythonista-tutorials%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2215%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-06-10T05%3A25%3A09.795Z%22%7D%2C%7B%22pid%22%3A%2245191%22%2C%22tid%22%3A%227127%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Frobert_tompkins%5C%22%3E%40Robert_Tompkins%3C%2Fa%3E%2C%20I%20have%20the%20same%20issue%2C%20and%20no%20workaround.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221623042144873%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%228473%22%2C%22tid%22%3A%227127%22%2C%22title%22%3A%22Custom%20theme%20suggestion%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227127%2Fcustom-theme-suggestion%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-06-07T05%3A02%3A24.873Z%22%7D%2C%7B%22pid%22%3A%2245190%22%2C%22tid%22%3A%227130%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Ftalns100%5C%22%3E%40talns100%3C%2Fa%3E%2C%20as%20others%20have%20pointed%20out%2C%20%3Ccode%3Eint%3C%2Fcode%3E%20is%20a%20quick%20way%20to%20get%20the%20number.%20Always%20a%20good%20idea%20to%20wrap%20it%20in%20%3Ccode%3Etry%20...%20except%20ValueError%3C%2Fcode%3E%20though%2C%20to%20either%20set%20a%20default%20or%20give%20the%20user%20some%20guidance%20on%20what%20you%20expected%20to%20receive.%3C%2Fp%3E%5Cn%3Cp%3EUsually%2C%20if%20all%20I%20want%20is%20an%20int%2C%20I%20prefer%20to%20use%20%3Ccode%3Eint(round(float(input())))%3C%2Fcode%3E%2C%20just%20to%20be%20that%20little%20bit%20more%20tolerant%20of%20users%20who%20input%20%3Ccode%3E1.0%3C%2Fcode%3E%2C%20for%20example.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221623040704247%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2211591%22%2C%22tid%22%3A%227130%22%2C%22title%22%3A%22Numbers%20behave%20like%20strings%20in%20iPhone%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227130%2Fnumbers-behave-like-strings-in-iphone%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2213%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-06-07T04%3A38%3A24.247Z%22%7D%2C%7B%22pid%22%3A%2245147%22%2C%22tid%22%3A%227121%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fsteven11%5C%22%3E%40Steven11%3C%2Fa%3E%2C%20on%20MacBook%2C%20would%20recommend%20PyCharm.%20Community%20edition%20is%20free%2C%20and%20the%20ease%20of%20navigating%20in%20the%20code%20is%20just%20something%20you%20cannot%20live%20without%20once%20you%20get%20used%20to%20it.%20Can%20be%20a%20bit%20heavy%20on%20the%20machine%2C%20though.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221622554345947%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2211451%22%2C%22tid%22%3A%227121%22%2C%22title%22%3A%22Best%20MacBook%20IDE%3F%20Pythonista%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227121%2Fbest-macbook-ide-pythonista%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-06-01T13%3A32%3A25.947Z%22%7D%2C%7B%22pid%22%3A%2245109%22%2C%22tid%22%3A%227110%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%2C%20sure%2C%20there%E2%80%99s%20pros%20and%20cons%2C%20and%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%E2%80%99s%20use%20case%20should%20provide%20some%20guidance%20here.%3C%2Fp%3E%5Cn%3Cp%3EBut%20you%20can%20have%20a%20TextView%20that%20resizes%20to%20fit%20the%20paragraph%2C%20and%20TableView%20rows%20that%20also%20resize%20to%20their%20contents.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221887%22%2C%22timestamp%22%3A%221622294800424%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A22%2C%22user%22%3A%7B%22uid%22%3A%221887%22%2C%22username%22%3A%22mikael%22%2C%22userslug%22%3A%22mikael%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F21d71ac20be1f1bad4e07cd4c4659f9c%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22878%22%2C%22tid%22%3A%227110%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227110%2Foutliner-with-drag-drop-reordering%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%221003%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222021-05-29T13%3A26%3A40.424Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22rSRRXGq7-mUvOzwfzHH4Orsas8VLrDebBt3A%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="mikael.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

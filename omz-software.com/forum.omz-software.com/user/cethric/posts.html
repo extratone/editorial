@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posts made by Cethric | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"L5PjVKEn-Zs5ZVVIGlx-2nvOerZ6-aDthfi4","searchEnabled":true}');
+		var app = {
+			template: "account/posts",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="posts.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="posts.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="posts.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="posts.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+
+<div class="account-username-box" data-userslug="cethric" data-uid="250">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="posts.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="following.html"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="followers.html"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="topics.html"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="posts.html"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="groups.html"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="../cethric.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="favourites">
+
+	
+
+	<div class="row">
+
+<ul component="posts" class="posts-list" data-nextstart="20">
+
+	<li component="post" class="posts-list-item" data-pid="24779" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>In general the <code>_appex</code> model is not really meant to be used as it is the backend for the <code>appex</code> wrapper module. Try using:</p>
+<pre><code class="python">import appex
+print(appex.get_text())
+print(appex.get_urls()) # or appex.get_url()
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-06-19T23:12:38.418Z"></span> &bull;
+						<a href="../../topic/4146/unicodedecodeerror-in-_appex-get_input/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="23823" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>From memory my OpenGLES library had very rudimentary header parsing (If its not on the github repo its probably on my iPad) if you wanted to have a look at it and use components of it. From memory it was very messy, it did what it needed to do but it wasn't very nice.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2017-03-29T22:58:00.384Z"></span> &bull;
+						<a href="../../topic/3935/header-parser/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22381" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="../wolf71.html">@wolf71</a> <code>objc_util</code> dynamically creates its own copy of the <code>AudioComponentDescription</code> hence your <code>ArgumentError</code> This can be resolved either by using the <code>objc_util</code> version (can remberer exactly how to do that) or you specify that you want to use your copy. Eg</p>
+<pre><code>from objc_util import *
+import ctypes
+
+AVAudioUnit=ObjCClass('AVAudioUnit')
+AVAudioUnitComponent=ObjCClass('AVAudioUnitComponent')
+AVAudioUnitComponentManager=ObjCClass('AVAudioUnitComponentManager')
+
+#
+# componentType,componentSubType,componentManufacturer is OSType
+#
+# ref:  developer.apple.com/reference/audiotoolbox/audiocomponentdescription
+#
+class AudioComponentDescription(ctypes.Structure):
+    _fields_=[('componentType',ctypes.c_char_p),('componentSubType',ctypes.c_char_p),('componentManufacturer',ctypes.c_char_p),('componentFlags',ctypes.c_uint32),('componentFlagsMask',ctypes.c_uint32)]
+    
+anyEffect = AudioComponentDescription('aufx','dcmp','appl',0,0)
+availableEffects = AVAudioUnitComponentManager.sharedAudioUnitComponentManager().componentsMatchingDescription_(anyEffect, argtypes=[AudioComponentDescription])
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-11-16T01:41:34.047Z"></span> &bull;
+						<a href="../../topic/3659/obj_c-struct-ostype-define-problem/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22288" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="../starrshaw.html">@starrshaw</a> the sound is being played twice but  the call to stop it playing is only made once.</p>
+<pre><code>import sound, time
+y = &quot;room_One.mp3&quot;
+x = sound.play_effect(y)
+sound.play_effect(y)  # &lt;- This call can be removed
+time.sleep(5)
+sound.stop_effect(x)
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-11-06T22:27:57.168Z"></span> &bull;
+						<a href="../../topic/3641/sound-effect-not-stopping/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="22018" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Without seeing the data or the complete stack trace I can only guess what the issue is. But two possibilities come to mind:</p>
+<ol>
+<li><code>line</code> is a white space character so there is nothing to split which results in 2).</li>
+<li><code>splitUP</code> has a value of <code>['xy']</code> instead of <code>['x', 'y']</code><br />
+Either way try printing the value of <code>splitUP</code> Without breaking it first. IE <code>print(splitUP)</code> and see what that gives.</li>
+</ol>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-22T23:53:32.118Z"></span> &bull;
+						<a href="../../topic/3600/indexerror-happens-in-pythonista-3/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21980" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>I assume that you have your data already in a <code>list</code> form and that you have some understanding of how pythonista UI's work, if not let me know and I will try and explain it as best I can.<br />
+The following is a brief outline of what needs to be done:</p>
+<pre><code class="python">import ui
+data = [x for x in range(0, 50)]
+datasource = ui.ListDataSource(data)
+tv = ui.TableView()
+tv.data_source = datasource
+tv.delegate = datasource
+
+def selectitem(*args):
+    view = ui.View(title='&#123;&#125;'.format(args[1]))
+    label = ui.Label()
+    label.text = &quot;&#123;&#125;, &#123;&#125;, &#123;&#125;&quot;.format(*args)
+    label.size_to_fit()
+    view.add_subview(label)
+    view.background_color = 'white'
+    nav.push_view(view)
+datasource.tableview_did_select = selectitem
+
+nav = ui.NavigationView(tv)
+
+nav.present()
+</code></pre>
+<p>Hope this helps.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-20T08:57:40.349Z"></span> &bull;
+						<a href="../../topic/3593/simple-n00b-question-populating-tableview-from-a-list/3.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21951" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>If you are really concerned about memory there is a lot more in your code that can be cleaned up, mainly unnecessary variables, etc. But if you need help with that then we can go over it after.<br />
+As to the rockets not deleting correctly, I get an error before it can even delete due to non-existent indecies in the list (due to the list being modified from in the loop that is not really friendly with your code). To resolve that I completely changed your <code>for</code>-loop to the following:</p>
+<pre><code class="python">for i, missile in enumerate(self.missiles):
+            print(i, missile.position)
+            if missile.position.y &gt; self.size_of_screen.y - 100:
+                missile.remove_from_parent()
+                self.missiles.remove(missile)
+</code></pre>
+<p>Also <code>Node.remove_from_parent()</code> needs to be called for the object to be removed from the render list.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-19T03:38:33.855Z"></span> &bull;
+						<a href="../../topic/3591/removing-missile-when-goes-off-screen/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21932" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="../mrcoxall.html">@mrcoxall</a>: does the last image display once the loop is finished? I just tested it (using different images) and it seemed that the only issue was that the loop was blocking the UI thread, so it couldn't update and render the new information. To fix this just add <code>@ui.in_background</code> above <code>def start_button_touch_up_inside(sender)</code> and it should work fine.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-17T21:09:47.191Z"></span> &bull;
+						<a href="../../topic/3589/refresh-ui/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21921" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Yes <code>.tmp.html</code> can simply be changed to any value you want. The following code does this automatically for you:</p>
+<pre><code>def createTables(text=None, name=None):
+    if text is None:
+        text = editor.get_text()
+    if name is None:
+        name = '&#123;&#125;.html'.format(os.path.basename(editor.get_path()))
+    path = os.path.join(os.path.expanduser('~/Documents'), name)
+    with open(path, 'wb') as f:
+        f.write(TEMPLATE.format('\n'.join([
+            TEMPLATE_ROW.format(x) for x in text.split('\n') if x != ''
+        ])))
+    webbrowser.open(&quot;file://&#123;&#125;&quot;.format(path))
+</code></pre>
+<p>However I would recommend against this on the basis that, if the <code>.html</code> was not appended to the name (or even just changing the name in any way shape or form) then it will replace the contents of the file you are working on. While this might be decent when rendered out it is not as easy to read as markdown is as <code>plaintext</code>. Hence I have used <code>.tmp.html</code> as only one file can be open at a time and this reduces 'clutter' from your documents folder (instead of dozens of <code>xyz.md.html</code> duplicate files there is just one <code>.tmp.html</code>). <code>.tmp.html</code> can be deleted whenever you want and will not damage you script file. (Also adding the prefix of <code>.</code> means the file will be hidden (reducing visual clutter)). Sorry if this has gone to far off on a wild tangent. Hope it answers your question as well...</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../category/6/editorial.html"><i class="fa fa-comments"></i> Editorial</a> <span class="timeago" title="2016-10-17T10:11:32.953Z"></span> &bull;
+						<a href="../../topic/3578/script-to-storyboard/9.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21913" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/procryon">@procryon</a>: <code>float(second_word)</code> is never stored hence, <code>screen.setBrightness_(second_word)</code> will fail as a <code>str</code> object is being passed as an argument instead of a <code>float</code> or <code>int</code> object.<br />
+Hence: <code>float_value = float(second_word)</code> and changing <code>screen_word</code> to <code>float_value</code> in <code>screen.setBrightness_</code> should resolve your issue.<br />
+I agree that <code>ctypes</code>/<code>objc_util</code> errors can sometimes be a little hard to read, however the error type (<code>TypeError</code>, <code>ValueError</code>, etc) can be a hint towards what the issue might be. In this instance passing a <code>str</code> argument where a <code>float</code> or <code>int</code> is expected.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-16T20:39:41.613Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3585/split-a-string/5">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21911" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Sorry didn't realise I forgot to add that. At the top of the python file add <code>import os</code> that should fix it.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../category/6/editorial.html"><i class="fa fa-comments"></i> Editorial</a> <span class="timeago" title="2016-10-16T20:25:41.230Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3578/script-to-storyboard/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21894" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>This is just a really basic concept for it, but add this to a workflow calling this script and see if it does what you want.</p>
+<pre><code>import editor
+import os
+import webbrowser
+
+
+TEMPLATE = '''&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+            &#123;&#125;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+'''
+
+TEMPLATE_ROW = '''&lt;tr&gt;
+&lt;td&gt; &#123;&#125; &lt;/td&gt;
+    &lt;td&gt;
+        &lt;div style='width: 300px; height: 300px; border: 1px solid black;'&gt;
+        &lt;/div&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+'''
+
+
+def createTables(text=None):
+    if text is None:
+        text = editor.get_text()
+    path = os.path.join(os.path.expanduser('~/Documents'), '.tmp.html')
+    with open(path, 'wb') as f:
+        f.write(TEMPLATE.format('\n'.join([
+            TEMPLATE_ROW.format(x) for x in text.split('\n') if x != ''
+        ])))
+    webbrowser.open(&quot;file://&#123;&#125;&quot;.format(path))
+
+createTables()
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../category/6/editorial.html"><i class="fa fa-comments"></i> Editorial</a> <span class="timeago" title="2016-10-15T21:52:08.595Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3578/script-to-storyboard/4">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21877" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/uj_jonas">@uj_jonas</a> instead of making <code>main</code> a <code>ui.ScrollView</code> in your code make <code>wv_container</code> a <code>ui.ScrollView</code>.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-15T06:08:11.296Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3577/webview-not-allowing-me-to-scroll-to-the-bottom-right-corner/4">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21876" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>I'm just putting ideas out here, but split the paragraphs with <code>str.split('\n')</code> and then use a tableview with a custom cell to display the text and a <code>storyboard</code> view. Then tell the scrollview to break on pages.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../category/6/editorial.html"><i class="fa fa-comments"></i> Editorial</a> <span class="timeago" title="2016-10-15T06:04:32.964Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3578/script-to-storyboard/2">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21603" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/rmurtsoo">@RMurtsoo</a> I am going to try an explain why this hasn't worked for you with out actually giving you a direct answer, not because I am trying to be rude/annoying but it is in my honest belief that we don't learn very well when just given an answer. So if this does come across as rude or demeaning I appologise.<br />
+So to pull your code apart</p>
+<pre><code>view = ui.View()  # this is correct however you might want to consider setting a frame size. `view = ui.View(frame=(0,0,width,height))` as the default is less than 200/200 from memory
+view.present('portrait')  # from documentation `ui.View.present(style='default', animated=True, popover_location=None, hide_title_bar=False, title_bar_color=None, title_color=None, orientations=None)` therefore if you want to force a orientation you need to provide values for `orientations` not `style` http://omz-software.com/pythonista/docs/ios/ui.html#ui.View.present
+
+def button():  # `ui.Button` actions require a sender argument, ie `def button(sender):...` where `sender` can be named anything
+    ui.Imageview('Image').height = 120  # this creates a new `ui.ImageView` and doesn't actually reference any view from you `view` variable in the global stack. This is why you `ui.ImageView` height is not changing. Consider reading the documentation and examples to see how this is done
+
+img = ui.ImageView()  # this is correct however you might want to set a new frame size here as the default is 0/0. Which cause also be an attributing reason to why you aren't seeing anything. `ui.ImageView(frame=(0,0,200,200)` or you can set it later with `img.width`, `img.height`, `img.x` and `img.y`
+img.name = 'Veer'
+img.heigt = 150  # I'm going to assume that this is just a typo
+view.add_subview(img)
+
+button = ui.Button()  # by naming the variable of this object to `button` you have overrided the method by the same name, thus you will get a `Exception` when tapping the button. Consider renaming either the method name to something else or renaming this variable to something else.
+button.action = button
+view.add_subview(button)
+</code></pre>
+<p>I would highly recommend reading the documentation for Pythonista, and for Python. Out of curiosity which version of Pythonista are you using?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-09-22T23:28:02.288Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3529/how-to-change-a-size-from-a-subview/2">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="20557" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="../cook.html">@cook</a> <code>shared_application.setStatusBarHidden_</code> is a function not a variable. Try <code>shared_application.setStatusBarHidden_(True)</code>.<br />
+The same goes for <code>prefersStatusBarHidden_</code></p>
+<p>As to whether or not it will work, I don't know, I would need to do further research.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-07-23T02:26:37.569Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3368/objc-setstatusbarhidden-possible/2">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="18775" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>I still have spare spaces on my account, I haven't used it much recently. So if you want to host from there, send me the details and I can set it up if you want.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-05-03T22:14:01.582Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3077/pythonista-slack-or-mattermost/45">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="18774" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Good catch, I can't say I have done a speed test on iOS to see the differences between the two, but in general yes <code>byref(error)</code> is faster than <code>pointer(error)</code></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-05-03T22:11:48.853Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3099/mysterious-crash/6">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="18771" data-uid="250">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="../cethric.html">
+					<img title="Cethric" class="img-rounded user-img" src="https://s.gravatar.com/avatar/daa7ef93bfc7f381552065c0b3ef84e2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="../cethric.html">
+					<strong><span>Cethric</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="../ccc.html">@ccc</a> my email is &lt;deleted&gt;</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-05-03T22:05:18.478Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/3077/pythonista-slack-or-mattermost/43">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+
+		
+	</div>
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="250" /><input type="hidden" ajaxify-data="%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%22250%22%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22posts%22%3A%5B%7B%22pid%22%3A%2224779%22%2C%22tid%22%3A%224146%22%2C%22content%22%3A%22%3Cp%3EIn%20general%20the%20%3Ccode%3E_appex%3C%2Fcode%3E%20model%20is%20not%20really%20meant%20to%20be%20used%20as%20it%20is%20the%20backend%20for%20the%20%3Ccode%3Eappex%3C%2Fcode%3E%20wrapper%20module.%20Try%20using%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20appex%5Cnprint(appex.get_text())%5Cnprint(appex.get_urls())%20%23%20or%20appex.get_url()%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221497913958418%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%223855%22%2C%22tid%22%3A%224146%22%2C%22title%22%3A%22UnicodeDecodeError%20in%20_appex.get_input()%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%224146%2Funicodedecodeerror-in-_appex-get_input%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-06-19T23%3A12%3A38.418Z%22%7D%2C%7B%22pid%22%3A%2223823%22%2C%22tid%22%3A%223935%22%2C%22content%22%3A%22%3Cp%3EFrom%20memory%20my%20OpenGLES%20library%20had%20very%20rudimentary%20header%20parsing%20(If%20its%20not%20on%20the%20github%20repo%20its%20probably%20on%20my%20iPad)%20if%20you%20wanted%20to%20have%20a%20look%20at%20it%20and%20use%20components%20of%20it.%20From%20memory%20it%20was%20very%20messy%2C%20it%20did%20what%20it%20needed%20to%20do%20but%20it%20wasn't%20very%20nice.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221490828280384%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221025%22%2C%22tid%22%3A%223935%22%2C%22title%22%3A%22Header%20parser%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223935%2Fheader-parser%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222017-03-29T22%3A58%3A00.384Z%22%7D%2C%7B%22pid%22%3A%2222381%22%2C%22tid%22%3A%223659%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwolf71%5C%22%3E%40wolf71%3C%2Fa%3E%20%3Ccode%3Eobjc_util%3C%2Fcode%3E%20dynamically%20creates%20its%20own%20copy%20of%20the%20%3Ccode%3EAudioComponentDescription%3C%2Fcode%3E%20hence%20your%20%3Ccode%3EArgumentError%3C%2Fcode%3E%20This%20can%20be%20resolved%20either%20by%20using%20the%20%3Ccode%3Eobjc_util%3C%2Fcode%3E%20version%20(can%20remberer%20exactly%20how%20to%20do%20that)%20or%20you%20specify%20that%20you%20want%20to%20use%20your%20copy.%20Eg%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Efrom%20objc_util%20import%20*%5Cnimport%20ctypes%5Cn%5CnAVAudioUnit%3DObjCClass('AVAudioUnit')%5CnAVAudioUnitComponent%3DObjCClass('AVAudioUnitComponent')%5CnAVAudioUnitComponentManager%3DObjCClass('AVAudioUnitComponentManager')%5Cn%5Cn%23%5Cn%23%20componentType%2CcomponentSubType%2CcomponentManufacturer%20is%20OSType%5Cn%23%5Cn%23%20ref%3A%20%20developer.apple.com%2Freference%2Faudiotoolbox%2Faudiocomponentdescription%5Cn%23%5Cnclass%20AudioComponentDescription(ctypes.Structure)%3A%5Cn%20%20%20%20_fields_%3D%5B('componentType'%2Cctypes.c_char_p)%2C('componentSubType'%2Cctypes.c_char_p)%2C('componentManufacturer'%2Cctypes.c_char_p)%2C('componentFlags'%2Cctypes.c_uint32)%2C('componentFlagsMask'%2Cctypes.c_uint32)%5D%5Cn%20%20%20%20%5CnanyEffect%20%3D%20AudioComponentDescription('aufx'%2C'dcmp'%2C'appl'%2C0%2C0)%5CnavailableEffects%20%3D%20AVAudioUnitComponentManager.sharedAudioUnitComponentManager().componentsMatchingDescription_(anyEffect%2C%20argtypes%3D%5BAudioComponentDescription%5D)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221479260494047%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221183%22%2C%22tid%22%3A%223659%22%2C%22title%22%3A%22Obj_C%20struct%20OSType%20define%20problem.%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223659%2Fobj_c-struct-ostype-define-problem%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2218%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-11-16T01%3A41%3A34.047Z%22%7D%2C%7B%22pid%22%3A%2222288%22%2C%22tid%22%3A%223641%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fstarrshaw%5C%22%3E%40starrshaw%3C%2Fa%3E%20the%20sound%20is%20being%20played%20twice%20but%20%20the%20call%20to%20stop%20it%20playing%20is%20only%20made%20once.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eimport%20sound%2C%20time%5Cny%20%3D%20%26quot%3Broom_One.mp3%26quot%3B%5Cnx%20%3D%20sound.play_effect(y)%5Cnsound.play_effect(y)%20%20%23%20%26lt%3B-%20This%20call%20can%20be%20removed%5Cntime.sleep(5)%5Cnsound.stop_effect(x)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221478471277168%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%223055%22%2C%22tid%22%3A%223641%22%2C%22title%22%3A%22Sound%20effect%20not%20stopping%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223641%2Fsound-effect-not-stopping%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-11-06T22%3A27%3A57.168Z%22%7D%2C%7B%22pid%22%3A%2222018%22%2C%22tid%22%3A%223600%22%2C%22content%22%3A%22%3Cp%3EWithout%20seeing%20the%20data%20or%20the%20complete%20stack%20trace%20I%20can%20only%20guess%20what%20the%20issue%20is.%20But%20two%20possibilities%20come%20to%20mind%3A%3C%2Fp%3E%5Cn%3Col%3E%5Cn%3Cli%3E%3Ccode%3Eline%3C%2Fcode%3E%20is%20a%20white%20space%20character%20so%20there%20is%20nothing%20to%20split%20which%20results%20in%202).%3C%2Fli%3E%5Cn%3Cli%3E%3Ccode%3EsplitUP%3C%2Fcode%3E%20has%20a%20value%20of%20%3Ccode%3E%5B'xy'%5D%3C%2Fcode%3E%20instead%20of%20%3Ccode%3E%5B'x'%2C%20'y'%5D%3C%2Fcode%3E%3Cbr%20%2F%3E%5CnEither%20way%20try%20printing%20the%20value%20of%20%3Ccode%3EsplitUP%3C%2Fcode%3E%20Without%20breaking%20it%20first.%20IE%20%3Ccode%3Eprint(splitUP)%3C%2Fcode%3E%20and%20see%20what%20that%20gives.%3C%2Fli%3E%5Cn%3C%2Fol%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221477180412118%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222993%22%2C%22tid%22%3A%223600%22%2C%22title%22%3A%22IndexError%20happens%20in%20pythonista%203%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223600%2Findexerror-happens-in-pythonista-3%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%228%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-22T23%3A53%3A32.118Z%22%7D%2C%7B%22pid%22%3A%2221980%22%2C%22tid%22%3A%223593%22%2C%22content%22%3A%22%3Cp%3EI%20assume%20that%20you%20have%20your%20data%20already%20in%20a%20%3Ccode%3Elist%3C%2Fcode%3E%20form%20and%20that%20you%20have%20some%20understanding%20of%20how%20pythonista%20UI's%20work%2C%20if%20not%20let%20me%20know%20and%20I%20will%20try%20and%20explain%20it%20as%20best%20I%20can.%3Cbr%20%2F%3E%5CnThe%20following%20is%20a%20brief%20outline%20of%20what%20needs%20to%20be%20done%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20ui%5Cndata%20%3D%20%5Bx%20for%20x%20in%20range(0%2C%2050)%5D%5Cndatasource%20%3D%20ui.ListDataSource(data)%5Cntv%20%3D%20ui.TableView()%5Cntv.data_source%20%3D%20datasource%5Cntv.delegate%20%3D%20datasource%5Cn%5Cndef%20selectitem(*args)%3A%5Cn%20%20%20%20view%20%3D%20ui.View(title%3D'%7B%7D'.format(args%5B1%5D))%5Cn%20%20%20%20label%20%3D%20ui.Label()%5Cn%20%20%20%20label.text%20%3D%20%26quot%3B%7B%7D%2C%20%7B%7D%2C%20%7B%7D%26quot%3B.format(*args)%5Cn%20%20%20%20label.size_to_fit()%5Cn%20%20%20%20view.add_subview(label)%5Cn%20%20%20%20view.background_color%20%3D%20'white'%5Cn%20%20%20%20nav.push_view(view)%5Cndatasource.tableview_did_select%20%3D%20selectitem%5Cn%5Cnnav%20%3D%20ui.NavigationView(tv)%5Cn%5Cnnav.present()%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EHope%20this%20helps.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476953860349%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222985%22%2C%22tid%22%3A%223593%22%2C%22title%22%3A%22Simple%20n00b%20question%3A%20Populating%20TableView%20from%20a%20list%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223593%2Fsimple-n00b-question-populating-tableview-from-a-list%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-20T08%3A57%3A40.349Z%22%7D%2C%7B%22pid%22%3A%2221951%22%2C%22tid%22%3A%223591%22%2C%22content%22%3A%22%3Cp%3EIf%20you%20are%20really%20concerned%20about%20memory%20there%20is%20a%20lot%20more%20in%20your%20code%20that%20can%20be%20cleaned%20up%2C%20mainly%20unnecessary%20variables%2C%20etc.%20But%20if%20you%20need%20help%20with%20that%20then%20we%20can%20go%20over%20it%20after.%3Cbr%20%2F%3E%5CnAs%20to%20the%20rockets%20not%20deleting%20correctly%2C%20I%20get%20an%20error%20before%20it%20can%20even%20delete%20due%20to%20non-existent%20indecies%20in%20the%20list%20(due%20to%20the%20list%20being%20modified%20from%20in%20the%20loop%20that%20is%20not%20really%20friendly%20with%20your%20code).%20To%20resolve%20that%20I%20completely%20changed%20your%20%3Ccode%3Efor%3C%2Fcode%3E-loop%20to%20the%20following%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Efor%20i%2C%20missile%20in%20enumerate(self.missiles)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20print(i%2C%20missile.position)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if%20missile.position.y%20%26gt%3B%20self.size_of_screen.y%20-%20100%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20missile.remove_from_parent()%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.missiles.remove(missile)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EAlso%20%3Ccode%3ENode.remove_from_parent()%3C%2Fcode%3E%20needs%20to%20be%20called%20for%20the%20object%20to%20be%20removed%20from%20the%20render%20list.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476848313855%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223591%22%2C%22title%22%3A%22Removing%20missile%2C%20when%20goes%20off%20screen%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223591%2Fremoving-missile-when-goes-off-screen%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-19T03%3A38%3A33.855Z%22%7D%2C%7B%22pid%22%3A%2221932%22%2C%22tid%22%3A%223589%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fmrcoxall%5C%22%3E%40mrcoxall%3C%2Fa%3E%3A%20does%20the%20last%20image%20display%20once%20the%20loop%20is%20finished%3F%20I%20just%20tested%20it%20(using%20different%20images)%20and%20it%20seemed%20that%20the%20only%20issue%20was%20that%20the%20loop%20was%20blocking%20the%20UI%20thread%2C%20so%20it%20couldn't%20update%20and%20render%20the%20new%20information.%20To%20fix%20this%20just%20add%20%3Ccode%3E%40ui.in_background%3C%2Fcode%3E%20above%20%3Ccode%3Edef%20start_button_touch_up_inside(sender)%3C%2Fcode%3E%20and%20it%20should%20work%20fine.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476738587191%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222039%22%2C%22tid%22%3A%223589%22%2C%22title%22%3A%22Refresh%20ui%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223589%2Frefresh-ui%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%225%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-17T21%3A09%3A47.191Z%22%7D%2C%7B%22pid%22%3A%2221921%22%2C%22tid%22%3A%223578%22%2C%22content%22%3A%22%3Cp%3EYes%20%3Ccode%3E.tmp.html%3C%2Fcode%3E%20can%20simply%20be%20changed%20to%20any%20value%20you%20want.%20The%20following%20code%20does%20this%20automatically%20for%20you%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Edef%20createTables(text%3DNone%2C%20name%3DNone)%3A%5Cn%20%20%20%20if%20text%20is%20None%3A%5Cn%20%20%20%20%20%20%20%20text%20%3D%20editor.get_text()%5Cn%20%20%20%20if%20name%20is%20None%3A%5Cn%20%20%20%20%20%20%20%20name%20%3D%20'%7B%7D.html'.format(os.path.basename(editor.get_path()))%5Cn%20%20%20%20path%20%3D%20os.path.join(os.path.expanduser('~%2FDocuments')%2C%20name)%5Cn%20%20%20%20with%20open(path%2C%20'wb')%20as%20f%3A%5Cn%20%20%20%20%20%20%20%20f.write(TEMPLATE.format('%5C%5Cn'.join(%5B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20TEMPLATE_ROW.format(x)%20for%20x%20in%20text.split('%5C%5Cn')%20if%20x%20!%3D%20''%5Cn%20%20%20%20%20%20%20%20%5D)))%5Cn%20%20%20%20webbrowser.open(%26quot%3Bfile%3A%2F%2F%7B%7D%26quot%3B.format(path))%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EHowever%20I%20would%20recommend%20against%20this%20on%20the%20basis%20that%2C%20if%20the%20%3Ccode%3E.html%3C%2Fcode%3E%20was%20not%20appended%20to%20the%20name%20(or%20even%20just%20changing%20the%20name%20in%20any%20way%20shape%20or%20form)%20then%20it%20will%20replace%20the%20contents%20of%20the%20file%20you%20are%20working%20on.%20While%20this%20might%20be%20decent%20when%20rendered%20out%20it%20is%20not%20as%20easy%20to%20read%20as%20markdown%20is%20as%20%3Ccode%3Eplaintext%3C%2Fcode%3E.%20Hence%20I%20have%20used%20%3Ccode%3E.tmp.html%3C%2Fcode%3E%20as%20only%20one%20file%20can%20be%20open%20at%20a%20time%20and%20this%20reduces%20'clutter'%20from%20your%20documents%20folder%20(instead%20of%20dozens%20of%20%3Ccode%3Exyz.md.html%3C%2Fcode%3E%20duplicate%20files%20there%20is%20just%20one%20%3Ccode%3E.tmp.html%3C%2Fcode%3E).%20%3Ccode%3E.tmp.html%3C%2Fcode%3E%20can%20be%20deleted%20whenever%20you%20want%20and%20will%20not%20damage%20you%20script%20file.%20(Also%20adding%20the%20prefix%20of%20%3Ccode%3E.%3C%2Fcode%3E%20means%20the%20file%20will%20be%20hidden%20(reducing%20visual%20clutter)).%20Sorry%20if%20this%20has%20gone%20to%20far%20off%20on%20a%20wild%20tangent.%20Hope%20it%20answers%20your%20question%20as%20well...%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476699092953%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222969%22%2C%22tid%22%3A%223578%22%2C%22title%22%3A%22Script%20to%20storyboard%22%2C%22cid%22%3A%226%22%2C%22slug%22%3A%223578%2Fscript-to-storyboard%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%229%22%7D%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-17T10%3A11%3A32.953Z%22%7D%2C%7B%22pid%22%3A%2221913%22%2C%22tid%22%3A%223585%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fprocryon%5C%22%3E%40procryon%3C%2Fa%3E%3A%20%3Ccode%3Efloat(second_word)%3C%2Fcode%3E%20is%20never%20stored%20hence%2C%20%3Ccode%3Escreen.setBrightness_(second_word)%3C%2Fcode%3E%20will%20fail%20as%20a%20%3Ccode%3Estr%3C%2Fcode%3E%20object%20is%20being%20passed%20as%20an%20argument%20instead%20of%20a%20%3Ccode%3Efloat%3C%2Fcode%3E%20or%20%3Ccode%3Eint%3C%2Fcode%3E%20object.%3Cbr%20%2F%3E%5CnHence%3A%20%3Ccode%3Efloat_value%20%3D%20float(second_word)%3C%2Fcode%3E%20and%20changing%20%3Ccode%3Escreen_word%3C%2Fcode%3E%20to%20%3Ccode%3Efloat_value%3C%2Fcode%3E%20in%20%3Ccode%3Escreen.setBrightness_%3C%2Fcode%3E%20should%20resolve%20your%20issue.%3Cbr%20%2F%3E%5CnI%20agree%20that%20%3Ccode%3Ectypes%3C%2Fcode%3E%2F%3Ccode%3Eobjc_util%3C%2Fcode%3E%20errors%20can%20sometimes%20be%20a%20little%20hard%20to%20read%2C%20however%20the%20error%20type%20(%3Ccode%3ETypeError%3C%2Fcode%3E%2C%20%3Ccode%3EValueError%3C%2Fcode%3E%2C%20etc)%20can%20be%20a%20hint%20towards%20what%20the%20issue%20might%20be.%20In%20this%20instance%20passing%20a%20%3Ccode%3Estr%3C%2Fcode%3E%20argument%20where%20a%20%3Ccode%3Efloat%3C%2Fcode%3E%20or%20%3Ccode%3Eint%3C%2Fcode%3E%20is%20expected.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476650381613%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222862%22%2C%22tid%22%3A%223585%22%2C%22title%22%3A%22Split%20a%20string%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223585%2Fsplit-a-string%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-16T20%3A39%3A41.613Z%22%7D%2C%7B%22pid%22%3A%2221911%22%2C%22tid%22%3A%223578%22%2C%22content%22%3A%22%3Cp%3ESorry%20didn't%20realise%20I%20forgot%20to%20add%20that.%20At%20the%20top%20of%20the%20python%20file%20add%20%3Ccode%3Eimport%20os%3C%2Fcode%3E%20that%20should%20fix%20it.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476649541230%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222969%22%2C%22tid%22%3A%223578%22%2C%22title%22%3A%22Script%20to%20storyboard%22%2C%22cid%22%3A%226%22%2C%22slug%22%3A%223578%2Fscript-to-storyboard%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%229%22%7D%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-16T20%3A25%3A41.230Z%22%7D%2C%7B%22pid%22%3A%2221894%22%2C%22tid%22%3A%223578%22%2C%22content%22%3A%22%3Cp%3EThis%20is%20just%20a%20really%20basic%20concept%20for%20it%2C%20but%20add%20this%20to%20a%20workflow%20calling%20this%20script%20and%20see%20if%20it%20does%20what%20you%20want.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eimport%20editor%5Cnimport%20os%5Cnimport%20webbrowser%5Cn%5Cn%5CnTEMPLATE%20%3D%20'''%26lt%3Bhtml%26gt%3B%5Cn%20%20%20%20%26lt%3Bhead%26gt%3B%5Cn%20%20%20%20%26lt%3B%2Fhead%26gt%3B%5Cn%20%20%20%20%26lt%3Bbody%26gt%3B%5Cn%20%20%20%20%20%20%20%20%26lt%3Btable%26gt%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7B%7D%5Cn%20%20%20%20%20%20%20%20%26lt%3B%2Ftable%26gt%3B%5Cn%20%20%20%20%26lt%3B%2Fbody%26gt%3B%5Cn%26lt%3B%2Fhtml%26gt%3B%5Cn'''%5Cn%5CnTEMPLATE_ROW%20%3D%20'''%26lt%3Btr%26gt%3B%5Cn%26lt%3Btd%26gt%3B%20%7B%7D%20%26lt%3B%2Ftd%26gt%3B%5Cn%20%20%20%20%26lt%3Btd%26gt%3B%5Cn%20%20%20%20%20%20%20%20%26lt%3Bdiv%20style%3D'width%3A%20300px%3B%20height%3A%20300px%3B%20border%3A%201px%20solid%20black%3B'%26gt%3B%5Cn%20%20%20%20%20%20%20%20%26lt%3B%2Fdiv%26gt%3B%5Cn%20%20%20%20%26lt%3B%2Ftd%26gt%3B%5Cn%26lt%3B%2Ftr%26gt%3B%5Cn'''%5Cn%5Cn%5Cndef%20createTables(text%3DNone)%3A%5Cn%20%20%20%20if%20text%20is%20None%3A%5Cn%20%20%20%20%20%20%20%20text%20%3D%20editor.get_text()%5Cn%20%20%20%20path%20%3D%20os.path.join(os.path.expanduser('~%2FDocuments')%2C%20'.tmp.html')%5Cn%20%20%20%20with%20open(path%2C%20'wb')%20as%20f%3A%5Cn%20%20%20%20%20%20%20%20f.write(TEMPLATE.format('%5C%5Cn'.join(%5B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20TEMPLATE_ROW.format(x)%20for%20x%20in%20text.split('%5C%5Cn')%20if%20x%20!%3D%20''%5Cn%20%20%20%20%20%20%20%20%5D)))%5Cn%20%20%20%20webbrowser.open(%26quot%3Bfile%3A%2F%2F%7B%7D%26quot%3B.format(path))%5Cn%5CncreateTables()%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476568328595%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222969%22%2C%22tid%22%3A%223578%22%2C%22title%22%3A%22Script%20to%20storyboard%22%2C%22cid%22%3A%226%22%2C%22slug%22%3A%223578%2Fscript-to-storyboard%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%229%22%7D%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-15T21%3A52%3A08.595Z%22%7D%2C%7B%22pid%22%3A%2221877%22%2C%22tid%22%3A%223577%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fuj_jonas%5C%22%3E%40uj_jonas%3C%2Fa%3E%20instead%20of%20making%20%3Ccode%3Emain%3C%2Fcode%3E%20a%20%3Ccode%3Eui.ScrollView%3C%2Fcode%3E%20in%20your%20code%20make%20%3Ccode%3Ewv_container%3C%2Fcode%3E%20a%20%3Ccode%3Eui.ScrollView%3C%2Fcode%3E.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476511691296%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222748%22%2C%22tid%22%3A%223577%22%2C%22title%22%3A%22WebView%20not%20allowing%20me%20to%20scroll%20to%20the%20bottom%20right%20corner%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223577%2Fwebview-not-allowing-me-to-scroll-to-the-bottom-right-corner%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-15T06%3A08%3A11.296Z%22%7D%2C%7B%22pid%22%3A%2221876%22%2C%22tid%22%3A%223578%22%2C%22content%22%3A%22%3Cp%3EI'm%20just%20putting%20ideas%20out%20here%2C%20but%20split%20the%20paragraphs%20with%20%3Ccode%3Estr.split('%5C%5Cn')%3C%2Fcode%3E%20and%20then%20use%20a%20tableview%20with%20a%20custom%20cell%20to%20display%20the%20text%20and%20a%20%3Ccode%3Estoryboard%3C%2Fcode%3E%20view.%20Then%20tell%20the%20scrollview%20to%20break%20on%20pages.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221476511472964%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222969%22%2C%22tid%22%3A%223578%22%2C%22title%22%3A%22Script%20to%20storyboard%22%2C%22cid%22%3A%226%22%2C%22slug%22%3A%223578%2Fscript-to-storyboard%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%229%22%7D%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-15T06%3A04%3A32.964Z%22%7D%2C%7B%22pid%22%3A%2221603%22%2C%22tid%22%3A%223529%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Frmurtsoo%5C%22%3E%40RMurtsoo%3C%2Fa%3E%20I%20am%20going%20to%20try%20an%20explain%20why%20this%20hasn't%20worked%20for%20you%20with%20out%20actually%20giving%20you%20a%20direct%20answer%2C%20not%20because%20I%20am%20trying%20to%20be%20rude%2Fannoying%20but%20it%20is%20in%20my%20honest%20belief%20that%20we%20don't%20learn%20very%20well%20when%20just%20given%20an%20answer.%20So%20if%20this%20does%20come%20across%20as%20rude%20or%20demeaning%20I%20appologise.%3Cbr%20%2F%3E%5CnSo%20to%20pull%20your%20code%20apart%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eview%20%3D%20ui.View()%20%20%23%20this%20is%20correct%20however%20you%20might%20want%20to%20consider%20setting%20a%20frame%20size.%20%60view%20%3D%20ui.View(frame%3D(0%2C0%2Cwidth%2Cheight))%60%20as%20the%20default%20is%20less%20than%20200%2F200%20from%20memory%5Cnview.present('portrait')%20%20%23%20from%20documentation%20%60ui.View.present(style%3D'default'%2C%20animated%3DTrue%2C%20popover_location%3DNone%2C%20hide_title_bar%3DFalse%2C%20title_bar_color%3DNone%2C%20title_color%3DNone%2C%20orientations%3DNone)%60%20therefore%20if%20you%20want%20to%20force%20a%20orientation%20you%20need%20to%20provide%20values%20for%20%60orientations%60%20not%20%60style%60%20http%3A%2F%2Fomz-software.com%2Fpythonista%2Fdocs%2Fios%2Fui.html%23ui.View.present%5Cn%5Cndef%20button()%3A%20%20%23%20%60ui.Button%60%20actions%20require%20a%20sender%20argument%2C%20ie%20%60def%20button(sender)%3A...%60%20where%20%60sender%60%20can%20be%20named%20anything%5Cn%20%20%20%20ui.Imageview('Image').height%20%3D%20120%20%20%23%20this%20creates%20a%20new%20%60ui.ImageView%60%20and%20doesn't%20actually%20reference%20any%20view%20from%20you%20%60view%60%20variable%20in%20the%20global%20stack.%20This%20is%20why%20you%20%60ui.ImageView%60%20height%20is%20not%20changing.%20Consider%20reading%20the%20documentation%20and%20examples%20to%20see%20how%20this%20is%20done%5Cn%5Cnimg%20%3D%20ui.ImageView()%20%20%23%20this%20is%20correct%20however%20you%20might%20want%20to%20set%20a%20new%20frame%20size%20here%20as%20the%20default%20is%200%2F0.%20Which%20cause%20also%20be%20an%20attributing%20reason%20to%20why%20you%20aren't%20seeing%20anything.%20%60ui.ImageView(frame%3D(0%2C0%2C200%2C200)%60%20or%20you%20can%20set%20it%20later%20with%20%60img.width%60%2C%20%60img.height%60%2C%20%60img.x%60%20and%20%60img.y%60%5Cnimg.name%20%3D%20'Veer'%5Cnimg.heigt%20%3D%20150%20%20%23%20I'm%20going%20to%20assume%20that%20this%20is%20just%20a%20typo%5Cnview.add_subview(img)%5Cn%5Cnbutton%20%3D%20ui.Button()%20%20%23%20by%20naming%20the%20variable%20of%20this%20object%20to%20%60button%60%20you%20have%20overrided%20the%20method%20by%20the%20same%20name%2C%20thus%20you%20will%20get%20a%20%60Exception%60%20when%20tapping%20the%20button.%20Consider%20renaming%20either%20the%20method%20name%20to%20something%20else%20or%20renaming%20this%20variable%20to%20something%20else.%5Cnbutton.action%20%3D%20button%5Cnview.add_subview(button)%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EI%20would%20highly%20recommend%20reading%20the%20documentation%20for%20Pythonista%2C%20and%20for%20Python.%20Out%20of%20curiosity%20which%20version%20of%20Pythonista%20are%20you%20using%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221474586882288%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222868%22%2C%22tid%22%3A%223529%22%2C%22title%22%3A%22How%20to%20change%20a%20size%20from%20a%20subview%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223529%2Fhow-to-change-a-size-from-a-subview%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%224%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-09-22T23%3A28%3A02.288Z%22%7D%2C%7B%22pid%22%3A%2220557%22%2C%22tid%22%3A%223368%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcook%5C%22%3E%40cook%3C%2Fa%3E%20%3Ccode%3Eshared_application.setStatusBarHidden_%3C%2Fcode%3E%20is%20a%20function%20not%20a%20variable.%20Try%20%3Ccode%3Eshared_application.setStatusBarHidden_(True)%3C%2Fcode%3E.%3Cbr%20%2F%3E%5CnThe%20same%20goes%20for%20%3Ccode%3EprefersStatusBarHidden_%3C%2Fcode%3E%3C%2Fp%3E%5Cn%3Cp%3EAs%20to%20whether%20or%20not%20it%20will%20work%2C%20I%20don't%20know%2C%20I%20would%20need%20to%20do%20further%20research.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221469240797569%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%2221%22%2C%22tid%22%3A%223368%22%2C%22title%22%3A%22objc%20setStatusBarHidden....possible%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223368%2Fobjc-setstatusbarhidden-possible%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-07-23T02%3A26%3A37.569Z%22%7D%2C%7B%22pid%22%3A%2218775%22%2C%22tid%22%3A%223077%22%2C%22content%22%3A%22%3Cp%3EI%20still%20have%20spare%20spaces%20on%20my%20account%2C%20I%20haven't%20used%20it%20much%20recently.%20So%20if%20you%20want%20to%20host%20from%20there%2C%20send%20me%20the%20details%20and%20I%20can%20set%20it%20up%20if%20you%20want.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221462313641582%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A45%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221025%22%2C%22tid%22%3A%223077%22%2C%22title%22%3A%22Pythonista%20Slack%20or%20Mattermost%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223077%2Fpythonista-slack-or-mattermost%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2254%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-05-03T22%3A14%3A01.582Z%22%7D%2C%7B%22pid%22%3A%2218774%22%2C%22tid%22%3A%223099%22%2C%22content%22%3A%22%3Cp%3EGood%20catch%2C%20I%20can't%20say%20I%20have%20done%20a%20speed%20test%20on%20iOS%20to%20see%20the%20differences%20between%20the%20two%2C%20but%20in%20general%20yes%20%3Ccode%3Ebyref(error)%3C%2Fcode%3E%20is%20faster%20than%20%3Ccode%3Epointer(error)%3C%2Fcode%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221462313508853%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22777%22%2C%22tid%22%3A%223099%22%2C%22title%22%3A%22Mysterious%20Crash%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223099%2Fmysterious-crash%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%227%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-05-03T22%3A11%3A48.853Z%22%7D%2C%7B%22pid%22%3A%2218771%22%2C%22tid%22%3A%223077%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20my%20email%20is%20%26lt%3Bdeleted%26gt%3B%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22250%22%2C%22timestamp%22%3A%221462313118478%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A43%2C%22user%22%3A%7B%22uid%22%3A%22250%22%2C%22username%22%3A%22Cethric%22%2C%22userslug%22%3A%22cethric%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fdaa7ef93bfc7f381552065c0b3ef84e2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221025%22%2C%22tid%22%3A%223077%22%2C%22title%22%3A%22Pythonista%20Slack%20or%20Mattermost%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223077%2Fpythonista-slack-or-mattermost%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2254%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-05-03T22%3A05%3A18.478Z%22%7D%5D%2C%22nextStart%22%3A20%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fposts%22%2C%22account%2Fposts%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22L5PjVKEn-Zs5ZVVIGlx-2nvOerZ6-aDthfi4%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fposts%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="posts.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

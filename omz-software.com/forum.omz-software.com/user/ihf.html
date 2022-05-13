@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ihf | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"iHvbOTXC-Tf6oTS2uKvVj7N379k8nYaBefbk","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="ihf.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="ihf.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="ihf.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="ihf.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="ihf" data-uid="878">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="ihf.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="https://forum.omz-software.com/user/ihf/following"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="https://forum.omz-software.com/user/ihf/followers"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="https://forum.omz-software.com/user/ihf/topics"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="https://forum.omz-software.com/user/ihf/posts"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="https://forum.omz-software.com/user/ihf/groups"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="ihf.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> ihf</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="ihf.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="ihf.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+						
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="31">31</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="1050">1050</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="12982">12982</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+					
+
+					
+
+					
+
+					
+
+					
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="4">4</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="2">2</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2015-08-06T07:22:07.766Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2022-05-11T11:51:28.508Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="48444" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> After doing a delete with children the app freezes.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-05-06T12:50:39.697Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/577">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48443" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> Most importantly, get some rest! As to continuing with Pythonista or switching to Pyto, that is a tough call. As least to date my experience with Pyto has not been good. It fails more frequently than Pythonista. Of course, given some degree of continuing support there is hope that it will eventually be more reliable than Pythonista, which gets no support. I suppose if you are interested in making the transition to Pyto for your projects more generally, then Outline is a good way to do it since you already have the feature-set, logic, and most of the code. If you are asking whether I would like to continue using Outline for the foreseeable future, the answer is yes.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-05-03T14:56:39.994Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/576">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48434" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> i’m so sorry to hear that. I hope you  have a very mild case. Best wishes for a speedy recovery.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-30T18:38:51.927Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/573">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48404" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> I hope that you enjoyed (or are still enjoying) your vacation. Unfortunately, the script is freezing rather frequently now. I’m not even sure what a minimal failing case is. I thought it was when I tried to delete an empty last item but I have seen it freeze at other times as well. I know this is not what you wanted to hear.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-23T23:27:41.574Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/569">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48395" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> It appears to be working now.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-18T20:28:34.807Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/567">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48379" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> I am using the latest version which is running the shortcut properly. I have an outline with a blank item at the end and if I try to delete it through the menu “delete with children” it hangs the program.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-14T21:53:34.461Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/563">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48377" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> many times over :-)</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-14T17:02:11.095Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/561">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48375" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> It works! Thank you!</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-14T17:00:11.164Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/559">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48373" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> What happens if you have a key in Data Jar that in turn has a value of a dictionary and the key values in the dictionary are the Outline names with their content. Then the shortcut to get a value based on key from Data Jar would get you the dictionary and the shortcut to get values from a dictionary would get you the outline text. Would that work?</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-14T14:26:39.348Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/557">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="48369" data-uid="878">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="ihf.html">
+					<img title="ihf" class="img-rounded user-img" src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="ihf.html">
+					<strong><span>ihf</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="cvp.html">@cvp</a> Sorry about the traceback, I first got a Pythonista error but restarting it cleared it. In regard to Data Jar, I believe that the Outlines could be one key and that key can have values such as lists or dictionaries. The dictionary (or list) could presumably hold each separate outline. However, a bigger problem is that the modified outline has yet to show up on the Watch (it shows up on 2 iPads so it must be on iCloud).</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2022-04-14T13:10:36.580Z"></span> &bull;
+						<a href="https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2/553">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="878" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22followingCount%22%3A2%2C%22fullname%22%3A%22%22%2C%22passwordExpiry%22%3A%220%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%22%22%2C%22postcount%22%3A%221050%22%2C%22status%22%3A%22offline%22%2C%22followerCount%22%3A4%2C%22website%22%3A%22%22%2C%22location%22%3A%22%22%2C%22joindate%22%3A%222015-08-06T07%3A22%3A07.766Z%22%2C%22uploadedpicture%22%3A%22%22%2C%22banned%22%3Afalse%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22userslug%22%3A%22ihf%22%2C%22lastonline%22%3A%222022-05-11T11%3A51%3A28.508Z%22%2C%22lastposttime%22%3A%221651841439697%22%2C%22profileviews%22%3A%2212982%22%2C%22reputation%22%3A%2231%22%2C%22uid%22%3A%22878%22%2C%22topiccount%22%3A%22111%22%2C%22username%22%3A%22ihf%22%2C%22email%22%3A%22%22%2C%22age%22%3A%22%22%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%22878%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22http%3A%2F%2F%22%2C%22websiteName%22%3A%22%22%2C%22posts%22%3A%5B%7B%22pid%22%3A%2248444%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20After%20doing%20a%20delete%20with%20children%20the%20app%20freezes.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221651841439697%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A577%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-05-06T12%3A50%3A39.697Z%22%7D%2C%7B%22pid%22%3A%2248443%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20Most%20importantly%2C%20get%20some%20rest!%20As%20to%20continuing%20with%20Pythonista%20or%20switching%20to%20Pyto%2C%20that%20is%20a%20tough%20call.%20As%20least%20to%20date%20my%20experience%20with%20Pyto%20has%20not%20been%20good.%20It%20fails%20more%20frequently%20than%20Pythonista.%20Of%20course%2C%20given%20some%20degree%20of%20continuing%20support%20there%20is%20hope%20that%20it%20will%20eventually%20be%20more%20reliable%20than%20Pythonista%2C%20which%20gets%20no%20support.%20I%20suppose%20if%20you%20are%20interested%20in%20making%20the%20transition%20to%20Pyto%20for%20your%20projects%20more%20generally%2C%20then%20Outline%20is%20a%20good%20way%20to%20do%20it%20since%20you%20already%20have%20the%20feature-set%2C%20logic%2C%20and%20most%20of%20the%20code.%20If%20you%20are%20asking%20whether%20I%20would%20like%20to%20continue%20using%20Outline%20for%20the%20foreseeable%20future%2C%20the%20answer%20is%20yes.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221651589799994%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A576%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-05-03T14%3A56%3A39.994Z%22%7D%2C%7B%22pid%22%3A%2248434%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20i%E2%80%99m%20so%20sorry%20to%20hear%20that.%20I%20hope%20you%20%20have%20a%20very%20mild%20case.%20Best%20wishes%20for%20a%20speedy%20recovery.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221651343931927%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A573%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-30T18%3A38%3A51.927Z%22%7D%2C%7B%22pid%22%3A%2248404%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20I%20hope%20that%20you%20enjoyed%20(or%20are%20still%20enjoying)%20your%20vacation.%20Unfortunately%2C%20the%20script%20is%20freezing%20rather%20frequently%20now.%20I%E2%80%99m%20not%20even%20sure%20what%20a%20minimal%20failing%20case%20is.%20I%20thought%20it%20was%20when%20I%20tried%20to%20delete%20an%20empty%20last%20item%20but%20I%20have%20seen%20it%20freeze%20at%20other%20times%20as%20well.%20I%20know%20this%20is%20not%20what%20you%20wanted%20to%20hear.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221650756461574%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A569%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-23T23%3A27%3A41.574Z%22%7D%2C%7B%22pid%22%3A%2248395%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20It%20appears%20to%20be%20working%20now.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221650313714807%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A567%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-18T20%3A28%3A34.807Z%22%7D%2C%7B%22pid%22%3A%2248379%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20I%20am%20using%20the%20latest%20version%20which%20is%20running%20the%20shortcut%20properly.%20I%20have%20an%20outline%20with%20a%20blank%20item%20at%20the%20end%20and%20if%20I%20try%20to%20delete%20it%20through%20the%20menu%20%E2%80%9Cdelete%20with%20children%E2%80%9D%20it%20hangs%20the%20program.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221649973214461%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A563%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-14T21%3A53%3A34.461Z%22%7D%2C%7B%22pid%22%3A%2248377%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20many%20times%20over%20%3A-)%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221649955731095%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A561%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-14T17%3A02%3A11.095Z%22%7D%2C%7B%22pid%22%3A%2248375%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20It%20works!%20Thank%20you!%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221649955611164%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A559%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-14T17%3A00%3A11.164Z%22%7D%2C%7B%22pid%22%3A%2248373%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20What%20happens%20if%20you%20have%20a%20key%20in%20Data%20Jar%20that%20in%20turn%20has%20a%20value%20of%20a%20dictionary%20and%20the%20key%20values%20in%20the%20dictionary%20are%20the%20Outline%20names%20with%20their%20content.%20Then%20the%20shortcut%20to%20get%20a%20value%20based%20on%20key%20from%20Data%20Jar%20would%20get%20you%20the%20dictionary%20and%20the%20shortcut%20to%20get%20values%20from%20a%20dictionary%20would%20get%20you%20the%20outline%20text.%20Would%20that%20work%3F%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221649946399348%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A557%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-14T14%3A26%3A39.348Z%22%7D%2C%7B%22pid%22%3A%2248369%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20Sorry%20about%20the%20traceback%2C%20I%20first%20got%20a%20Pythonista%20error%20but%20restarting%20it%20cleared%20it.%20In%20regard%20to%20Data%20Jar%2C%20I%20believe%20that%20the%20Outlines%20could%20be%20one%20key%20and%20that%20key%20can%20have%20values%20such%20as%20lists%20or%20dictionaries.%20The%20dictionary%20(or%20list)%20could%20presumably%20hold%20each%20separate%20outline.%20However%2C%20a%20bigger%20problem%20is%20that%20the%20modified%20outline%20has%20yet%20to%20show%20up%20on%20the%20Watch%20(it%20shows%20up%20on%202%20iPads%20so%20it%20must%20be%20on%20iCloud).%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22878%22%2C%22timestamp%22%3A%221649941836580%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A553%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222281%22%2C%22tid%22%3A%227248%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%22579%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222022-04-14T13%3A10%3A36.580Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22iHvbOTXC-Tf6oTS2uKvVj7N379k8nYaBefbk%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="ihf.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

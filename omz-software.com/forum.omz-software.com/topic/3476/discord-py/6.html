@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Discord.py | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Discord.py" />
+	<meta name="description" content="How do I use something called discord.py? https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;Rapptz&amp;#x2F;discord.py I tried using stash but I couldn&amp;#x27;t get it to work. " />
+	<meta property="og:title" content="Discord.py" />
+	<meta property="og:description" content="How do I use something called discord.py? https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;Rapptz&amp;#x2F;discord.py I tried using stash but I couldn&amp;#x27;t get it to work. " />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;3476&#x2F;discord-py" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;bc6dcab597f47b458d8aa3eefe7b95bf?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;bc6dcab597f47b458d8aa3eefe7b95bf?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="article:published_time" content="2016-09-03T02:16:54.965Z" />
+	<meta property="article:modified_time" content="2018-01-19T23:42:29.051Z" />
+	<meta property="article:section" content="Pythonista" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="https://forum.omz-software.com/topic/3476.rss" />
+	<link rel="canonical" href="https://forum.omz-software.com/topic/3476/discord-py" />
+	<link rel="up" href="../../../../omz-software.com/pythonista/forums.html" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"4XwdfEoE-wsSR30NRla8FUUteM4CPBD_li4w","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="6.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="6.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="6.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="6.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../../omz-software.com/pythonista/forums.html" itemprop="url">
+			<span itemprop="title">
+				Pythonista
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Discord.py
+												<a target="_blank" href="https://forum.omz-software.com/topic/3476.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock hidden"></i> <span class="topic-title" component="topic/title">Discord.py</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="3476">
+			<li component="post" class="clearfix "data-pid="21265" data-uid="2827" data-username="SpiesWithin" data-userslug="spieswithin" data-index="0" data-timestamp="1472869015212" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2016-09-03T02:16:55.212Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/spieswithin.html">
+			<img src="https://s.gravatar.com/avatar/bc6dcab597f47b458d8aa3eefe7b95bf?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/spieswithin.html" itemprop="author" data-username="SpiesWithin" data-uid="2827">SpiesWithin</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/1"><span class="timeago" title="2016-09-03T02:16:55.212Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>How do I use something called <a href="http://discord.py" rel="nofollow">discord.py</a>? <a href="https://github.com/Rapptz/discord.py" rel="nofollow">https://github.com/Rapptz/discord.py</a> I tried using stash but I couldn't get it to work.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="15">15</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="14697">14697</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="21276" data-uid="2827" data-username="SpiesWithin" data-userslug="spieswithin" data-index="1" data-timestamp="1472914033362" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2016-09-03T14:47:13.362Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/spieswithin.html">
+			<img src="https://s.gravatar.com/avatar/bc6dcab597f47b458d8aa3eefe7b95bf?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/spieswithin.html" itemprop="author" data-username="SpiesWithin" data-uid="2827">SpiesWithin</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/2"><span class="timeago" title="2016-09-03T14:47:13.362Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>There is a variable called client, which isn't defined in the module because you have to define it in the code you write. This is my current road block.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21306" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="2" data-timestamp="1473019173639" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T19:59:33.639Z">
+				<meta itemprop="dateModified" content="2016-09-04T20:00:11.840Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/3"><span class="timeago" title="2016-09-04T19:59:33.639Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>How to use <code>discord.py</code> has nothing to do with Pythonista itself. Why don't you read <a href="https://github.com/Rapptz/discord.py#quick-example" rel="nofollow">the example</a> on the page you linked:</p>
+<pre><code class="python">import discord
+import asyncio
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
+
+@client.event
+async def on_message(message):
+    if message.content.startswith('!test'):
+        counter = 0
+        tmp = await client.send_message(message.channel, 'Calculating messages...')
+        async for log in client.logs_from(message.channel, limit=100):
+            if log.author == message.author:
+                counter += 1
+
+        await client.edit_message(tmp, 'You have &#123;&#125; messages.'.format(counter))
+    elif message.content.startswith('!sleep'):
+        await asyncio.sleep(5)
+        await client.send_message(message.channel, 'Done sleeping')
+
+client.run('token')
+</code></pre>
+<p>I'm not sure whether <code>asyncio</code> works in Pythonista, though, it may not. The last time I used <a href="http://Discord.py" rel="nofollow">Discord.py</a> was almost a year ago, and it didn't use asyncio at that point. I believe there's still a legacy API available.</p>
+
+	
+</div>
+
+
+<small data-editor="webmaster4o" component="post/editor" class="hidden">last edited by <strong>Webmaster4o</strong> <span class="timeago" title="2016-09-04T20:00:11.840Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21307" data-uid="1634" data-username="ccc" data-userslug="ccc" data-index="3" data-timestamp="1473022060618" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2016-09-04T20:47:40.618Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/ccc.html">
+			<img src="../../../uploads/profile/1634-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/ccc.html" itemprop="author" data-username="ccc" data-uid="1634">ccc</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/4"><span class="timeago" title="2016-09-04T20:47:40.618Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Asyncio works in Pythonista and it is supercool!!</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21350" data-uid="2827" data-username="SpiesWithin" data-userslug="spieswithin" data-index="4" data-timestamp="1473206137711" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2016-09-06T23:55:37.711Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/spieswithin.html">
+			<img src="https://s.gravatar.com/avatar/bc6dcab597f47b458d8aa3eefe7b95bf?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/spieswithin.html" itemprop="author" data-username="SpiesWithin" data-uid="2827">SpiesWithin</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/5"><span class="timeago" title="2016-09-06T23:55:37.711Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a> Try it out,<br />
+It doesn't work for me, it says client not defined and I have no idea how to define it.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21426" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="5" data-timestamp="1473535242858" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2016-09-10T19:20:42.858Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="6.html"><span class="timeago" title="2016-09-10T19:20:42.858Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/spieswithin.html">@SpiesWithin</a> This example is correct. <code>client</code> is defined with <code>client = discord.Client()</code></p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21439" data-uid="2827" data-username="SpiesWithin" data-userslug="spieswithin" data-index="6" data-timestamp="1473644018465" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="6"></a>
+
+				<meta itemprop="datePublished" content="2016-09-12T01:33:38.465Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/spieswithin.html">
+			<img src="https://s.gravatar.com/avatar/bc6dcab597f47b458d8aa3eefe7b95bf?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/spieswithin.html" itemprop="author" data-username="SpiesWithin" data-uid="2827">SpiesWithin</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/7"><span class="timeago" title="2016-09-12T01:33:38.465Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a> I'm telling you, just try it out I am getting error after error</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="21440" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="7" data-timestamp="1473648855774" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="7"></a>
+
+				<meta itemprop="datePublished" content="2016-09-12T02:54:15.774Z">
+				<meta itemprop="dateModified" content="2016-09-12T02:56:54.183Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/8"><span class="timeago" title="2016-09-12T02:54:15.774Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I have always found the best way to get help is to describe exactly what error you get, and exactly what steps led you to that error.  People might know the easy answer, and can give you the answer quickly by seeing the traceback, or an explanation of what you tried.  I ignored this thread 5 or 6 times because I did not feel like figuring out where and how to install discord, or solving the other roadblock you implied that you encountered..  I guess seven times was the charm....</p>
+<p>I installed <a href="http://discord.py" rel="nofollow">discord.py</a> using stash:<br />
+$ pip install <a href="http://discord.py" rel="nofollow">discord.py</a><br />
+There were a few errors, because stash runs in py2, and aiohttp required py3, and also setup failed to run on most of the dependencies.  This happens, it is a limitation of the stash pip and ios environment, sometimes you need to do a little extra work.  But, we'll try anyway, see if it worked:</p>
+<pre><code>&gt;&gt;&gt; import discord
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/private/var/mobile/Containers/Shared/AppGroup/C534C622-2FDA-41F7-AE91-E3AAFE5FFC6B/Pythonista3/Documents/site-packages/discord/__init__.py&quot;, line 20, in &lt;module&gt;
+    from .client import Client, AppInfo, ChannelPermissions
+  File &quot;/private/var/mobile/Containers/Shared/AppGroup/C534C622-2FDA-41F7-AE91-E3AAFE5FFC6B/Pythonista3/Documents/site-packages/discord/client.py&quot;, line 42, in &lt;module&gt;
+    from .voice_client import VoiceClient
+  File &quot;/private/var/mobile/Containers/Shared/AppGroup/C534C622-2FDA-41F7-AE91-E3AAFE5FFC6B/Pythonista3/Documents/site-packages/discord/voice_client.py&quot;, line 64, in &lt;module&gt;
+    from .gateway import *
+  File &quot;/private/var/mobile/Containers/Shared/AppGroup/C534C622-2FDA-41F7-AE91-E3AAFE5FFC6B/Pythonista3/Documents/site-packages/discord/gateway.py&quot;, line 30, in &lt;module&gt;
+    import aiohttp
+  File &quot;/private/var/mobile/Containers/Shared/AppGroup/C534C622-2FDA-41F7-AE91-E3AAFE5FFC6B/Pythonista3/Documents/site-packages/aiohttp/__init__.py&quot;, line 4, in &lt;module&gt;
+    import multidict  # noqa
+ImportError: No module named 'multidict'
+</code></pre>
+<p>Ok, so sure enough, problem with importing <code>aiohttp</code>.  Seems like we need a module named <code>multidict</code>. A good first guess is pip...Back to stash, and <code>pip install multidict</code>.  <code>import discord</code> still fails, no package named <code>chardet</code>.  Ok, do you sense a pattern?  <code>pip install chardet</code>.  Importing discord now says <code>NameError: name 'errors' is not defined</code>.  That is wierd, since it is on a line that does not even mention <code>errors</code>.  Sometimes when you get an import error on package, it gets stuck on a bad state.   So we restart pythonista and try again.  Now <code>import discord</code> works (in python3 -- discord won't work as written in py2), and client=discord.Client() works too.</p>
+
+	
+</div>
+
+
+<small data-editor="jonb" component="post/editor" class="hidden">last edited by <strong>JonB</strong> <span class="timeago" title="2016-09-12T02:56:54.183Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27069" data-uid="3708" data-username="oakandsage" data-userslug="oakandsage" data-index="8" data-timestamp="1511821788798" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="8"></a>
+
+				<meta itemprop="datePublished" content="2017-11-27T22:29:48.798Z">
+				<meta itemprop="dateModified" content="2017-11-27T22:30:39.638Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/oakandsage">
+			<img src="https://s.gravatar.com/avatar/7b42efe7dbae21dbdfadff520ee31015?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/oakandsage" itemprop="author" data-username="oakandsage" data-uid="3708">oakandsage</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/9"><span class="timeago" title="2017-11-27T22:29:48.798Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>So I've been looking into this, and I've hit a snag. I can't tell whether or not it's insurmountable.</p>
+<p>The <a href="http://discord.py" rel="nofollow">discord.py</a> library depends on websockets.<br />
+Websockets won't install via python 2, so StaSh doesn't install it properly. You can , in theory, run <a href="http://setup.py" rel="nofollow">setup.py</a> manually. But when I look at <a href="https://github.com/aaugustin/websockets/blob/master/setup.py" rel="nofollow">the websockets setup.py file</a>, I see this in the setuptools call:</p>
+<pre><code>ext_modules = [
+    setuptools.Extension(
+        'websockets.speedups',
+        sources=['websockets/speedups.c'],
+        optional=not os.path.exists(os.path.join(root_dir, '.cibuildwheel')),
+    )
+]
+</code></pre>
+<p>Now, to me it looks like this is an optional extension in C, but I'm not sure whether websockets is ever going to install correctly. I don't have any experience with setuptools, so I don't know how SOL Pythonista's going to be when it hits that.</p>
+<p>I also can't figure out how to run <a href="http://setup.py" rel="nofollow">setup.py</a> (I just get a whole bunch of permission errors), so I haven't been able to verify whether or not it's possible to use websockets. It's even possible that websockets is actually installed properly (despite the issue report that says it can't be installed with pip install if pip is using python 2.x) and the issue with the failed coroutine detection is something else entirely.</p>
+<p>Regardless, it looks like it would be a challenge to do anything meaningful with the Discord API using <a href="http://discord.py" rel="nofollow">discord.py</a> in Pythonista.</p>
+
+	
+</div>
+
+
+<small data-editor="oakandsage" component="post/editor" class="hidden">last edited by <strong>oakandsage</strong> <span class="timeago" title="2017-11-27T22:30:39.638Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27070" data-uid="902" data-username="dgelessus" data-userslug="dgelessus" data-index="9" data-timestamp="1511825852538" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="9"></a>
+
+				<meta itemprop="datePublished" content="2017-11-27T23:37:32.538Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/dgelessus">
+			<img src="../../../uploads/profile/902-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/dgelessus" itemprop="author" data-username="dgelessus" data-uid="902">dgelessus</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/10"><span class="timeago" title="2017-11-27T23:37:32.538Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>It's not possible to run <code>setup.py</code>s under Pythonista directly, because of how different the directory structure is compared to a Python installation on a regular Unix or Windows system. (Even on normal systems the recommended way to install packages is to <code>pip install</code> the folder containing the <code>setup.py</code>, rather than running <code>setup.py install</code>.) Stash's <code>pip</code> does some hackery to make most <code>setup.py</code>s work in Pythonista, but since Stash is basically Python 2-only, that isn't an option for Python 3-only packages.</p>
+<p>If I'm reading the code correctly, the speedups are indeed optional. The <code>optional=not os.path.exists(...)</code> part makes it required only when running a CI build (which the library devs have presumably set up to build wheels for PyPI, so they want to force the speedups to be included there).</p>
+<p>You could try installing the library &quot;the manual way&quot; - install all dependencies somehow (Stash <code>pip</code>, or also manually), then find the directory or Python file containing the library's source code and copy that into <code>site-packages-3</code>. Assuming the library is used as <code>import discord</code>, that would be either a directory <code>discord</code> or a file <code>discord.py</code>, most likely located in the same directory as the <code>setup.py</code>.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27071" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="10" data-timestamp="1511838751874" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="10"></a>
+
+				<meta itemprop="datePublished" content="2017-11-28T03:12:31.874Z">
+				<meta itemprop="dateModified" content="2017-11-28T03:13:47.092Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/11"><span class="timeago" title="2017-11-28T03:12:31.874Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>For what its worth, I have websockets installed in pythonista.  I believe it only really needs asyncio, which is included in python 3 on pythonista.</p>
+<p>I frankly forget why or how I installed it -- at a minimum, just pip download, then untar.p, or it might be easier to use git clone.</p>
+
+	
+</div>
+
+
+<small data-editor="jonb" component="post/editor" class="hidden">last edited by <strong>JonB</strong> <span class="timeago" title="2017-11-28T03:13:47.092Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27898" data-uid="2137" data-username="Ivoah" data-userslug="ivoah" data-index="11" data-timestamp="1516349600350" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="11"></a>
+
+				<meta itemprop="datePublished" content="2018-01-19T08:13:20.350Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/ivoah">
+			<img src="https://s.gravatar.com/avatar/69889436fc06263094a3b873bb29f494?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/ivoah" itemprop="author" data-username="Ivoah" data-uid="2137">Ivoah</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/12"><span class="timeago" title="2018-01-19T08:13:20.350Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Has anyone made any progress on this? I've been trying for the last hour to get <a href="http://discord.py" rel="nofollow">discord.py</a> working on the latest Pythonista beta (3.1.1),  but haven't had much luck. Currently I'm stuck on getting aiohttp to work. A little bit of googling shows that at one point pythonista beta had aiohttp built in (<a href="https://forum.omz-software.com/topic/4456/ui-and-aiohttp">https://forum.omz-software.com/topic/4456/ui-and-aiohttp</a>), but that doesn't seem to be the case anymore. I was able to install aiohttp using pip from stash, but it seems the imports are messed up, with python complaining about not being able to find parts of the library.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27900" data-uid="149" data-username="zrzka" data-userslug="zrzka" data-index="12" data-timestamp="1516354245882" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="12"></a>
+
+				<meta itemprop="datePublished" content="2018-01-19T09:30:45.882Z">
+				<meta itemprop="dateModified" content="2018-01-19T09:49:27.528Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/zrzka">
+			<img src="https://s.gravatar.com/avatar/a503f14866aaa083332c81264860ac8e?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/zrzka" itemprop="author" data-username="zrzka" data-uid="149">zrzka</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/13"><span class="timeago" title="2018-01-19T09:30:45.882Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<ul>
+<li>Install Pythonista 3.2 (latest version from the App Store &gt; latest Pythonista beta 3.1.1)</li>
+<li><code>pip install aiohttp</code>
+<ul>
+<li>Extensions are gonna fail, ... but you can ignore them</li>
+</ul>
+</li>
+<li><code>pip install idna</code></li>
+<li>Working <a href="https://forum.omz-software.com/topic/4638/permission-error-with-multiprocessing-process/10">aiohttp example</a> in Pythonista</li>
+</ul>
+<blockquote>
+<p>with python complaining about not being able to find parts of the library</p>
+</blockquote>
+<p>No crystal ball, always paste what's the problem. If you read the error message you'll see that there's module import error - missing <code>idna</code>.</p>
+
+	
+</div>
+
+
+<small data-editor="zrzka" component="post/editor" class="hidden">last edited by <strong>zrzka</strong> <span class="timeago" title="2018-01-19T09:49:27.528Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27903" data-uid="2137" data-username="Ivoah" data-userslug="ivoah" data-index="13" data-timestamp="1516399354607" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="13"></a>
+
+				<meta itemprop="datePublished" content="2018-01-19T22:02:34.607Z">
+				<meta itemprop="dateModified" content="2018-01-28T18:45:38.070Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/ivoah">
+			<img src="https://s.gravatar.com/avatar/69889436fc06263094a3b873bb29f494?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/ivoah" itemprop="author" data-username="Ivoah" data-uid="2137">Ivoah</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/14"><span class="timeago" title="2018-01-19T22:02:34.607Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I followed your instructions, but it still doesn't work. When trying to import <code>aiohttp</code> it fails in the <code>__init__.py</code> file. It looks like it tries to import other parts of the library with <code>from .&lt;something&gt; import *</code>, but it isn't working. The exact message it gives is <code>name 'client' is not defined</code>. Pythonista says the error is on <a href="https://github.com/aio-libs/aiohttp/blob/v1.0.5/aiohttp/__init__.py#L38" rel="nofollow">line 38</a>, but I think it's actually <a href="https://github.com/aio-libs/aiohttp/blob/v1.0.5/aiohttp/__init__.py#L29" rel="nofollow">line 29</a>.</p>
+
+	
+</div>
+
+
+<small data-editor="ivoah" component="post/editor" class="hidden">last edited by <strong>Ivoah</strong> <span class="timeago" title="2018-01-28T18:45:38.070Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="27904" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="14" data-timestamp="1516405349051" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="14"></a>
+
+				<meta itemprop="datePublished" content="2018-01-19T23:42:29.051Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/3476/discord-py/15"><span class="timeago" title="2018-01-19T23:42:29.051Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="6.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="6.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="6.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="6.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>paste the entire traceback...</p>
+<p>Also, be sure to quit pythonista and try again. Sometimes if you get an error after starting to import, things get into a stuck state.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="15">15</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="14697">14697</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container hidden">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/3476/discord-py/6?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+
+
+		<li class="next pull-right disabled">
+			<a href="https://forum.omz-software.com/topic/3476/discord-py/6?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="3476" />
+<input type="hidden" template-variable="topic_slug" value="3476/discord-py" />
+<input type="hidden" template-variable="category_id" value="5" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="1" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="false" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Discord.py" />
+<input type="hidden" template-variable="postcount" value="15" />
+<input type="hidden" template-variable="viewcount" value="14697" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%223476%22%2C%22uid%22%3A%222827%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2221265%22%2C%22title%22%3A%22Discord.py%22%2C%22slug%22%3A%223476%2Fdiscord-py%22%2C%22timestamp%22%3A%221472869014965%22%2C%22lastposttime%22%3A%221516405349051%22%2C%22postcount%22%3A%2215%22%2C%22viewcount%22%3A%2214697%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2227904%22%2C%22relativeTime%22%3A%222016-09-03T02%3A16%3A54.965Z%22%2C%22lastposttimeISO%22%3A%222018-01-19T23%3A42%3A29.051Z%22%2C%22posts%22%3A%5B%7B%22timestamp%22%3A%221472869015212%22%2C%22content%22%3A%22%3Cp%3EHow%20do%20I%20use%20something%20called%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%3F%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FRapptz%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2FRapptz%2Fdiscord.py%3C%2Fa%3E%20I%20tried%20using%20stash%20but%20I%20couldn't%20get%20it%20to%20work.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221265%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222827%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-03T02%3A16%3A55.212Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%222827%22%2C%22username%22%3A%22SpiesWithin%22%2C%22userslug%22%3A%22spieswithin%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%225%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221472914033362%22%2C%22content%22%3A%22%3Cp%3EThere%20is%20a%20variable%20called%20client%2C%20which%20isn't%20defined%20in%20the%20module%20because%20you%20have%20to%20define%20it%20in%20the%20code%20you%20write.%20This%20is%20my%20current%20road%20block.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2221276%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222827%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-03T14%3A47%3A13.362Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%222827%22%2C%22username%22%3A%22SpiesWithin%22%2C%22userslug%22%3A%22spieswithin%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%225%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473019173639%22%2C%22content%22%3A%22%3Cp%3EHow%20to%20use%20%3Ccode%3Ediscord.py%3C%2Fcode%3E%20has%20nothing%20to%20do%20with%20Pythonista%20itself.%20Why%20don't%20you%20read%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2FRapptz%2Fdiscord.py%23quick-example%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ethe%20example%3C%2Fa%3E%20on%20the%20page%20you%20linked%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Eimport%20discord%5Cnimport%20asyncio%5Cn%5Cnclient%20%3D%20discord.Client()%5Cn%5Cn%40client.event%5Cnasync%20def%20on_ready()%3A%5Cn%20%20%20%20print('Logged%20in%20as')%5Cn%20%20%20%20print(client.user.name)%5Cn%20%20%20%20print(client.user.id)%5Cn%20%20%20%20print('------')%5Cn%5Cn%40client.event%5Cnasync%20def%20on_message(message)%3A%5Cn%20%20%20%20if%20message.content.startswith('!test')%3A%5Cn%20%20%20%20%20%20%20%20counter%20%3D%200%5Cn%20%20%20%20%20%20%20%20tmp%20%3D%20await%20client.send_message(message.channel%2C%20'Calculating%20messages...')%5Cn%20%20%20%20%20%20%20%20async%20for%20log%20in%20client.logs_from(message.channel%2C%20limit%3D100)%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if%20log.author%20%3D%3D%20message.author%3A%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20counter%20%2B%3D%201%5Cn%5Cn%20%20%20%20%20%20%20%20await%20client.edit_message(tmp%2C%20'You%20have%20%7B%7D%20messages.'.format(counter))%5Cn%20%20%20%20elif%20message.content.startswith('!sleep')%3A%5Cn%20%20%20%20%20%20%20%20await%20asyncio.sleep(5)%5Cn%20%20%20%20%20%20%20%20await%20client.send_message(message.channel%2C%20'Done%20sleeping')%5Cn%5Cnclient.run('token')%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EI'm%20not%20sure%20whether%20%3Ccode%3Easyncio%3C%2Fcode%3E%20works%20in%20Pythonista%2C%20though%2C%20it%20may%20not.%20The%20last%20time%20I%20used%20%3Ca%20href%3D%5C%22http%3A%2F%2FDiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3EDiscord.py%3C%2Fa%3E%20was%20almost%20a%20year%20ago%2C%20and%20it%20didn't%20use%20asyncio%20at%20that%20point.%20I%20believe%20there's%20still%20a%20legacy%20API%20available.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221473019211840%22%2C%22pid%22%3A%2221306%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-04T19%3A59%3A33.639Z%22%2C%22relativeEditTime%22%3A%222016-09-04T20%3A00%3A11.840Z%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2221307%22%2C%22uid%22%3A%221634%22%2C%22tid%22%3A%223476%22%2C%22content%22%3A%22%3Cp%3EAsyncio%20works%20in%20Pythonista%20and%20it%20is%20supercool!!%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221473022060618%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%221%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222016-09-04T20%3A47%3A40.618Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22reputation%22%3A%22587%22%2C%22postcount%22%3A%222938%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473206137711%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%20Try%20it%20out%2C%3Cbr%20%2F%3E%5CnIt%20doesn't%20work%20for%20me%2C%20it%20says%20client%20not%20defined%20and%20I%20have%20no%20idea%20how%20to%20define%20it.%3C%2Fp%3E%5Cn%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221350%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221306%22%2C%22uid%22%3A%222827%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-06T23%3A55%3A37.711Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%222827%22%2C%22username%22%3A%22SpiesWithin%22%2C%22userslug%22%3A%22spieswithin%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%225%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473535242858%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fspieswithin%5C%22%3E%40SpiesWithin%3C%2Fa%3E%20This%20example%20is%20correct.%20%3Ccode%3Eclient%3C%2Fcode%3E%20is%20defined%20with%20%3Ccode%3Eclient%20%3D%20discord.Client()%3C%2Fcode%3E%3C%2Fp%3E%5Cn%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221426%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221350%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-10T19%3A20%3A42.858Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473644018465%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%20I'm%20telling%20you%2C%20just%20try%20it%20out%20I%20am%20getting%20error%20after%20error%3C%2Fp%3E%5Cn%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22deleted%22%3Afalse%2C%22pid%22%3A%2221439%22%2C%22edited%22%3A%220%22%2C%22reputation%22%3A%220%22%2C%22toPid%22%3A%2221426%22%2C%22uid%22%3A%222827%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-12T01%3A33%3A38.465Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%222827%22%2C%22username%22%3A%22SpiesWithin%22%2C%22userslug%22%3A%22spieswithin%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%225%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221473648855774%22%2C%22content%22%3A%22%3Cp%3EI%20have%20always%20found%20the%20best%20way%20to%20get%20help%20is%20to%20describe%20exactly%20what%20error%20you%20get%2C%20and%20exactly%20what%20steps%20led%20you%20to%20that%20error.%20%20People%20might%20know%20the%20easy%20answer%2C%20and%20can%20give%20you%20the%20answer%20quickly%20by%20seeing%20the%20traceback%2C%20or%20an%20explanation%20of%20what%20you%20tried.%20%20I%20ignored%20this%20thread%205%20or%206%20times%20because%20I%20did%20not%20feel%20like%20figuring%20out%20where%20and%20how%20to%20install%20discord%2C%20or%20solving%20the%20other%20roadblock%20you%20implied%20that%20you%20encountered..%20%20I%20guess%20seven%20times%20was%20the%20charm....%3C%2Fp%3E%5Cn%3Cp%3EI%20installed%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%20using%20stash%3A%3Cbr%20%2F%3E%5Cn%24%20pip%20install%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%3Cbr%20%2F%3E%5CnThere%20were%20a%20few%20errors%2C%20because%20stash%20runs%20in%20py2%2C%20and%20aiohttp%20required%20py3%2C%20and%20also%20setup%20failed%20to%20run%20on%20most%20of%20the%20dependencies.%20%20This%20happens%2C%20it%20is%20a%20limitation%20of%20the%20stash%20pip%20and%20ios%20environment%2C%20sometimes%20you%20need%20to%20do%20a%20little%20extra%20work.%20%20But%2C%20we'll%20try%20anyway%2C%20see%20if%20it%20worked%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3E%26gt%3B%26gt%3B%26gt%3B%20import%20discord%5CnTraceback%20(most%20recent%20call%20last)%3A%5Cn%20%20File%20%26quot%3B%26lt%3Bstring%26gt%3B%26quot%3B%2C%20line%201%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20File%20%26quot%3B%2Fprivate%2Fvar%2Fmobile%2FContainers%2FShared%2FAppGroup%2FC534C622-2FDA-41F7-AE91-E3AAFE5FFC6B%2FPythonista3%2FDocuments%2Fsite-packages%2Fdiscord%2F__init__.py%26quot%3B%2C%20line%2020%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20from%20.client%20import%20Client%2C%20AppInfo%2C%20ChannelPermissions%5Cn%20%20File%20%26quot%3B%2Fprivate%2Fvar%2Fmobile%2FContainers%2FShared%2FAppGroup%2FC534C622-2FDA-41F7-AE91-E3AAFE5FFC6B%2FPythonista3%2FDocuments%2Fsite-packages%2Fdiscord%2Fclient.py%26quot%3B%2C%20line%2042%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20from%20.voice_client%20import%20VoiceClient%5Cn%20%20File%20%26quot%3B%2Fprivate%2Fvar%2Fmobile%2FContainers%2FShared%2FAppGroup%2FC534C622-2FDA-41F7-AE91-E3AAFE5FFC6B%2FPythonista3%2FDocuments%2Fsite-packages%2Fdiscord%2Fvoice_client.py%26quot%3B%2C%20line%2064%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20from%20.gateway%20import%20*%5Cn%20%20File%20%26quot%3B%2Fprivate%2Fvar%2Fmobile%2FContainers%2FShared%2FAppGroup%2FC534C622-2FDA-41F7-AE91-E3AAFE5FFC6B%2FPythonista3%2FDocuments%2Fsite-packages%2Fdiscord%2Fgateway.py%26quot%3B%2C%20line%2030%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20import%20aiohttp%5Cn%20%20File%20%26quot%3B%2Fprivate%2Fvar%2Fmobile%2FContainers%2FShared%2FAppGroup%2FC534C622-2FDA-41F7-AE91-E3AAFE5FFC6B%2FPythonista3%2FDocuments%2Fsite-packages%2Faiohttp%2F__init__.py%26quot%3B%2C%20line%204%2C%20in%20%26lt%3Bmodule%26gt%3B%5Cn%20%20%20%20import%20multidict%20%20%23%20noqa%5CnImportError%3A%20No%20module%20named%20'multidict'%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3EOk%2C%20so%20sure%20enough%2C%20problem%20with%20importing%20%3Ccode%3Eaiohttp%3C%2Fcode%3E.%20%20Seems%20like%20we%20need%20a%20module%20named%20%3Ccode%3Emultidict%3C%2Fcode%3E.%20A%20good%20first%20guess%20is%20pip...Back%20to%20stash%2C%20and%20%3Ccode%3Epip%20install%20multidict%3C%2Fcode%3E.%20%20%3Ccode%3Eimport%20discord%3C%2Fcode%3E%20still%20fails%2C%20no%20package%20named%20%3Ccode%3Echardet%3C%2Fcode%3E.%20%20Ok%2C%20do%20you%20sense%20a%20pattern%3F%20%20%3Ccode%3Epip%20install%20chardet%3C%2Fcode%3E.%20%20Importing%20discord%20now%20says%20%3Ccode%3ENameError%3A%20name%20'errors'%20is%20not%20defined%3C%2Fcode%3E.%20%20That%20is%20wierd%2C%20since%20it%20is%20on%20a%20line%20that%20does%20not%20even%20mention%20%3Ccode%3Eerrors%3C%2Fcode%3E.%20%20Sometimes%20when%20you%20get%20an%20import%20error%20on%20package%2C%20it%20gets%20stuck%20on%20a%20bad%20state.%20%20%20So%20we%20restart%20pythonista%20and%20try%20again.%20%20Now%20%3Ccode%3Eimport%20discord%3C%2Fcode%3E%20works%20(in%20python3%20--%20discord%20won't%20work%20as%20written%20in%20py2)%2C%20and%20client%3Ddiscord.Client()%20works%20too.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%7D%2C%22votes%22%3A%222%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221473649014183%22%2C%22pid%22%3A%2221440%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222016-09-12T02%3A54%3A15.774Z%22%2C%22relativeEditTime%22%3A%222016-09-12T02%3A56%3A54.183Z%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221511821788798%22%2C%22content%22%3A%22%3Cp%3ESo%20I've%20been%20looking%20into%20this%2C%20and%20I've%20hit%20a%20snag.%20I%20can't%20tell%20whether%20or%20not%20it's%20insurmountable.%3C%2Fp%3E%5Cn%3Cp%3EThe%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%20library%20depends%20on%20websockets.%3Cbr%20%2F%3E%5CnWebsockets%20won't%20install%20via%20python%202%2C%20so%20StaSh%20doesn't%20install%20it%20properly.%20You%20can%20%2C%20in%20theory%2C%20run%20%3Ca%20href%3D%5C%22http%3A%2F%2Fsetup.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Esetup.py%3C%2Fa%3E%20manually.%20But%20when%20I%20look%20at%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Faaugustin%2Fwebsockets%2Fblob%2Fmaster%2Fsetup.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ethe%20websockets%20setup.py%20file%3C%2Fa%3E%2C%20I%20see%20this%20in%20the%20setuptools%20call%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%3Eext_modules%20%3D%20%5B%5Cn%20%20%20%20setuptools.Extension(%5Cn%20%20%20%20%20%20%20%20'websockets.speedups'%2C%5Cn%20%20%20%20%20%20%20%20sources%3D%5B'websockets%2Fspeedups.c'%5D%2C%5Cn%20%20%20%20%20%20%20%20optional%3Dnot%20os.path.exists(os.path.join(root_dir%2C%20'.cibuildwheel'))%2C%5Cn%20%20%20%20)%5Cn%5D%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%3Cp%3ENow%2C%20to%20me%20it%20looks%20like%20this%20is%20an%20optional%20extension%20in%20C%2C%20but%20I'm%20not%20sure%20whether%20websockets%20is%20ever%20going%20to%20install%20correctly.%20I%20don't%20have%20any%20experience%20with%20setuptools%2C%20so%20I%20don't%20know%20how%20SOL%20Pythonista's%20going%20to%20be%20when%20it%20hits%20that.%3C%2Fp%3E%5Cn%3Cp%3EI%20also%20can't%20figure%20out%20how%20to%20run%20%3Ca%20href%3D%5C%22http%3A%2F%2Fsetup.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Esetup.py%3C%2Fa%3E%20(I%20just%20get%20a%20whole%20bunch%20of%20permission%20errors)%2C%20so%20I%20haven't%20been%20able%20to%20verify%20whether%20or%20not%20it's%20possible%20to%20use%20websockets.%20It's%20even%20possible%20that%20websockets%20is%20actually%20installed%20properly%20(despite%20the%20issue%20report%20that%20says%20it%20can't%20be%20installed%20with%20pip%20install%20if%20pip%20is%20using%20python%202.x)%20and%20the%20issue%20with%20the%20failed%20coroutine%20detection%20is%20something%20else%20entirely.%3C%2Fp%3E%5Cn%3Cp%3ERegardless%2C%20it%20looks%20like%20it%20would%20be%20a%20challenge%20to%20do%20anything%20meaningful%20with%20the%20Discord%20API%20using%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%20in%20Pythonista.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%223708%22%2C%22username%22%3A%22oakandsage%22%2C%22userslug%22%3A%22oakandsage%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221511821839638%22%2C%22pid%22%3A%2227069%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%223708%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222017-11-27T22%3A29%3A48.798Z%22%2C%22relativeEditTime%22%3A%222017-11-27T22%3A30%3A39.638Z%22%2C%22index%22%3A8%2C%22user%22%3A%7B%22uid%22%3A%223708%22%2C%22username%22%3A%22oakandsage%22%2C%22userslug%22%3A%22oakandsage%22%2C%22reputation%22%3A%221%22%2C%22postcount%22%3A%226%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F7b42efe7dbae21dbdfadff520ee31015%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221511825852538%22%2C%22content%22%3A%22%3Cp%3EIt's%20not%20possible%20to%20run%20%3Ccode%3Esetup.py%3C%2Fcode%3Es%20under%20Pythonista%20directly%2C%20because%20of%20how%20different%20the%20directory%20structure%20is%20compared%20to%20a%20Python%20installation%20on%20a%20regular%20Unix%20or%20Windows%20system.%20(Even%20on%20normal%20systems%20the%20recommended%20way%20to%20install%20packages%20is%20to%20%3Ccode%3Epip%20install%3C%2Fcode%3E%20the%20folder%20containing%20the%20%3Ccode%3Esetup.py%3C%2Fcode%3E%2C%20rather%20than%20running%20%3Ccode%3Esetup.py%20install%3C%2Fcode%3E.)%20Stash's%20%3Ccode%3Epip%3C%2Fcode%3E%20does%20some%20hackery%20to%20make%20most%20%3Ccode%3Esetup.py%3C%2Fcode%3Es%20work%20in%20Pythonista%2C%20but%20since%20Stash%20is%20basically%20Python%202-only%2C%20that%20isn't%20an%20option%20for%20Python%203-only%20packages.%3C%2Fp%3E%5Cn%3Cp%3EIf%20I'm%20reading%20the%20code%20correctly%2C%20the%20speedups%20are%20indeed%20optional.%20The%20%3Ccode%3Eoptional%3Dnot%20os.path.exists(...)%3C%2Fcode%3E%20part%20makes%20it%20required%20only%20when%20running%20a%20CI%20build%20(which%20the%20library%20devs%20have%20presumably%20set%20up%20to%20build%20wheels%20for%20PyPI%2C%20so%20they%20want%20to%20force%20the%20speedups%20to%20be%20included%20there).%3C%2Fp%3E%5Cn%3Cp%3EYou%20could%20try%20installing%20the%20library%20%26quot%3Bthe%20manual%20way%26quot%3B%20-%20install%20all%20dependencies%20somehow%20(Stash%20%3Ccode%3Epip%3C%2Fcode%3E%2C%20or%20also%20manually)%2C%20then%20find%20the%20directory%20or%20Python%20file%20containing%20the%20library's%20source%20code%20and%20copy%20that%20into%20%3Ccode%3Esite-packages-3%3C%2Fcode%3E.%20Assuming%20the%20library%20is%20used%20as%20%3Ccode%3Eimport%20discord%3C%2Fcode%3E%2C%20that%20would%20be%20either%20a%20directory%20%3Ccode%3Ediscord%3C%2Fcode%3E%20or%20a%20file%20%3Ccode%3Ediscord.py%3C%2Fcode%3E%2C%20most%20likely%20located%20in%20the%20same%20directory%20as%20the%20%3Ccode%3Esetup.py%3C%2Fcode%3E.%3C%2Fp%3E%5Cn%22%2C%22edited%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22pid%22%3A%2227070%22%2C%22deleted%22%3Afalse%2C%22editor%22%3Anull%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22902%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222017-11-27T23%3A37%3A32.538Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%22902%22%2C%22username%22%3A%22dgelessus%22%2C%22userslug%22%3A%22dgelessus%22%2C%22reputation%22%3A%22402%22%2C%22postcount%22%3A%221198%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F902-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221511838751874%22%2C%22content%22%3A%22%3Cp%3EFor%20what%20its%20worth%2C%20I%20have%20websockets%20installed%20in%20pythonista.%20%20I%20believe%20it%20only%20really%20needs%20asyncio%2C%20which%20is%20included%20in%20python%203%20on%20pythonista.%3C%2Fp%3E%5Cn%3Cp%3EI%20frankly%20forget%20why%20or%20how%20I%20installed%20it%20--%20at%20a%20minimum%2C%20just%20pip%20download%2C%20then%20untar.p%2C%20or%20it%20might%20be%20easier%20to%20use%20git%20clone.%3C%2Fp%3E%5Cn%22%2C%22votes%22%3A%220%22%2C%22edited%22%3A%221511838827092%22%2C%22deleted%22%3Afalse%2C%22editor%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%7D%2C%22pid%22%3A%2227071%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222017-11-28T03%3A12%3A31.874Z%22%2C%22relativeEditTime%22%3A%222017-11-28T03%3A13%3A47.092Z%22%2C%22index%22%3A10%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221516349600350%22%2C%22content%22%3A%22%3Cp%3EHas%20anyone%20made%20any%20progress%20on%20this%3F%20I've%20been%20trying%20for%20the%20last%20hour%20to%20get%20%3Ca%20href%3D%5C%22http%3A%2F%2Fdiscord.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ediscord.py%3C%2Fa%3E%20working%20on%20the%20latest%20Pythonista%20beta%20(3.1.1)%2C%20%20but%20haven't%20had%20much%20luck.%20Currently%20I'm%20stuck%20on%20getting%20aiohttp%20to%20work.%20A%20little%20bit%20of%20googling%20shows%20that%20at%20one%20point%20pythonista%20beta%20had%20aiohttp%20built%20in%20(%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F4456%2Fui-and-aiohttp%5C%22%3Ehttps%3A%2F%2Fforum.omz-software.com%2Ftopic%2F4456%2Fui-and-aiohttp%3C%2Fa%3E)%2C%20but%20that%20doesn't%20seem%20to%20be%20the%20case%20anymore.%20I%20was%20able%20to%20install%20aiohttp%20using%20pip%20from%20stash%2C%20but%20it%20seems%20the%20imports%20are%20messed%20up%2C%20with%20python%20complaining%20about%20not%20being%20able%20to%20find%20parts%20of%20the%20library.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2227898%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222137%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222018-01-19T08%3A13%3A20.350Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A11%2C%22user%22%3A%7B%22uid%22%3A%222137%22%2C%22username%22%3A%22Ivoah%22%2C%22userslug%22%3A%22ivoah%22%2C%22reputation%22%3A%2214%22%2C%22postcount%22%3A%2219%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F69889436fc06263094a3b873bb29f494%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22content%22%3A%22%3Cul%3E%5Cn%3Cli%3EInstall%20Pythonista%203.2%20(latest%20version%20from%20the%20App%20Store%20%26gt%3B%20latest%20Pythonista%20beta%203.1.1)%3C%2Fli%3E%5Cn%3Cli%3E%3Ccode%3Epip%20install%20aiohttp%3C%2Fcode%3E%5Cn%3Cul%3E%5Cn%3Cli%3EExtensions%20are%20gonna%20fail%2C%20...%20but%20you%20can%20ignore%20them%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%3Ccode%3Epip%20install%20idna%3C%2Fcode%3E%3C%2Fli%3E%5Cn%3Cli%3EWorking%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F4638%2Fpermission-error-with-multiprocessing-process%2F10%5C%22%3Eaiohttp%20example%3C%2Fa%3E%20in%20Pythonista%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3Ewith%20python%20complaining%20about%20not%20being%20able%20to%20find%20parts%20of%20the%20library%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3ENo%20crystal%20ball%2C%20always%20paste%20what's%20the%20problem.%20If%20you%20read%20the%20error%20message%20you'll%20see%20that%20there's%20module%20import%20error%20-%20missing%20%3Ccode%3Eidna%3C%2Fcode%3E.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%22149%22%2C%22editor%22%3A%7B%22uid%22%3A%22149%22%2C%22username%22%3A%22zrzka%22%2C%22userslug%22%3A%22zrzka%22%7D%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221516355367528%22%2C%22votes%22%3A%220%22%2C%22tid%22%3A%223476%22%2C%22timestamp%22%3A%221516354245882%22%2C%22pid%22%3A%2227900%22%2C%22reputation%22%3A%220%22%2C%22relativeTime%22%3A%222018-01-19T09%3A30%3A45.882Z%22%2C%22relativeEditTime%22%3A%222018-01-19T09%3A49%3A27.528Z%22%2C%22index%22%3A12%2C%22user%22%3A%7B%22uid%22%3A%22149%22%2C%22username%22%3A%22zrzka%22%2C%22userslug%22%3A%22zrzka%22%2C%22reputation%22%3A%2282%22%2C%22postcount%22%3A%22269%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa503f14866aaa083332c81264860ac8e%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221516399354607%22%2C%22content%22%3A%22%3Cp%3EI%20followed%20your%20instructions%2C%20but%20it%20still%20doesn't%20work.%20When%20trying%20to%20import%20%3Ccode%3Eaiohttp%3C%2Fcode%3E%20it%20fails%20in%20the%20%3Ccode%3E__init__.py%3C%2Fcode%3E%20file.%20It%20looks%20like%20it%20tries%20to%20import%20other%20parts%20of%20the%20library%20with%20%3Ccode%3Efrom%20.%26lt%3Bsomething%26gt%3B%20import%20*%3C%2Fcode%3E%2C%20but%20it%20isn't%20working.%20The%20exact%20message%20it%20gives%20is%20%3Ccode%3Ename%20'client'%20is%20not%20defined%3C%2Fcode%3E.%20Pythonista%20says%20the%20error%20is%20on%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Faio-libs%2Faiohttp%2Fblob%2Fv1.0.5%2Faiohttp%2F__init__.py%23L38%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eline%2038%3C%2Fa%3E%2C%20but%20I%20think%20it's%20actually%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Faio-libs%2Faiohttp%2Fblob%2Fv1.0.5%2Faiohttp%2F__init__.py%23L29%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eline%2029%3C%2Fa%3E.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%222137%22%2C%22username%22%3A%22Ivoah%22%2C%22userslug%22%3A%22ivoah%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221517165138070%22%2C%22pid%22%3A%2227903%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%222137%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222018-01-19T22%3A02%3A34.607Z%22%2C%22relativeEditTime%22%3A%222018-01-28T18%3A45%3A38.070Z%22%2C%22index%22%3A13%2C%22user%22%3A%7B%22uid%22%3A%222137%22%2C%22username%22%3A%22Ivoah%22%2C%22userslug%22%3A%22ivoah%22%2C%22reputation%22%3A%2214%22%2C%22postcount%22%3A%2219%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F69889436fc06263094a3b873bb29f494%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221516405349051%22%2C%22content%22%3A%22%3Cp%3Epaste%20the%20entire%20traceback...%3C%2Fp%3E%5Cn%3Cp%3EAlso%2C%20be%20sure%20to%20quit%20pythonista%20and%20try%20again.%20Sometimes%20if%20you%20get%20an%20error%20after%20starting%20to%20import%2C%20things%20get%20into%20a%20stuck%20state.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2227904%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%223476%22%2C%22relativeTime%22%3A%222018-01-19T23%3A42%3A29.051Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A14%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22description%22%3A%22Share%20scripts%20and%20get%20help%20with%20your%20programming%20questions%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%225875%22%2C%22post_count%22%3A%2242768%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%221%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22totalPostCount%22%3A%2242768%22%2C%22totalTopicCount%22%3A%225875%22%2C%22descriptionParsed%22%3A%22%3Cp%3EShare%20scripts%20and%20get%20help%20with%20your%20programming%20questions%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A1%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Pythonista%22%2C%22url%22%3A%22%2Fcategory%2F5%2Fpythonista%22%7D%2C%7B%22text%22%3A%22Discord.py%22%2C%22url%22%3A%22%2Ftopic%2F3476%2Fdiscord-py%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%223476%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F3476.rss%22%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%224XwdfEoE-wsSR30NRla8FUUteM4CPBD_li4w%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Discord.py%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22How%20do%20I%20use%20something%20called%20discord.py%3F%20https%3A%26%23x2F%3B%26%23x2F%3Bgithub.com%26%23x2F%3BRapptz%26%23x2F%3Bdiscord.py%20I%20tried%20using%20stash%20but%20I%20couldn%26%23x27%3Bt%20get%20it%20to%20work.%20%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Discord.py%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22How%20do%20I%20use%20something%20called%20discord.py%3F%20https%3A%26%23x2F%3B%26%23x2F%3Bgithub.com%26%23x2F%3BRapptz%26%23x2F%3Bdiscord.py%20I%20tried%20using%20stash%20but%20I%20couldn%26%23x27%3Bt%20get%20it%20to%20work.%20%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3476%2Fdiscord-py%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fbc6dcab597f47b458d8aa3eefe7b95bf%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222016-09-03T02%3A16%3A54.965Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222018-01-19T23%3A42%3A29.051Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Pythonista%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3476.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F3476%2Fdiscord-py%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F5%2Fpythonista%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="6.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

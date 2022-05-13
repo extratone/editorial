@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Topics created by Webmaster4o | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"SXbo0L9b-A2v4ameBweuVBc5uXyLZPcXTrrk","searchEnabled":true}');
+		var app = {
+			template: "account/topics",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../index.html">
+					<img class="hide forum-logo" src="topics.html" />
+				</a>
+								<a href="../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="topics.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="topics.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="topics.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="webmaster4o" data-uid="1053">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="topics.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="following.html"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="followers.html"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="topics.html"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="posts.html"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="groups.html"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="../webmaster4o.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div>
+	
+
+	<div class="category">
+<ul component="category" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="20">
+	<meta itemprop="itemListOrder" content="descending">
+	<li component="category/topic" class="row clearfix unread"data-tid="3566" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Python 3.6 and objc_util syntax">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3566/python-3-6-and-objc_util-syntax" itemprop="url">Python 3.6 and objc_util syntax</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-10-09T16:13:52.110Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6">6</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="5022">5022</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>filippocld</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3566/python-3-6-and-objc_util-syntax/6">
+						<small class="timeago" title="2016-10-10T05:37:03.263Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Yeah, it takes  a bit more but it's usable. Let's hope for some speed in the future :-)</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3410" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Framer-style UI editor">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3410/framer-style-ui-editor" itemprop="url">Framer-style UI editor</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-08-08T19:04:43.431Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11">11</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="7051">7051</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Phuket2</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3410/framer-style-ui-editor/11">
+						<small class="timeago" title="2016-08-10T14:31:54.012Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/josephbywater">@JosephBywater</a> , yeah, was using the designer as a drawing tool.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3356" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="UI proxies for subclassing">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3356/ui-proxies-for-subclassing" itemprop="url">UI proxies for subclassing</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-07-19T06:21:00.714Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11">11</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6615">6615</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3356/ui-proxies-for-subclassing/11">
+						<small class="timeago" title="2016-07-20T08:38:28.930Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Ugh. Thanks, though.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3350" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Wrap an Objective C UIView in a ui.View">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3350/wrap-an-objective-c-uiview-in-a-ui-view" itemprop="url">Wrap an Objective C UIView in a ui.View</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-07-16T16:18:09.229Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2213">2213</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3350/wrap-an-objective-c-uiview-in-a-ui-view/3">
+						<small class="timeago" title="2016-07-16T19:00:42.364Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Right. I noticed this is how <a class="plugin-mentions-a" href="../omz.html">@omz</a> did it in that MapView from a while back. I guess there's a different way to do it but not from Python. Thanks.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3326" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Share code: Serving files over HTTP">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3326/share-code-serving-files-over-http" itemprop="url">Share code: Serving files over HTTP</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-07-10T01:34:53.652Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2725">2725</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3326/share-code-serving-files-over-http/3">
+						<small class="timeago" title="2016-07-13T17:45:20.139Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>I think Flask tries to get the Content-Type correct, but I'm not sure if there's a header for forcing download. I'll look into it. 👍</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3321" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Use objc_util functions to draw on a &#96;ui.View&#96;">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3321/use-objc_util-functions-to-draw-on-a-ui-view" itemprop="url">Use objc_util functions to draw on a &#96;ui.View&#96;</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-07-09T01:08:42.299Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4">4</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2596">2596</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3321/use-objc_util-functions-to-draw-on-a-ui-view/4">
+						<small class="timeago" title="2016-07-09T12:14:21.823Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks <a class="plugin-mentions-a" href="../jonb.html">@JonB</a> I came up with a similar example a few hours before you: <a href="https://github.com/controversial/ui2/blob/master/ui2/view_classes/ProgressPathView.py" rel="nofollow">https://github.com/controversial/ui2/blob/master/ui2/view_classes/ProgressPathView.py</a></p>
+<p>I should really report back here sooner when I find a solution.</p>
+<p>I had found addSublayer_() in a StackOverflow answer and realized it was perfect ;)</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3320" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Problem with UIBezierPath and CGPath">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3320/problem-with-uibezierpath-and-cgpath" itemprop="url">Problem with UIBezierPath and CGPath</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-07-09T00:23:08.327Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3">3</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2132">2132</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3320/problem-with-uibezierpath-and-cgpath/3">
+						<small class="timeago" title="2016-07-09T12:10:50.127Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks <a class="plugin-mentions-a" href="../jonb.html">@JonB</a>! As <a class="plugin-mentions-a" href="https://forum.omz-software.com/user/dgelessus">@dgelessus</a> said on Slack, i wad able to pass around that c_void_p even without ObjCInstance and it worked fine. The ObjCInstance trick looks good, though!</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3057" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Alternate idea for Notification Center implementation">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3057/alternate-idea-for-notification-center-implementation" itemprop="url">Alternate idea for Notification Center implementation</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-04-22T12:17:51.591Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1192">1192</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3049" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="JSON syntax highlighting problems">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3049/json-syntax-highlighting-problems" itemprop="url">JSON syntax highlighting problems</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-04-17T11:59:42.302Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="11">11</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6413">6413</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>dgelessus</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3049/json-syntax-highlighting-problems/11">
+						<small class="timeago" title="2016-04-27T23:15:22.030Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../omz.html">@omz</a> Another quote highlighting issue: long bytes literals b&quot;&quot;&quot; and br&quot;&quot;&quot; are highlighted like short literals, i. e. they do not continue into the next line. (The closing triple quote is of course detected, which means that the rest of the file is highlighted as a long string literal.)</p>
+<p>Example (bug obviously only visible in Pythonista):</p>
+# normal code
+
+b&quot;&quot;&quot;
+bytes data, highlighted as code
+&quot;&quot;&quot;
+
+# normal code again, highlighted as literal
+
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="3047" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Suggestion: Formal Plugin API">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/3047/suggestion-formal-plugin-api" itemprop="url">Suggestion: Formal Plugin API</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-04-16T23:55:13.658Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="7">7</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="3829">3829</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/3047/suggestion-formal-plugin-api/7">
+						<small class="timeago" title="2016-04-17T07:46:46.295Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>fwiw,</p>
+<p>A few things I have found that really help with customizing the editor/app and such:<br />
+<a href="https://github.com/jsbain/objc_hacks/blob/master/print_objc.py" rel="nofollow">https://github.com/jsbain/objc_hacks/blob/master/print_objc.py</a><br />
+prints the Instance and Class methods of a class, but not of its ancestors.  really helps identify what is unique about custom classes (vs dir() which shows instance and inherited methods)</p>
+<p>A lot of good stuff is exposed in PA2UniversalTextEditorViewController, which is what editor._get_editor_tab() returns.  For instance, saveData, which can be <a href="https://github.com/jsbain/objc_hacks/blob/master/swizzle.py" rel="nofollow">swizzled</a>.   Also, <a class="plugin-mentions-a" href="https://forum.omz-software.com/user/dgelessus">@dgelessus</a>, I think you mentioned you wanted  the ability to launch a script with another interpreter version, this class seems to have that capability.</p>
+void    runScriptAtPath_withInterpreterVersion_arguments_( object, int, object )
+void    runScriptAtPath_withInterpreterVersion_scriptForShebang_arguments_( object, int, object, object )
+void    runScriptWithNonDefaultPythonVersion(  )
+
+<p>Also, editorView() on this object returns a view which you can addSubview_ to create your own overlays.</p>
+<p>Also, I have experimented a bit with NSNotifications, which can be another interesting way to get callbacks for some things without swizzling.  <a href="https://github.com/jsbain/objc_hacks/blob/master/notification_capture.py" rel="nofollow">here</a> is a class which captures all notifications types (by default excluding the various NS and UI notifications).  For instance, changing from editor to console or vice versa posts a notification which can be observed and action taken.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2909" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="[Suggestion] speeding up print">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2909/suggestion-speeding-up-print" itemprop="url">[Suggestion] speeding up print</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-03-09T17:29:49.735Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="10">10</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="6663">6663</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>omz</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2909/suggestion-speeding-up-print/10">
+						<small class="timeago" title="2016-03-10T02:46:32.124Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>I'll see what I can do.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2891" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pydia and cloud module">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2891/pydia-and-cloud-module" itemprop="url">Pydia and cloud module</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-03-06T16:24:52.920Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2">2</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1597">1597</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong></strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2891/pydia-and-cloud-module">
+						<small class="timeago" title=""></small>
+					</a>
+				</p>
+				<div class="post-content">
+					
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2882" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="[Suggestion] file move improvement">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2882/suggestion-file-move-improvement" itemprop="url">[Suggestion] file move improvement</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-03-05T02:24:15.345Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1">1</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1005">1005</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					No one has replied
+				</p>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2879" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="NavigationView with constant background">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2879/navigationview-with-constant-background" itemprop="url">NavigationView with constant background</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-03-04T14:24:19.514Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2">2</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1632">1632</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2879/navigationview-with-constant-background/2">
+						<small class="timeago" title="2016-03-04T16:13:39.955Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>If you set the individual view alpha's before pushing them, whatever is under the NavView shows through.  The bg_color of the NavView acts like a layer between the pushed view and the background, so leave it set to 0,0,0,0</p>
+# coding: utf-8
+import ui
+v=ui.ImageView(frame=(0,0,576,576))
+v.image=ui.Image.named('test:Ruler')
+
+v2=ui.ImageView(frame=v.bounds)
+v2.image=ui.Image.named('test:Mandrill')
+n=ui.NavigationView(v2)
+n.frame=v.bounds
+
+v3=ui.ImageView(frame=v.bounds)
+v3.image=ui.Image.named('test:Lenna')
+
+v2.alpha=0.5
+v3.alpha=0.5
+n.push_view(v3)
+v.add_subview(n)
+v.present('sheet')
+
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2878" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pythonista indent with cursor before EOL">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2878/pythonista-indent-with-cursor-before-eol" itemprop="url">Pythonista indent with cursor before EOL</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-03-04T13:17:41.882Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4">4</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2391">2391</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2878/pythonista-indent-with-cursor-before-eol/4">
+						<small class="timeago" title="2016-03-04T17:02:26.756Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../jonb.html">@JonB</a> Yeah, this is what I do now. It's not convenient at all, though.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2827" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Determining if JSON is a valid pyui file">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2827/determining-if-json-is-a-valid-pyui-file" itemprop="url">Determining if JSON is a valid pyui file</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-02-24T22:27:00.057Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4">4</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="2690">2690</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Phuket2</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2827/determining-if-json-is-a-valid-pyui-file/4">
+						<small class="timeago" title="2016-02-25T08:47:23.164Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../webmaster4o.html">@Webmaster4o</a> , maybe not what you are looking for, but couldn't you write an extra key out to the files. I assume they would be ignored by Pythonista</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2805" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="When is the tmp directory cleared?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2805/when-is-the-tmp-directory-cleared" itemprop="url">When is the tmp directory cleared?</a><br />
+
+								<small>
+					<a href="../../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-02-24T00:01:57.531Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="8">8</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="4600">4600</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>ywangd</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2805/when-is-the-tmp-directory-cleared/8">
+						<small class="timeago" title="2016-02-24T01:16:59.380Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/dgelessus">@dgelessus</a> Thanks I'll make sure the setup files are deleted at the end.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+		
+	</div>
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="1053" /><input type="hidden" ajaxify-data="%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%221053%22%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22tid%22%3A%223566%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2221821%22%2C%22title%22%3A%22Python%203.6%20and%20objc_util%20syntax%22%2C%22slug%22%3A%223566%2Fpython-3-6-and-objc_util-syntax%22%2C%22timestamp%22%3A%221476029632110%22%2C%22lastposttime%22%3A%221476077823263%22%2C%22postcount%22%3A%226%22%2C%22viewcount%22%3A%225022%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2221827%22%2C%22relativeTime%22%3A%222016-10-09T16%3A13%3A52.110Z%22%2C%22lastposttimeISO%22%3A%222016-10-10T05%3A37%3A03.263Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2221827%22%2C%22uid%22%3A%221441%22%2C%22timestamp%22%3A%222016-10-10T05%3A37%3A03.263Z%22%2C%22tid%22%3A%223566%22%2C%22content%22%3A%22%3Cp%3EYeah%2C%20it%20takes%20%20a%20bit%20more%20but%20it's%20usable.%20Let's%20hope%20for%20some%20speed%20in%20the%20future%20%3A-)%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221441%22%2C%22username%22%3A%22filippocld%22%2C%22userslug%22%3A%22filippocld%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe3edfa7954e9783a657f498d962454c9%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A6%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223410%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220829%22%2C%22title%22%3A%22Framer-style%20UI%20editor%22%2C%22slug%22%3A%223410%2Fframer-style-ui-editor%22%2C%22timestamp%22%3A%221470683083431%22%2C%22lastposttime%22%3A%221470839514012%22%2C%22postcount%22%3A%2211%22%2C%22viewcount%22%3A%227051%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220864%22%2C%22relativeTime%22%3A%222016-08-08T19%3A04%3A43.431Z%22%2C%22lastposttimeISO%22%3A%222016-08-10T14%3A31%3A54.012Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220864%22%2C%22uid%22%3A%22232%22%2C%22timestamp%22%3A%222016-08-10T14%3A31%3A54.012Z%22%2C%22tid%22%3A%223410%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjosephbywater%5C%22%3E%40JosephBywater%3C%2Fa%3E%20%2C%20yeah%2C%20was%20using%20the%20designer%20as%20a%20drawing%20tool.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%7D%2C%22index%22%3A11%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223356%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220444%22%2C%22title%22%3A%22UI%20proxies%20for%20subclassing%22%2C%22slug%22%3A%223356%2Fui-proxies-for-subclassing%22%2C%22timestamp%22%3A%221468909260714%22%2C%22lastposttime%22%3A%221469003908930%22%2C%22postcount%22%3A%2211%22%2C%22viewcount%22%3A%226615%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220492%22%2C%22relativeTime%22%3A%222016-07-19T06%3A21%3A00.714Z%22%2C%22lastposttimeISO%22%3A%222016-07-20T08%3A38%3A28.930Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220492%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-07-20T08%3A38%3A28.930Z%22%2C%22tid%22%3A%223356%22%2C%22content%22%3A%22%3Cp%3EUgh.%20Thanks%2C%20though.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A11%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223350%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220408%22%2C%22title%22%3A%22Wrap%20an%20Objective%20C%20UIView%20in%20a%20ui.View%22%2C%22slug%22%3A%223350%2Fwrap-an-objective-c-uiview-in-a-ui-view%22%2C%22timestamp%22%3A%221468685889229%22%2C%22lastposttime%22%3A%221468695642364%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%222213%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220412%22%2C%22relativeTime%22%3A%222016-07-16T16%3A18%3A09.229Z%22%2C%22lastposttimeISO%22%3A%222016-07-16T19%3A00%3A42.364Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220412%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-07-16T19%3A00%3A42.364Z%22%2C%22tid%22%3A%223350%22%2C%22content%22%3A%22%3Cp%3ERight.%20I%20noticed%20this%20is%20how%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20did%20it%20in%20that%20MapView%20from%20a%20while%20back.%20I%20guess%20there's%20a%20different%20way%20to%20do%20it%20but%20not%20from%20Python.%20Thanks.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223326%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220222%22%2C%22title%22%3A%22Share%20code%3A%20Serving%20files%20over%20HTTP%22%2C%22slug%22%3A%223326%2Fshare-code-serving-files-over-http%22%2C%22timestamp%22%3A%221468114493652%22%2C%22lastposttime%22%3A%221468431920139%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%222725%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220350%22%2C%22relativeTime%22%3A%222016-07-10T01%3A34%3A53.652Z%22%2C%22lastposttimeISO%22%3A%222016-07-13T17%3A45%3A20.139Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220350%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-07-13T17%3A45%3A20.139Z%22%2C%22tid%22%3A%223326%22%2C%22content%22%3A%22%3Cp%3EI%20think%20Flask%20tries%20to%20get%20the%20Content-Type%20correct%2C%20but%20I'm%20not%20sure%20if%20there's%20a%20header%20for%20forcing%20download.%20I'll%20look%20into%20it.%20%F0%9F%91%8D%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223321%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220199%22%2C%22title%22%3A%22Use%20objc_util%20functions%20to%20draw%20on%20a%20%26%2396%3Bui.View%26%2396%3B%22%2C%22slug%22%3A%223321%2Fuse-objc_util-functions-to-draw-on-a-ui-view%22%2C%22timestamp%22%3A%221468026522299%22%2C%22lastposttime%22%3A%221468066461823%22%2C%22postcount%22%3A%224%22%2C%22viewcount%22%3A%222596%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220213%22%2C%22relativeTime%22%3A%222016-07-09T01%3A08%3A42.299Z%22%2C%22lastposttimeISO%22%3A%222016-07-09T12%3A14%3A21.823Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220213%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-07-09T12%3A14%3A21.823Z%22%2C%22tid%22%3A%223321%22%2C%22content%22%3A%22%3Cp%3EThanks%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20I%20came%20up%20with%20a%20similar%20example%20a%20few%20hours%20before%20you%3A%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fcontroversial%2Fui2%2Fblob%2Fmaster%2Fui2%2Fview_classes%2FProgressPathView.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2Fcontroversial%2Fui2%2Fblob%2Fmaster%2Fui2%2Fview_classes%2FProgressPathView.py%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EI%20should%20really%20report%20back%20here%20sooner%20when%20I%20find%20a%20solution.%3C%2Fp%3E%5Cn%3Cp%3EI%20had%20found%20addSublayer_()%20in%20a%20StackOverflow%20answer%20and%20realized%20it%20was%20perfect%20%3B)%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223320%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2220198%22%2C%22title%22%3A%22Problem%20with%20UIBezierPath%20and%20CGPath%22%2C%22slug%22%3A%223320%2Fproblem-with-uibezierpath-and-cgpath%22%2C%22timestamp%22%3A%221468023788327%22%2C%22lastposttime%22%3A%221468066250127%22%2C%22postcount%22%3A%223%22%2C%22viewcount%22%3A%222132%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220212%22%2C%22relativeTime%22%3A%222016-07-09T00%3A23%3A08.327Z%22%2C%22lastposttimeISO%22%3A%222016-07-09T12%3A10%3A50.127Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2220212%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-07-09T12%3A10%3A50.127Z%22%2C%22tid%22%3A%223320%22%2C%22content%22%3A%22%3Cp%3EThanks%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E!%20As%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fdgelessus%5C%22%3E%40dgelessus%3C%2Fa%3E%20said%20on%20Slack%2C%20i%20wad%20able%20to%20pass%20around%20that%20c_void_p%20even%20without%20ObjCInstance%20and%20it%20worked%20fine.%20The%20ObjCInstance%20trick%20looks%20good%2C%20though!%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A3%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223057%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2218439%22%2C%22title%22%3A%22Alternate%20idea%20for%20Notification%20Center%20implementation%22%2C%22slug%22%3A%223057%2Falternate-idea-for-notification-center-implementation%22%2C%22timestamp%22%3A%221461327471591%22%2C%22lastposttime%22%3A%221461327471867%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%221192%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22relativeTime%22%3A%222016-04-22T12%3A17%3A51.591Z%22%2C%22lastposttimeISO%22%3A%222016-04-22T12%3A17%3A51.867Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%7D%2C%7B%22tid%22%3A%223049%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2218334%22%2C%22title%22%3A%22JSON%20syntax%20highlighting%20problems%22%2C%22slug%22%3A%223049%2Fjson-syntax-highlighting-problems%22%2C%22timestamp%22%3A%221460894382302%22%2C%22lastposttime%22%3A%221461798922030%22%2C%22postcount%22%3A%2211%22%2C%22viewcount%22%3A%226413%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2218563%22%2C%22relativeTime%22%3A%222016-04-17T11%3A59%3A42.302Z%22%2C%22lastposttimeISO%22%3A%222016-04-27T23%3A15%3A22.030Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2218563%22%2C%22uid%22%3A%22902%22%2C%22timestamp%22%3A%222016-04-27T23%3A15%3A22.030Z%22%2C%22tid%22%3A%223049%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Another%20quote%20highlighting%20issue%3A%20long%20bytes%20literals%20b%26quot%3B%26quot%3B%26quot%3B%20and%20br%26quot%3B%26quot%3B%26quot%3B%20are%20highlighted%20like%20short%20literals%2C%20i.%20e.%20they%20do%20not%20continue%20into%20the%20next%20line.%20(The%20closing%20triple%20quote%20is%20of%20course%20detected%2C%20which%20means%20that%20the%20rest%20of%20the%20file%20is%20highlighted%20as%20a%20long%20string%20literal.)%3C%2Fp%3E%5Cn%3Cp%3EExample%20(bug%20obviously%20only%20visible%20in%20Pythonista)%3A%3C%2Fp%3E%5Cn%23%20normal%20code%5Cn%5Cnb%26quot%3B%26quot%3B%26quot%3B%5Cnbytes%20data%2C%20highlighted%20as%20code%5Cn%26quot%3B%26quot%3B%26quot%3B%5Cn%5Cn%23%20normal%20code%20again%2C%20highlighted%20as%20literal%5Cn%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22902%22%2C%22username%22%3A%22dgelessus%22%2C%22userslug%22%3A%22dgelessus%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F902-profileimg.png%22%7D%2C%22index%22%3A11%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%223047%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2218317%22%2C%22title%22%3A%22Suggestion%3A%20Formal%20Plugin%20API%22%2C%22slug%22%3A%223047%2Fsuggestion-formal-plugin-api%22%2C%22timestamp%22%3A%221460850913658%22%2C%22lastposttime%22%3A%221460879206295%22%2C%22postcount%22%3A%227%22%2C%22viewcount%22%3A%223829%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2218328%22%2C%22relativeTime%22%3A%222016-04-16T23%3A55%3A13.658Z%22%2C%22lastposttimeISO%22%3A%222016-04-17T07%3A46%3A46.295Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2218328%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222016-04-17T07%3A46%3A46.295Z%22%2C%22tid%22%3A%223047%22%2C%22content%22%3A%22%3Cp%3Efwiw%2C%3C%2Fp%3E%5Cn%3Cp%3EA%20few%20things%20I%20have%20found%20that%20really%20help%20with%20customizing%20the%20editor%2Fapp%20and%20such%3A%3Cbr%20%2F%3E%5Cn%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fjsbain%2Fobjc_hacks%2Fblob%2Fmaster%2Fprint_objc.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fgithub.com%2Fjsbain%2Fobjc_hacks%2Fblob%2Fmaster%2Fprint_objc.py%3C%2Fa%3E%3Cbr%20%2F%3E%5Cnprints%20the%20Instance%20and%20Class%20methods%20of%20a%20class%2C%20but%20not%20of%20its%20ancestors.%20%20really%20helps%20identify%20what%20is%20unique%20about%20custom%20classes%20(vs%20dir()%20which%20shows%20instance%20and%20inherited%20methods)%3C%2Fp%3E%5Cn%3Cp%3EA%20lot%20of%20good%20stuff%20is%20exposed%20in%20PA2UniversalTextEditorViewController%2C%20which%20is%20what%20editor._get_editor_tab()%20returns.%20%20For%20instance%2C%20saveData%2C%20which%20can%20be%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fjsbain%2Fobjc_hacks%2Fblob%2Fmaster%2Fswizzle.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Eswizzled%3C%2Fa%3E.%20%20%20Also%2C%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fdgelessus%5C%22%3E%40dgelessus%3C%2Fa%3E%2C%20I%20think%20you%20mentioned%20you%20wanted%20%20the%20ability%20to%20launch%20a%20script%20with%20another%20interpreter%20version%2C%20this%20class%20seems%20to%20have%20that%20capability.%3C%2Fp%3E%5Cnvoid%20%20%20%20runScriptAtPath_withInterpreterVersion_arguments_(%20object%2C%20int%2C%20object%20)%5Cnvoid%20%20%20%20runScriptAtPath_withInterpreterVersion_scriptForShebang_arguments_(%20object%2C%20int%2C%20object%2C%20object%20)%5Cnvoid%20%20%20%20runScriptWithNonDefaultPythonVersion(%20%20)%5Cn%5Cn%3Cp%3EAlso%2C%20editorView()%20on%20this%20object%20returns%20a%20view%20which%20you%20can%20addSubview_%20to%20create%20your%20own%20overlays.%3C%2Fp%3E%5Cn%3Cp%3EAlso%2C%20I%20have%20experimented%20a%20bit%20with%20NSNotifications%2C%20which%20can%20be%20another%20interesting%20way%20to%20get%20callbacks%20for%20some%20things%20without%20swizzling.%20%20%3Ca%20href%3D%5C%22https%3A%2F%2Fgithub.com%2Fjsbain%2Fobjc_hacks%2Fblob%2Fmaster%2Fnotification_capture.py%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehere%3C%2Fa%3E%20is%20a%20class%20which%20captures%20all%20notifications%20types%20(by%20default%20excluding%20the%20various%20NS%20and%20UI%20notifications).%20%20For%20instance%2C%20changing%20from%20editor%20to%20console%20or%20vice%20versa%20posts%20a%20notification%20which%20can%20be%20observed%20and%20action%20taken.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A7%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222909%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217282%22%2C%22title%22%3A%22%5BSuggestion%5D%20speeding%20up%20print%22%2C%22slug%22%3A%222909%2Fsuggestion-speeding-up-print%22%2C%22timestamp%22%3A%221457544589735%22%2C%22lastposttime%22%3A%221457577992124%22%2C%22postcount%22%3A%2210%22%2C%22viewcount%22%3A%226663%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2217298%22%2C%22relativeTime%22%3A%222016-03-09T17%3A29%3A49.735Z%22%2C%22lastposttimeISO%22%3A%222016-03-10T02%3A46%3A32.124Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2217298%22%2C%22uid%22%3A%221719%22%2C%22timestamp%22%3A%222016-03-10T02%3A46%3A32.124Z%22%2C%22tid%22%3A%222909%22%2C%22content%22%3A%22%3Cp%3EI'll%20see%20what%20I%20can%20do.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22index%22%3A10%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222891%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217146%22%2C%22title%22%3A%22Pydia%20and%20cloud%20module%22%2C%22slug%22%3A%222891%2Fpydia-and-cloud-module%22%2C%22timestamp%22%3A%221457281492920%22%2C%22lastposttime%22%3A%221457281493258%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%221597%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%22null%22%2C%22relativeTime%22%3A%222016-03-06T16%3A24%3A52.920Z%22%2C%22lastposttimeISO%22%3A%222016-03-06T16%3A24%3A53.258Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222882%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217049%22%2C%22title%22%3A%22%5BSuggestion%5D%20file%20move%20improvement%22%2C%22slug%22%3A%222882%2Fsuggestion-file-move-improvement%22%2C%22timestamp%22%3A%221457144655345%22%2C%22lastposttime%22%3A%221457144655648%22%2C%22postcount%22%3A%221%22%2C%22viewcount%22%3A%221005%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22relativeTime%22%3A%222016-03-05T02%3A24%3A15.345Z%22%2C%22lastposttimeISO%22%3A%222016-03-05T02%3A24%3A15.648Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Atrue%7D%2C%7B%22tid%22%3A%222879%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217015%22%2C%22title%22%3A%22NavigationView%20with%20constant%20background%22%2C%22slug%22%3A%222879%2Fnavigationview-with-constant-background%22%2C%22timestamp%22%3A%221457101459514%22%2C%22lastposttime%22%3A%221457108019955%22%2C%22postcount%22%3A%222%22%2C%22viewcount%22%3A%221632%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2217024%22%2C%22relativeTime%22%3A%222016-03-04T14%3A24%3A19.514Z%22%2C%22lastposttimeISO%22%3A%222016-03-04T16%3A13%3A39.955Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2217024%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222016-03-04T16%3A13%3A39.955Z%22%2C%22tid%22%3A%222879%22%2C%22content%22%3A%22%3Cp%3EIf%20you%20set%20the%20individual%20view%20alpha's%20before%20pushing%20them%2C%20whatever%20is%20under%20the%20NavView%20shows%20through.%20%20The%20bg_color%20of%20the%20NavView%20acts%20like%20a%20layer%20between%20the%20pushed%20view%20and%20the%20background%2C%20so%20leave%20it%20set%20to%200%2C0%2C0%2C0%3C%2Fp%3E%5Cn%23%20coding%3A%20utf-8%5Cnimport%20ui%5Cnv%3Dui.ImageView(frame%3D(0%2C0%2C576%2C576))%5Cnv.image%3Dui.Image.named('test%3ARuler')%5Cn%5Cnv2%3Dui.ImageView(frame%3Dv.bounds)%5Cnv2.image%3Dui.Image.named('test%3AMandrill')%5Cnn%3Dui.NavigationView(v2)%5Cnn.frame%3Dv.bounds%5Cn%5Cnv3%3Dui.ImageView(frame%3Dv.bounds)%5Cnv3.image%3Dui.Image.named('test%3ALenna')%5Cn%5Cnv2.alpha%3D0.5%5Cnv3.alpha%3D0.5%5Cnn.push_view(v3)%5Cnv.add_subview(n)%5Cnv.present('sheet')%5Cn%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A2%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222878%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2217012%22%2C%22title%22%3A%22Pythonista%20indent%20with%20cursor%20before%20EOL%22%2C%22slug%22%3A%222878%2Fpythonista-indent-with-cursor-before-eol%22%2C%22timestamp%22%3A%221457097461882%22%2C%22lastposttime%22%3A%221457110946756%22%2C%22postcount%22%3A%224%22%2C%22viewcount%22%3A%222391%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2217033%22%2C%22relativeTime%22%3A%222016-03-04T13%3A17%3A41.882Z%22%2C%22lastposttimeISO%22%3A%222016-03-04T17%3A02%3A26.756Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2217033%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-03-04T17%3A02%3A26.756Z%22%2C%22tid%22%3A%222878%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20Yeah%2C%20this%20is%20what%20I%20do%20now.%20It's%20not%20convenient%20at%20all%2C%20though.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222827%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2216589%22%2C%22title%22%3A%22Determining%20if%20JSON%20is%20a%20valid%20pyui%20file%22%2C%22slug%22%3A%222827%2Fdetermining-if-json-is-a-valid-pyui-file%22%2C%22timestamp%22%3A%221456352820057%22%2C%22lastposttime%22%3A%221456390043164%22%2C%22postcount%22%3A%224%22%2C%22viewcount%22%3A%222690%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2216600%22%2C%22relativeTime%22%3A%222016-02-24T22%3A27%3A00.057Z%22%2C%22lastposttimeISO%22%3A%222016-02-25T08%3A47%3A23.164Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2216600%22%2C%22uid%22%3A%22232%22%2C%22timestamp%22%3A%222016-02-25T08%3A47%3A23.164Z%22%2C%22tid%22%3A%222827%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%20%2C%20maybe%20not%20what%20you%20are%20looking%20for%2C%20but%20couldn't%20you%20write%20an%20extra%20key%20out%20to%20the%20files.%20I%20assume%20they%20would%20be%20ignored%20by%20Pythonista%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%7D%2C%22index%22%3A4%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222805%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2216535%22%2C%22title%22%3A%22When%20is%20the%20tmp%20directory%20cleared%3F%22%2C%22slug%22%3A%222805%2Fwhen-is-the-tmp-directory-cleared%22%2C%22timestamp%22%3A%221456272117531%22%2C%22lastposttime%22%3A%221456276619380%22%2C%22postcount%22%3A%228%22%2C%22viewcount%22%3A%224600%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2216548%22%2C%22relativeTime%22%3A%222016-02-24T00%3A01%3A57.531Z%22%2C%22lastposttimeISO%22%3A%222016-02-24T01%3A16%3A59.380Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2216548%22%2C%22uid%22%3A%22449%22%2C%22timestamp%22%3A%222016-02-24T01%3A16%3A59.380Z%22%2C%22tid%22%3A%222805%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fdgelessus%5C%22%3E%40dgelessus%3C%2Fa%3E%20Thanks%20I'll%20make%20sure%20the%20setup%20files%20are%20deleted%20at%20the%20end.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22449%22%2C%22username%22%3A%22ywangd%22%2C%22userslug%22%3A%22ywangd%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc206b7ff9c8a77f8aac1b536af27aad0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A8%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%5D%2C%22nextStart%22%3A20%2C%22pagination%22%3A%7B%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22next%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%7D%2C%22rel%22%3A%5B%5D%2C%22pages%22%3A%5B%5D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Ftopics%22%2C%22account%2Ftopics%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22SXbo0L9b-A2v4ameBweuVBc5uXyLZPcXTrrk%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Ftopics%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="topics.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"pTdf0AIy-KYD-jt8QswppMP6Rl-KvOL__u_Q","searchEnabled":true}');
+		var app = {
+			template: "popular",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="alltime.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="alltime.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="alltime.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="alltime.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="popular">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Popular
+												<a target="_blank" href="https://forum.omz-software.com/popular/alltime.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<ul class="nav nav-pills">
+		<li><a href='daily.html'>Day</a></li>
+		<li><a href='weekly.html'>Week</a></li>
+		<li><a href='monthly.html'>Month</a></li>
+		<li><a href='alltime.html'>All Time</a></li>
+	</ul>
+
+	<br />
+
+	<div class="category">
+		
+
+<ul component="category" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="">
+	<meta itemprop="itemListOrder" content="descending">
+	<li component="category/topic" class="row clearfix locked unread"data-tid="7110" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Outliner with drag&#x2F;drop reordering">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/ihf.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/4a419f690f4c619d38e0f7e8337394f2?size=128&default=identicon&rating=pg" class="img-circle user-img" title="ihf"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock "></i>
+				<a href="https://forum.omz-software.com/topic/7110/outliner-with-drag-drop-reordering" itemprop="url">Outliner with drag&#x2F;drop reordering</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-05-25T12:42:10.081Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="1003">1003</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="339446">339446</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>ccc</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/7110/outliner-with-drag-drop-reordering/1003">
+						<small class="timeago" title="2021-09-30T23:30:17.034Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>CONTINUED AT <a href="../topic/7248/outliner-with-drag-drop-reordering-part-2.html">https://forum.omz-software.com/topic/7248/outliner-with-drag-drop-reordering-part-2</a> ...</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7248" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Outliner with drag&#x2F;drop reordering - part 2">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/cvp.html" class="pull-left">
+						<img src="../uploads/profile/2281-profileimg.png" class="img-circle user-img" title="cvp"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="../topic/7248/outliner-with-drag-drop-reordering-part-2.html" itemprop="url">Outliner with drag&#x2F;drop reordering - part 2</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-09-30T20:51:14.861Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="579">579</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="60107">60107</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="../topic/7248/outliner-with-drag-drop-reordering-part-2/579.html">
+						<small class="timeago" title="2022-05-07T06:42:08.687Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/ihf.html">@ihf</a> Rememeber, I was able to play normally without freezing afTer rebooting my iPad, no other way, even restarting Pythonista did not work. Reason for which I think the problem comes from the iOS.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2747" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Python 3.x Progress Update">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/omz.html" class="pull-left">
+						<img src="../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2747/python-3-x-progress-update" itemprop="url">Python 3.x Progress Update</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-02-17T00:49:57.377Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="395">395</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="438829">438829</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>wreichard</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2747/python-3-x-progress-update/395">
+						<small class="timeago" title="2016-06-22T21:35:36.633Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Hi--is there an FAQ someplace on this subject? Confused about it all. Does the current version of the app support both 2.7 and 3? How? Thanks!</p>
+<p>ETA: Oops. Just answered my own question (saw there's a new app version for 3).</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5584" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Braille application.">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/shinya-ta" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/86c56340f4a610234f554e3a17853c5a?size=128&default=identicon&rating=pg" class="img-circle user-img" title="shinya.ta"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/5584/braille-application" itemprop="url">Braille application.</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2019-04-19T19:44:29.079Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="334">334</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="151932">151932</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/5584/braille-application/334">
+						<small class="timeago" title="2019-06-16T15:57:10.049Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/shinya-ta">@shinya.ta</a> Really, if I'm your god, please change your religion 😂</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1946" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pythonista 1.6 Beta">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/omz.html" class="pull-left">
+						<img src="../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1946/pythonista-1-6-beta" itemprop="url">Pythonista 1.6 Beta</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-07-22T10:13:54.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="301">301</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="389440">389440</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Phuket2</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1946/pythonista-1-6-beta/301">
+						<small class="timeago" title="2016-01-15T07:39:11.353Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/jonb.html">@JonB</a> , ok great.<br />
+Edit<br />
+I just noticed that is supported with devices supporting 3D Touch. I didn't really notice before as not using my iphone much</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5128" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="pythonista UI">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/shinya-ta" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/86c56340f4a610234f554e3a17853c5a?size=128&default=identicon&rating=pg" class="img-circle user-img" title="shinya.ta"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/5128/pythonista-ui" itemprop="url">pythonista UI</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2018-10-08T13:24:51.194Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="256">256</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="125604">125604</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/5128/pythonista-ui/256">
+						<small class="timeago" title="2018-12-05T17:35:15.143Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/shinya-ta">@shinya.ta</a> Thé script here-under will allow you to test the Apple standard speech module, and this code supports, I hope, all emojis. Thus, I suppose that my other scripts has a bug for combined emojis. I'll try to correct it in a close future.</p>
+<p><a href="https://forum.omz-software.com/topic/5271/script-to-test-objective-c-avspeechsynthesizer">see here</a></p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="7086" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Map API, need suggestions for how to execute ideas">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/rocketblaster05" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/14f5a4a36887da8b46b084038e4f4715?size=128&default=identicon&rating=pg" class="img-circle user-img" title="RocketBlaster05"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/7086/map-api-need-suggestions-for-how-to-execute-ideas" itemprop="url">Map API, need suggestions for how to execute ideas</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-05-15T02:28:35.451Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="196">196</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="38359">38359</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/7086/map-api-need-suggestions-for-how-to-execute-ideas/196">
+						<small class="timeago" title="2021-05-27T13:06:59.116Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/rocketblaster05">@RocketBlaster05</a> Good luck and always read to help, or debug (less funny)</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2544" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Wish list for next release">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/webmaster4o.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Webmaster4o"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2544/wish-list-for-next-release" itemprop="url">Wish list for next release</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2016-01-12T01:30:15.800Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="139">139</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="126858">126858</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>ellie_ff1493</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2544/wish-list-for-next-release/139">
+						<small class="timeago" title="2018-05-16T19:16:33.022Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>same code folding, along with vertex shaders in scene and opencv</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6345" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="[SPACE ESCAPE]-Game example to help with Game dev">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/stephen" class="pull-left">
+						<img src="../uploads/profile/7184-profileimg.png" class="img-circle user-img" title="stephen"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/6345/space-escape-game-example-to-help-with-game-dev" itemprop="url">[SPACE ESCAPE]-Game example to help with Game dev</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/game&#32;dev"><span class="tag">game dev</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2020-04-24T19:14:03.446Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="133">133</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="33732">33732</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Karina</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6345/space-escape-game-example-to-help-with-game-dev/133">
+						<small class="timeago" title="2020-06-06T09:45:08.132Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/cvp.html">@cvp</a> yes you’re right 😅</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1782" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Beta Status Update">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/omz.html" class="pull-left">
+						<img src="../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1782/beta-status-update" itemprop="url">Beta Status Update</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-05-29T17:25:01.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="124">124</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="147629">147629</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>JonB</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1782/beta-status-update/124">
+						<small class="timeago" title="2015-05-29T17:25:00.000Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>The extension runs in its own sandbox.. As I recall there was an extensions site packages?  You have to separately install packages to both locations.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5824" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Keyboard switch.">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/shinya-ta" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/86c56340f4a610234f554e3a17853c5a?size=128&default=identicon&rating=pg" class="img-circle user-img" title="shinya.ta"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/5824/keyboard-switch" itemprop="url">Keyboard switch.</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2019-09-07T08:27:12.753Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="116">116</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="37510">37510</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>mukulb</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/5824/keyboard-switch/116">
+						<small class="timeago" title="2019-09-27T16:51:46.246Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Thanks all for your responses. i was having similar questions and your answers were helpful to me.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1286" data-index="" data-cid="6" itemprop="itemListElement">
+		<meta itemprop="name" content="First Look at Editorial 1.1">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/omz.html" class="pull-left">
+						<img src="../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1286/first-look-at-editorial-1-1" itemprop="url">First Look at Editorial 1.1</a><br />
+
+								<small>
+					<a href="../category/6/editorial.html"><i class="fa fa-comments"></i> Editorial</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2014-11-16T16:32:56.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="116">116</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="228068">228068</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>duerig</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1286/first-look-at-editorial-1-1/116">
+						<small class="timeago" title="2014-11-16T16:32:56.000Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Please test the updated version on an iPad with the split keyboard enabled, both docked and undocked and split and unsplit. The current release keyboard bar is broken in various ways when split mode is enabled including:</p>
+<p>Sometimes the extra row overlaps with the normal keyboard.</p>
+<p>When the extra row is positioned properly, the buttons don't work. Instead, the touch events fall through to the piece of the document the buttons cover.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1964" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Binary files read and write ">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/manuelu" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/77fec4e35eba94905f062ef9b50dc0c4?size=128&default=identicon&rating=pg" class="img-circle user-img" title="ManuelU"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1964/binary-files-read-and-write" itemprop="url">Binary files read and write </a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-07-27T21:05:12.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="99">99</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="83571">83571</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>ManuelU</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1964/binary-files-read-and-write/99">
+						<small class="timeago" title="2015-09-02T07:04:34.365Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/ccc.html">@CCC</a>, yes I transferred that way so far , but I learned from the forum that you can transfer all the  files stored in the Phytonista sandbox with the FTP Transfer script running  in your iOS device and the Connect to Server item from the Mac OS X Finder. The trick is that you have tu use the IP Address insted of the name of your iOS device.and connect by pressing the Guest button in the Mac. You don't need to put the username and password when you transfer between iOS devices</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="1907" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Pythonista for Python 3.x.">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/d4t4wr4ngl3r231" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/5e543256c480ac577d30f76f9120eb74?size=128&default=identicon&rating=pg" class="img-circle user-img" title="D4t4Wr4ngl3r231"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/1907/pythonista-for-python-3-x" itemprop="url">Pythonista for Python 3.x.</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2015-07-06T22:18:03.000Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="99">99</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="193437">193437</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>dgelessus</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/1907/pythonista-for-python-3-x/99">
+						<small class="timeago" title="2016-02-17T01:12:26.739Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Just FYI to anyone who may have missed it - <a href="https://forum.omz-software.com/topic/2747/python-3-x-progress-update">it's happening</a>...</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5295" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="New Beta for Pythonista 3.3">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/omz.html" class="pull-left">
+						<img src="../uploads/profile/1719-profileimg.png" class="img-circle user-img" title="omz"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/5295/new-beta-for-pythonista-3-3" itemprop="url">New Beta for Pythonista 3.3</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2018-12-21T09:10:23.477Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="98">98</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="78206">78206</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>simon_hibbs</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/5295/new-beta-for-pythonista-3-3/98">
+						<small class="timeago" title="2020-06-08T22:11:38.777Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/mikael.html">@mikael</a> <a class="plugin-mentions-a" href="../user/omz.html">@omz</a> Pythonista played an important role in my career as well. When I was interviewing for my last job they set a programming task to write a custom compression tool for specifically formatted data. I wrote it in Pythonista, mostly on the train on my commute. It was fun, I used a combination of techniques for different fields, including variable length encoding for numeric fields that took a fair amount of bit twiddling. I was able to actually demo it to them in my face to face interview on my iPad. It blew them away, they had no idea you could do something like that on an iPad.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6118" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="No update?">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Guest"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/6118/no-update" itemprop="url">No update?</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2019-12-31T03:18:05.676Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="95">95</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="44175">44175</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6118/no-update/95">
+						<small class="timeago" title="2020-02-08T14:32:19.307Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/wnmark">@wnMark</a> said:</p>
+<blockquote>
+<p>If Ole will provide us a PayPal email address, this would be an alternative and will get him 100% of the money</p>
+</blockquote>
+<p>He could have problems if Apple knows that</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="5773" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Text detection with Vison coreML">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/pavlinb" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/a5d1968c29f152a56441182911b5d80e?size=128&default=identicon&rating=pg" class="img-circle user-img" title="pavlinb"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/5773/text-detection-with-vison-coreml" itemprop="url">Text detection with Vison coreML</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2019-08-02T19:36:09.273Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="94">94</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="34562">34562</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>enginsur</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/5773/text-detection-with-vison-coreml/94">
+						<small class="timeago" title="2022-01-14T10:41:39.212Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p>Can you help me with one issue I can't fix on iPhone 12 Pro?<a href="https://www.surveyzop.com/talktowendys/" rel="nofollow">.</a> <a href="https://www.surveyzop.com/restaurant-survey/" rel="nofollow">.</a></p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="2329" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Bug list for beta release 160037">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/jonb.html" class="pull-left">
+						<img src="../uploads/profile/895-profileimg.png" class="img-circle user-img" title="JonB"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/2329/bug-list-for-beta-release-160037" itemprop="url">Bug list for beta release 160037</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+					<a href="https://forum.omz-software.com/tags/160037"><span class="tag">160037</span></a>
+									<a href="https://forum.omz-software.com/tags/2.0"><span class="tag">2.0</span></a>
+									<a href="https://forum.omz-software.com/tags/beta"><span class="tag">beta</span></a>
+									<a href="https://forum.omz-software.com/tags/bug"><span class="tag">bug</span></a>
+									<a href="https://forum.omz-software.com/tags/160036"><span class="tag">160036</span></a>
+					<small>&bull;</small>
+				</span>
+
+				<small>posted <span class="timeago" title="2015-10-31T06:20:15.040Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="86">86</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="72874">72874</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>Webmaster4o</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/2329/bug-list-for-beta-release-160037/86">
+						<small class="timeago" title="2016-01-25T12:28:33.885Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/omz.html">@omz</a> Great, thanks. I'm the future I'll report without replying.</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6931" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Python SMB Connection">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="../user/davine.html" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/2736027fdb8077e0d87c91fa2e47ea61?size=128&default=identicon&rating=pg" class="img-circle user-img" title="DavinE"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/6931/python-smb-connection" itemprop="url">Python SMB Connection</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2021-03-01T12:59:37.150Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="85">85</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="17103">17103</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>cvp</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6931/python-smb-connection/85">
+						<small class="timeago" title="2021-03-08T10:50:44.351Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="../user/davine.html">@DavinE</a> 😂</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+	<li component="category/topic" class="row clearfix unread"data-tid="6319" data-index="" data-cid="5" itemprop="itemListElement">
+		<meta itemprop="name" content="Flappy bird">
+
+		<div class="col-md-7 col-sm-9 col-xs-11 content">
+			<div class="avatar hidden-sm hidden-xs pull-left">
+									<a href="https://forum.omz-software.com/user/karina" class="pull-left">
+						<img src="https://s.gravatar.com/avatar/3bd8cd1f49f66dd3238e3969d47ee4d1?size=128&default=identicon&rating=pg" class="img-circle user-img" title="Karina"/>
+					</a>
+			</div>
+
+			<h1 component="topic/header" class="title pull-left">
+				<i component="topic/pinned" class="fa fa-thumb-tack hide"></i>
+				<i component="topic/locked" class="fa fa-lock hide"></i>
+				<a href="https://forum.omz-software.com/topic/6319/flappy-bird" itemprop="url">Flappy bird</a><br />
+
+								<small>
+					<a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> &bull;
+				</small>
+
+				<span class="tag-list">
+
+					
+				</span>
+
+				<small>posted <span class="timeago" title="2020-04-13T12:47:40.428Z"></span></small>
+			</h1>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="81">81</span><br />
+			<small>Posts</small>
+		</div>
+		<div class="col-md-1 hidden-sm hidden-xs stats">
+			<span class="human-readable-number" title="19237">19237</span><br />
+			<small>Views</small>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-1 teaser">
+			<div class="card" style="border-color: ">
+								<p class="hidden-xs">
+					<strong>stephen</strong>
+					<a class="permalink" href="https://forum.omz-software.com/topic/6319/flappy-bird/81">
+						<small class="timeago" title="2020-04-25T10:04:35.076Z"></small>
+					</a>
+				</p>
+				<div class="post-content">
+					<p><a class="plugin-mentions-a" href="https://forum.omz-software.com/user/karina">@Karina</a> also &quot;brushes&quot; are properly used in the example so hopfully you see the diference</p>
+
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+	</div>
+</div><input type="hidden" ajaxify-data="%7B%22topics%22%3A%5B%7B%22tid%22%3A%227110%22%2C%22uid%22%3A%22878%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2244999%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%22%2C%22slug%22%3A%227110%2Foutliner-with-drag-drop-reordering%22%2C%22timestamp%22%3A%221621946530081%22%2C%22lastposttime%22%3A%221633044617034%22%2C%22postcount%22%3A%221003%22%2C%22viewcount%22%3A%22339446%22%2C%22locked%22%3Atrue%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2246839%22%2C%22relativeTime%22%3A%222021-05-25T12%3A42%3A10.081Z%22%2C%22lastposttimeISO%22%3A%222021-09-30T23%3A30%3A17.034Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22878%22%2C%22username%22%3A%22ihf%22%2C%22userslug%22%3A%22ihf%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F4a419f690f4c619d38e0f7e8337394f2%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2246839%22%2C%22uid%22%3A%221634%22%2C%22timestamp%22%3A%222021-09-30T23%3A30%3A17.034Z%22%2C%22tid%22%3A%227110%22%2C%22content%22%3A%22%3Cp%3ECONTINUED%20AT%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7248%2Foutliner-with-drag-drop-reordering-part-2%5C%22%3Ehttps%3A%2F%2Fforum.omz-software.com%2Ftopic%2F7248%2Foutliner-with-drag-drop-reordering-part-2%3C%2Fa%3E%20...%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221634%22%2C%22username%22%3A%22ccc%22%2C%22userslug%22%3A%22ccc%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1634-profileimg.png%22%7D%2C%22index%22%3A1003%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%227248%22%2C%22uid%22%3A%222281%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2246837%22%2C%22title%22%3A%22Outliner%20with%20drag%26%23x2F%3Bdrop%20reordering%20-%20part%202%22%2C%22slug%22%3A%227248%2Foutliner-with-drag-drop-reordering-part-2%22%2C%22timestamp%22%3A%221633035074861%22%2C%22lastposttime%22%3A%221651905728687%22%2C%22postcount%22%3A%22579%22%2C%22viewcount%22%3A%2260107%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2248446%22%2C%22relativeTime%22%3A%222021-09-30T20%3A51%3A14.861Z%22%2C%22lastposttimeISO%22%3A%222022-05-07T06%3A42%3A08.687Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2248446%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222022-05-07T06%3A42%3A08.687Z%22%2C%22tid%22%3A%227248%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fihf%5C%22%3E%40ihf%3C%2Fa%3E%20Rememeber%2C%20I%20was%20able%20to%20play%20normally%20without%20freezing%20afTer%20rebooting%20my%20iPad%2C%20no%20other%20way%2C%20even%20restarting%20Pythonista%20did%20not%20work.%20Reason%20for%20which%20I%20think%20the%20problem%20comes%20from%20the%20iOS.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A579%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222747%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2216002%22%2C%22title%22%3A%22Python%203.x%20Progress%20Update%22%2C%22slug%22%3A%222747%2Fpython-3-x-progress-update%22%2C%22timestamp%22%3A%221455670197377%22%2C%22lastposttime%22%3A%221466631336633%22%2C%22postcount%22%3A%22395%22%2C%22viewcount%22%3A%22438829%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2219800%22%2C%22relativeTime%22%3A%222016-02-17T00%3A49%3A57.377Z%22%2C%22lastposttimeISO%22%3A%222016-06-22T21%3A35%3A36.633Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2219800%22%2C%22uid%22%3A%222169%22%2C%22timestamp%22%3A%222016-06-22T21%3A35%3A36.633Z%22%2C%22tid%22%3A%222747%22%2C%22content%22%3A%22%3Cp%3EHi--is%20there%20an%20FAQ%20someplace%20on%20this%20subject%3F%20Confused%20about%20it%20all.%20Does%20the%20current%20version%20of%20the%20app%20support%20both%202.7%20and%203%3F%20How%3F%20Thanks!%3C%2Fp%3E%5Cn%3Cp%3EETA%3A%20Oops.%20Just%20answered%20my%20own%20question%20(saw%20there's%20a%20new%20app%20version%20for%203).%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222169%22%2C%22username%22%3A%22wreichard%22%2C%22userslug%22%3A%22wreichard%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fc044c921b609b342d6245d3fb30f8f43%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A395%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%225584%22%2C%22uid%22%3A%225415%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2233862%22%2C%22title%22%3A%22Braille%20application.%22%2C%22slug%22%3A%225584%2Fbraille-application%22%2C%22timestamp%22%3A%221555703069079%22%2C%22lastposttime%22%3A%221560700630049%22%2C%22postcount%22%3A%22334%22%2C%22viewcount%22%3A%22151932%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2234918%22%2C%22relativeTime%22%3A%222019-04-19T19%3A44%3A29.079Z%22%2C%22lastposttimeISO%22%3A%222019-06-16T15%3A57%3A10.049Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%225415%22%2C%22username%22%3A%22shinya.ta%22%2C%22userslug%22%3A%22shinya-ta%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F86c56340f4a610234f554e3a17853c5a%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2234918%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222019-06-16T15%3A57%3A10.049Z%22%2C%22tid%22%3A%225584%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fshinya-ta%5C%22%3E%40shinya.ta%3C%2Fa%3E%20Really%2C%20if%20I'm%20your%20god%2C%20please%20change%20your%20religion%20%F0%9F%98%82%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A334%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221946%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%221946%22%2C%22title%22%3A%22Pythonista%201.6%20Beta%22%2C%22slug%22%3A%221946%2Fpythonista-1-6-beta%22%2C%22timestamp%22%3A%221437560034000%22%2C%22lastposttime%22%3A%221452843551353%22%2C%22postcount%22%3A%22301%22%2C%22viewcount%22%3A%22389440%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2214731%22%2C%22relativeTime%22%3A%222015-07-22T10%3A13%3A54.000Z%22%2C%22lastposttimeISO%22%3A%222016-01-15T07%3A39%3A11.353Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2214731%22%2C%22uid%22%3A%22232%22%2C%22timestamp%22%3A%222016-01-15T07%3A39%3A11.353Z%22%2C%22tid%22%3A%221946%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20%2C%20ok%20great.%3Cbr%20%2F%3E%5CnEdit%3Cbr%20%2F%3E%5CnI%20just%20noticed%20that%20is%20supported%20with%20devices%20supporting%203D%20Touch.%20I%20didn't%20really%20notice%20before%20as%20not%20using%20my%20iphone%20much%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22232%22%2C%22username%22%3A%22Phuket2%22%2C%22userslug%22%3A%22phuket2%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F232-profileimg.png%22%7D%2C%22index%22%3A301%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%225128%22%2C%22uid%22%3A%225415%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2230288%22%2C%22title%22%3A%22pythonista%20UI%22%2C%22slug%22%3A%225128%2Fpythonista-ui%22%2C%22timestamp%22%3A%221539005091194%22%2C%22lastposttime%22%3A%221544031315143%22%2C%22postcount%22%3A%22256%22%2C%22viewcount%22%3A%22125604%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2231467%22%2C%22relativeTime%22%3A%222018-10-08T13%3A24%3A51.194Z%22%2C%22lastposttimeISO%22%3A%222018-12-05T17%3A35%3A15.143Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%225415%22%2C%22username%22%3A%22shinya.ta%22%2C%22userslug%22%3A%22shinya-ta%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F86c56340f4a610234f554e3a17853c5a%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2231467%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222018-12-05T17%3A35%3A15.143Z%22%2C%22tid%22%3A%225128%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fshinya-ta%5C%22%3E%40shinya.ta%3C%2Fa%3E%20Th%C3%A9%20script%20here-under%20will%20allow%20you%20to%20test%20the%20Apple%20standard%20speech%20module%2C%20and%20this%20code%20supports%2C%20I%20hope%2C%20all%20emojis.%20Thus%2C%20I%20suppose%20that%20my%20other%20scripts%20has%20a%20bug%20for%20combined%20emojis.%20I'll%20try%20to%20correct%20it%20in%20a%20close%20future.%3C%2Fp%3E%5Cn%3Cp%3E%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F5271%2Fscript-to-test-objective-c-avspeechsynthesizer%5C%22%3Esee%20here%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A256%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%227086%22%2C%22uid%22%3A%2210606%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2244776%22%2C%22title%22%3A%22Map%20API%2C%20need%20suggestions%20for%20how%20to%20execute%20ideas%22%2C%22slug%22%3A%227086%2Fmap-api-need-suggestions-for-how-to-execute-ideas%22%2C%22timestamp%22%3A%221621045715451%22%2C%22lastposttime%22%3A%221622120819116%22%2C%22postcount%22%3A%22196%22%2C%22viewcount%22%3A%2238359%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2245079%22%2C%22relativeTime%22%3A%222021-05-15T02%3A28%3A35.451Z%22%2C%22lastposttimeISO%22%3A%222021-05-27T13%3A06%3A59.116Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2210606%22%2C%22username%22%3A%22RocketBlaster05%22%2C%22userslug%22%3A%22rocketblaster05%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F14f5a4a36887da8b46b084038e4f4715%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2245079%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222021-05-27T13%3A06%3A59.116Z%22%2C%22tid%22%3A%227086%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Frocketblaster05%5C%22%3E%40RocketBlaster05%3C%2Fa%3E%20Good%20luck%20and%20always%20read%20to%20help%2C%20or%20debug%20(less%20funny)%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A196%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222544%22%2C%22uid%22%3A%221053%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2214532%22%2C%22title%22%3A%22Wish%20list%20for%20next%20release%22%2C%22slug%22%3A%222544%2Fwish-list-for-next-release%22%2C%22timestamp%22%3A%221452562215800%22%2C%22lastposttime%22%3A%221526498193022%22%2C%22postcount%22%3A%22139%22%2C%22viewcount%22%3A%22126858%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2229067%22%2C%22relativeTime%22%3A%222016-01-12T01%3A30%3A15.800Z%22%2C%22lastposttimeISO%22%3A%222018-05-16T19%3A16%3A33.022Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2229067%22%2C%22uid%22%3A%224078%22%2C%22timestamp%22%3A%222018-05-16T19%3A16%3A33.022Z%22%2C%22tid%22%3A%222544%22%2C%22content%22%3A%22%3Cp%3Esame%20code%20folding%2C%20along%20with%20vertex%20shaders%20in%20scene%20and%20opencv%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%224078%22%2C%22username%22%3A%22ellie_ff1493%22%2C%22userslug%22%3A%22ellie_ff1493%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F4078-profileimg.png%22%7D%2C%22index%22%3A139%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%226345%22%2C%22uid%22%3A%227184%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2239852%22%2C%22title%22%3A%22%5BSPACE%20ESCAPE%5D-Game%20example%20to%20help%20with%20Game%20dev%22%2C%22slug%22%3A%226345%2Fspace-escape-game-example-to-help-with-game-dev%22%2C%22timestamp%22%3A%221587755643446%22%2C%22lastposttime%22%3A%221591436708132%22%2C%22postcount%22%3A%22133%22%2C%22viewcount%22%3A%2233732%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2240775%22%2C%22relativeTime%22%3A%222020-04-24T19%3A14%3A03.446Z%22%2C%22lastposttimeISO%22%3A%222020-06-06T09%3A45%3A08.132Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%227184%22%2C%22username%22%3A%22stephen%22%2C%22userslug%22%3A%22stephen%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F7184-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2240775%22%2C%22uid%22%3A%227454%22%2C%22timestamp%22%3A%222020-06-06T09%3A45%3A08.132Z%22%2C%22tid%22%3A%226345%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fcvp%5C%22%3E%40cvp%3C%2Fa%3E%20yes%20you%E2%80%99re%20right%20%F0%9F%98%85%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%227454%22%2C%22username%22%3A%22Karina%22%2C%22userslug%22%3A%22karina%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F3bd8cd1f49f66dd3238e3969d47ee4d1%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A133%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22game%20dev%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%224%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221782%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%221782%22%2C%22title%22%3A%22Beta%20Status%20Update%22%2C%22slug%22%3A%221782%2Fbeta-status-update%22%2C%22timestamp%22%3A%221432920301000%22%2C%22lastposttime%22%3A%221432920300000%22%2C%22postcount%22%3A%22124%22%2C%22viewcount%22%3A%22147629%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%229797%22%2C%22relativeTime%22%3A%222015-05-29T17%3A25%3A01.000Z%22%2C%22lastposttimeISO%22%3A%222015-05-29T17%3A25%3A00.000Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%229797%22%2C%22uid%22%3A%22895%22%2C%22timestamp%22%3A%222015-05-29T17%3A25%3A00.000Z%22%2C%22tid%22%3A%221782%22%2C%22content%22%3A%22%3Cp%3EThe%20extension%20runs%20in%20its%20own%20sandbox..%20As%20I%20recall%20there%20was%20an%20extensions%20site%20packages%3F%20%20You%20have%20to%20separately%20install%20packages%20to%20both%20locations.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22index%22%3A124%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%225824%22%2C%22uid%22%3A%225415%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2235823%22%2C%22title%22%3A%22Keyboard%20switch.%22%2C%22slug%22%3A%225824%2Fkeyboard-switch%22%2C%22timestamp%22%3A%221567844832753%22%2C%22lastposttime%22%3A%221569603106246%22%2C%22postcount%22%3A%22116%22%2C%22viewcount%22%3A%2237510%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2236245%22%2C%22relativeTime%22%3A%222019-09-07T08%3A27%3A12.753Z%22%2C%22lastposttimeISO%22%3A%222019-09-27T16%3A51%3A46.246Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%225415%22%2C%22username%22%3A%22shinya.ta%22%2C%22userslug%22%3A%22shinya-ta%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F86c56340f4a610234f554e3a17853c5a%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2236245%22%2C%22uid%22%3A%226570%22%2C%22timestamp%22%3A%222019-09-27T16%3A51%3A46.246Z%22%2C%22tid%22%3A%225824%22%2C%22content%22%3A%22%3Cp%3EThanks%20all%20for%20your%20responses.%20i%20was%20having%20similar%20questions%20and%20your%20answers%20were%20helpful%20to%20me.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%226570%22%2C%22username%22%3A%22mukulb%22%2C%22userslug%22%3A%22mukulb%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F218b61c740b10116bf614f6fc4374dbc%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A116%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221286%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%226%22%2C%22mainPid%22%3A%221286%22%2C%22title%22%3A%22First%20Look%20at%20Editorial%201.1%22%2C%22slug%22%3A%221286%2Ffirst-look-at-editorial-1-1%22%2C%22timestamp%22%3A%221416155576000%22%2C%22lastposttime%22%3A%221416155576000%22%2C%22postcount%22%3A%22116%22%2C%22viewcount%22%3A%22228068%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%227260%22%2C%22relativeTime%22%3A%222014-11-16T16%3A32%3A56.000Z%22%2C%22lastposttimeISO%22%3A%222014-11-16T16%3A32%3A56.000Z%22%2C%22category%22%3A%7B%22cid%22%3A%226%22%2C%22name%22%3A%22Editorial%22%2C%22slug%22%3A%226%2Feditorial%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%23495c74%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%227260%22%2C%22uid%22%3A%22452%22%2C%22timestamp%22%3A%222014-11-16T16%3A32%3A56.000Z%22%2C%22tid%22%3A%221286%22%2C%22content%22%3A%22%3Cp%3EPlease%20test%20the%20updated%20version%20on%20an%20iPad%20with%20the%20split%20keyboard%20enabled%2C%20both%20docked%20and%20undocked%20and%20split%20and%20unsplit.%20The%20current%20release%20keyboard%20bar%20is%20broken%20in%20various%20ways%20when%20split%20mode%20is%20enabled%20including%3A%3C%2Fp%3E%5Cn%3Cp%3ESometimes%20the%20extra%20row%20overlaps%20with%20the%20normal%20keyboard.%3C%2Fp%3E%5Cn%3Cp%3EWhen%20the%20extra%20row%20is%20positioned%20properly%2C%20the%20buttons%20don't%20work.%20Instead%2C%20the%20touch%20events%20fall%20through%20to%20the%20piece%20of%20the%20document%20the%20buttons%20cover.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22452%22%2C%22username%22%3A%22duerig%22%2C%22userslug%22%3A%22duerig%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F7088bee6d6f3ce35c4e73acfda6b09e7%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A116%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221964%22%2C%22uid%22%3A%2255%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%221964%22%2C%22title%22%3A%22Binary%20files%20read%20and%20write%20%22%2C%22slug%22%3A%221964%2Fbinary-files-read-and-write%22%2C%22timestamp%22%3A%221438031112000%22%2C%22lastposttime%22%3A%221441177474365%22%2C%22postcount%22%3A%2299%22%2C%22viewcount%22%3A%2283571%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2212066%22%2C%22relativeTime%22%3A%222015-07-27T21%3A05%3A12.000Z%22%2C%22lastposttimeISO%22%3A%222015-09-02T07%3A04%3A34.365Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%2255%22%2C%22username%22%3A%22ManuelU%22%2C%22userslug%22%3A%22manuelu%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F77fec4e35eba94905f062ef9b50dc0c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2212066%22%2C%22uid%22%3A%2255%22%2C%22timestamp%22%3A%222015-09-02T07%3A04%3A34.365Z%22%2C%22tid%22%3A%221964%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40CCC%3C%2Fa%3E%2C%20yes%20I%20transferred%20that%20way%20so%20far%20%2C%20but%20I%20learned%20from%20the%20forum%20that%20you%20can%20transfer%20all%20the%20%20files%20stored%20in%20the%20Phytonista%20sandbox%20with%20the%20FTP%20Transfer%20script%20running%20%20in%20your%20iOS%20device%20and%20the%20Connect%20to%20Server%20item%20from%20the%20Mac%20OS%20X%20Finder.%20The%20trick%20is%20that%20you%20have%20tu%20use%20the%20IP%20Address%20insted%20of%20the%20name%20of%20your%20iOS%20device.and%20connect%20by%20pressing%20the%20Guest%20button%20in%20the%20Mac.%20You%20don't%20need%20to%20put%20the%20username%20and%20password%20when%20you%20transfer%20between%20iOS%20devices%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2255%22%2C%22username%22%3A%22ManuelU%22%2C%22userslug%22%3A%22manuelu%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F77fec4e35eba94905f062ef9b50dc0c4%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A99%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%221907%22%2C%22uid%22%3A%221658%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%221907%22%2C%22title%22%3A%22Pythonista%20for%20Python%203.x.%22%2C%22slug%22%3A%221907%2Fpythonista-for-python-3-x%22%2C%22timestamp%22%3A%221436221083000%22%2C%22lastposttime%22%3A%221455671546739%22%2C%22postcount%22%3A%2299%22%2C%22viewcount%22%3A%22193437%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2216010%22%2C%22relativeTime%22%3A%222015-07-06T22%3A18%3A03.000Z%22%2C%22lastposttimeISO%22%3A%222016-02-17T01%3A12%3A26.739Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221658%22%2C%22username%22%3A%22D4t4Wr4ngl3r231%22%2C%22userslug%22%3A%22d4t4wr4ngl3r231%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F5e543256c480ac577d30f76f9120eb74%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2216010%22%2C%22uid%22%3A%22902%22%2C%22timestamp%22%3A%222016-02-17T01%3A12%3A26.739Z%22%2C%22tid%22%3A%221907%22%2C%22content%22%3A%22%3Cp%3EJust%20FYI%20to%20anyone%20who%20may%20have%20missed%20it%20-%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2747%2Fpython-3-x-progress-update%5C%22%3Eit's%20happening%3C%2Fa%3E...%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%22902%22%2C%22username%22%3A%22dgelessus%22%2C%22userslug%22%3A%22dgelessus%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F902-profileimg.png%22%7D%2C%22index%22%3A99%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%225295%22%2C%22uid%22%3A%221719%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2231631%22%2C%22title%22%3A%22New%20Beta%20for%20Pythonista%203.3%22%2C%22slug%22%3A%225295%2Fnew-beta-for-pythonista-3-3%22%2C%22timestamp%22%3A%221545383423477%22%2C%22lastposttime%22%3A%221591654298777%22%2C%22postcount%22%3A%2298%22%2C%22viewcount%22%3A%2278206%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2240813%22%2C%22relativeTime%22%3A%222018-12-21T09%3A10%3A23.477Z%22%2C%22lastposttimeISO%22%3A%222020-06-08T22%3A11%3A38.777Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2240813%22%2C%22uid%22%3A%226288%22%2C%22timestamp%22%3A%222020-06-08T22%3A11%3A38.777Z%22%2C%22tid%22%3A%225295%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fmikael%5C%22%3E%40mikael%3C%2Fa%3E%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Pythonista%20played%20an%20important%20role%20in%20my%20career%20as%20well.%20When%20I%20was%20interviewing%20for%20my%20last%20job%20they%20set%20a%20programming%20task%20to%20write%20a%20custom%20compression%20tool%20for%20specifically%20formatted%20data.%20I%20wrote%20it%20in%20Pythonista%2C%20mostly%20on%20the%20train%20on%20my%20commute.%20It%20was%20fun%2C%20I%20used%20a%20combination%20of%20techniques%20for%20different%20fields%2C%20including%20variable%20length%20encoding%20for%20numeric%20fields%20that%20took%20a%20fair%20amount%20of%20bit%20twiddling.%20I%20was%20able%20to%20actually%20demo%20it%20to%20them%20in%20my%20face%20to%20face%20interview%20on%20my%20iPad.%20It%20blew%20them%20away%2C%20they%20had%20no%20idea%20you%20could%20do%20something%20like%20that%20on%20an%20iPad.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%226288%22%2C%22username%22%3A%22simon_hibbs%22%2C%22userslug%22%3A%22simon_hibbs%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fd43a64250c056a4be0b3c4aaedecb22d%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A98%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%226118%22%2C%22uid%22%3A%226551%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2237557%22%2C%22title%22%3A%22No%20update%3F%22%2C%22slug%22%3A%226118%2Fno-update%22%2C%22timestamp%22%3A%221577762285676%22%2C%22lastposttime%22%3A%221581172339307%22%2C%22postcount%22%3A%2295%22%2C%22viewcount%22%3A%2244175%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2238083%22%2C%22relativeTime%22%3A%222019-12-31T03%3A18%3A05.676Z%22%2C%22lastposttimeISO%22%3A%222020-02-08T14%3A32%3A19.307Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A0%2C%22username%22%3A%22%5B%5Bglobal%3Aguest%5D%5D%22%2C%22userslug%22%3A%22%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fd415f0e30c471dfdd9bc4f827329ef48%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2238083%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222020-02-08T14%3A32%3A19.307Z%22%2C%22tid%22%3A%226118%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwnmark%5C%22%3E%40wnMark%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EIf%20Ole%20will%20provide%20us%20a%20PayPal%20email%20address%2C%20this%20would%20be%20an%20alternative%20and%20will%20get%20him%20100%25%20of%20the%20money%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EHe%20could%20have%20problems%20if%20Apple%20knows%20that%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A95%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%225773%22%2C%22uid%22%3A%226404%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2235394%22%2C%22title%22%3A%22Text%20detection%20with%20Vison%20coreML%22%2C%22slug%22%3A%225773%2Ftext-detection-with-vison-coreml%22%2C%22timestamp%22%3A%221564774569273%22%2C%22lastposttime%22%3A%221642156899212%22%2C%22postcount%22%3A%2294%22%2C%22viewcount%22%3A%2234562%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2247791%22%2C%22relativeTime%22%3A%222019-08-02T19%3A36%3A09.273Z%22%2C%22lastposttimeISO%22%3A%222022-01-14T10%3A41%3A39.212Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%226404%22%2C%22username%22%3A%22pavlinb%22%2C%22userslug%22%3A%22pavlinb%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fa5d1968c29f152a56441182911b5d80e%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2247791%22%2C%22uid%22%3A%2217154%22%2C%22timestamp%22%3A%222022-01-14T10%3A41%3A39.212Z%22%2C%22tid%22%3A%225773%22%2C%22content%22%3A%22%3Cp%3ECan%20you%20help%20me%20with%20one%20issue%20I%20can't%20fix%20on%20iPhone%2012%20Pro%3F%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.surveyzop.com%2Ftalktowendys%2F%5C%22%20rel%3D%5C%22nofollow%5C%22%3E.%3C%2Fa%3E%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.surveyzop.com%2Frestaurant-survey%2F%5C%22%20rel%3D%5C%22nofollow%5C%22%3E.%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%2217154%22%2C%22username%22%3A%22enginsur%22%2C%22userslug%22%3A%22enginsur%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Ffd5611486f9333ac7a13b76b7eb2f14d%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A94%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%222329%22%2C%22uid%22%3A%22895%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2212999%22%2C%22title%22%3A%22Bug%20list%20for%20beta%20release%20160037%22%2C%22slug%22%3A%222329%2Fbug-list-for-beta-release-160037%22%2C%22timestamp%22%3A%221446272415040%22%2C%22lastposttime%22%3A%221453724913885%22%2C%22postcount%22%3A%2286%22%2C%22viewcount%22%3A%2272874%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2215236%22%2C%22relativeTime%22%3A%222015-10-31T06%3A20%3A15.040Z%22%2C%22lastposttimeISO%22%3A%222016-01-25T12%3A28%3A33.885Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2215236%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%222016-01-25T12%3A28%3A33.885Z%22%2C%22tid%22%3A%222329%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Great%2C%20thanks.%20I'm%20the%20future%20I'll%20report%20without%20replying.%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22index%22%3A86%7D%2C%22tags%22%3A%5B%7B%22value%22%3A%22160037%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%2C%7B%22value%22%3A%222.0%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%224%22%7D%2C%7B%22value%22%3A%22beta%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2230%22%7D%2C%7B%22value%22%3A%22bug%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%2230%22%7D%2C%7B%22value%22%3A%22160036%22%2C%22color%22%3A%22%22%2C%22bgColor%22%3A%22%22%2C%22score%22%3A%221%22%7D%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%226931%22%2C%22uid%22%3A%228454%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2243875%22%2C%22title%22%3A%22Python%20SMB%20Connection%22%2C%22slug%22%3A%226931%2Fpython-smb-connection%22%2C%22timestamp%22%3A%221614603577150%22%2C%22lastposttime%22%3A%221615200644351%22%2C%22postcount%22%3A%2285%22%2C%22viewcount%22%3A%2217103%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2244038%22%2C%22relativeTime%22%3A%222021-03-01T12%3A59%3A37.150Z%22%2C%22lastposttimeISO%22%3A%222021-03-08T10%3A50%3A44.351Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%228454%22%2C%22username%22%3A%22DavinE%22%2C%22userslug%22%3A%22davine%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2736027fdb8077e0d87c91fa2e47ea61%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2244038%22%2C%22uid%22%3A%222281%22%2C%22timestamp%22%3A%222021-03-08T10%3A50%3A44.351Z%22%2C%22tid%22%3A%226931%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fdavine%5C%22%3E%40DavinE%3C%2Fa%3E%20%F0%9F%98%82%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%222281%22%2C%22username%22%3A%22cvp%22%2C%22userslug%22%3A%22cvp%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F2281-profileimg.png%22%7D%2C%22index%22%3A85%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%2C%7B%22tid%22%3A%226319%22%2C%22uid%22%3A%227454%22%2C%22cid%22%3A%225%22%2C%22mainPid%22%3A%2239534%22%2C%22title%22%3A%22Flappy%20bird%22%2C%22slug%22%3A%226319%2Fflappy-bird%22%2C%22timestamp%22%3A%221586782060428%22%2C%22lastposttime%22%3A%221587809075076%22%2C%22postcount%22%3A%2281%22%2C%22viewcount%22%3A%2219237%22%2C%22locked%22%3Afalse%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2239868%22%2C%22relativeTime%22%3A%222020-04-13T12%3A47%3A40.428Z%22%2C%22lastposttimeISO%22%3A%222020-04-25T10%3A04%3A35.076Z%22%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%2C%22disabled%22%3Afalse%7D%2C%22user%22%3A%7B%22uid%22%3A%227454%22%2C%22username%22%3A%22Karina%22%2C%22userslug%22%3A%22karina%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F3bd8cd1f49f66dd3238e3969d47ee4d1%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22teaser%22%3A%7B%22pid%22%3A%2239868%22%2C%22uid%22%3A%227184%22%2C%22timestamp%22%3A%222020-04-25T10%3A04%3A35.076Z%22%2C%22tid%22%3A%226319%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fkarina%5C%22%3E%40Karina%3C%2Fa%3E%20also%20%26quot%3Bbrushes%26quot%3B%20are%20properly%20used%20in%20the%20example%20so%20hopfully%20you%20see%20the%20diference%3C%2Fp%3E%5Cn%22%2C%22user%22%3A%7B%22uid%22%3A%227184%22%2C%22username%22%3A%22stephen%22%2C%22userslug%22%3A%22stephen%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F7184-profileimg.png%22%7D%2C%22index%22%3A81%7D%2C%22tags%22%3A%5B%5D%2C%22isOwner%22%3Afalse%2C%22unread%22%3Atrue%2C%22unreplied%22%3Afalse%7D%5D%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Fpopular%2Falltime.rss%22%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22%5B%5Bglobal%3Aheader.popular%5D%5D%22%7D%5D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22popular%22%2C%22popular%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22pTdf0AIy-KYD-jt8QswppMP6Rl-KvOL__u_Q%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22popular%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="alltime.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The ImagePath Module &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/ImagePath.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-ImagePath">
+<span id="the-imagepath-module"></span><h1>The ImagePath Module<a class="headerlink" href="ImagePath.html#module-ImagePath" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="ImagePath.html#module-ImagePath" title="ImagePath"><code class="xref py py-mod docutils literal"><span class="pre">ImagePath</span></code></a> module is used to store and manipulate 2-dimensional vector data. Path objects can be passed to the methods in the <a class="reference internal" href="ImageDraw.html#module-ImageDraw" title="ImageDraw"><code class="xref py py-mod docutils literal"><span class="pre">ImageDraw</span></code></a> module.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="ImagePath.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="ImagePath.Path">
+<code class="descclassname">ImagePath.</code><code class="descname">Path</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a path object. The coordinate list can be any sequence object containing either 2-tuples [ (x, y), … ] or numeric values [ x, y, … ].</p>
+<p>You can also create a path object from another path object.</p>
+<p>In 1.1.6 and later, you can also pass in any object that implements Python’s buffer API. The buffer should provide read access, and contain C floats in machine byte order.</p>
+<p>The path object implements most parts of the Python sequence interface, and behaves like a list of (x, y) pairs. You can use len(), item access, and slicing as usual. However, the current version does not support slice assignment, or item and slice deletion.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="path-methods">
+<h2>Path Methods<a class="headerlink" href="ImagePath.html#path-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="ImagePath.path.compact">
+<code class="descclassname">path.</code><code class="descname">compact</code><span class="sig-paren">(</span><em>distance=2</em><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.path.compact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compacts the path, by removing points that are close to each other. This method modifies the path in place, and returns the number of points left in the path.</p>
+<p>The distance is measured as “city-block distance,” and defaults to two pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ImagePath.path.getbbox">
+<code class="descclassname">path.</code><code class="descname">getbbox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.path.getbbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the bounding box of the path.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ImagePath.path.map">
+<code class="descclassname">path.</code><code class="descname">map</code><span class="sig-paren">(</span><em>function</em><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.path.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps the path through a function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ImagePath.path.tolist">
+<code class="descclassname">path.</code><code class="descname">tolist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.path.tolist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the path to a Python list <code class="docutils literal"><span class="pre">[(x,</span> <span class="pre">y),</span> <span class="pre">...]</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">path.</code><code class="descname">tolist</code><span class="sig-paren">(</span><em>flat=0</em><span class="sig-paren">)</span></dt>
+<dd><p>(New in 1.1.5) Converts the path to a Python list. If the flat flag is zero or omitted, the resulting list contains 2-tuples <code class="docutils literal"><span class="pre">[</span> <span class="pre">(x,</span> <span class="pre">y),</span> <span class="pre">…</span> <span class="pre">]</span></code>. If flat is 1, the list is flattened <code class="docutils literal"><span class="pre">[</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">…</span> <span class="pre">]</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ImagePath.path.transform">
+<code class="descclassname">path.</code><code class="descname">transform</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="ImagePath.html#ImagePath.path.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms the path in place, using an affine transform. The matrix is a 6-tuple (a, b, c, d, e, f), and each point is mapped as follows:</p>
+<p><code class="docutils literal"><span class="pre">xOut</span> <span class="pre">=</span> <span class="pre">xIn</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">yIn</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c</span></code></p>
+<p><code class="docutils literal"><span class="pre">yOut</span> <span class="pre">=</span> <span class="pre">xIn</span> <span class="pre">*</span> <span class="pre">d</span> <span class="pre">+</span> <span class="pre">yIn</span> <span class="pre">*</span> <span class="pre">e</span> <span class="pre">+</span> <span class="pre">f</span></code></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

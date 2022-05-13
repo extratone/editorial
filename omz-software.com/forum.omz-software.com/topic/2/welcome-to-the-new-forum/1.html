@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to the new forum! | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<meta name="title" content="Welcome to the new forum!" />
+	<meta name="description" content="I&amp;#x27;ve migrated the Pythonista and Editorial community forums to NodeBB, which brings a fresh new look and a lot of very nice features that the old forum was lacking. For example:   Get notified when someone replies to your posts or @-mentions you (see the ..." />
+	<meta property="og:title" content="Welcome to the new forum!" />
+	<meta property="og:description" content="I&amp;#x27;ve migrated the Pythonista and Editorial community forums to NodeBB, which brings a fresh new look and a lot of very nice features that the old forum was lacking. For example:   Get notified when someone replies to your posts or @-mentions you (see the ..." />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https:&#x2F;&#x2F;forum.omz-software.com&#x2F;topic&#x2F;2&#x2F;welcome-to-the-new-forum" />
+	<meta property="og:image" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;b2731bf385b0ba32d559bf8f40174808?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="og:image:url" content="https:&#x2F;&#x2F;s.gravatar.com&#x2F;avatar&#x2F;b2731bf385b0ba32d559bf8f40174808?size=128&amp;default=identicon&amp;rating=pg" />
+	<meta property="article:published_time" content="2015-08-05T15:37:01.049Z" />
+	<meta property="article:modified_time" content="2016-08-04T05:53:26.856Z" />
+	<meta property="article:section" content="Announcements" />
+	<link rel="stylesheet" type="text/css" href="../../../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+	<link rel="apple-touch-icon" href="../../../apple-touch-icon" />
+	<link rel="alternate" type="application/rss+xml" href="../../2.rss" />
+	<link rel="canonical" href="../welcome-to-the-new-forum.html" />
+	<link rel="up" href="../../../category/1/announcements.html" />
+	<link rel="next" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/1?page=2" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"uYdYkfX0-mogeVe5XnmuSAC5yanRg-W-9vcM","searchEnabled":true}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../../../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../../../index.html">
+					<img class="hide forum-logo" src="1.html" />
+				</a>
+								<a href="../../../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../../../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../../7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="1.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../../../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="1.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="1.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../../../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../../../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript><div class="topic">
+<ol class="breadcrumb">
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../index.html" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" >
+		<a href="../../../category/1/announcements.html" itemprop="url">
+			<span itemprop="title">
+				Announcements
+				
+			</span>
+		</a>
+	</li>
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Welcome to the new forum!
+												<a target="_blank" href="../../2.rss"><i class="fa fa-rss-square"></i></a>
+			</span>
+		
+	</li>
+</ol>
+
+	<h1 component="post/header" itemprop="name">
+
+		<i class="fa fa-thumb-tack hidden"></i> <i class="fa fa-lock "></i> <span class="topic-title" component="topic/title">Welcome to the new forum!</span>
+
+
+		<button component="topic/follow" class="btn hidden-xs hidden-sm ">
+			<span>Watch</span> <i class="fa fa-eye"></i>
+		</button>
+
+		<button component="topic/unfollow" class="btn hidden-xs hidden-sm hidden">
+			<span>Unwatch</span> <i class="fa fa-eye-slash"></i>
+		</button>
+
+		<span class="browsing-users hidden hidden-xs hidden-sm pull-right">
+			<span>browsing</span>
+			<div component="topic/browsing/list" class="thread_active_users active-users inline-block"></div>
+			<small class="hidden">
+				<i class="fa fa-users"></i> <span component="topic/browsing/count" class="user-count"></span>
+			</small>
+		</span>
+	</h1>
+
+	<div component="topic/deleted/message" class="alert alert-warning hidden">This topic has been deleted. Only users with topic management privileges can see it.</div>
+
+	<ul component="topic" class="posts" data-tid="2">
+			<li component="post" class="clearfix "data-pid="2" data-uid="1" data-username="admin2" data-userslug="admin2" data-index="0" data-timestamp="1438789021481" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="0"></a>
+
+				<meta itemprop="datePublished" content="2015-08-05T15:37:01.481Z">
+				<meta itemprop="dateModified" content="2015-08-06T09:08:17.760Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/admin2.html">
+			<img src="https://s.gravatar.com/avatar/b2731bf385b0ba32d559bf8f40174808?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/admin2.html" itemprop="author" data-username="admin2" data-uid="1">admin2</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="1.html"><span class="timeago" title="2015-08-05T15:37:01.481Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="2">2</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I've migrated the Pythonista and Editorial community forums to <a href="https://nodebb.org" rel="nofollow">NodeBB</a>, which brings a fresh new look and a lot of very nice features that the old forum was lacking. For example:</p>
+<ul>
+<li>
+<p>Get notified when someone replies to your posts or @-mentions you (see the settings in your profile)</p>
+</li>
+<li>
+<p>Mark posts as favorites, flag for moderation, track unread status, etc.</p>
+</li>
+<li>
+<p>Better search</p>
+</li>
+<li>
+<p>You can introduce yourself on the profile page</p>
+</li>
+<li>
+<p>Login via Twitter (optional, for new users)</p>
+</li>
+<li>
+<p>A nicer URL ;)</p>
+</li>
+<li>
+<p>...and much more.</p>
+</li>
+</ul>
+<p>If you already have an account in the old forum, here's what you need to know:</p>
+<ul>
+<li>
+<p>I've imported all users (and posts), but you need to set a new password. Simply enter the email address you used for the old forum here: <a href="../../../reset.html">→ Reset Password</a></p>
+</li>
+<li>
+<p>The old forum is still online for now, so that links continue to work. In the next couple of days, I will start redirecting the old topic pages to the imported ones in this forum.</p>
+</li>
+<li>
+<p>I'm not sure yet if I'll redirect the RSS feeds as well, you might want to update your feed reader manually in any case (some apps don't support redirection properly).</p>
+</li>
+</ul>
+<p>If you see anything that looks weird, or if you have any problems with accessing your account, please let me know.</p>
+<p>Unfortunately, spam has been a bit of an issue lately. I don't know yet how well NodeBB will work in that regard, but I've taken some precautionary measures. Signups require solving a <a href="https://www.google.com/recaptcha/intro/index.html" rel="nofollow">reCAPTCHA</a>, and all posts are checked by <a href="http://akismet.com" rel="nofollow">Akismet</a> – I don't have experience with the latter, but I've heard good things about it.</p>
+
+	
+</div>
+
+
+<small data-editor="omz" component="post/editor" class="hidden">last edited by <strong>omz</strong> <span class="timeago" title="2015-08-06T09:08:17.760Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+						<li class="post-bar" data-index="0">
+<span class="tags">
+
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="24">24</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="35443">35443</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+			</li>
+				<li component="post" class="clearfix "data-pid="10998" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="1" data-timestamp="1438899391142" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="1"></a>
+
+				<meta itemprop="datePublished" content="2015-08-06T22:16:31.142Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/2"><span class="timeago" title="2015-08-06T22:16:31.142Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Loving the new forum so far. I don't know how hard this would be to do, but it'd be nice if links to old forum posts changed. For example in the topic <a href="https://forum.omz-software.com/topic/2031/videos">Videos</a> <a class="plugin-mentions-a" href="../../../user/ccc.html">@ccc</a> said:</p>
+<blockquote>
+<p>This exploration allows you to record video from the camera... <a href="http://omz-forums.appspot.com/pythonista/post/6438894778187776" rel="nofollow">http://omz-forums.appspot.com/pythonista/post/6438894778187776</a></p>
+</blockquote>
+<p>It'd be nice and provide a smoother user experience if that was automatically changed to :</p>
+<blockquote>
+<p>This exploration allows you to record video from the camera... <a href="https://forum.omz-software.com/topic/2026/capturemedia">https://forum.omz-software.com/topic/2026/capturemedia</a></p>
+</blockquote>
+<p>Because as of right now, if I click that, it takes me to the old forum. This could be a matter of having a program that changes the physical links, or it could be a matter of when the old site goes down, having each page redirect to the relevant page on the new forum.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11005" data-uid="1719" data-username="omz" data-userslug="omz" data-index="2" data-timestamp="1438926476301" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="2"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T05:47:56.301Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/omz.html">
+			<img src="../../../uploads/profile/1719-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/omz.html" itemprop="author" data-username="omz" data-uid="1719">omz</a>
+		</strong>
+
+<a href="../../../groups/administrators.html"><small class="label group-label inline-block" style="background-color: #000000;">admin</small></a>
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/3"><span class="timeago" title="2015-08-07T05:47:56.301Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<blockquote>
+<p>...or it could be a matter of when the old site goes down, having each page redirect to the relevant page on the new forum.</p>
+</blockquote>
+<p>That's what I plan to do. It has the benefit that links from elsewhere also continue to work.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11018" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="3" data-timestamp="1438959649438" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="3"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T15:00:49.438Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/4"><span class="timeago" title="2015-08-07T15:00:49.438Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Ok, great.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11026" data-uid="963" data-username="techteej" data-userslug="techteej" data-index="4" data-timestamp="1438975698567" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="4"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T19:28:18.567Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/techteej">
+			<img src="../../../uploads/profile/963-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/techteej" itemprop="author" data-username="techteej" data-uid="963">techteej</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/5"><span class="timeago" title="2015-08-07T19:28:18.567Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/omz.html">@omz</a> Not sure if you can do this through NodeBB, but if you could Close a topic instead of deleting it all together, that would be helpful in most cases with code issues/questions.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11029" data-uid="1500" data-username="roosterboy" data-userslug="roosterboy" data-index="5" data-timestamp="1438977574748" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="5"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T19:59:34.748Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/roosterboy">
+			<img src="https://s.gravatar.com/avatar/e61c67adc6b55b6777162f5c9c3425a0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/roosterboy" itemprop="author" data-username="roosterboy" data-uid="1500">roosterboy</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/6"><span class="timeago" title="2015-08-07T19:59:34.748Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Is there a way to link to the first new post in a topic based on the last time you visited the forums? This drove me nuts about the old forum too.</p>
+<p>You can click on the topic title to start at the first post, or on the link to the right to jump to the last post but doing that means you'll have to scroll up to see if there were posts made between your last visit and the last post in the thread. Frustrating.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11031" data-uid="1719" data-username="omz" data-userslug="omz" data-index="6" data-timestamp="1438978366007" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="6"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T20:12:46.007Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/omz.html">
+			<img src="../../../uploads/profile/1719-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/omz.html" itemprop="author" data-username="omz" data-uid="1719">omz</a>
+		</strong>
+
+<a href="../../../groups/administrators.html"><small class="label group-label inline-block" style="background-color: #000000;">admin</small></a>
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/7"><span class="timeago" title="2015-08-07T20:12:46.007Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>When clicking on a topic I've visited before, I usually get a popup like this one:</p>
+<p><img src="../../../../omz-software.com/share/forum_return_to_last_post.png" alt="" class="img-responsive img-markdown" /></p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11034" data-uid="1500" data-username="roosterboy" data-userslug="roosterboy" data-index="7" data-timestamp="1438982421297" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="7"></a>
+
+				<meta itemprop="datePublished" content="2015-08-07T21:20:21.297Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="https://forum.omz-software.com/user/roosterboy">
+			<img src="https://s.gravatar.com/avatar/e61c67adc6b55b6777162f5c9c3425a0?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="https://forum.omz-software.com/user/roosterboy" itemprop="author" data-username="roosterboy" data-uid="1500">roosterboy</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/8"><span class="timeago" title="2015-08-07T21:20:21.297Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>OK, definitely never noticed that. It's a little awkward that it requires you to make a second action to jump to that spot rather than automatically taking you there like most other forum software I've ever used, but I suppose it'll work.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11046" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="8" data-timestamp="1439000771793" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="8"></a>
+
+				<meta itemprop="datePublished" content="2015-08-08T02:26:11.793Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/9"><span class="timeago" title="2015-08-08T02:26:11.793Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>i find that, on ipad, when i reply, the rest of the conversation goes away...  until i am done editing.  is there a setting that lets you still scroll back?  for example copying bits if code, or opening links in a new window, etc, or frankly remebering what i wanted to say in the first place?</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11047" data-uid="1719" data-username="omz" data-userslug="omz" data-index="9" data-timestamp="1439001826593" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="9"></a>
+
+				<meta itemprop="datePublished" content="2015-08-08T02:43:46.593Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/omz.html">
+			<img src="../../../uploads/profile/1719-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/omz.html" itemprop="author" data-username="omz" data-uid="1719">omz</a>
+		</strong>
+
+<a href="../../../groups/administrators.html"><small class="label group-label inline-block" style="background-color: #000000;">admin</small></a>
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="10.html"><span class="timeago" title="2015-08-08T02:43:46.593Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>I think your best option might be to open a separate tab for replying.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11069" data-uid="1719" data-username="omz" data-userslug="omz" data-index="10" data-timestamp="1439049001802" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="10"></a>
+
+				<meta itemprop="datePublished" content="2015-08-08T15:50:01.802Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/omz.html">
+			<img src="../../../uploads/profile/1719-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/omz.html" itemprop="author" data-username="omz" data-uid="1719">omz</a>
+		</strong>
+
+<a href="../../../groups/administrators.html"><small class="label group-label inline-block" style="background-color: #000000;">admin</small></a>
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="11.html"><span class="timeago" title="2015-08-08T15:50:01.802Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>The old forum now redirects to the new one for both the index pages and individual discussions.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11113" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="11" data-timestamp="1439171561392" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="11"></a>
+
+				<meta itemprop="datePublished" content="2015-08-10T01:52:41.392Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="12.html"><span class="timeago" title="2015-08-10T01:52:41.392Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Does anyone else have trouble reading/copying code blocks in the forum, when on iOS?  it seems that in the new forum, code blocks are limited to a certain height.  I cannot seem to reliably get those blocks to either select all, or scroll.   Scrolling scrolls the page, and selecting never wants to grab the whole section, even when dragging to the top, etc.</p>
+<p>I suspect there may be a &quot;trick&quot; to this (similar to selecting text on iOS in general... i have found that some webpages trying to select selects a whole paragraph...l unless you zoom/pan such that the right side of the text is off screen, at which point long tap selects single words).</p>
+<p>Also.... on some threads I have noticed a little red plus sign in the bottom right corner, which lets you reply while still keeping the conversation in view.... but others default to fullscreen replies.... odd!</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11146" data-uid="1719" data-username="omz" data-userslug="omz" data-index="12" data-timestamp="1439210170485" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="12"></a>
+
+				<meta itemprop="datePublished" content="2015-08-10T12:36:10.485Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/omz.html">
+			<img src="../../../uploads/profile/1719-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/omz.html" itemprop="author" data-username="omz" data-uid="1719">omz</a>
+		</strong>
+
+<a href="../../../groups/administrators.html"><small class="label group-label inline-block" style="background-color: #000000;">admin</small></a>
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="13.html"><span class="timeago" title="2015-08-10T12:36:10.485Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/jonb.html">@JonB</a> I've disabled the vertical scrolling in code blocks for now.</p>
+<p>This isn't ideal, but I'll need a little more time to dig deeper into NodeBB's plugin system before I can figure out a better solution.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11517" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="13" data-timestamp="1439911905293" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="13"></a>
+
+				<meta itemprop="datePublished" content="2015-08-18T15:31:45.293Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="14.html"><span class="timeago" title="2015-08-18T15:31:45.293Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Bug (sort of): I can go to <a href="https://omz-forums.appspot.com/pythonista/new" rel="nofollow">https://omz-forums.appspot.com/pythonista/new</a> and see the old forum, it should be redirected to the equivalent URL on the new forum.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="11555" data-uid="1173" data-username="MartinPacker" data-userslug="martinpacker" data-index="14" data-timestamp="1439970392623" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="14"></a>
+
+				<meta itemprop="datePublished" content="2015-08-19T07:46:32.623Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/martinpacker.html">
+			<img src="https://s.gravatar.com/avatar/e55bf0bddd650c42cc77b47c3c088510?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/martinpacker.html" itemprop="author" data-username="MartinPacker" data-uid="1173">MartinPacker</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="15.html"><span class="timeago" title="2015-08-19T07:46:32.623Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Note: Back button doesn't work the way I think it should.</p>
+<p>Not sure I can codify what I mean :-) and it's probably not fixable.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="12428" data-uid="895" data-username="JonB" data-userslug="jonb" data-index="15" data-timestamp="1442413746686" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="15"></a>
+
+				<meta itemprop="datePublished" content="2015-09-16T14:29:06.686Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/jonb.html">
+			<img src="../../../uploads/profile/895-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/jonb.html" itemprop="author" data-username="JonB" data-uid="895">JonB</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="16.html"><span class="timeago" title="2015-09-16T14:29:06.686Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>Did the forum editor settings change recently? I can no longer see the editor cursor on IPad, and things seeem very &quot;jumpy&quot;.</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="20637" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="16" data-timestamp="1469575454157" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="16"></a>
+
+				<meta itemprop="datePublished" content="2016-07-26T23:24:14.157Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="17.html"><span class="timeago" title="2016-07-26T23:24:14.157Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p>The forum is turning 1 right about now... not sure about the exact date</p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix "data-pid="20786" data-uid="21" data-username="cook" data-userslug="cook" data-index="17" data-timestamp="1470290006856" data-votes="1" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="17"></a>
+
+				<meta itemprop="datePublished" content="2016-08-04T05:53:26.856Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/cook.html">
+			<img src="../../../uploads/profile/21-profileimg.png" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/cook.html" itemprop="author" data-username="cook" data-uid="21">cook</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="18.html"><span class="timeago" title="2016-08-04T05:53:26.856Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="1">1</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-a" href="../../../user/webmaster4o.html">@Webmaster4o</a><br />
+The date from the post above:<br />
+<strong>2015-08-05T15:37:01.049Z</strong></p>
+
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix deleted"data-pid="20805" data-uid="1053" data-username="Webmaster4o" data-userslug="webmaster4o" data-index="18" data-timestamp="1470352288066" data-votes="2" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="18"></a>
+
+				<meta itemprop="datePublished" content="2016-08-04T23:11:28.066Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/webmaster4o.html">
+			<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/webmaster4o.html" itemprop="author" data-username="Webmaster4o" data-uid="1053">Webmaster4o</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="19.html"><span class="timeago" title="2016-08-04T23:11:28.066Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="2">2</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	This post is deleted!
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix deleted"data-pid="38234" data-uid="7368" data-username="nazimo" data-userslug="nazimo" data-index="19" data-timestamp="1582128480672" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="19"></a>
+
+				<meta itemprop="datePublished" content="2020-02-19T16:08:00.672Z">
+				<meta itemprop="dateModified" content="2020-02-20T20:53:13.437Z">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/nazimo.html">
+			<img src="https://s.gravatar.com/avatar/9e5ef68484ef28db458753a96dfee79b?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/nazimo.html" itemprop="author" data-username="nazimo" data-uid="7368">nazimo</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="20.html"><span class="timeago" title="2020-02-19T16:08:00.672Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon "></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	This post is deleted!
+	
+</div>
+
+
+<small data-editor="nazimo" component="post/editor" class="hidden">last edited by <strong>nazimo</strong> <span class="timeago" title="2020-02-20T20:53:13.437Z"></span></small>
+
+
+<hr />
+
+			</li>
+
+			
+				<li component="post" class="clearfix deleted"data-pid="45103" data-uid="10320" data-username="engineering" data-userslug="engineering" data-index="20" data-timestamp="1622287017526" data-votes="0" itemscope itemtype="http://schema.org/Comment">
+				<a component="post/anchor" name="20"></a>
+
+				<meta itemprop="datePublished" content="2021-05-29T11:16:57.526Z">
+				<meta itemprop="dateModified" content="">
+
+<div class="clearfix">
+	<div class="icon pull-left">
+		<a href="../../../user/engineering.html">
+			<img src="https://s.gravatar.com/avatar/eb2be104bb042b0bd83d309c4bb3b7c6?size=128&default=identicon&rating=pg" align="left" itemprop="image" />
+			
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		<strong>
+			<a href="../../../user/engineering.html" itemprop="author" data-username="engineering" data-uid="10320">engineering</a>
+		</strong>
+
+
+
+		<div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			posted <a class="permalink" href="21.html"><span class="timeago" title="2021-05-29T11:16:57.526Z"></span></a>
+			<i class="fa fa-pencil-square pointer edit-icon hidden"></i>
+
+			<span class="post-tools">
+				<a component="post/reply" class="no-select hidden">Reply</a>
+				<a component="post/quote" class="no-select hidden">Quote</a>
+			</span>
+			<span>
+				
+			</span>
+		</div>
+		<div class="votes">
+						<a component="post/upvote" href="1.html#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			<span component="post/vote-count" data-votes="0">0</span>
+			
+		</div>
+
+<div class="dropdown moderator-tools">
+	<a href="1.html#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+		
+
+		<li role="presentation">
+			<a component="post/favourite" role="menuitem" tabindex="-1" href="1.html#" data-favourited="false">
+
+				<span class="favourite-text">Favorite</span>
+				<span component="post/favourite-count" class="favouriteCount" data-favourites="0">0</span>&nbsp;
+
+				<i component="post/favourite/on" class="fa fa-heart hidden"></i>
+				<i component="post/favourite/off" class="fa fa-heart-o "></i>
+			</a>
+		</li>
+
+		
+
+		<li role="presentation" class="divider"></li>
+
+				<li role="presentation">
+			<a component="post/flag" role="menuitem" tabindex="-1" href="1.html#">
+				Flag this post for moderation
+			</a>
+		</li>
+	</ul>
+</div>
+	</small>
+</div>
+
+<br />
+<div class="content" component="post/content" itemprop="text">
+	This post is deleted!
+	
+</div>
+
+
+<small data-editor="" component="post/editor" class="hidden">last edited by <strong></strong> <span class="timeago" title=""></span></small>
+
+
+<hr />
+
+			</li>
+	</ul>
+
+	<div class="post-bar bottom-post-bar ">
+<span class="tags">
+</span>
+
+<div class="topic-main-buttons pull-right">
+	<span class="loading-indicator btn pull-left" done="0" style="display:none;">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	<div class="stats">
+		<span component="topic/post-count" class="human-readable-number" title="24">24</span><br />
+		<small>Posts</small>
+	</div>
+	<div class="stats">
+		<span class="human-readable-number" title="35443">35443</span><br />
+		<small>Views</small>
+	</div>
+
+
+
+
+<a component="topic/reply" class="btn btn-primary hidden">Reply</a>
+
+<a href="../../7476.html" class="btn btn-primary">Log in to reply</a>
+
+
+
+
+
+</div>
+<div style="clear:both;"></div>
+
+<hr />
+	</div>
+
+	
+
+<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Move Topic</h3>
+			</div>
+			<div class="modal-body">
+				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> Loading Categories</p>
+				<p>
+					Disabled Categories are greyed out
+				</p>
+				<div id="move-confirm" style="display: none;">
+					<hr />
+					<div class="alert alert-info">This topic will be moved to the category <strong><span id="confirm-category-name"></span></strong></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Fork Topic</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
+					<label>Click the posts you want to fork</label> <br/>
+					<span id="fork-pids"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>Fork</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Move Post</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="topicId">Topic ID</label>
+					<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">Close</button>
+				<button type="button" class="btn btn-primary" id="move_post_commit" disabled>Move</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<noscript>
+
+<div class="text-center pagination-container">
+	<ul class="pagination">
+		<li class="previous pull-left disabled">
+			<a href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/1?page=1" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+						<li class="page active" >
+				<a href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/1?page=1" data-page="1">1</a>
+			</li>
+							<li class="page" >
+				<a href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/1?page=2" data-page="2">2</a>
+			</li>
+
+		<li class="next pull-right">
+			<a href="https://forum.omz-software.com/topic/2/welcome-to-the-new-forum/1?page=2" data-page="2"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+</div>
+
+</noscript>
+
+<input type="hidden" template-variable="topic_id" value="2" />
+<input type="hidden" template-variable="topic_slug" value="2/welcome-to-the-new-forum" />
+<input type="hidden" template-variable="category_id" value="1" />
+<input type="hidden" template-variable="currentPage" value="1" />
+<input type="hidden" template-variable="pageCount" value="2" />
+<input type="hidden" template-variable="locked" template-type="boolean" value="true" />
+<input type="hidden" template-variable="deleted" template-type="boolean" value="false" />
+<input type="hidden" template-variable="pinned" template-type="boolean" value="false" />
+<input type="hidden" template-variable="topic_name" value="Welcome to the new forum!" />
+<input type="hidden" template-variable="postcount" value="24" />
+<input type="hidden" template-variable="viewcount" value="35443" /><input type="hidden" ajaxify-data="%7B%22tid%22%3A%222%22%2C%22uid%22%3A%221%22%2C%22cid%22%3A%221%22%2C%22mainPid%22%3A%222%22%2C%22title%22%3A%22Welcome%20to%20the%20new%20forum!%22%2C%22slug%22%3A%222%2Fwelcome-to-the-new-forum%22%2C%22timestamp%22%3A%221438789021049%22%2C%22lastposttime%22%3A%221470290006856%22%2C%22postcount%22%3A%2224%22%2C%22viewcount%22%3A%2235443%22%2C%22locked%22%3Atrue%2C%22deleted%22%3Afalse%2C%22pinned%22%3Afalse%2C%22teaserPid%22%3A%2220786%22%2C%22relativeTime%22%3A%222015-08-05T15%3A37%3A01.049Z%22%2C%22lastposttimeISO%22%3A%222016-08-04T05%3A53%3A26.856Z%22%2C%22posts%22%3A%5B%7B%22timestamp%22%3A%221438789021481%22%2C%22content%22%3A%22%3Cp%3EI've%20migrated%20the%20Pythonista%20and%20Editorial%20community%20forums%20to%20%3Ca%20href%3D%5C%22https%3A%2F%2Fnodebb.org%5C%22%20rel%3D%5C%22nofollow%5C%22%3ENodeBB%3C%2Fa%3E%2C%20which%20brings%20a%20fresh%20new%20look%20and%20a%20lot%20of%20very%20nice%20features%20that%20the%20old%20forum%20was%20lacking.%20For%20example%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn%3Cli%3E%5Cn%3Cp%3EGet%20notified%20when%20someone%20replies%20to%20your%20posts%20or%20%40-mentions%20you%20(see%20the%20settings%20in%20your%20profile)%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EMark%20posts%20as%20favorites%2C%20flag%20for%20moderation%2C%20track%20unread%20status%2C%20etc.%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EBetter%20search%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EYou%20can%20introduce%20yourself%20on%20the%20profile%20page%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3ELogin%20via%20Twitter%20(optional%2C%20for%20new%20users)%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EA%20nicer%20URL%20%3B)%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3E...and%20much%20more.%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EIf%20you%20already%20have%20an%20account%20in%20the%20old%20forum%2C%20here's%20what%20you%20need%20to%20know%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn%3Cli%3E%5Cn%3Cp%3EI've%20imported%20all%20users%20(and%20posts)%2C%20but%20you%20need%20to%20set%20a%20new%20password.%20Simply%20enter%20the%20email%20address%20you%20used%20for%20the%20old%20forum%20here%3A%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Freset%5C%22%3E%E2%86%92%20Reset%20Password%3C%2Fa%3E%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EThe%20old%20forum%20is%20still%20online%20for%20now%2C%20so%20that%20links%20continue%20to%20work.%20In%20the%20next%20couple%20of%20days%2C%20I%20will%20start%20redirecting%20the%20old%20topic%20pages%20to%20the%20imported%20ones%20in%20this%20forum.%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3Cli%3E%5Cn%3Cp%3EI'm%20not%20sure%20yet%20if%20I'll%20redirect%20the%20RSS%20feeds%20as%20well%2C%20you%20might%20want%20to%20update%20your%20feed%20reader%20manually%20in%20any%20case%20(some%20apps%20don't%20support%20redirection%20properly).%3C%2Fp%3E%5Cn%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EIf%20you%20see%20anything%20that%20looks%20weird%2C%20or%20if%20you%20have%20any%20problems%20with%20accessing%20your%20account%2C%20please%20let%20me%20know.%3C%2Fp%3E%5Cn%3Cp%3EUnfortunately%2C%20spam%20has%20been%20a%20bit%20of%20an%20issue%20lately.%20I%20don't%20know%20yet%20how%20well%20NodeBB%20will%20work%20in%20that%20regard%2C%20but%20I've%20taken%20some%20precautionary%20measures.%20Signups%20require%20solving%20a%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.google.com%2Frecaptcha%2Fintro%2Findex.html%5C%22%20rel%3D%5C%22nofollow%5C%22%3EreCAPTCHA%3C%2Fa%3E%2C%20and%20all%20posts%20are%20checked%20by%20%3Ca%20href%3D%5C%22http%3A%2F%2Fakismet.com%5C%22%20rel%3D%5C%22nofollow%5C%22%3EAkismet%3C%2Fa%3E%20%E2%80%93%20I%20don't%20have%20experience%20with%20the%20latter%2C%20but%20I've%20heard%20good%20things%20about%20it.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%7D%2C%22votes%22%3A%222%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%221438852097760%22%2C%22pid%22%3A%222%22%2C%22reputation%22%3A%222%22%2C%22uid%22%3A%221%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-05T15%3A37%3A01.481Z%22%2C%22relativeEditTime%22%3A%222015-08-06T09%3A08%3A17.760Z%22%2C%22index%22%3A0%2C%22user%22%3A%7B%22uid%22%3A%221%22%2C%22username%22%3A%22admin2%22%2C%22userslug%22%3A%22admin2%22%2C%22reputation%22%3A%222%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fb2731bf385b0ba32d559bf8f40174808%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438899391142%22%2C%22content%22%3A%22%3Cp%3ELoving%20the%20new%20forum%20so%20far.%20I%20don't%20know%20how%20hard%20this%20would%20be%20to%20do%2C%20but%20it'd%20be%20nice%20if%20links%20to%20old%20forum%20posts%20changed.%20For%20example%20in%20the%20topic%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2031%2Fvideos%5C%22%3EVideos%3C%2Fa%3E%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20said%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EThis%20exploration%20allows%20you%20to%20record%20video%20from%20the%20camera...%20%3Ca%20href%3D%5C%22http%3A%2F%2Fomz-forums.appspot.com%2Fpythonista%2Fpost%2F6438894778187776%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttp%3A%2F%2Fomz-forums.appspot.com%2Fpythonista%2Fpost%2F6438894778187776%3C%2Fa%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EIt'd%20be%20nice%20and%20provide%20a%20smoother%20user%20experience%20if%20that%20was%20automatically%20changed%20to%20%3A%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3EThis%20exploration%20allows%20you%20to%20record%20video%20from%20the%20camera...%20%3Ca%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2026%2Fcapturemedia%5C%22%3Ehttps%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2026%2Fcapturemedia%3C%2Fa%3E%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EBecause%20as%20of%20right%20now%2C%20if%20I%20click%20that%2C%20it%20takes%20me%20to%20the%20old%20forum.%20This%20could%20be%20a%20matter%20of%20having%20a%20program%20that%20changes%20the%20physical%20links%2C%20or%20it%20could%20be%20a%20matter%20of%20when%20the%20old%20site%20goes%20down%2C%20having%20each%20page%20redirect%20to%20the%20relevant%20page%20on%20the%20new%20forum.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2210998%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-06T22%3A16%3A31.142Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438926476301%22%2C%22content%22%3A%22%3Cblockquote%3E%5Cn%3Cp%3E...or%20it%20could%20be%20a%20matter%20of%20when%20the%20old%20site%20goes%20down%2C%20having%20each%20page%20redirect%20to%20the%20relevant%20page%20on%20the%20new%20forum.%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EThat's%20what%20I%20plan%20to%20do.%20It%20has%20the%20benefit%20that%20links%20from%20elsewhere%20also%20continue%20to%20work.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211005%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221719%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-07T05%3A47%3A56.301Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22reputation%22%3A%22770%22%2C%22postcount%22%3A%222281%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%7B%22name%22%3A%22administrators%22%2C%22slug%22%3A%22administrators%22%2C%22labelColor%22%3A%22%23000000%22%2C%22icon%22%3A%22%22%2C%22userTitle%22%3A%22admin%22%2C%22userTitleEnabled%22%3Atrue%2C%22selected%22%3Atrue%7D%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2211018%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%222%22%2C%22content%22%3A%22%3Cp%3EOk%2C%20great.%3C%2Fp%3E%5Cn%22%2C%22timestamp%22%3A%221438959649438%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22relativeTime%22%3A%222015-08-07T15%3A00%3A49.438Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438975698567%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20Not%20sure%20if%20you%20can%20do%20this%20through%20NodeBB%2C%20but%20if%20you%20could%20Close%20a%20topic%20instead%20of%20deleting%20it%20all%20together%2C%20that%20would%20be%20helpful%20in%20most%20cases%20with%20code%20issues%2Fquestions.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211026%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22963%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-07T19%3A28%3A18.567Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A4%2C%22user%22%3A%7B%22uid%22%3A%22963%22%2C%22username%22%3A%22techteej%22%2C%22userslug%22%3A%22techteej%22%2C%22reputation%22%3A%227%22%2C%22postcount%22%3A%22399%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F963-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438977574748%22%2C%22content%22%3A%22%3Cp%3EIs%20there%20a%20way%20to%20link%20to%20the%20first%20new%20post%20in%20a%20topic%20based%20on%20the%20last%20time%20you%20visited%20the%20forums%3F%20This%20drove%20me%20nuts%20about%20the%20old%20forum%20too.%3C%2Fp%3E%5Cn%3Cp%3EYou%20can%20click%20on%20the%20topic%20title%20to%20start%20at%20the%20first%20post%2C%20or%20on%20the%20link%20to%20the%20right%20to%20jump%20to%20the%20last%20post%20but%20doing%20that%20means%20you'll%20have%20to%20scroll%20up%20to%20see%20if%20there%20were%20posts%20made%20between%20your%20last%20visit%20and%20the%20last%20post%20in%20the%20thread.%20Frustrating.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211029%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221500%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-07T19%3A59%3A34.748Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221500%22%2C%22username%22%3A%22roosterboy%22%2C%22userslug%22%3A%22roosterboy%22%2C%22reputation%22%3A%222%22%2C%22postcount%22%3A%2212%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe61c67adc6b55b6777162f5c9c3425a0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438978366007%22%2C%22content%22%3A%22%3Cp%3EWhen%20clicking%20on%20a%20topic%20I've%20visited%20before%2C%20I%20usually%20get%20a%20popup%20like%20this%20one%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Cimg%20src%3D%5C%22http%3A%2F%2Fomz-software.com%2Fshare%2Fforum_return_to_last_post.png%5C%22%20alt%3D%5C%22%5C%22%20class%3D%5C%22img-responsive%20img-markdown%5C%22%20%2F%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211031%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221719%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-07T20%3A12%3A46.007Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22reputation%22%3A%22770%22%2C%22postcount%22%3A%222281%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%7B%22name%22%3A%22administrators%22%2C%22slug%22%3A%22administrators%22%2C%22labelColor%22%3A%22%23000000%22%2C%22icon%22%3A%22%22%2C%22userTitle%22%3A%22admin%22%2C%22userTitleEnabled%22%3Atrue%2C%22selected%22%3Atrue%7D%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221438982421297%22%2C%22content%22%3A%22%3Cp%3EOK%2C%20definitely%20never%20noticed%20that.%20It's%20a%20little%20awkward%20that%20it%20requires%20you%20to%20make%20a%20second%20action%20to%20jump%20to%20that%20spot%20rather%20than%20automatically%20taking%20you%20there%20like%20most%20other%20forum%20software%20I've%20ever%20used%2C%20but%20I%20suppose%20it'll%20work.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211034%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221500%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-07T21%3A20%3A21.297Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A7%2C%22user%22%3A%7B%22uid%22%3A%221500%22%2C%22username%22%3A%22roosterboy%22%2C%22userslug%22%3A%22roosterboy%22%2C%22reputation%22%3A%222%22%2C%22postcount%22%3A%2212%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe61c67adc6b55b6777162f5c9c3425a0%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439000771793%22%2C%22content%22%3A%22%3Cp%3Ei%20find%20that%2C%20on%20ipad%2C%20when%20i%20reply%2C%20the%20rest%20of%20the%20conversation%20goes%20away...%20%20until%20i%20am%20done%20editing.%20%20is%20there%20a%20setting%20that%20lets%20you%20still%20scroll%20back%3F%20%20for%20example%20copying%20bits%20if%20code%2C%20or%20opening%20links%20in%20a%20new%20window%2C%20etc%2C%20or%20frankly%20remebering%20what%20i%20wanted%20to%20say%20in%20the%20first%20place%3F%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211046%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-08T02%3A26%3A11.793Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A8%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439001826593%22%2C%22content%22%3A%22%3Cp%3EI%20think%20your%20best%20option%20might%20be%20to%20open%20a%20separate%20tab%20for%20replying.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211047%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221719%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-08T02%3A43%3A46.593Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A9%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22reputation%22%3A%22770%22%2C%22postcount%22%3A%222281%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%7B%22name%22%3A%22administrators%22%2C%22slug%22%3A%22administrators%22%2C%22labelColor%22%3A%22%23000000%22%2C%22icon%22%3A%22%22%2C%22userTitle%22%3A%22admin%22%2C%22userTitleEnabled%22%3Atrue%2C%22selected%22%3Atrue%7D%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439049001802%22%2C%22content%22%3A%22%3Cp%3EThe%20old%20forum%20now%20redirects%20to%20the%20new%20one%20for%20both%20the%20index%20pages%20and%20individual%20discussions.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211069%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221719%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-08T15%3A50%3A01.802Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A10%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22reputation%22%3A%22770%22%2C%22postcount%22%3A%222281%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%7B%22name%22%3A%22administrators%22%2C%22slug%22%3A%22administrators%22%2C%22labelColor%22%3A%22%23000000%22%2C%22icon%22%3A%22%22%2C%22userTitle%22%3A%22admin%22%2C%22userTitleEnabled%22%3Atrue%2C%22selected%22%3Atrue%7D%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439171561392%22%2C%22content%22%3A%22%3Cp%3EDoes%20anyone%20else%20have%20trouble%20reading%2Fcopying%20code%20blocks%20in%20the%20forum%2C%20when%20on%20iOS%3F%20%20it%20seems%20that%20in%20the%20new%20forum%2C%20code%20blocks%20are%20limited%20to%20a%20certain%20height.%20%20I%20cannot%20seem%20to%20reliably%20get%20those%20blocks%20to%20either%20select%20all%2C%20or%20scroll.%20%20%20Scrolling%20scrolls%20the%20page%2C%20and%20selecting%20never%20wants%20to%20grab%20the%20whole%20section%2C%20even%20when%20dragging%20to%20the%20top%2C%20etc.%3C%2Fp%3E%5Cn%3Cp%3EI%20suspect%20there%20may%20be%20a%20%26quot%3Btrick%26quot%3B%20to%20this%20(similar%20to%20selecting%20text%20on%20iOS%20in%20general...%20i%20have%20found%20that%20some%20webpages%20trying%20to%20select%20selects%20a%20whole%20paragraph...l%20unless%20you%20zoom%2Fpan%20such%20that%20the%20right%20side%20of%20the%20text%20is%20off%20screen%2C%20at%20which%20point%20long%20tap%20selects%20single%20words).%3C%2Fp%3E%5Cn%3Cp%3EAlso....%20on%20some%20threads%20I%20have%20noticed%20a%20little%20red%20plus%20sign%20in%20the%20bottom%20right%20corner%2C%20which%20lets%20you%20reply%20while%20still%20keeping%20the%20conversation%20in%20view....%20but%20others%20default%20to%20fullscreen%20replies....%20odd!%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211113%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-10T01%3A52%3A41.392Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A11%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439210170485%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fjonb%5C%22%3E%40JonB%3C%2Fa%3E%20I've%20disabled%20the%20vertical%20scrolling%20in%20code%20blocks%20for%20now.%3C%2Fp%3E%5Cn%3Cp%3EThis%20isn't%20ideal%2C%20but%20I'll%20need%20a%20little%20more%20time%20to%20dig%20deeper%20into%20NodeBB's%20plugin%20system%20before%20I%20can%20figure%20out%20a%20better%20solution.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211146%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221719%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-10T12%3A36%3A10.485Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A12%2C%22user%22%3A%7B%22uid%22%3A%221719%22%2C%22username%22%3A%22omz%22%2C%22userslug%22%3A%22omz%22%2C%22reputation%22%3A%22770%22%2C%22postcount%22%3A%222281%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F1719-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%7B%22name%22%3A%22administrators%22%2C%22slug%22%3A%22administrators%22%2C%22labelColor%22%3A%22%23000000%22%2C%22icon%22%3A%22%22%2C%22userTitle%22%3A%22admin%22%2C%22userTitleEnabled%22%3Atrue%2C%22selected%22%3Atrue%7D%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439911905293%22%2C%22content%22%3A%22%3Cp%3EBug%20(sort%20of)%3A%20I%20can%20go%20to%20%3Ca%20href%3D%5C%22https%3A%2F%2Fomz-forums.appspot.com%2Fpythonista%2Fnew%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fomz-forums.appspot.com%2Fpythonista%2Fnew%3C%2Fa%3E%20and%20see%20the%20old%20forum%2C%20it%20should%20be%20redirected%20to%20the%20equivalent%20URL%20on%20the%20new%20forum.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211517%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-18T15%3A31%3A45.293Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A13%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221439970392623%22%2C%22content%22%3A%22%3Cp%3ENote%3A%20Back%20button%20doesn't%20work%20the%20way%20I%20think%20it%20should.%3C%2Fp%3E%5Cn%3Cp%3ENot%20sure%20I%20can%20codify%20what%20I%20mean%20%3A-)%20and%20it's%20probably%20not%20fixable.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%220%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2211555%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221173%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-08-19T07%3A46%3A32.623Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A14%2C%22user%22%3A%7B%22uid%22%3A%221173%22%2C%22username%22%3A%22MartinPacker%22%2C%22userslug%22%3A%22martinpacker%22%2C%22reputation%22%3A%2213%22%2C%22postcount%22%3A%22180%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fe55bf0bddd650c42cc77b47c3c088510%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221442413746686%22%2C%22content%22%3A%22%3Cp%3EDid%20the%20forum%20editor%20settings%20change%20recently%3F%20I%20can%20no%20longer%20see%20the%20editor%20cursor%20on%20IPad%2C%20and%20things%20seeem%20very%20%26quot%3Bjumpy%26quot%3B.%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%221%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2212428%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%22895%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222015-09-16T14%3A29%3A06.686Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A15%2C%22user%22%3A%7B%22uid%22%3A%22895%22%2C%22username%22%3A%22JonB%22%2C%22userslug%22%3A%22jonb%22%2C%22reputation%22%3A%221013%22%2C%22postcount%22%3A%223915%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F895-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221469575454157%22%2C%22content%22%3A%22%3Cp%3EThe%20forum%20is%20turning%201%20right%20about%20now...%20not%20sure%20about%20the%20exact%20date%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%222%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2220637%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222016-07-26T23%3A24%3A14.157Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A16%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221470290006856%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fwebmaster4o%5C%22%3E%40Webmaster4o%3C%2Fa%3E%3Cbr%20%2F%3E%5CnThe%20date%20from%20the%20post%20above%3A%3Cbr%20%2F%3E%5Cn%3Cstrong%3E2015-08-05T15%3A37%3A01.049Z%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%22%2C%22editor%22%3Anull%2C%22votes%22%3A%221%22%2C%22deleted%22%3Afalse%2C%22edited%22%3A%220%22%2C%22pid%22%3A%2220786%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%2221%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222016-08-04T05%3A53%3A26.856Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A17%2C%22user%22%3A%7B%22uid%22%3A%2221%22%2C%22username%22%3A%22cook%22%2C%22userslug%22%3A%22cook%22%2C%22reputation%22%3A%2242%22%2C%22postcount%22%3A%22172%22%2C%22picture%22%3A%22%2Fuploads%2Fprofile%2F21-profileimg.png%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2220805%22%2C%22uid%22%3A%221053%22%2C%22tid%22%3A%222%22%2C%22content%22%3A%22%5B%5Btopic%3Apost_is_deleted%5D%5D%22%2C%22timestamp%22%3A%221470352288066%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%222%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Atrue%2C%22relativeTime%22%3A%222016-08-04T23%3A11%3A28.066Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A18%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22reputation%22%3A%22319%22%2C%22postcount%22%3A%221074%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22timestamp%22%3A%221582128480672%22%2C%22content%22%3A%22%5B%5Btopic%3Apost_is_deleted%5D%5D%22%2C%22editor%22%3A%7B%22uid%22%3A%227368%22%2C%22username%22%3A%22nazimo%22%2C%22userslug%22%3A%22nazimo%22%7D%2C%22votes%22%3A%220%22%2C%22deleted%22%3Atrue%2C%22edited%22%3A%221582231993437%22%2C%22pid%22%3A%2238234%22%2C%22reputation%22%3A%220%22%2C%22uid%22%3A%227368%22%2C%22tid%22%3A%222%22%2C%22relativeTime%22%3A%222020-02-19T16%3A08%3A00.672Z%22%2C%22relativeEditTime%22%3A%222020-02-20T20%3A53%3A13.437Z%22%2C%22index%22%3A19%2C%22user%22%3A%7B%22uid%22%3A%227368%22%2C%22username%22%3A%22nazimo%22%2C%22userslug%22%3A%22nazimo%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%222%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F9e5ef68484ef28db458753a96dfee79b%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%2C%7B%22pid%22%3A%2245103%22%2C%22uid%22%3A%2210320%22%2C%22tid%22%3A%222%22%2C%22content%22%3A%22%5B%5Btopic%3Apost_is_deleted%5D%5D%22%2C%22timestamp%22%3A%221622287017526%22%2C%22reputation%22%3A%220%22%2C%22votes%22%3A%220%22%2C%22editor%22%3Anull%2C%22edited%22%3A%220%22%2C%22deleted%22%3Atrue%2C%22relativeTime%22%3A%222021-05-29T11%3A16%3A57.526Z%22%2C%22relativeEditTime%22%3A%22%22%2C%22index%22%3A20%2C%22user%22%3A%7B%22uid%22%3A%2210320%22%2C%22username%22%3A%22engineering%22%2C%22userslug%22%3A%22engineering%22%2C%22reputation%22%3A%220%22%2C%22postcount%22%3A%221%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Feb2be104bb042b0bd83d309c4bb3b7c6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22banned%22%3Afalse%2C%22status%22%3A%22offline%22%2C%22groups%22%3A%5B%5D%2C%22custom_profile_info%22%3A%5B%5D%7D%2C%22favourited%22%3Afalse%2C%22upvoted%22%3Afalse%2C%22downvoted%22%3Afalse%2C%22display_moderator_tools%22%3Afalse%2C%22display_move_tools%22%3Afalse%2C%22selfPost%22%3Afalse%7D%5D%2C%22category%22%3A%7B%22cid%22%3A%221%22%2C%22name%22%3A%22Announcements%22%2C%22description%22%3A%22Announcements%20regarding%20our%20community%22%2C%22icon%22%3A%22fa-bullhorn%22%2C%22bgColor%22%3A%22%23fda34b%22%2C%22color%22%3A%22%23fff%22%2C%22slug%22%3A%221%2Fannouncements%22%2C%22parentCid%22%3A%220%22%2C%22topic_count%22%3A%221%22%2C%22post_count%22%3A%2224%22%2C%22disabled%22%3Afalse%2C%22order%22%3A%224%22%2C%22link%22%3A%22%22%2C%22numRecentReplies%22%3A%221%22%2C%22class%22%3A%22col-md-3%20col-xs-6%22%2C%22imageClass%22%3A%22auto%22%2C%22undefined%22%3A%22on%22%2C%22totalPostCount%22%3A%2224%22%2C%22totalTopicCount%22%3A%221%22%2C%22descriptionParsed%22%3A%22%3Cp%3EAnnouncements%20regarding%20our%20community%3C%2Fp%3E%5Cn%22%7D%2C%22thread_tools%22%3A%5B%5D%2C%22tags%22%3A%5B%5D%2C%22isFollowing%22%3Afalse%2C%22unreplied%22%3Afalse%2C%22pageCount%22%3A2%2C%22currentPage%22%3A1%2C%22breadcrumbs%22%3A%5B%7B%22text%22%3A%22%5B%5Bglobal%3Ahome%5D%5D%22%2C%22url%22%3A%22%2F%22%7D%2C%7B%22text%22%3A%22Announcements%22%2C%22url%22%3A%22%2Fcategory%2F1%2Fannouncements%22%7D%2C%7B%22text%22%3A%22Welcome%20to%20the%20new%20forum!%22%2C%22url%22%3A%22%2Ftopic%2F2%2Fwelcome-to-the-new-forum%22%7D%5D%2C%22privileges%22%3A%7B%22topics%3Areply%22%3Afalse%2C%22read%22%3Atrue%2C%22view_thread_tools%22%3Afalse%2C%22editable%22%3Afalse%2C%22deletable%22%3Afalse%2C%22view_deleted%22%3Afalse%2C%22disabled%22%3Afalse%2C%22tid%22%3A%222%22%2C%22uid%22%3A0%7D%2C%22reputation%3Adisabled%22%3Afalse%2C%22downvote%3Adisabled%22%3Atrue%2C%22feeds%3AdisableRSS%22%3Afalse%2C%22rssFeedUrl%22%3A%22%2Ftopic%2F2.rss%22%2C%22pagination%22%3A%7B%22rel%22%3A%5B%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22pages%22%3A%5B%7B%22page%22%3A1%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D1%22%7D%2C%7B%22page%22%3A2%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D2%22%7D%5D%2C%22prev%22%3A%7B%22page%22%3A1%2C%22active%22%3Afalse%2C%22qs%22%3A%22page%3D1%22%7D%2C%22next%22%3A%7B%22page%22%3A2%2C%22active%22%3Atrue%2C%22qs%22%3A%22page%3D2%22%7D%7D%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22topic%22%2C%22topic%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22uYdYkfX0-mogeVe5XnmuSAC5yanRg-W-9vcM%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22metaTags%22%3A%5B%7B%22name%22%3A%22title%22%2C%22content%22%3A%22Welcome%20to%20the%20new%20forum!%22%7D%2C%7B%22name%22%3A%22description%22%2C%22content%22%3A%22I%26%23x27%3Bve%20migrated%20the%20Pythonista%20and%20Editorial%20community%20forums%20to%20NodeBB%2C%20which%20brings%20a%20fresh%20new%20look%20and%20a%20lot%20of%20very%20nice%20features%20that%20the%20old%20forum%20was%20lacking.%20For%20example%3A%20%20%20Get%20notified%20when%20someone%20replies%20to%20your%20posts%20or%20%40-mentions%20you%20(see%20the%20...%22%7D%2C%7B%22property%22%3A%22og%3Atitle%22%2C%22content%22%3A%22Welcome%20to%20the%20new%20forum!%22%7D%2C%7B%22property%22%3A%22og%3Adescription%22%2C%22content%22%3A%22I%26%23x27%3Bve%20migrated%20the%20Pythonista%20and%20Editorial%20community%20forums%20to%20NodeBB%2C%20which%20brings%20a%20fresh%20new%20look%20and%20a%20lot%20of%20very%20nice%20features%20that%20the%20old%20forum%20was%20lacking.%20For%20example%3A%20%20%20Get%20notified%20when%20someone%20replies%20to%20your%20posts%20or%20%40-mentions%20you%20(see%20the%20...%22%7D%2C%7B%22property%22%3A%22og%3Atype%22%2C%22content%22%3A%22article%22%7D%2C%7B%22property%22%3A%22og%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2%2Fwelcome-to-the-new-forum%22%7D%2C%7B%22property%22%3A%22og%3Aimage%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fb2731bf385b0ba32d559bf8f40174808%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22og%3Aimage%3Aurl%22%2C%22content%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2Fb2731bf385b0ba32d559bf8f40174808%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%7B%22property%22%3A%22article%3Apublished_time%22%2C%22content%22%3A%222015-08-05T15%3A37%3A01.049Z%22%7D%2C%7B%22property%22%3A%22article%3Amodified_time%22%2C%22content%22%3A%222016-08-04T05%3A53%3A26.856Z%22%7D%2C%7B%22property%22%3A%22article%3Asection%22%2C%22content%22%3A%22Announcements%22%7D%5D%2C%22linkTags%22%3A%5B%7B%22rel%22%3A%22alternate%22%2C%22type%22%3A%22application%2Frss%2Bxml%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2.rss%22%7D%2C%7B%22rel%22%3A%22canonical%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Ftopic%2F2%2Fwelcome-to-the-new-forum%22%7D%2C%7B%22rel%22%3A%22up%22%2C%22href%22%3A%22https%3A%2F%2Fforum.omz-software.com%2Fcategory%2F1%2Fannouncements%22%7D%2C%7B%22rel%22%3A%22next%22%2C%22href%22%3A%22%3Fpage%3D2%22%7D%5D%2C%22template%22%3A%22topic%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="1.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

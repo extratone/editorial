@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>faker &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/faker.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-faker">
+<span id="faker"></span><h1><a class="reference internal" href="faker.html#module-faker" title="faker: Faker is a Python package that generates fake data for you"><code class="xref py py-mod docutils literal"><span class="pre">faker</span></code></a><a class="headerlink" href="faker.html#module-faker" title="Permalink to this headline">¶</a></h1>
+<p><em>Faker</em> is a Python package that generates fake data for you. Whether you need to bootstrap your database,
+create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service,
+Faker is for you.</p>
+<p>Faker is heavily inspired by PHP&#8217;s <a class="reference external" href="https://github.com/fzaninotto/Faker">Faker</a>, Perl&#8217;s <a class="reference external" href="http://search.cpan.org/~jasonk/Data-Faker-0.07/">Data::Faker</a>, and by ruby&#8217;s <a class="reference external" href="http://faker.rubyforge.org/">Faker</a>.</p>
+<div class="section" id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="faker.html#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="docutils literal"><span class="pre">fake.Factory.create()</span></code> to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Factory</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="c1"># OR</span>
+<span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">()</span>
+
+<span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="c1"># &#39;Lucy Cechtelar&#39;</span>
+
+<span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">()</span>
+<span class="c1"># &quot;426 Jordy Lodge</span>
+<span class="c1">#  Cartwrightshire, SC 88120-6700&quot;</span>
+
+<span class="n">fake</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+<span class="c1"># Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi</span>
+<span class="c1"># beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt</span>
+<span class="c1"># amet quidem. Iusto deleniti cum autem ad quia aperiam.</span>
+<span class="c1"># A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui</span>
+<span class="c1"># quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur</span>
+<span class="c1"># voluptatem sit aliquam. Dolores voluptatum est.</span>
+<span class="c1"># Aut molestias et maxime. Fugit autem facilis quos vero. Eius quibusdam possimus est.</span>
+<span class="c1"># Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati.</span>
+<span class="c1"># Et sint et. Ut ducimus quod nemo ab voluptatum.</span>
+</pre></div>
+</div>
+<p>Each call to method <code class="docutils literal"><span class="pre">fake.name()</span></code> yealds a different (random) result.
+This is because faker forwards <code class="docutils literal"><span class="pre">faker.Genarator.method_name()</span></code> calls to <code class="docutils literal"><span class="pre">faker.Generator.format(method_name)</span></code>.:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+  <span class="nb">print</span> <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+
+    <span class="c1"># Adaline Reichel</span>
+    <span class="c1"># Dr. Santa Prosacco DVM</span>
+    <span class="c1"># Noemy Vandervort V</span>
+    <span class="c1"># Lexi O&#39;Conner</span>
+    <span class="c1"># Gracie Weber</span>
+    <span class="c1"># Roscoe Johns</span>
+    <span class="c1"># Emmett Lebsack</span>
+    <span class="c1"># Keegan Thiel</span>
+    <span class="c1"># Wellington Koelpin II</span>
+    <span class="c1"># Ms. Karley Kiehn V</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="formatters">
+<h2>Formatters<a class="headerlink" href="faker.html#formatters" title="Permalink to this headline">¶</a></h2>
+<p>Each of the generator properties (like <code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">address</span></code>, and <code class="docutils literal"><span class="pre">lorem</span></code>) are called &#8220;formatters&#8221;.
+A faker generator has many of them, packaged in &#8220;providers&#8221;. Here is a list of the bundled formatters in the default locale.</p>
+<div class="section" id="faker-providers-base">
+<h3>faker.providers.base<a class="headerlink" href="faker.html#faker-providers-base" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">random_digit_not_null</span><span class="p">()</span>                                             <span class="c1"># 1</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">randomize_nb_elements</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>                <span class="c1"># 13</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">random_letter</span><span class="p">()</span>                                                     <span class="c1"># S</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">random_digit</span><span class="p">()</span>                                                      <span class="c1"># 6</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">bothify</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;## ??&quot;</span><span class="p">)</span>                                               <span class="c1"># 05 Gm</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">random_element</span><span class="p">(</span><span class="n">array</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>                               <span class="c1"># b</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">random_number</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                                          <span class="c1"># 38</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">lexify</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;????&quot;</span><span class="p">)</span>                                                 <span class="c1"># gJPH</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">random_int</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">9999</span><span class="p">)</span>                                         <span class="c1"># 2355</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">numerify</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;###&quot;</span><span class="p">)</span>                                                <span class="c1"># 646</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-lorem">
+<h3>faker.providers.lorem<a class="headerlink" href="faker.html#faker-providers-lorem" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">max_nb_chars</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>                                              <span class="c1"># Quam quibusdam iusto commodi velit. Earum voluptatibus officiis suscipit. Sed</span>
+                                                                            <span class="n">ut</span> <span class="n">nesciunt</span> <span class="n">iste</span><span class="o">.</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">sentence</span><span class="p">(</span><span class="n">nb_words</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">variable_nb_words</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                        <span class="c1"># Ut beatae distinctio aliquid placeat mollitia.</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">word</span><span class="p">()</span>                                                              <span class="c1"># rem</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">(</span><span class="n">nb</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                                                    <span class="c1"># [u&#39;Aliquid repellat dolores sed autem et. Voluptatem nisi sint quae aut autem</span>
+                                                                            <span class="n">cupiditate</span><span class="o">.</span> <span class="n">Delectus</span> <span class="n">ullam</span> <span class="n">nemo</span> <span class="n">tempore</span> <span class="n">et</span> <span class="n">ab</span> <span class="n">aut</span> <span class="n">fuga</span> <span class="n">molestias</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Blandi</span>
+                                                                           <span class="n">tiis</span> <span class="n">sint</span> <span class="n">enim</span> <span class="nb">id</span> <span class="n">est</span> <span class="n">nostrum</span> <span class="n">aliquid</span> <span class="n">molestiae</span><span class="o">.</span> <span class="n">Eius</span> <span class="n">sint</span> <span class="n">tempore</span> <span class="n">autem</span> <span class="n">atqu</span>
+                                                                           <span class="n">e</span> <span class="n">consequatur</span> <span class="n">assumenda</span><span class="o">.</span> <span class="n">Et</span> <span class="n">voluptatem</span> <span class="n">sunt</span> <span class="n">fugiat</span> <span class="n">sunt</span> <span class="n">et</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Voluptate</span> <span class="n">lab</span>
+                                                                           <span class="n">orum</span> <span class="n">maiores</span> <span class="n">veniam</span> <span class="n">saepe</span><span class="o">.</span> <span class="n">Beatae</span> <span class="n">ipsam</span> <span class="n">quam</span> <span class="n">nihil</span> <span class="n">qui</span> <span class="n">qui</span> <span class="n">asperiores</span><span class="o">.</span> <span class="n">Enim</span> <span class="n">c</span>
+                                                                           <span class="n">ulpa</span> <span class="n">laudantium</span> <span class="n">temporibus</span> <span class="n">quibusdam</span> <span class="n">aliquid</span><span class="o">.</span> <span class="n">Corporis</span> <span class="n">ut</span> <span class="n">nostrum</span> <span class="n">voluptate</span> <span class="n">e</span>
+                                                                           <span class="n">t</span> <span class="n">sit</span> <span class="n">tempore</span><span class="o">.</span><span class="s1">&#39;]</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">nb</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                                                         <span class="c1"># [u&#39;consectetur&#39;, u&#39;est&#39;, u&#39;rerum&#39;]</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">paragraph</span><span class="p">(</span><span class="n">nb_sentences</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">variable_nb_sentences</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>               <span class="c1"># Perferendis placeat dolores exercitationem quae ducimus. Magnam debitis eum e</span>
+                                                                           <span class="n">xcepturi</span> <span class="n">at</span> <span class="n">quidem</span> <span class="n">qui</span><span class="o">.</span> <span class="n">Animi</span> <span class="n">ad</span> <span class="n">cupiditate</span> <span class="ow">in</span><span class="o">.</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">sentences</span><span class="p">(</span><span class="n">nb</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                                                     <span class="c1"># [u&#39;Accusantium molestiae ut exercitationem voluptatem.&#39;, u&#39;Fuga consequatur c</span>
+                                                                           <span class="n">onsequuntur</span> <span class="n">quam</span> <span class="n">molestiae</span> <span class="n">nam</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Dolor</span> <span class="n">omnis</span> <span class="n">hic</span> <span class="n">perferendis</span> <span class="n">aut</span> <span class="n">itaque</span> <span class="n">si</span>
+                                                                           <span class="n">t</span><span class="o">.</span><span class="s1">&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-address">
+<h3>faker.providers.address<a class="headerlink" href="faker.html#faker-providers-address" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">state_abbr</span><span class="p">()</span>                                                        <span class="c1"># ID</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">latitude</span><span class="p">()</span>                                                          <span class="c1"># 176.060836</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_name</span><span class="p">()</span>                                                       <span class="c1"># Bernadine Vista</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">()</span>                                                           <span class="c1"># 59802 Kohler Gateway</span>
+                                                                           <span class="n">Keeblertown</span><span class="p">,</span> <span class="n">CA</span> <span class="mi">89092</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_address</span><span class="p">()</span>                                                    <span class="c1"># 39719 Klein Mews</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">postcode</span><span class="p">()</span>                                                          <span class="c1"># 97628</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">longitude</span><span class="p">()</span>                                                         <span class="c1"># -80.950377</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">country</span><span class="p">()</span>                                                           <span class="c1"># Palau</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">geo_coordinate</span><span class="p">()</span>                                                    <span class="c1"># 8.572122</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_suffix</span><span class="p">()</span>                                                     <span class="c1"># Corners</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_prefix</span><span class="p">()</span>                                                       <span class="c1"># West</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_suffix</span><span class="p">()</span>                                                       <span class="c1"># burgh</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">building_number</span><span class="p">()</span>                                                   <span class="c1"># 26481</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">secondary_address</span><span class="p">()</span>                                                 <span class="c1"># Apt. 399</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city</span><span class="p">()</span>                                                              <span class="c1"># East Noemie</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>                                                             <span class="c1"># Kansas</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-person">
+<h3>faker.providers.person<a class="headerlink" href="faker.html#faker-providers-person" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>                                                              <span class="c1"># Deborah Johnston</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">suffix</span><span class="p">()</span>                                                            <span class="c1"># I</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">last_name</span><span class="p">()</span>                                                         <span class="c1"># Cummings</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">first_name</span><span class="p">()</span>                                                        <span class="c1"># Violet</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">prefix</span><span class="p">()</span>                                                            <span class="c1"># Miss</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-date-time">
+<h3>faker.providers.date_time<a class="headerlink" href="faker.html#faker-providers-date-time" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">date_time_ad</span><span class="p">()</span>                                                      <span class="c1"># 0335-11-13 23:08:35</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">month</span><span class="p">()</span>                                                             <span class="c1"># 11</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">am_pm</span><span class="p">()</span>                                                             <span class="c1"># PM</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">iso8601</span><span class="p">()</span>                                                           <span class="c1"># 1988-03-30T13:39:34</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time_this_century</span><span class="p">()</span>                                            <span class="c1"># 1930-10-08 21:49:52</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time</span><span class="p">()</span>                                                         <span class="c1"># 1997-03-13 02:03:24</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>                                                        <span class="c1"># June</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time_this_month</span><span class="p">()</span>                                              <span class="c1"># 2013-11-04 18:41:20</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time_this_decade</span><span class="p">()</span>                                             <span class="c1"># 2010-12-11 02:32:12</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">day_of_week</span><span class="p">()</span>                                                       <span class="c1"># Wednesday</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">day_of_month</span><span class="p">()</span>                                                      <span class="c1"># 16</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>                                            <span class="c1"># 11:30:21</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time_between</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;-30y&quot;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s2">&quot;now&quot;</span><span class="p">)</span>                <span class="c1"># 2002-10-11 14:57:38</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">unix_time</span><span class="p">()</span>                                                         <span class="c1"># 763964108</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date_time_this_year</span><span class="p">()</span>                                               <span class="c1"># 2012-12-11 07:09:57</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">timezone</span><span class="p">()</span>                                                          <span class="c1"># Europe/Zurich</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">century</span><span class="p">()</span>                                                           <span class="c1"># XVII</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>                                            <span class="c1"># 1982-04-26</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">year</span><span class="p">()</span>                                                              <span class="c1"># 2000</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-company">
+<h3>faker.providers.company<a class="headerlink" href="faker.html#faker-providers-company" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">()</span>                                                           <span class="c1"># Funk and Sons</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_suffix</span><span class="p">()</span>                                                    <span class="c1"># and Sons</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase</span><span class="p">()</span>                                                      <span class="c1"># Triple-buffered executive focusgroup</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">bs</span><span class="p">()</span>                                                                <span class="c1"># brand proactive communities</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-internet">
+<h3>faker.providers.internet<a class="headerlink" href="faker.html#faker-providers-internet" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">ipv4</span><span class="p">()</span>                                                              <span class="c1"># 131.175.254.102</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">url</span><span class="p">()</span>                                                               <span class="c1"># http://www.bernier.com/</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_email</span><span class="p">()</span>                                                     <span class="c1"># barrows.brandyn@altenwerth.org</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri</span><span class="p">()</span>                                                               <span class="c1"># http://www.murray.net/about.html</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">tld</span><span class="p">()</span>                                                               <span class="c1"># info</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_path</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                                                 <span class="c1"># search/main</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email</span><span class="p">()</span>                                                        <span class="c1"># gmccullough@gmail.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">user_name</span><span class="p">()</span>                                                         <span class="c1"># wiza.johnathon</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email_domain</span><span class="p">()</span>                                                 <span class="c1"># hotmail.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_name</span><span class="p">()</span>                                                       <span class="c1"># mertz.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_extension</span><span class="p">()</span>                                                     <span class="c1"># .jsp</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">ipv6</span><span class="p">()</span>                                                              <span class="c1"># 6a67:a71f:ec3c:f641:177f:f33f:fb11:e27b</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">safe_email</span><span class="p">()</span>                                                        <span class="c1"># greinger@example.org</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_page</span><span class="p">()</span>                                                          <span class="c1"># login</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">()</span>                                                             <span class="c1"># dorcas53@hotmail.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_word</span><span class="p">()</span>                                                       <span class="c1"># bahringer</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">slug</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                                                    <span class="c1"># maxime-ea-omnis</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-miscelleneous">
+<h3>faker.providers.miscelleneous<a class="headerlink" href="faker.html#faker-providers-miscelleneous" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">locale</span><span class="p">()</span>                                                            <span class="c1"># cn_TJ</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">raw_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>                                               <span class="c1"># 98063a4419ebc124a94a0fe9411d95ba</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">raw_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>                                              <span class="c1"># 910aa38699b69228fee09ca0f2fb6e65f987ebd4</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">null_boolean</span><span class="p">()</span>                                                      <span class="c1"># False</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">raw_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>                                            <span class="c1"># 0aed69e82a0abfa4c03dcf17e212c5b0ac08f12751b1acac96553c1abc3352b5</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">country_code</span><span class="p">()</span>                                                      <span class="c1"># TG</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">language_code</span><span class="p">()</span>                                                     <span class="c1"># pt</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">boolean</span><span class="p">(</span><span class="n">chance_of_getting_true</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>                                  <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-phone-number">
+<h3>faker.providers.phone_number<a class="headerlink" href="faker.html#faker-providers-phone-number" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>                                                      <span class="c1"># +94(1)6262568403</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-user-agent">
+<h3>faker.providers.user_agent<a class="headerlink" href="faker.html#faker-providers-user-agent" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">mac_processor</span><span class="p">()</span>                                                     <span class="c1"># U; Intel</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">firefox</span><span class="p">()</span>                                                           <span class="c1"># Mozilla/5.0 (X11; Linux i686; rv:1.9.6.20) Gecko/2012-01-08 15:31:21 Firefox/</span>
+                                                                           <span class="mf">3.8</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">linux_platform_token</span><span class="p">()</span>                                              <span class="c1"># X11; Linux x86_64</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">opera</span><span class="p">()</span>                                                             <span class="c1"># Opera/8.46.(Windows NT 5.2; it-IT) Presto/2.9.161 Version/11.00</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">windows_platform_token</span><span class="p">()</span>                                            <span class="c1"># Windows 95</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">internet_explorer</span><span class="p">()</span>                                                 <span class="c1"># Mozilla/5.0 (compatible; MSIE 5.0; Windows NT 6.1; Trident/3.1)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">user_agent</span><span class="p">()</span>                                                        <span class="c1"># Mozilla/5.0 (X11; Linux i686; rv:1.9.6.20) Gecko/2010-12-19 10:41:34 Firefox/</span>
+                                                                           <span class="mf">3.6</span><span class="o">.</span><span class="mi">17</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">chrome</span><span class="p">()</span>                                                            <span class="c1"># Mozilla/5.0 (Windows 98) AppleWebKit/5332 (KHTML, like Gecko) Chrome/15.0.849</span>
+                                                                           <span class="o">.</span><span class="mi">0</span> <span class="n">Safari</span><span class="o">/</span><span class="mi">5332</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">linux_processor</span><span class="p">()</span>                                                   <span class="c1"># i686</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">mac_platform_token</span><span class="p">()</span>                                                <span class="c1"># Macintosh; U; Intel Mac OS X 10_7_4</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">safari</span><span class="p">()</span>                                                            <span class="c1"># Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_8_3 rv:2.0; it-IT) AppleWebKit/532</span>
+                                                                           <span class="o">.</span><span class="mf">47.1</span> <span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Version</span><span class="o">/</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">5</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">532.47</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-file">
+<h3>faker.providers.file<a class="headerlink" href="faker.html#faker-providers-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">mime_type</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                                            <span class="c1"># video/mpeg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-python">
+<h3>faker.providers.python<a class="headerlink" href="faker.html#faker-providers-python" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">pyiterable</span><span class="p">(</span><span class="n">nb_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">variable_nb_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span> <span class="c1"># set([Decimal(&#39;7.2022029784E+11&#39;), Decimal(&#39;7.80290776173E+12&#39;), u&#39;Dolor imped</span>
+                                                                           <span class="n">it</span> <span class="n">quia</span><span class="o">.</span><span class="s1">&#39;, 3014507.7827, u&#39;</span><span class="n">ramiro</span><span class="o">.</span><span class="n">carter</span><span class="nd">@schumm</span><span class="o">.</span><span class="n">org</span><span class="s1">&#39;, 4443, u&#39;</span><span class="n">Sed</span> <span class="n">iusto</span> <span class="n">magna</span>
+                                                                           <span class="n">m</span><span class="o">.</span><span class="s1">&#39;])</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pystr</span><span class="p">(</span><span class="n">max_chars</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>                                                 <span class="c1"># Nulla odit ex fuga.</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pyfloat</span><span class="p">(</span><span class="n">left_digits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right_digits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>        <span class="c1"># 69950445.94</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pystruct</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span>                                    <span class="c1"># ([u&#39;Corporis excepturi.&#39;, -6.3746979, 8874, 641.670735144, u&#39;Dolores ut aut v</span>
+                                                                           <span class="n">el</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Non</span> <span class="n">cumque</span><span class="o">.</span><span class="s1">&#39;, datetime(1988, 1, 10, 18, 20, 26), u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">cronin</span><span class="o">.</span><span class="n">info</span>
+                                                                           <span class="o">/</span><span class="n">search</span><span class="o">/</span><span class="n">category</span><span class="o">/</span><span class="n">search</span><span class="o">.</span><span class="n">htm</span><span class="s1">&#39;, -543720939267106.0, u&#39;</span><span class="n">Est</span> <span class="n">dignissimos</span> <span class="n">et</span><span class="o">.</span><span class="s1">&#39;], {u</span>
+                                                                           <span class="s1">&#39;neque&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;sit&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Et sed ut nisi.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;arc</span>
+                                                                           <span class="n">hitecto</span><span class="s1">&#39;: u&#39;</span><span class="n">Minus</span> <span class="n">sunt</span> <span class="n">quos</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">numquam</span><span class="s1">&#39;: u&#39;</span><span class="n">Officiis</span> <span class="ow">in</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">esse</span><span class="s1">&#39;: Decimal(</span>
+                                                                           <span class="s1">&#39;851592439.65&#39;</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;ex&#39;</span><span class="p">:</span> <span class="mf">55651.0</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;praesentium&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Beatae excepturi.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;dolo</span>
+                                                                           <span class="n">rem</span><span class="s1">&#39;: Decimal(&#39;</span><span class="o">-</span><span class="mf">3.49169242935E+13</span><span class="s1">&#39;), u&#39;</span><span class="n">vel</span><span class="s1">&#39;: u&#39;</span><span class="n">Exercitationem</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">quo</span><span class="s1">&#39;: date</span>
+                                                                           <span class="n">time</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">28</span><span class="p">)},</span> <span class="p">{</span><span class="sa">u</span><span class="s1">&#39;consequuntur&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">9</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Eaque quis autem.&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span>
+                                                                            <span class="p">[</span><span class="o">-</span><span class="mf">922275532.2</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Incidunt aut.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Et sint excepturi.&#39;</span><span class="p">],</span> <span class="mi">11</span><span class="p">:</span> <span class="p">{</span><span class="mi">9</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">19</span>
+                                                                           <span class="mi">77</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span> <span class="mi">10</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Est sunt.&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;victoria.blick@littel.info&#39;</span><span class="p">,</span>
+                                                                           <span class="sa">u</span><span class="s1">&#39;Quos aut quo.&#39;</span><span class="p">]}},</span> <span class="sa">u</span><span class="s1">&#39;non&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">6716</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mf">29014.550976</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Praesentium.&#39;</span><span class="p">,</span> <span class="mi">870</span>
+                                                                           <span class="mi">4</span><span class="p">],</span> <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">3649</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1979</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">37</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;http://langworthr</span>
+                                                                           <span class="n">osenbaum</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">register</span><span class="o">/</span><span class="s1">&#39;, Decimal(&#39;</span><span class="mf">62790.0</span><span class="s1">&#39;)]}}, u&#39;</span><span class="n">est</span><span class="s1">&#39;: {5: u&#39;</span><span class="n">Maxime</span> <span class="n">incidunt</span>
+                                                                           <span class="o">.</span><span class="s1">&#39;, 6: [-9.5832, u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nitzsche</span><span class="o">.</span><span class="n">biz</span><span class="o">/</span><span class="n">search</span><span class="o">/</span><span class="n">search</span><span class="o">/</span><span class="n">author</span><span class="o">.</span><span class="n">htm</span><span class="s1">&#39;, u&#39;</span><span class="n">Cum</span> <span class="n">s</span>
+                                                                           <span class="n">uscipit</span> <span class="n">dolor</span><span class="o">.</span><span class="s1">&#39;], 7: {5: u&#39;</span><span class="n">Consequuntur</span> <span class="n">autem</span><span class="o">.</span><span class="s1">&#39;, 6: 1684, 7: [u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">rath</span><span class="o">.</span><span class="n">c</span>
+                                                                           <span class="n">om</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="n">homepage</span><span class="o">/</span><span class="s1">&#39;, u&#39;</span><span class="n">Ea</span> <span class="n">sit</span> <span class="n">error</span><span class="o">.</span><span class="s1">&#39;]}}, u&#39;</span><span class="n">voluptatum</span><span class="s1">&#39;: {4: u&#39;</span><span class="n">Omnis</span> <span class="n">omnis</span> <span class="n">op</span>
+                                                                           <span class="n">tio</span><span class="o">.</span><span class="s1">&#39;, 5: [u&#39;</span><span class="n">Voluptatibus</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Numquam</span> <span class="n">qui</span> <span class="n">qui</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">bahringer</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span>
+                                                                           <span class="ow">or</span><span class="o">/</span><span class="s1">&#39;], 6: {4: datetime(1976, 6, 3, 20, 42, 52), 5: Decimal(&#39;</span><span class="mf">12939334042.1</span><span class="s1">&#39;),</span>
+                                                                           <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Vel sed similique.&#39;</span><span class="p">,</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;-968.39980246&#39;</span><span class="p">)]}},</span> <span class="sa">u</span><span class="s1">&#39;voluptas&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">8</span><span class="p">:</span> <span class="p">{</span><span class="mi">8</span><span class="p">:</span>
+                                                                           <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Vel rerum quia.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Aperiam officiis in.&#39;</span><span class="p">],</span> <span class="mi">6</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Ipsa non beatae.&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;h</span>
+                                                                           <span class="n">ttp</span><span class="p">:</span><span class="o">//</span><span class="n">donnelly</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">terms</span><span class="o">/</span><span class="s1">&#39;}, 6: Decimal(&#39;</span><span class="o">-</span><span class="mf">35.6</span><span class="s1">&#39;), 7: [9534, 1605, Decimal(&#39;</span><span class="o">-</span><span class="mi">4</span>
+                                                                           <span class="o">.</span><span class="mf">21540418737E+12</span><span class="s1">&#39;)]}, u&#39;</span><span class="n">molestiae</span><span class="s1">&#39;: {0: -811865398.937, 1: [u&#39;</span><span class="n">Ipsum</span> <span class="n">quos</span> <span class="ow">in</span> <span class="n">o</span>
+                                                                           <span class="n">mnis</span><span class="o">.</span><span class="s1">&#39;, 4467, u&#39;</span><span class="n">Nobis</span><span class="o">.</span><span class="s1">&#39;], 2: {0: u&#39;</span><span class="n">Rerum</span> <span class="n">alias</span> <span class="n">dolorem</span><span class="o">.</span><span class="s1">&#39;, 1: u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pfanner</span>
+                                                                           <span class="n">still</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">home</span><span class="o">.</span><span class="n">html</span><span class="s1">&#39;, 2: [u&#39;</span><span class="n">Aut</span> <span class="n">et</span> <span class="n">officiis</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">jackie</span><span class="o">.</span><span class="n">gottlieb</span><span class="nd">@hotmail</span><span class="o">.</span><span class="n">com</span><span class="s1">&#39;</span>
+                                                                           <span class="p">]}},</span> <span class="sa">u</span><span class="s1">&#39;enim&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Beatae nam ut odio.&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;Et aut aut quasi.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Saepe o</span>
+                                                                           <span class="n">fficiis</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">gusikowski</span><span class="o">.</span><span class="n">biz</span><span class="o">/</span><span class="s1">&#39;], 3: {1: 7259, 2: u&#39;</span><span class="n">alex</span><span class="o">.</span><span class="n">farrell</span><span class="nd">@walker</span><span class="o">.</span>
+                                                                           <span class="n">com</span><span class="s1">&#39;, 3: [u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">tromp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">privacy</span><span class="o">.</span><span class="n">php</span><span class="s1">&#39;, Decimal(&#39;</span><span class="mf">57290273.37</span>
+                                                                           <span class="mi">2</span><span class="s1">&#39;)]}}, u&#39;</span><span class="n">molestias</span><span class="s1">&#39;: {8: datetime(1978, 1, 10, 19, 59, 3), 9: [52692718.897,</span>
+                                                                            <span class="sa">u</span><span class="s1">&#39;http://www.quitzon.com/&#39;</span><span class="p">,</span> <span class="mf">113896345221807.0</span><span class="p">],</span> <span class="mi">10</span><span class="p">:</span> <span class="p">{</span><span class="mi">8</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;mariane50@hotmail.</span>
+                                                                           <span class="n">com</span><span class="s1">&#39;, 9: u&#39;</span><span class="n">eric</span><span class="o">.</span><span class="n">emmerich</span><span class="nd">@hand</span><span class="o">.</span><span class="n">biz</span><span class="s1">&#39;, 10: [4015, 1200]}}, u&#39;</span><span class="n">et</span><span class="s1">&#39;: {8: [u&#39;</span><span class="n">Est</span> <span class="n">dig</span>
+                                                                           <span class="n">nissimos</span><span class="o">.</span><span class="s1">&#39;, -582365.7420196, u&#39;</span><span class="n">Et</span> <span class="n">odit</span> <span class="n">laborum</span> <span class="n">ut</span><span class="o">.</span><span class="s1">&#39;], 9: {8: Decimal(&#39;</span><span class="o">-</span><span class="mf">1.9923</span>
+                                                                           <span class="mf">2256052E+13</span><span class="s1">&#39;), 9: [u&#39;</span><span class="n">Enim</span> <span class="n">consequatur</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">huels</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tag</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">tags</span>
+                                                                           <span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">asp</span><span class="s1">&#39;], 7: u&#39;</span><span class="n">Praesentium</span><span class="o">.</span><span class="s1">&#39;}, 7: 1035}, u&#39;</span><span class="n">atque</span><span class="s1">&#39;: {3: u&#39;</span><span class="n">Repellendus</span> <span class="n">fugi</span>
+                                                                           <span class="n">t</span><span class="o">.</span><span class="s1">&#39;, 4: [u&#39;</span><span class="n">kvolkman</span><span class="nd">@bodejast</span><span class="o">.</span><span class="n">com</span><span class="s1">&#39;, u&#39;</span><span class="n">Nam</span> <span class="n">saepe</span> <span class="n">nihil</span> <span class="n">et</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Officiis</span> <span class="n">quo</span><span class="o">.</span><span class="s1">&#39;],</span>
+                                                                            <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">7778</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">4111</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;reichel.katharina@schulist.com&#39;</span><span class="p">,</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1984</span><span class="p">,</span>
+                                                                           <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]}}})</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pydecimal</span><span class="p">(</span><span class="n">left_digits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right_digits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>      <span class="c1"># 813138968.731</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pylist</span><span class="p">(</span><span class="n">nb_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">variable_nb_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span>     <span class="c1"># [u&#39;Dignissimos.&#39;, u&#39;http://www.boganhintz.com/categories/categories/homepage.</span>
+                                                                           <span class="n">php</span><span class="s1">&#39;, u&#39;</span><span class="n">sanford</span><span class="o">.</span><span class="n">magnolia</span><span class="nd">@hotmail</span><span class="o">.</span><span class="n">com</span><span class="s1">&#39;, u&#39;</span><span class="n">At</span> <span class="n">non</span> <span class="n">aliquid</span><span class="o">.</span><span class="s1">&#39;, 7741, 87500826857.</span>
+                                                                           <span class="mi">2962</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;ralph02@aufderharpollich.com&#39;</span><span class="p">,</span> <span class="mi">7686</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;http://koelpindouglas.org/tags</span>
+                                                                           <span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">terms</span><span class="o">.</span><span class="n">html</span><span class="s1">&#39;, u&#39;</span><span class="n">Voluptas</span> <span class="n">ea</span> <span class="n">natus</span><span class="o">.</span><span class="s1">&#39;, 7165, u&#39;</span><span class="n">Doloremque</span> <span class="n">earum</span><span class="o">.</span><span class="s1">&#39;, 1823]</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pytuple</span><span class="p">(</span><span class="n">nb_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">variable_nb_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span>    <span class="c1"># (u&#39;tokuneva@kling.org&#39;, u&#39;A dolorem.&#39;, 6377, u&#39;Ullam corrupti.&#39;, u&#39;Eos deseru</span>
+                                                                           <span class="n">nt</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Nihil</span> <span class="n">quia</span><span class="o">.</span><span class="s1">&#39;, 5019)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pybool</span><span class="p">()</span>                                                            <span class="c1"># True</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pyset</span><span class="p">(</span><span class="n">nb_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">variable_nb_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span>      <span class="c1"># set([u&#39;osvaldo06@gmail.com&#39;, 4298, datetime(1977, 6, 8, 5, 15, 47), u&#39;rempel.</span>
+                                                                           <span class="n">eliezer</span><span class="nd">@rutherford</span><span class="o">.</span><span class="n">com</span><span class="s1">&#39;, u&#39;</span><span class="n">Velit</span> <span class="n">quae</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Temporibus</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">Aut</span> <span class="n">accusantium</span><span class="o">.</span><span class="s1">&#39;]</span>
+                                                                           <span class="p">)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pydict</span><span class="p">(</span><span class="n">nb_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">variable_nb_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">value_types</span><span class="p">)</span>     <span class="c1"># {u&#39;eum&#39;: u&#39;Repudiandae.&#39;, u&#39;velit&#39;: u&#39;Aliquam optio ut.&#39;, u&#39;commodi&#39;: u&#39;Moles</span>
+                                                                           <span class="n">tiae</span> <span class="n">autem</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">quis</span><span class="s1">&#39;: u&#39;</span><span class="n">quigley</span><span class="o">.</span><span class="n">christian</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="s1">&#39;, u&#39;</span><span class="n">accusamus</span><span class="s1">&#39;: Decimal(</span>
+                                                                           <span class="s1">&#39;-14.48787&#39;</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;ut&#39;</span><span class="p">:</span> <span class="mf">61715747966374.0</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Occaecati explicabo.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;f</span>
+                                                                           <span class="n">acilis</span><span class="s1">&#39;: u&#39;</span><span class="n">Et</span> <span class="n">vitae</span> <span class="n">totam</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">enim</span><span class="s1">&#39;: u&#39;</span><span class="n">Quam</span> <span class="n">repellat</span><span class="o">.</span><span class="s1">&#39;, u&#39;</span><span class="n">explicabo</span><span class="s1">&#39;: dateti</span>
+                                                                           <span class="n">me</span><span class="p">(</span><span class="mi">1985</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;officiis&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;Et id culpa sequi.&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;labore&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;</span>
+                                                                           <span class="n">Aut</span> <span class="n">tempore</span> <span class="n">culpa</span><span class="o">.</span><span class="s1">&#39;}</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">pyint</span><span class="p">()</span>                                                             <span class="c1"># 4166</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="faker-providers-credit-card">
+<h3>faker.providers.credit_card<a class="headerlink" href="faker.html#faker-providers-credit-card" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">credit_card_security_code</span><span class="p">(</span><span class="n">card_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                           <span class="c1"># 816</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">credit_card_full</span><span class="p">(</span><span class="n">card_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_check</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>      <span class="c1">#</span>
+                                                                           <span class="n">American</span> <span class="n">Express</span>
+                                                                           <span class="n">Ralph</span> <span class="n">Bartoletti</span>
+                                                                           <span class="mi">379037504006334</span>  <span class="mi">12</span><span class="o">/</span><span class="mi">18</span>
+                                                                           <span class="n">CVC</span><span class="p">:</span> <span class="mi">686</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">credit_card_expire</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;now&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;+10y&quot;</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="s2">&quot;%m/%y&quot;</span><span class="p">)</span>    <span class="c1"># 06/15</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">credit_card_number</span><span class="p">(</span><span class="n">card_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_check</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>    <span class="c1"># 201493034311625</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">credit_card_provider</span><span class="p">(</span><span class="n">card_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                                <span class="c1"># VISA 13 digit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="localization">
+<h3>Localization<a class="headerlink" href="faker.html#localization" title="Permalink to this headline">¶</a></h3>
+<p><cite>faker.Factory</cite> can take a locale as an argument, to return localized data.
+If no localized provider is found, the factory fallbacks to the default locale (en_EN).:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Factory</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;it_IT&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+
+<span class="o">&gt;</span> <span class="n">Elda</span> <span class="n">Palumbo</span>
+<span class="o">&gt;</span> <span class="n">Pacifico</span> <span class="n">Giordano</span>
+<span class="o">&gt;</span> <span class="n">Sig</span><span class="o">.</span> <span class="n">Avide</span> <span class="n">Guerra</span>
+<span class="o">&gt;</span> <span class="n">Yago</span> <span class="n">Amato</span>
+<span class="o">&gt;</span> <span class="n">Eustachio</span> <span class="n">Messina</span>
+<span class="o">&gt;</span> <span class="n">Dott</span><span class="o">.</span> <span class="n">Violante</span> <span class="n">Lombardo</span>
+<span class="o">&gt;</span> <span class="n">Sig</span><span class="o">.</span> <span class="n">Alighieri</span> <span class="n">Monti</span>
+<span class="o">&gt;</span> <span class="n">Costanzo</span> <span class="n">Costa</span>
+<span class="o">&gt;</span> <span class="n">Nazzareno</span> <span class="n">Barbieri</span>
+<span class="o">&gt;</span> <span class="n">Max</span> <span class="n">Coppola</span>
+</pre></div>
+</div>
+<p>You can check available Faker locales in the source code, under the providers package.
+The localization of Faker is an ongoing process, for which we need your help.
+Don&#8217;t hesitate to create localized providers to your own locale and submit a PR!</p>
+<p>Some example of included localized providers:</p>
+</div>
+<div class="section" id="language-it-it">
+<h3>LANGUAGE it_IT<a class="headerlink" href="faker.html#language-it-it" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>faker.providers.address<a class="headerlink" href="faker.html#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">state_abbr</span><span class="p">()</span>             <span class="c1"># RA</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">latitude</span><span class="p">()</span>               <span class="c1"># -99.579871</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_name</span><span class="p">()</span>            <span class="c1"># Canale Conti</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">()</span>                <span class="c1"># Borgo Nabil 59 Appartamento 21</span>
+                                <span class="n">Quarto</span> <span class="n">Brigitta</span> <span class="n">ligure</span><span class="p">,</span> <span class="mi">36534</span> <span class="n">Pavia</span> <span class="p">(</span><span class="n">VR</span><span class="p">)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_address</span><span class="p">()</span>         <span class="c1"># Canale Gianriccardo 743</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">postcode</span><span class="p">()</span>               <span class="c1"># 61219</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">longitude</span><span class="p">()</span>              <span class="c1"># -4.116482</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">country</span><span class="p">()</span>                <span class="c1"># Isole Falkland (Malvinas)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">geo_coordinate</span><span class="p">()</span>         <span class="c1"># -46.328470</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_suffix</span><span class="p">()</span>          <span class="c1"># Borgo</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_prefix</span><span class="p">()</span>            <span class="c1"># San</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_suffix</span><span class="p">()</span>            <span class="c1"># sardo</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">building_number</span><span class="p">()</span>        <span class="c1"># 06</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">secondary_address</span><span class="p">()</span>      <span class="c1"># Piano 7</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city</span><span class="p">()</span>                   <span class="c1"># Borgo Tristano umbro</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>                  <span class="c1"># Terni</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>faker.providers.person<a class="headerlink" href="faker.html#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>                   <span class="c1"># Sig. Cesidia De Angelis</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">last_name</span><span class="p">()</span>              <span class="c1"># Neri</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">first_name</span><span class="p">()</span>             <span class="c1"># Gianmarco</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">prefix</span><span class="p">()</span>                 <span class="c1"># Dott.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>faker.providers.company<a class="headerlink" href="faker.html#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">()</span>                <span class="c1"># Bianchi SPA</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_suffix</span><span class="p">()</span>         <span class="c1"># e figli</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase</span><span class="p">()</span>           <span class="c1"># Migrazione stand-alone logistica</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">bs</span><span class="p">()</span>                     <span class="c1"># webservices evolutive verticalizzate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>faker.providers.phone_number<a class="headerlink" href="faker.html#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>           <span class="c1"># +23 42 2530333</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="language-fr-fr">
+<h3>LANGUAGE fr_FR<a class="headerlink" href="faker.html#language-fr-fr" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>faker.providers.address<a class="headerlink" href="faker.html#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">()</span>                      <span class="c1"># 87, boulevard de Nguyen</span>
+                                      <span class="mi">18</span> <span class="mi">421</span> <span class="n">Bernier</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">latitude</span><span class="p">()</span>                     <span class="c1"># 18.516947</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">department_number</span><span class="p">()</span>            <span class="c1"># 81</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_name</span><span class="p">()</span>                  <span class="c1"># boulevard de Herve</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">department</span><span class="p">()</span>                   <span class="c1"># (u&#39;38&#39;, u&#39;Is\xe8re&#39;)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">department_name</span><span class="p">()</span>              <span class="c1"># Finistère</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_address</span><span class="p">()</span>               <span class="c1"># 26, rue René Ribeiro</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">postcode</span><span class="p">()</span>                     <span class="c1"># 86 828</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">longitude</span><span class="p">()</span>                    <span class="c1"># -98.262211</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">country</span><span class="p">()</span>                      <span class="c1"># Guatemala</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">geo_coordinate</span><span class="p">()</span>               <span class="c1"># 111.305524</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_prefix</span><span class="p">()</span>                <span class="c1"># boulevard</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_suffix</span><span class="p">()</span>                <span class="c1"># Street</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_suffix</span><span class="p">()</span>                  <span class="c1"># -la-Forêt</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">building_number</span><span class="p">()</span>              <span class="c1"># 621</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">region</span><span class="p">()</span>                       <span class="c1"># Wallis-et-Futuna</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city</span><span class="p">()</span>                         <span class="c1"># Rodrigues</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>faker.providers.person<a class="headerlink" href="faker.html#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>                         <span class="c1"># Léon Thierry</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">last_name</span><span class="p">()</span>                    <span class="c1"># Jourdan</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">first_name</span><span class="p">()</span>                   <span class="c1"># Isaac</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">prefix</span><span class="p">()</span>                       <span class="c1"># de</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>faker.providers.company<a class="headerlink" href="faker.html#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">()</span>                      <span class="c1"># Colas Grondin et Fils</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_suffix</span><span class="p">()</span>               <span class="c1"># S.A.</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase_verb</span><span class="p">()</span>            <span class="c1"># d&#39;atteindre vos buts</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase</span><span class="p">()</span>                 <span class="c1"># L&#39;avantage de rouler autrement</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase_noun</span><span class="p">()</span>            <span class="c1"># le droit</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">siren</span><span class="p">()</span>                        <span class="c1"># 575 730 129</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">siret</span><span class="p">(</span><span class="n">max_sequential_digits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 205 560 539 00917</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">catch_phrase_attribute</span><span class="p">()</span>       <span class="c1"># plus facilement</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>faker.providers.internet<a class="headerlink" href="faker.html#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">ipv4</span><span class="p">()</span>                         <span class="c1"># 6.14.119.96</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">url</span><span class="p">()</span>                          <span class="c1"># http://www.langlois.com/</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_email</span><span class="p">()</span>                <span class="c1"># michaud.honore@fontaine.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri</span><span class="p">()</span>                          <span class="c1"># http://www.navarro.com/index.htm</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">tld</span><span class="p">()</span>                          <span class="c1"># com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_path</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>            <span class="c1"># blog/wp-content</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email</span><span class="p">()</span>                   <span class="c1"># guerin.daniel@ifrance.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">user_name</span><span class="p">()</span>                    <span class="c1"># vincent53</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email_domain</span><span class="p">()</span>            <span class="c1"># live.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_name</span><span class="p">()</span>                  <span class="c1"># monnier.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_extension</span><span class="p">()</span>                <span class="c1"># .htm</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">ipv6</span><span class="p">()</span>                         <span class="c1"># c578:0382:cf59:46e8:98e3:7c13:c5b6:91a6</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">safe_email</span><span class="p">()</span>                   <span class="c1"># josephine.guilbert@example.net</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_page</span><span class="p">()</span>                     <span class="c1"># register</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">()</span>                        <span class="c1"># martine74@caron.fr</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_word</span><span class="p">()</span>                  <span class="c1"># bodin</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">slug</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>               <span class="c1"># voluptas-ut-autem</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>faker.providers.phone_number<a class="headerlink" href="faker.html#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>                 <span class="c1"># +33 4 38 41 91 92</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="language-pt-br">
+<h3>LANGUAGE pt_BR<a class="headerlink" href="faker.html#language-pt-br" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>faker.providers.address<a class="headerlink" href="faker.html#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">estado_nome</span><span class="p">()</span>            <span class="c1"># Rio de Janeiro</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">latitude</span><span class="p">()</span>               <span class="c1"># -106.011949</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_name</span><span class="p">()</span>            <span class="c1"># Vereda Ribeiro</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_prefix</span><span class="p">()</span>          <span class="c1"># Rodovia</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">address</span><span class="p">()</span>                <span class="c1"># Conjunto Pereira, 775</span>
+                                <span class="n">Acaiaca</span>
+                                <span class="mi">08618559</span> <span class="n">Barbosa</span> <span class="n">de</span> <span class="n">Cunha</span> <span class="o">/</span> <span class="n">RS</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_address</span><span class="p">()</span>         <span class="c1"># Praça Martins, 48</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">bairro</span><span class="p">()</span>                 <span class="c1"># São João Batista</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">longitude</span><span class="p">()</span>              <span class="c1"># -160.626433</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">country</span><span class="p">()</span>                <span class="c1"># Sudão</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">geo_coordinate</span><span class="p">()</span>         <span class="c1"># 21.660349</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">estado_sigla</span><span class="p">()</span>           <span class="c1"># PI</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">street_suffix</span><span class="p">()</span>          <span class="c1"># Street</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city_suffix</span><span class="p">()</span>            <span class="c1"># de Minas</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">building_number</span><span class="p">()</span>        <span class="c1"># 94</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>                 <span class="c1"># (u&#39;MA&#39;, u&#39;Maranh\xe3o&#39;)</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">city</span><span class="p">()</span>                   <span class="c1"># Cunha</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">postcode</span><span class="p">()</span>               <span class="c1"># 92673-460</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>faker.providers.person<a class="headerlink" href="faker.html#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>                   <span class="c1"># Sabrina Martins</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">last_name</span><span class="p">()</span>              <span class="c1"># Rocha</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">first_name</span><span class="p">()</span>             <span class="c1"># Maitê</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">prefix</span><span class="p">()</span>                 <span class="c1"># do</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>faker.providers.company<a class="headerlink" href="faker.html#id14" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">()</span>                <span class="c1"># Lima Azevedo e Filhos</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_suffix</span><span class="p">()</span>         <span class="c1"># - EI</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>faker.providers.internet<a class="headerlink" href="faker.html#id15" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">ipv4</span><span class="p">()</span>                   <span class="c1"># 221.193.94.76</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">url</span><span class="p">()</span>                    <span class="c1"># http://www.carvalho.com/</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">company_email</span><span class="p">()</span>          <span class="c1"># thiago.gomes@costela.br</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri</span><span class="p">()</span>                    <span class="c1"># http://www.souza.com/search/author/</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">tld</span><span class="p">()</span>                    <span class="c1"># br</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_path</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>      <span class="c1"># explore/tags/category</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email</span><span class="p">()</span>             <span class="c1"># rafaela04@gmail.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">user_name</span><span class="p">()</span>              <span class="c1"># alexia.pinto</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">free_email_domain</span><span class="p">()</span>      <span class="c1"># uol.com.br</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_name</span><span class="p">()</span>            <span class="c1"># ferreira.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_extension</span><span class="p">()</span>          <span class="c1"># .jsp</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">ipv6</span><span class="p">()</span>                   <span class="c1"># 5f15:bd2b:fa0f:0d20:4e4d:3ab6:7eb7:0904</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">safe_email</span><span class="p">()</span>             <span class="c1"># vitor38@example.br</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">uri_page</span><span class="p">()</span>               <span class="c1"># author</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">email</span><span class="p">()</span>                  <span class="c1"># bianca.dias@dias.com</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">domain_word</span><span class="p">()</span>            <span class="c1"># castro</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">slug</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>         <span class="c1"># magnam-consequatur</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>faker.providers.phone_number<a class="headerlink" href="faker.html#id16" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">fake</span><span class="o">.</span><span class="n">phone_number</span><span class="p">()</span>           <span class="c1"># +55 71 8130 0097</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-from-shell">
+<h2>Using from shell<a class="headerlink" href="faker.html#using-from-shell" title="Permalink to this headline">¶</a></h2>
+<p>In a python environment with faker installed you can use it with:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">faker</span> <span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="p">[</span><span class="o">*</span><span class="n">args</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>[option]:</p>
+<ul class="simple">
+<li>formatter name as <cite>text</cite>, <cite>address</cite>: display result of fake</li>
+<li>Provider name as <cite>lorem</cite>: display all Provider&#8217;s fakes</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">[*args]</span></code>: pass value to formatter (actually only strings):</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span>$ python -m faker address
+968 Bahringer Garden Apt. 722
+Kristinaland, NJ 09890
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-create-a-provider">
+<h2>How to create a Provider<a class="headerlink" href="faker.html#how-to-create-a-provider" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">()</span>
+
+<span class="c1"># first, import a similar Provider or use the default one</span>
+<span class="kn">from</span> <span class="nn">faker.providers</span> <span class="kn">import</span> <span class="n">BaseProvider</span>
+
+<span class="c1"># create new provider class</span>
+<span class="k">class</span> <span class="nc">MyProvider</span><span class="p">(</span><span class="n">BaseProvider</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;bar&#39;</span>
+
+<span class="c1"># then add new provider to faker instance</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">add_provider</span><span class="p">(</span><span class="n">MyProvider</span><span class="p">)</span>
+
+<span class="c1"># now you can use:</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="s1">&#39;bar&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="seeding-the-generator">
+<h2>Seeding the Generator<a class="headerlink" href="faker.html#seeding-the-generator" title="Permalink to this headline">¶</a></h2>
+<p>You may want to get always the same generated data - for instance when using Faker for unit testing purposes.
+The generator offers a <cite>seed()</cite> method, which seeds the random number generator.
+Calling the same script twice with the same seed produces the same results.:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">()</span>
+<span class="n">fake</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4321</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="n">fake</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>   <span class="c1"># Margaret Boehm</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="faker.html#license" title="Permalink to this headline">¶</a></h2>
+<p>Faker is released under the MIT Licence.</p>
+<p>Copyright (c) 2012 Daniele Faraglia</p>
+<p>Portions Copyright (c) 2011 François Zaninotto</p>
+<p>Portions Copyright (c) 2008 Caius Durling</p>
+<p>Portions Copyright (c) 2008 Adam Royle</p>
+<p>Portions Copyright (c) 2008 Fiona Burrows</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &#8220;Software&#8221;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &#8220;AS IS&#8221;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="faker.html#credits" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/fzaninotto">FZaninotto</a> / <a class="reference external" href="https://github.com/fzaninotto/Faker">Faker</a></li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/distribute">Distribute</a></li>
+<li><a class="reference external" href="http://www.buildout.org/">Buildout</a></li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/modern-package-template">modern-package-template</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

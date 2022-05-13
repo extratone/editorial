@@ -1,0 +1,563 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+		
+    <title>Pythonista for iOS</title>
+    
+    <script src="https://use.typekit.net/wxh6sxi.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+		<link rel="stylesheet" href="http://omz-software.com/pythonista/css/magnific-popup.css">
+		
+	<style type="text/css">
+	
+	body {
+		font-family: "source-sans-pro", helvetica, sans-serif;
+		background-color: #F5F5F5;
+    background-color: white;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0 auto;
+	}
+	a {
+		color: #387295;
+    color: #004846;
+    color: #0c6461;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 20px 0 20px;
+	}
+  .feature-row {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #ddd;
+    margin-bottom: 40px;
+  }
+	h1.title {
+		font-size: 64px;
+		font-weight: 100;
+		color: #1f4c59;
+		margin: 50px 0 0 0;
+    font-family: "paralucent-condensed",helvetica,sans-serif;
+    font-weight: 300;
+    
+    color: #004946;
+	}
+	h2.subtitle {
+		font-size: 30px;
+		font-weight: 400;
+		color: #313D4D;
+		width: 50%;
+		padding-bottom: 20px;
+    margin-top: 0;
+    font-family: "paralucent-condensed",helvetica,sans-serif;
+	}
+	.main-blurb {
+		font-size: 22px;
+		background-color: #1f4c59;
+    background-color: #058b51;
+		color: white;
+		padding: 40px 0px 40px 0px;
+		width: 100%;
+		margin: 0;
+	}
+	.appstore-container {
+    background-color: #004846;
+		color: white;
+		min-height: 130px;
+		margin-bottom: 40px;
+	}
+  .app-icon {
+    width: 85px;
+    height: 85px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-image: url(http://omz-software.com/pythonista/images/Pythonista3IconMasked-170.png);
+    background-size: 85px 85px;
+  }
+	img.device-image {
+		position: relative;
+		float: right;
+		width: 512px;
+		height: 682px;
+		margin: -120px 0px 0px 20px;
+	}
+	img.feature-icon {
+		float:left;
+		width: 79px;
+		height: 80px;
+	}
+	.feature-container {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 20px;
+		clear: both;
+	}
+	.feature-description {
+		float: right;
+		width: 75%;
+		margin-top: 0;
+		padding-left: 10px;
+	}
+	.feature-description h4 {
+		font-weight: 400;
+		font-size: 22px;
+		margin: 0;
+    font-family: "paralucent-condensed",helvetica,sans-serif;
+	}
+	.feature-description p {
+		margin: 10px 20px 10px 0;
+	}
+	.feature-description strong {
+		font-weight: 400;
+	}
+	.testimonials {
+		font-size: 22px;
+		
+		background-color: #eaeaea;
+    
+		min-height: 180px;
+		clear: both;
+		width: 100%;
+		color: white;
+		
+		float: left;
+		padding: 15px 0 0px 0;
+		margin: 0px 0 40px 0;
+	}
+	.testimonial {
+		padding: 0 32px 0 32px;
+	}
+	.testimonial-credits {
+		margin-top: 28px;
+		margin-left: 50px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+  .testimonial-credits a {
+    color: white;
+  }
+	.column {
+		width: 50%;
+		float: left;
+		
+		margin-bottom: 40px;
+	}
+	.column.right {
+		float: right;
+	}
+	.column-33 {
+		width: 33%;
+		float: left;
+	}
+	
+	img.avatar {
+		width: 36px; height: 36px; border-radius: 20px; display: inline-block; float: left;
+	}
+	img.thumbnail {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #bbb;
+		margin-right: 20px;
+		margin-top: 20px;
+		border-radius: 8px;
+	}
+	a.screenshot-link img:hover {
+		opacity: 0.75;
+		cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+		border-color: #058b51;
+	}
+	@media only screen and (max-width: 840px) {
+		img.feature-icon {	
+			width: 60px;
+			height: 60px;
+		}
+	}
+	@media only screen and (max-width: 767px) {
+		body {
+			//font-size: 16px;
+		}
+    
+    .feature-row {
+      border-width: 0;
+      margin-bottom: 0;
+    }
+    
+		.main-blurb {
+			clear: both;
+      font-size: 20px;
+		}
+		.column {
+			width: 100%;
+			float: none;
+		}
+		.testimonial {
+			padding: 0;
+		}
+		.column.left {
+		}
+		.column.right {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.column-33 {
+			width: 100%;
+		}
+		img.device-image {
+			float: left;
+			clear: both;
+			margin: 0;
+			
+			width: 320px;
+			height: 427px;
+		}
+		h1.title {
+			font-size: 40px;
+			font-weight: 400;
+			margin-top: 0;
+			padding: 20px 10px 10px 10px;
+		}
+		h2.subtitle {
+			font-size: 24px;
+			padding: 10px;
+			margin: 0;
+			width: 100%;
+		}
+		img.feature-icon {	
+			width: 60px;
+			height: 60px;
+		}
+		img.device-image {
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+		.column {
+			margin-bottom: 0px;
+		}
+	}
+	.footer {
+		background-color: #1f4c59;
+    background-color: #004846;
+		min-height: 300px;
+		clear: both;
+	}
+	.footer-text {
+		text-align: center;
+		color: white;
+		padding: 20px;
+		font-weight: 400;
+	}
+	.footer-text a {
+		color: white;
+	}
+	
+	/* magnific popup (animation) */
+	.mfp-fade {
+		-webkit-user-select: none;
+	}
+	.mfp-fade.mfp-bg {
+	  opacity: 0;
+
+	  -webkit-transition: all 0.15s ease-out;
+	  -moz-transition: all 0.15s ease-out;
+	  transition: all 0.15s ease-out;
+	}
+
+	/* overlay animate in */
+	.mfp-fade.mfp-bg.mfp-ready {
+		opacity: 0.5;
+	}
+	/* overlay animate out */
+	.mfp-fade.mfp-bg.mfp-removing {
+		opacity: 0;
+	}
+	/* content at start */
+	.mfp-fade.mfp-wrap .mfp-content {
+		opacity: 0;
+	  	-webkit-transition: all 0.15s ease-out;
+		-moz-transition: all 0.15s ease-out;
+		transition: all 0.15s ease-out;
+	}
+	/* content animate it */
+	.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+		opacity: 1;
+	}
+	/* content animate out */
+	.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+		opacity: 0;
+	}
+	
+		
+	</style>
+  </head>
+  <body>
+  
+	<div class="container">
+		<h1 class="title">Pythonista 3</h1>
+		
+		<h2 class="subtitle">A Full Python IDE for iOS</h2>
+		<img src="http://omz-software.com/pythonista/images/DeviceScreenshots.png" class="device-image"/>	
+	</div>
+	
+	
+	<div class="main-blurb">
+		<div class="container">
+			<div>
+				<p>Pythonista is a complete development environment for writing Python™ scripts on your iPad or iPhone. Lots of examples are included &mdash; from games and animations to plotting, image manipulation, custom user interfaces, and automation scripts.</p>
+
+				<p>In addition to the powerful standard library, Pythonista provides extensive support for interacting with native iOS features, like contacts, reminders, photos, location data, and more.</p>
+
+			</div>
+		</div>
+	</div>
+	<div class="appstore-container">
+		<div class="container">
+    <div class="app-icon"></div>
+      
+		<a href="https://itunes.apple.com/us/app/pythonista-3/id1085978097?ls=1&mt=8"><img src="http://omz-software.com/pythonista/images/AppStoreBadge.png" style="width: 205px; height: 61px; margin-top:22px;" alt="Download Pythonista on the App Store"/></a>
+		<br/>
+		<span style="font-size:16px; color: #efefef;">Universal App for iPhone + iPad</span>
+		</div>
+	</div>
+	
+	<div class="container feature-row" style="clear:both">
+		<div class="column left">
+			<img src="http://omz-software.com/pythonista/images/primaries/Drafts.png" class="feature-icon"/>
+			<div class="feature-description">
+				<h4>Full-featured Code Editor</h4>
+				<p>Pythonista's professional code editor provides syntax highlighting, smart code completion, and an extended on-screen keyboard specifically designed for Python.</p>
+				<p>A convenient outline view allows you to navigate your scripts efficiently, and multiple tabs make it easy to work on larger projects.</p>
+				<a href="http://omz-software.com/pythonista/images/screenshots/iPad04.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/CodeEditor_thumb.png" class="thumbnail"/></a></a>
+				<a href="http://omz-software.com/pythonista/images/screenshots/iPad02.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/CodeEditor2_thumb.png" class="thumbnail"/></a></a>
+			</div>
+		</div>
+		<div class="column right">
+			<img src="http://omz-software.com/pythonista/images/primaries/MagicWand.png" class="feature-icon"/>
+			<div class="feature-description">
+				<h4>Graphics and Multi-Touch</h4>
+				<p>Pythonista comes with easy-to-use libraries for <a href="docs/ios/scene.html">2D graphics</a>, multitouch and <a href="docs/ios/sound.html">sound effects</a>. You can even use the accelerometer to create <a href="docs/ios/motion.html">motion-controlled</a> games or interactive experiments.</p>
+				<p>Lots of ready-to-run examples are included, so you can get started right away.</p>
+				<a href="http://omz-software.com/pythonista/images/screenshots/iPad07.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Game_thumb.png" class="thumbnail"/></a></a>
+				<a href="http://omz-software.com/pythonista/images/screenshots/Game2.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Game2_thumb.png" class="thumbnail"/></a></a>
+			</div>
+			
+		</div>
+    
+		<div style="clear:both;"></div>
+    
+    
+	</div>
+  
+  
+	<div class="container">
+		<div class="column left">
+			<img src="http://omz-software.com/pythonista/images/prompt2.png" class="feature-icon"/>
+			<div class="feature-description">
+				<h4>Powerful Interactive Prompt</h4>
+				<p>When you want to quickly try a snippet of code or perform an ad-hoc calculation, the interactive prompt is always just a swipe away. You can also use it to inspect the results of your scripts interactively.</p>
+
+<p>The console also provides support for showing images and plots when working with the included matplotlib and PIL (Python Imaging Library) modules.</p>
+			<a href="http://omz-software.com/pythonista/images/screenshots/iPad05.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Prompt_thumb.png" class="thumbnail"/></a></a>
+			<a href="http://omz-software.com/pythonista/images/screenshots/Console2.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Console2_thumb.png" class="thumbnail"/></a></a>
+			</div>
+		</div>
+		<div class="column right">
+			<img src="http://omz-software.com/pythonista/images/primaries/BatteryCharging.png" class="feature-icon"/>
+			<div class="feature-description">
+				<h4>Batteries Included</h4>
+				<p>In addition to the powerful Python standard library, Pythonista includes <a href="docs/ios/index.html">several modules</a> specifically designed for iOS.</p>
+				<p>You can write automation scripts with access to data from the <a href="docs/ios/clipboard.html">clipboard</a>, your <a href="docs/ios/contacts.html">contacts</a>, <a href="docs/ios/reminders.html">reminders</a>, and <a href="docs/ios/photos.html">photos</a>. You can also use your device's <a href="docs/ios/motion.html">motion</a> sensors and <a href="docs/ios/location.html">geo-location data</a>, and Pythonista is probably the easiest way to experiment with <a href="docs/ios/twitter.html">Twitter APIs</a>.</p>
+        <p>And if something's not covered yet, you can even access native <a href="docs/ios/objc_util.html">Objective-C</a> APIs from Python.</p>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>	
+	
+	<div class="testimonials" style="background-color: #0090d5">
+		<div class="container">
+			<div class="column left">
+				<div class="testimonial">
+					<p>“Pythonista is strategically placed on the first row of the first home screen of both devices. Enough said.”</p>
+					<img src="http://omz-software.com/pythonista/images/avatars/macdrifter.png" class="avatar"/><p class="testimonial-credits"><a href="http://www.macdrifter.com/2012/11/the-power-of-pythonista-12.html">Gabe Weatherhead, MacDrifter</a></p>
+				</div>
+			</div>
+			<div class="column right">
+				<div class="testimonial">
+					<p>“Three years later … Pythonista is still the app testing the unexplored possibilities of iOS.”</p>
+					<img src="http://omz-software.com/pythonista/images/avatars/viticci.png" class="avatar"/><p class="testimonial-credits"><a href="https://www.macstories.net/reviews/pythonista-2-0-brings-action-extension-ipad-pro-support-code-editor-improvements-and-more/">Federico Viticci, MacStories</a></p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	
+		<div class="container feature-row">
+			<div class="column left">
+				<img src="http://omz-software.com/pythonista/images/primaries/Chart.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>NumPy and MatPlotLib</h4>
+					<p>Pythonista includes the powerful NumPy and matplotlib packages for scientific computation and data visualization.</p>
+          <p>Plots are shown directly in the console output, and you can easily save them to your photo library, or tap to zoom in.</p>
+				</div>
+			</div>
+		
+			
+			<div class="column right">
+				<img src="http://omz-software.com/pythonista/images/primaries/Keyboard.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Extended Keyboard and Snippets</h4>
+					<p>The keyboard has been designed specifically for Python and includes common special characters. Of course there's also full support for external keyboards, including lots of convenient shortcuts.</p>
+          <p>With the new snippet system in 3.0, you can insert frequently-used blocks of code much more quickly.</p>
+				</div>
+			</div>
+			
+			<div style="clear:both;"></div>
+		</div>
+		
+			<div class="container">
+				<div class="column left">
+					<img src="http://omz-software.com/pythonista/images/primaries/ColorPalette.png" class="feature-icon"/>
+					<div class="feature-description">
+						<h4>Color Themes</h4>
+						<p>A variety of tasteful light and dark color themes allow you to customize the editor's UI and syntax highlighting. New in version 3.0, you can even create your own themes.</p>
+						<a href="http://omz-software.com/pythonista/images/screenshots/iPad08.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Themes_thumb.png" class="thumbnail"/></a></a>
+						<a href="http://omz-software.com/pythonista/images/screenshots/Themes2.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/Themes2_thumb.png" class="thumbnail"/></a></a>
+					</div>
+				</div>
+				
+				<div class="column right">
+					<img src="http://omz-software.com/pythonista/images/primaries/Layers.png" class="feature-icon"/>
+					<div class="feature-description">
+						<h4>UI Editor</h4>
+						<p>With the integrated UI Editor, you can create user interfaces for your scripts without writing any code.</p>
+						<a href="http://omz-software.com/pythonista/images/screenshots/iPad06.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/UIEditor_thumb.png" class="thumbnail"/></a></a>
+						<a href="http://omz-software.com/pythonista/images/screenshots/UIEditor2.jpg" class="screenshot-link"><img src="http://omz-software.com/pythonista/images/screenshots/UIEditor2_thumb.png" class="thumbnail"/></a></a>
+					</div>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+	
+	<div class="testimonials" style="background-color: #742acd;">
+		<div class="container">
+			<div class="column left">
+				<div class="testimonial">
+					<p>“Been using the beta for a while and it is <em>awesome</em>. Can’t wait to put it in the hands of students.”</p>
+					<img src="http://omz-software.com/pythonista/images/avatars/fraserspeirs.jpg" class="avatar"/><p class="testimonial-credits"><a href="https://twitter.com/fraserspeirs/status/659766861165391872">Fraser Speirs</a></p>
+				</div>
+			</div>
+			<div class="column right">
+				<div class="testimonial">
+					<p>“Pythonista is a really cool app, but how did it make it into the App Store?”</p>
+					
+					<div>
+					<img src="http://omz-software.com/pythonista/images/avatars/gruber.png" class="avatar"/><p class="testimonial-credits"><a href="https://alpha.app.net/gruber/post/1127153">John Gruber</a>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div style="clear:both;"></div>
+			
+		</div>
+	</div>
+	
+		<div class="container feature-row">
+			<div class="column left">
+				<img src="http://omz-software.com/pythonista/images/primaries/Library.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Complete Documentation</h4>
+					<p>You can read the entire Python documentation within the app &mdash; no internet connection required. Context-sensitive help is also available directly from the code editor.</p>
+				</div>
+			</div>
+			<div class="column right">
+				<img src="http://omz-software.com/pythonista/images/primaries/Phone.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Universal App</h4>
+					<p>Pythonista is a universal app that runs on iPad, iPhone, and iPod touch with just one purchase (and no in-app purchases).</p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+    
+		<div class="container feature-row">
+			<div class="column left">
+				<img src="http://omz-software.com/pythonista/images/primaries/Microscope.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Integrated Debugger</h4>
+					<p>When something goes wrong, you can inspect the full call stack, and show the values of all variables. For images and UI elements, the debugger shows a visual snapshot, instead of just text.</p>
+          <p>Dig deeper by setting breakpoints, and stepping through your script line by line.</p>
+				</div>
+			</div>
+			<div class="column right">
+				<img src="http://omz-software.com/pythonista/images/python3.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Full Python 3.5 Support</h4>
+					<p>Pythonista supports both Python 2.7 <em>and</em> 3.5. That means you can use the latest Python language features, while retaining backwards compatibility for your existing scripts.</p>
+          <p>The integrated "2 to 3" tool makes it easy to upgrade your scripts when you're ready.</p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+    
+		<div class="container">
+			<div class="column left">
+				<img src="http://omz-software.com/pythonista/images/primaries/SidebarRight.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>Split-Screen Multitasking</h4>
+					<p>If you have an iPad Air 2 or later, you can use Pythonista simultaneously with a second app, for example to read or watch a tutorial while coding, or to build a web app in Pythonista, while testing it in Safari.</p>
+				</div>
+			</div>
+			<div class="column right">
+				<img src="http://omz-software.com/pythonista/images/primaries/Share.png" class="feature-icon"/>
+				<div class="feature-description">
+					<h4>App Extension</h4>
+					<p>Pythonista's app extension allows you to run Python scripts directly inside pretty much any iOS app that supports the standard share sheet.</p>
+          <p>Your scripts can access the share sheet's input (URLs, images...) using the <a href="docs/ios/appex.html">appex</a> module.</p>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	
+	<div class="footer">
+		<div class="footer-text">
+      <p><a href="https://itunes.apple.com/us/app/pythonista-3/id1085978097?ls=1&mt=8"><img src="http://omz-software.com/pythonista/images/AppStoreBadge.png" style="width: 205px; height: 61px; margin-top:22px;" alt="Download Pythonista on the App Store"/></a></p>
+      <p><a href="http://omz-software.com/pythonista/privacy.html">Privacy Policy</a></p>
+			<p><a href="../../forum.omz-software.com/index.html">Community Forum</a></p>
+			<p><a href="docs.html">Documentation</a></p>
+			<p><a href="docs/ios/new.html">Release Notes</a></p>
+      <p><a href="https://github.com/omz/Pythonista-Issues">Bugtracker</a></p>
+			<p><a href="http://twitter.com/olemoritz">Follow @olemoritz on Twitter</a></p>
+			<p style="font-size: 14px; color: #888">Made in Berlin</p>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="http://omz-software.com/pythonista/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://omz-software.com/pythonista/js/magnific-popup.js"></script>
+	<script>
+	$('.screenshot-link').magnificPopup({ 
+		type: 'image',
+		removalDelay: 300,
+		mainClass: 'mfp-fade',
+		closeOnContentClick: true,
+		/*
+		retina: {
+			ratio: 2,
+			replaceSrc: function(item, ratio) {
+				return item.src.replace(/\.\w+$/, function(m) { return  m; });
+			}
+		}
+		*/
+	});
+	</script>	
+  </body>
+</html>

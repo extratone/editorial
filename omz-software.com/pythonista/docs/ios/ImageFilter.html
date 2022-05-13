@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The ImageFilter Module &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/ImageFilter.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-ImageFilter">
+<span id="the-imagefilter-module"></span><h1>The ImageFilter Module<a class="headerlink" href="ImageFilter.html#module-ImageFilter" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="ImageFilter.html#module-ImageFilter" title="ImageFilter"><code class="xref py py-mod docutils literal"><span class="pre">ImageFilter</span></code></a> module contains definitions for a pre-defined set of filters, which can be be used with the filter method of the <a class="reference internal" href="Image.html#module-Image" title="Image"><code class="xref py py-class docutils literal"><span class="pre">Image</span></code></a> class.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="ImageFilter.html#example" title="Permalink to this headline">¶</a></h2>
+<p>Filter an Image:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ImageFilter</span>
+
+<span class="n">im1</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="o">.</span><span class="n">BLUR</span><span class="p">)</span>
+
+<span class="n">im2</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="o">.</span><span class="n">MinFilter</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">im3</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="o">.</span><span class="n">MinFilter</span><span class="p">)</span> <span class="c1"># same as MinFilter(3)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filters">
+<h2>Filters<a class="headerlink" href="ImageFilter.html#filters" title="Permalink to this headline">¶</a></h2>
+<p>The current version of the library provides the following set of predefined image enhancement filters:</p>
+<p>BLUR, CONTOUR, DETAIL, EDGE_ENHANCE, EDGE_ENHANCE_MORE, EMBOSS, FIND_EDGES, SMOOTH, SMOOTH_MORE, and SHARPEN.</p>
+<dl class="function">
+<dt id="ImageFilter.Kernel">
+<code class="descclassname">ImageFilter.</code><code class="descname">Kernel</code><span class="sig-paren">(</span><em>size</em>, <em>kernel</em>, <em>scale=None</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.Kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a convolution kernel of the given size. In the current version, size must be either (3, 3) or (5, 5), and the kernel argument must be a sequence containing 9 or 25 integer or floating point weights.</p>
+<p>If scale is given, the result of applying the kernel to each pixel is divided by the scale value. The default is the sum of the kernel weights.</p>
+<p>If offset is given, this value is added to the result, after it has been divided by scale.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageFilter.RankFilter">
+<code class="descclassname">ImageFilter.</code><code class="descname">RankFilter</code><span class="sig-paren">(</span><em>size</em>, <em>rank</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.RankFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a rank filter of the given size. For each pixel in the input image, the rank filter sorts all pixels in a (size, size) environment by pixel value, and copies the rank‘th value to the output image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageFilter.MinFilter">
+<code class="descclassname">ImageFilter.</code><code class="descname">MinFilter</code><span class="sig-paren">(</span><em>size=3</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.MinFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a min filter of the given size. For each pixel in the input image, this filter copies the smallest pixel value from a (size, size) environment to the output image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageFilter.MedianFilter">
+<code class="descclassname">ImageFilter.</code><code class="descname">MedianFilter</code><span class="sig-paren">(</span><em>size=3</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.MedianFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a median filter of the given size. For each pixel in the input image, this filter copies the median pixel value from a (size, size) environment to the output image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageFilter.MaxFilter">
+<code class="descclassname">ImageFilter.</code><code class="descname">MaxFilter</code><span class="sig-paren">(</span><em>size=3</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.MaxFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a max filter of the given size. For each pixel in the input image, this filter copies the largest pixel value from a (size, size) environment to the output image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageFilter.ModeFilter">
+<code class="descclassname">ImageFilter.</code><code class="descname">ModeFilter</code><span class="sig-paren">(</span><em>size=3</em><span class="sig-paren">)</span><a class="headerlink" href="ImageFilter.html#ImageFilter.ModeFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>(New in 1.1.5) Creates a mode filter of the given size. For each pixel in the input image, this filter copies the most common pixel value in a (size, size) environment to the output image. If no pixel value occurs more than once, the original pixel value is used.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

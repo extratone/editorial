@@ -1,0 +1,738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial: Todo-List Application &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/bottle/tutorial_app.html" />
+    
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorial-todo-list-application">
+<h1><a class="toc-backref" href="tutorial_app.html#id1">Tutorial: Todo-List Application</a><a class="headerlink" href="tutorial_app.html#tutorial-todo-list-application" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This tutorial is a work in progess and written by <a class="reference external" href="http://github.com/noisefloor">noisefloor</a>.</p>
+</div>
+<p>This tutorial should give a brief introduction to the <a class="reference external" href="http://bottle.paws.org">Bottle</a> WSGI Framework. The main goal is to be able, after reading through this tutorial, to create a project using Bottle. Within this document, not all abilities will be shown, but at least the main and important ones like routing, utilizing the Bottle template abilities to format output and handling GET / POST parameters.</p>
+<p>To understand the content here, it is not necessary to have a basic knowledge of WSGI, as Bottle tries to keep WSGI away from the user anyway. You should have a fair understanding of the <a class="reference external" href="http://www.python.org">Python</a> programming language. Furthermore, the example used in the tutorial retrieves and stores data in a SQL databse, so a basic idea about SQL helps, but is not a must to understand the concepts of Bottle. Right here, <a class="reference external" href="http://www.sqlite.org">SQLite</a> is used. The output of Bottle sent to the browser is formatted in some examples by the help of HTML. Thus, a basic idea about the common HTML tags does help as well.</p>
+<p>For the sake of introducing Bottle, the Python code &#8220;in between&#8221; is kept short, in order to keep the focus. Also all code within the tutorial is working fine, but you may not necessarily use it &#8220;in the wild&#8221;, e.g. on a public web server. In order to do so, you may add e.g. more error handling, protect the database with a password, test and escape the input etc.</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="tutorial_app.html#tutorial-todo-list-application" id="id1">Tutorial: Todo-List Application</a><ul>
+<li><a class="reference internal" href="tutorial_app.html#goals" id="id2">Goals</a></li>
+<li><a class="reference internal" href="tutorial_app.html#before-we-start" id="id3">Before We Start...</a></li>
+<li><a class="reference internal" href="tutorial_app.html#using-bottle-for-a-web-based-todo-list" id="id4">Using Bottle for a Web-Based ToDo List</a></li>
+<li><a class="reference internal" href="tutorial_app.html#server-setup" id="id5">Server Setup</a></li>
+<li><a class="reference internal" href="tutorial_app.html#final-words" id="id6">Final Words</a></li>
+<li><a class="reference internal" href="tutorial_app.html#complete-example-listing" id="id7">Complete Example Listing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="goals">
+<h2><a class="toc-backref" href="tutorial_app.html#id2">Goals</a><a class="headerlink" href="tutorial_app.html#goals" title="Permalink to this headline">¶</a></h2>
+<p>At the end of this tutorial, we will have a simple, web-based ToDo list. The list contains a text (with max 100 characters) and a status (0 for closed, 1 for open) for each item. Through the web-based user interface, open items can be view and edited and new items can be added.</p>
+<p>During development, all pages will be available on <code class="docutils literal"><span class="pre">localhost</span></code> only, but later on it will be shown how to adapt the application for a &#8220;real&#8221; server, including how to use with Apache&#8217;s mod_wsgi.</p>
+<p>Bottle will do the routing and format the output, with the help of templates. The items of the list will be stored inside a SQLite database. Reading and  writing the database will be done by Python code.</p>
+<p>We will end up with an application with the following pages and functionality:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start page <code class="docutils literal"><span class="pre">http://localhost:8080/todo</span></code></li>
+<li>adding new items to the list: <code class="docutils literal"><span class="pre">http://localhost:8080/new</span></code></li>
+<li>page for editing items: <code class="docutils literal"><span class="pre">http://localhost:8080/edit/:no</span></code></li>
+<li>validating data assigned by dynamic routes with the &#64;validate decorator</li>
+<li>catching errors</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="before-we-start">
+<h2><a class="toc-backref" href="tutorial_app.html#id3">Before We Start...</a><a class="headerlink" href="tutorial_app.html#before-we-start" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Install Bottle</p>
+<p>Assuming that you have a fairly new installation of Python (version 2.5 or higher), you only need to install Bottle in addition to that. Bottle has no other dependencies than Python itself.</p>
+<p>You can either manually install Bottle or use Python&#8217;s easy_install: <code class="docutils literal"><span class="pre">easy_install</span> <span class="pre">bottle</span></code></p>
+<p class="rubric">Further Software Necessities</p>
+<p>As we use SQLite3 as a database, make sure it is installed. On Linux systems, most distributions have SQLite3 installed by default. SQLite is available for Windows and MacOS X as well and the <cite>sqlite3</cite> module is part of the python standard library.</p>
+<p class="rubric">Create An SQL Database</p>
+<p>First, we need to create the database we use later on. To do so, save the following script in your project directory and run it with python. You can use the interactive interpreter too:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span> <span class="c1"># Warning: This file is created in the current directory</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE todo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status bool NOT NULL)&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (&#39;Read A-byte-of-python to get a good introduction into Python&#39;,0)&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (&#39;Visit the Python website&#39;,1)&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (&#39;Test various editors for and check the syntax highlighting&#39;,1)&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (&#39;Choose your favorite WSGI-Framework&#39;,0)&quot;</span><span class="p">)</span>
+<span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This generates a database-file <cite>todo.db</cite> with tables called <code class="docutils literal"><span class="pre">todo</span></code> and three columns <code class="docutils literal"><span class="pre">id</span></code>, <code class="docutils literal"><span class="pre">task</span></code>, and <code class="docutils literal"><span class="pre">status</span></code>. <code class="docutils literal"><span class="pre">id</span></code> is a unique id for each row, which is used later on to reference the rows. The column <code class="docutils literal"><span class="pre">task</span></code> holds the text which describes the task, it can be max 100 characters long. Finally, the column <code class="docutils literal"><span class="pre">status</span></code> is used to mark a task as open (value 1) or closed (value 0).</p>
+</div>
+<div class="section" id="using-bottle-for-a-web-based-todo-list">
+<h2><a class="toc-backref" href="tutorial_app.html#id4">Using Bottle for a Web-Based ToDo List</a><a class="headerlink" href="tutorial_app.html#using-bottle-for-a-web-based-todo-list" title="Permalink to this headline">¶</a></h2>
+<p>Now it is time to introduce Bottle in order to create a web-based application. But first, we need to look into a basic concept of Bottle: routes.</p>
+<p class="rubric">Understanding routes</p>
+<p>Basically, each page visible in the browser is dynamically generated when the page address is called. Thus, there is no static content. That is exactly what is called a &#8220;route&#8221; within Bottle: a certain address on the server. So, for example, when the page <code class="docutils literal"><span class="pre">http://localhost:8080/todo</span></code> is called from the browser, Bottle &#8220;grabs&#8221; the call and checks if there is any (Python) function defined for the route &#8220;todo&#8221;. If so, Bottle will execute the corresponding Python code and return its result.</p>
+<p class="rubric">First Step - Showing All Open Items</p>
+<p>So, after understanding the concept of routes, let&#8217;s create the first one. The goal is to see all open items from the ToDo list:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/todo&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">todo_list</span><span class="p">():</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT id, task FROM todo WHERE status LIKE &#39;1&#39;&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Save the code a <code class="docutils literal"><span class="pre">todo.py</span></code>, preferably in the same directory as the file <code class="docutils literal"><span class="pre">todo.db</span></code>. Otherwise, you need to add the path to <code class="docutils literal"><span class="pre">todo.db</span></code> in the <code class="docutils literal"><span class="pre">sqlite3.connect()</span></code> statement.</p>
+<p>Let&#8217;s have a look what we just did: We imported the necessary module <code class="docutils literal"><span class="pre">sqlite3</span></code> to access to SQLite database and from Bottle we imported <code class="docutils literal"><span class="pre">route</span></code> and <code class="docutils literal"><span class="pre">run</span></code>. The <code class="docutils literal"><span class="pre">run()</span></code> statement simply starts the web server included in Bottle. By default, the web server serves the pages on localhost and port 8080. Furthermore, we imported <code class="docutils literal"><span class="pre">route</span></code>, which is the function responsible for Bottle&#8217;s routing. As you can see, we defined one function, <code class="docutils literal"><span class="pre">todo_list()</span></code>, with a few lines of code reading from the database. The important point is the <a class="reference external" href="http://docs.python.org/glossary.html#term-decorator">decorator statement</a> <code class="docutils literal"><span class="pre">&#64;route('/todo')</span></code> right before the <code class="docutils literal"><span class="pre">def</span> <span class="pre">todo_list()</span></code> statement. By doing this, we bind this function to the route <code class="docutils literal"><span class="pre">/todo</span></code>, so every time the browsers calls <code class="docutils literal"><span class="pre">http://localhost:8080/todo</span></code>, Bottle returns the result of the function <code class="docutils literal"><span class="pre">todo_list()</span></code>. That is how routing within bottle works.</p>
+<p>Actually you can bind more than one route to a function. So the following code:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/todo&#39;</span><span class="p">)</span>
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/my_todo_list&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">todo_list</span><span class="p">():</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>will work fine, too. What will not work is to bind one route to more than one function.</p>
+<p>What you will see in the browser is what is returned, thus the value given by the <code class="docutils literal"><span class="pre">return</span></code> statement. In this example, we need to convert <code class="docutils literal"><span class="pre">result</span></code> in to a string by <code class="docutils literal"><span class="pre">str()</span></code>, as Bottle expects a string or a list of strings from the return statement. But here, the result of the database query is a list of tuples, which is the standard defined by the <a class="reference external" href="http://www.python.org/dev/peps/pep-0249/">Python DB API</a>.</p>
+<p>Now, after understanding the little script above, it is time to execute it and watch the result yourself. Remember that on Linux- / Unix-based systems the file <code class="docutils literal"><span class="pre">todo.py</span></code> needs to be executable first. Then, just run <code class="docutils literal"><span class="pre">python</span> <span class="pre">todo.py</span></code> and call the page <code class="docutils literal"><span class="pre">http://localhost:8080/todo</span></code> in your browser. In case you made no mistake writing the script, the output should look like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Visit the Python website&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Test various editors for and check the syntax highlighting&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>If so - congratulations! You are now a successful user of Bottle. In case it did not work and you need to make some changes to the script, remember to stop Bottle serving the page, otherwise the revised version will not be loaded.</p>
+<p>Actually, the output is not really exciting nor nice to read. It is the raw result returned from the SQL query.</p>
+<p>So, in the next step we format the output in a nicer way. But before we do that, we make our life easier.</p>
+<p class="rubric">Debugging and Auto-Reload</p>
+<p>Maybe you already noticed that Bottle sends a short error message to the browser in case something within the script is wrong, e.g. the connection to the database is not working. For debugging purposes it is quite helpful to get more details. This can be easily achieved by adding the following statement to the script:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">debug</span>
+<span class="o">...</span>
+<span class="c1">#add this at the very end:</span>
+<span class="n">debug</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By enabling &#8220;debug&#8221;, you will get a full stacktrace of the Python interpreter, which usually contains useful information for finding bugs. Furthermore, templates (see below) are not cached, thus changes to templates will take effect without stopping the server.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">That <code class="docutils literal"><span class="pre">debug(True)</span></code> is supposed to be used for development only, it should <em>not</em> be used in production environments.</p>
+</div>
+<p>Another quite nice feature is auto-reloading, which is enabled by modifying the <code class="docutils literal"><span class="pre">run()</span></code> statement to</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="n">reloader</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will automatically detect changes to the script and reload the new version once it is called again, without the need to stop and start the server.</p>
+<p>Again, the feature is mainly supposed to be used while developing, not on production systems.</p>
+<p class="rubric">Bottle Template To Format The Output</p>
+<p>Now let&#8217;s have a look at casting the output of the script into a proper format.</p>
+<p>Actually Bottle expects to receive a string or a list of strings from a function and returns them by the help of the built-in server to the browser. Bottle does not bother about the content of the string itself, so it can be text formatted with HTML markup, too.</p>
+<p>Bottle brings its own easy-to-use template engine with it. Templates are stored as separate files having a <code class="docutils literal"><span class="pre">.tpl</span></code> extension. The template can be called then from within a function. Templates can contain any type of text (which will be most likely HTML-markup mixed with Python statements). Furthermore, templates can take arguments, e.g. the result set of a database query, which will be then formatted nicely within the template.</p>
+<p>Right here, we are going to cast the result of our query showing the open ToDo items into a simple table with two columns: the first column will contain the ID of the item, the second column the text. The result set is, as seen above, a list of tuples, each tuple contains one set of results.</p>
+<p>To include the template in our example, just add the following lines:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">template</span>
+<span class="o">...</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;make_table&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">output</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>So we do here two things: first, we import <code class="docutils literal"><span class="pre">template</span></code> from Bottle in order to be able to use templates. Second, we assign the output of the template <code class="docutils literal"><span class="pre">make_table</span></code> to the variable <code class="docutils literal"><span class="pre">output</span></code>, which is then returned. In addition to calling the template, we assign <code class="docutils literal"><span class="pre">result</span></code>, which we received from the database query, to the variable <code class="docutils literal"><span class="pre">rows</span></code>, which is later on used within the template. If necessary, you can assign more than one variable / value to a template.</p>
+<p>Templates always return a list of strings, thus there is no need to convert anything. Of course, we can save one line of code by writing <code class="docutils literal"><span class="pre">return</span> <span class="pre">template('make_table',</span> <span class="pre">rows=result)</span></code>, which gives exactly the same result as above.</p>
+<p>Now it is time to write the corresponding template, which looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">%</span><span class="c1">#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="nb">open</span> <span class="n">items</span> <span class="n">are</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">table</span> <span class="n">border</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">&gt;</span>
+<span class="o">%</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+  <span class="o">%</span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">col</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+  <span class="o">%</span><span class="n">end</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<span class="o">%</span><span class="n">end</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Save the code as <code class="docutils literal"><span class="pre">make_table.tpl</span></code> in the same directory where <code class="docutils literal"><span class="pre">todo.py</span></code> is stored.</p>
+<p>Let&#8217;s have a look at the code: every line starting with % is interpreted as Python code. Please note that, of course, only valid Python statements are allowed, otherwise the template will raise an exception, just as any other Python code. The other lines are plain HTML markup.</p>
+<p>As you can see, we use Python&#8217;s <code class="docutils literal"><span class="pre">for</span></code> statement two times, in order to go through <code class="docutils literal"><span class="pre">rows</span></code>. As seen above, <code class="docutils literal"><span class="pre">rows</span></code> is a variable which holds the result of the database query, so it is a list of tuples. The first <code class="docutils literal"><span class="pre">for</span></code> statement accesses the tuples within the list, the second one the items within the tuple, which are put each into a cell of the table. It is important that you close all <code class="docutils literal"><span class="pre">for</span></code>, <code class="docutils literal"><span class="pre">if</span></code>, <code class="docutils literal"><span class="pre">while</span></code> etc. statements with <code class="docutils literal"><span class="pre">%end</span></code>, otherwise the output may not be what you expect.</p>
+<p>If you need to access a variable within a non-Python code line inside the template, you need to put it into double curly braces. This tells the template to insert the actual value of the variable right in place.</p>
+<p>Run the script again and look at the output. Still not really nice, but at least more readable than the list of tuples. Of course, you can spice-up the very simple HTML markup above, e.g. by using in-line styles to get a better looking output.</p>
+<p class="rubric">Using GET and POST Values</p>
+<p>As we can review all open items properly, we move to the next step, which is adding new items to the ToDo list. The new item should be received from a regular HTML-based form, which sends its data by the GET method.</p>
+<p>To do so, we first add a new route to our script and tell the route that it should get GET data:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">request</span>
+<span class="o">...</span>
+<span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;make_table&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/new&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">new_item</span><span class="p">():</span>
+
+    <span class="n">new</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (?,?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">new</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">new_id</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">lastrowid</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;The new task was inserted into the database, the ID is </span><span class="si">%s</span><span class="s1">&lt;/p&gt;&#39;</span> <span class="o">%</span> <span class="n">new_id</span>
+</pre></div>
+</div>
+<p>To access GET (or POST) data, we need to import <code class="docutils literal"><span class="pre">request</span></code> from Bottle. To assign the actual data to a variable, we use the statement <code class="docutils literal"><span class="pre">request.GET.get('task','').strip()</span></code> statement, where <code class="docutils literal"><span class="pre">task</span></code> is the name of the GET data we want to access. That&#8217;s all. If your GET data has more than one variable, multiple <code class="docutils literal"><span class="pre">request.GET.get()</span></code> statements can be used and assigned to other variables.</p>
+<p>The rest of this piece of code is just processing of the gained data: writing to the database, retrieve the corresponding id from the database and generate the output.</p>
+<p>But where do we get the GET data from? Well, we can use a static HTML page holding the form. Or, what we do right now, is to use a template which is output when the route <code class="docutils literal"><span class="pre">/new</span></code> is called without GET data.</p>
+<p>The code needs to be extended to:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/new&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">new_item</span><span class="p">():</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;save&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+
+        <span class="n">new</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (?,?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">new</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">new_id</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">lastrowid</span>
+
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;The new task was inserted into the database, the ID is </span><span class="si">%s</span><span class="s1">&lt;/p&gt;&#39;</span> <span class="o">%</span> <span class="n">new_id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;new_task.tpl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">new_task.tpl</span></code> looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">task</span> <span class="n">to</span> <span class="n">the</span> <span class="n">ToDo</span> <span class="nb">list</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;/new&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">maxlength</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;save&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>That&#8217;s all. As you can see, the template is plain HTML this time.</p>
+<p>Now we are able to extend our to do list.</p>
+<p>By the way, if you prefer to use POST data: this works exactly the same way, just use <code class="docutils literal"><span class="pre">request.POST.get()</span></code> instead.</p>
+<p class="rubric">Editing Existing Items</p>
+<p>The last point to do is to enable editing of existing items.</p>
+<p>By using only the routes we know so far it is possible, but may be quite tricky. But Bottle knows something called &#8220;dynamic routes&#8221;, which makes this task quite easy.</p>
+<p>The basic statement for a dynamic route looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/myroute/:something&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The key point here is the colon. This tells Bottle to accept for <code class="docutils literal"><span class="pre">:something</span></code> any string up to the next slash. Furthermore, the value of <code class="docutils literal"><span class="pre">something</span></code> will be passed to the function assigned to that route, so the data can be processed within the function.</p>
+<p>For our ToDo list, we will create a route <code class="docutils literal"><span class="pre">&#64;route('/edit/:no)</span></code>, where <code class="docutils literal"><span class="pre">no</span></code> is the id of the item to edit.</p>
+<p>The code looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/edit/:no&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">edit_item</span><span class="p">(</span><span class="n">no</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;save&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="n">edit</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;open&#39;</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE todo SET task = ?, status = ? WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">edit</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">no</span><span class="p">))</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;The item number </span><span class="si">%s</span><span class="s1"> was successfully updated&lt;/p&gt;&#39;</span> <span class="o">%</span> <span class="n">no</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">no</span><span class="p">)))</span>
+        <span class="n">cur_data</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;edit_task&#39;</span><span class="p">,</span> <span class="n">old</span><span class="o">=</span><span class="n">cur_data</span><span class="p">,</span> <span class="n">no</span><span class="o">=</span><span class="n">no</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is basically pretty much the same what we already did above when adding new items, like using <code class="docutils literal"><span class="pre">GET</span></code> data etc. The main addition here is using the dynamic route <code class="docutils literal"><span class="pre">:no</span></code>, which here passes the number to the corresponding function. As you can see, <code class="docutils literal"><span class="pre">no</span></code> is used within the function to access the right row of data within the database.</p>
+<p>The template <code class="docutils literal"><span class="pre">edit_task.tpl</span></code> called within the function looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">%</span><span class="c1">#template for editing a task</span>
+<span class="o">%</span><span class="c1">#the template expects to receive a value for &quot;no&quot; as well a &quot;old&quot;, the text of the selected ToDo item</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Edit</span> <span class="n">the</span> <span class="n">task</span> <span class="k">with</span> <span class="n">ID</span> <span class="o">=</span> <span class="p">{{</span><span class="n">no</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;/edit/{{no}}&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;get&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;{{old[0]}}&quot;</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">maxlength</span><span class="o">=</span><span class="s2">&quot;100&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">select</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">option</span><span class="o">&gt;</span><span class="nb">open</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">option</span><span class="o">&gt;</span><span class="n">closed</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;save&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Again, this template is a mix of Python statements and HTML, as already explained above.</p>
+<p>A last word on dynamic routes: you can even use a regular expression for a dynamic route, as demonstrated later.</p>
+<p class="rubric">Validating Dynamic Routes</p>
+<p>Using dynamic routes is fine, but for many cases it makes sense to validate the dynamic part of the route. For example, we expect an integer number in our route for editing above. But if a float, characters or so are received, the Python interpreter throws an exception, which is not what we want.</p>
+<p>For those cases, Bottle offers the <code class="docutils literal"><span class="pre">&#64;validate</span></code> decorator, which validates the &#8220;input&#8221; prior to passing it to the function. In order to apply the validator, extend the code as follows:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">validate</span>
+<span class="o">...</span>
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/edit/:no&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="nd">@validate</span><span class="p">(</span><span class="n">no</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">edit_item</span><span class="p">(</span><span class="n">no</span><span class="p">):</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>At first, we imported <code class="docutils literal"><span class="pre">validate</span></code> from the Bottle framework, than we apply the &#64;validate-decorator. Right here, we validate if <code class="docutils literal"><span class="pre">no</span></code> is an integer. Basically, the validation works with all types of data like floats, lists etc.</p>
+<p>Save the code and call the page again using a &#8220;403 forbidden&#8221; value for <code class="docutils literal"><span class="pre">:no</span></code>, e.g. a float. You will receive not an exception, but a &#8220;403 - Forbidden&#8221; error, saying that an integer was expected.</p>
+<p class="rubric">Dynamic Routes Using Regular Expressions</p>
+<p>Bottle can also handle dynamic routes, where the &#8220;dynamic part&#8221; of the route can be a regular expression.</p>
+<p>So, just to demonstrate that, let&#8217;s assume that all single items in our ToDo list should be accessible by their plain number, by a term like e.g. &#8220;item1&#8221;. For obvious reasons, you do not want to create a route for every item. Furthermore, the simple dynamic routes do not work either, as part of the route, the term &#8220;item&#8221; is static.</p>
+<p>As said above, the solution is a regular expression:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/item:item#[0-9]+#&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">item</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;This item number does not exist!&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Task: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Of course, this example is somehow artificially constructed - it would be easier to use a plain dynamic route only combined with a validation. Nevertheless, we want to see how regular expression routes work: the line <code class="docutils literal"><span class="pre">&#64;route(/item:item_#[0-9]+#)</span></code> starts like a normal route, but the part surrounded by # is interpreted as a regular expression, which is the dynamic part of the route. So in this case, we want to match any digit between 0 and 9. The following function &#8220;show_item&#8221; just checks whether the given item is present in the database or not. In case it is present, the corresponding text of the task is returned. As you can see, only the regular expression part of the route is passed forward. Furthermore, it is always forwarded as a string, even if it is a plain integer number, like in this case.</p>
+<p class="rubric">Returning Static Files</p>
+<p>Sometimes it may become necessary to associate a route not to a Python function, but just return a static file. So if you have for example a help page for your application, you may want to return this page as plain HTML. This works as follows:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">validate</span><span class="p">,</span> <span class="n">static_file</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/help&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">help</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">static_file</span><span class="p">(</span><span class="s1">&#39;help.html&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At first, we need to import the <code class="docutils literal"><span class="pre">static_file</span></code> function from Bottle. As you can see, the <code class="docutils literal"><span class="pre">return</span> <span class="pre">static_file</span></code> statement replaces the <code class="docutils literal"><span class="pre">return</span></code> statement. It takes at least two arguments: the name of the file to be returned and the path to the file. Even if the file is in the same directory as your application, the path needs to be stated. But in this case, you can use <code class="docutils literal"><span class="pre">'.'</span></code> as a path, too. Bottle guesses the MIME-type of the file automatically, but in case you like to state it explicitly, add a third argument to <code class="docutils literal"><span class="pre">static_file</span></code>, which would be here <code class="docutils literal"><span class="pre">mimetype='text/html'</span></code>. <code class="docutils literal"><span class="pre">static_file</span></code> works with any type of route, including the dynamic ones.</p>
+<p class="rubric">Returning JSON Data</p>
+<p>There may be cases where you do not want your application to generate the output directly, but return data to be processed further on, e.g. by JavaScript. For those cases, Bottle offers the possibility to return JSON objects, which is sort of standard for exchanging data between web applications. Furthermore, JSON can be processed by many programming languages, including Python</p>
+<p>So, let&#8217;s assume we want to return the data generated in the regular expression route example as a JSON object. The code looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/json:json#[0-9]+#&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_json</span><span class="p">(</span><span class="n">json</span><span class="p">):</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">json</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;task&#39;</span><span class="p">:</span><span class="s1">&#39;This item number does not exist!&#39;</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Task&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p>As you can, that is fairly simple: just return a regular Python dictionary and Bottle will convert it automatically into a JSON object prior to sending. So if you e.g. call &#8220;<a class="reference external" href="http://localhost/json1">http://localhost/json1</a>&#8221; Bottle should in this case return the JSON object <code class="docutils literal"><span class="pre">{&quot;Task&quot;:</span> <span class="pre">[&quot;Read</span> <span class="pre">A-byte-of-python</span> <span class="pre">to</span> <span class="pre">get</span> <span class="pre">a</span> <span class="pre">good</span> <span class="pre">introduction</span> <span class="pre">into</span> <span class="pre">Python&quot;]}</span></code>.</p>
+<p class="rubric">Catching Errors</p>
+<p>The next step may is to catch the error with Bottle itself, to keep away any type of error message from the user of your application. To do that, Bottle has an &#8220;error-route&#8221;, which can be a assigned to a HTML-error.</p>
+<p>In our case, we want to catch a 403 error. The code is as follows:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">error</span>
+
+<span class="nd">@error</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;The parameter you passed has the wrong format!&#39;</span>
+</pre></div>
+</div>
+<p>So, at first we need to import <code class="docutils literal"><span class="pre">error</span></code> from Bottle and define a route by <code class="docutils literal"><span class="pre">error(403)</span></code>, which catches all &#8220;403 forbidden&#8221; errors. The function &#8220;mistake&#8221; is assigned to that. Please note that <code class="docutils literal"><span class="pre">error()</span></code> always passes the error-code to the function - even if you do not need it. Thus, the function always needs to accept one argument, otherwise it will not work.</p>
+<p>Again, you can assign more than one error-route to a function, or catch various errors with one function each. So this code:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@error</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<span class="nd">@error</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;There is something wrong!&#39;</span>
+</pre></div>
+</div>
+<p>works fine, the following one as well:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="nd">@error</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake403</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;The parameter you passed has the wrong format!&#39;</span>
+
+<span class="nd">@error</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake404</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;Sorry, this page does not exist!&#39;</span>
+</pre></div>
+</div>
+<p class="rubric">Summary</p>
+<p>After going through all the sections above, you should have a brief understanding how the Bottle WSGI framework works. Furthermore you have all the knowledge necessary to use Bottle for your applications.</p>
+<p>The following chapter give a short introduction how to adapt Bottle for larger projects. Furthermore, we will show how to operate Bottle with web servers which perform better on a higher load / more web traffic than the one we used so far.</p>
+</div>
+<div class="section" id="server-setup">
+<h2><a class="toc-backref" href="tutorial_app.html#id5">Server Setup</a><a class="headerlink" href="tutorial_app.html#server-setup" title="Permalink to this headline">¶</a></h2>
+<p>So far, we used the standard server used by Bottle, which is the <a class="reference external" href="http://docs.python.org/library/wsgiref.html#module-wsgiref.simple_server">WSGI reference Server</a> shipped along with Python. Although this server is perfectly suitable for development purposes, it is not really suitable for larger applications. But before we have a look at the alternatives, let&#8217;s have a look how to tweak the settings of the standard server first.</p>
+<p class="rubric">Running Bottle on a different port and IP</p>
+<p>As standard, Bottle serves the pages on the IP adress 127.0.0.1, also known as <code class="docutils literal"><span class="pre">localhost</span></code>, and on port <code class="docutils literal"><span class="pre">8080</span></code>. To modify the setting is pretty simple, as additional parameters can be passed to Bottle&#8217;s <code class="docutils literal"><span class="pre">run()</span></code> function to change the port and the address.</p>
+<p>To change the port, just add <code class="docutils literal"><span class="pre">port=portnumber</span></code> to the run command. So, for example:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would make Bottle listen to port 80.</p>
+<p>To change the IP address where Bottle is listening:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;123.45.67.89&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, both parameters can be combined, like:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;123.45.67.89&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">port</span></code> and <code class="docutils literal"><span class="pre">host</span></code> parameter can also be applied when Bottle is running with a different server, as shown in the following section.</p>
+<p class="rubric">Running Bottle with a different server</p>
+<p>As said above, the standard server is perfectly suitable for development, personal use or a small group of people only using your application based on Bottle. For larger tasks, the standard server may become a bottleneck, as it is single-threaded, thus it can only serve one request at a time.</p>
+<p>But Bottle has already various adapters to multi-threaded servers on board, which perform better on higher load. Bottle supports <a class="reference external" href="http://www.cherrypy.org/">Cherrypy</a>, <a class="reference external" href="http://github.com/william-os4y/fapws3">Fapws3</a>, <a class="reference external" href="http://trac.saddi.com/flup">Flup</a> and <a class="reference external" href="http://pythonpaste.org/">Paste</a>.</p>
+<p>If you want to run for example Bottle with the Paste server, use the following code:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">PasteServer</span>
+<span class="o">...</span>
+<span class="n">run</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="n">PasteServer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This works exactly the same way with <code class="docutils literal"><span class="pre">FlupServer</span></code>, <code class="docutils literal"><span class="pre">CherryPyServer</span></code> and <code class="docutils literal"><span class="pre">FapwsServer</span></code>.</p>
+<p class="rubric">Running Bottle on Apache with mod_wsgi</p>
+<p>Maybe you already have an <a class="reference external" href="http://www.apache.org">Apache</a> or you want to run a Bottle-based application large scale - then it is time to think about Apache with <a class="reference external" href="http://code.google.com/p/modwsgi/">mod_wsgi</a>.</p>
+<p>We assume that your Apache server is up and running and mod_wsgi is working fine as well. On a lot of Linux distributions, mod_wsgi can be easily installed via whatever package management system is in use.</p>
+<p>Bottle brings an adapter for mod_wsgi with it, so serving your application is an easy task.</p>
+<p>In the following example, we assume that you want to make your application &#8220;ToDo list&#8221; accessible through <code class="docutils literal"><span class="pre">http://www.mypage.com/todo</span></code> and your code, templates and SQLite database are stored in the path <code class="docutils literal"><span class="pre">/var/www/todo</span></code>.</p>
+<p>When you run your application via mod_wsgi, it is imperative to remove the <code class="docutils literal"><span class="pre">run()</span></code> statement from your code, otherwise it won&#8217;t work here.</p>
+<p>After that, create a file called <code class="docutils literal"><span class="pre">adapter.wsgi</span></code> with the following content:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">bottle</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/var/www/todo/&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">todo</span> <span class="c1"># This loads your application</span>
+
+<span class="n">application</span> <span class="o">=</span> <span class="n">bottle</span><span class="o">.</span><span class="n">default_app</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and save it in the same path, <code class="docutils literal"><span class="pre">/var/www/todo</span></code>. Actually the name of the file can be anything, as long as the extension is <code class="docutils literal"><span class="pre">.wsgi</span></code>. The name is only used to reference the file from your virtual host.</p>
+<p>Finally, we need to add a virtual host to the Apache configuration, which looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*&gt;</span>
+    <span class="n">ServerName</span> <span class="n">mypage</span><span class="o">.</span><span class="n">com</span>
+
+    <span class="n">WSGIDaemonProcess</span> <span class="n">todo</span> <span class="n">user</span><span class="o">=</span><span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">group</span><span class="o">=</span><span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="n">processes</span><span class="o">=</span><span class="mi">1</span> <span class="n">threads</span><span class="o">=</span><span class="mi">5</span>
+    <span class="n">WSGIScriptAlias</span> <span class="o">/</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">todo</span><span class="o">/</span><span class="n">adapter</span><span class="o">.</span><span class="n">wsgi</span>
+
+    <span class="o">&lt;</span><span class="n">Directory</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">todo</span><span class="o">&gt;</span>
+        <span class="n">WSGIProcessGroup</span> <span class="n">todo</span>
+        <span class="n">WSGIApplicationGroup</span> <span class="o">%</span><span class="p">{</span><span class="n">GLOBAL</span><span class="p">}</span>
+        <span class="n">Order</span> <span class="n">deny</span><span class="p">,</span><span class="n">allow</span>
+        <span class="n">Allow</span> <span class="kn">from</span> <span class="nn">all</span>
+    <span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>After restarting the server, your ToDo list should be accessible at <code class="docutils literal"><span class="pre">http://www.mypage.com/todo</span></code></p>
+</div>
+<div class="section" id="final-words">
+<h2><a class="toc-backref" href="tutorial_app.html#id6">Final Words</a><a class="headerlink" href="tutorial_app.html#final-words" title="Permalink to this headline">¶</a></h2>
+<p>Now we are at the end of this introduction and tutorial to Bottle. We learned about the basic concepts of Bottle and wrote a first application using the Bottle framework. In addition to that, we saw how to adapt Bottle for large tasks and serve Bottle through an Apache web server with mod_wsgi.</p>
+<p>As said in the introduction, this tutorial is not showing all shades and possibilities of Bottle. What we skipped here is e.g. receiving file objects and streams and how to handle authentication data. Furthermore, we did not show how templates can be called from within another template. For an introduction into those points, please refer to the full <a class="reference external" href="http://bottlepy.org/docs/dev/tutorial.html">Bottle documentation</a> .</p>
+</div>
+<div class="section" id="complete-example-listing">
+<h2><a class="toc-backref" href="tutorial_app.html#id7">Complete Example Listing</a><a class="headerlink" href="tutorial_app.html#complete-example-listing" title="Permalink to this headline">¶</a></h2>
+<p>As the ToDo list example was developed piece by piece, here is the complete listing:</p>
+<p>Main code for the application <code class="docutils literal"><span class="pre">todo.py</span></code>:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">validate</span><span class="p">,</span> <span class="n">static_file</span><span class="p">,</span> <span class="n">error</span>
+
+<span class="c1"># only needed when you run Bottle on mod_wsgi</span>
+<span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">default_app</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/todo&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">todo_list</span><span class="p">():</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT id, task FROM todo WHERE status LIKE &#39;1&#39;;&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;make_table&#39;</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/new&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">new_item</span><span class="p">():</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;save&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+
+        <span class="n">new</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO todo (task,status) VALUES (?,?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">new</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">new_id</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">lastrowid</span>
+
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;The new task was inserted into the database, the ID is </span><span class="si">%s</span><span class="s1">&lt;/p&gt;&#39;</span> <span class="o">%</span> <span class="n">new_id</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;new_task.tpl&#39;</span><span class="p">)</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/edit/:no&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
+<span class="nd">@validate</span><span class="p">(</span><span class="n">no</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">edit_item</span><span class="p">(</span><span class="n">no</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;save&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="n">edit</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;open&#39;</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE todo SET task = ?, status = ? WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">edit</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">no</span><span class="p">))</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="s1">&#39;&lt;p&gt;The item number </span><span class="si">%s</span><span class="s1"> was successfully updated&lt;/p&gt;&#39;</span> <span class="o">%</span><span class="n">no</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">no</span><span class="p">)))</span>
+        <span class="n">cur_data</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s1">&#39;edit_task&#39;</span><span class="p">,</span> <span class="n">old</span> <span class="o">=</span> <span class="n">cur_data</span><span class="p">,</span> <span class="n">no</span> <span class="o">=</span> <span class="n">no</span><span class="p">)</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/item:item#[0-9]+#&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">item</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;This item number does not exist!&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Task: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/help&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">help</span><span class="p">():</span>
+
+    <span class="n">static_file</span><span class="p">(</span><span class="s1">&#39;help.html&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="nd">@route</span><span class="p">(</span><span class="s1">&#39;/json:json#[0-9]+#&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_json</span><span class="p">(</span><span class="n">json</span><span class="p">):</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;todo.db&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT task FROM todo WHERE id LIKE ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">json</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;task&#39;</span><span class="p">:</span><span class="s1">&#39;This item number does not exist!&#39;</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Task&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+
+
+<span class="nd">@error</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake403</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;There is a mistake in your url!&#39;</span>
+
+<span class="nd">@error</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">mistake404</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;Sorry, this page does not exist!&#39;</span>
+
+
+<span class="n">debug</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">reloader</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#remember to remove reloader=True and debug(True) when you move your application from development to a productive environment</span>
+</pre></div>
+</div>
+<p>Template <code class="docutils literal"><span class="pre">make_table.tpl</span></code>:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">%</span><span class="c1">#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="nb">open</span> <span class="n">items</span> <span class="n">are</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">table</span> <span class="n">border</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">&gt;</span>
+<span class="o">%</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+  <span class="o">%</span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">col</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+  <span class="o">%</span><span class="n">end</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<span class="o">%</span><span class="n">end</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Template <code class="docutils literal"><span class="pre">edit_task.tpl</span></code>:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">%</span><span class="c1">#template for editing a task</span>
+<span class="o">%</span><span class="c1">#the template expects to receive a value for &quot;no&quot; as well a &quot;old&quot;, the text of the selected ToDo item</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Edit</span> <span class="n">the</span> <span class="n">task</span> <span class="k">with</span> <span class="n">ID</span> <span class="o">=</span> <span class="p">{{</span><span class="n">no</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;/edit/{{no}}&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;get&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;{{old[0]}}&quot;</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">maxlength</span><span class="o">=</span><span class="s2">&quot;100&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">select</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">option</span><span class="o">&gt;</span><span class="nb">open</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">option</span><span class="o">&gt;</span><span class="n">closed</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;save&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Template <code class="docutils literal"><span class="pre">new_task.tpl</span></code>:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="o">%</span><span class="c1">#template for the form for a new task</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">task</span> <span class="n">to</span> <span class="n">the</span> <span class="n">ToDo</span> <span class="nb">list</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;/new&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">maxlength</span><span class="o">=</span><span class="s2">&quot;100&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;save&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>

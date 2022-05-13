@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Webmaster4o | omz:forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="content-type" content="text&#x2F;html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="omz:forum" />
+	<meta name="keywords" content="pythonista, editorial, ios" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https:&#x2F;&#x2F;forum.omz-software.com&#x2F;sitemap.xml" />
+	<meta name="msapplication-square150x150logo" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css@7159df99.css" />
+	
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../apple-touch-icon" />
+
+	<!--[if lt IE 9]>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  		<script>__lt_ie_9__ = 1;</script>
+	<![endif]-->
+
+	<script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","socketioTransports":["polling","websocket"],"websocketAddress":"","version":"0.7.2","siteTitle":"omz:forum","showSiteTitle":true,"postDelay":"15","minimumTitleLength":"3","maximumTitleLength":"255","minimumPostLength":"8","maximumPostLength":"32767","hasImageUploadPlugin":false,"maximumProfileImageSize":"256","minimumUsernameLength":"2","maximumUsernameLength":"16","minimumPasswordLength":"6","maximumSignatureLength":"255","maximumAboutMeLength":"1000","useOutgoingLinksPage":false,"allowGuestSearching":true,"allowGuestUserSearching":false,"allowGuestHandles":false,"allowFileUploads":false,"allowProfileImageUploads":true,"allowTopicsThumbnail":false,"allowAccountDelete":true,"privateUserInfo":false,"privateTagListing":false,"usePagination":false,"disableSocialButtons":true,"disableChat":true,"maxReconnectionAttempts":5,"reconnectionDelay":1500,"minimumTagsPerTopic":"0","maximumTagsPerTopic":"5","minimumTagLength":3,"maximumTagLength":15,"topicsPerPage":20,"postsPerPage":20,"maximumFileSize":"2048","theme:id":"nodebb-theme-persona","defaultLang":"en_US","userLang":"en_US","loggedIn":false,"cache-buster":"v0.7.2-2-g4bcf779","script-buster":"bff8d8f7","css-buster":"7159df99","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"MIIk1XXq-eWkFsGLiPSItoVmeUzLlhtF_APg","searchEnabled":true}');
+		var app = {
+			template: "account/profile",
+			user: JSON.parse('{"username":"Guest","userslug":"","picture":"https://s.gravatar.com/avatar/d415f0e30c471dfdd9bc4f827329ef48?size=128&default=identicon&rating=pg","status":"offline","banned":false,"uid":0,"isAdmin":false,"email:confirmed":false}')
+		};
+	</script>
+	<script src="../nodebb.min.js@bff8d8f7"></script>
+<script>
+	require.config({
+		baseUrl: "/src/modules",
+		waitSeconds: 3,
+		urlArgs: "v0.7.2-2-g4bcf779",
+		paths: {
+			'forum': '../client',
+			'vendor': '../../vendor',
+			'mousetrap': '../../bower/mousetrap/mousetrap'
+		}
+	});
+</script>
+	
+	
+		<style type="text/css">.copyright{color:gray;font-size:.85em}.topic .posts .content pre{max-height:none}</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="slide-in" data-target=".navbar-slide-in">
+					<span class="notification-icon fa fa-fw fa-bell-o" data-content="0"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="../index.html">
+					<img class="hide forum-logo" src="webmaster4o.html" />
+				</a>
+								<a href="../index.html">
+					<h1 class="navbar-brand forum-title">omz:forum</h1>
+				</a>
+
+				<div component="navbar/title" class="visible-xs">
+					<span></span>
+				</div>
+			</div>
+
+			<div class="navbar-slide-in" id="nav-dropdown">
+												<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+										<li>
+						<a href="../register.html">
+							<i class="fa fa-pencil visible-xs-inline"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					<li>
+						<a href="../topic/7476.html">
+							<i class="fa fa-sign-in visible-xs-inline"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+								<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="webmaster4o.html">
+							<div class="hide" id="search-fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+						</form>
+					</li>
+					<li class="visible-xs">
+						<a href="../search.html">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="webmaster4o.html#" id="reconnect" class="hide" title="Connection to omz:forum has been lost, attempting to reconnect...">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block invisible visible-lg visible-md">
+					<li class="dropdown">
+						<i class="fa fa-angle-double-up pointer fa-fw pagetop"></i>
+						<i class="fa fa-angle-up pointer fa-fw pageup"></i>
+
+						<a href="webmaster4o.html#" class="dropdown-toggle" data-toggle="dropdown">
+							<span id="pagination"></span>
+						</a>
+
+						<i class="fa fa-angle-down pointer fa-fw pagedown"></i>
+						<i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i>
+
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+  							<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+														<li class="">
+						<a href="../recent.html" title="Recent" id="">
+														<i class="fa fa-fw fa-clock-o"></i>
+
+														<span class="visible-xs-inline">Recent</span>
+						</a>
+					</li>
+														<li class="">
+						<a href="../popular.html" title="Popular" id="">
+														<i class="fa fa-fw fa-fire"></i>
+
+														<span class="visible-xs-inline">Popular</span>
+						</a>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="content" component="header">
+	<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+<div class="account-username-box" data-userslug="webmaster4o" data-uid="1053">
+	<ul class="nav nav-pills account-sub-links">
+		<li>
+			<a href="webmaster4o.html#" type="button" class="dropdown-toggle inline-block" data-toggle="dropdown">
+				More
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</a>
+			<ul class="dropdown-menu pull-right" role="menu">
+				<li><a href="webmaster4o/following.html"><i class="fa fa-fw fa-users"></i> Following</a></li>
+				<li><a href="webmaster4o/followers.html"><i class="fa fa-fw fa-users"></i> Followers</a></li>
+				<li class="divider"></li>
+				<li><a href="webmaster4o/topics.html"><i class="fa fa-fw fa-book"></i> Topics</a></li>
+				<li><a href="webmaster4o/posts.html"><i class="fa fa-fw fa-pencil"></i> Posts</a></li>
+				<li><a href="webmaster4o/groups.html"><i class="fa fa-fw fa-users"></i> Groups</a></li>
+				
+
+			</ul>
+		</li>
+		<li>
+			<a href="webmaster4o.html" class="inline-block" id="profile"><i class="fa fa-user"></i> Profile</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="account">
+
+	<div class="row">
+		<div class="col-md-5 account-block">
+
+			<div class="account-picture-block panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<img src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg" class="user-profile-picture" />
+					</div>
+
+					<div>
+						<div class="text-center">
+							<span>
+								<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+								<span class="account-username"> Webmaster4o</span>
+							</span>
+
+														<br/>
+							
+ 							<a id="follow-btn" href="webmaster4o.html#" class="btn btn-success btn-sm ">Follow</a>
+ 							<a id="unfollow-btn" href="webmaster4o.html#" class="btn btn-warning btn-sm hide">Unfollow</a>
+                            
+                            
+
+						</div>
+
+						<div id="banLabel" class="text-center hide">
+							<span class="label label-danger">Banned</span>
+						</div>
+
+												<hr/>
+						<div component="aboutme" class="text-center">
+						<p>I'm fourteen and living in New Paltz, NY. Python is a hobby outside of school.</p>
+
+						</div>
+						<hr/>
+						<div class="text-center account-stats">
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="319">319</span>
+								<span class="account-bio-label">Reputation</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="1074">1074</span>
+								<span class="account-bio-label">Posts</span>
+							</div>
+
+							<div class="inline-block text-center">
+								<span class="human-readable-number" title="5764">5764</span>
+								<span class="account-bio-label">Profile views</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+
+										<span class="account-bio-label">Email</span>
+					<span class="account-bio-value"><i class="fa fa-eye-slash hide" title="Email Hidden"></i> ldt@deentaylor.com</span>
+
+										<span class="account-bio-label">Full Name</span>
+					<span class="account-bio-value">Luke Deen Taylor</span>
+
+										<span class="account-bio-label">Website</span>
+					<span class="account-bio-value"><a href="http://luke.deentaylor.com">luke.deentaylor.com</a></span>
+
+										<span class="account-bio-label">Location</span>
+					<span class="account-bio-value">New Paltz, NY.</span>
+
+										<span class="account-bio-label">Age</span>
+					<span class="account-bio-value">20</span>
+
+
+					<span class="account-bio-label">Followers</span>
+					<span class="human-readable-number account-bio-value" title="13">13</span>
+
+					<span class="account-bio-label">Following</span>
+					<span class="human-readable-number account-bio-value"  title="5">5</span>
+
+					<span class="account-bio-label">Joined</span>
+					<span class="timeago account-bio-value" title="2015-08-06T07:22:35.458Z"></span>
+
+					<span class="account-bio-label">Last Online</span>
+					<span class="timeago account-bio-value" title="2017-02-22T03:58:00.761Z"></span>
+
+					
+				</div>
+			</div>
+
+			
+
+			
+
+		</div>
+
+		<div class="col-md-7">
+		
+<ul component="posts" class="posts-list" data-nextstart="10">
+
+	<li component="post" class="posts-list-item" data-pid="21922" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>Use <code>shutil.copytree</code></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-17T12:30:52.873Z"></span> &bull;
+						<a href="../topic/3586/solved-duplicate-a-directory-or-multiple-files/3.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21909" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><code>x.split()</code> will give you each word as an element in a list. So, to get the second word of your sentence, you use <code>x.split()[1]</code>.</p>
+<p>You could do something like:</p>
+<pre><code class="python">words = x.split()
+if words[0].lower() == &quot;jump&quot;:
+    second_word = x.split()[1]
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-16T18:53:57.576Z"></span> &bull;
+						<a href="../topic/3585/split-a-string/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21905" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>There may be an API incompatibility with iOS 10, I'm sure <a class="plugin-mentions-a" href="omz.html">@omz</a> will fix it soon enough</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-16T14:54:38.694Z"></span> &bull;
+						<a href="../topic/3517/was-3d-touch-removed-in-pythonista-3/3.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21904" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>The Pythonista turtle module is rewritten completely from the desktop module, so I don't know if there's complete feature parity, but in the desktop module I think you can use <code>turtle.speed(0)</code>. Give it a try and let me know.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-16T14:51:40.362Z"></span> &bull;
+						<a href="../topic/3583/turtle-module-speed-of-turtle/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21821" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>When we were discussing a cleaner <code>objc_util</code> syntax a few months ago, the suggestion of using kwargs was rejected because there as no way to guarantee the order. However, look at <a href="https://docs.python.org/3.6/whatsnew/3.6.html#whatsnew-kwargs" rel="nofollow">this from the Python 3.6 release notes!</a></p>
+<blockquote>
+<p><code>**kwargs</code> in a function signature is now guaranteed to be an insertion-order-preserving mapping.</p>
+</blockquote>
+<p>This is from <a href="https://www.python.org/dev/peps/pep-0468/" rel="nofollow">PEP 468</a></p>
+<p>Unless I'm mistaken, this would enable that syntax.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-09T16:13:52.380Z"></span> &bull;
+						<a href="../topic/3566/python-3-6-and-objc_util-syntax/1.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21820" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="mikael.html">@mikael</a> I'm actually currently working on the same thing for <a href="https://zeit.co/now" rel="nofollow">https://zeit.co/now</a></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-09T15:54:56.362Z"></span> &bull;
+						<a href="../topic/3563/pythonista-lambda-microservice-packager/2.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21819" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="phuket2.html">@Phuket2</a> A github repo just for your experiments would be a good way to organize them, I think</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-10-09T15:52:52.625Z"></span> &bull;
+						<a href="../topic/3562/forum-suggestion-new-area-to-post-tips-shares-labs-etc/5.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21602" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p>One tip for making text more readable is something the Material Design guidelines recommend: While white text should be <code>rgba(255, 255, 255, 1)</code>, but black text should be <code>rgba(0, 0, 0, 0.87)</code>. The slight opacity in the black makes it much more readable on colored backgrounds.</p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-09-22T23:18:58.838Z"></span> &bull;
+						<a href="../topic/3527/lab-determine-black-or-white-color-to-draw-text-onto-a-css-color/5.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21426" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="spieswithin.html">@SpiesWithin</a> This example is correct. <code>client</code> is defined with <code>client = discord.Client()</code></p>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-09-10T19:20:42.858Z"></span> &bull;
+						<a href="../topic/3476/discord-py/6.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+	<li component="post" class="posts-list-item" data-pid="21309" data-uid="1053">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="webmaster4o.html">
+					<img title="Webmaster4o" class="img-rounded user-img" src="https://s.gravatar.com/avatar/2b49a0c830607a550fe7fe4d1efc2dd6?size=128&default=identicon&rating=pg">
+				</a>
+
+				<a href="webmaster4o.html">
+					<strong><span>Webmaster4o</span></strong>
+				</a>
+				<div component="post/content" class="content">
+					<p><p><a class="plugin-mentions-a" href="ccc.html">@ccc</a> It does, but it can't possibly convert them back into tuples.</p>
+<pre><code class="python">In [2]: a = livejson.File(&quot;/Users/luke/Desktop/a.json&quot;)
+
+In [3]: a[&quot;b&quot;] = (0, 1, 2, 3)
+
+In [4]: a[&quot;b&quot;]
+Out[5]: [0, 1, 2, 3]
+</code></pre>
+</p>
+					<p class="fade-out"></p>
+				</div>
+				<small>
+					<span class="pull-right">
+						posted in <a href="../../omz-software.com/pythonista/forums.html"><i class="fa fa-comments"></i> Pythonista</a> <span class="timeago" title="2016-09-04T22:15:13.707Z"></span> &bull;
+						<a href="../topic/3483/livejson-webmaster4o-tuples/5.html">read more</a>
+					</span>
+				</small>
+			</div>
+		</div>
+
+	</li>
+</ul>
+<div component="posts/loading" class="loading-indicator text-center hidden">
+	<i class="fa fa-refresh fa-spin"></i>
+</div>
+		</div>
+
+	</div>
+
+	<br/>
+	<div id="user-action-alert" class="alert alert-success hide"></div>
+
+</div>
+
+<input type="hidden" template-variable="yourid" value="0" />
+<input type="hidden" template-variable="theirid" value="1053" />
+<input type="hidden" template-type="boolean" template-variable="isFollowing" value="false" />
+<input type="hidden" ajaxify-data="%7B%22followingCount%22%3A5%2C%22fullname%22%3A%22Luke%20Deen%20Taylor%22%2C%22passwordExpiry%22%3A%220%22%2C%22gravatarpicture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22signature%22%3A%22%22%2C%22birthday%22%3A%2211%2F03%2F2001%22%2C%22postcount%22%3A%221074%22%2C%22status%22%3A%22offline%22%2C%22followerCount%22%3A13%2C%22website%22%3A%22luke.deentaylor.com%22%2C%22location%22%3A%22New%20Paltz%2C%20NY.%22%2C%22joindate%22%3A%222015-08-06T07%3A22%3A35.458Z%22%2C%22uploadedpicture%22%3A%22%2Fuploads%2Fprofile%2F1053-profileimg.png%22%2C%22banned%22%3Afalse%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%2C%22lastonline%22%3A%222017-02-22T03%3A58%3A00.761Z%22%2C%22lastposttime%22%3A%221476707452873%22%2C%22profileviews%22%3A%225764%22%2C%22reputation%22%3A%22319%22%2C%22aboutme%22%3A%22%3Cp%3EI'm%20fourteen%20and%20living%20in%20New%20Paltz%2C%20NY.%20Python%20is%20a%20hobby%20outside%20of%20school.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22topiccount%22%3A%22101%22%2C%22username%22%3A%22Webmaster4o%22%2C%22email%22%3A%22ldt%40deentaylor.com%22%2C%22age%22%3A20%2C%22emailClass%22%3A%22hide%22%2C%22yourid%22%3A0%2C%22theirid%22%3A%221053%22%2C%22isAdmin%22%3Afalse%2C%22isSelf%22%3Afalse%2C%22showHidden%22%3Afalse%2C%22groups%22%3A%5B%5D%2C%22disableSignatures%22%3Atrue%2C%22email%3Aconfirmed%22%3Afalse%2C%22profile_links%22%3A%5B%5D%2C%22websiteLink%22%3A%22http%3A%2F%2Fluke.deentaylor.com%22%2C%22websiteName%22%3A%22luke.deentaylor.com%22%2C%22posts%22%3A%5B%7B%22pid%22%3A%2221922%22%2C%22tid%22%3A%223586%22%2C%22content%22%3A%22%3Cp%3EUse%20%3Ccode%3Eshutil.copytree%3C%2Fcode%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476707452873%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22508%22%2C%22tid%22%3A%223586%22%2C%22title%22%3A%22%5Bsolved%5D%20duplicate%20a%20directory%20or%20multiple%20files.%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223586%2Fsolved-duplicate-a-directory-or-multiple-files%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2214%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-17T12%3A30%3A52.873Z%22%7D%2C%7B%22pid%22%3A%2221909%22%2C%22tid%22%3A%223585%22%2C%22content%22%3A%22%3Cp%3E%3Ccode%3Ex.split()%3C%2Fcode%3E%20will%20give%20you%20each%20word%20as%20an%20element%20in%20a%20list.%20So%2C%20to%20get%20the%20second%20word%20of%20your%20sentence%2C%20you%20use%20%3Ccode%3Ex.split()%5B1%5D%3C%2Fcode%3E.%3C%2Fp%3E%5Cn%3Cp%3EYou%20could%20do%20something%20like%3A%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3Ewords%20%3D%20x.split()%5Cnif%20words%5B0%5D.lower()%20%3D%3D%20%26quot%3Bjump%26quot%3B%3A%5Cn%20%20%20%20second_word%20%3D%20x.split()%5B1%5D%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476644037576%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222862%22%2C%22tid%22%3A%223585%22%2C%22title%22%3A%22Split%20a%20string%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223585%2Fsplit-a-string%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-16T18%3A53%3A57.576Z%22%7D%2C%7B%22pid%22%3A%2221905%22%2C%22tid%22%3A%223517%22%2C%22content%22%3A%22%3Cp%3EThere%20may%20be%20an%20API%20incompatibility%20with%20iOS%2010%2C%20I'm%20sure%20%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fomz%5C%22%3E%40omz%3C%2Fa%3E%20will%20fix%20it%20soon%20enough%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476629678694%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A3%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222879%22%2C%22tid%22%3A%223517%22%2C%22title%22%3A%22Was%203D%20Touch%20removed%20in%20Pythonista%203%3F%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223517%2Fwas-3d-touch-removed-in-pythonista-3%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-16T14%3A54%3A38.694Z%22%7D%2C%7B%22pid%22%3A%2221904%22%2C%22tid%22%3A%223583%22%2C%22content%22%3A%22%3Cp%3EThe%20Pythonista%20turtle%20module%20is%20rewritten%20completely%20from%20the%20desktop%20module%2C%20so%20I%20don't%20know%20if%20there's%20complete%20feature%20parity%2C%20but%20in%20the%20desktop%20module%20I%20think%20you%20can%20use%20%3Ccode%3Eturtle.speed(0)%3C%2Fcode%3E.%20Give%20it%20a%20try%20and%20let%20me%20know.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476629500362%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222973%22%2C%22tid%22%3A%223583%22%2C%22title%22%3A%22Turtle%20module%20speed%20of%20turtle%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223583%2Fturtle-module-speed-of-turtle%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%222%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-16T14%3A51%3A40.362Z%22%7D%2C%7B%22pid%22%3A%2221821%22%2C%22tid%22%3A%223566%22%2C%22content%22%3A%22%3Cp%3EWhen%20we%20were%20discussing%20a%20cleaner%20%3Ccode%3Eobjc_util%3C%2Fcode%3E%20syntax%20a%20few%20months%20ago%2C%20the%20suggestion%20of%20using%20kwargs%20was%20rejected%20because%20there%20as%20no%20way%20to%20guarantee%20the%20order.%20However%2C%20look%20at%20%3Ca%20href%3D%5C%22https%3A%2F%2Fdocs.python.org%2F3.6%2Fwhatsnew%2F3.6.html%23whatsnew-kwargs%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ethis%20from%20the%20Python%203.6%20release%20notes!%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cblockquote%3E%5Cn%3Cp%3E%3Ccode%3E**kwargs%3C%2Fcode%3E%20in%20a%20function%20signature%20is%20now%20guaranteed%20to%20be%20an%20insertion-order-preserving%20mapping.%3C%2Fp%3E%5Cn%3C%2Fblockquote%3E%5Cn%3Cp%3EThis%20is%20from%20%3Ca%20href%3D%5C%22https%3A%2F%2Fwww.python.org%2Fdev%2Fpeps%2Fpep-0468%2F%5C%22%20rel%3D%5C%22nofollow%5C%22%3EPEP%20468%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EUnless%20I'm%20mistaken%2C%20this%20would%20enable%20that%20syntax.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476029632380%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A1%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221053%22%2C%22tid%22%3A%223566%22%2C%22title%22%3A%22Python%203.6%20and%20objc_util%20syntax%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223566%2Fpython-3-6-and-objc_util-syntax%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-09T16%3A13%3A52.380Z%22%7D%2C%7B%22pid%22%3A%2221820%22%2C%22tid%22%3A%223563%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fmikael%5C%22%3E%40mikael%3C%2Fa%3E%20I'm%20actually%20currently%20working%20on%20the%20same%20thing%20for%20%3Ca%20href%3D%5C%22https%3A%2F%2Fzeit.co%2Fnow%5C%22%20rel%3D%5C%22nofollow%5C%22%3Ehttps%3A%2F%2Fzeit.co%2Fnow%3C%2Fa%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476028496362%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A2%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%221887%22%2C%22tid%22%3A%223563%22%2C%22title%22%3A%22Pythonista%20Lambda%20microservice%20packager%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223563%2Fpythonista-lambda-microservice-packager%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%223%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-09T15%3A54%3A56.362Z%22%7D%2C%7B%22pid%22%3A%2221819%22%2C%22tid%22%3A%223562%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fphuket2%5C%22%3E%40Phuket2%3C%2Fa%3E%20A%20github%20repo%20just%20for%20your%20experiments%20would%20be%20a%20good%20way%20to%20organize%20them%2C%20I%20think%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221476028372625%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22232%22%2C%22tid%22%3A%223562%22%2C%22title%22%3A%22Forum%20Suggestion%20-%20New%20area%20to%20post%20tips%2C%20shares%20labs%20etc....%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223562%2Fforum-suggestion-new-area-to-post-tips-shares-labs-etc%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%226%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-10-09T15%3A52%3A52.625Z%22%7D%2C%7B%22pid%22%3A%2221602%22%2C%22tid%22%3A%223527%22%2C%22content%22%3A%22%3Cp%3EOne%20tip%20for%20making%20text%20more%20readable%20is%20something%20the%20Material%20Design%20guidelines%20recommend%3A%20While%20white%20text%20should%20be%20%3Ccode%3Ergba(255%2C%20255%2C%20255%2C%201)%3C%2Fcode%3E%2C%20but%20black%20text%20should%20be%20%3Ccode%3Ergba(0%2C%200%2C%200%2C%200.87)%3C%2Fcode%3E.%20The%20slight%20opacity%20in%20the%20black%20makes%20it%20much%20more%20readable%20on%20colored%20backgrounds.%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221474586338838%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22232%22%2C%22tid%22%3A%223527%22%2C%22title%22%3A%22%5BLab%5D%20determine%20%20black%20or%20white%20color%20to%20draw%20text%20onto%20a%20CSS%20color%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223527%2Flab-determine-black-or-white-color-to-draw-text-onto-a-css-color%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%229%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-09-22T23%3A18%3A58.838Z%22%7D%2C%7B%22pid%22%3A%2221426%22%2C%22tid%22%3A%223476%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fspieswithin%5C%22%3E%40SpiesWithin%3C%2Fa%3E%20This%20example%20is%20correct.%20%3Ccode%3Eclient%3C%2Fcode%3E%20is%20defined%20with%20%3Ccode%3Eclient%20%3D%20discord.Client()%3C%2Fcode%3E%3C%2Fp%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221473535242858%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A6%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%222827%22%2C%22tid%22%3A%223476%22%2C%22title%22%3A%22Discord.py%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223476%2Fdiscord-py%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2215%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-09-10T19%3A20%3A42.858Z%22%7D%2C%7B%22pid%22%3A%2221309%22%2C%22tid%22%3A%223483%22%2C%22content%22%3A%22%3Cp%3E%3Ca%20class%3D%5C%22plugin-mentions-a%5C%22%20href%3D%5C%22https%3A%2F%2Fforum.omz-software.com%2Fuser%2Fccc%5C%22%3E%40ccc%3C%2Fa%3E%20It%20does%2C%20but%20it%20can't%20possibly%20convert%20them%20back%20into%20tuples.%3C%2Fp%3E%5Cn%3Cpre%3E%3Ccode%20class%3D%5C%22python%5C%22%3EIn%20%5B2%5D%3A%20a%20%3D%20livejson.File(%26quot%3B%2FUsers%2Fluke%2FDesktop%2Fa.json%26quot%3B)%5Cn%5CnIn%20%5B3%5D%3A%20a%5B%26quot%3Bb%26quot%3B%5D%20%3D%20(0%2C%201%2C%202%2C%203)%5Cn%5CnIn%20%5B4%5D%3A%20a%5B%26quot%3Bb%26quot%3B%5D%5CnOut%5B5%5D%3A%20%5B0%2C%201%2C%202%2C%203%5D%5Cn%3C%2Fcode%3E%3C%2Fpre%3E%5Cn%22%2C%22uid%22%3A%221053%22%2C%22timestamp%22%3A%221473027313707%22%2C%22deleted%22%3A%220%22%2C%22index%22%3A5%2C%22user%22%3A%7B%22uid%22%3A%221053%22%2C%22username%22%3A%22Webmaster4o%22%2C%22userslug%22%3A%22webmaster4o%22%2C%22picture%22%3A%22https%3A%2F%2Fs.gravatar.com%2Favatar%2F2b49a0c830607a550fe7fe4d1efc2dd6%3Fsize%3D128%26default%3Didenticon%26rating%3Dpg%22%7D%2C%22topic%22%3A%7B%22uid%22%3A%22232%22%2C%22tid%22%3A%223483%22%2C%22title%22%3A%22livejson%20-%20Webmaster4o%20-%20Tuples%22%2C%22cid%22%3A%225%22%2C%22slug%22%3A%223483%2Flivejson-webmaster4o-tuples%22%2C%22deleted%22%3A%220%22%2C%22postcount%22%3A%2214%22%7D%2C%22category%22%3A%7B%22cid%22%3A%225%22%2C%22name%22%3A%22Pythonista%22%2C%22icon%22%3A%22fa-comments%22%2C%22slug%22%3A%225%2Fpythonista%22%2C%22parentCid%22%3A%220%22%2C%22bgColor%22%3A%22%230485a6%22%2C%22color%22%3A%22%23fff%22%7D%2C%22relativeTime%22%3A%222016-09-04T22%3A15%3A13.707Z%22%7D%5D%2C%22nextStart%22%3A10%2C%22isFollowing%22%3Afalse%2C%22loggedIn%22%3Afalse%2C%22template%22%3A%7B%22name%22%3A%22account%2Fprofile%22%2C%22account%2Fprofile%22%3Atrue%7D%2C%22_locals%22%3A%7B%22renderHeader%22%3Atrue%2C%22isAPI%22%3Afalse%2C%22config%22%3A%7B%22relative_path%22%3A%22%22%2C%22socketioTransports%22%3A%5B%22polling%22%2C%22websocket%22%5D%2C%22websocketAddress%22%3A%22%22%2C%22version%22%3A%220.7.2%22%2C%22siteTitle%22%3A%22omz%3Aforum%22%2C%22showSiteTitle%22%3Atrue%2C%22postDelay%22%3A%2215%22%2C%22minimumTitleLength%22%3A%223%22%2C%22maximumTitleLength%22%3A%22255%22%2C%22minimumPostLength%22%3A%228%22%2C%22maximumPostLength%22%3A%2232767%22%2C%22hasImageUploadPlugin%22%3Afalse%2C%22maximumProfileImageSize%22%3A%22256%22%2C%22minimumUsernameLength%22%3A%222%22%2C%22maximumUsernameLength%22%3A%2216%22%2C%22minimumPasswordLength%22%3A%226%22%2C%22maximumSignatureLength%22%3A%22255%22%2C%22maximumAboutMeLength%22%3A%221000%22%2C%22useOutgoingLinksPage%22%3Afalse%2C%22allowGuestSearching%22%3Atrue%2C%22allowGuestUserSearching%22%3Afalse%2C%22allowGuestHandles%22%3Afalse%2C%22allowFileUploads%22%3Afalse%2C%22allowProfileImageUploads%22%3Atrue%2C%22allowTopicsThumbnail%22%3Afalse%2C%22allowAccountDelete%22%3Atrue%2C%22privateUserInfo%22%3Afalse%2C%22privateTagListing%22%3Afalse%2C%22usePagination%22%3Afalse%2C%22disableSocialButtons%22%3Atrue%2C%22disableChat%22%3Atrue%2C%22maxReconnectionAttempts%22%3A5%2C%22reconnectionDelay%22%3A1500%2C%22minimumTagsPerTopic%22%3A%220%22%2C%22maximumTagsPerTopic%22%3A%225%22%2C%22minimumTagLength%22%3A3%2C%22maximumTagLength%22%3A15%2C%22topicsPerPage%22%3A20%2C%22postsPerPage%22%3A20%2C%22maximumFileSize%22%3A%222048%22%2C%22theme%3Aid%22%3A%22nodebb-theme-persona%22%2C%22defaultLang%22%3A%22en_US%22%2C%22userLang%22%3A%22en_US%22%2C%22loggedIn%22%3Afalse%2C%22cache-buster%22%3A%22v0.7.2-2-g4bcf779%22%2C%22script-buster%22%3A%22bff8d8f7%22%2C%22css-buster%22%3A%227159df99%22%2C%22requireEmailConfirmation%22%3Afalse%2C%22topicPostSort%22%3A%22oldest_to_newest%22%2C%22categoryTopicSort%22%3A%22newest_to_oldest%22%2C%22csrf_token%22%3A%22MIIk1XXq-eWkFsGLiPSItoVmeUzLlhtF_APg%22%2C%22searchEnabled%22%3Atrue%7D%2C%22footer%22%3A%22%5Ct%3C%2Fdiv%3E%3C!--END%20container%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22hide%20tpl-500%5C%22%3E%5Cn%3Cdiv%20class%3D%5C%22alert%20alert-danger%5C%22%3E%5Cn%5Ct%3Cstrong%3EInternal%20error.%3C%2Fstrong%3E%5Cn%5Ct%3Cp%3EOops!%20Looks%20like%20something%20went%20wrong!%3C%2Fp%3E%5Cn%5Ct%3Cp%3E%3C%2Fp%3E%5Cn%5Ct%5Cn%5Cn%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20id%3D%5C%22upload-picture-modal%5C%22%20class%3D%5C%22modal%20fade%5C%22%20tabindex%3D%5C%22-1%5C%22%20role%3D%5C%22dialog%5C%22%20aria-labelledby%3D%5C%22Upload%20Picture%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-dialog%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-content%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-header%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22close%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3E%C3%97%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Ch3%20id%3D%5C%22myModalLabel%5C%22%3EUpload%20picture%3C%2Fh3%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-body%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cform%20id%3D%5C%22uploadForm%5C%22%20action%3D%5C%22%5C%22%20method%3D%5C%22post%5C%22%20enctype%3D%5C%22multipart%2Fform-data%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22form-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Clabel%20for%3D%5C%22userPhoto%5C%22%3EUpload%20a%20picture%3C%2Flabel%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22file%5C%22%20id%3D%5C%22userPhotoInput%5C%22%20name%3D%5C%22files%5B%5D%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cp%20class%3D%5C%22help-block%5C%22%3EYou%20may%20only%20upload%20PNG%2C%20JPG%2C%20or%20GIF%20files%20(%3Cspan%20id%3D%5C%22file-size-block%5C%22%20class%3D%5C%22hide%5C%22%3E%3C%2Fspan%3E)%3C%2Fp%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cinput%20type%3D%5C%22hidden%5C%22%20id%3D%5C%22params%5C%22%20name%3D%5C%22params%5C%22%20%2F%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fform%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-box%5C%22%20class%3D%5C%22progress%20progress-striped%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22upload-progress-bar%5C%22%20class%3D%5C%22progress-bar%20progress-bar-success%5C%22%20role%3D%5C%22progressbar%5C%22%20aria-valuenow%3D%5C%220%5C%22%20aria-valuemin%3D%5C%220%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3Cspan%20class%3D%5C%22sr-only%5C%22%3E%20Success%3C%2Fspan%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-status%5C%22%20class%3D%5C%22alert%20alert-info%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-success%5C%22%20class%3D%5C%22alert%20alert-success%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cdiv%20id%3D%5C%22alert-error%5C%22%20class%3D%5C%22alert%20alert-danger%20hide%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22modal-footer%5C%22%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20class%3D%5C%22btn%20btn-default%5C%22%20data-dismiss%3D%5C%22modal%5C%22%20aria-hidden%3D%5C%22true%5C%22%3EClose%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%5Ct%3Cbutton%20id%3D%5C%22pictureUploadSubmitBtn%5C%22%20class%3D%5C%22btn%20btn-primary%5C%22%3EUpload%20picture%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-content%20--%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal-dialog%20--%3E%5Cn%5Ct%3C%2Fdiv%3E%3C!--%20%2F.modal%20--%3E%5Cn%5Cn%5Ct%3Cdiv%20class%3D%5C%22topic-search%20hidden%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22btn-group%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20count%5C%22%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20prev%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-up%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%5Ct%3Cbutton%20type%3D%5C%22button%5C%22%20class%3D%5C%22btn%20btn-default%20next%5C%22%3E%3Ci%20class%3D%5C%22fa%20fa-fw%20fa-angle-down%5C%22%3E%3C%2Fi%3E%3C%2Fbutton%3E%5Cn%5Ct%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-left-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-top%5C%22%3E%3C%2Fdiv%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22alert-window%20alert-right-bottom%5C%22%3E%3C%2Fdiv%3E%5Cn%5Cn%5Ct%3Cscript%3E%5Cn%5Ct%5Ctrequire(%5B'forum%2Ffooter'%5D)%3B%5Cn%5Ct%3C%2Fscript%3E%5Cn%3C%2Fbody%3E%5Cn%3C%2Fhtml%3E%5Cn%22%2C%22template%22%3A%22account%2Fprofile%22%7D%7D" />	</div><!--END container -->
+
+	<div class="hide tpl-500">
+<div class="alert alert-danger">
+	<strong>Internal error.</strong>
+	<p>Oops! Looks like something went wrong!</p>
+	<p></p>
+	
+
+</div>
+
+	</div>
+	<div id="upload-picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Upload picture</h3>
+				</div>
+				<div class="modal-body">
+					<form id="uploadForm" action="webmaster4o.html" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="userPhoto">Upload a picture</label>
+							<input type="file" id="userPhotoInput" name="files[]">
+							<p class="help-block">You may only upload PNG, JPG, or GIF files (<span id="file-size-block" class="hide"></span>)</p>
+						</div>
+						<input type="hidden" id="params" name="params" />
+					</form>
+
+					<div id="upload-progress-box" class="progress progress-striped">
+						<div id="upload-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0">
+							<span class="sr-only"> Success</span>
+						</div>
+					</div>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button id="pictureUploadSubmitBtn" class="btn btn-primary">Upload picture</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+	<div class="alert-window alert-left-top"></div>
+	<div class="alert-window alert-left-bottom"></div>
+	<div class="alert-window alert-right-top"></div>
+	<div class="alert-window alert-right-bottom"></div>
+
+	<script>
+		require(['forum/footer']);
+	</script>
+</body>
+</html>

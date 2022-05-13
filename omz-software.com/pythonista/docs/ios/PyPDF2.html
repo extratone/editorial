@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PyPDF2 &mdash; Python 3.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.6.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Python 3.6.1 documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Python 3.6.1 documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/ios/PyPDF2.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python3')[i];
+            return codeBlock.innerText;
+        }
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python3');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+                    var openButton = document.createElement('button');
+                    openButton.className = 'pythonista-button';
+                    openButton.innerText = 'Open in Editor';
+                    openButton.addEventListener('click', openSample.partial(i));
+                    codeHeader.appendChild(openButton);
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+
+
+  </head>
+  <body ontouchstart="">  
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &raquo;</li>
+        <li>
+          <a href="../index.html">3.6.1 Documentation</a> &raquo;
+        </li>
+
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="http://omz-software.com/pythonista/docs/search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-PyPDF2">
+<span id="pypdf2"></span><h1><a class="reference internal" href="PyPDF2.html#module-PyPDF2" title="PyPDF2"><code class="xref py py-mod docutils literal"><span class="pre">PyPDF2</span></code></a><a class="headerlink" href="PyPDF2.html#module-PyPDF2" title="Permalink to this headline">¶</a></h1>
+<p>PyPDF2 is a pure-python PDF library capable of splitting, merging together, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. It can retrieve text and metadata from PDFs as well as merge entire files together.</p>
+<p>Homepage: <a class="reference external" href="http://mstamy2.github.io/PyPDF2/">http://mstamy2.github.io/PyPDF2/</a></p>
+<div class="section" id="the-destination-class">
+<h2>The Destination Class<a class="headerlink" href="PyPDF2.html#the-destination-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="PyPDF2.Destination">
+<em class="property">class </em><code class="descclassname">PyPDF2.</code><code class="descname">Destination</code><span class="sig-paren">(</span><em>title</em>, <em>page</em>, <em>typ</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing a destination within a PDF file. See section 8.2.1 of the PDF 1.6 reference.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.bottom">
+<code class="descclassname">Destination.</code><code class="descname">bottom</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the bottom vertical coordinate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.left">
+<code class="descclassname">Destination.</code><code class="descname">left</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the left horizontal coordinate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.page">
+<code class="descclassname">Destination.</code><code class="descname">page</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the destination page.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.right">
+<code class="descclassname">Destination.</code><code class="descname">right</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the right horizontal coordinate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.title">
+<code class="descclassname">Destination.</code><code class="descname">title</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the destination title.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.top">
+<code class="descclassname">Destination.</code><code class="descname">top</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the top vertical coordinate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.typ">
+<code class="descclassname">Destination.</code><code class="descname">typ</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.typ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the destination type.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.Destination.zoom">
+<code class="descclassname">Destination.</code><code class="descname">zoom</code><a class="headerlink" href="PyPDF2.html#PyPDF2.Destination.zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the zoom factor.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-documentinformation-class">
+<h2>The DocumentInformation Class<a class="headerlink" href="PyPDF2.html#the-documentinformation-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="PyPDF2.DocumentInformation">
+<em class="property">class </em><code class="descclassname">PyPDF2.</code><code class="descname">DocumentInformation</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing the basic document metadata provided in a PDF File.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.DocumentInformation.author">
+<code class="descclassname">DocumentInformation.</code><code class="descname">author</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the document&#8217;s author.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.DocumentInformation.creator">
+<code class="descclassname">DocumentInformation.</code><code class="descname">creator</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the document&#8217;s creator. If the document was converted to PDF from another format, the name of the application (for example, OpenOffice) that created the original document from which it was converted.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.DocumentInformation.producer">
+<code class="descclassname">DocumentInformation.</code><code class="descname">producer</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation.producer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the document&#8217;s producer. If the document was converted to PDF from another format, the name of the application (for example, OSX Quartz) that converted it to PDF.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.DocumentInformation.subject">
+<code class="descclassname">DocumentInformation.</code><code class="descname">subject</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation.subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the subject of the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.DocumentInformation.title">
+<code class="descclassname">DocumentInformation.</code><code class="descname">title</code><a class="headerlink" href="PyPDF2.html#PyPDF2.DocumentInformation.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property accessing the document&#8217;s title.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-pageobject-class">
+<h2>The PageObject Class<a class="headerlink" href="PyPDF2.html#the-pageobject-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="PyPDF2.PageObject">
+<em class="property">class </em><code class="descclassname">PyPDF2.</code><code class="descname">PageObject</code><span class="sig-paren">(</span><em>pdf</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a single page within a PDF file. Typically this object will be created by accessing the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getPage" title="PyPDF2.PdfFileReader.getPage"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getPage()</span></code></a> function of the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader" title="PyPDF2.PdfFileReader"><code class="xref py py-class docutils literal"><span class="pre">PdfFileReader</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PageObject.artBox">
+<code class="descclassname">PageObject.</code><code class="descname">artBox</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.artBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle (<code class="xref py py-class docutils literal"><span class="pre">RectangleObject</span></code>), expressed in default user space units, defining the extent of the page&#8217;s meaningful content as intended by the page&#8217;s creator.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PageObject.bleedBox">
+<code class="descclassname">PageObject.</code><code class="descname">bleedBox</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.bleedBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle (<code class="xref py py-class docutils literal"><span class="pre">RectangleObject</span></code>), expressed in default user space units, defining the region to which the contents of the page should be clipped when output in a production enviroment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PageObject.compressContentStreams">
+<code class="descclassname">PageObject.</code><code class="descname">compressContentStreams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.compressContentStreams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compresses the size of this page by joining all content streams and applying a FlateDecode filter.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PageObject.cropBox">
+<code class="descclassname">PageObject.</code><code class="descname">cropBox</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.cropBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle (<code class="xref py py-class docutils literal"><span class="pre">RectangleObject</span></code>), expressed in default user space units, defining the visible region of default user space. When the page is displayed or printed, its contents are to be clipped (cropped) to this rectangle and then imposed on the output medium in some implementation-defined manner. Default value: same as MediaBox.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PageObject.extractText">
+<code class="descclassname">PageObject.</code><code class="descname">extractText</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.extractText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locate all text drawing commands, in the order they are provided in the content stream, and extract the text. This works well for some PDF files, but poorly for others, depending on the generator used. This will be refined in the future. Do not rely on the order of text coming out of this function, as it will change if this function is made more sophisticated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PageObject.mediaBox">
+<code class="descclassname">PageObject.</code><code class="descname">mediaBox</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.mediaBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle (<code class="xref py py-class docutils literal"><span class="pre">RectangleObject</span></code>), expressed in default user space units, defining the boundaries of the physical medium on which the page is intended to be displayed or printed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PageObject.mergePage">
+<code class="descclassname">PageObject.</code><code class="descname">mergePage</code><span class="sig-paren">(</span><em>page2</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.mergePage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges the content streams of two pages into one. Resource references (i.e. fonts) are maintained from both pages. The mediabox/cropbox/etc of this page are not altered. The parameter page&#8217;s content stream will be added to the end of this page&#8217;s content stream, meaning that it will be drawn after, or &#8220;on top&#8221; of this page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PageObject.rotateClockwise">
+<code class="descclassname">PageObject.</code><code class="descname">rotateClockwise</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.rotateClockwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates a page clockwise by increments of 90 degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PageObject.rotateCounterClockwise">
+<code class="descclassname">PageObject.</code><code class="descname">rotateCounterClockwise</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.rotateCounterClockwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates a page counter-clockwise by increments of 90 degrees.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PageObject.trimBox">
+<code class="descclassname">PageObject.</code><code class="descname">trimBox</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PageObject.trimBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle (<code class="xref py py-class docutils literal"><span class="pre">RectangleObject</span></code>), expressed in default user space units, defining the intended dimensions of the finished page after trimming.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-pdffilereader-class">
+<h2>The PdfFileReader Class<a class="headerlink" href="PyPDF2.html#the-pdffilereader-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="PyPDF2.PdfFileReader">
+<em class="property">class </em><code class="descclassname">PyPDF2.</code><code class="descname">PdfFileReader</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes a PdfFileReader object. This operation can take some time, as the PDF stream&#8217;s cross-reference tables are read into memory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.decrypt">
+<code class="descclassname">PdfFileReader.</code><code class="descname">decrypt</code><span class="sig-paren">(</span><em>password</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>When using an encrypted / secured PDF file with the PDF Standard encryption handler, this function will allow the file to be decrypted. It checks the given password against the document&#8217;s user password and owner password, and then stores the resulting decryption key if either password is correct.</p>
+<p>It does not matter which password was matched. Both passwords provide the correct decryption key that will allow the document to be used with this library.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.documentInfo">
+<code class="descclassname">PdfFileReader.</code><code class="descname">documentInfo</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.documentInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property that accesses the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getDocumentInfo" title="PyPDF2.PdfFileReader.getDocumentInfo"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getDocumentInfo()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.getDocumentInfo">
+<code class="descclassname">PdfFileReader.</code><code class="descname">getDocumentInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.getDocumentInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the PDF file&#8217;s document information dictionary, if it exists. Note that some PDF files use metadata streams instead of docinfo dictionaries, and these metadata streams will not be accessed by this function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.getNamedDestinations">
+<code class="descclassname">PdfFileReader.</code><code class="descname">getNamedDestinations</code><span class="sig-paren">(</span><em>tree=None</em>, <em>retval=None</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.getNamedDestinations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the named destinations present in the document.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.getNumPages">
+<code class="descclassname">PdfFileReader.</code><code class="descname">getNumPages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.getNumPages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of pages in this PDF file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.getOutlines">
+<code class="descclassname">PdfFileReader.</code><code class="descname">getOutlines</code><span class="sig-paren">(</span><em>node=None</em>, <em>outlines=None</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.getOutlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the document outline present in the document.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileReader.getPage">
+<code class="descclassname">PdfFileReader.</code><code class="descname">getPage</code><span class="sig-paren">(</span><em>pageNumber</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.getPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves a page by number from this PDF file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.isEncrypted">
+<code class="descclassname">PdfFileReader.</code><code class="descname">isEncrypted</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.isEncrypted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only boolean property showing whether this PDF file is encrypted. Note that this property, if true, will remain true even after the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.decrypt" title="PyPDF2.PdfFileReader.decrypt"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.decrypt()</span></code></a> function is called.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.namedDestinations">
+<code class="descclassname">PdfFileReader.</code><code class="descname">namedDestinations</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.namedDestinations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property that accesses the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getNamedDestinations" title="PyPDF2.PdfFileReader.getNamedDestinations"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getNamedDestinations()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.numPages">
+<code class="descclassname">PdfFileReader.</code><code class="descname">numPages</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.numPages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property that accesses the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getNumPages" title="PyPDF2.PdfFileReader.getNumPages"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getNumPages()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.outlines">
+<code class="descclassname">PdfFileReader.</code><code class="descname">outlines</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.outlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property that accesses the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getOutlines" title="PyPDF2.PdfFileReader.getOutlines"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getOutlines()</span></code></a> function.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PyPDF2.PdfFileReader.pages">
+<code class="descclassname">PdfFileReader.</code><code class="descname">pages</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileReader.pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property that emulates a list based upon the <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getNumPages" title="PyPDF2.PdfFileReader.getNumPages"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getNumPages()</span></code></a> and <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader.getPage" title="PyPDF2.PdfFileReader.getPage"><code class="xref py py-meth docutils literal"><span class="pre">PdfFileReader.getPage()</span></code></a> functions.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-pdffilewriter-class">
+<h2>The PdfFileWriter Class<a class="headerlink" href="PyPDF2.html#the-pdffilewriter-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="PyPDF2.PdfFileWriter">
+<em class="property">class </em><code class="descclassname">PyPDF2.</code><code class="descname">PdfFileWriter</code><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class supports writing PDF files out, given pages produced by another class (typically <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader" title="PyPDF2.PdfFileReader"><code class="xref py py-class docutils literal"><span class="pre">PdfFileReader</span></code></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileWriter.addPage">
+<code class="descclassname">PdfFileWriter.</code><code class="descname">addPage</code><span class="sig-paren">(</span><em>page</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileWriter.addPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a page to this PDF file. The page is usually acquired from a <a class="reference internal" href="PyPDF2.html#PyPDF2.PdfFileReader" title="PyPDF2.PdfFileReader"><code class="xref py py-class docutils literal"><span class="pre">PdfFileReader</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileWriter.encrpyt">
+<code class="descclassname">PdfFileWriter.</code><code class="descname">encrpyt</code><span class="sig-paren">(</span><em>user_pwd</em>, <em>owner_pwd=None</em>, <em>use_128bit=True</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileWriter.encrpyt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt this PDF file with the PDF Standard encryption handler.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PyPDF2.PdfFileWriter.write">
+<code class="descclassname">PdfFileWriter.</code><code class="descname">write</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="PyPDF2.html#PyPDF2.PdfFileWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the collection of pages added to this object out as a PDF file.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2020, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on Feb 19, 2020.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.
+    </div>
+
+  </body>
+</html>
