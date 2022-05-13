@@ -1,24 +1,16 @@
-![Git Folder](/gitfolder.png)
+# Editorial History / Configuration
+- [GitHub Repository](https://github.com/extratone/editorial)
 
-# David Blue's GitHub Repository Template
-- [WTF](https://davidblue.wtf/drafts/745BCB94-CE46-4509-A7E0-7566F8DDDF23.html)
+## Audio
 
-***Latte*** is a GitHub Repository Template created specifically for use by [David Blue](/DavidBlue.vcf) (that’s me, howdy,) but open to any and all use/misuse/defilement as per [its license](/LICENSE.md).
+- [Mac Power Users #156: Editorial with Federico Viticci - Relay FM](https://www.relay.fm/mpu/156)
 
-To be honest, I’m almost positive the name was really clever but I cannot for the life of me remember what the fuck I meant.
+<audio controls>
+  <source src="https://www.podtrac.com/pts/redirect.mp3/traffic.libsyn.com/relaympu/mpu-156.mp3">
+</audio>
 
-At least as of...
+### *Writing On The iPad: Text Automation with Editorial*
 
-04092022-143149
+> I know it's far from the priority list, I'm sure, but I've been diving deep into iOS history recently and came across mention of Federico's first book, *Writing On The iPad: Text Automation with Editorial*. I noticed that it's been unpublished from the Apple Books store and was wondering if you guys might consider re-publishing it. from all the commentary I've come across from the time, it sounds like it was universally acknowledged as the definitive pioneer work on the subject. 
 
-### Contact me for whatever reason
-
-- [Contact Card](https://davidblue.wtf/db.vcf)
-- [Telegram](https://t.me/extratone)
-- [Email](mailto:davidblue@extratone.com) 
-- [Twitter](https://twitter.com/NeoYokel)
-- [Mastodon](https://mastodon.social/@DavidBlue)
-- [Discord](https://discord.gg/0b9KQUKP858b0iZF)
-- [*Everywhere*](https://raindrop.io/davidblue/social-directory-21059174)...
-
-![Cute Git](https://user-images.githubusercontent.com/43663476/117531764-d6064100-afa9-11eb-9e09-783e189abe8e.gif)
+- [Discord Link](https://discord.com/channels/836622115435184162/837345476122247198/974590236858413086)
