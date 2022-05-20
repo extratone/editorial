@@ -1,3 +1,5 @@
+![Default Landscape](https://user-images.githubusercontent.com/43663476/169541538-0c4fbe47-2ea4-4626-bb0e-1ee1e93d43f2.png)
+
 # David Blue’s Editorial Configs
 
 
