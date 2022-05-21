@@ -1,0 +1,1 @@
+{"actions":[{"pauseBeforeRunning":false,"pauseWithoutShowingParameters":false,"customTitle":"","class":"WorkflowActionReplaceSelectedText","parameters":{"replacement":{"type":"advancedText","tokenRanges":{"{2, 1}":"%date:MM","{4, 1}":"%date:dd","{0, 1}":"%date:yyyy"},"text":"?-?-?"}}}]}

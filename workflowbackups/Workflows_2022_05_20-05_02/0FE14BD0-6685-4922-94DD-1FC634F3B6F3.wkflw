@@ -1,0 +1,246 @@
+{
+    "actions": [
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If text is selected...",
+            "parameters": {
+                "comparisonType": 1,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:selection"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false,
+            "subActions": [
+                {
+                    "class": "WorkflowActionStoreVariable",
+                    "customTitle": "",
+                    "parameters": {
+                        "name": "Initial Text",
+                        "value": {
+                            "text": "?",
+                            "tokenRanges": {
+                                "{0, 1}": "%editor:selection"
+                            },
+                            "type": "advancedText"
+                        }
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionStoreVariable",
+                    "customTitle": "",
+                    "parameters": {
+                        "name": "Title",
+                        "value": {
+                            "text": "Add to Scratchpad (Selection)",
+                            "tokenRanges": {},
+                            "type": "advancedText"
+                        }
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionConditionEnd",
+                    "customTitle": "",
+                    "parameters": {},
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                }
+            ]
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If no text is selected...",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false,
+            "subActions": [
+                {
+                    "class": "WorkflowActionStoreVariable",
+                    "customTitle": "",
+                    "parameters": {
+                        "name": "Initial Text",
+                        "value": {
+                            "text": "?",
+                            "tokenRanges": {
+                                "{0, 1}": "Clipboard"
+                            },
+                            "type": "advancedText"
+                        }
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionStoreVariable",
+                    "customTitle": "",
+                    "parameters": {
+                        "name": "Title",
+                        "value": {
+                            "text": "Add to Scratchpad (Clipboard)",
+                            "tokenRanges": {},
+                            "type": "advancedText"
+                        }
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionConditionEnd",
+                    "customTitle": "",
+                    "parameters": {},
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                }
+            ]
+        },
+        {
+            "class": "WorkflowActionGetFileContents",
+            "customTitle": "",
+            "parameters": {
+                "filename": "Scratchpad.txt",
+                "ifNotExists": 0,
+                "inDropbox": false
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Scratchpad",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionRequestTextInput",
+            "customTitle": "",
+            "parameters": {
+                "keyboardType": 0,
+                "multiLineOption": 1,
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Initial Text"
+                    },
+                    "type": "advancedText"
+                },
+                "title": "%var:Title"
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Text",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCountWords",
+            "customTitle": "Count Words",
+            "parameters": {
+                "countOption": 0
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Word Count",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionSetFileContents",
+            "customTitle": "",
+            "parameters": {
+                "filename": "Scratchpad.txt",
+                "ifNotExists": 0,
+                "inDropbox": false,
+                "text": {
+                    "text": "?\n?",
+                    "tokenRanges": {
+                        "{0, 1}": "Scratchpad",
+                        "{2, 1}": "Text"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionShowHUD",
+            "customTitle": "",
+            "parameters": {
+                "HUDText": {
+                    "text": "? words appended",
+                    "tokenRanges": {
+                        "{0, 1}": "Word Count"
+                    },
+                    "type": "advancedText"
+                },
+                "duration": 0,
+                "icon": 0
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        }
+    ]
+}

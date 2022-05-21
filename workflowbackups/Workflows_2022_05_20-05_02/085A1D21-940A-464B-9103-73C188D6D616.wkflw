@@ -1,0 +1,165 @@
+{
+    "actions": [
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "Stop if empty",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Clipboard"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false,
+            "subActions": [
+                {
+                    "class": "WorkflowActionStopWorkflow",
+                    "customTitle": "",
+                    "parameters": {
+                        "HUDTitle": "Clipboard Empty",
+                        "showHUD": true
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionConditionEnd",
+                    "customTitle": "",
+                    "parameters": {},
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                }
+            ]
+        },
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "Get Clipboard",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Clipboard"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCountWords",
+            "customTitle": "Count Words",
+            "parameters": {
+                "countOption": 0
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionShowAlert",
+            "customTitle": "",
+            "parameters": {
+                "button1Title": "Block Quote",
+                "button1Value": {
+                    "text": "> ",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "button2Title": "Code Block",
+                "button2Value": {
+                    "text": "    ",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "button3Title": "Paragraph",
+                "button3Value": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "message": {
+                    "text": "(? words)",
+                    "tokenRanges": {
+                        "{1, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "showCancelButton": true,
+                "title": "Paste as..."
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Prefix",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "Get Clipboard",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Clipboard"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionPrefixSuffixLines",
+            "customTitle": "",
+            "parameters": {
+                "prefixOrSuffix": 0,
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Prefix"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionReplaceSelectedText",
+            "customTitle": "",
+            "parameters": {
+                "replacement": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        }
+    ]
+}
