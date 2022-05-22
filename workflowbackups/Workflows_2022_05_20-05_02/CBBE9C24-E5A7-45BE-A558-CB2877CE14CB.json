@@ -1,0 +1,82 @@
+{
+    "actions": [
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "Get Selected Text",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:selection"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If No Text is Selected...",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionRequestTextInput",
+            "customTitle": "",
+            "parameters": {
+                "keyboardType": 0,
+                "multiLineOption": 0,
+                "text": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "title": "Search Wikipedia"
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionConditionEnd",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionOpenURL",
+            "customTitle": "",
+            "parameters": {
+                "URL": {
+                    "text": "http://en.m.wikipedia.org/w/index.php?search=?",
+                    "tokenRanges": {
+                        "{45, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "URL:__URL_ESCAPE__": 1,
+                "openIn": 0,
+                "revealBrowserAutomatically": true,
+                "waitUntilLoaded": false
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        }
+    ]
+}

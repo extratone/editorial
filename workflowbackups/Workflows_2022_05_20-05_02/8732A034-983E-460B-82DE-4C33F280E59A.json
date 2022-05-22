@@ -1,0 +1,121 @@
+{
+    "actions": [
+        {
+            "class": "WorkflowActionGetEditorText",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionExtractURLs",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If no URLs are found...",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStopWorkflow",
+            "customTitle": "",
+            "parameters": {
+                "HUDTitle": "No URLs found",
+                "showHUD": true,
+                "stopOption": 0
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionConditionEnd",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionSelectFromList",
+            "customTitle": "",
+            "parameters": {
+                "allowMultipleSelection": false,
+                "list": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "showInPopover": true,
+                "title": ""
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If URL is selected...",
+            "parameters": {
+                "comparisonType": 1,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionOpenURL",
+            "customTitle": "",
+            "parameters": {
+                "URL": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                },
+                "openIn": 0,
+                "revealBrowserAutomatically": true,
+                "waitUntilLoaded": false
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionConditionEnd",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        }
+    ]
+}
