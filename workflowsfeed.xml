@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editorial Workflows - Recently Added</title>
+    <link>http://www.editorial-workflows.com/workflows/recent</link>
+    
+    
+    <item>
+      <title>Dropbox Sync</title>
+      <description>Manually triggers Editorial’s Dropbox sync action and calls the native `Bleep` notification sound when the sync has completed.</description>
+      <link>http://www.editorial-workflows.com/workflow/5046322772049920/pjMNMniXSII</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5046322772049920/pjMNMniXSII</guid>
+      <pubDate>Sun, 22 May 2022 16:34:15 </pubDate>
+    </item>
+    
+    <item>
+      <title>Define Selection</title>
+      <description>Retrieves the definition of the selected term using the native system dictionary, displays native definition dialog, and then speaks the term.</description>
+      <link>http://www.editorial-workflows.com/workflow/6362016277069824/me-8dVTz2XA</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6362016277069824/me-8dVTz2XA</guid>
+      <pubDate>Sun, 22 May 2022 16:33:10 </pubDate>
+    </item>
+    
+    <item>
+      <title>Share WorkFlow</title>
+      <description>Opens the system share sheet locally with the contents of the system clipboard, URL-encoded. Designed primarily to AirDrop Editorial Workflows between devices.</description>
+      <link>http://www.editorial-workflows.com/workflow/6446244142514176/hGYrAgCs34I</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6446244142514176/hGYrAgCs34I</guid>
+      <pubDate>Sun, 22 May 2022 16:32:21 </pubDate>
+    </item>
+    
+    <item>
+      <title>- List</title>
+      <description>Formats the selected text as an unordered (-) markdown list.</description>
+      <link>http://www.editorial-workflows.com/workflow/6451242947575808/NFTUMOGvBbw</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6451242947575808/NFTUMOGvBbw</guid>
+      <pubDate>Sun, 22 May 2022 16:31:31 </pubDate>
+    </item>
+    
+    <item>
+      <title>MD Link</title>
+      <description>Transforms the selected text into a markdown-formatted hyperlink using the contents of the clipboard.</description>
+      <link>http://www.editorial-workflows.com/workflow/6441302916857856/BraQ_q3ljQE</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6441302916857856/BraQ_q3ljQE</guid>
+      <pubDate>Sun, 22 May 2022 16:30:36 </pubDate>
+    </item>
+    
+    <item>
+      <title>Copy Schemed MD Document URL</title>
+      <description>Copies the url schemed bookmark url of the current file to the clipboard.</description>
+      <link>http://www.editorial-workflows.com/workflow/6453697655603200/vFX-BA4C2zo</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6453697655603200/vFX-BA4C2zo</guid>
+      <pubDate>Sun, 22 May 2022 16:29:47 </pubDate>
+    </item>
+    
+    <item>
+      <title>Bold Selection</title>
+      <description>Wraps the selected text with double (*) asterisks.</description>
+      <link>http://www.editorial-workflows.com/workflow/6443763664683008/uhPTKphZrro</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6443763664683008/uhPTKphZrro</guid>
+      <pubDate>Sun, 22 May 2022 16:28:59 </pubDate>
+    </item>
+    
+    <item>
+      <title>Search Drafts by Selected Tag</title>
+      <description>Opens a tag-filtered search by the current selection in Drafts via x-callback-url.</description>
+      <link>http://www.editorial-workflows.com/workflow/6448762469744640/B-U2qwccRdg</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6448762469744640/B-U2qwccRdg</guid>
+      <pubDate>Sun, 22 May 2022 16:27:47 </pubDate>
+    </item>
+    
+    <item>
+      <title>Set Tot Dot</title>
+      <description>Pick a Dot (1-7) in Tot Pocket to replace with the selected text. If no text is selected, the entire document will be passed. </description>
+      <link>http://www.editorial-workflows.com/workflow/6438841967706112/1g87io-ZLak</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6438841967706112/1g87io-ZLak</guid>
+      <pubDate>Sun, 22 May 2022 16:26:44 </pubDate>
+    </item>
+    
+    <item>
+      <title>Search Workflow Directory</title>
+      <description>Searches the Editorial Workflow Directory by the selected text in the in-app browser.</description>
+      <link>http://www.editorial-workflows.com/workflow/6455131168047104/ELrK3zhHJlY</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6455131168047104/ELrK3zhHJlY</guid>
+      <pubDate>Sun, 22 May 2022 16:25:31 </pubDate>
+    </item>
+    
+    <item>
+      <title>OPEN</title>
+      <description>Opens the selected URL in a new Safari tab. Best paired with a keyboard shortcut.</description>
+      <link>http://www.editorial-workflows.com/workflow/6364927996461056/GApRE_Z4wXk</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6364927996461056/GApRE_Z4wXk</guid>
+      <pubDate>Fri, 20 May 2022 04:35:27 </pubDate>
+    </item>
+    
+    <item>
+      <title>Tweetbot Selection</title>
+      <description>Opens the selected text in Tweetbot for iOS’ compose window. Upon install, you’ll need to enter your own Twitter @ name as the 	`Account` variable in the Tweetbot action.
+
+(Best used with a handy keyboard shortcut.)</description>
+      <link>http://www.editorial-workflows.com/workflow/6446859329470464/giWk4JLMKzI</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6446859329470464/giWk4JLMKzI</guid>
+      <pubDate>Fri, 20 May 2022 04:13:12 </pubDate>
+    </item>
+    
+    <item>
+      <title>Clear Clipboard</title>
+      <description>Clears the system clipboard by copying nothing.</description>
+      <link>http://www.editorial-workflows.com/workflow/6450208867090432/4maxhAKGONg</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/6450208867090432/4maxhAKGONg</guid>
+      <pubDate>Fri, 20 May 2022 04:05:46 </pubDate>
+    </item>
+    
+    <item>
+      <title>URL to Markdown Link</title>
+      <description>This action makes a link in Markdown from a selected URL.
+
+The link’s text is the Title of the page fetched from the URL.
+
+For example:
+
+    http://dobyfriday.com
+
+Becomes:
+
+    [Do By Friday](http://dobyfriday.com)
+</description>
+      <link>http://www.editorial-workflows.com/workflow/5792363410620416/gT3xjLfoOho</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5792363410620416/gT3xjLfoOho</guid>
+      <pubDate>Wed, 05 Feb 2020 11:42:08 </pubDate>
+    </item>
+    
+    <item>
+      <title>View Not Done</title>
+      <description>Show only TaskPaper tasks that are not marked Done. </description>
+      <link>http://www.editorial-workflows.com/workflow/5881127713636352/5qz7ZV08nRg</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5881127713636352/5qz7ZV08nRg</guid>
+      <pubDate>Tue, 04 Feb 2020 18:22:34 </pubDate>
+    </item>
+    
+    <item>
+      <title>List URLs...</title>
+      <description>Shows a list of URLs in the current document. Selecting one of the URLs opens it in the browser panel.</description>
+      <link>http://www.editorial-workflows.com/workflow/5820410822131712/za_cEbbV8B0</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5820410822131712/za_cEbbV8B0</guid>
+      <pubDate>Sat, 25 Jan 2020 19:30:56 </pubDate>
+    </item>
+    
+    <item>
+      <title>New OmniFocus Project</title>
+      <description>This Workflow accepts TaskPaper text with «placeholder» tokens and prompts for you to enter final values, then creates a project in OmniFocus 2.14 for iOS using those tokens.
+
+For example, given this input:
+
+- «project_name» @parallel(false) @due(«due»)
+        - This task needs to be done at least 1 week before «project_name» is due @due(«due» -1w)
+        - This task needs to be done at least 2 days before «project_name» is due @due(«due» -2d)
+
+You&#39;ll be prompted to enter values for «project_name» and «due». If you enter &#34;Phonewave 1.2&#34; and &#34;next Thursday&#34;, it will create a new &#34;Phonewave 1.2&#34; project in OmniFocus that is due next Thursday, and has two tasks already filled with due dates of this Thursday and next Tuesday.</description>
+      <link>http://www.editorial-workflows.com/workflow/5852708976197632/EiGLFTji9HE</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5852708976197632/EiGLFTji9HE</guid>
+      <pubDate>Thu, 16 Jan 2020 01:01:36 </pubDate>
+    </item>
+    
+    <item>
+      <title>Share...</title>
+      <description>Shows the iOS share sheet with the selected text as input. If nothing is selected, the entire document is shared. In a Markdown document, the text can optionally be converted to HTML first.</description>
+      <link>http://www.editorial-workflows.com/workflow/5854738818007040/DN4OvMvq-xc</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5854738818007040/DN4OvMvq-xc</guid>
+      <pubDate>Thu, 09 Jan 2020 03:45:56 </pubDate>
+    </item>
+    
+    <item>
+      <title>Convert to PDF</title>
+      <description>Converts a Markdown or plain text document to PDF. The result is shown in a browser tab.</description>
+      <link>http://www.editorial-workflows.com/workflow/5311796902625280/kBoj7nVm5qI</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5311796902625280/kBoj7nVm5qI</guid>
+      <pubDate>Thu, 09 Jan 2020 03:43:06 </pubDate>
+    </item>
+    
+    <item>
+      <title>Lucky Link</title>
+      <description>Replaces the selected word(s) with a Markdown link, pointing to the first Google result. E.g. when you select &#34;Markdown&#34;, it is replaced with &#34;[Markdown](http://daringfireball.net/projects/markdown)&#34;.</description>
+      <link>http://www.editorial-workflows.com/workflow/5874746856046592/H2ZjBpnTWaU</link>
+      <guid isPermaLink="true">http://www.editorial-workflows.com/workflow/5874746856046592/H2ZjBpnTWaU</guid>
+      <pubDate>Thu, 09 Jan 2020 03:13:43 </pubDate>
+    </item>
+    
+  </channel>
+</rss>
