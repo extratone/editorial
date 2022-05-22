@@ -1,0 +1,344 @@
+{
+    "actions": [
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "Stop if no document...",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:filename"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false,
+            "subActions": [
+                {
+                    "class": "WorkflowActionStopWorkflow",
+                    "customTitle": "",
+                    "parameters": {
+                        "HUDTitle": "No Document Selected",
+                        "showHUD": true
+                    },
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                },
+                {
+                    "class": "WorkflowActionConditionEnd",
+                    "customTitle": "",
+                    "parameters": {},
+                    "pauseBeforeRunning": false,
+                    "pauseWithoutShowingParameters": false
+                }
+            ]
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "If text is selected...",
+            "parameters": {
+                "comparisonType": 1,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:selection"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Text",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:selection"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Title",
+                "value": {
+                    "text": "Statistics (Selection)",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionConditionEnd",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCondition",
+            "customTitle": "Else... (use all text)",
+            "parameters": {
+                "comparisonType": 0,
+                "expression1": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "%editor:selection"
+                    },
+                    "type": "advancedText"
+                },
+                "expression2": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionGetEditorText",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Text",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Title",
+                "value": {
+                    "text": "Statistics (Document)",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionConditionEnd",
+            "customTitle": "",
+            "parameters": {},
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Text"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCountWords",
+            "customTitle": "",
+            "parameters": {
+                "countOption": 0
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Words",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Text"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCountWords",
+            "customTitle": "",
+            "parameters": {
+                "countOption": 1
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Sentences",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionFormatString",
+            "customTitle": "",
+            "parameters": {
+                "text": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Text"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionCountWords",
+            "customTitle": "",
+            "parameters": {
+                "countOption": 3
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionStoreVariable",
+            "customTitle": "",
+            "parameters": {
+                "name": "Characters",
+                "value": {
+                    "text": "?",
+                    "tokenRanges": {
+                        "{0, 1}": "Input"
+                    },
+                    "type": "advancedText"
+                }
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionMath",
+            "customTitle": "Math: Words per Sentence",
+            "parameters": {
+                "expression": {
+                    "text": "?/?",
+                    "tokenRanges": {
+                        "{0, 1}": "Words",
+                        "{2, 1}": "Sentences"
+                    },
+                    "type": "advancedText"
+                },
+                "onError": 0,
+                "resultOption": 1,
+                "variableName": "Words per Sentence"
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        },
+        {
+            "class": "WorkflowActionShowAlert",
+            "customTitle": "Show Alert: Results",
+            "parameters": {
+                "button1Title": "",
+                "button1Value": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "button2Title": "",
+                "button2Value": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "button3Title": "",
+                "button3Value": {
+                    "text": "",
+                    "tokenRanges": {},
+                    "type": "advancedText"
+                },
+                "message": {
+                    "text": "? Character(s)\n? Word(s)\n? Sentence(s)\n? Word(s) per Sentence (average)",
+                    "tokenRanges": {
+                        "{0, 1}": "Characters",
+                        "{15, 1}": "Words",
+                        "{25, 1}": "Sentences",
+                        "{39, 1}": "Words per Sentence"
+                    },
+                    "type": "advancedText"
+                },
+                "showCancelButton": false,
+                "title": "%var:Title"
+            },
+            "pauseBeforeRunning": false,
+            "pauseWithoutShowingParameters": false
+        }
+    ]
+}
