@@ -20,7 +20,7 @@ Best used with a handy keyboard shortcut.
 
 Clears the system clipboard by copying nothing.
 
-### [Search Workflow Directory](http://www.editorial-workflows.com/workflow/6455131168047104/ELrK3zhHJlY
+### [Search Workflow Directory](http://www.editorial-workflows.com/workflow/6455131168047104/ELrK3zhHJlY)
 
 Searches the Editorial Workflow Directory by the selected text in the in-app browser.
 
