@@ -60,6 +60,10 @@ Retrieves the definition of the selected term using the native system dictionary
 
 Manually triggers Editorial’s Dropbox sync action and calls the native `Bleep` notification sound when the sync has completed.
 
+### [Stream with VLC](http://www.editorial-workflows.com/workflow/6366168235376640/4KoGog2kW-Q)
+
+Stream the currently-selected URL in [VLC media player for iOS](https://apps.apple.com/us/app/vlc-media-player/id650377962). If no text is selected, the entire document contents will be passed.
+
 ---
 
 ## Raindrop Collection
