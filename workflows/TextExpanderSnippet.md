@@ -1,0 +1,24 @@
+# TextExpander Snippet Editorial Workflow
+Updated `05152023-160143`
+
+- [GitHub Issue](https://github.com/extratone/editorial/issues/10)
+- [**Itty Install URL**](https://itty.bitty.site/#/editorial://add-workflow?workflow-data-b64=eNq9VNtqGzEQ_RWhhwbMbpyU9mUhhKQ4JWDq4E2ah7qYsXZsC8vSIo18qTH0a_ph_ZKOdh23IS30KS_aZS5n5ujMaCe1clYWcqlt-gt5e1pY6RmQdjY3bpa7SPnb09rOZCZBJXOQxZedrCEGvMap8ziM1moOKKZgAmat61HTnHPLuVuz7w48LJHQh2OUioHc8l6TQW6C0ZWBwG756Pxiatz6qqn2EelGG_zE6TJB_8bZSW2ViRXeOFOhPwIfrL0NoQ06UWwc-332el2XxBU-g9cwMS_7tolM0X4yuQITMZlpWyczVCuwCqt73BC7yS3QDsHOsMndnWXifM9ht7aOJPcckOIKeSn3r0qRhSnRoKJjp89J4rKmbRvB0YOaGinOMjlNcjU5fzUOsTagcIk2sfr5_QcjhwamZ0l77GubboJ8fF1JBzXah2H_BU_H9lsmcZ7J5P5vHd89CXkYg937fylLSC6qeb5Rxag76m5yBcZMQC3y6M2oqzwC4SVMJv7i8k2wuq6R-G_mXawveA08NEAM6HGFYK69Wwf0V5Fp86IntG17oVwSJn-owoSK8ZjPca_8cHXXG48bnmvQ9MBimL4DVu24YF-zp9FOnHubGiwvpijblphjhUF5fcCXD4ygv2EQz6JZSKEH5air76AalCeCy4ug5jwRgpxo2QoQFtfiQFZgSk67firu5-zkq8CVbh4xsdbGiAnnsqNyKqbBOgmi06GkeKcjuGzjxLaDSvAzyE8HHTMDV4DQxHRU9J59ZivCYfhFutzOqdz_AiRW5ZE~)
+- [Documentation](https://www.dropbox.com/s/140e7exrk8gaq1b/TextExpander%20SnippetWorkflow.md?dl=0) (Shared DropBox Markdown Document)
+
+---
+
+## Meta
+
+### Description
+
+Utilizes [TextExpander for iOS/iPadOS' URL scheme](https://smilesoftware.com/textexpander/entry/textexpander-touch-3-5-adds-create-expand-xcallbackurl-support/) to create a new snippet expansion. 
+
+The abbreviation will be the document's **title** and the expanded content will be set as the *currently selected text*.
+
+---
+
+## Source
+
+```
+editorial://add-workflow?workflow-data-b64=eNq9VNtqGzEQ_RWhhwbMbpyU9mUhhKQ4JWDq4E2ah7qYsXZsC8vSIo18qTH0a_ph_ZKOdh23IS30KS_aZS5n5ujMaCe1clYWcqlt-gt5e1pY6RmQdjY3bpa7SPnb09rOZCZBJXOQxZedrCEGvMap8ziM1moOKKZgAmat61HTnHPLuVuz7w48LJHQh2OUioHc8l6TQW6C0ZWBwG756Pxiatz6qqn2EelGG_zE6TJB_8bZSW2ViRXeOFOhPwIfrL0NoQ06UWwc-332el2XxBU-g9cwMS_7tolM0X4yuQITMZlpWyczVCuwCqt73BC7yS3QDsHOsMndnWXifM9ht7aOJPcckOIKeSn3r0qRhSnRoKJjp89J4rKmbRvB0YOaGinOMjlNcjU5fzUOsTagcIk2sfr5_QcjhwamZ0l77GubboJ8fF1JBzXah2H_BU_H9lsmcZ7J5P5vHd89CXkYg937fylLSC6qeb5Rxag76m5yBcZMQC3y6M2oqzwC4SVMJv7i8k2wuq6R-G_mXawveA08NEAM6HGFYK69Wwf0V5Fp86IntG17oVwSJn-owoSK8ZjPca_8cHXXG48bnmvQ9MBimL4DVu24YF-zp9FOnHubGiwvpijblphjhUF5fcCXD4ygv2EQz6JZSKEH5air76AalCeCy4ug5jwRgpxo2QoQFtfiQFZgSk67firu5-zkq8CVbh4xsdbGiAnnsqNyKqbBOgmi06GkeKcjuGzjxLaDSvAzyE8HHTMDV4DQxHRU9J59ZivCYfhFutzOqdz_AiRW5ZE~
+```
